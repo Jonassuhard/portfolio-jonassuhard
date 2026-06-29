@@ -12,3 +12,4 @@ build/
 .vercel/
 .DS_Store
 *.log
+.vercel
