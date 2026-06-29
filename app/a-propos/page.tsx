@@ -14,9 +14,8 @@ export default function AboutPage() {
           <p className="eyebrow">À propos</p>
           <h1>Je relie marketing, IA et exécution.</h1>
           <p className="lead">
-            Mon avantage n'est pas d'être le meilleur pur dev, ni le meilleur pur
-            marketeur. C'est de traduire un problème business en système utilisable,
-            puis de documenter ce qui marche, ce qui casse et ce qui manque.
+            Mon avantage : traduire un problème business en système utilisable,
+            puis documenter ce qui marche, ce qui casse et ce qui manque.
           </p>
           <p>
             Je viens du marketing digital. J'ai appris à construire pour ne plus

@@ -17,8 +17,14 @@ export default function RecruitersPage() {
           <h1>Où me ranger : Builder IA appliquée &amp; Growth Engineer.</h1>
           <p className="lead">
             Profil hybride marketing, IA générative et développement full-stack.
-            Je transforme des problèmes d'acquisition, de contenu ou d'operation
+            Je transforme des problèmes d'acquisition, de contenu ou d'opération
             en outils utilisables.
+          </p>
+          <p>
+            <strong>Pourquoi m'appeler ?</strong> Je prends un problème
+            d'acquisition ou de contenu, je le transforme en prototype web/IA,
+            je le documente, puis je le livre sans attendre une équipe produit
+            complète.
           </p>
           <div className="button-row">
             <a className="button primary" href={site.cvClassic}>CV — classique</a>
@@ -51,6 +57,10 @@ export default function RecruitersPage() {
                 <th scope="row">Stack</th>
                 <td>Next.js, React, Firebase, Supabase, Python, Playwright, SEO, workflows LLM</td>
               </tr>
+              <tr>
+                <th scope="row">Code</th>
+                <td>2 repos publics ; les projets clients restent privés (confidentialité).</td>
+              </tr>
             </tbody>
           </table>
         </div>
@@ -74,15 +84,15 @@ export default function RecruitersPage() {
           </div>
           <div className="matrix-item">
             <strong>IA générative</strong>
-            <p>Workflows LLM, RAG simple, assistants cadres, fact-check et QA.</p>
+            <p>Workflows LLM, RAG simple, assistants cadrés, fact-check et QA.</p>
           </div>
           <div className="matrix-item">
             <strong>Produit web</strong>
             <p>Next.js, React, Firebase, Supabase, CMS léger, déploiement et maintenance.</p>
           </div>
           <div className="matrix-item">
-            <strong>Operations</strong>
-            <p>Scripts Python, Playwright, rapports, automatisation de taches répétitives.</p>
+            <strong>Opérations</strong>
+            <p>Scripts Python, Playwright, rapports, automatisation de tâches répétitives.</p>
           </div>
         </div>
       </section>

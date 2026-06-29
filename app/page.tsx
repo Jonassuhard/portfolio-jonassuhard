@@ -95,7 +95,7 @@ export default function HomePage() {
             <p className="section-kicker">Compétences reliées</p>
             <h2>Des compétences reliées à des preuves.</h2>
           </div>
-          <p>Chaque compétence pointe vers des projets réels, pas vers une liste flottante.</p>
+          <p>Chaque compétence s'appuie sur des projets livrés et documentés.</p>
         </div>
 
         <div className="matrix">

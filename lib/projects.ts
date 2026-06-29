@@ -28,6 +28,8 @@ export type Project = {
   notMeasured?: string[];
   repoStatus?: string;
   liveLabel?: string;
+  evidenceNote?: string;
+  noindex?: boolean;
   links: Array<{
     label: string;
     href: string;
@@ -63,12 +65,14 @@ export const projects: Project[] = [
     shortTitle: "Les Petites Griffes",
     type: "Site live + CMS + assistant IA",
     period: "Avril 2026 - Juin 2026",
-    role: "Strategie, design, développement, SEO, déploiement, QA",
+    role: "Stratégie, design, développement, SEO, déploiement, QA",
     status: "Prod live",
     tier: 1,
     image: "/assets/cards/les-petites-griffes.webp",
     repoStatus: "Privé — code et données client",
-    liveLabel: "Live (URL masquée)",
+    liveLabel: "Live · URL communiquée en entretien",
+    evidenceNote:
+      "Captures anonymisées (home, CMS, assistant IA) et démo courte sur demande ou en entretien ; rapport Lighthouse daté disponible.",
     architecture: [
       "Front Next.js (React) rendu et déployé sur Vercel.",
       "Contenus dynamiques (galerie, prestations, tarifs, FAQ) servis depuis Supabase, éditables via un CMS maison protégé.",
@@ -85,7 +89,7 @@ export const projects: Project[] = [
       "Taux d'usage de l'assistant côté visiteurs : non instrumenté."
     ],
     proofLine:
-      "Site client live en production (URL masquée pour confidentialité), CMS maison, SEO local, assistant IA cadré, Lighthouse mobile 88 / SEO 100 / a11y 93 (audit revérifié le 29/06).",
+      "Site client live en production (URL communiquée en entretien · captures anonymisées sur demande), CMS maison, SEO local, assistant IA cadré, Lighthouse mobile 88 / SEO 100 / a11y 93 (audit revérifié le 29/06).",
     summary:
       "Transformer une activité Instagram en présence web crédible, éditable et utile pour les demandes clientes.",
     stack: ["Next.js", "React", "Supabase", "Clerk", "Vercel", "LLM"],
@@ -95,8 +99,8 @@ export const projects: Project[] = [
       "Gestion d'incidents: domaine .fr, données DB, prix, galerie, cohérentisation contenu."
     ],
     constraints: [
-      "Budget quasi nul et besoin d'autonomie cote cliente.",
-      "Donnees privées a ne pas exposer.",
+      "Budget quasi nul et besoin d'autonomie côté cliente.",
+      "Données privées a ne pas exposer.",
       "Contenus variables servis par base de données, pas seulement par le code."
     ],
     decisions: [
@@ -143,12 +147,14 @@ export const projects: Project[] = [
     shortTitle: "Educool / La Herse",
     type: "Application web education",
     period: "2026",
-    role: "Developpement, UX, sécurité, PDF, Firebase, maintenance",
+    role: "Développement, UX, sécurité, PDF, Firebase, maintenance",
     status: "Prod / maintenance",
     tier: 1,
     image: "/assets/cards/educool.webp",
     repoStatus: "Privé — RGPD (données mineurs)",
     liveLabel: "Usage classe (non public)",
+    evidenceNote:
+      "Captures anonymisées sur données fictives et démo sur demande ; aucune donnée élève réelle n'est publiée.",
     architecture: [
       "Application web / PWA Next.js utilisable sur tablette par une non-dev.",
       "Données et authentification sur Firebase / Firestore.",
@@ -172,10 +178,10 @@ export const projects: Project[] = [
     recruiterProof: [
       "Produit utilise par une vraie utilisatrice avec retours terrain.",
       "Conscience sécurité sur données enfants et rules Firebase.",
-      "Capacite a investiguer des bugs PDF, déploiement, auth et données."
+      "Capacité a investiguer des bugs PDF, déploiement, auth et données."
     ],
     constraints: [
-      "Donnees enfants strictement anonymisées.",
+      "Données enfants strictement anonymisées.",
       "Usage tablette/PWA par une non-dev.",
       "PDF imprimables et logique métier dense."
     ],
@@ -187,21 +193,21 @@ export const projects: Project[] = [
       },
       {
         decision: "Cloud Functions pour opérations sensibles",
-        why: "Eviter de mettre l'autorité métier uniquement cote client.",
+        why: "Éviter de mettre l'autorité métier uniquement côté client.",
         rejected: "Tout faire dans le front."
       },
       {
         decision: "Audits sécurité documentés",
-        why: "Donnees mineurs = pas de validation au doigt mouillé.",
+        why: "Données mineurs = pas de validation au doigt mouillé.",
         rejected: "Se contenter d'un 'ca marche'."
       }
     ],
     delivered: [
       "Application web/PWA.",
       "Suivi élèves et compétences.",
-      "Generation PDF et ZIP.",
+      "Génération PDF et ZIP.",
       "Rules Firebase, Cloud Functions et tests.",
-      "Refontes UX successives apres retours."
+      "Refontes UX successives après retours."
     ],
     results: [
       "Une classe entière en contexte réel, données élèves anonymisées.",
@@ -223,12 +229,14 @@ export const projects: Project[] = [
     shortTitle: "Capsélys",
     type: "Conversion + expérimentation IA",
     period: "Juin 2026 - Juillet 2026",
-    role: "Strategie, audit, UX, contenus, expérimentation IA, deck client",
+    role: "Stratégie, audit, UX, contenus, expérimentation IA, deck client",
     status: "Staging / workshop MBA",
     tier: 1,
     image: "/assets/cards/capselys.webp",
     repoStatus: "Privé — projet client",
     liveLabel: "Staging (non public)",
+    evidenceNote:
+      "Captures du staging et deck client (14 slides) sur demande ; mesures lab, pas une prod.",
     architecture: [
       "WordPress + Divi imposés ; refonte sur un environnement de staging sécurisé.",
       "Audits de rendu multi-viewports via Playwright (le DOM Divi ne suffit pas à prouver le visuel).",
@@ -250,17 +258,17 @@ export const projects: Project[] = [
     stack: ["WordPress", "Divi", "Playwright", "PHP", "PDF", "LLM workflows"],
     recruiterProof: [
       "Cadrage client et conversion, pas seulement exécution front.",
-      "Capacite a travailler avec une stack contrainte et vieillissante.",
-      "Presentation honnête: staging, mesures lab, limites et plan d'action."
+      "Capacité a travailler avec une stack contrainte et vieillissante.",
+      "Présentation honnête: staging, mesures lab, limites et plan d'action."
     ],
     constraints: [
       "Staging, pas prod finale.",
-      "Client present a l'oral MBA.",
+      "Client présent a l'oral MBA.",
       "WordPress/Divi impose et risques de régression visuelle."
     ],
     decisions: [
       {
-        decision: "Deploiement sequentiel sur staging",
+        decision: "Déploiement séquentiel sur staging",
         why: "Valider sans casser la prod client.",
         rejected: "Push prod direct."
       },
@@ -276,21 +284,21 @@ export const projects: Project[] = [
       }
     ],
     delivered: [
-      "Staging visuel retravaille.",
-      "Pages service et adhesion mieux structurees.",
+      "Staging visuel retravaillé.",
+      "Pages service et adhesion mieux structurées.",
       "Deck oral client 14 slides.",
       "Audits visuels et rapports.",
       "Prototype d'assistant / tunnel."
     ],
     results: [
-      "Support oral MBA pret avec garde-fous client.",
+      "Support oral MBA prêt avec garde-fous client.",
       "Refonte staging auditee sur plusieurs tailles.",
-      "Mesures business reelles a qualifier apres déploiement."
+      "Mesures business réelles a qualifier après déploiement."
     ],
     limits: [
       "Ne pas dire que le staging est une prod utilisée.",
       "Retombees business non disponibles a court terme.",
-      "Certaines decisions dependent de validation client."
+      "Certaines decisions dépendent de validation client."
     ],
     links: [
       { label: "Version Markdown", href: "/projects/capselys.md" }
@@ -298,11 +306,11 @@ export const projects: Project[] = [
   },
   {
     slug: "iscom",
-    title: "ISCOM - SEO, Drupal et production editoriale",
+    title: "ISCOM - SEO, Drupal et production éditoriale",
     shortTitle: "ISCOM",
-    type: "SEO + Drupal + production editoriale",
+    type: "SEO + Drupal + production éditoriale",
     period: "2026",
-    role: "SEO, fact-check, contenu, audits, CMS, process qualite",
+    role: "SEO, fact-check, contenu, audits, CMS, process qualité",
     status: "Alternance / client interne",
     tier: 1,
     image: "/assets/cards/iscom.webp",
@@ -323,11 +331,11 @@ export const projects: Project[] = [
     proofLine:
       "Production SEO a volume, audits cannibalisation, saisie Drupal et garde-fous de publication.",
     summary:
-      "Produire et corriger du contenu SEO dans un CMS sensible, avec exigences marque, verification et validation humaine.",
+      "Produire et corriger du contenu SEO dans un CMS sensible, avec exigences marque, vérification et validation humaine.",
     stack: ["Drupal", "Playwright", "Semrush", "SEO", "LLM-assisted QA"],
     recruiterProof: [
-      "Production a volume avec contrôle qualite.",
-      "Capacite a transformer un audit SEO en decisions nommees.",
+      "Production a volume avec contrôle qualité.",
+      "Capacité a transformer un audit SEO en decisions nommees.",
       "Discipline sur actions sensibles: ne pas publier sans validation."
     ],
     constraints: [
@@ -338,7 +346,7 @@ export const projects: Project[] = [
     decisions: [
       {
         decision: "Checklist avant publication",
-        why: "Eviter erreurs live et publication irreversible.",
+        why: "Éviter erreurs live et publication irréversible.",
         rejected: "Automatiser le bouton enregistrer."
       },
       {
@@ -348,19 +356,19 @@ export const projects: Project[] = [
       }
     ],
     delivered: [
-      "Actus SEO montees dans Drupal.",
+      "Actus SEO montées dans Drupal.",
       "Audits cannibalisation et inter-marques.",
-      "Payloads editoriaux prets a coller.",
-      "Images et champs media controles.",
-      "Lessons qualite et garde-fous."
+      "Payloads éditoriaux prêts a coller.",
+      "Images et champs media contrôles.",
+      "Lessons qualité et garde-fous."
     ],
     results: [
-      "Actu IA agentique publiee live le 16/06.",
+      "Actu IA agentique publiée live le 16/06.",
       "Audit cannibalisation livre en PDF.",
-      "Process de pre-publication durci apres erreurs."
+      "Process de pre-publication durci après erreurs."
     ],
     limits: [
-      "Ne pas publier acces CMS ni données internes.",
+      "Ne pas publier accès CMS ni données internes.",
       "Ne pas sur-vendre l'automatisation: validation humaine obligatoire.",
       "Certaines preuves restent confidentielles."
     ],
@@ -385,6 +393,7 @@ export const projects: Project[] = [
     image: "/assets/cards/battle-engine.webp",
     repoStatus: "Public à venir (copie anonymisée prête)",
     liveLabel: "Lab",
+    noindex: true,
     architecture: [
       "Pipeline Python orchestrant : rendu Godot → FFmpeg → interpolation RIFE → publication via l'API YouTube."
     ],
@@ -402,7 +411,7 @@ export const projects: Project[] = [
     recruiterProof: [
       "Automatisation de pipeline creatif.",
       "Orchestration fichiers, rendu et publication.",
-      "Capacite a industrialiser une idee personnelle."
+      "Capacité a industrialiser une idee personnelle."
     ],
     constraints: ["Contenu lab a cadrer pour ne pas brouiller le positionnement CDI."],
     decisions: [
@@ -412,9 +421,9 @@ export const projects: Project[] = [
         rejected: "Le mettre en premiere ligne."
       }
     ],
-    delivered: ["Pipeline de rendu", "Videos publiees", "Scripts d'automatisation"],
+    delivered: ["Pipeline de rendu", "Videos publiées", "Scripts d'automatisation"],
     results: ["Audience YouTube a verifier avant publication finale."],
-    limits: ["Ne pas laisser le cote meme-content dominer le portfolio."],
+    limits: ["Ne pas laisser le côté meme-content dominer le portfolio."],
     links: [{ label: "Version Markdown", href: "/projects/battle-engine.md" }]
   },
   {
@@ -429,6 +438,7 @@ export const projects: Project[] = [
     image: "/assets/cards/hoopsphere.webp",
     repoStatus: "Public à venir (copie anonymisée prête)",
     liveLabel: "Lab / archive",
+    noindex: true,
     architecture: [
       "Prototype mobile React Native, backend Firebase, OCR via un service FastAPI."
     ],
@@ -445,7 +455,7 @@ export const projects: Project[] = [
     stack: ["React Native", "Firebase", "FastAPI", "OCR"],
     recruiterProof: [
       "Raisonnement produit.",
-      "Capacite a documenter aussi ce qui n'a pas marche.",
+      "Capacité a documenter aussi ce qui n'a pas marche.",
       "Lien business/tech."
     ],
     constraints: ["Projet scolaire, pas traction marche."],
@@ -475,7 +485,7 @@ export const skills = [
     proofSlugs: ["iscom", "capselys", "les-petites-griffes"],
     proofExtra: "",
     proof: "ISCOM, Capsélys, Les Petites Griffes",
-    note: "Recherche, structure, maillage, Drupal, verification et publication encadree."
+    note: "Recherche, structure, maillage, Drupal, vérification et publication encadree."
   },
   {
     name: "Next.js / React",
@@ -496,21 +506,21 @@ export const skills = [
     proofSlugs: ["battle-engine"],
     proofExtra: "audits Playwright, scripts Python",
     proof: "Battle Engine, audits Playwright, scripts Python",
-    note: "Pipelines Python, Playwright, génération, controles et verification."
+    note: "Pipelines Python, Playwright, génération, contrôles et vérification."
   },
   {
     name: "Produit / arbitrage",
     proofSlugs: ["educool-la-herse", "capselys", "hoopsphere"],
     proofExtra: "",
     proof: "Educool, Capsélys, HoopSphere",
-    note: "Contraintes terrain, limites explicites, decisions et alternatives rejetees."
+    note: "Contraintes terrain, limites explicites, decisions et alternatives rejetées."
   },
   {
-    name: "Securite / données",
+    name: "Sécurité / données",
     proofSlugs: ["educool-la-herse", "les-petites-griffes"],
     proofExtra: "",
     proof: "Educool, Les Petites Griffes",
-    note: "Donnees sensibles, auth, rules, anonymisation et prudence de publication."
+    note: "Données sensibles, auth, rules, anonymisation et prudence de publication."
   }
 ];
 

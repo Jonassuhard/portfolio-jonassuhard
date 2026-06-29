@@ -3,7 +3,9 @@ import { projects, siteUrl } from "@/lib/projects";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = ["", "/recruteurs", "/projets", "/competences", "/a-propos"];
-  const projectRoutes = projects.map((project) => `/projets/${project.slug}`);
+  const projectRoutes = projects
+    .filter((project) => !project.noindex)
+    .map((project) => `/projets/${project.slug}`);
   const agentFiles = ["/profile.md", "/profile.json", "/llms.txt"];
 
   return [...staticRoutes, ...projectRoutes, ...agentFiles].map((path) => ({

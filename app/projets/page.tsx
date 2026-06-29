@@ -4,7 +4,7 @@ import { projects } from "@/lib/projects";
 
 export const metadata: Metadata = {
   title: "Projets",
-  description: "Index des preuves de travail de Jonas Suhard, classees par maturite."
+  description: "Index des preuves de travail de Jonas Suhard, classées par maturité."
 };
 
 export default function ProjectsPage() {

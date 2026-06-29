@@ -22,6 +22,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: project.shortTitle,
     description: project.summary,
+    robots: project.noindex ? { index: false, follow: true } : undefined,
     alternates: {
       canonical: `/projets/${project.slug}`,
       types: {
@@ -62,6 +63,9 @@ export default async function ProjectDetailPage({ params }: PageProps) {
           <p className="eyebrow">Case study / Tier {project.tier}</p>
           <h1>{project.title}</h1>
           <p className="lead">{project.summary}</p>
+          {project.noindex ? (
+            <p className="case-meta">Lab / archive — non utilisé comme preuve principale de candidature.</p>
+          ) : null}
           <div className="button-row">
             {project.links.map((link) => (
               <a
@@ -87,11 +91,11 @@ export default async function ProjectDetailPage({ params }: PageProps) {
               <td>{project.type}</td>
             </tr>
             <tr>
-              <th scope="row">Periode</th>
+              <th scope="row">Période</th>
               <td>{project.period}</td>
             </tr>
             <tr>
-              <th scope="row">Role</th>
+              <th scope="row">Rôle</th>
               <td>{project.role}</td>
             </tr>
             <tr>
@@ -135,15 +139,15 @@ export default async function ProjectDetailPage({ params }: PageProps) {
           ) : null}
 
           <section>
-            <p className="section-kicker">Decisions</p>
-            <h2>Choix faits, alternatives refusees.</h2>
+            <p className="section-kicker">Décisions</p>
+            <h2>Choix faits, alternatives refusées.</h2>
             <div className="table-scroll">
               <table className="decision-table">
                 <thead>
                   <tr>
-                    <th scope="col">Decision</th>
+                    <th scope="col">Décision</th>
                     <th scope="col">Pourquoi</th>
-                    <th scope="col">Alternative rejetee</th>
+                    <th scope="col">Alternative rejetée</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -161,7 +165,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
 
           <section>
             <p className="section-kicker">Livraison</p>
-            <h2>Ce qui a ete produit.</h2>
+            <h2>Ce qui a été produit.</h2>
             <ul>
               {project.delivered.map((item) => (
                 <li key={item}>{item}</li>
@@ -170,7 +174,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
           </section>
 
           <section>
-            <p className="section-kicker">Resultats</p>
+            <p className="section-kicker">Résultats</p>
             <h2>Ce qu'on peut affirmer.</h2>
             <ul>
               {project.results.map((item) => (
@@ -221,6 +225,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
           <ul>
             {project.liveLabel ? <li>Live : {project.liveLabel}</li> : null}
             {project.repoStatus ? <li>Repo : {project.repoStatus}</li> : null}
+            {project.evidenceNote ? <li>Preuve visuelle : {project.evidenceNote}</li> : null}
             {project.links.map((link) => (
               <li key={link.href}>
                 <a
