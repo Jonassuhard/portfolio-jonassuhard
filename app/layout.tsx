@@ -83,7 +83,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           </div>
           <div className="menubar">
             <Link className="brand" href="/" aria-label="Accueil Jonas Suhard">
-              <span className="brand-mark">JS</span>
+              <img className="brand-mark" src="/brand/js-medallion.png" alt="Jonas Suhard" width={36} height={36} />
             </Link>
             <nav className="main-nav" aria-label="Navigation principale">
               <Link href="/recruteurs">Recruteurs</Link>
@@ -98,7 +98,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <footer className="site-footer">
           <div className="foot-top">
             <div className="foot-id">
-              <span className="brand-mark sm">JS</span>
+              <img className="brand-mark sm" src="/brand/js-medallion.png" alt="" width={46} height={46} />
               <div>
                 <strong>Jonas Suhard</strong>
                 <span className="foot-id-sub">Builder IA appliquée &amp; Growth Engineer</span>
