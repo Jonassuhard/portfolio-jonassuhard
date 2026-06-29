@@ -1,41 +1,25 @@
 # Educool / La Herse - app web pour une classe
 
-Type: application web education.
+Type : Application web éducation.
+Période : 2026.
+Rôle : Développement, UX, sécurité, PDF, Firebase, maintenance.
+Stack : Next.js, Firebase, Firestore, Cloud Functions, Vitest, PDF.
+Statut : Prod / maintenance.
 
-Periode: 2026.
+En bref : Application utilisée par une classe, Firebase, données sensibles, PDF et audits de sécurité.
 
-Role: developpement, UX, securite, PDF, Firebase, maintenance.
+## Problème
 
-Stack: Next.js, Firebase, Firestore, Cloud Functions, Vitest, PDF.
+Construire un produit terrain pour une enseignante: suivi de compétences, livrets, PDF, PWA et logique métier scolaire.
 
-Statut: prod / maintenance.
+## Ce que ça montre
 
-Preuve principale: application utilisee dans un contexte de classe, avec Firebase, donnees sensibles, PDF et audits de securite.
-
-## Probleme
-
-Construire un produit terrain pour une enseignante: suivi de competences, livrets, PDF, PWA et logique metier scolaire.
-
-## Contraintes
-
-- Donnees enfants strictement anonymisees.
-- Usage tablette/PWA par une non-dev.
-- PDF imprimables et logique metier dense.
-
-## Decisions
-
-- Firebase / Firestore pour auth, donnees et functions.
-- Cloud Functions pour operations sensibles.
-- Audits securite documentes pour eviter la validation au doigt mouille.
-
-## Ce que ca prouve
-
-- Produit utilise par une vraie utilisatrice.
-- Conscience securite sur donnees enfants.
-- Capacite a investiguer des bugs PDF, deploy, auth et donnees.
+- Produit utilisé par une vraie utilisatrice avec retours terrain.
+- Conscience sécurité sur données enfants et rules Firebase.
+- Capacité à investiguer des bugs PDF, déploiement, auth et données.
 
 ## Limites
 
-- Aucune donnee eleve ne doit apparaitre publiquement.
-- Certaines phases securite sont a contextualiser finement.
-
+- Aucune donnée élève ne doit apparaître publiquement.
+- Certaines phases sécurité sont à contextualiser finement.
+- Projet très dense: la case study doit rester lisible.

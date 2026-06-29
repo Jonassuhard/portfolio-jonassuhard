@@ -1,41 +1,25 @@
-# ISCOM - SEO, Drupal et production editoriale
+# ISCOM - SEO, Drupal et production éditoriale
 
-Type: SEO + Drupal + production editoriale.
+Type : SEO + Drupal + production éditoriale.
+Période : 2026.
+Rôle : SEO, fact-check, contenu, audits, CMS, process qualité.
+Stack : Drupal, Playwright, Semrush, SEO, LLM-assisted QA.
+Statut : Alternance / client interne.
 
-Periode: 2026.
+En bref : Production SEO dans Drupal, audits de cannibalisation et garde-fous de publication avant mise en ligne.
 
-Role: SEO, fact-check, contenu, audits, CMS, process qualite.
+## Problème
 
-Stack: Drupal, Playwright, Semrush, SEO, LLM-assisted QA.
+Produire et corriger du contenu SEO dans un CMS sensible, avec exigences marque, vérification et validation humaine.
 
-Statut: alternance / client interne.
+## Ce que ça montre
 
-Preuve principale: production SEO a volume, audits cannibalisation, saisie Drupal et garde-fous de publication.
-
-## Probleme
-
-Produire et corriger du contenu SEO dans un CMS sensible, avec exigences marque, verification et validation humaine.
-
-## Contraintes
-
-- Publication CMS sensible.
-- Faits, chiffres et sources a verifier.
-- Validation interne.
-
-## Decisions
-
-- Checklist avant publication.
-- Fact-check claim par claim.
-- Ne pas automatiser l'enregistrement CMS.
-
-## Ce que ca prouve
-
-- Production a volume avec controle qualite.
-- Transformation d'audits SEO en decisions nommees.
-- Discipline sur actions sensibles.
+- Production à volume avec contrôle qualité.
+- Capacité à transformer un audit SEO en décisions nommées.
+- Discipline sur actions sensibles: ne pas publier sans validation.
 
 ## Limites
 
-- Ne pas publier acces CMS ni donnees internes.
+- Ne pas publier accès CMS ni données internes.
 - Ne pas sur-vendre l'automatisation: validation humaine obligatoire.
-
+- Certaines preuves restent confidentielles.

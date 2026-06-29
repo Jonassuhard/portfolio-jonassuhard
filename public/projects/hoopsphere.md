@@ -1,10 +1,23 @@
 # HoopSphere - prototype produit MBA
 
-Type: prototype produit.
+Type : Prototype produit.
+Période : 2025 - 2026.
+Rôle : Produit, personas, prototype, OCR.
+Stack : React Native, Firebase, FastAPI, OCR.
+Statut : Archive / MBA.
 
-Stack: React Native, Firebase, FastAPI, OCR.
+En bref : Prototype mobile basket amateur, utile pour montrer raisonnement produit et limites.
 
-Statut: archive / MBA.
+## Problème
 
-Ce projet sert d'autopsie produit: idee, personas, prototype et limites. Il ne doit pas etre vendu comme SaaS abouti.
+Projet MBA a garder comme autopsie honnête: idée, personas, prototype, limites.
 
+## Ce que ça montre
+
+- Raisonnement produit.
+- Capacité à documenter aussi ce qui n'a pas marché.
+- Lien business/tech.
+
+## Limites
+
+- Pas de traction payante.

@@ -1,16 +1,12 @@
 # Edusemantix - jeu de devinette sémantique multijoueur
 
-Type : jeu sémantique · temps réel.
-
+Type : Lab / projet perso.
 Période : 2026.
-
 Rôle : Conception et développement.
-
-Stack : React 19 / Vite 6, Node.js / Express / Socket.io, ConceptNet Numberbatch, Python.
-
+Stack : React 19 / Vite 6, Node.js / Express / Socket.io, ConceptNet Numberbatch, Python (pré-calcul), Firebase Firestore.
 Statut : Copie publique anonymisée.
 
-En bref : Jeu multijoueur en temps réel : trouver un mot secret, chaque proposition recevant un score de proximité sémantique (similarité cosinus), scores en direct via WebSocket.
+En bref : Jeu multijoueur en temps réel où l'on cherche un mot secret : chaque proposition reçoit un score de proximité sémantique (similarité cosinus sur vecteurs de mots), scores en direct via WebSocket.
 
 ## Problème
 
@@ -18,10 +14,10 @@ Faire jouer plusieurs personnes en simultané sur une mécanique de proximité s
 
 ## Ce que ça montre
 
-- Scoring sémantique sur vecteurs de mots, pré-calcul Python et stockage binaire pour la performance.
-- Temps réel multijoueur via Socket.io.
+- Scoring sémantique sur vecteurs de mots (similarité cosinus) avec pré-calcul Python et stockage binaire pour la performance.
+- Temps réel multijoueur via Socket.io (parties simultanées, scores en direct).
 
 ## Limites
 
 - Lab personnel, pas de démo publique maintenue.
-- Persistance des stats dépend de Firebase.
+- Persistance des stats dépend de Firebase (mode mémoire sans credentials).

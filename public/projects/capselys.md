@@ -1,42 +1,25 @@
-# Capsélys - refonte conversion et experimentation IA
+# Capsélys - refonte conversion et expérimentation IA
 
-Type: conversion + experimentation IA.
+Type : Conversion + expérimentation IA.
+Période : Juin 2026 - Juillet 2026.
+Rôle : Stratégie, audit, UX, contenus, expérimentation IA, deck client.
+Stack : WordPress, Divi, Playwright, PHP, PDF, LLM workflows.
+Statut : Staging / workshop MBA.
 
-Periode: juin 2026 - juillet 2026.
+En bref : Refonte orientée conversion, staging WordPress sécurisé, deck oral client et audits multi-viewports.
 
-Role: strategie, audit, UX, contenus, experimentation IA, deck client.
+## Problème
 
-Stack: WordPress, Divi, Playwright, PHP, PDF, LLM workflows.
+Clarifier une offre complexe, réduire la friction d'adhésion et tester un parcours de conversion avec un assistant IA cadré.
 
-Statut: staging / workshop MBA.
+## Ce que ça montre
 
-Preuve principale: refonte orientee conversion, staging WordPress securise, deck oral client et audits multi-viewports.
-
-## Probleme
-
-Clarifier une offre complexe, reduire la friction d'adhesion et presenter une demarche d'experimentation marketing.
-
-## Contraintes
-
-- Staging, pas prod finale.
-- Client present a l'oral MBA.
-- WordPress/Divi impose.
-- Risques de regression visuelle.
-
-## Decisions
-
-- Deploiement sequentiel sur staging pour valider sans casser la prod.
-- Audits Playwright multi-viewport pour prouver le rendu.
-- Assistant IA qualifiant plutot qu'un chatbot gadget.
-
-## Ce que ca prouve
-
-- Cadrage client et conversion.
-- Travail avec stack contrainte.
-- Presentation honnete: staging, mesures lab, limites et plan d'action.
+- Cadrage client et conversion, pas seulement exécution front.
+- Capacité à travailler avec une stack contrainte et vieillissante.
+- Présentation honnête: staging, mesures lab, limites et plan d'action.
 
 ## Limites
 
-- Ne pas dire que le staging est une prod utilisee.
-- Retombees business non disponibles a court terme.
-
+- Ne pas dire que le staging est une prod utilisée.
+- Retombées business non disponibles à court terme.
+- Certaines décisions dépendent de validation client.

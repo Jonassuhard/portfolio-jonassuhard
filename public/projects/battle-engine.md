@@ -1,10 +1,23 @@
-# Battle Engine - pipeline video automatise
+# Battle Engine - pipeline vidéo automatise
 
-Type: pipeline video / automation.
+Type : Pipeline vidéo / automation.
+Période : 2026.
+Rôle : Pipeline Python, Godot, rendu, FFmpeg, publication.
+Stack : Godot, Python, FFmpeg, RIFE, YouTube API.
+Statut : Actif / lab.
 
-Stack: Godot, Python, FFmpeg, RIFE, YouTube API.
+En bref : Pipeline Godot -> FFmpeg -> interpolation -> YouTube API pour vidéos 1VS1.
 
-Statut: actif / lab.
+## Problème
 
-Ce projet sert de preuve d'automatisation creative: pipeline Godot vers FFmpeg, interpolation et publication. Il reste en Tier 2 pour ne pas brouiller le positionnement CDI marketing + IA.
+Automatiser une chaîne de production vidéo, utile comme preuve Python/pipeline, pas comme argument principal recruteur.
 
+## Ce que ça montre
+
+- Automatisation de pipeline creatif.
+- Orchestration fichiers, rendu et publication.
+- Capacité à industrialiser une idée personnelle.
+
+## Limites
+
+- Ne pas laisser le côté meme-content dominer le portfolio.
