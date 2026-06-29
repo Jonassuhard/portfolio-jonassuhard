@@ -80,7 +80,20 @@ export default async function ProjectDetailPage({ params }: PageProps) {
             ))}
           </div>
         </div>
-        <img src={project.image} alt={`Aperçu du projet ${project.shortTitle}`} />
+        {project.video ? (
+          <video
+            className="case-video"
+            src={project.video}
+            poster={project.video.replace(".mp4", "-poster.webp")}
+            autoPlay
+            loop
+            muted
+            playsInline
+            aria-label={`Aperçu animé (filtre ASCII) du projet ${project.shortTitle}`}
+          />
+        ) : (
+          <img src={project.image} alt={`Aperçu du projet ${project.shortTitle}`} />
+        )}
       </section>
 
       <section>

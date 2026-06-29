@@ -30,6 +30,7 @@ export type Project = {
   liveLabel?: string;
   evidenceNote?: string;
   cardLine?: string;
+  video?: string;
   noindex?: boolean;
   links: Array<{
     label: string;
@@ -399,6 +400,7 @@ export const projects: Project[] = [
     status: "Actif / lab",
     tier: 2,
     image: "/assets/cards/battle-engine.webp",
+    video: "/assets/video/battle-engine.mp4",
     repoStatus: "Publication prévue après anonymisation",
     liveLabel: "Lab",
     noindex: true,
