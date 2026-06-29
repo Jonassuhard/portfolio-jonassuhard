@@ -302,8 +302,14 @@ td { color:var(--color-ink-soft); }
   .main-nav { gap:12px 16px; }
   h1 { font-size:clamp(30px,8vw,42px); }
   .case-hero img { max-height:240px; }
-  .foot-top { gap:14px; }
-  .foot-bar { gap:4px 12px; }
+  .foot-top { gap:10px; padding:14px 14px 12px; }
+  .foot-id { gap:11px; }
+  .brand-mark.sm { width:38px; height:38px; }
+  .foot-pitch { font-size:12px; line-height:1.5; }
+  .foot-cols { padding:12px 14px 14px; gap:8px 18px; }
+  .foot-cols .foot-col-title { margin:0 0 5px; }
+  .foot-cols a { padding:2px 0; font-size:12.5px; }
+  .foot-bar { gap:4px 12px; padding:9px 14px; }
 }
 @media (max-width:430px) {
   .titlebar .ver { width:100%; }
