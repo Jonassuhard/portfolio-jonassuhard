@@ -470,6 +470,255 @@ export const projects: Project[] = [
     results: ["Support MBA, pas preuve commerciale."],
     limits: ["Pas de traction payante."],
     links: [{ label: "Version Markdown", href: "/projects/hoopsphere.md" }]
+  },
+  {
+    slug: "rag-starter-kit",
+    title: "RAG Starter Kit - API de retrieval augmenté multi-tenant",
+    shortTitle: "RAG Starter Kit",
+    type: "Projet perso / preuve technique",
+    period: "2026",
+    role: "Conception et développement (full-stack)",
+    status: "Copie publique anonymisée",
+    tier: 2,
+    image: "/assets/cards/rag-starter-kit.webp",
+    repoStatus: "Public à venir (copie anonymisée prête)",
+    liveLabel: "Démo locale",
+    noindex: true,
+    proofLine:
+      "API FastAPI qui ingère des documents (PDF, DOCX, Markdown, texte), les indexe dans Qdrant et répond en citant ses sources, avec auth multi-tenant et un module d'évaluation type Ragas.",
+    summary:
+      "Servir plusieurs clients sur un même backend RAG, en gardant les données isolées par client_id et en mesurant la qualité des réponses.",
+    stack: ["FastAPI", "Qdrant", "Mistral AI", "LangChain", "SQLite", "pytest", "Next.js 16 / React 19", "Docker Compose"],
+    recruiterProof: [
+      "Architecture RAG complète de bout en bout : ingestion multi-format, indexation vectorielle, génération avec citation des sources.",
+      "Isolation multi-tenant (un backend, plusieurs clients séparés par client_id) avec couche d'auth.",
+      "Module d'évaluation de la qualité des réponses inspiré de Ragas, avec cas de scoring versionnés et suite pytest."
+    ],
+    constraints: [
+      "Données clients, secrets et identités réelles retirés pour publier le code comme projet.",
+      "Backend unique servant plusieurs clients : isolation stricte des données par tenant."
+    ],
+    decisions: [
+      {
+        decision: "Qdrant comme base vectorielle, orchestration via LangChain.",
+        why: "Stack RAG éprouvée, intégration directe avec les embeddings Mistral et les text-splitters.",
+        rejected: "Recherche full-text classique sans vecteurs - insuffisante pour de la similarité sémantique."
+      },
+      {
+        decision: "Module d'évaluation type Ragas avec cas de scoring versionnés.",
+        why: "Mesurer la qualité du retrieval au lieu de juger les réponses à l'œil.",
+        rejected: "Validation manuelle ad hoc - non reproductible, non comparable entre versions."
+      }
+    ],
+    delivered: [
+      "Backend FastAPI : ingestion, retriever, chat avec sources, auth multi-tenant, logs d'usage et d'audit.",
+      "Frontend Next.js 16 / React 19 (App Router, TypeScript, Tailwind 4).",
+      "Stack dockerisée (Qdrant + backend + frontend) lançable via docker compose, + docs d'onboarding."
+    ],
+    results: [
+      "Suite de tests pytest et jeux de cas de scoring en place pour évaluer le retrieval.",
+      "Performance et qualité chiffrées du RAG : pas encore mesurées publiquement."
+    ],
+    limits: [
+      "Copie anonymisée : données et clients réels remplacés par des placeholders, pas de démo publique hébergée.",
+      "Le module d'évaluation fournit le harnais ; les scores de qualité ne sont pas publiés."
+    ],
+    links: [{ label: "Version Markdown", href: "/projects/rag-starter-kit.md" }]
+  },
+  {
+    slug: "board-ia-pme",
+    title: "Board IA PME - comité consultatif multi-agents",
+    shortTitle: "Board IA PME",
+    type: "POC / preuve technique",
+    period: "2026",
+    role: "Conception et développement (POC)",
+    status: "POC initié - copie publique anonymisée",
+    tier: 2,
+    image: "/assets/cards/board-ia-pme.webp",
+    repoStatus: "Public à venir (copie anonymisée prête)",
+    liveLabel: "Lab",
+    noindex: true,
+    proofLine:
+      "POC d'audit stratégique pour TPE/PME : 5 agents Mistral analysent une question, chacun avec sa donnée exclusive (asymétrie d'information), puis un CIO déterministe agrège les verdicts par niveau de confiance.",
+    summary:
+      "Faire émerger de vraies divergences d'analyse plutôt qu'une synthèse lissée, en privant chaque agent de la vue des autres et en agrégeant via des règles explicites.",
+    stack: ["Python / FastAPI", "Mistral Small + Large", "Qdrant (1 collection/agent)", "Celery + Redis", "Docker Compose"],
+    recruiterProof: [
+      "Conception d'un système multi-agents avec asymétrie d'information : chaque agent (financier, marché, client, ops, macro) a sa donnée exclusive.",
+      "Agrégation par un CIO déterministe (pondération explicite, pas un 6e LLM) avec quality gate sur le niveau de confiance.",
+      "Architecture orientée souveraineté des données (Mistral, Qdrant self-hosted)."
+    ],
+    constraints: [
+      "Éviter le piège des comités d'agents qui se reformulent entre eux : forcer la divergence par l'isolation des données.",
+      "POC à valeur business pour PME françaises : contrainte de souveraineté des données."
+    ],
+    decisions: [
+      {
+        decision: "CIO d'agrégation déterministe (règles de pondération), pas un LLM supplémentaire.",
+        why: "Rendre la synthèse traçable et reproductible plutôt que de déléguer l'arbitrage à un modèle opaque.",
+        rejected: "Un 6e agent LLM de synthèse - moins traçable, risque de re-lissage des divergences."
+      },
+      {
+        decision: "Asymétrie d'information stricte entre les 5 agents.",
+        why: "Obtenir de vraies divergences exploitables au lieu d'un consensus artificiel.",
+        rejected: "Agents partageant le même contexte - conclusions redondantes."
+      }
+    ],
+    delivered: [
+      "Backend Python : 5 agents spécialisés, CIO déterministe, orchestrateur run_board.",
+      "Structure d'orchestration async (Celery/Redis) et RAG Qdrant par agent.",
+      "Documentation de l'architecture, du concept et de la roadmap."
+    ],
+    results: [
+      "POC : pipeline d'agents et CIO posés ; dashboard, export PDF et tests E2E restent à implémenter.",
+      "Validation sur cas client réel : pas encore mesurée."
+    ],
+    limits: [
+      "POC initié, non terminé : le dashboard React Flow et l'export PDF décrits ne sont pas implémentés.",
+      "Pas de test automatisé côté backend pour l'instant."
+    ],
+    links: [{ label: "Version Markdown", href: "/projects/board-ia-pme.md" }]
+  },
+  {
+    slug: "edusemantix",
+    title: "Edusemantix - jeu de devinette sémantique multijoueur",
+    shortTitle: "Edusemantix",
+    type: "Lab / projet perso",
+    period: "2026",
+    role: "Conception et développement",
+    status: "Copie publique anonymisée",
+    tier: 3,
+    image: "/assets/cards/edusemantix.webp",
+    repoStatus: "Public à venir (copie anonymisée prête)",
+    liveLabel: "Lab",
+    noindex: true,
+    proofLine:
+      "Jeu multijoueur en temps réel où l'on cherche un mot secret : chaque proposition reçoit un score de proximité sémantique (similarité cosinus sur vecteurs de mots), scores en direct via WebSocket.",
+    summary:
+      "Faire jouer plusieurs personnes en simultané sur une mécanique de proximité sémantique, avec scoring temps réel.",
+    stack: ["React 19 / Vite 6", "Node.js / Express / Socket.io", "ConceptNet Numberbatch", "Python (pré-calcul)", "Firebase Firestore"],
+    recruiterProof: [
+      "Scoring sémantique sur vecteurs de mots (similarité cosinus) avec pré-calcul Python et stockage binaire pour la performance.",
+      "Temps réel multijoueur via Socket.io (parties simultanées, scores en direct)."
+    ],
+    constraints: [
+      "Servir un gros jeu de vecteurs sans pénaliser le temps de réponse : réduction et stockage binaire.",
+      "Persistance optionnelle : le serveur tourne même sans Firestore (mode mémoire)."
+    ],
+    decisions: [
+      {
+        decision: "Vecteurs réduits puis stockés en binaire, un seul process Node servant le build et le WebSocket.",
+        why: "Réduire l'empreinte et simplifier le déploiement sur une cible légère.",
+        rejected: "Appel à une API d'embeddings à chaque proposition - latence et coût incompatibles avec le temps réel."
+      }
+    ],
+    delivered: [
+      "Application React + serveur Node/Socket.io avec moteur de jeu et scoring sémantique.",
+      "Scripts Python de génération/pré-calcul des vecteurs."
+    ],
+    results: ["Jeu fonctionnel déployable.", "Audience / engagement : pas encore mesurés."],
+    limits: [
+      "Lab personnel, pas de démo publique maintenue.",
+      "Persistance des stats dépend de Firebase (mode mémoire sans credentials)."
+    ],
+    links: [{ label: "Version Markdown", href: "/projects/edusemantix.md" }]
+  },
+  {
+    slug: "pokemon-gen4-toolkit",
+    title: "Pokémon Gen-4 Toolkit - outils de ROM hacking NDS",
+    shortTitle: "Pokémon Gen-4 Toolkit",
+    type: "Lab / projet perso",
+    period: "2026",
+    role: "Conception et développement",
+    status: "Copie publique anonymisée (ROM non incluse)",
+    tier: 3,
+    image: "/assets/cards/pokemon-gen4-toolkit.webp",
+    repoStatus: "Public à venir (copie anonymisée prête)",
+    liveLabel: "Lab",
+    noindex: true,
+    proofLine:
+      "Boîte à outils Python (ndspy) pour explorer et modifier un ROM Pokémon de 4e génération : décodage/encodage des textes chiffrés, édition des events et scripts, stats des espèces, cartographie, viewer web.",
+    summary:
+      "Lire et réécrire le contenu propriétaire d'un ROM NDS (textes chiffrés, events, scripts) sans outil tout fait, en reverse-engineering du format Gen 4.",
+    stack: ["Python 3", "ndspy", "Format NARC", "Moteur de texte Gen 4 maison", "EmulatorJS (viewer web)"],
+    recruiterProof: [
+      "Reverse-engineering d'un format binaire propriétaire : décodage/encodage du texte chiffré Gen 4 (charmap + chiffrement seed/XOR) écrit à la main.",
+      "Outillage complet : édition des events (PNJ, warps, triggers), du bytecode des scripts, des stats/espèces, et cartographie des zones."
+    ],
+    constraints: [
+      "Aucune ROM ou save versionnés (copyright) : l'utilisateur fournit sa propre copie légale.",
+      "Format binaire non documenté officiellement : analyse de headers et d'archives NARC."
+    ],
+    decisions: [
+      {
+        decision: "Moteur de texte Gen 4 réimplémenté en Python plutôt qu'une dépendance d'un éditeur existant.",
+        why: "Contrôle total du chiffrement/charmap et intégration au reste de l'outillage.",
+        rejected: "Éditeurs ROM grand public - boîtes noires, peu scriptables."
+      }
+    ],
+    delivered: [
+      "Scripts d'édition (textes, events, scripts, espèces) et d'analyse de zones.",
+      "Viewer web EmulatorJS avec serveur de dev configuré et notes techniques."
+    ],
+    results: ["Outils fonctionnels sur ROM Gen 4 fournie par l'utilisateur.", "Aucune métrique d'usage (exploration technique)."],
+    limits: [
+      "Sans ROM légale fournie, le toolkit ne fait rien : aucun contenu jouable distribué.",
+      "Lab ciblé sur la 4e génération NDS, non généralisé."
+    ],
+    links: [{ label: "Version Markdown", href: "/projects/pokemon-gen4-toolkit.md" }]
+  },
+  {
+    slug: "claude-code-soul",
+    title: "claude-code-soul - pack de configuration Claude Code",
+    shortTitle: "claude-code-soul",
+    type: "Projet open source (config / outillage)",
+    period: "2026",
+    role: "Auteur",
+    status: "Public",
+    tier: 3,
+    image: "/assets/cards/claude-code-soul.webp",
+    repoStatus: "Public",
+    liveLabel: "Public",
+    noindex: true,
+    proofLine:
+      "Pack de configuration open source pour Claude Code CLI : un soul.md (identité/ton/refus) plus skills, agents, hooks et rules, pour transformer le CLI en assistant à personnalité dosée plutôt qu'en chatbot poli.",
+    summary:
+      "Séparer l'« âme » de l'assistant (ton, valeurs, refus) de la config technique, et packager un outillage Claude Code réutilisable et publiable sans fuite de données.",
+    stack: ["Claude Code CLI", "Shell (hooks)", "Markdown", "macOS Keychain + Touch ID", "gitleaks"],
+    recruiterProof: [
+      "Conception d'un système de configuration en couches (identité, personnalité, workflow, skills, agents, hooks) documenté et installable via script.",
+      "Sécurité by design : Touch ID sur actions sensibles, secrets via Keychain, rédaction des secrets dans les transcrits, règle 0 PII / 0 chemin perso.",
+      "Publication open source propre (MIT) avec crédits explicites des packs tiers exclus."
+    ],
+    constraints: [
+      "Publier une config personnelle sans fuiter de données : 0 PII, 0 secret, 0 chemin absolu personnel.",
+      "Rester une couche par-dessus Claude Code, pas une refonte de l'outil."
+    ],
+    decisions: [
+      {
+        decision: "Séparer soul.md (identité/ton) de la config technique.",
+        why: "Pattern communautaire : isoler l'âme de la config rend les deux plus lisibles et réutilisables.",
+        rejected: "Tout mélanger dans un seul fichier - illisible et non réutilisable."
+      },
+      {
+        decision: "Lazy-load des MCP, LaunchAgents et agents lourds (à la demande, pas au startup).",
+        why: "Réduire la consommation de tokens et de RAM au démarrage.",
+        rejected: "Tout charger au startup - coût tokens/RAM inutile."
+      }
+    ],
+    delivered: [
+      "Repo public MIT : soul.md, rules, skills, agents, hooks, script setup et docs.",
+      "Pipeline de publication propre : gitleaks, exclusion des packs tiers, crédits."
+    ],
+    results: ["Repo public en ligne sur GitHub.", "Étoiles / adoption : pas encore mesurées."],
+    limits: [
+      "Config opinionnée (ton majordome, workflow personnel) : à adapter avant réutilisation.",
+      "Certaines briques tierces sont exclues du repo et doivent être réinstallées séparément."
+    ],
+    links: [
+      { label: "Version Markdown", href: "/projects/claude-code-soul.md" },
+      { label: "Repo GitHub", href: "https://github.com/Jonassuhard/claude-code-soul", external: true }
+    ]
   }
 ];
 
