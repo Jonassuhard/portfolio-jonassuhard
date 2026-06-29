@@ -1,6 +1,6 @@
 # Jonas Suhard
 
-Builder IA appliquee & Growth Engineer - marketing, IA generative et developpement full-stack.
+Builder IA appliquée & Growth Engineer — marketing, IA générative et développement full-stack.
 
 ## Positionnement
 
@@ -15,7 +15,7 @@ Je construis des systemes marketing augmentes par l'IA : sites, automatisations,
 
 ## Localisation
 
-Paris, France. CDI Paris ou hybride.
+Paris, France. CDI à Paris ou hybride, disponible à partir du 1er octobre 2026.
 
 ## Competences
 
@@ -48,7 +48,7 @@ Paris, France. CDI Paris ou hybride.
 
 - Les Petites Griffes: site live, CMS, SEO local, assistant IA.
 - Educool / La Herse: app web education, Firebase, donnees sensibles, PDF.
-- Capselys: refonte conversion, experimentation IA, workshop client.
+- Capsélys: refonte conversion, experimentation IA, workshop client.
 - ISCOM: SEO, Drupal, production editoriale, audits.
 
 ## Contact

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { skills } from "@/lib/projects";
+import Link from "next/link";
+import { skills, getProject } from "@/lib/projects";
 
 export const metadata: Metadata = {
   title: "Compétences",
@@ -11,9 +12,10 @@ export default function SkillsPage() {
     <div className="page">
       <section>
         <p className="eyebrow">Compétences</p>
-        <h1>Une compétence sans preuve reste une etiquette.</h1>
+        <h1>Compétences prouvées, pas déclarées.</h1>
         <p className="lead">
-          Cette page relie chaque bloc de compétence aux projets qui la rendent crédible.
+          Chaque bloc pointe vers les projets qui le rendent crédible. Une compétence
+          sans preuve reste une étiquette.
         </p>
       </section>
 
@@ -22,11 +24,24 @@ export default function SkillsPage() {
           <article className="matrix-item" key={skill.name}>
             <strong>{skill.name}</strong>
             <p>{skill.note}</p>
-            <p className="case-meta">{skill.proof}</p>
+            <p className="case-meta">
+              {skill.proofSlugs.map((slug, i) => {
+                const project = getProject(slug);
+                if (!project) return null;
+                return (
+                  <span key={slug}>
+                    {i > 0 ? " · " : ""}
+                    <Link className="lk" href={`/projets/${project.slug}`}>
+                      {project.shortTitle}
+                    </Link>
+                  </span>
+                );
+              })}
+              {skill.proofExtra ? ` · ${skill.proofExtra}` : ""}
+            </p>
           </article>
         ))}
       </section>
     </div>
   );
 }
-

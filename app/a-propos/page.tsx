@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { site } from "@/lib/projects";
 
 export const metadata: Metadata = {
-  title: "A propos",
+  title: "À propos",
   description: "Positionnement et contexte de Jonas Suhard."
 };
 
@@ -11,12 +11,18 @@ export default function AboutPage() {
     <div className="page">
       <section className="case-hero">
         <div>
-          <p className="eyebrow">A propos</p>
+          <p className="eyebrow">À propos</p>
           <h1>Je relie marketing, IA et exécution.</h1>
           <p className="lead">
             Mon avantage n'est pas d'être le meilleur pur dev, ni le meilleur pur
             marketeur. C'est de traduire un problème business en système utilisable,
             puis de documenter ce qui marche, ce qui casse et ce qui manque.
+          </p>
+          <p>
+            Je viens du marketing digital. J'ai appris à construire pour ne plus
+            rester au niveau des recommandations : aujourd'hui je code, je déploie
+            et je documente les systèmes que je propose. Je cherche un rôle où relier
+            acquisition, IA appliquée et produit web.
           </p>
           <div className="button-row">
             <a className="button primary" href={`mailto:${site.email}`}>Contact</a>

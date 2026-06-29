@@ -23,6 +23,11 @@ export type Project = {
   delivered: string[];
   results: string[];
   limits: string[];
+  architecture?: string[];
+  v2?: string[];
+  notMeasured?: string[];
+  repoStatus?: string;
+  liveLabel?: string;
   links: Array<{
     label: string;
     href: string;
@@ -45,7 +50,7 @@ export const site = {
   github: "https://github.com/Jonassuhard",
   linkedin: "https://www.linkedin.com/in/jonassuhard/",
   location: "Paris, France",
-  availability: "Octobre 2026"
+  availability: "1er octobre 2026"
 };
 
 export const projects: Project[] = [
@@ -59,8 +64,25 @@ export const projects: Project[] = [
     status: "Prod live",
     tier: 1,
     image: "/assets/cards/les-petites-griffes.webp",
+    repoStatus: "Privé — code et données client",
+    liveLabel: "Live (URL masquée)",
+    architecture: [
+      "Front Next.js (React) rendu et déployé sur Vercel.",
+      "Contenus dynamiques (galerie, prestations, tarifs, FAQ) servis depuis Supabase, éditables via un CMS maison protégé.",
+      "Authentification du back-office via Clerk.",
+      "Assistant IA cadré par une base de connaissance avec garde-fous (prix, disponibilités, adresse).",
+      "SEO local : JSON-LD, sitemap et contenus structurants."
+    ],
+    v2: [
+      "Instrumenter les demandes entrantes pour mesurer la conversion.",
+      "Itérer l'assistant à partir des vraies questions clientes."
+    ],
+    notMeasured: [
+      "Impact business (CA, demandes générées) : non mesuré à ce stade.",
+      "Taux d'usage de l'assistant côté visiteurs : non instrumenté."
+    ],
     proofLine:
-      "Site public live, CMS maison, SEO local, assistant IA cadré et Lighthouse mobile 88 / SEO 100 / a11y 93 (audit revérifié le 29/06).",
+      "Site client live en production (URL masquée pour confidentialité), CMS maison, SEO local, assistant IA cadré, Lighthouse mobile 88 / SEO 100 / a11y 93 (audit revérifié le 29/06).",
     summary:
       "Transformer une activité Instagram en présence web crédible, éditable et utile pour les demandes clientes.",
     stack: ["Next.js", "React", "Supabase", "Clerk", "Vercel", "LLM"],
@@ -100,7 +122,7 @@ export const projects: Project[] = [
     ],
     results: [
       "Lighthouse mobile 88, SEO 100, accessibilite 93 (audit revérifié le 29/06).",
-      "Site client live en production (URL communiquée sur demande).",
+      "Site client live en production, URL masquée publiquement pour confidentialité (captures anonymisées sur demande).",
       "Back-office utilisable par la cliente."
     ],
     limits: [
@@ -122,6 +144,23 @@ export const projects: Project[] = [
     status: "Prod / maintenance",
     tier: 1,
     image: "/assets/cards/educool.webp",
+    repoStatus: "Privé — RGPD (données mineurs)",
+    liveLabel: "Usage classe (non public)",
+    architecture: [
+      "Application web / PWA Next.js utilisable sur tablette par une non-dev.",
+      "Données et authentification sur Firebase / Firestore.",
+      "Opérations sensibles déportées en Cloud Functions (l'autorité métier n'est pas seulement côté client).",
+      "Génération de livrets PDF et export ZIP.",
+      "Rules Firebase et tests (Vitest) sur les lots livrés."
+    ],
+    v2: [
+      "Durcissement continu des rules et des audits de sécurité.",
+      "Industrialisation des exports PDF."
+    ],
+    notMeasured: [
+      "Aucune métrique élève n'est publiable (données de mineurs).",
+      "Gain de temps enseignant : observé en retours terrain, non chiffré publiquement."
+    ],
     proofLine:
       "Application utilisée par une classe, Firebase, données sensibles, PDF et audits de sécurité.",
     summary:
@@ -162,8 +201,8 @@ export const projects: Project[] = [
       "Refontes UX successives apres retours."
     ],
     results: [
-      "23 élèves dans le contexte réel de classe.",
-      "Centaines de tests sur les lots documentés.",
+      "Une classe entière en contexte réel, données élèves anonymisées.",
+      "Tests documentés sur les lots livrés (génération PDF, rules, parcours).",
       "Incidents identifiés, documentés et corrigés progressivement."
     ],
     limits: [
@@ -177,16 +216,32 @@ export const projects: Project[] = [
   },
   {
     slug: "capselys",
-    title: "Capselys - refonte conversion et expérimentation IA",
-    shortTitle: "Capselys",
+    title: "Capsélys - refonte conversion et expérimentation IA",
+    shortTitle: "Capsélys",
     type: "Conversion + expérimentation IA",
     period: "Juin 2026 - Juillet 2026",
     role: "Strategie, audit, UX, contenus, expérimentation IA, deck client",
     status: "Staging / workshop MBA",
     tier: 1,
     image: "/assets/cards/capselys.webp",
+    repoStatus: "Privé — projet client",
+    liveLabel: "Staging (non public)",
+    architecture: [
+      "WordPress + Divi imposés ; refonte sur un environnement de staging sécurisé.",
+      "Audits de rendu multi-viewports via Playwright (le DOM Divi ne suffit pas à prouver le visuel).",
+      "Déploiement séquentiel sur staging pour ne pas casser la prod client.",
+      "Prototype d'assistant IA qualifiant orientant vers le bon service."
+    ],
+    v2: [
+      "Passage en production après validation client.",
+      "Mesure des retombées conversion une fois en ligne."
+    ],
+    notMeasured: [
+      "Retombées business (conversion, adhésions) : non mesurées — staging, pas une prod utilisée.",
+      "Les gains attendus restent des hypothèses à valider après déploiement."
+    ],
     proofLine:
-      "Refonte orientee conversion, staging Prometheus, deck oral client et audits multi-viewports.",
+      "Refonte orientée conversion, staging WordPress sécurisé, deck oral client et audits multi-viewports.",
     summary:
       "Clarifier une offre complexe, reduire la friction d'adhesion et présenter une démarche d'expérimentation marketing.",
     stack: ["WordPress", "Divi", "Playwright", "PHP", "PDF", "LLM workflows"],
@@ -248,6 +303,20 @@ export const projects: Project[] = [
     status: "Alternance / client interne",
     tier: 1,
     image: "/assets/cards/iscom.webp",
+    repoStatus: "CMS employeur — non publiable",
+    liveLabel: "Actu publiée (lien)",
+    architecture: [
+      "Production éditoriale SEO saisie dans Drupal (CMS sensible).",
+      "Audits de cannibalisation et inter-marques via Semrush.",
+      "Automatisations Playwright pour la saisie et les contrôles.",
+      "Checklist de pré-publication et fact-check claim par claim avant mise en ligne."
+    ],
+    v2: [
+      "Étendre les garde-fous qualité à d'autres types de contenus."
+    ],
+    notMeasured: [
+      "Impact trafic SEO des contenus : suivi côté employeur, non publiable ici."
+    ],
     proofLine:
       "Production SEO a volume, audits cannibalisation, saisie Drupal et garde-fous de publication.",
     summary:
@@ -261,7 +330,7 @@ export const projects: Project[] = [
     constraints: [
       "Publication CMS sensible.",
       "Faits, chiffres et sources a verifier.",
-      "Validation Sarah/Michel."
+      "Validation éditoriale interne avant publication."
     ],
     decisions: [
       {
@@ -311,6 +380,17 @@ export const projects: Project[] = [
     status: "Actif / lab",
     tier: 2,
     image: "/assets/cards/battle-engine.webp",
+    repoStatus: "Public à venir (copie anonymisée prête)",
+    liveLabel: "Lab",
+    architecture: [
+      "Pipeline Python orchestrant : rendu Godot → FFmpeg → interpolation RIFE → publication via l'API YouTube."
+    ],
+    v2: [
+      "Cadrer le contenu pour ne pas brouiller le positionnement CDI."
+    ],
+    notMeasured: [
+      "Audience YouTube : à vérifier, non avancée comme preuve recruteur."
+    ],
     proofLine:
       "Pipeline Godot -> FFmpeg -> interpolation -> YouTube API pour videos 1VS1.",
     summary:
@@ -344,6 +424,17 @@ export const projects: Project[] = [
     status: "Archive / MBA",
     tier: 3,
     image: "/assets/cards/hoopsphere.webp",
+    repoStatus: "Public à venir (copie anonymisée prête)",
+    liveLabel: "Lab / archive",
+    architecture: [
+      "Prototype mobile React Native, backend Firebase, OCR via un service FastAPI."
+    ],
+    v2: [
+      "Aucune suite prévue — gardé comme autopsie produit honnête."
+    ],
+    notMeasured: [
+      "Aucune traction marché ni revenu : projet scolaire."
+    ],
     proofLine:
       "Prototype mobile basket amateur, utile pour montrer raisonnement produit et limites.",
     summary:
@@ -378,31 +469,43 @@ export const primaryProjects = projects.filter((project) => project.tier === 1);
 export const skills = [
   {
     name: "SEO / contenu",
-    proof: "ISCOM, Capselys, Les Petites Griffes",
+    proofSlugs: ["iscom", "capselys", "les-petites-griffes"],
+    proofExtra: "",
+    proof: "ISCOM, Capsélys, Les Petites Griffes",
     note: "Recherche, structure, maillage, Drupal, verification et publication encadree."
   },
   {
     name: "Next.js / React",
-    proof: "Les Petites Griffes, Educool, portfolio",
+    proofSlugs: ["les-petites-griffes", "educool-la-herse"],
+    proofExtra: "ce portfolio",
+    proof: "Les Petites Griffes, Educool, ce portfolio",
     note: "Interfaces utiles, pages publiques, routes, rendu statique et production."
   },
   {
     name: "IA générative",
-    proof: "Capselys, Les Petites Griffes, RAG / workflows",
+    proofSlugs: ["capselys", "les-petites-griffes"],
+    proofExtra: "RAG / workflows LLM",
+    proof: "Capsélys, Les Petites Griffes, RAG / workflows LLM",
     note: "Assistant cadre, workflows LLM, fact-check, pas de promesse magique."
   },
   {
     name: "Automatisation",
-    proof: "Battle Engine, audits, scripts",
+    proofSlugs: ["battle-engine"],
+    proofExtra: "audits Playwright, scripts Python",
+    proof: "Battle Engine, audits Playwright, scripts Python",
     note: "Pipelines Python, Playwright, génération, controles et verification."
   },
   {
     name: "Produit / arbitrage",
-    proof: "Educool, Capselys, HoopSphere",
+    proofSlugs: ["educool-la-herse", "capselys", "hoopsphere"],
+    proofExtra: "",
+    proof: "Educool, Capsélys, HoopSphere",
     note: "Contraintes terrain, limites explicites, decisions et alternatives rejetees."
   },
   {
     name: "Securite / données",
+    proofSlugs: ["educool-la-herse", "les-petites-griffes"],
+    proofExtra: "",
     proof: "Educool, Les Petites Griffes",
     note: "Donnees sensibles, auth, rules, anonymisation et prudence de publication."
   }

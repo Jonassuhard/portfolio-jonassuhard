@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { projectJsonLd } from "@/lib/json-ld";
+import { projectJsonLd, breadcrumbJsonLd } from "@/lib/json-ld";
 import { getProject, projects } from "@/lib/projects";
 
 type PageProps = {
@@ -38,6 +38,11 @@ export default async function ProjectDetailPage({ params }: PageProps) {
   if (!project) notFound();
 
   const jsonLd = projectJsonLd(project.slug);
+  const breadcrumb = breadcrumbJsonLd([
+    { name: "Accueil", path: "/" },
+    { name: "Projets", path: "/projets" },
+    { name: project.shortTitle, path: `/projets/${project.slug}` }
+  ]);
 
   return (
     <div className="page">
@@ -47,6 +52,10 @@ export default async function ProjectDetailPage({ params }: PageProps) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       ) : null}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+      />
 
       <section className="case-hero">
         <div>
@@ -113,6 +122,18 @@ export default async function ProjectDetailPage({ params }: PageProps) {
             </ul>
           </section>
 
+          {project.architecture ? (
+            <section>
+              <p className="section-kicker">Architecture / workflow</p>
+              <h2>Comment c'est construit.</h2>
+              <ul>
+                {project.architecture.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </section>
+          ) : null}
+
           <section>
             <p className="section-kicker">Decisions</p>
             <h2>Choix faits, alternatives refusees.</h2>
@@ -157,6 +178,30 @@ export default async function ProjectDetailPage({ params }: PageProps) {
               ))}
             </ul>
           </section>
+
+          {project.notMeasured ? (
+            <section>
+              <p className="section-kicker">Ce qui n'est pas mesuré</p>
+              <h2>Limites de preuve, assumées.</h2>
+              <ul>
+                {project.notMeasured.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </section>
+          ) : null}
+
+          {project.v2 ? (
+            <section>
+              <p className="section-kicker">V2 / suite</p>
+              <h2>Ce qui viendrait ensuite.</h2>
+              <ul>
+                {project.v2.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </section>
+          ) : null}
         </div>
 
         <aside className="panel">
@@ -170,6 +215,23 @@ export default async function ProjectDetailPage({ params }: PageProps) {
           <ul>
             {project.limits.map((item) => (
               <li key={item}>{item}</li>
+            ))}
+          </ul>
+          <h3>Preuves auditables</h3>
+          <ul>
+            {project.liveLabel ? <li>Live : {project.liveLabel}</li> : null}
+            {project.repoStatus ? <li>Repo : {project.repoStatus}</li> : null}
+            {project.links.map((link) => (
+              <li key={link.href}>
+                <a
+                  className="lk"
+                  href={link.href}
+                  target={link.external ? "_blank" : undefined}
+                  rel={link.external ? "noreferrer" : undefined}
+                >
+                  {link.label}
+                </a>
+              </li>
             ))}
           </ul>
         </aside>

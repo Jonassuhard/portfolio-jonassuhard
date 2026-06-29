@@ -1,4 +1,4 @@
-# Capselys - refonte conversion et experimentation IA
+# Capsélys - refonte conversion et experimentation IA
 
 Type: conversion + experimentation IA.
 
@@ -10,7 +10,7 @@ Stack: WordPress, Divi, Playwright, PHP, PDF, LLM workflows.
 
 Statut: staging / workshop MBA.
 
-Preuve principale: refonte orientee conversion, staging Prometheus, deck oral client et audits multi-viewports.
+Preuve principale: refonte orientee conversion, staging WordPress securise, deck oral client et audits multi-viewports.
 
 ## Probleme
 

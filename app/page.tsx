@@ -36,7 +36,7 @@ export default function HomePage() {
             <div className="ledger-item">
               <time>2026-06</time>
               <strong>Site live + CMS + assistant IA</strong>
-              <span>Les Petites Griffes, prod publique et contenus éditables.</span>
+              <span>Les Petites Griffes, prod live et contenus éditables.</span>
             </div>
             <div className="ledger-item">
               <time>2026-06</time>
@@ -46,7 +46,7 @@ export default function HomePage() {
             <div className="ledger-item">
               <time>2026-07</time>
               <strong>Refonte conversion + workshop client</strong>
-              <span>Capselys, staging, audits et présentation MBA.</span>
+              <span>Capsélys, staging, audits et présentation MBA.</span>
             </div>
           </div>
         </aside>
@@ -56,7 +56,7 @@ export default function HomePage() {
         <div className="section-head">
           <div>
             <p className="section-kicker">Preuves principales</p>
-            <h2>Trois projets a ouvrir avant le CV.</h2>
+            <h2>Trois preuves à lire en priorité.</h2>
           </div>
           <p>
             Chaque page expose le problème, les contraintes, les choix rejetés,
@@ -90,9 +90,9 @@ export default function HomePage() {
         <div className="section-head">
           <div>
             <p className="section-kicker">Compétences reliées</p>
-            <h2>Pas de liste de skills flottante.</h2>
+            <h2>Des compétences reliées à des preuves.</h2>
           </div>
-          <p>Chaque compétence pointe vers des projets. Sinon c'est du bruit de CV.</p>
+          <p>Chaque compétence pointe vers des projets réels, pas vers une liste flottante.</p>
         </div>
 
         <div className="matrix">
@@ -110,9 +110,8 @@ export default function HomePage() {
         <div className="notice">
           <strong>Ce que je cherche.</strong>
           <p>
-            Un CDI junior/junior+ a Paris ou hybride, dans une équipe qui a besoin
-            de relier marketing, IA et exécution technique. Pas ML research, pas
-            community management pur, pas consultant IA PowerPoint.
+            Un CDI à Paris ou hybride, dans une équipe qui relie acquisition,
+            IA appliquée et exécution produit.
           </p>
           <div className="button-row">
             <Link className="button primary" href="/recruteurs">

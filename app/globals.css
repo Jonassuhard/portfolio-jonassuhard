@@ -167,6 +167,12 @@ td { color:var(--color-ink-soft); }
 /* table décisions (3 colonnes) */
 .decision-table { min-width:560px; }
 
+/* cellule accès (/projets) */
+.access-cell { display:flex; flex-direction:column; gap:8px; }
+.access-links { display:flex; flex-wrap:wrap; gap:6px 14px; }
+.access-links .lk { font-family:var(--ft-data); font-size:12px; text-decoration:none; }
+.access-links .lk:hover { text-decoration:underline; }
+
 /* ===== CASE HERO (recruteurs + case study) ===== */
 .case-hero { display:grid; grid-template-columns:minmax(0,1.4fr) minmax(0,1fr); gap:30px; align-items:start; }
 .case-hero > div { min-width:0; display:flex; flex-direction:column; gap:16px; }

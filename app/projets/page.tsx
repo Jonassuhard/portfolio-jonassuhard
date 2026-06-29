@@ -26,9 +26,8 @@ export default function ProjectsPage() {
               <tr>
                 <th scope="col">Projet</th>
                 <th scope="col">Type</th>
-                <th scope="col">Stack</th>
-                <th scope="col">Ce que ça prouve</th>
                 <th scope="col">Tier</th>
+                <th scope="col">Accès</th>
               </tr>
             </thead>
             <tbody>
@@ -41,9 +40,26 @@ export default function ProjectsPage() {
                     <p className="table-note">{project.status}</p>
                   </td>
                   <td>{project.type}</td>
-                  <td>{project.stack.slice(0, 4).join(", ")}</td>
-                  <td>{project.recruiterProof[0]}</td>
                   <td>Tier {project.tier}</td>
+                  <td>
+                    <div className="access-cell">
+                      <div className="tag-row">
+                        {project.liveLabel ? <span className="tag">{project.liveLabel}</span> : null}
+                        {project.repoStatus ? <span className="tag">{project.repoStatus}</span> : null}
+                      </div>
+                      <div className="access-links">
+                        <Link className="lk" href={`/projets/${project.slug}`}>Case study</Link>
+                        <a className="lk" href={`/projects/${project.slug}.md`}>Markdown</a>
+                        {project.links
+                          .filter((link) => link.external)
+                          .map((link) => (
+                            <a className="lk" key={link.href} href={link.href} target="_blank" rel="noreferrer">
+                              {link.label}
+                            </a>
+                          ))}
+                      </div>
+                    </div>
+                  </td>
                 </tr>
               ))}
             </tbody>

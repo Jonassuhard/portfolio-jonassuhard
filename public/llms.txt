@@ -1,6 +1,6 @@
 # Jonas Suhard
 
-> Builder IA appliquée & Growth Engineer basé à Paris : profil hybride marketing, IA générative et développement full-stack. Disponible en CDI à partir d'octobre 2026. Contact : contact@jonassuhard.com.
+> Builder IA appliquée & Growth Engineer basé à Paris : profil hybride marketing, IA générative et développement full-stack. Disponible en CDI à partir du 1er octobre 2026. Contact : contact@jonassuhard.com.
 
 Jonas construit des systèmes marketing augmentés par l'IA — sites, automatisations, contenus, workflows LLM et dashboards — qui transforment une stratégie en produit utilisable. Ce site est une bibliothèque de preuves de travail : projets réels, décisions, contraintes et résultats, sans métrique inventée.
 
@@ -16,7 +16,7 @@ Jonas construit des systèmes marketing augmentés par l'IA — sites, automatis
 ## Projets principaux
 
 - [Les Petites Griffes](https://jonassuhard.com/projects/les-petites-griffes.md): site live + CMS maison + SEO local + assistant IA (Lighthouse mobile 88 / SEO 100 / accessibilité 93)
-- [Educool / La Herse](https://jonassuhard.com/projects/educool-la-herse.md): application web de classe (Firebase, données sensibles, PDF), utilisée par une classe de 23 élèves
+- [Educool / La Herse](https://jonassuhard.com/projects/educool-la-herse.md): application web de classe (Firebase, données sensibles, PDF), utilisée par une classe entière (données anonymisées)
 - [Capsélys](https://jonassuhard.com/projects/capselys.md): refonte conversion, expérimentation IA et atelier client
 - [ISCOM](https://jonassuhard.com/projects/iscom.md): SEO, Drupal, production éditoriale et audits
 

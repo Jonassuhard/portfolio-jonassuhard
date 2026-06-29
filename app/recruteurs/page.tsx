@@ -14,7 +14,7 @@ export default function RecruitersPage() {
       <section className="case-hero">
         <div>
           <p className="eyebrow">Résumé 30 secondes</p>
-          <h1>Où me ranger : Growth Engineer junior.</h1>
+          <h1>Où me ranger : Builder IA appliquée &amp; Growth Engineer.</h1>
           <p className="lead">
             Profil hybride marketing, IA générative et développement full-stack.
             Je transforme des problèmes d'acquisition, de contenu ou d'operation
@@ -33,6 +33,10 @@ export default function RecruitersPage() {
               <tr>
                 <th scope="row">Contrat</th>
                 <td>CDI junior / junior+</td>
+              </tr>
+              <tr>
+                <th scope="row">Disponibilité</th>
+                <td>À partir du 1er octobre 2026</td>
               </tr>
               <tr>
                 <th scope="row">Zone</th>
@@ -105,12 +109,38 @@ export default function RecruitersPage() {
       </section>
 
       <section className="section">
+        <div className="section-head">
+          <div>
+            <p className="section-kicker">Prise en charge</p>
+            <h2>Ce que je peux livrer en 30 jours.</h2>
+          </div>
+        </div>
+        <div className="matrix">
+          <div className="matrix-item">
+            <strong>Acquisition</strong>
+            <p>Audit et correctifs d'un tunnel, plus une landing ou une section de conversion livrée.</p>
+          </div>
+          <div className="matrix-item">
+            <strong>IA appliquée</strong>
+            <p>Une automatisation ou un assistant LLM cadré, avec garde-fous et QA.</p>
+          </div>
+          <div className="matrix-item">
+            <strong>SEO / contenu</strong>
+            <p>Une production SEO structurée et un audit (cannibalisation, maillage).</p>
+          </div>
+          <div className="matrix-item">
+            <strong>Produit web</strong>
+            <p>Un prototype ou une page Next.js déployée, propre et documentée.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
         <div className="notice">
           <strong>Limites honnêtes.</strong>
           <p>
-            Je ne suis pas AI Engineer ML, pas backend senior, pas designer graphique
-            pur et pas community manager pur. Mon angle : relier acquisition, IA
-            générative et exécution produit.
+            Je ne fais pas de ML research ni de backend senior. Mon angle : relier
+            acquisition, IA appliquée et exécution produit.
           </p>
         </div>
       </section>

@@ -7,7 +7,7 @@ import {
   Newsreader,
   IBM_Plex_Mono
 } from "next/font/google";
-import { personJsonLd } from "@/lib/json-ld";
+import { personJsonLd, websiteJsonLd } from "@/lib/json-ld";
 import { site, siteUrl } from "@/lib/projects";
 import "./globals.css";
 
@@ -76,6 +76,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd()) }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd()) }}
+        />
         <header className="site-header">
           <div className="titlebar">
             <span>JONAS SUHARD — Bibliothèque de preuves</span>
@@ -105,7 +109,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               </div>
             </div>
             <p className="foot-pitch">
-              Marketing, IA générative et développement full-stack. Disponible {site.availability} · {site.location} ou hybride.
+              Marketing, IA générative et développement full-stack. Disponible à partir du {site.availability} · {site.location} ou hybride.
             </p>
           </div>
           <div className="foot-cols">

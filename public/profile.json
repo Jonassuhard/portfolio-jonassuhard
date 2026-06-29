@@ -4,11 +4,11 @@
   "location": "Paris, France",
   "target_contract": "CDI",
   "seniority": "junior / junior+",
-  "availability": "Octobre 2026",
+  "availability": "1er octobre 2026",
   "verified_at": "2026-06-29",
   "citable_facts": {
     "les_petites_griffes_lighthouse": "mobile 88 / SEO 100 / accessibilité 93 (audit 2026-06-29)",
-    "educool_classroom_users": 23
+    "educool_context": "application utilisée par une classe entière en contexte réel, données élèves anonymisées"
   },
   "target_roles": [
     "Growth Engineer",
@@ -31,7 +31,10 @@
       "stack": ["Next.js", "Supabase", "Clerk", "Vercel", "LLM"],
       "case_study": "/projets/les-petites-griffes",
       "markdown": "/projects/les-petites-griffes.md",
-      "confidentiality": "données privées anonymisées"
+      "evidence": "Site client live en production (URL masquée pour confidentialité), CMS maison, SEO local, Lighthouse mobile 88 / SEO 100 / accessibilité 93 (audit 2026-06-29).",
+      "limits": "Impact business non mesuré ; URL et captures non publiques (confidentialité cliente).",
+      "confidentiality": "données privées anonymisées",
+      "repo_status": "privé — code et données client"
     },
     {
       "project": "Educool / La Herse",
@@ -41,7 +44,10 @@
       "stack": ["Next.js", "Firebase", "Firestore", "Cloud Functions"],
       "case_study": "/projets/educool-la-herse",
       "markdown": "/projects/educool-la-herse.md",
-      "confidentiality": "données enfants anonymisées"
+      "evidence": "Application utilisée par une classe entière en contexte réel ; rules Firebase, Cloud Functions, génération PDF et tests documentés sur les lots.",
+      "limits": "Aucune donnée élève publiable (mineurs) ; gain de temps enseignant observé, non chiffré publiquement.",
+      "confidentiality": "données enfants anonymisées",
+      "repo_status": "privé — RGPD (données mineurs)"
     },
     {
       "project": "Capsélys",
@@ -51,7 +57,10 @@
       "stack": ["WordPress", "Divi", "Playwright", "LLM workflows"],
       "case_study": "/projets/capselys",
       "markdown": "/projects/capselys.md",
-      "confidentiality": "client réel, staging contextualisé"
+      "evidence": "Refonte sur environnement de staging sécurisé, audits Playwright multi-viewports, deck oral client.",
+      "limits": "Staging, pas une prod utilisée ; retombées business non mesurées à ce stade.",
+      "confidentiality": "client réel, staging contextualisé",
+      "repo_status": "privé — projet client"
     },
     {
       "project": "ISCOM",
@@ -61,7 +70,10 @@
       "stack": ["Drupal", "Playwright", "Semrush", "LLM-assisted QA"],
       "case_study": "/projets/iscom",
       "markdown": "/projects/iscom.md",
-      "confidentiality": "accès CMS et données internes non publiés"
+      "evidence": "Actu SEO publiée en live, audit de cannibalisation livré, process de pré-publication durci avec validation humaine.",
+      "limits": "Accès CMS et données internes non publiables ; impact trafic non publié ici.",
+      "confidentiality": "accès CMS et données internes non publiés",
+      "repo_status": "CMS employeur — non publiable"
     }
   ],
   "contact": {
