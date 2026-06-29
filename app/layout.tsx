@@ -115,7 +115,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           </div>
           <div className="foot-cols">
             <div>
-              <h5>Contact</h5>
+              <p className="foot-col-title">Contact</p>
               <a href={`mailto:${site.email}`}>{site.email}</a>
               <a href={site.github}>GitHub</a>
               <a href={site.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
@@ -124,20 +124,20 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               ) : null}
             </div>
             <div>
-              <h5>Documents</h5>
+              <p className="foot-col-title">Documents</p>
               <a href={site.cvClassic}>CV — classique (PDF)</a>
               <a href={site.cvStyled}>CV — version site (PDF)</a>
               <a href="/profile.md">profile.md</a>
               <a href="/skills.md">skills.md</a>
             </div>
             <div>
-              <h5>Agent-readable</h5>
+              <p className="foot-col-title">Agent-readable</p>
               <a href="/profile.json">profile.json</a>
               <a href="/llms.txt">llms.txt</a>
               <a href="/sitemap.xml">sitemap.xml</a>
             </div>
             <div>
-              <h5>Légal</h5>
+              <p className="foot-col-title">Légal</p>
               <Link href="/mentions-legales">Mentions légales</Link>
               <Link href="/confidentialite">Confidentialité</Link>
             </div>

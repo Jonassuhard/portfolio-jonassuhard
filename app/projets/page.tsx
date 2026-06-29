@@ -12,9 +12,9 @@ export default function ProjectsPage() {
     <div className="page">
       <section>
         <p className="eyebrow">Index secondaire</p>
-        <h1>Les projets, classes par force de preuve.</h1>
+        <h1>Les projets, classés par force de preuve.</h1>
         <p className="lead">
-          Tout n'est pas mis au meme niveau. Les projets Tier 1 servent la candidature.
+          Tout n'est pas mis au même niveau. Les projets Tier 1 servent la candidature.
           Les labs restent accessibles, mais ils ne pilotent pas le positionnement.
         </p>
       </section>
@@ -68,6 +68,12 @@ export default function ProjectsPage() {
       </section>
 
       <section className="section">
+        <div className="section-head">
+          <div>
+            <p className="section-kicker">Détail</p>
+            <h2>Chaque preuve, en case study.</h2>
+          </div>
+        </div>
         <div className="case-grid">
           {projects.map((project) => (
             <article className="case-card" key={project.slug}>
