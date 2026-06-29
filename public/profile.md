@@ -52,7 +52,7 @@ Paris, France. CDI Paris ou hybride.
 
 ## Contact
 
-- Email: jonas.suhard@gmail.com
+- Email: contact@jonassuhard.com
 - GitHub: https://github.com/Jonassuhard
-- LinkedIn: https://fr.linkedin.com/in/jonas-suhard-b73923245/
+- LinkedIn: https://www.linkedin.com/in/jonassuhard/
 

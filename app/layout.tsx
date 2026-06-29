@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     template: "%s | Jonas Suhard"
   },
   description: site.description,
-  metadataBase: new URL("https://jonassuhard.com"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://portfolio-jonassuhard.vercel.app"),
   alternates: {
     canonical: "/",
     types: {
