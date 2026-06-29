@@ -1,0 +1,14 @@
+# deps / build
+node_modules/
+.next/
+out/
+dist/
+build/
+# env / secrets
+.env
+.env.*
+!.env.example
+# vercel / os
+.vercel/
+.DS_Store
+*.log

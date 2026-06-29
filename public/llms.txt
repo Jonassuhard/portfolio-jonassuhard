@@ -1,0 +1,28 @@
+# Jonas Suhard
+
+Growth Engineer junior - marketing, IA generative et full-stack.
+
+Jonas construit des systemes marketing augmentes par l'IA : sites, automatisations, contenus, workflows LLM et dashboards qui transforment une strategie en produit utilisable.
+
+## Profil
+
+- Profile: /profile.md
+- Structured profile: /profile.json
+- Skills: /skills.md
+- Recruiter page: /recruteurs
+- CV: /cv.pdf
+
+## Projets principaux
+
+- Les Petites Griffes - site live, CMS, SEO local, assistant IA: /projects/les-petites-griffes.md
+- Educool / La Herse - application web de classe, Firebase, securite, PDF: /projects/educool-la-herse.md
+- Capselys - refonte conversion, experimentation IA, workshop client: /projects/capselys.md
+- ISCOM - SEO, Drupal, production editoriale, audits: /projects/iscom.md
+
+## Code et contact
+
+- GitHub: https://github.com/Jonassuhard
+- CV: /cv.pdf
+- Contact: mailto:jonas.suhard@gmail.com
+- LinkedIn: https://fr.linkedin.com/in/jonas-suhard-b73923245/
+

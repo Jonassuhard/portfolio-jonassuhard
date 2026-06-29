@@ -1,0 +1,68 @@
+{
+  "name": "Jonas Suhard",
+  "title": "Builder IA appliquée & Growth Engineer",
+  "location": "Paris, France",
+  "target_contract": "CDI",
+  "seniority": "junior / junior+",
+  "availability": "Octobre 2026",
+  "target_roles": [
+    "Growth Engineer",
+    "Marketing Technologist IA",
+    "Chef de projet IA orienté produit",
+    "AI Automation Specialist"
+  ],
+  "positioning": "Marketing, IA générative et développement full-stack pour construire des systèmes d'acquisition mesurables.",
+  "skills": {
+    "marketing": ["SEO", "content strategy", "conversion", "analytics", "marketing operations"],
+    "ai": ["LLM workflows", "RAG", "prompt engineering", "automation", "AI-assisted content QA"],
+    "development": ["Next.js", "React", "Firebase", "Supabase", "Python", "Playwright"]
+  },
+  "proofs": [
+    {
+      "project": "Les Petites Griffes",
+      "type": "site live + CMS + assistant IA",
+      "period": "2026",
+      "role": "stratégie, design, développement, SEO, déploiement",
+      "stack": ["Next.js", "Supabase", "Clerk", "Vercel", "LLM"],
+      "case_study": "/projets/les-petites-griffes",
+      "markdown": "/projects/les-petites-griffes.md",
+      "confidentiality": "données privées anonymisées"
+    },
+    {
+      "project": "Educool / La Herse",
+      "type": "application web éducation",
+      "period": "2026",
+      "role": "développement, sécurité, PDF, maintenance",
+      "stack": ["Next.js", "Firebase", "Firestore", "Cloud Functions"],
+      "case_study": "/projets/educool-la-herse",
+      "markdown": "/projects/educool-la-herse.md",
+      "confidentiality": "données enfants anonymisées"
+    },
+    {
+      "project": "Capsélys",
+      "type": "conversion + expérimentation IA",
+      "period": "2026",
+      "role": "stratégie, audit, UX, expérimentation, deck client",
+      "stack": ["WordPress", "Divi", "Playwright", "LLM workflows"],
+      "case_study": "/projets/capselys",
+      "markdown": "/projects/capselys.md",
+      "confidentiality": "client réel, staging contextualisé"
+    },
+    {
+      "project": "ISCOM",
+      "type": "SEO + Drupal + production éditoriale",
+      "period": "2026",
+      "role": "SEO, fact-check, contenu, audits, CMS",
+      "stack": ["Drupal", "Playwright", "Semrush", "LLM-assisted QA"],
+      "case_study": "/projets/iscom",
+      "markdown": "/projects/iscom.md",
+      "confidentiality": "accès CMS et données internes non publiés"
+    }
+  ],
+  "contact": {
+    "email": "contact@jonassuhard.com",
+    "github": "https://github.com/Jonassuhard",
+    "linkedin": "https://www.linkedin.com/in/jonassuhard/",
+    "site": "https://jonassuhard.com"
+  }
+}
