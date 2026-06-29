@@ -770,6 +770,20 @@ export const skills = [
     proofExtra: "",
     proof: "Educool, Les Petites Griffes",
     note: "Données sensibles, auth, rules, anonymisation et prudence de publication."
+  },
+  {
+    name: "Orchestration multi-modèles & QA IA",
+    proofSlugs: ["board-ia-pme", "rag-starter-kit", "iscom"],
+    proofExtra: "",
+    proof: "Board IA PME, RAG Starter Kit, ISCOM",
+    note: "Un modèle par tâche, détection d'hallucinations, refus de publier sans vérification — de l'ingénierie LLM, pas un wrapper GPT."
+  },
+  {
+    name: "Design & direction artistique",
+    proofSlugs: ["les-petites-griffes", "battle-engine"],
+    proofExtra: "ce portfolio",
+    proof: "Les Petites Griffes, Battle Engine, ce portfolio",
+    note: "3 ans d'animation 2D/3D (Human Académie) + Suite Adobe ; je conçois la DA et produis les visuels moi-même."
   }
 ];
 
