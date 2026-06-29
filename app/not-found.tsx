@@ -17,7 +17,7 @@ export default function NotFound() {
         <p className="worldline-num">DIVERGENCE 1.048596 — SIGNAL PERDU</p>
         <div className="button-row">
           <Link className="button primary" href="/">Revenir à la ligne stable</Link>
-          <Link className="button" href="/projets">Voir les preuves</Link>
+          <Link className="button" href="/projets">Voir les projets</Link>
         </div>
         <p className="elpsy">El Psy Kongroo.</p>
       </section>

@@ -12,6 +12,7 @@ import { personJsonLd, websiteJsonLd } from "@/lib/json-ld";
 import { site, siteUrl } from "@/lib/projects";
 import GlitchController from "./glitch-controller";
 import NixieClock from "./nixie-clock";
+import SiteNav from "./site-nav";
 import "./globals.css";
 
 const fontTitle = Cormorant_Garamond({
@@ -96,18 +97,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <span>JONAS SUHARD — Agent-Readable Portfolio</span>
             <span className="ver">{site.location} · <NixieClock /></span>
           </div>
-          <div className="menubar">
-            <Link className="brand" href="/" aria-label="Accueil Jonas Suhard">
-              <img className="brand-mark" src="/brand/js-medallion-sm.webp" alt="Jonas Suhard" width={36} height={36} />
-            </Link>
-            <nav className="main-nav" aria-label="Navigation principale">
-              <Link href="/recruteurs">Recruteurs</Link>
-              <Link href="/projets">Preuves</Link>
-              <Link href="/competences">Compétences</Link>
-              <Link href="/a-propos">À propos</Link>
-              <a href="/cv.pdf">CV</a>
-            </nav>
-          </div>
+          <SiteNav />
         </header>
         <main>{children}</main>
         <footer className="site-footer">

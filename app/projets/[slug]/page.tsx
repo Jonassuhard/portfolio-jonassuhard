@@ -64,7 +64,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
           <h1>{project.title}</h1>
           <p className="lead">{project.summary}</p>
           {project.noindex ? (
-            <p className="case-meta">Lab / archive — non utilisé comme preuve principale de candidature.</p>
+            <p className="case-meta">Lab / archive — non mis en avant pour la candidature.</p>
           ) : null}
           <div className="button-row">
             {project.links.map((link) => (
@@ -107,7 +107,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
               <td>{project.stack.join(", ")}</td>
             </tr>
             <tr>
-              <th scope="row">Preuve</th>
+              <th scope="row">En bref</th>
               <td>{project.proofLine}</td>
             </tr>
           </tbody>
@@ -221,11 +221,11 @@ export default async function ProjectDetailPage({ params }: PageProps) {
               <li key={item}>{item}</li>
             ))}
           </ul>
-          <h3>Preuves auditables</h3>
+          <h3>Accès &amp; liens</h3>
           <ul>
             {project.liveLabel ? <li>Live : {project.liveLabel}</li> : null}
             {project.repoStatus ? <li>Repo : {project.repoStatus}</li> : null}
-            {project.evidenceNote ? <li>Preuve visuelle : {project.evidenceNote}</li> : null}
+            {project.evidenceNote ? <li>Visuel : {project.evidenceNote}</li> : null}
             {project.links.map((link) => (
               <li key={link.href}>
                 <a

@@ -23,7 +23,7 @@ export default function HomePage() {
               Me contacter
             </a>
             <Link className="button" href="/projets">
-              Voir les preuves
+              Voir les projets
             </Link>
           </div>
           <p className="cta-sub">
@@ -31,7 +31,7 @@ export default function HomePage() {
           </p>
         </div>
 
-        <aside className="ledger" aria-label="Journal de preuves">
+        <aside className="ledger" aria-label="Journal de projets">
           <div>
             <p className="ledger-title">Journal de build</p>
             <h2>Ce que j'ai vraiment construit.</h2>
@@ -59,7 +59,7 @@ export default function HomePage() {
       <section className="section" id="preuves">
         <div className="section-head">
           <div>
-            <p className="section-kicker">Preuves principales</p>
+            <p className="section-kicker">Projets phares</p>
             <h2>Trois projets pour comprendre mon profil.</h2>
           </div>
           <p>
@@ -82,7 +82,7 @@ export default function HomePage() {
                   ))}
                 </div>
                 <Link className="button" href={`/projets/${project.slug}`}>
-                  Lire la preuve
+                  Voir le projet
                 </Link>
               </div>
             </article>
@@ -94,7 +94,7 @@ export default function HomePage() {
         <div className="section-head">
           <div>
             <p className="section-kicker">Compétences reliées</p>
-            <h2>Ce que je sais faire, preuves à l'appui.</h2>
+            <h2>Ce que je sais faire, projets à l'appui.</h2>
           </div>
           <p>Chaque compétence s'appuie sur des projets livrés et documentés.</p>
         </div>

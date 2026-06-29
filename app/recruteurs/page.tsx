@@ -100,7 +100,7 @@ export default function RecruitersPage() {
       <section className="section">
         <div className="section-head">
           <div>
-            <p className="section-kicker">Preuves rapides</p>
+            <p className="section-kicker">Projets clés</p>
             <h2>Pourquoi m'appeler.</h2>
           </div>
           <p>

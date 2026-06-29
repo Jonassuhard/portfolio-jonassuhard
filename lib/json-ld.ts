@@ -52,7 +52,7 @@ export function websiteJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "Jonas Suhard — Portfolio de preuves",
+    name: "Jonas Suhard — Portfolio",
     url: siteUrl,
     inLanguage: "fr-FR",
     author: { "@type": "Person", name: site.name }

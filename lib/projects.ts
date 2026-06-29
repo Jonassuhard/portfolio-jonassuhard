@@ -47,7 +47,7 @@ export const site = {
   name: "Jonas Suhard",
   title: "Builder IA appliquée & Growth Engineer",
   description:
-    "Portfolio de preuves de Jonas Suhard : projets réels, décisions, contraintes, stacks et résultats — profil hybride marketing, IA appliquée et développement full-stack.",
+    "Portfolio de Jonas Suhard : projets réels, décisions, contraintes, stacks et résultats — profil hybride marketing, IA appliquée et développement full-stack.",
   email: "contact@jonassuhard.com",
   github: "https://github.com/Jonassuhard",
   linkedin: "https://www.linkedin.com/in/jonas-suhard-b73923245/",

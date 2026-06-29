@@ -46,8 +46,8 @@ strong, b { color:var(--color-rust); }
 }
 .titlebar .ver { color:var(--color-muted); display:flex; align-items:baseline; gap:8px; }
 .nixie-clock {
-  font-family:var(--ft-clock); font-variant-numeric:tabular-nums; letter-spacing:.06em;
-  color:var(--color-nixie); text-shadow:0 0 4px rgba(255,122,24,.55), 0 0 11px rgba(255,122,24,.30);
+  font-family:var(--ft-clock); font-weight:700; font-variant-numeric:tabular-nums; letter-spacing:.06em;
+  color:var(--color-nixie); text-shadow:0 0 5px rgba(255,122,24,.6), 0 0 12px rgba(255,122,24,.4);
   animation:nixie-pulse 3.6s ease-in-out infinite; will-change:opacity;
 }
 @keyframes nixie-pulse { 0%,100% { opacity:1; } 50% { opacity:.78; } }
@@ -90,6 +90,21 @@ h3 { font-family:var(--ft-title); font-weight:600; font-size:22px; margin:4px 0 
 .cta-sub a { color:var(--color-rust); text-decoration:none; }
 .cta-sub a:hover { text-decoration:underline; }
 .mobile-only { display:none; }
+/* ===== Burger nav mobile ===== */
+.nav-toggle { display:none; }
+@media (max-width:640px) {
+  .menubar { justify-content:space-between; position:relative; flex-wrap:nowrap; }
+  .nav-toggle { display:inline-flex; flex-direction:column; justify-content:center; gap:4px; width:36px; height:32px; padding:7px; background:var(--color-bg); border:1px solid var(--color-ink); cursor:pointer; }
+  .nav-toggle span { display:block; height:2px; width:100%; background:var(--color-ink); transition:transform .2s ease, opacity .2s ease; }
+  .nav-toggle[aria-expanded="true"] span:nth-child(1) { transform:translateY(6px) rotate(45deg); }
+  .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity:0; }
+  .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform:translateY(-6px) rotate(-45deg); }
+  .main-nav { display:none; }
+  .main-nav.open { display:flex; flex-direction:column; gap:0; position:absolute; top:100%; left:0; right:0; z-index:40; background:var(--color-bg); border:1px solid var(--color-ink); border-top:0; box-shadow:0 10px 0 rgba(21,18,14,.06); }
+  .main-nav.open a { padding:13px 16px; border-top:1px solid var(--color-line); font-size:13px; }
+  .main-nav.open a:first-child { border-top:0; }
+}
+@media (prefers-reduced-motion:reduce) { .nav-toggle span { transition:none; } }
 p { margin:0 0 10px; }
 
 /* ===== HERO ===== */
