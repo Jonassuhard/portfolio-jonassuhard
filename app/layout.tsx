@@ -9,6 +9,7 @@ import {
 } from "next/font/google";
 import { personJsonLd, websiteJsonLd } from "@/lib/json-ld";
 import { site, siteUrl } from "@/lib/projects";
+import GlitchController from "./glitch-controller";
 import "./globals.css";
 
 const fontTitle = Cormorant_Garamond({
@@ -87,7 +88,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           </div>
           <div className="menubar">
             <Link className="brand" href="/" aria-label="Accueil Jonas Suhard">
-              <img className="brand-mark" src="/brand/js-medallion.png" alt="Jonas Suhard" width={36} height={36} />
+              <img className="brand-mark" src="/brand/js-medallion-sm.webp" alt="Jonas Suhard" width={36} height={36} />
             </Link>
             <nav className="main-nav" aria-label="Navigation principale">
               <Link href="/recruteurs">Recruteurs</Link>
@@ -102,7 +103,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <footer className="site-footer">
           <div className="foot-top">
             <div className="foot-id">
-              <img className="brand-mark sm" src="/brand/js-medallion.png" alt="" width={46} height={46} />
+              <img className="brand-mark sm" src="/brand/js-medallion-sm.webp" alt="" width={46} height={46} />
               <div>
                 <strong>Jonas Suhard</strong>
                 <span className="foot-id-sub">Builder IA appliquée &amp; Growth Engineer</span>
@@ -117,11 +118,15 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               <h5>Contact</h5>
               <a href={`mailto:${site.email}`}>{site.email}</a>
               <a href={site.github}>GitHub</a>
-              <a href={site.linkedin}>LinkedIn</a>
+              <a href={site.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
+              {site.instagram ? (
+                <a href={site.instagram} target="_blank" rel="noreferrer">Instagram</a>
+              ) : null}
             </div>
             <div>
               <h5>Documents</h5>
-              <a href="/cv.pdf">CV (PDF)</a>
+              <a href={site.cvClassic}>CV — classique (PDF)</a>
+              <a href={site.cvStyled}>CV — version site (PDF)</a>
               <a href="/profile.md">profile.md</a>
               <a href="/skills.md">skills.md</a>
             </div>
@@ -142,6 +147,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <span>jonassuhard.com</span>
           </div>
         </footer>
+        <GlitchController />
       </body>
     </html>
   );

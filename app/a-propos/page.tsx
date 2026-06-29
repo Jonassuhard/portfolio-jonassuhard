@@ -26,7 +26,8 @@ export default function AboutPage() {
           </p>
           <div className="button-row">
             <a className="button primary" href={`mailto:${site.email}`}>Contact</a>
-            <a className="button" href="/cv.pdf">CV PDF</a>
+            <a className="button" href={site.cvStyled}>CV — version site</a>
+            <a className="button" href={site.cvClassic}>CV — classique</a>
           </div>
         </div>
         <div className="panel">

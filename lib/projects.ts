@@ -48,9 +48,12 @@ export const site = {
     "Portfolio de preuves de Jonas Suhard : projets réels, décisions, contraintes, stacks et résultats — profil hybride marketing, IA appliquée et développement full-stack.",
   email: "contact@jonassuhard.com",
   github: "https://github.com/Jonassuhard",
-  linkedin: "https://www.linkedin.com/in/jonassuhard/",
+  linkedin: "https://www.linkedin.com/in/jonas-suhard-b73923245/",
+  instagram: "",
   location: "Paris, France",
-  availability: "1er octobre 2026"
+  availability: "1er octobre 2026",
+  cvClassic: "/cv.pdf",
+  cvStyled: "/cv-portfolio.pdf"
 };
 
 export const projects: Project[] = [

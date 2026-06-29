@@ -21,7 +21,8 @@ export default function RecruitersPage() {
             en outils utilisables.
           </p>
           <div className="button-row">
-            <a className="button primary" href="/cv.pdf">CV PDF</a>
+            <a className="button primary" href={site.cvClassic}>CV — classique</a>
+            <a className="button" href={site.cvStyled}>CV — version site</a>
             <a className="button" href={`mailto:${site.email}`}>Email</a>
             <a className="button" href={site.github}>GitHub</a>
           </div>

@@ -15,8 +15,11 @@ export default function HomePage() {
             </p>
           </div>
           <div className="button-row">
-            <a className="button primary" href="/cv.pdf">
-              Télécharger le CV
+            <a className="button primary" href={site.cvStyled}>
+              CV — version site
+            </a>
+            <a className="button" href={site.cvClassic}>
+              CV — classique
             </a>
             <Link className="button" href="/projets">
               Voir les preuves

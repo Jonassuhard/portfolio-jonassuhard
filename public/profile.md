@@ -55,5 +55,5 @@ Paris, France. CDI à Paris ou hybride, disponible à partir du 1er octobre 2026
 
 - Email: contact@jonassuhard.com
 - GitHub: https://github.com/Jonassuhard
-- LinkedIn: https://www.linkedin.com/in/jonassuhard/
+- LinkedIn: https://www.linkedin.com/in/jonas-suhard-b73923245/
 
