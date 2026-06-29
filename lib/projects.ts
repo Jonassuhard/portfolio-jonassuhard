@@ -29,6 +29,7 @@ export type Project = {
   repoStatus?: string;
   liveLabel?: string;
   evidenceNote?: string;
+  cardLine?: string;
   noindex?: boolean;
   links: Array<{
     label: string;
@@ -52,6 +53,7 @@ export const site = {
   github: "https://github.com/Jonassuhard",
   linkedin: "https://www.linkedin.com/in/jonas-suhard-b73923245/",
   instagram: "",
+  malt: "https://www.malt.fr/profile/jonassuhard",
   location: "Paris, France",
   availability: "1er octobre 2026",
   cvClassic: "/cv.pdf",
@@ -73,6 +75,8 @@ export const projects: Project[] = [
     liveLabel: "Live · URL communiquée en entretien",
     evidenceNote:
       "Captures anonymisées (home, CMS, assistant IA) et démo courte sur demande ou en entretien ; rapport Lighthouse daté disponible.",
+    cardLine:
+      "Site client live, CMS maison, SEO local et assistant IA cadré. Signaux : prod réelle, contenus éditables, Lighthouse mobile 88 / SEO 100 / a11y 93.",
     architecture: [
       "Front Next.js (React) rendu et déployé sur Vercel.",
       "Contenus dynamiques (galerie, prestations, tarifs, FAQ) servis depuis Supabase, éditables via un CMS maison protégé.",
@@ -155,6 +159,8 @@ export const projects: Project[] = [
     liveLabel: "Usage classe (non public)",
     evidenceNote:
       "Captures anonymisées sur données fictives et démo sur demande ; aucune donnée élève réelle n'est publiée.",
+    cardLine:
+      "Application utilisée en classe : suivi de compétences, génération PDF, Firebase, données élèves anonymisées.",
     architecture: [
       "Application web / PWA Next.js utilisable sur tablette par une non-dev.",
       "Données et authentification sur Firebase / Firestore.",
@@ -237,6 +243,8 @@ export const projects: Project[] = [
     liveLabel: "Staging (non public)",
     evidenceNote:
       "Captures du staging et deck client (14 slides) sur demande ; mesures lab, pas une prod.",
+    cardLine:
+      "Refonte de conversion en staging : audit UX, parcours d'adhésion et prototype d'assistant IA.",
     architecture: [
       "WordPress + Divi imposés ; refonte sur un environnement de staging sécurisé.",
       "Audits de rendu multi-viewports via Playwright (le DOM Divi ne suffit pas à prouver le visuel).",
@@ -391,7 +399,7 @@ export const projects: Project[] = [
     status: "Actif / lab",
     tier: 2,
     image: "/assets/cards/battle-engine.webp",
-    repoStatus: "Public à venir (copie anonymisée prête)",
+    repoStatus: "Publication prévue après anonymisation",
     liveLabel: "Lab",
     noindex: true,
     architecture: [
@@ -436,7 +444,7 @@ export const projects: Project[] = [
     status: "Archive / MBA",
     tier: 3,
     image: "/assets/cards/hoopsphere.webp",
-    repoStatus: "Public à venir (copie anonymisée prête)",
+    repoStatus: "Publication prévue après anonymisation",
     liveLabel: "Lab / archive",
     noindex: true,
     architecture: [
@@ -481,7 +489,7 @@ export const projects: Project[] = [
     status: "Copie publique anonymisée",
     tier: 2,
     image: "/assets/cards/rag-starter-kit.webp",
-    repoStatus: "Public à venir (copie anonymisée prête)",
+    repoStatus: "Publication prévue après anonymisation",
     liveLabel: "Démo locale",
     noindex: true,
     proofLine:
@@ -535,7 +543,7 @@ export const projects: Project[] = [
     status: "POC initié - copie publique anonymisée",
     tier: 2,
     image: "/assets/cards/board-ia-pme.webp",
-    repoStatus: "Public à venir (copie anonymisée prête)",
+    repoStatus: "Publication prévue après anonymisation",
     liveLabel: "Lab",
     noindex: true,
     proofLine:
@@ -589,7 +597,7 @@ export const projects: Project[] = [
     status: "Copie publique anonymisée",
     tier: 3,
     image: "/assets/cards/edusemantix.webp",
-    repoStatus: "Public à venir (copie anonymisée prête)",
+    repoStatus: "Publication prévue après anonymisation",
     liveLabel: "Lab",
     noindex: true,
     proofLine:
@@ -625,7 +633,7 @@ export const projects: Project[] = [
   },
   {
     slug: "pokemon-gen4-toolkit",
-    title: "Pokémon Gen-4 Toolkit - outils de ROM hacking NDS",
+    title: "Pokémon Gen-4 Toolkit - outils d'exploration de données de jeu",
     shortTitle: "Pokémon Gen-4 Toolkit",
     type: "Lab / projet perso",
     period: "2026",
@@ -633,13 +641,13 @@ export const projects: Project[] = [
     status: "Copie publique anonymisée (ROM non incluse)",
     tier: 3,
     image: "/assets/cards/pokemon-gen4-toolkit.webp",
-    repoStatus: "Public à venir (copie anonymisée prête)",
+    repoStatus: "Publication prévue après anonymisation",
     liveLabel: "Lab",
     noindex: true,
     proofLine:
-      "Boîte à outils Python (ndspy) pour explorer et modifier un ROM Pokémon de 4e génération : décodage/encodage des textes chiffrés, édition des events et scripts, stats des espèces, cartographie, viewer web.",
+      "Boîte à outils Python (ndspy) pour explorer des formats de données de jeu (textes, events, scripts, stats) et écrire ses propres outils d'édition — aucune ROM ni asset distribué.",
     summary:
-      "Lire et réécrire le contenu propriétaire d'un ROM NDS (textes chiffrés, events, scripts) sans outil tout fait, en reverse-engineering du format Gen 4.",
+      "Explorer des formats de données de jeu et écrire mes propres outils d'édition Python, sans publier d'assets ni de ROM.",
     stack: ["Python 3", "ndspy", "Format NARC", "Moteur de texte Gen 4 maison", "EmulatorJS (viewer web)"],
     recruiterProof: [
       "Reverse-engineering d'un format binaire propriétaire : décodage/encodage du texte chiffré Gen 4 (charmap + chiffrement seed/XOR) écrit à la main.",

@@ -94,7 +94,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         />
         <header className="site-header">
           <div className="titlebar">
-            <span>JONAS SUHARD — Agent-Readable Portfolio</span>
+            <span>JONAS SUHARD — Evidence Archive</span>
             <span className="ver">{site.location} · <NixieClock /></span>
           </div>
           <SiteNav />
@@ -119,6 +119,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               <a href={`mailto:${site.email}`}>{site.email}</a>
               <a href={site.github}>GitHub</a>
               <a href={site.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
+              {site.malt ? (
+                <a href={site.malt} target="_blank" rel="noreferrer">Malt</a>
+              ) : null}
               {site.instagram ? (
                 <a href={site.instagram} target="_blank" rel="noreferrer">Instagram</a>
               ) : null}

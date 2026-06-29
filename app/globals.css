@@ -111,6 +111,7 @@ h3 { font-family:var(--ft-title); font-weight:600; font-size:22px; margin:4px 0 
   .main-nav.open a:nth-child(3) { transition-delay:.55s; }
   .main-nav.open a:nth-child(4) { transition-delay:.70s; }
   .main-nav.open a:nth-child(5) { transition-delay:.85s; }
+  .main-nav.open a:nth-child(6) { transition-delay:1s; }
 }
 @media (prefers-reduced-motion:reduce) { .nav-toggle span { transition:none; } }
 p { margin:0 0 10px; }

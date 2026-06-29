@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { projects, siteUrl } from "@/lib/projects";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes = ["", "/recruteurs", "/projets", "/competences", "/a-propos"];
+  const staticRoutes = ["", "/recruteurs", "/projets", "/competences", "/methode", "/a-propos"];
   const projectRoutes = projects
     .filter((project) => !project.noindex)
     .map((project) => `/projets/${project.slug}`);

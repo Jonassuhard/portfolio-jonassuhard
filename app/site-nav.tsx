@@ -28,6 +28,7 @@ export default function SiteNav() {
         <Link href="/recruteurs" onClick={close}>Recruteurs</Link>
         <Link href="/projets" onClick={close}>Projets</Link>
         <Link href="/competences" onClick={close}>Compétences</Link>
+        <Link href="/methode" onClick={close}>Méthode</Link>
         <Link href="/a-propos" onClick={close}>À propos</Link>
         <a href="/cv.pdf" onClick={close}>CV</a>
       </nav>

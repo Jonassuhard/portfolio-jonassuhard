@@ -60,7 +60,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
 
       <section className="case-hero">
         <div>
-          <p className="eyebrow">Case study / Tier {project.tier}</p>
+          <p className="eyebrow">Case study</p>
           <h1>{project.title}</h1>
           <p className="lead">{project.summary}</p>
           {project.noindex ? (

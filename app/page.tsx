@@ -63,8 +63,9 @@ export default function HomePage() {
             <h2>Trois projets pour comprendre mon profil.</h2>
           </div>
           <p>
-            Chaque page expose le problème, les contraintes, les choix rejetés,
-            la livraison, les limites et ce que le projet prouve pour recruter.
+            Ces trois projets montrent trois choses : livrer un site en production,
+            construire une app métier sensible, et cadrer une expérimentation
+            marketing avec IA.
           </p>
         </div>
 
@@ -73,9 +74,9 @@ export default function HomePage() {
             <article className="proof-card" key={project.slug}>
               <img src={project.image} alt={`Aperçu du projet ${project.shortTitle}`} />
               <div className="proof-body">
-                <p className="case-meta">Tier {project.tier} / {project.type}</p>
+                <p className="case-meta">{project.type}</p>
                 <h3>{project.shortTitle}</h3>
-                <p>{project.proofLine}</p>
+                <p>{project.cardLine ?? project.proofLine}</p>
                 <div className="tag-row">
                   {project.stack.slice(0, 4).map((item) => (
                     <span className="tag" key={item}>{item}</span>
