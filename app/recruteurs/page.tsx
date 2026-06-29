@@ -27,11 +27,12 @@ export default function RecruitersPage() {
             complète.
           </p>
           <div className="button-row">
-            <a className="button primary" href={site.cvClassic}>CV — classique</a>
-            <a className="button" href={site.cvStyled}>CV — version site</a>
-            <a className="button" href={`mailto:${site.email}`}>Email</a>
+            <a className="button primary" href={`mailto:${site.email}`}>Me contacter</a>
             <a className="button" href={site.github}>GitHub</a>
           </div>
+          <p className="cta-sub">
+            CV : <a href={site.cvStyled}>version site</a> · <a href={site.cvClassic}>classique</a>
+          </p>
         </div>
         <div className="panel">
           <h2>Signal utile</h2>

@@ -25,10 +25,12 @@ export default function AboutPage() {
             proprement et transformer l'IA en outils concrets.
           </p>
           <div className="button-row">
-            <a className="button primary" href={`mailto:${site.email}`}>Contact</a>
-            <a className="button" href={site.cvStyled}>CV — version site</a>
-            <a className="button" href={site.cvClassic}>CV — classique</a>
+            <a className="button primary" href={`mailto:${site.email}`}>Me contacter</a>
+            <a className="button" href="/projets">Voir les projets</a>
           </div>
+          <p className="cta-sub">
+            CV : <a href={site.cvStyled}>version site</a> · <a href={site.cvClassic}>classique</a>
+          </p>
         </div>
         <div className="panel panel-sys">
           <div className="avatar-frame">
