@@ -13,27 +13,28 @@ export default function HomePage() {
               Marketing, IA générative et développement full-stack pour construire
               des systèmes d'acquisition mesurables.
             </p>
+            <p className="hero-human">
+              Je viens du marketing digital, mais j'ai appris à construire moi-même :
+              sites, workflows IA, automatisations, contenus SEO et prototypes web.
+            </p>
           </div>
           <div className="button-row">
-            <a className="button primary" href={site.cvStyled}>
-              CV — version site
-            </a>
-            <a className="button" href={site.cvClassic}>
-              CV — classique
+            <a className="button primary" href={`mailto:${site.email}`}>
+              Me contacter
             </a>
             <Link className="button" href="/projets">
               Voir les preuves
             </Link>
-            <a className="button" href={`mailto:${site.email}`}>
-              Me contacter
-            </a>
           </div>
+          <p className="cta-sub">
+            CV : <a href={site.cvStyled}>version site</a> · <a href={site.cvClassic}>classique</a>
+          </p>
         </div>
 
         <aside className="ledger" aria-label="Journal de preuves">
           <div>
             <p className="ledger-title">Journal de build</p>
-            <h2>Pas une galerie. Un dossier de preuves.</h2>
+            <h2>Ce que j'ai vraiment construit.</h2>
           </div>
           <div className="ledger-list">
             <div className="ledger-item">
@@ -59,7 +60,7 @@ export default function HomePage() {
         <div className="section-head">
           <div>
             <p className="section-kicker">Preuves principales</p>
-            <h2>Trois preuves à lire en priorité.</h2>
+            <h2>Trois projets pour comprendre mon profil.</h2>
           </div>
           <p>
             Chaque page expose le problème, les contraintes, les choix rejetés,
@@ -93,7 +94,7 @@ export default function HomePage() {
         <div className="section-head">
           <div>
             <p className="section-kicker">Compétences reliées</p>
-            <h2>Des compétences reliées à des preuves.</h2>
+            <h2>Ce que je sais faire, preuves à l'appui.</h2>
           </div>
           <p>Chaque compétence s'appuie sur des projets livrés et documentés.</p>
         </div>

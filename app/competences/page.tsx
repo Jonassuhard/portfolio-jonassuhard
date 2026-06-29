@@ -12,10 +12,10 @@ export default function SkillsPage() {
     <div className="page">
       <section>
         <p className="eyebrow">Compétences</p>
-        <h1>Compétences prouvées, pas déclarées.</h1>
+        <h1>Ce que je peux apporter à une équipe.</h1>
         <p className="lead">
-          Chaque bloc pointe vers les projets qui le rendent crédible. Une compétence
-          sans preuve reste une étiquette.
+          Je ne liste pas des outils pour remplir une page. Chaque compétence
+          ci-dessous correspond à un projet livré, testé ou documenté.
         </p>
       </section>
 

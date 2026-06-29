@@ -21,7 +21,7 @@ export default function RecruitersPage() {
             en outils utilisables.
           </p>
           <p>
-            <strong>Pourquoi m'appeler ?</strong> Je prends un problème
+            <strong>En clair —</strong> Je prends un problème
             d'acquisition ou de contenu, je le transforme en prototype web/IA,
             je le documente, puis je le livre sans attendre une équipe produit
             complète.
@@ -70,11 +70,11 @@ export default function RecruitersPage() {
         <div className="section-head">
           <div>
             <p className="section-kicker">Ce que je peux prendre en charge</p>
-            <h2>Build marketing, pas théâtre IA.</h2>
+            <h2>Construire plutôt que promettre.</h2>
           </div>
           <p>
-            Sites de conversion, workflows LLM, automatisation, SEO, dashboards,
-            prototypes internes et documentation propre.
+            Je transforme un besoin marketing en livrable concret : page de
+            conversion, workflow IA, automatisation, audit SEO ou prototype web.
           </p>
         </div>
         <div className="matrix">
@@ -101,8 +101,12 @@ export default function RecruitersPage() {
         <div className="section-head">
           <div>
             <p className="section-kicker">Preuves rapides</p>
-            <h2>Trois raisons d'appeler.</h2>
+            <h2>Pourquoi m'appeler.</h2>
           </div>
+          <p>
+            Mes projets montrent trois choses : je sais livrer en production, gérer
+            des données sensibles et cadrer une expérimentation marketing.
+          </p>
         </div>
         <div className="proof-grid">
           {featuredProjects.map((project) => (
@@ -148,9 +152,9 @@ export default function RecruitersPage() {
 
       <section className="section">
         <div className="notice">
-          <strong>Limites honnêtes.</strong>
+          <strong>Ce que je ne fais pas.</strong>
           <p>
-            Je ne fais pas de ML research ni de backend senior. Mon angle : relier
+            Pas de ML research ni de backend senior. Mon angle : relier
             acquisition, IA appliquée et exécution produit.
           </p>
         </div>

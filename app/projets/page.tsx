@@ -11,15 +11,16 @@ export default function ProjectsPage() {
   return (
     <div className="page">
       <section>
-        <p className="eyebrow">Index secondaire</p>
-        <h1>Les projets, classés par force de preuve.</h1>
+        <p className="eyebrow">Projets</p>
+        <h1>Mes projets les plus solides.</h1>
         <p className="lead">
-          Tout n'est pas mis au même niveau. Les projets Tier 1 servent la candidature.
-          Les labs restent accessibles, mais ils ne pilotent pas le positionnement.
+          Je distingue les projets livrés, les preuves techniques et les archives.
+          L'idée : voir vite ce qui est vérifiable, ce qui est privé et ce qui reste
+          en laboratoire.
         </p>
       </section>
 
-      <section className="section">
+      <section className="section desktop-only">
         <div className="table-scroll">
           <table className="project-table">
             <thead>
@@ -67,11 +68,11 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section mobile-only">
         <div className="section-head">
           <div>
             <p className="section-kicker">Détail</p>
-            <h2>Chaque preuve, en case study.</h2>
+            <h2>Chaque projet, en clair.</h2>
           </div>
         </div>
         <div className="case-grid">

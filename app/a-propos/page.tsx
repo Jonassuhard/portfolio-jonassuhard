@@ -14,14 +14,15 @@ export default function AboutPage() {
           <p className="eyebrow">À propos</p>
           <h1>Je relie marketing, IA et exécution.</h1>
           <p className="lead">
-            Mon avantage : traduire un problème business en système utilisable,
-            puis documenter ce qui marche, ce qui casse et ce qui manque.
+            Je viens du marketing digital, puis j'ai appris à construire pour ne plus
+            m'arrêter aux recommandations. Mon point fort : relier trois mondes —
+            acquisition, IA appliquée et développement web.
           </p>
           <p>
-            Je viens du marketing digital. J'ai appris à construire pour ne plus
-            rester au niveau des recommandations : aujourd'hui je code, je déploie
-            et je documente les systèmes que je propose. Je cherche un rôle où relier
-            acquisition, IA appliquée et produit web.
+            Concrètement, je cadre un besoin, je construis une première version, je
+            mesure ce qui marche et je documente ce qui reste à creuser. Je cherche un
+            CDI où ce profil hybride sert : une équipe qui doit produire vite, tester
+            proprement et transformer l'IA en outils concrets.
           </p>
           <div className="button-row">
             <a className="button primary" href={`mailto:${site.email}`}>Contact</a>

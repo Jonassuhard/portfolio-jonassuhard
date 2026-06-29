@@ -140,14 +140,14 @@ export default async function ProjectDetailPage({ params }: PageProps) {
 
           <section>
             <p className="section-kicker">Décisions</p>
-            <h2>Choix faits, alternatives refusées.</h2>
+            <h2>Les choix et leurs compromis.</h2>
             <div className="table-scroll">
               <table className="decision-table">
                 <thead>
                   <tr>
                     <th scope="col">Décision</th>
                     <th scope="col">Pourquoi</th>
-                    <th scope="col">Alternative rejetée</th>
+                    <th scope="col">Écarté</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -185,8 +185,8 @@ export default async function ProjectDetailPage({ params }: PageProps) {
 
           {project.notMeasured ? (
             <section>
-              <p className="section-kicker">Ce qui n'est pas mesuré</p>
-              <h2>Limites de preuve, assumées.</h2>
+              <p className="section-kicker">Pas encore mesuré</p>
+              <h2>Ce qui reste à creuser.</h2>
               <ul>
                 {project.notMeasured.map((item) => (
                   <li key={item}>{item}</li>
@@ -209,7 +209,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
         </div>
 
         <aside className="panel">
-          <h2>Preuve recruteur</h2>
+          <h2>Signal pour une équipe</h2>
           <ul>
             {project.recruiterProof.map((item) => (
               <li key={item}>{item}</li>

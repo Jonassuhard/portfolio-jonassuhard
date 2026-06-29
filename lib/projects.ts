@@ -115,7 +115,7 @@ export const projects: Project[] = [
         rejected: "CMS externe plus lent a cadrer et plus cher a maintenir."
       },
       {
-        decision: "Assistant IA cadre",
+        decision: "Assistant IA cadré",
         why: "Aider les clientes a formuler leur demande sans promettre une automation magique.",
         rejected: "Chatbot libre, trop risque pour prix, disponibilites et adresse."
       }
@@ -298,7 +298,7 @@ export const projects: Project[] = [
     limits: [
       "Ne pas dire que le staging est une prod utilisée.",
       "Retombees business non disponibles a court terme.",
-      "Certaines decisions dépendent de validation client."
+      "Certaines décisions dépendent de validation client."
     ],
     links: [
       { label: "Version Markdown", href: "/projects/capselys.md" }
@@ -335,7 +335,7 @@ export const projects: Project[] = [
     stack: ["Drupal", "Playwright", "Semrush", "SEO", "LLM-assisted QA"],
     recruiterProof: [
       "Production a volume avec contrôle qualité.",
-      "Capacité a transformer un audit SEO en decisions nommees.",
+      "Capacité à transformer un audit SEO en décisions nommées.",
       "Discipline sur actions sensibles: ne pas publier sans validation."
     ],
     constraints: [
@@ -485,7 +485,7 @@ export const skills = [
     proofSlugs: ["iscom", "capselys", "les-petites-griffes"],
     proofExtra: "",
     proof: "ISCOM, Capsélys, Les Petites Griffes",
-    note: "Recherche, structure, maillage, Drupal, vérification et publication encadree."
+    note: "Recherche, structure, maillage, Drupal, vérification et publication encadrée."
   },
   {
     name: "Next.js / React",
@@ -513,7 +513,7 @@ export const skills = [
     proofSlugs: ["educool-la-herse", "capselys", "hoopsphere"],
     proofExtra: "",
     proof: "Educool, Capsélys, HoopSphere",
-    note: "Contraintes terrain, limites explicites, decisions et alternatives rejetées."
+    note: "Contraintes terrain, limites explicites, décisions et alternatives rejetées."
   },
   {
     name: "Sécurité / données",
