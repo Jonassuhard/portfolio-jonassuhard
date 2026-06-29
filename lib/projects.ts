@@ -157,7 +157,7 @@ export const projects: Project[] = [
     tier: 1,
     image: "/assets/cards/educool.webp",
     repoStatus: "Privé — RGPD (données mineurs)",
-    liveLabel: "Usage classe (non public)",
+    liveLabel: "Classe, non public",
     evidenceNote:
       "Captures anonymisées sur données fictives et démo sur demande ; aucune donnée élève réelle n'est publiée.",
     cardLine:
@@ -461,7 +461,7 @@ export const projects: Project[] = [
     proofLine:
       "Prototype mobile basket amateur, utile pour montrer raisonnement produit et limites.",
     summary:
-      "Projet MBA a garder comme autopsie honnête: idée, personas, prototype, limites.",
+      "Projet MBA à garder comme autopsie utile : idée, personas, prototype, limites.",
     stack: ["React Native", "Firebase", "FastAPI", "OCR"],
     recruiterProof: [
       "Raisonnement produit.",
@@ -688,7 +688,6 @@ export const projects: Project[] = [
     tier: 3,
     image: "/assets/cards/claude-code-soul.webp",
     repoStatus: "Public",
-    liveLabel: "Public",
     noindex: true,
     proofLine:
       "Pack de configuration open source pour Claude Code CLI : un soul.md (identité/ton/refus) plus skills, agents, hooks et rules, pour transformer le CLI en assistant à personnalité dosée plutôt qu'en chatbot poli.",
@@ -758,7 +757,7 @@ export const skills = [
     proofSlugs: ["capselys", "les-petites-griffes"],
     proofExtra: "RAG / workflows LLM",
     proof: "Capsélys, Les Petites Griffes, RAG / workflows LLM",
-    note: "Assistant cadre, workflows LLM, fact-check, pas de promesse magique."
+    note: "Assistants cadrés, workflows LLM, fact-check et garde-fous métier."
   },
   {
     name: "Automatisation",
@@ -772,14 +771,14 @@ export const skills = [
     proofSlugs: ["educool-la-herse", "capselys", "hoopsphere"],
     proofExtra: "",
     proof: "Educool, Capsélys, HoopSphere",
-    note: "Contraintes terrain, limites explicites, décisions et alternatives rejetées."
+    note: "Contraintes terrain, décisions documentées et compromis assumés."
   },
   {
     name: "Sécurité / données",
     proofSlugs: ["educool-la-herse", "les-petites-griffes"],
     proofExtra: "",
     proof: "Educool, Les Petites Griffes",
-    note: "Données sensibles, auth, rules, anonymisation et prudence de publication."
+    note: "Données sensibles, authentification, règles d'accès, anonymisation et prudence de publication."
   },
   {
     name: "Orchestration multi-modèles & QA IA",

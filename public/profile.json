@@ -8,7 +8,7 @@
   "verified_at": "2026-06-29",
   "citable_facts": {
     "les_petites_griffes_lighthouse": "mobile 88 / SEO 100 / accessibilité 93 (audit 2026-06-29)",
-    "educool_context": "application utilisée par une classe entière en contexte réel, données élèves anonymisées"
+    "educool_context": "application utilisée en contexte de classe, données élèves anonymisées"
   },
   "target_roles": [
     "Growth Engineer",
@@ -22,7 +22,7 @@
     "ai": ["LLM workflows", "RAG", "prompt engineering", "automation", "AI-assisted content QA"],
     "development": ["Next.js", "React", "Firebase", "Supabase", "Python", "Playwright"]
   },
-  "proofs": [
+  "projects": [
     {
       "project": "Les Petites Griffes",
       "type": "site live + CMS + assistant IA",
@@ -44,7 +44,7 @@
       "stack": ["Next.js", "Firebase", "Firestore", "Cloud Functions"],
       "case_study": "/projets/educool-la-herse",
       "markdown": "/projects/educool-la-herse.md",
-      "evidence": "Application utilisée par une classe entière en contexte réel ; rules Firebase, Cloud Functions, génération PDF et tests documentés sur les lots.",
+      "evidence": "Application utilisée en contexte de classe, données élèves anonymisées ; rules Firebase, Cloud Functions, génération PDF et tests documentés sur les lots.",
       "limits": "Aucune donnée élève publiable (mineurs) ; gain de temps enseignant observé, non chiffré publiquement.",
       "confidentiality": "données enfants anonymisées",
       "repo_status": "privé — RGPD (données mineurs)"
@@ -53,11 +53,11 @@
       "project": "Capsélys",
       "type": "conversion + expérimentation IA",
       "period": "Juin 2026 - Juillet 2026",
-      "role": "stratégie, audit, UX, expérimentation, deck client",
+      "role": "stratégie, audit, UX, expérimentation, support de présentation client",
       "stack": ["WordPress", "Divi", "Playwright", "LLM workflows"],
       "case_study": "/projets/capselys",
       "markdown": "/projects/capselys.md",
-      "evidence": "Refonte sur environnement de staging sécurisé, audits Playwright multi-viewports, deck oral client.",
+      "evidence": "Refonte sur environnement de staging sécurisé, audits Playwright multi-viewports, présentation client.",
       "limits": "Staging, pas une prod utilisée ; retombées business non mesurées à ce stade.",
       "confidentiality": "client réel, staging contextualisé",
       "repo_status": "privé — projet client"

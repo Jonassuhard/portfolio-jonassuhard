@@ -2,15 +2,15 @@
 
 > Builder IA appliquée & Growth Engineer basé à Paris : profil hybride marketing, IA générative et développement full-stack. Disponible en CDI à partir du 1er octobre 2026. Contact : contact@jonassuhard.com.
 
-Jonas construit des systèmes marketing augmentés par l'IA — sites, automatisations, contenus, workflows LLM et dashboards — qui transforment une stratégie en produit utilisable. Ce site est une bibliothèque de preuves de travail : projets réels, décisions, contraintes et résultats, sans métrique inventée.
+Jonas construit des systèmes marketing augmentés par l'IA — sites, automatisations, contenus, workflows LLM et dashboards — qui transforment une stratégie en produit utilisable. Ce site rassemble mes projets de travail : projets réels, décisions, contraintes et résultats, sans métrique inventée.
 
 ## Profil
 
 - [Profil (Markdown)](https://jonassuhard.com/profile.md): résumé lisible — positionnement, cibles, stack, contact
 - [Profil structuré (JSON)](https://jonassuhard.com/profile.json): source de vérité lisible par une machine
 - [Faits citables Q/R (JSON)](https://jonassuhard.com/claims.json): réponses factuelles prêtes à citer, sans chiffre inventé
-- [Compétences](https://jonassuhard.com/skills.md): matrice de compétences prouvées
-- [Page recruteurs](https://jonassuhard.com/recruteurs): où me ranger, preuves, limites assumées, contact
+- [Compétences](https://jonassuhard.com/skills.md): matrice de compétences reliées à des projets
+- [Page recruteurs](https://jonassuhard.com/recruteurs): où me ranger, preuves, périmètre, contact
 - [CV (PDF)](https://jonassuhard.com/cv.pdf): CV à jour
 
 ## Projets principaux
@@ -30,5 +30,5 @@ Jonas construit des systèmes marketing augmentés par l'IA — sites, automatis
 
 - [Battle Engine](https://jonassuhard.com/projects/battle-engine.md): pipeline vidéo automatisé (Godot, FFmpeg)
 - [HoopSphere](https://jonassuhard.com/projects/hoopsphere.md): application basket (Firebase, React Native, OCR)
-- [Index des projets](https://jonassuhard.com/projets): toutes les preuves classées par force de preuve
+- [Index des projets](https://jonassuhard.com/projets): toutes les preuves classées par maturité, vérifiabilité et contexte
 - [Plan du site](https://jonassuhard.com/sitemap.xml): toutes les URLs
