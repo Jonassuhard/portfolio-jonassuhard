@@ -29,7 +29,7 @@ export default function AboutPage() {
             <a className="button" href={site.cvClassic}>CV — classique</a>
           </div>
         </div>
-        <div className="panel">
+        <div className="panel panel-sys">
           <div className="avatar-frame">
             <img src="/brand/jonas-avatar.jpg" alt="Portrait de Jonas Suhard" />
           </div>

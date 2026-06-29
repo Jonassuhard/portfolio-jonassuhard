@@ -5,11 +5,13 @@ import {
   Courier_Prime,
   Special_Elite,
   Newsreader,
-  IBM_Plex_Mono
+  IBM_Plex_Mono,
+  Chakra_Petch
 } from "next/font/google";
 import { personJsonLd, websiteJsonLd } from "@/lib/json-ld";
 import { site, siteUrl } from "@/lib/projects";
 import GlitchController from "./glitch-controller";
+import NixieClock from "./nixie-clock";
 import "./globals.css";
 
 const fontTitle = Cormorant_Garamond({
@@ -42,6 +44,12 @@ const fontData = IBM_Plex_Mono({
   variable: "--font-data",
   display: "swap"
 });
+const fontClock = Chakra_Petch({
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+  variable: "--font-clock",
+  display: "swap"
+});
 export const metadata: Metadata = {
   title: {
     default: site.title,
@@ -69,7 +77,7 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  const fonts = `${fontTitle.variable} ${fontBody.variable} ${fontType.variable} ${fontItalic.variable} ${fontData.variable}`;
+  const fonts = `${fontTitle.variable} ${fontBody.variable} ${fontType.variable} ${fontItalic.variable} ${fontData.variable} ${fontClock.variable}`;
   return (
     <html lang="fr" className={fonts}>
       <body>
@@ -83,8 +91,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         />
         <header className="site-header">
           <div className="titlebar">
-            <span>JONAS SUHARD — Bibliothèque de preuves</span>
-            <span className="ver">v1.0 · {site.location}</span>
+            <span>JONAS SUHARD — Agent-Readable Portfolio</span>
+            <span className="ver">{site.location} · <NixieClock /></span>
           </div>
           <div className="menubar">
             <Link className="brand" href="/" aria-label="Accueil Jonas Suhard">
