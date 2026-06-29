@@ -43,7 +43,7 @@ export default function AboutPage() {
           </p>
           <h3>Ce site existe pour quoi ?</h3>
           <p>
-            Montrer des preuves de travail réutilisables en candidature et en entretien.
+            Montrer des projets réutilisables en candidature et en entretien.
             Le but : donner à un recruteur des preuves rapides à vérifier.
           </p>
         </div>

@@ -5,7 +5,7 @@ import { featuredProjects, site } from "@/lib/projects";
 export const metadata: Metadata = {
   title: "Recruteurs",
   description:
-    "Résumé recruteur de Jonas Suhard: rôle cible, preuves, stack, limites honnêtes et contact."
+    "Résumé recruteur de Jonas Suhard : rôle cible, projets, stack, limites et contact."
 };
 
 export default function RecruitersPage() {

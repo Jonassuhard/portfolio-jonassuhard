@@ -4,7 +4,7 @@ import { skills, getProject } from "@/lib/projects";
 
 export const metadata: Metadata = {
   title: "Compétences",
-  description: "Compétences de Jonas Suhard reliées aux preuves de travail."
+  description: "Compétences de Jonas Suhard reliées à des projets livrés et documentés."
 };
 
 export default function SkillsPage() {

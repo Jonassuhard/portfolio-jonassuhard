@@ -4,7 +4,7 @@ import { projects } from "@/lib/projects";
 
 export const metadata: Metadata = {
   title: "Projets",
-  description: "Index des preuves de travail de Jonas Suhard, classées par maturité."
+  description: "Index des projets de Jonas Suhard, classés par maturité (livrés, techniques, archives)."
 };
 
 export default function ProjectsPage() {
@@ -14,7 +14,7 @@ export default function ProjectsPage() {
         <p className="eyebrow">Projets</p>
         <h1>Mes projets les plus solides.</h1>
         <p className="lead">
-          Je distingue les projets livrés, les preuves techniques et les archives.
+          Je distingue les projets livrés, les démos techniques et les archives.
           L'idée : voir vite ce qui est vérifiable, ce qui est privé et ce qui reste
           en laboratoire.
         </p>
