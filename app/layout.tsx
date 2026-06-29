@@ -5,9 +5,9 @@ import {
   Courier_Prime,
   Special_Elite,
   Newsreader,
-  IBM_Plex_Mono,
-  Chakra_Petch
+  IBM_Plex_Mono
 } from "next/font/google";
+import localFont from "next/font/local";
 import { personJsonLd, websiteJsonLd } from "@/lib/json-ld";
 import { site, siteUrl } from "@/lib/projects";
 import GlitchController from "./glitch-controller";
@@ -44,9 +44,11 @@ const fontData = IBM_Plex_Mono({
   variable: "--font-data",
   display: "swap"
 });
-const fontClock = Chakra_Petch({
-  subsets: ["latin"],
-  weight: ["500", "600", "700"],
+const fontClock = localFont({
+  src: [
+    { path: "./fonts/oslo-ii.regular.ttf", weight: "400", style: "normal" },
+    { path: "./fonts/oslo-ii.bold.ttf", weight: "700", style: "normal" }
+  ],
   variable: "--font-clock",
   display: "swap"
 });
