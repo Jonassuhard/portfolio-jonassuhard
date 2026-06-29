@@ -30,6 +30,12 @@ export type Project = {
   }>;
 };
 
+// Origine canonique unique : env en prod (jonassuhard.com dès SSL), sinon URL Vercel live.
+// Pilote metadataBase, sitemap, robots et JSON-LD pour qu'ils pointent tous la même origine crawlable.
+export const siteUrl = (
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://portfolio-jonassuhard.vercel.app"
+).replace(/\/$/, "");
+
 export const site = {
   name: "Jonas Suhard",
   title: "Builder IA appliquée & Growth Engineer",

@@ -8,7 +8,7 @@ import {
   IBM_Plex_Mono
 } from "next/font/google";
 import { personJsonLd } from "@/lib/json-ld";
-import { site } from "@/lib/projects";
+import { site, siteUrl } from "@/lib/projects";
 import "./globals.css";
 
 const fontTitle = Cormorant_Garamond({
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     template: "%s | Jonas Suhard"
   },
   description: site.description,
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://portfolio-jonassuhard.vercel.app"),
+  metadataBase: new URL(siteUrl),
   alternates: {
     canonical: "/",
     types: {
@@ -126,6 +126,11 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               <a href="/profile.json">profile.json</a>
               <a href="/llms.txt">llms.txt</a>
               <a href="/sitemap.xml">sitemap.xml</a>
+            </div>
+            <div>
+              <h5>Légal</h5>
+              <Link href="/mentions-legales">Mentions légales</Link>
+              <Link href="/confidentialite">Confidentialité</Link>
             </div>
           </div>
           <div className="foot-bar">

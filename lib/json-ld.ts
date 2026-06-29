@@ -1,4 +1,4 @@
-import { projects, site } from "./projects";
+import { projects, site, siteUrl } from "./projects";
 
 export function personJsonLd() {
   return {
@@ -7,7 +7,7 @@ export function personJsonLd() {
     name: site.name,
     jobTitle: "Builder IA appliquée & Growth Engineer",
     email: `mailto:${site.email}`,
-    url: "https://jonassuhard.com",
+    url: siteUrl,
     sameAs: [site.github, site.linkedin],
     address: {
       "@type": "PostalAddress",
@@ -44,7 +44,7 @@ export function projectJsonLd(slug: string) {
       name: site.name
     },
     programmingLanguage: project.stack,
-    url: `https://jonassuhard.com/projets/${project.slug}`
+    url: `${siteUrl}/projets/${project.slug}`
   };
 }
 

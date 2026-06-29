@@ -74,27 +74,27 @@ export default async function ProjectDetailPage({ params }: PageProps) {
         <table className="summary-table">
           <tbody>
             <tr>
-              <th>Type</th>
+              <th scope="row">Type</th>
               <td>{project.type}</td>
             </tr>
             <tr>
-              <th>Periode</th>
+              <th scope="row">Periode</th>
               <td>{project.period}</td>
             </tr>
             <tr>
-              <th>Role</th>
+              <th scope="row">Role</th>
               <td>{project.role}</td>
             </tr>
             <tr>
-              <th>Statut</th>
+              <th scope="row">Statut</th>
               <td>{project.status}</td>
             </tr>
             <tr>
-              <th>Stack</th>
+              <th scope="row">Stack</th>
               <td>{project.stack.join(", ")}</td>
             </tr>
             <tr>
-              <th>Preuve</th>
+              <th scope="row">Preuve</th>
               <td>{project.proofLine}</td>
             </tr>
           </tbody>
@@ -116,24 +116,26 @@ export default async function ProjectDetailPage({ params }: PageProps) {
           <section>
             <p className="section-kicker">Decisions</p>
             <h2>Choix faits, alternatives refusees.</h2>
-            <table className="decision-table">
-              <thead>
-                <tr>
-                  <th>Decision</th>
-                  <th>Pourquoi</th>
-                  <th>Alternative rejetee</th>
-                </tr>
-              </thead>
-              <tbody>
-                {project.decisions.map((item) => (
-                  <tr key={item.decision}>
-                    <td>{item.decision}</td>
-                    <td>{item.why}</td>
-                    <td>{item.rejected}</td>
+            <div className="table-scroll">
+              <table className="decision-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Decision</th>
+                    <th scope="col">Pourquoi</th>
+                    <th scope="col">Alternative rejetee</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {project.decisions.map((item) => (
+                    <tr key={item.decision}>
+                      <td>{item.decision}</td>
+                      <td>{item.why}</td>
+                      <td>{item.rejected}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </section>
 
           <section>

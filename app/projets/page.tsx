@@ -20,33 +20,35 @@ export default function ProjectsPage() {
       </section>
 
       <section className="section">
-        <table className="project-table">
-          <thead>
-            <tr>
-              <th>Projet</th>
-              <th>Type</th>
-              <th>Stack</th>
-              <th>Ce que ça prouve</th>
-              <th>Tier</th>
-            </tr>
-          </thead>
-          <tbody>
-            {projects.map((project) => (
-              <tr key={project.slug}>
-                <td>
-                  <Link href={`/projets/${project.slug}`}>
-                    <strong>{project.shortTitle}</strong>
-                  </Link>
-                  <p className="table-note">{project.status}</p>
-                </td>
-                <td>{project.type}</td>
-                <td>{project.stack.slice(0, 4).join(", ")}</td>
-                <td>{project.recruiterProof[0]}</td>
-                <td>Tier {project.tier}</td>
+        <div className="table-scroll">
+          <table className="project-table">
+            <thead>
+              <tr>
+                <th scope="col">Projet</th>
+                <th scope="col">Type</th>
+                <th scope="col">Stack</th>
+                <th scope="col">Ce que ça prouve</th>
+                <th scope="col">Tier</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {projects.map((project) => (
+                <tr key={project.slug}>
+                  <td>
+                    <Link href={`/projets/${project.slug}`}>
+                      <strong>{project.shortTitle}</strong>
+                    </Link>
+                    <p className="table-note">{project.status}</p>
+                  </td>
+                  <td>{project.type}</td>
+                  <td>{project.stack.slice(0, 4).join(", ")}</td>
+                  <td>{project.recruiterProof[0]}</td>
+                  <td>Tier {project.tier}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </section>
 
       <section className="section">

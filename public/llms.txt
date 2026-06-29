@@ -1,6 +1,6 @@
 # Jonas Suhard
 
-Growth Engineer junior - marketing, IA generative et full-stack.
+Builder IA appliquee & Growth Engineer - marketing, IA generative et developpement full-stack.
 
 Jonas construit des systemes marketing augmentes par l'IA : sites, automatisations, contenus, workflows LLM et dashboards qui transforment une strategie en produit utilisable.
 
@@ -8,6 +8,7 @@ Jonas construit des systemes marketing augmentes par l'IA : sites, automatisatio
 
 - Profile: /profile.md
 - Structured profile: /profile.json
+- Citable Q/A facts: /claims.json
 - Skills: /skills.md
 - Recruiter page: /recruteurs
 - CV: /cv.pdf

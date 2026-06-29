@@ -31,19 +31,19 @@ export default function RecruitersPage() {
           <table className="summary-table">
             <tbody>
               <tr>
-                <th>Contrat</th>
+                <th scope="row">Contrat</th>
                 <td>CDI junior / junior+</td>
               </tr>
               <tr>
-                <th>Zone</th>
+                <th scope="row">Zone</th>
                 <td>Paris ou hybride</td>
               </tr>
               <tr>
-                <th>Rôles</th>
+                <th scope="row">Rôles</th>
                 <td>Growth Engineer, Marketing Technologist IA, Chef de projet IA orienté produit</td>
               </tr>
               <tr>
-                <th>Stack</th>
+                <th scope="row">Stack</th>
                 <td>Next.js, React, Firebase, Supabase, Python, Playwright, SEO, workflows LLM</td>
               </tr>
             </tbody>
