@@ -1,29 +1,34 @@
 # Jonas Suhard
 
-Builder IA appliquee & Growth Engineer - marketing, IA generative et developpement full-stack.
+> Builder IA appliquée & Growth Engineer basé à Paris : profil hybride marketing, IA générative et développement full-stack. Disponible en CDI à partir d'octobre 2026. Contact : contact@jonassuhard.com.
 
-Jonas construit des systemes marketing augmentes par l'IA : sites, automatisations, contenus, workflows LLM et dashboards qui transforment une strategie en produit utilisable.
+Jonas construit des systèmes marketing augmentés par l'IA — sites, automatisations, contenus, workflows LLM et dashboards — qui transforment une stratégie en produit utilisable. Ce site est une bibliothèque de preuves de travail : projets réels, décisions, contraintes et résultats, sans métrique inventée.
 
 ## Profil
 
-- Profile: /profile.md
-- Structured profile: /profile.json
-- Citable Q/A facts: /claims.json
-- Skills: /skills.md
-- Recruiter page: /recruteurs
-- CV: /cv.pdf
+- [Profil (Markdown)](https://jonassuhard.com/profile.md): résumé lisible — positionnement, cibles, stack, contact
+- [Profil structuré (JSON)](https://jonassuhard.com/profile.json): source de vérité lisible par une machine
+- [Faits citables Q/R (JSON)](https://jonassuhard.com/claims.json): réponses factuelles prêtes à citer, sans chiffre inventé
+- [Compétences](https://jonassuhard.com/skills.md): matrice de compétences prouvées
+- [Page recruteurs](https://jonassuhard.com/recruteurs): où me ranger, preuves, limites assumées, contact
+- [CV (PDF)](https://jonassuhard.com/cv.pdf): CV à jour
 
 ## Projets principaux
 
-- Les Petites Griffes - site live, CMS, SEO local, assistant IA: /projects/les-petites-griffes.md
-- Educool / La Herse - application web de classe, Firebase, securite, PDF: /projects/educool-la-herse.md
-- Capselys - refonte conversion, experimentation IA, workshop client: /projects/capselys.md
-- ISCOM - SEO, Drupal, production editoriale, audits: /projects/iscom.md
+- [Les Petites Griffes](https://jonassuhard.com/projects/les-petites-griffes.md): site live + CMS maison + SEO local + assistant IA (Lighthouse mobile 88 / SEO 100 / accessibilité 93)
+- [Educool / La Herse](https://jonassuhard.com/projects/educool-la-herse.md): application web de classe (Firebase, données sensibles, PDF), utilisée par une classe de 23 élèves
+- [Capsélys](https://jonassuhard.com/projects/capselys.md): refonte conversion, expérimentation IA et atelier client
+- [ISCOM](https://jonassuhard.com/projects/iscom.md): SEO, Drupal, production éditoriale et audits
 
-## Code et contact
+## Contact
 
-- GitHub: https://github.com/Jonassuhard
-- CV: /cv.pdf
-- Contact: mailto:contact@jonassuhard.com
-- LinkedIn: https://www.linkedin.com/in/jonassuhard/
+- [Email](mailto:contact@jonassuhard.com): contact@jonassuhard.com
+- [GitHub](https://github.com/Jonassuhard): code et preuves auditables
+- [LinkedIn](https://www.linkedin.com/in/jonassuhard/): profil professionnel
 
+## Optional
+
+- [Battle Engine](https://jonassuhard.com/projects/battle-engine.md): pipeline vidéo automatisé (Godot, FFmpeg)
+- [HoopSphere](https://jonassuhard.com/projects/hoopsphere.md): application basket (Firebase, React Native, OCR)
+- [Index des projets](https://jonassuhard.com/projets): toutes les preuves classées par force de preuve
+- [Plan du site](https://jonassuhard.com/sitemap.xml): toutes les URLs
