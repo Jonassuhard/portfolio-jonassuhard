@@ -40,7 +40,7 @@ export default function RecruitersPage() {
             <tbody>
               <tr>
                 <th scope="row">Contrat</th>
-                <td>CDI junior / junior+</td>
+                <td>CDI junior</td>
               </tr>
               <tr>
                 <th scope="row">Disponibilité</th>
