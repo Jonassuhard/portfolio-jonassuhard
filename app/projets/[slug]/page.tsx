@@ -118,7 +118,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
         <div className="prose">
           <section>
             <p className="section-kicker">Contraintes</p>
-            <h2>Ce qui rend le projet réel.</h2>
+            <h2>Contexte et contraintes.</h2>
             <ul>
               {project.constraints.map((item) => (
                 <li key={item}>{item}</li>
@@ -129,7 +129,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
           {project.architecture ? (
             <section>
               <p className="section-kicker">Architecture / workflow</p>
-              <h2>Comment c'est construit.</h2>
+              <h2>Architecture.</h2>
               <ul>
                 {project.architecture.map((item) => (
                   <li key={item}>{item}</li>
@@ -165,7 +165,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
 
           <section>
             <p className="section-kicker">Livraison</p>
-            <h2>Ce qui a été produit.</h2>
+            <h2>Livrables.</h2>
             <ul>
               {project.delivered.map((item) => (
                 <li key={item}>{item}</li>
@@ -175,7 +175,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
 
           <section>
             <p className="section-kicker">Résultats</p>
-            <h2>Ce qu'on peut affirmer.</h2>
+            <h2>Résultats.</h2>
             <ul>
               {project.results.map((item) => (
                 <li key={item}>{item}</li>
@@ -198,7 +198,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
           {project.v2 ? (
             <section>
               <p className="section-kicker">V2 / suite</p>
-              <h2>Ce qui viendrait ensuite.</h2>
+              <h2>Prochaine itération.</h2>
               <ul>
                 {project.v2.map((item) => (
                   <li key={item}>{item}</li>

@@ -39,12 +39,12 @@ export default function AboutPage() {
           <h2>Position cible</h2>
           <p>
             Growth Engineer / Marketing Technologist IA, dans une équipe qui
-            a besoin de construire vite sans transformer l'IA en théâtre de slides.
+            a besoin de construire vite et de transformer l'IA en outils concrets.
           </p>
           <h3>Ce site existe pour quoi ?</h3>
           <p>
             Montrer des preuves de travail réutilisables en candidature et en entretien.
-            Le style reste volontairement secondaire.
+            Le but : donner à un recruteur des preuves rapides à vérifier.
           </p>
         </div>
       </section>

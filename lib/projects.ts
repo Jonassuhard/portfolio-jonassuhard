@@ -100,7 +100,7 @@ export const projects: Project[] = [
     ],
     constraints: [
       "Budget quasi nul et besoin d'autonomie côté cliente.",
-      "Données privées a ne pas exposer.",
+      "Données privées à ne pas exposer.",
       "Contenus variables servis par base de données, pas seulement par le code."
     ],
     decisions: [
@@ -112,12 +112,12 @@ export const projects: Project[] = [
       {
         decision: "CMS maison",
         why: "La cliente peut modifier galerie, tarifs, FAQ et contenus sans toucher au code.",
-        rejected: "CMS externe plus lent a cadrer et plus cher a maintenir."
+        rejected: "CMS externe plus lent à cadrer et plus cher à maintenir."
       },
       {
         decision: "Assistant IA cadré",
-        why: "Aider les clientes a formuler leur demande sans promettre une automation magique.",
-        rejected: "Chatbot libre, trop risque pour prix, disponibilites et adresse."
+        why: "Aider les clientes à formuler leur demande sans promettre une automation magique.",
+        rejected: "Chatbot libre, trop risqué pour prix, disponibilités et adresse."
       }
     ],
     delivered: [
@@ -128,7 +128,7 @@ export const projects: Project[] = [
       "SEO local, JSON-LD, sitemap et contenus structurants."
     ],
     results: [
-      "Lighthouse mobile 88, SEO 100, accessibilite 93 (audit revérifié le 29/06).",
+      "Lighthouse mobile 88, SEO 100, accessibilité 93 (audit revérifié le 29/06).",
       "Site client live en production, URL masquée publiquement pour confidentialité (captures anonymisées sur demande).",
       "Back-office utilisable par la cliente."
     ],
@@ -145,7 +145,7 @@ export const projects: Project[] = [
     slug: "educool-la-herse",
     title: "Educool / La Herse - app web pour une classe",
     shortTitle: "Educool / La Herse",
-    type: "Application web education",
+    type: "Application web éducation",
     period: "2026",
     role: "Développement, UX, sécurité, PDF, Firebase, maintenance",
     status: "Prod / maintenance",
@@ -176,9 +176,9 @@ export const projects: Project[] = [
       "Construire un produit terrain pour une enseignante: suivi de compétences, livrets, PDF, PWA et logique métier scolaire.",
     stack: ["Next.js", "Firebase", "Firestore", "Cloud Functions", "Vitest", "PDF"],
     recruiterProof: [
-      "Produit utilise par une vraie utilisatrice avec retours terrain.",
+      "Produit utilisé par une vraie utilisatrice avec retours terrain.",
       "Conscience sécurité sur données enfants et rules Firebase.",
-      "Capacité a investiguer des bugs PDF, déploiement, auth et données."
+      "Capacité à investiguer des bugs PDF, déploiement, auth et données."
     ],
     constraints: [
       "Données enfants strictement anonymisées.",
@@ -210,14 +210,14 @@ export const projects: Project[] = [
       "Refontes UX successives après retours."
     ],
     results: [
-      "Une classe entière en contexte réel, données élèves anonymisées.",
+      "Usage en contexte de classe, données élèves strictement anonymisées.",
       "Tests documentés sur les lots livrés (génération PDF, rules, parcours).",
       "Incidents identifiés, documentés et corrigés progressivement."
     ],
     limits: [
-      "Aucune donnée élève ne doit apparaitre publiquement.",
-      "Certaines phases sécurité sont a contextualiser finement.",
-      "Projet tres dense: la case study doit rester lisible."
+      "Aucune donnée élève ne doit apparaître publiquement.",
+      "Certaines phases sécurité sont à contextualiser finement.",
+      "Projet très dense: la case study doit rester lisible."
     ],
     links: [
       { label: "Version Markdown", href: "/projects/educool-la-herse.md" }
@@ -254,16 +254,16 @@ export const projects: Project[] = [
     proofLine:
       "Refonte orientée conversion, staging WordPress sécurisé, deck oral client et audits multi-viewports.",
     summary:
-      "Clarifier une offre complexe, reduire la friction d'adhesion et présenter une démarche d'expérimentation marketing.",
+      "Clarifier une offre complexe, réduire la friction d'adhésion et tester un parcours de conversion avec un assistant IA cadré.",
     stack: ["WordPress", "Divi", "Playwright", "PHP", "PDF", "LLM workflows"],
     recruiterProof: [
       "Cadrage client et conversion, pas seulement exécution front.",
-      "Capacité a travailler avec une stack contrainte et vieillissante.",
+      "Capacité à travailler avec une stack contrainte et vieillissante.",
       "Présentation honnête: staging, mesures lab, limites et plan d'action."
     ],
     constraints: [
       "Staging, pas prod finale.",
-      "Client présent a l'oral MBA.",
+      "Client présent à l'oral MBA.",
       "WordPress/Divi impose et risques de régression visuelle."
     ],
     decisions: [
@@ -274,7 +274,7 @@ export const projects: Project[] = [
       },
       {
         decision: "Audits Playwright multi-viewport",
-        why: "Le DOM Divi ne suffit pas a prouver le rendu.",
+        why: "Le DOM Divi ne suffit pas à prouver le rendu.",
         rejected: "Validation visuelle ponctuelle."
       },
       {
@@ -285,19 +285,19 @@ export const projects: Project[] = [
     ],
     delivered: [
       "Staging visuel retravaillé.",
-      "Pages service et adhesion mieux structurées.",
+      "Pages service et adhésion mieux structurées.",
       "Deck oral client 14 slides.",
       "Audits visuels et rapports.",
       "Prototype d'assistant / tunnel."
     ],
     results: [
       "Support oral MBA prêt avec garde-fous client.",
-      "Refonte staging auditee sur plusieurs tailles.",
-      "Mesures business réelles a qualifier après déploiement."
+      "Refonte staging auditée sur plusieurs tailles.",
+      "Mesures business réelles à qualifier après déploiement."
     ],
     limits: [
       "Ne pas dire que le staging est une prod utilisée.",
-      "Retombees business non disponibles a court terme.",
+      "Retombées business non disponibles à court terme.",
       "Certaines décisions dépendent de validation client."
     ],
     links: [
@@ -329,18 +329,18 @@ export const projects: Project[] = [
       "Impact trafic SEO des contenus : suivi côté employeur, non publiable ici."
     ],
     proofLine:
-      "Production SEO a volume, audits cannibalisation, saisie Drupal et garde-fous de publication.",
+      "Production SEO dans Drupal, audits de cannibalisation et garde-fous de publication avant mise en ligne.",
     summary:
       "Produire et corriger du contenu SEO dans un CMS sensible, avec exigences marque, vérification et validation humaine.",
     stack: ["Drupal", "Playwright", "Semrush", "SEO", "LLM-assisted QA"],
     recruiterProof: [
-      "Production a volume avec contrôle qualité.",
+      "Production à volume avec contrôle qualité.",
       "Capacité à transformer un audit SEO en décisions nommées.",
       "Discipline sur actions sensibles: ne pas publier sans validation."
     ],
     constraints: [
       "Publication CMS sensible.",
-      "Faits, chiffres et sources a verifier.",
+      "Faits, chiffres et sources à vérifier.",
       "Validation éditoriale interne avant publication."
     ],
     decisions: [
@@ -358,14 +358,14 @@ export const projects: Project[] = [
     delivered: [
       "Actus SEO montées dans Drupal.",
       "Audits cannibalisation et inter-marques.",
-      "Payloads éditoriaux prêts a coller.",
-      "Images et champs media contrôles.",
+      "Payloads éditoriaux prêts à coller.",
+      "Images et champs médias contrôlés.",
       "Lessons qualité et garde-fous."
     ],
     results: [
       "Actu IA agentique publiée live le 16/06.",
-      "Audit cannibalisation livre en PDF.",
-      "Process de pre-publication durci après erreurs."
+      "Audit cannibalisation livré en PDF.",
+      "Process de pré-publication durci après erreurs."
     ],
     limits: [
       "Ne pas publier accès CMS ni données internes.",
@@ -383,9 +383,9 @@ export const projects: Project[] = [
   },
   {
     slug: "battle-engine",
-    title: "Battle Engine - pipeline video automatise",
+    title: "Battle Engine - pipeline vidéo automatise",
     shortTitle: "Battle Engine",
-    type: "Pipeline video / automation",
+    type: "Pipeline vidéo / automation",
     period: "2026",
     role: "Pipeline Python, Godot, rendu, FFmpeg, publication",
     status: "Actif / lab",
@@ -404,16 +404,16 @@ export const projects: Project[] = [
       "Audience YouTube : à vérifier, non avancée comme preuve recruteur."
     ],
     proofLine:
-      "Pipeline Godot -> FFmpeg -> interpolation -> YouTube API pour videos 1VS1.",
+      "Pipeline Godot -> FFmpeg -> interpolation -> YouTube API pour vidéos 1VS1.",
     summary:
-      "Automatiser une chaine de production video, utile comme preuve Python/pipeline, pas comme argument principal recruteur.",
+      "Automatiser une chaîne de production vidéo, utile comme preuve Python/pipeline, pas comme argument principal recruteur.",
     stack: ["Godot", "Python", "FFmpeg", "RIFE", "YouTube API"],
     recruiterProof: [
       "Automatisation de pipeline creatif.",
       "Orchestration fichiers, rendu et publication.",
-      "Capacité a industrialiser une idee personnelle."
+      "Capacité à industrialiser une idée personnelle."
     ],
-    constraints: ["Contenu lab a cadrer pour ne pas brouiller le positionnement CDI."],
+    constraints: ["Contenu lab à cadrer pour ne pas brouiller le positionnement CDI."],
     decisions: [
       {
         decision: "Le garder en Tier 2",
@@ -421,8 +421,8 @@ export const projects: Project[] = [
         rejected: "Le mettre en premiere ligne."
       }
     ],
-    delivered: ["Pipeline de rendu", "Videos publiées", "Scripts d'automatisation"],
-    results: ["Audience YouTube a verifier avant publication finale."],
+    delivered: ["Pipeline de rendu", "Vidéos publiées", "Scripts d'automatisation"],
+    results: ["Audience YouTube à vérifier avant publication finale."],
     limits: ["Ne pas laisser le côté meme-content dominer le portfolio."],
     links: [{ label: "Version Markdown", href: "/projects/battle-engine.md" }]
   },
@@ -451,11 +451,11 @@ export const projects: Project[] = [
     proofLine:
       "Prototype mobile basket amateur, utile pour montrer raisonnement produit et limites.",
     summary:
-      "Projet MBA a garder comme autopsie honnête: idee, personas, prototype, limites.",
+      "Projet MBA a garder comme autopsie honnête: idée, personas, prototype, limites.",
     stack: ["React Native", "Firebase", "FastAPI", "OCR"],
     recruiterProof: [
       "Raisonnement produit.",
-      "Capacité a documenter aussi ce qui n'a pas marche.",
+      "Capacité à documenter aussi ce qui n'a pas marché.",
       "Lien business/tech."
     ],
     constraints: ["Projet scolaire, pas traction marche."],

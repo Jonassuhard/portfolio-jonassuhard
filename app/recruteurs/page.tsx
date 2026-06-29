@@ -18,7 +18,7 @@ export default function RecruitersPage() {
           <p className="lead">
             Profil hybride marketing, IA générative et développement full-stack.
             Je transforme des problèmes d'acquisition, de contenu ou d'opération
-            en outils utilisables.
+            en outils web/IA utilisables.
           </p>
           <p>
             <strong>En clair —</strong> Je prends un problème
@@ -142,7 +142,7 @@ export default function RecruitersPage() {
           </div>
           <div className="matrix-item">
             <strong>SEO / contenu</strong>
-            <p>Une production SEO structurée et un audit (cannibalisation, maillage).</p>
+            <p>Un lot de contenus SEO structurés et un audit (cannibalisation, maillage).</p>
           </div>
           <div className="matrix-item">
             <strong>Produit web</strong>
