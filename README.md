@@ -1,52 +1,42 @@
-# PORTFOLIO_PREUVES
+# Portfolio — Jonas Suhard
 
-MVP local du portfolio "site de preuves" de Jonas Suhard.
+Portfolio de preuves, **recruteur-first et agent-readable**.
+Live : **[jonassuhard.com](https://jonassuhard.com)**
 
-## Objectif
+Growth Engineer · IA appliquée & Automatisation — un profil hybride marketing, IA générative et développement full-stack. Ce site présente des projets réels avec leurs décisions, contraintes, limites et résultats, plutôt qu'une liste de compétences.
 
-Portfolio recruteur-first et agent-readable de Jonas Suhard — **Builder IA appliquée & Growth Engineer** (marketing, web, automatisations LLM). Projets réels, décisions, contraintes, limites, markdown publics et données structurées.
+## Stack
 
-## Lancer
+- **Next.js 16** (App Router, Turbopack) · **React 19**
+- CSS natif (pas de framework), `next/font` (Google + local)
+- Déploiement **Vercel** · analytics **cookieless** (Vercel Web Analytics + Speed Insights, sans bannière)
+
+## Ce que le projet démontre (mesuré)
+
+- **PageSpeed 100 / 100 / 100 / 100** (performance · accessibilité · best practices · SEO), mobile **et** desktop
+- **Sécurité A+** ([securityheaders.com](https://securityheaders.com)) : CSP, HSTS, X-Frame-Options, Referrer-Policy, Permissions-Policy
+- **Agent-readable** : JSON-LD (Person, WebSite, Project), `llms.txt`, `profile.json`, `profile.md`, un `.md` par projet
+- Optimisations LCP : `experimental.inlineCss`, `display:optional` + préchargement ciblé des fonts du hero
+
+## Architecture
+
+- `lib/projects.ts` — **source unique** des données (projets, profil, compétences) → alimente les pages, les `/projects/*.md` et `profile.json`
+- `lib/json-ld.ts` — données structurées schema.org
+- `next.config.mjs` — headers de sécurité + inline CSS
+- `app/` — App Router (home, projets, case studies, recruteurs, méthode, à-propos, mentions légales, confidentialité)
+
+## Lancer en local
 
 ```bash
 npm install
 npm run build
-./node_modules/.bin/next start -p 3027
+npx next start -p 3027   # http://localhost:3027
 ```
 
-URL locale : `http://localhost:3027`
+## Notes
 
-## Routes clés
+- Aucun secret ni donnée client dans ce dépôt (les projets clients restent privés).
+- Contenu et données structurées en français (cible : recruteurs FR).
 
-- `/` : home proof-led.
-- `/recruteurs` : lecture rapide pour recruteurs.
-- `/projets` : index des preuves.
-- `/projets/les-petites-griffes`
-- `/projets/educool-la-herse`
-- `/projets/capselys`
-- `/projets/iscom`
-- `/competences`
-- `/a-propos`
-- `/llms.txt`
-- `/profile.md`
-- `/profile.json`
-- `/projects/*.md`
-
-## Validation faite le 2026-06-27
-
-- `npm run build` : OK, 13 pages générées.
-- `npm audit --audit-level=moderate` : 0 vulnérabilité.
-- Routes principales et fichiers publics : HTTP 200.
-- Mobile CDP 390px : `scrollWidth=390`, `overflowCount=0`.
-- Captures : `qa/screenshots/home-desktop.png`, `qa/screenshots/home-mobile-cdp.png`, `qa/screenshots/case-mobile-cdp.png`.
-
-## Sources
-
-- Préparation complète : `/Users/asterion/Desktop/SITE_PREUVES_PORTFOLIO_2026`.
-- Journal de build (handoff, revue, plan, journaux) : `../05_SUIVI_BUILD/`.
-- Assets repris : anciens visuels portfolio Paris Nuit.
-- CV public : `public/cv.pdf`.
-
-## Attention
-
-Ce MVP ne remplace pas PF Nixie. Il sert de site pragmatique de preuves, publiable vite, que Claude pourra relire lundi sans repartir dans une cathédrale 3D. Ce serait dommage, même si très tentant.
+---
+Contact : [contact@jonassuhard.com](mailto:contact@jonassuhard.com) · [LinkedIn](https://www.linkedin.com/in/jonas-suhard-b73923245/)
