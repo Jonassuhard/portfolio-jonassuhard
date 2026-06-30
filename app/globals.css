@@ -80,6 +80,8 @@ main {
   background-size:32px 32px;
 }
 .page { display:flex; flex-direction:column; gap:34px; }
+/* Pages courtes qui doivent tenir dans l'écran (À propos) : tout centré sur une vue */
+.about-fit { min-height:calc(100svh - 124px); justify-content:center; gap:clamp(20px,3.5vh,34px); }
 
 /* ===== TYPO ===== */
 h1 {
@@ -344,6 +346,7 @@ td { color:var(--color-ink-soft); }
 @media (max-width:960px) {
   .hero, .case-hero, .content-grid, .section-head { grid-template-columns:1fr; }
   .hero { min-height:auto; align-items:start; padding-bottom:0; }
+  .about-fit { min-height:auto; justify-content:flex-start; }
   .hero-scroll { display:none; }
   .case-hero img { max-height:300px; }
 }

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="page">
+    <div className="page about-fit">
       <section className="case-hero">
         <div>
           <p className="eyebrow">À propos</p>
