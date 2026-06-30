@@ -125,8 +125,13 @@ h3 { font-family:var(--ft-title); font-weight:600; font-size:22px; margin:4px 0 
 p { margin:0 0 10px; }
 
 /* ===== HERO ===== */
-.hero { display:grid; grid-template-columns:minmax(0,1.5fr) minmax(0,1fr); gap:30px; align-items:start; }
-.hero-copy { display:flex; flex-direction:column; gap:18px; }
+.hero { position:relative; display:grid; grid-template-columns:minmax(0,1.5fr) minmax(0,1fr); gap:34px; align-items:center; min-height:calc(100svh - 124px); padding-bottom:34px; }
+.hero-copy { display:flex; flex-direction:column; gap:20px; }
+.hero-scroll { position:absolute; left:50%; bottom:4px; transform:translateX(-50%); display:flex; flex-direction:column; align-items:center; gap:5px; font-family:var(--ft-type); font-size:10px; text-transform:uppercase; letter-spacing:.16em; color:var(--color-muted); text-decoration:none; }
+.hero-scroll:hover { color:var(--color-rust); }
+.hero-scroll span:last-child { font-size:15px; line-height:1; animation:hero-bounce 2.2s ease-in-out infinite; }
+@keyframes hero-bounce { 0%,100% { transform:translateY(0); } 50% { transform:translateY(5px); } }
+@media (prefers-reduced-motion:reduce) { .hero-scroll span:last-child { animation:none; } }
 .button-row { display:flex; gap:12px; flex-wrap:wrap; align-items:center; }
 
 /* ===== BOUTONS ===== */
@@ -338,6 +343,8 @@ td { color:var(--color-ink-soft); }
 /* ===== RESPONSIVE ===== */
 @media (max-width:960px) {
   .hero, .case-hero, .content-grid, .section-head { grid-template-columns:1fr; }
+  .hero { min-height:auto; align-items:start; padding-bottom:0; }
+  .hero-scroll { display:none; }
   .case-hero img { max-height:300px; }
 }
 @media (max-width:640px) {

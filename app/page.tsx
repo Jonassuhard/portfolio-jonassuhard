@@ -54,6 +54,11 @@ export default function HomePage() {
             </div>
           </div>
         </aside>
+
+        <a className="hero-scroll" href="#preuves" aria-label="Faire défiler vers les projets">
+          <span>Preuves</span>
+          <span aria-hidden="true">↓</span>
+        </a>
       </section>
 
       <section className="section" id="preuves">
