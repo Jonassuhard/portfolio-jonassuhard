@@ -19,6 +19,7 @@ Jonas construit des systèmes marketing augmentés par l'IA — sites, automatis
 - [Educool / La Herse](https://jonassuhard.com/projects/educool-la-herse.md): application web de classe (Firebase, données sensibles, PDF), utilisée par une classe entière (données anonymisées)
 - [Capsélys](https://jonassuhard.com/projects/capselys.md): refonte conversion, expérimentation IA et atelier client
 - [ISCOM](https://jonassuhard.com/projects/iscom.md): SEO, Drupal, production éditoriale et audits
+- [Preuvia](https://jonassuhard.com/projects/preuvia.md): offre productisée d'audit GEO — identifier qui les IA citent à la place d'une marque, puis livrer les contenus à publier (site : https://preuvia.vercel.app)
 
 ## Contact
 

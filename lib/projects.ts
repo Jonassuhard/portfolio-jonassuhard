@@ -391,6 +391,87 @@ export const projects: Project[] = [
     ]
   },
   {
+    slug: "preuvia",
+    title: "Preuvia - audit de visibilité dans les réponses des IA",
+    shortTitle: "Preuvia",
+    type: "Produit - audit GEO (visibilité IA)",
+    period: "Juin 2026 - en cours",
+    role: "Conception produit, méthode d'audit, site, livraison client",
+    status: "En activité - premiers audits livrés",
+    tier: 1,
+    image: "/assets/cards/preuvia.webp",
+    repoStatus: "Privé - produit commercial",
+    liveLabel: "Site en ligne (preuvia.vercel.app)",
+    evidenceNote:
+      "Détail de l'offre et exemple de sortie d'audit sur le site ; la méthode interne n'est pas publiée.",
+    architecture: [
+      "Site et tunnel de prise de contact en Next.js, déployés et suivis en production.",
+      "Protocole d'audit reproductible : un jeu de requêtes testé sur plusieurs assistants (ChatGPT, Claude, Perplexity, Gemini, Mistral).",
+      "Comparaison des sources citées (concurrents, comparatifs, forums) pour situer la marque.",
+      "Livrable PDF structuré : score de visibilité, écarts, contenus et balisage à publier."
+    ],
+    v2: [
+      "Industrialiser la collecte multi-modèles.",
+      "Suivi mensuel des écarts de citation pour les clients sous abonnement."
+    ],
+    notMeasured: [
+      "Revenus récurrents : trop tôt, offre en phase de lancement.",
+      "Effet réel sur les citations IA des clients : mesuré au cas par cas, pas de moyenne publiable."
+    ],
+    proofLine:
+      "Offre productisée d'audit GEO : identifier qui les IA citent à la place d'une marque, puis livrer les contenus à publier.",
+    summary:
+      "Aider une marque à savoir si elle apparaît dans les réponses des assistants IA, qui ressort à sa place, et quoi publier pour augmenter ses chances d'être reprise.",
+    stack: ["Next.js", "GEO / AEO", "LLM multi-modèles", "Schema JSON-LD", "PDF"],
+    recruiterProof: [
+      "Produit pensé de bout en bout : positionnement, offre, site, livraison.",
+      "Maîtrise concrète de l'optimisation pour les moteurs de réponse IA - le sujet même de ce portfolio.",
+      "Premiers audits clients réels livrés, pas une démo."
+    ],
+    constraints: [
+      "Sujet mouvant : les réponses des IA varient selon le modèle, le prompt et le moment.",
+      "Promesse honnête imposée : ne jamais garantir l'apparition dans les IA.",
+      "Méthode et template d'audit = actif commercial, non publiés."
+    ],
+    decisions: [
+      {
+        decision: "Offre productisée plutôt que SaaS",
+        why: "Livrer une valeur claire et facturable tout de suite, sans construire une plateforme avant d'avoir des clients.",
+        rejected: "Développer un outil de monitoring self-service d'emblée."
+      },
+      {
+        decision: "Promesse explicitement non garantie",
+        why: "Crédibilité : personne ne contrôle ce que les modèles citent.",
+        rejected: "Vendre une garantie d'apparition invérifiable."
+      },
+      {
+        decision: "Sortie = contenus prêts à publier",
+        why: "Donner l'action, pas seulement le constat.",
+        rejected: "Se limiter à un score de visibilité."
+      }
+    ],
+    delivered: [
+      "Site en ligne avec tunnel de prise de contact.",
+      "Protocole d'audit multi-modèles reproductible.",
+      "Livrable PDF : score, sources citées, plan d'action.",
+      "Premiers mini-audits et audits clients livrés."
+    ],
+    results: [
+      "Premiers audits clients livrés en conditions réelles.",
+      "Méthode et livrable stabilisés sur des cas concrets.",
+      "Ce portfolio est lui-même optimisé selon cette méthode (llms.txt, profile.json, données structurées)."
+    ],
+    limits: [
+      "Ne garantit pas l'apparition dans les réponses IA.",
+      "Résultats dépendants du modèle, du prompt et du moment du test.",
+      "Méthode interne volontairement non détaillée ici."
+    ],
+    links: [
+      { label: "Voir le site", href: "https://preuvia.vercel.app", external: true },
+      { label: "Version Markdown", href: "/projects/preuvia.md" }
+    ]
+  },
+  {
     slug: "battle-engine",
     title: "Battle Engine - pipeline vidéo automatise",
     shortTitle: "Battle Engine",

@@ -74,6 +74,20 @@
       "limits": "Accès CMS et données internes non publiables ; impact trafic non publié ici.",
       "confidentiality": "accès CMS et données internes non publiés",
       "repo_status": "CMS employeur — non publiable"
+    },
+    {
+      "project": "Preuvia",
+      "type": "produit — audit GEO (visibilité IA)",
+      "period": "Juin 2026 - en cours",
+      "role": "conception produit, méthode d'audit, site, livraison client",
+      "stack": ["Next.js", "GEO / AEO", "LLM multi-modèles", "Schema JSON-LD", "PDF"],
+      "case_study": "/projets/preuvia",
+      "markdown": "/projects/preuvia.md",
+      "site": "https://preuvia.vercel.app",
+      "evidence": "Offre productisée d'audit GEO en activité : site en ligne, protocole d'audit multi-modèles, livrable PDF, premiers audits clients livrés.",
+      "limits": "Ne garantit pas l'apparition dans les IA ; résultats variables selon modèle et prompt ; méthode interne non publiée.",
+      "confidentiality": "produit commercial — méthode interne non divulguée",
+      "repo_status": "privé — produit commercial"
     }
   ],
   "contact": {
