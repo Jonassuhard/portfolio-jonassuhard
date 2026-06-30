@@ -68,11 +68,6 @@ export default function AboutPage() {
             <p className="cert">Titre RNCP niveau 6 — « Chef de projet e-business »</p>
           </div>
           <div className="matrix-item">
-            <strong>Cycle du Digital</strong>
-            <p>2022–2023 · MyDigitalSchool</p>
-            <p className="cert">Première année (Bac+1)</p>
-          </div>
-          <div className="matrix-item">
             <strong>Animation 2D / 3D</strong>
             <p>2019–2021 · Human Academy, Angoulême</p>
             <p className="cert">Cursus 3 ans — certificat d'école</p>
