@@ -96,6 +96,14 @@ h1 {
   font-family:var(--ft-title); font-weight:700; letter-spacing:-.03em; line-height:.98;
   font-size:clamp(38px,6vw,68px); margin:6px 0 12px; color:var(--color-ink);
   text-shadow:1px 0 rgba(127,216,212,.18),-1px 0 rgba(142,31,47,.12);
+  animation:chroma 1s ease-out;
+}
+/* Aberration chromatique d'entrée du h1 : n'anime que le text-shadow ->
+   le texte est peint frame 0, LCP inchangé. One-shot 1s. */
+@keyframes chroma {
+  0% { text-shadow:6px 0 rgba(127,216,212,.5),-6px 0 rgba(142,31,47,.4); }
+  60% { text-shadow:3px 0 rgba(127,216,212,.3),-3px 0 rgba(142,31,47,.25); }
+  100% { text-shadow:1px 0 rgba(127,216,212,.18),-1px 0 rgba(142,31,47,.12); }
 }
 h2 { font-family:var(--ft-title); font-weight:600; font-size:clamp(24px,3.4vw,34px); letter-spacing:-.02em; line-height:1.05; margin:0 0 8px; color:var(--color-ink); }
 h3 { font-family:var(--ft-title); font-weight:600; font-size:22px; margin:4px 0 6px; color:var(--color-ink); }
