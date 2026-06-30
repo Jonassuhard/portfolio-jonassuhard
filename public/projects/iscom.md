@@ -8,9 +8,11 @@ Statut : Alternance / client interne.
 
 En bref : Production SEO dans Drupal, audits de cannibalisation et garde-fous de publication avant mise en ligne.
 
+Lien : https://www.iscom.fr/actualites/lia-change-de-role-les-communicants-aussi
+
 ## Problème
 
-Produire et corriger du contenu SEO dans un CMS sensible, avec exigences marque, vérification et validation humaine.
+Production éditoriale SEO dans le Drupal d'ISCOM : rédaction et fact-check d'articles, audits de cannibalisation avec Semrush, et automatisations Playwright pour la saisie, avec validation humaine avant chaque publication.
 
 ## Ce que ça montre
 

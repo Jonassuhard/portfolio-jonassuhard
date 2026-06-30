@@ -8,7 +8,7 @@ Statut : En activité - premiers audits livrés.
 
 En bref : Offre productisée d'audit GEO : identifier qui les IA citent à la place d'une marque, puis livrer les contenus à publier.
 
-Site : https://preuvia.vercel.app
+Lien : https://preuvia.vercel.app
 
 ## Problème
 

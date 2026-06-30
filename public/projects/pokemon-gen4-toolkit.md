@@ -1,4 +1,4 @@
-# Pokémon Gen-4 Toolkit - outils de ROM hacking NDS
+# Pokémon Gen-4 Toolkit - outils d'exploration de données de jeu
 
 Type : Lab / projet perso.
 Période : 2026.
@@ -6,11 +6,11 @@ Rôle : Conception et développement.
 Stack : Python 3, ndspy, Format NARC, Moteur de texte Gen 4 maison, EmulatorJS (viewer web).
 Statut : Copie publique anonymisée (ROM non incluse).
 
-En bref : Boîte à outils Python (ndspy) pour explorer et modifier un ROM Pokémon de 4e génération : décodage/encodage des textes chiffrés, édition des events et scripts, stats des espèces, cartographie, viewer web.
+En bref : Boîte à outils Python (ndspy) pour explorer des formats de données de jeu (textes, events, scripts, stats) et écrire ses propres outils d'édition — aucune ROM ni asset distribué.
 
 ## Problème
 
-Lire et réécrire le contenu propriétaire d'un ROM NDS (textes chiffrés, events, scripts) sans outil tout fait, en reverse-engineering du format Gen 4.
+Explorer des formats de données de jeu et écrire mes propres outils d'édition Python, sans publier d'assets ni de ROM.
 
 ## Ce que ça montre
 

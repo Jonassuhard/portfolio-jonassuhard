@@ -43,15 +43,6 @@ export default function ProjectsPage() {
                 <article className="case-card" key={project.slug}>
                   <img src={project.image} alt={`Aperçu du projet ${project.shortTitle}`} />
                   <div className="case-body">
-                    {project.liveLabel || project.repoStatus ? (
-                      <div className="access-block">
-                        <p className="access-label">Accès</p>
-                        <ul className="access-meta">
-                          {project.liveLabel ? <li>Usage : {project.liveLabel}</li> : null}
-                          {project.repoStatus ? <li>Repo : {project.repoStatus}</li> : null}
-                        </ul>
-                      </div>
-                    ) : null}
                     <h3>{project.shortTitle}</h3>
                     <p>{project.summary}</p>
                     <div className="access-links">

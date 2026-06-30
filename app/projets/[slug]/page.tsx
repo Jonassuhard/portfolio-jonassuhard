@@ -234,11 +234,8 @@ export default async function ProjectDetailPage({ params }: PageProps) {
               <li key={item}>{item}</li>
             ))}
           </ul>
-          <h3>Accès &amp; liens</h3>
+          <h3>Liens</h3>
           <ul>
-            {project.liveLabel ? <li>Usage : {project.liveLabel}</li> : null}
-            {project.repoStatus ? <li>Repo : {project.repoStatus}</li> : null}
-            {project.evidenceNote ? <li>Visuel : {project.evidenceNote}</li> : null}
             {project.links.map((link) => (
               <li key={link.href}>
                 <a

@@ -48,6 +48,29 @@ export default function AboutPage() {
           </p>
         </div>
       </section>
+
+      <section className="section">
+        <div className="section-head">
+          <div>
+            <p className="section-kicker">Parcours</p>
+            <h2>Formation.</h2>
+          </div>
+        </div>
+        <div className="matrix">
+          <div className="matrix-item">
+            <strong>Mastère — Expert en marketing (en cours)</strong>
+            <p>MyDigitalSchool, Paris</p>
+          </div>
+          <div className="matrix-item">
+            <strong>Licence (bac+3) — Chef de projet digital</strong>
+            <p>Digital School, Angers</p>
+          </div>
+          <div className="matrix-item">
+            <strong>Licence (bac+3) — Animation 2D / 3D</strong>
+            <p>Human Academy, Angoulême</p>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

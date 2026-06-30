@@ -10,7 +10,7 @@ En bref : Prototype mobile basket amateur, utile pour montrer raisonnement produ
 
 ## Problème
 
-Projet MBA a garder comme autopsie honnête: idée, personas, prototype, limites.
+Prototype d'application mobile basket (React Native) conçu pendant le MBA : cadrage de l'idée, personas, maquette et premières fonctions, jusqu'à ses limites.
 
 ## Ce que ça montre
 

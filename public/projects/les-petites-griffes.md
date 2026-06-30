@@ -10,7 +10,7 @@ En bref : Site client live en production (URL communiquée en entretien · captu
 
 ## Problème
 
-Transformer une activité Instagram en présence web crédible, éditable et utile pour les demandes clientes.
+Site vitrine d'un salon de toilettage : front Next.js, un CMS maison pour que la gérante édite seule sa galerie, ses tarifs et sa FAQ, et un assistant IA cadré sur ses prix et ses disponibilités.
 
 ## Ce que ça montre
 
@@ -20,6 +20,5 @@ Transformer une activité Instagram en présence web crédible, éditable et uti
 
 ## Limites
 
-- Projet client réel (TPE) : vrai contexte utilisateur en production, pas un client enterprise.
+- Projet d'une TPE locale : vrai contexte de production, à petite échelle.
 - Mesure business encore à consolider.
-- Captures dashboards et adresse précise non publiables (confidentialité cliente).

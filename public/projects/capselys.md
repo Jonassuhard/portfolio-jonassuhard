@@ -10,12 +10,12 @@ En bref : Refonte orientée conversion, staging WordPress sécurisé, présentat
 
 ## Problème
 
-Clarifier une offre complexe, réduire la friction d'adhésion et tester un parcours de conversion avec un assistant IA cadré.
+Refonte du site d'un client (WordPress / Divi) sur un staging sécurisé : nouveau parcours d'adhésion, audits de rendu multi-viewports avec Playwright, et prototype d'assistant IA qui oriente vers le bon service.
 
 ## Ce que ça montre
 
 - Cadrage client et conversion, pas seulement exécution front.
-- Capacité à travailler avec une stack contrainte et vieillissante.
+- Capacité à travailler avec une stack existante imposée.
 - Présentation honnête: staging, mesures lab, limites et plan d'action.
 
 ## Limites

@@ -4,7 +4,7 @@
   "location": "Paris, France",
   "target_contract": "CDI",
   "seniority": "junior",
-  "availability": "1er octobre 2026",
+  "availability": "1er septembre 2026",
   "verified_at": "2026-06-29",
   "citable_facts": {
     "les_petites_griffes_lighthouse": "mobile 88 / SEO 100 / accessibilité 93 (audit 2026-06-29)",
@@ -22,6 +22,11 @@
     "ai": ["LLM workflows", "RAG", "prompt engineering", "automation", "AI-assisted content QA"],
     "development": ["Next.js", "React", "Firebase", "Supabase", "Python", "Playwright"]
   },
+  "education": [
+    { "degree": "Mastère — Expert en marketing (en cours)", "school": "MyDigitalSchool, Paris" },
+    { "degree": "Licence (bac+3) — Chef de projet digital", "school": "Digital School, Angers" },
+    { "degree": "Licence (bac+3) — Animation 2D / 3D", "school": "Human Academy, Angoulême" }
+  ],
   "projects": [
     {
       "project": "Les Petites Griffes",
@@ -31,8 +36,8 @@
       "stack": ["Next.js", "Supabase", "Clerk", "Vercel", "LLM"],
       "case_study": "/projets/les-petites-griffes",
       "markdown": "/projects/les-petites-griffes.md",
-      "evidence": "Site client live en production (URL masquée pour confidentialité), CMS maison, SEO local, Lighthouse mobile 88 / SEO 100 / accessibilité 93 (audit 2026-06-29).",
-      "limits": "Impact business non mesuré ; URL et captures non publiques (confidentialité cliente).",
+      "evidence": "Site client live en production, CMS maison, SEO local, Lighthouse mobile 88 / SEO 100 / accessibilité 93 (audit 2026-06-29).",
+      "limits": "Impact business non mesuré à ce stade.",
       "confidentiality": "données privées anonymisées",
       "repo_status": "privé — code et données client"
     },

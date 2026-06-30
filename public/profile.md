@@ -15,7 +15,7 @@ Je construis des systemes marketing augmentes par l'IA : sites, automatisations,
 
 ## Localisation
 
-Paris, France. CDI à Paris ou hybride, disponible à partir du 1er octobre 2026.
+Paris, France. CDI à Paris ou hybride, disponible à partir du 1er septembre 2026.
 
 ## Competences
 
@@ -50,6 +50,12 @@ Paris, France. CDI à Paris ou hybride, disponible à partir du 1er octobre 2026
 - Educool / La Herse: app web education, Firebase, donnees sensibles, PDF.
 - Capsélys: refonte conversion, experimentation IA, workshop client.
 - ISCOM: SEO, Drupal, production editoriale, audits.
+
+## Formation
+
+- Mastere - Expert en marketing (en cours), MyDigitalSchool, Paris.
+- Licence (bac+3) - Chef de projet digital, Digital School, Angers.
+- Licence (bac+3) - Animation 2D / 3D, Human Academy, Angouleme.
 
 ## Contact
 

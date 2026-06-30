@@ -55,7 +55,7 @@ export const site = {
   linkedin: "https://www.linkedin.com/in/jonas-suhard-b73923245/",
   malt: "https://www.malt.fr/profile/jonassuhard",
   location: "Paris, France",
-  availability: "1er octobre 2026",
+  availability: "1er septembre 2026",
   cvClassic: "/cv.pdf",
   cvStyled: "/cv-portfolio.pdf"
 };
@@ -95,7 +95,7 @@ export const projects: Project[] = [
     proofLine:
       "Site client live en production (URL communiquée en entretien · captures anonymisées sur demande), CMS maison, SEO local, assistant IA cadré, Lighthouse mobile 88 / SEO 100 / a11y 93 (audit revérifié le 29/06).",
     summary:
-      "Transformer une activité Instagram en présence web crédible, éditable et utile pour les demandes clientes.",
+      "Site vitrine d'un salon de toilettage : front Next.js, un CMS maison pour que la gérante édite seule sa galerie, ses tarifs et sa FAQ, et un assistant IA cadré sur ses prix et ses disponibilités.",
     stack: ["Next.js", "React", "Supabase", "Clerk", "Vercel", "LLM"],
     recruiterProof: [
       "Livraison d'un site public réel avec domaine et contraintes de production.",
@@ -103,7 +103,7 @@ export const projects: Project[] = [
       "Gestion d'incidents: domaine .fr, données DB, prix, galerie, cohérentisation contenu."
     ],
     constraints: [
-      "Budget quasi nul et besoin d'autonomie côté cliente.",
+      "Contraintes de budget d'une TPE et besoin d'autonomie côté cliente.",
       "Données privées à ne pas exposer.",
       "Contenus variables servis par base de données, pas seulement par le code."
     ],
@@ -133,13 +133,12 @@ export const projects: Project[] = [
     ],
     results: [
       "Lighthouse mobile 88, SEO 100, accessibilité 93 (audit revérifié le 29/06).",
-      "Site client live en production, URL masquée publiquement pour confidentialité (captures anonymisées sur demande).",
+      "Site client live en production, utilisé au quotidien par la gérante via son back-office.",
       "Back-office utilisable par la cliente."
     ],
     limits: [
-      "Projet client réel (TPE) : vrai contexte utilisateur en production, pas un client enterprise.",
-      "Mesure business encore à consolider.",
-      "Captures dashboards et adresse précise non publiables (confidentialité cliente)."
+      "Projet d'une TPE locale : vrai contexte de production, à petite échelle.",
+      "Mesure business encore à consolider."
     ],
     links: [
       { label: "Version Markdown", href: "/projects/les-petites-griffes.md" }
@@ -179,7 +178,7 @@ export const projects: Project[] = [
     proofLine:
       "Application utilisée par une classe, Firebase, données sensibles, PDF et audits de sécurité.",
     summary:
-      "Construire un produit terrain pour une enseignante: suivi de compétences, livrets, PDF, PWA et logique métier scolaire.",
+      "Application web utilisée par une enseignante en classe : suivi des compétences des élèves et génération de livrets PDF, sur Firebase, avec les opérations sensibles déportées en Cloud Functions.",
     stack: ["Next.js", "Firebase", "Firestore", "Cloud Functions", "Vitest", "PDF"],
     recruiterProof: [
       "Produit utilisé par une vraie utilisatrice avec retours terrain.",
@@ -262,11 +261,11 @@ export const projects: Project[] = [
     proofLine:
       "Refonte orientée conversion, staging WordPress sécurisé, présentation orale client et audits multi-viewports.",
     summary:
-      "Clarifier une offre complexe, réduire la friction d'adhésion et tester un parcours de conversion avec un assistant IA cadré.",
+      "Refonte du site d'un client (WordPress / Divi) sur un staging sécurisé : nouveau parcours d'adhésion, audits de rendu multi-viewports avec Playwright, et prototype d'assistant IA qui oriente vers le bon service.",
     stack: ["WordPress", "Divi", "Playwright", "PHP", "PDF", "LLM workflows"],
     recruiterProof: [
       "Cadrage client et conversion, pas seulement exécution front.",
-      "Capacité à travailler avec une stack contrainte et vieillissante.",
+      "Capacité à travailler avec une stack existante imposée.",
       "Présentation honnête: staging, mesures lab, limites et plan d'action."
     ],
     constraints: [
@@ -339,7 +338,7 @@ export const projects: Project[] = [
     proofLine:
       "Production SEO dans Drupal, audits de cannibalisation et garde-fous de publication avant mise en ligne.",
     summary:
-      "Produire et corriger du contenu SEO dans un CMS sensible, avec exigences marque, vérification et validation humaine.",
+      "Production éditoriale SEO dans le Drupal d'ISCOM : rédaction et fact-check d'articles, audits de cannibalisation avec Semrush, et automatisations Playwright pour la saisie, avec validation humaine avant chaque publication.",
     stack: ["Drupal", "Playwright", "Semrush", "SEO", "LLM-assisted QA"],
     recruiterProof: [
       "Production à volume avec contrôle qualité.",
@@ -496,7 +495,7 @@ export const projects: Project[] = [
     proofLine:
       "Pipeline Godot -> FFmpeg -> interpolation -> YouTube API pour vidéos 1VS1.",
     summary:
-      "Automatiser une chaîne de production vidéo, utile comme preuve Python/pipeline, pas comme argument principal recruteur.",
+      "Pipeline vidéo automatisé pour une chaîne YouTube de simulations 1v1 : rendu sous Godot, montage et encodage FFmpeg, interpolation d'images avec RIFE, le tout scripté en Python.",
     stack: ["Godot", "Python", "FFmpeg", "RIFE", "YouTube API"],
     recruiterProof: [
       "Automatisation de pipeline creatif.",
@@ -533,7 +532,7 @@ export const projects: Project[] = [
       "Prototype mobile React Native, backend Firebase, OCR via un service FastAPI."
     ],
     v2: [
-      "Aucune suite prévue — gardé comme autopsie produit honnête."
+      "Aucune suite prévue : gardé comme apprentissage produit."
     ],
     notMeasured: [
       "Aucune traction marché ni revenu : projet scolaire."
@@ -541,7 +540,7 @@ export const projects: Project[] = [
     proofLine:
       "Prototype mobile basket amateur, utile pour montrer raisonnement produit et limites.",
     summary:
-      "Projet MBA à garder comme autopsie utile : idée, personas, prototype, limites.",
+      "Prototype d'application mobile basket (React Native) conçu pendant le MBA : cadrage de l'idée, personas, maquette et premières fonctions, jusqu'à ses limites.",
     stack: ["React Native", "Firebase", "FastAPI", "OCR"],
     recruiterProof: [
       "Raisonnement produit.",
@@ -859,11 +858,11 @@ export const skills = [
     note: "Données sensibles, authentification, règles d'accès, anonymisation et prudence de publication."
   },
   {
-    name: "Orchestration multi-modèles & QA IA",
+    name: "Workflows LLM & QA de contenu IA",
     proofSlugs: ["board-ia-pme", "rag-starter-kit", "iscom"],
     proofExtra: "",
     proof: "Board IA PME, RAG Starter Kit, ISCOM",
-    note: "Un modèle par tâche, détection d'hallucinations, refus de publier sans vérification — de l'ingénierie LLM, pas un wrapper GPT."
+    note: "Un modèle adapté à chaque tâche, détection d'hallucinations et vérification avant publication."
   },
   {
     name: "Design & direction artistique",

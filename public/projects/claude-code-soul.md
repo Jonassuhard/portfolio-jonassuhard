@@ -8,6 +8,8 @@ Statut : Public.
 
 En bref : Pack de configuration open source pour Claude Code CLI : un soul.md (identité/ton/refus) plus skills, agents, hooks et rules, pour transformer le CLI en assistant à personnalité dosée plutôt qu'en chatbot poli.
 
+Lien : https://github.com/Jonassuhard/claude-code-soul
+
 ## Problème
 
 Séparer l'« âme » de l'assistant (ton, valeurs, refus) de la config technique, et packager un outillage Claude Code réutilisable et publiable sans fuite de données.

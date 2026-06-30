@@ -14,7 +14,7 @@ export default function RecruitersPage() {
       <section className="case-hero">
         <div>
           <p className="eyebrow">Résumé 30 secondes</p>
-          <h1>Où me ranger : Builder IA appliquée &amp; Growth Engineer.</h1>
+          <h1>Mon poste cible : Builder IA appliquée &amp; Growth Engineer.</h1>
           <p className="lead">
             Profil hybride marketing, IA générative et développement full-stack.
             Je transforme des problèmes d'acquisition, de contenu ou d'opération
@@ -44,7 +44,7 @@ export default function RecruitersPage() {
               </tr>
               <tr>
                 <th scope="row">Disponibilité</th>
-                <td>À partir du 1er octobre 2026</td>
+                <td>À partir du 1er septembre 2026</td>
               </tr>
               <tr>
                 <th scope="row">Zone</th>
@@ -60,7 +60,7 @@ export default function RecruitersPage() {
               </tr>
               <tr>
                 <th scope="row">Code</th>
-                <td>2 repos publics ; les projets clients restent privés (confidentialité).</td>
+                <td>Open source sur GitHub (github.com/Jonassuhard).</td>
               </tr>
             </tbody>
           </table>
@@ -102,7 +102,7 @@ export default function RecruitersPage() {
         <div className="section-head">
           <div>
             <p className="section-kicker">Projets clés</p>
-            <h2>Pourquoi m'appeler.</h2>
+            <h2>Ce que j'apporte à une équipe.</h2>
           </div>
           <p>
             Mes projets montrent trois choses : je sais livrer en production, gérer
@@ -128,7 +128,7 @@ export default function RecruitersPage() {
         <div className="section-head">
           <div>
             <p className="section-kicker">Prise en charge</p>
-            <h2>Ce que je peux livrer en 30 jours.</h2>
+            <h2>Mes 30 premiers jours dans une équipe.</h2>
           </div>
         </div>
         <div className="matrix">
@@ -153,10 +153,11 @@ export default function RecruitersPage() {
 
       <section className="section">
         <div className="notice">
-          <strong>Ce que je ne fais pas.</strong>
+          <strong>Mon périmètre.</strong>
           <p>
-            Pas de ML research ni de backend senior. Mon angle : relier
-            acquisition, IA appliquée et exécution produit.
+            Mon cœur, c'est de relier acquisition, IA appliquée et exécution
+            produit. Pour du ML research pur ou du backend lourd, je m'appuie sur
+            l'équipe.
           </p>
         </div>
       </section>

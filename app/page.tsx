@@ -14,7 +14,7 @@ export default function HomePage() {
               des systèmes d'acquisition mesurables.
             </p>
             <p className="hero-human">
-              Je viens du marketing digital, mais j'ai appris à construire moi-même :
+              Je viens du marketing digital et je code mes propres outils :
               sites, workflows IA, automatisations, contenus SEO et prototypes web.
             </p>
           </div>
@@ -48,9 +48,9 @@ export default function HomePage() {
               <span>Educool, Firebase, PDF, sécurité et retours terrain.</span>
             </div>
             <div className="ledger-item">
-              <time>2026-07</time>
+              <time>2026-06</time>
               <strong>Refonte conversion + workshop client</strong>
-              <span>Capsélys, staging, audits et présentation MBA.</span>
+              <span>Capsélys, staging sécurisé, audits multi-viewports et présentation client.</span>
             </div>
           </div>
         </aside>

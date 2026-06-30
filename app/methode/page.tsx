@@ -5,57 +5,53 @@ import { site } from "@/lib/projects";
 export const metadata: Metadata = {
   title: "Méthode",
   description:
-    "Comment Jonas Suhard travaille : orchestration multi-agents IA, veille et recherche fact-checkée, sécurité par projet, écoute client et méthode de livraison."
+    "Comment Jonas Suhard travaille : cadrage, standards de code, vérification, sécurité des données et usage raisonné de l'IA."
 };
 
 const SECTIONS = [
   {
-    kicker: "Orchestration",
-    title: "Une équipe d'IA, pas un chatbot.",
+    kicker: "Cadrage",
+    title: "Cadrer avant de coder.",
     items: [
-      "Un modèle par tâche : Claude pour l'architecture et le raisonnement long, Codex (GPT-5.5) pour le fix ciblé et la vérification croisée, Gemini pour la recherche et le visuel.",
-      "Construire / vérifier en duo : un agent produit, un autre relit en lecture seule. Règle dure — un seul agent écrit un fichier à la fois, jamais de collision.",
-      "Conseil contradictoire : sur une décision à fort enjeu, je fais débattre plusieurs IA avec des angles opposés, puis je tranche. Pas de validation par confort.",
-      "Agents et outils chargés à la demande, avec un inventaire vivant : je ne raisonne pas sur des capacités périmées."
+      "Je pars du vrai problème, pas de la demande littérale.",
+      "Action minimale d'abord : la réponse directe avant le plan en dix étapes.",
+      "Cause racine, pas rustine : je corrige le problème, pas le symptôme."
     ]
   },
   {
-    kicker: "Veille & recherche",
+    kicker: "Code",
+    title: "Des standards d'équipe.",
+    items: [
+      "Git propre : branches, commits atomiques, revue avant de merger.",
+      "Tests sur les parties sensibles, et un déploiement sur staging avant la prod.",
+      "Je documente les décisions et leurs compromis, pour qu'un autre puisse reprendre le projet."
+    ]
+  },
+  {
+    kicker: "Vérification",
     title: "Vérifier avant d'affirmer.",
     items: [
-      "Recherche multi-axes en parallèle, puis synthèse — plusieurs angles plutôt qu'une seule requête.",
-      "Fact-check systématique sur sources primaires. Zéro chiffre inventé : une donnée sans source est marquée « non mesuré », pas comblée.",
-      "Un agent sceptique dont le seul rôle est de réfuter, pour casser les fausses bonnes idées avant qu'elles coûtent du temps."
+      "Jamais « c'est fait » sans preuve : test, capture ou sortie de commande à l'appui.",
+      "Pas de chiffre inventé : une donnée sans source est marquée « non mesuré », pas comblée.",
+      "Sur un sujet à enjeu, je confronte plusieurs sources avant de trancher."
     ]
   },
   {
     kicker: "Sécurité",
-    title: "Comment je sécurise chaque projet.",
+    title: "Sécuriser les données et les accès.",
     items: [
-      "Actions sensibles protégées (validation biométrique sur commits, push et suppressions).",
-      "Secrets jamais en clair : trousseau système, jamais dans le code ; détection de fuite automatique avant chaque commit.",
-      "Données clients et mineurs anonymisées (RGPD) : aucune donnée réelle publiée, scrub complet avant toute mise en open source.",
-      "Publication prudente : accès CMS et données internes restent privés, rien ne part sans relecture."
+      "Secrets hors du code (trousseau système) et détection de fuite avant chaque commit.",
+      "Données clients et mineurs anonymisées (RGPD) : aucune donnée réelle publiée.",
+      "Actions sensibles (push, suppressions) verrouillées par une confirmation forte."
     ]
   },
   {
-    kicker: "Relation client",
-    title: "Comment j'écoute mes clients.",
+    kicker: "IA dans le workflow",
+    title: "L'IA comme outil, pas comme béquille.",
     items: [
-      "Je cadre le vrai problème avant de coder, pas la demande littérale.",
-      "Validation humaine avant publication : je ne publie jamais à la place du client.",
-      "Des garde-fous plutôt que des promesses : un assistant IA cadré (prix, disponibilités, périmètre), pas une « magie » qui invente.",
-      "Staging avant production, puis itération sur les retours terrain réels."
-    ]
-  },
-  {
-    kicker: "Méthode",
-    title: "Comment je fonctionne.",
-    items: [
-      "Action minimale d'abord : la réponse directe avant le plan en dix étapes.",
-      "Cause racine, pas rustine : je corrige le problème, pas le symptôme.",
-      "Vérification = priorité n°1 : jamais « c'est fait » sans preuve (test, capture, sortie).",
-      "Je documente ce qui marche, ce qui casse et ce qui reste à mesurer."
+      "Je m'appuie sur l'IA pour accélérer la recherche, la génération et la relecture croisée.",
+      "Un modèle adapté à chaque tâche, mais le code et les choix d'architecture restent vérifiés à la main.",
+      "Aller plus vite sans déléguer le jugement : la responsabilité du résultat reste la mienne."
     ]
   }
 ];
@@ -67,9 +63,9 @@ export default function MethodePage() {
         <p className="eyebrow">Méthode</p>
         <h1>Comment je travaille.</h1>
         <p className="lead">
-          Je construis avec une équipe d'outils IA orchestrés, pas avec un seul
-          chatbot. Voici comment je cadre, sécurise et livre — et comment
-          j'utilise l'IA sans la transformer en théâtre.
+          Voici comment je cadre, code, sécurise et livre. L'IA accélère mon
+          travail, mais les décisions, la vérification et la responsabilité du
+          résultat restent les miennes.
         </p>
       </section>
 
@@ -95,8 +91,8 @@ export default function MethodePage() {
         <div className="notice">
           <strong>En pratique.</strong>
           <p>
-            Cette méthode est ce qui me permet de livrer vite et proprement, seul,
-            sur des stacks variées. C'est aussi ce que je veux apporter à une équipe.
+            Cette méthode me permet de livrer vite et proprement sur des stacks
+            variées, et de m'intégrer dans une équipe qui doit produire sans casser.
           </p>
           <div className="button-row">
             <Link className="button primary" href="/recruteurs">Page recruteurs</Link>

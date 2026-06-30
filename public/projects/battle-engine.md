@@ -10,7 +10,7 @@ En bref : Pipeline Godot -> FFmpeg -> interpolation -> YouTube API pour vidéos 
 
 ## Problème
 
-Automatiser une chaîne de production vidéo, utile comme preuve Python/pipeline, pas comme argument principal recruteur.
+Pipeline vidéo automatisé pour une chaîne YouTube de simulations 1v1 : rendu sous Godot, montage et encodage FFmpeg, interpolation d'images avec RIFE, le tout scripté en Python.
 
 ## Ce que ça montre
 

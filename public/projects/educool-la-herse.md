@@ -10,7 +10,7 @@ En bref : Application utilisée par une classe, Firebase, données sensibles, PD
 
 ## Problème
 
-Construire un produit terrain pour une enseignante: suivi de compétences, livrets, PDF, PWA et logique métier scolaire.
+Application web utilisée par une enseignante en classe : suivi des compétences des élèves et génération de livrets PDF, sur Firebase, avec les opérations sensibles déportées en Cloud Functions.
 
 ## Ce que ça montre
 
