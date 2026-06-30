@@ -314,6 +314,10 @@ export const projects: Project[] = [
       "Retombées business non disponibles à court terme.",
       "Certaines décisions dépendent de validation client."
     ],
+    gallery: [
+      { src: "/assets/proof/capselys/capselys-site.webp", caption: "Home Capsélys (staging) avec l'assistant IA ouvert en contexte." },
+      { src: "/assets/proof/capselys/capselys-assistant.webp", caption: "L'assistant répond à une vraie question (DUERP) : réponse cadrée, CTA et disclaimer « réponses générées automatiquement »." }
+    ],
     links: [
       { label: "Version Markdown", href: "/projects/capselys.md" }
     ]
