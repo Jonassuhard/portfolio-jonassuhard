@@ -81,7 +81,15 @@ main {
 }
 .page { display:flex; flex-direction:column; gap:34px; }
 /* Pages courtes qui doivent tenir dans l'écran (À propos) : tout centré sur une vue */
-.about-fit { min-height:calc(100svh - 124px); justify-content:center; gap:clamp(20px,3.5vh,34px); }
+.about-fit { min-height:calc(100svh - 124px); justify-content:center; gap:clamp(16px,2.6vh,28px); }
+/* compactage pour que hero + formation tiennent sur une vue */
+.about-fit .case-hero { gap:28px; }
+.about-fit h1 { font-size:clamp(30px,4.3vw,48px); margin-bottom:8px; }
+.about-fit .avatar-frame { width:130px; height:156px; margin-bottom:12px; }
+.about-fit .panel { padding:16px 18px; }
+.about-fit p { margin-bottom:6px; }
+.about-fit .section { gap:8px; }
+.about-fit .section-head { padding-bottom:8px; }
 
 /* ===== TYPO ===== */
 h1 {
