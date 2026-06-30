@@ -65,7 +65,12 @@ export default function AboutPage() {
           <div className="matrix-item">
             <strong>Bachelor Chef de projet digital</strong>
             <p>2023–2024 · La Digital School, Angers</p>
-            <p className="cert">Titre RNCP niveau 6</p>
+            <p className="cert">Titre RNCP niveau 6 — « Chef de projet e-business »</p>
+          </div>
+          <div className="matrix-item">
+            <strong>Cycle du Digital</strong>
+            <p>2022–2023 · MyDigitalSchool</p>
+            <p className="cert">Première année (Bac+1)</p>
           </div>
           <div className="matrix-item">
             <strong>Animation 2D / 3D</strong>
