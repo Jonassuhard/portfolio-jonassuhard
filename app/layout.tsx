@@ -134,9 +134,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               {site.malt ? (
                 <a href={site.malt} target="_blank" rel="noreferrer">Malt</a>
               ) : null}
-              {site.instagram ? (
-                <a href={site.instagram} target="_blank" rel="noreferrer">Instagram</a>
-              ) : null}
             </div>
             <div>
               <p className="foot-col-title">Documents</p>

@@ -314,11 +314,6 @@ td { color:var(--color-ink-soft); }
 .elpsy { font-family:var(--ft-italic); font-style:italic; font-size:18px; color:var(--color-muted); margin-top:10px; }
 
 /* ===== MOTION ===== */
-@keyframes chroma {
-  0% { text-shadow:6px 0 rgba(127,216,212,.5),-6px 0 rgba(142,31,47,.4); }
-  60% { text-shadow:3px 0 rgba(127,216,212,.3),-3px 0 rgba(142,31,47,.25); }
-  100% { text-shadow:1px 0 rgba(127,216,212,.18),-1px 0 rgba(142,31,47,.12); }
-}
 
 /* glitch léger récurrent (piloté en JS, 10-15s aléatoire) sur les grands titres */
 @keyframes glitch {

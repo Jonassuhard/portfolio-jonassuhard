@@ -53,7 +53,6 @@ export const site = {
   email: "contact@jonassuhard.com",
   github: "https://github.com/Jonassuhard",
   linkedin: "https://www.linkedin.com/in/jonas-suhard-b73923245/",
-  instagram: "",
   malt: "https://www.malt.fr/profile/jonassuhard",
   location: "Paris, France",
   availability: "1er octobre 2026",
@@ -815,8 +814,6 @@ export const projects: Project[] = [
 export const featuredProjects = projects.filter((project) =>
   ["les-petites-griffes", "educool-la-herse", "capselys"].includes(project.slug)
 );
-
-export const primaryProjects = projects.filter((project) => project.tier === 1);
 
 export const skills = [
   {
