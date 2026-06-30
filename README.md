@@ -25,6 +25,8 @@ Growth Engineer · IA appliquée & Automatisation — un profil hybride marketin
 - `next.config.mjs` — headers de sécurité + inline CSS
 - `app/` — App Router (home, projets, case studies, recruteurs, méthode, à-propos, mentions légales, confidentialité)
 
+> Détails d'ingénierie (perf/LCP, sécurité, données structurées) + le pattern de l'assistant IA cadré, avec snippets : **[ARCHITECTURE.md](ARCHITECTURE.md)**
+
 ## Lancer en local
 
 ```bash
