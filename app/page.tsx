@@ -82,7 +82,11 @@ export default function HomePage() {
                     <span className="tag" key={item}>{item}</span>
                   ))}
                 </div>
-                <Link className="button" href={`/projets/${project.slug}`}>
+                <Link
+                  className="button"
+                  href={`/projets/${project.slug}`}
+                  aria-label={`Voir le projet ${project.shortTitle}`}
+                >
                   Voir le projet
                 </Link>
               </div>

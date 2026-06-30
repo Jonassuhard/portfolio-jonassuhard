@@ -15,35 +15,46 @@ import NixieClock from "./nixie-clock";
 import SiteNav from "./site-nav";
 import "./globals.css";
 
+// Seuls le titre (h1) et le corps (lead/paragraphes) sont préchargés : ce sont
+// les fonts du hero qui pilotent le LCP. Les autres (titlebar, eyebrow, clock)
+// sont petites et chargées en swap -> on libère la bande passante mobile 4G.
+// display:optional sur les fonts du hero -> pas de swap tardif qui décale le LCP.
+// Le fallback métrique-ajusté (Georgia / Courier New) rend le premier paint, la
+// font custom prend la main dès qu'elle est en cache. Zéro CLS, LCP ≈ FCP.
 const fontTitle = Cormorant_Garamond({
   subsets: ["latin"],
   weight: ["500", "600", "700"],
   variable: "--font-title",
-  display: "swap"
+  display: "optional",
+  preload: true
 });
 const fontBody = Courier_Prime({
   subsets: ["latin"],
   weight: ["400", "700"],
   variable: "--font-body",
-  display: "swap"
+  display: "optional",
+  preload: true
 });
 const fontType = Special_Elite({
   subsets: ["latin"],
   weight: "400",
   variable: "--font-type",
-  display: "swap"
+  display: "swap",
+  preload: false
 });
 const fontItalic = Newsreader({
   subsets: ["latin"],
   style: ["italic"],
   variable: "--font-italic",
-  display: "swap"
+  display: "swap",
+  preload: false
 });
 const fontData = IBM_Plex_Mono({
   subsets: ["latin"],
   weight: ["400", "500", "600"],
   variable: "--font-data",
-  display: "swap"
+  display: "swap",
+  preload: false
 });
 const fontClock = localFont({
   src: [
@@ -51,7 +62,8 @@ const fontClock = localFont({
     { path: "./fonts/oslo-ii.bold.ttf", weight: "700", style: "normal" }
   ],
   variable: "--font-clock",
-  display: "swap"
+  display: "swap",
+  preload: false
 });
 export const metadata: Metadata = {
   title: {
