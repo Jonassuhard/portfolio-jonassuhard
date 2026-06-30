@@ -24,8 +24,8 @@
   },
   "education": [
     { "degree": "Mastère — Expert en marketing (en cours)", "school": "MyDigitalSchool, Paris" },
-    { "degree": "Licence (bac+3) — Chef de projet digital", "school": "Digital School, Angers" },
-    { "degree": "Licence (bac+3) — Animation 2D / 3D", "school": "Human Academy, Angoulême" }
+    { "degree": "Bachelor — Chef de projet digital (bac+3)", "school": "Digital School, Angers" },
+    { "degree": "Animation 2D / 3D — formation 3 ans (bac+3)", "school": "Human Academy, Angoulême" }
   ],
   "projects": [
     {

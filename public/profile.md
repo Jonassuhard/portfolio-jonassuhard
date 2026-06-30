@@ -54,8 +54,8 @@ Paris, France. CDI à Paris ou hybride, disponible à partir du 1er septembre 20
 ## Formation
 
 - Mastere - Expert en marketing (en cours), MyDigitalSchool, Paris.
-- Licence (bac+3) - Chef de projet digital, Digital School, Angers.
-- Licence (bac+3) - Animation 2D / 3D, Human Academy, Angouleme.
+- Bachelor - Chef de projet digital (bac+3), Digital School, Angers.
+- Animation 2D / 3D - formation 3 ans (bac+3), Human Academy, Angouleme.
 
 ## Contact
 

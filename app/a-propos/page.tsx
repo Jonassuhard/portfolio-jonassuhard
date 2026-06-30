@@ -62,11 +62,11 @@ export default function AboutPage() {
             <p>MyDigitalSchool, Paris</p>
           </div>
           <div className="matrix-item">
-            <strong>Licence (bac+3) — Chef de projet digital</strong>
+            <strong>Bachelor — Chef de projet digital (bac+3)</strong>
             <p>Digital School, Angers</p>
           </div>
           <div className="matrix-item">
-            <strong>Licence (bac+3) — Animation 2D / 3D</strong>
+            <strong>Animation 2D / 3D — formation 3 ans (bac+3)</strong>
             <p>Human Academy, Angoulême</p>
           </div>
         </div>
