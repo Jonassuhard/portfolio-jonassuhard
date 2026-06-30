@@ -58,16 +58,19 @@ export default function AboutPage() {
         </div>
         <div className="matrix">
           <div className="matrix-item">
-            <strong>Mastère — Expert en marketing (en cours)</strong>
-            <p>MyDigitalSchool, Paris</p>
+            <strong>MBA Expert Marketing Digital (en cours)</strong>
+            <p>2024–2026 · MyDigitalSchool, Paris</p>
+            <p className="cert">RNCP41809 — « Manager de la stratégie marketing digital », niveau 7</p>
           </div>
           <div className="matrix-item">
-            <strong>Bachelor — Chef de projet digital (bac+3)</strong>
-            <p>Digital School, Angers</p>
+            <strong>Bachelor Chef de projet digital</strong>
+            <p>2023–2024 · La Digital School, Angers</p>
+            <p className="cert">Titre RNCP niveau 6</p>
           </div>
           <div className="matrix-item">
-            <strong>Animation 2D / 3D — formation 3 ans (bac+3)</strong>
-            <p>Human Academy, Angoulême</p>
+            <strong>Animation 2D / 3D</strong>
+            <p>2019–2021 · Human Academy, Angoulême</p>
+            <p className="cert">Cursus 3 ans — certificat d'école</p>
           </div>
         </div>
       </section>

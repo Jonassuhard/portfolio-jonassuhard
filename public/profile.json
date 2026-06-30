@@ -23,9 +23,9 @@
     "development": ["Next.js", "React", "Firebase", "Supabase", "Python", "Playwright"]
   },
   "education": [
-    { "degree": "Mastère — Expert en marketing (en cours)", "school": "MyDigitalSchool, Paris" },
-    { "degree": "Bachelor — Chef de projet digital (bac+3)", "school": "Digital School, Angers" },
-    { "degree": "Animation 2D / 3D — formation 3 ans (bac+3)", "school": "Human Academy, Angoulême" }
+    { "degree": "MBA Expert Marketing Digital", "status": "en cours", "period": "2024–2026", "school": "MyDigitalSchool, Paris", "certification": "RNCP41809 — Manager de la stratégie marketing digital, niveau 7" },
+    { "degree": "Bachelor Chef de projet digital", "period": "2023–2024", "school": "La Digital School, Angers", "certification": "titre RNCP niveau 6" },
+    { "degree": "Animation 2D / 3D", "period": "2019–2021", "school": "Human Academy, Angoulême", "certification": "certificat d'école (cursus 3 ans, non inscrit au RNCP)" }
   ],
   "projects": [
     {

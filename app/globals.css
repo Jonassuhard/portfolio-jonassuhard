@@ -221,6 +221,7 @@ p { margin:0 0 10px; }
 .matrix-item { background:var(--color-surface-strong); padding:16px; }
 .matrix-item strong { display:block; font-family:var(--ft-data); color:var(--color-ink); margin-bottom:4px; }
 .matrix-item p { font-size:13px; color:var(--color-ink-soft); margin:0 0 4px; }
+.matrix-item .cert { font-size:11px; color:var(--color-muted); font-family:var(--ft-type); letter-spacing:.02em; margin:0; }
 
 /* ===== NOTICE (ce que je cherche) ===== */
 .notice { border-left:3px solid var(--color-rust); }
