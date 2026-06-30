@@ -127,6 +127,21 @@ export default async function ProjectDetailPage({ params }: PageProps) {
         </table>
       </section>
 
+      {project.gallery ? (
+        <section className="section">
+          <p className="section-kicker">Aperçu</p>
+          <h2>Preuves visuelles.</h2>
+          <div className="proof-gallery">
+            {project.gallery.map((shot) => (
+              <figure key={shot.src}>
+                <img src={shot.src} alt={shot.caption} loading="lazy" decoding="async" />
+                <figcaption>{shot.caption}</figcaption>
+              </figure>
+            ))}
+          </div>
+        </section>
+      ) : null}
+
       <section className="section content-grid">
         <div className="prose">
           <section>

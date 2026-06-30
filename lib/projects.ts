@@ -32,6 +32,7 @@ export type Project = {
   cardLine?: string;
   video?: string;
   noindex?: boolean;
+  gallery?: Array<{ src: string; caption: string }>;
   links: Array<{
     label: string;
     href: string;
@@ -139,6 +140,12 @@ export const projects: Project[] = [
     limits: [
       "Projet d'une TPE locale : vrai contexte de production, à petite échelle.",
       "Mesure business encore à consolider."
+    ],
+    gallery: [
+      { src: "/assets/proof/les-petites-griffes/lpg-home.webp", caption: "Home — studio de nail art, front Next.js déployé sur Vercel." },
+      { src: "/assets/proof/les-petites-griffes/lpg-compose.webp", caption: "« Compose ta pose » : devis guidé qui cadre la demande de la cliente." },
+      { src: "/assets/proof/les-petites-griffes/lpg-assistant.webp", caption: "Assistant IA cadré : prix, durée, méthode, style — garde-fous, pas de promesse magique." },
+      { src: "/assets/proof/les-petites-griffes/lpg-assistant-vision.webp", caption: "L'assistant analyse une photo d'ongles envoyée par la cliente." }
     ],
     links: [
       { label: "Version Markdown", href: "/projects/les-petites-griffes.md" }
