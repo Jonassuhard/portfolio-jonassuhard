@@ -236,14 +236,14 @@ export const projects: Project[] = [
     shortTitle: "Capsélys",
     type: "Conversion + expérimentation IA",
     period: "Juin 2026 - Juillet 2026",
-    role: "Stratégie, audit, UX, contenus, expérimentation IA, deck client",
+    role: "Stratégie, audit, UX, contenus, expérimentation IA, présentation client",
     status: "Staging / workshop MBA",
     tier: 1,
     image: "/assets/cards/capselys.webp",
     repoStatus: "Privé — projet client",
     liveLabel: "Staging (non public)",
     evidenceNote:
-      "Captures du staging et deck client (14 slides) sur demande ; mesures lab, pas une prod.",
+      "Captures du staging et présentation client (14 slides) sur demande ; mesures lab, pas une prod.",
     cardLine:
       "Refonte de conversion en staging : audit UX, parcours d'adhésion et prototype d'assistant IA.",
     architecture: [
@@ -261,7 +261,7 @@ export const projects: Project[] = [
       "Les gains attendus restent des hypothèses à valider après déploiement."
     ],
     proofLine:
-      "Refonte orientée conversion, staging WordPress sécurisé, deck oral client et audits multi-viewports.",
+      "Refonte orientée conversion, staging WordPress sécurisé, présentation orale client et audits multi-viewports.",
     summary:
       "Clarifier une offre complexe, réduire la friction d'adhésion et tester un parcours de conversion avec un assistant IA cadré.",
     stack: ["WordPress", "Divi", "Playwright", "PHP", "PDF", "LLM workflows"],
@@ -295,7 +295,7 @@ export const projects: Project[] = [
     delivered: [
       "Staging visuel retravaillé.",
       "Pages service et adhésion mieux structurées.",
-      "Deck oral client 14 slides.",
+      "Présentation orale client (14 slides).",
       "Audits visuels et rapports.",
       "Prototype d'assistant / tunnel."
     ],

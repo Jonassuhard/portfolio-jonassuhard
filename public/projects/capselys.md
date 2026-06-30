@@ -2,11 +2,11 @@
 
 Type : Conversion + expérimentation IA.
 Période : Juin 2026 - Juillet 2026.
-Rôle : Stratégie, audit, UX, contenus, expérimentation IA, deck client.
+Rôle : Stratégie, audit, UX, contenus, expérimentation IA, présentation client.
 Stack : WordPress, Divi, Playwright, PHP, PDF, LLM workflows.
 Statut : Staging / workshop MBA.
 
-En bref : Refonte orientée conversion, staging WordPress sécurisé, deck oral client et audits multi-viewports.
+En bref : Refonte orientée conversion, staging WordPress sécurisé, présentation orale client et audits multi-viewports.
 
 ## Problème
 
