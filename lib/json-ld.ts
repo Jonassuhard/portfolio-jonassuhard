@@ -5,7 +5,7 @@ export function personJsonLd() {
     "@context": "https://schema.org",
     "@type": "Person",
     name: site.name,
-    jobTitle: "Builder IA appliquée & Growth Engineer",
+    jobTitle: "Growth Engineer · IA appliquée & Automatisation",
     email: `mailto:${site.email}`,
     url: siteUrl,
     sameAs: [site.github, site.linkedin],

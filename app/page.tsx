@@ -8,7 +8,7 @@ export default function HomePage() {
         <div className="hero-copy">
           <div>
             <p className="eyebrow">Paris / hybride · CDI · marketing · IA appliquée · full-stack</p>
-            <h1>Builder IA appliquée &amp; Growth Engineer</h1>
+            <h1>Growth Engineer · IA appliquée &amp; Automatisation</h1>
             <p className="lead">
               Marketing, IA générative et développement full-stack pour construire
               des systèmes d'acquisition mesurables.

@@ -1,6 +1,6 @@
 # Jonas Suhard
 
-Builder IA appliquée & Growth Engineer — marketing, IA générative et développement full-stack.
+Growth Engineer · IA appliquée & Automatisation — marketing, IA générative et développement full-stack.
 
 ## Positionnement
 

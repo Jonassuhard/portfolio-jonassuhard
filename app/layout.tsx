@@ -120,7 +120,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               <img className="brand-mark sm" src="/brand/js-medallion-sm.webp" alt="" width={46} height={46} />
               <div>
                 <strong>Jonas Suhard</strong>
-                <span className="foot-id-sub">Builder IA appliquée &amp; Growth Engineer</span>
+                <span className="foot-id-sub">Growth Engineer · IA appliquée &amp; Automatisation</span>
               </div>
             </div>
             <p className="foot-pitch">

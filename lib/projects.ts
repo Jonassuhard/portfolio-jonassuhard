@@ -47,7 +47,7 @@ export const siteUrl = (
 
 export const site = {
   name: "Jonas Suhard",
-  title: "Builder IA appliquée & Growth Engineer",
+  title: "Growth Engineer · IA appliquée & Automatisation",
   description:
     "Portfolio de Jonas Suhard : projets réels, décisions, contraintes, stacks et résultats — profil hybride marketing, IA appliquée et développement full-stack.",
   email: "contact@jonassuhard.com",

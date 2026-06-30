@@ -14,7 +14,7 @@ export default function RecruitersPage() {
       <section className="case-hero">
         <div>
           <p className="eyebrow">Résumé 30 secondes</p>
-          <h1>Mon poste cible : Builder IA appliquée &amp; Growth Engineer.</h1>
+          <h1>Mon poste cible : Growth Engineer · IA appliquée &amp; Automatisation.</h1>
           <p className="lead">
             Profil hybride marketing, IA générative et développement full-stack.
             Je transforme des problèmes d'acquisition, de contenu ou d'opération
