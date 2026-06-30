@@ -8,6 +8,8 @@ import {
   IBM_Plex_Mono
 } from "next/font/google";
 import localFont from "next/font/local";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { personJsonLd, websiteJsonLd } from "@/lib/json-ld";
 import { site, siteUrl } from "@/lib/projects";
 import GlitchController from "./glitch-controller";
@@ -160,6 +162,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           </div>
         </footer>
         <GlitchController />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
