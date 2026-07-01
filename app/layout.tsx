@@ -16,6 +16,7 @@ import GlitchController from "./glitch-controller";
 import NixieClock from "./nixie-clock";
 import SiteNav from "./site-nav";
 import ConsentBanner from "./consent-banner";
+import BlueprintBg from "./blueprint-bg";
 import "./globals.css";
 
 // Seuls le titre (h1) et le corps (lead/paragraphes) sont préchargés : ce sont
@@ -99,6 +100,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="fr" className={fonts}>
       <body>
+        <BlueprintBg />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd()) }}
