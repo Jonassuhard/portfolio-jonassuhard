@@ -2,7 +2,9 @@
 
 > Growth Engineer · IA appliquée & Automatisation basé à Paris : profil hybride marketing, IA générative et développement full-stack. Disponible en CDI à partir du 1er septembre 2026. Contact : contact@jonassuhard.com.
 
-Jonas construit des systèmes marketing augmentés par l'IA — sites, automatisations, contenus, workflows LLM et dashboards — qui transforment une stratégie en produit utilisable. Ce site rassemble mes projets de travail : projets réels, décisions, contraintes et résultats, sans métrique inventée.
+Jonas construit des systèmes marketing augmentés par l'IA — sites, automatisations, contenus, workflows LLM et dashboards — qui transforment une stratégie en produit utilisable. Ce site rassemble ses projets de travail : projets réels, décisions, contraintes et résultats, sans métrique inventée.
+
+Dernière mise à jour : 2026-07-01
 
 ## Profil
 
