@@ -17,6 +17,7 @@ import NixieClock from "./nixie-clock";
 import SiteNav from "./site-nav";
 import ConsentBanner from "./consent-banner";
 import BlueprintBg from "./blueprint-bg";
+import PageTransition from "./page-transition";
 import "./globals.css";
 
 // Seuls le titre (h1) et le corps (lead/paragraphes) sont préchargés : ce sont
@@ -116,7 +117,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           </div>
           <SiteNav />
         </header>
-        <main>{children}</main>
+        <main>
+          <PageTransition>{children}</PageTransition>
+        </main>
         <footer className="site-footer">
           <div className="foot-top">
             <div className="foot-id">
