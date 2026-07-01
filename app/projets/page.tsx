@@ -43,10 +43,13 @@ export default function ProjectsPage() {
                 <article className="case-card" key={project.slug}>
                   <img src={project.image} alt={`Aperçu du projet ${project.shortTitle}`} />
                   <div className="case-body">
-                    <h3>{project.shortTitle}</h3>
+                    <h3>
+                      <Link className="case-card-title" href={`/projets/${project.slug}`}>
+                        {project.shortTitle}
+                      </Link>
+                    </h3>
                     <p>{project.summary}</p>
                     <div className="access-links">
-                      <Link className="lk" href={`/projets/${project.slug}`}>Case study</Link>
                       <a className="lk" href={`/projects/${project.slug}.md`}>Markdown</a>
                       {project.links
                         .filter((link) => link.external)

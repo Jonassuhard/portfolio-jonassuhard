@@ -34,6 +34,7 @@ body {
     linear-gradient(rgba(21,18,14,.075) 2px,transparent 2px),
     linear-gradient(90deg,rgba(21,18,14,.075) 2px,transparent 2px);
   background-size:32px 32px,32px 32px,160px 160px,160px 160px;
+  background-attachment:fixed;
   font-family:var(--ft-body); line-height:1.72; font-size:15px;
 }
 .blueprint-bg {
@@ -88,6 +89,11 @@ strong, b { color:var(--color-rust); }
   border-bottom:2px solid transparent;
 }
 .main-nav a:hover { color:var(--color-rust); border-bottom-color:var(--color-rust); }
+/* Desktop : nav centrée dans le header, logo pinné à gauche (mobile/burger ≤640 intacts) */
+@media (min-width:641px) {
+  .menubar { position:relative; justify-content:center; }
+  .menubar .brand { position:absolute; left:22px; top:50%; transform:translateY(-50%); }
+}
 
 main {
   position:relative; z-index:1;
@@ -314,6 +320,11 @@ td { color:var(--color-ink-soft); }
 .case-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:16px; }
 .case-card { position:relative; border:1px solid var(--color-ink); background:var(--color-surface-strong); display:flex; flex-direction:column; overflow:hidden; transition:transform .15s,box-shadow .15s; }
 .case-card:hover { transform:translateY(-2px); box-shadow:6px 6px 0 rgba(21,18,14,.08); }
+/* Carte entière cliquable -> page détail (stretched link sur le titre) */
+.case-card-title { color:inherit; text-decoration:none; }
+.case-card-title::after { content:""; position:absolute; inset:0; z-index:1; }
+.case-card:hover .case-card-title { color:var(--color-rust); }
+.case-card .access-links { position:relative; z-index:2; }
 .case-card img { width:100%; height:150px; object-fit:cover; filter:grayscale(.5) contrast(1.05) sepia(.12); border-bottom:1px solid var(--color-ink); }
 .case-body { padding:16px; display:flex; flex-direction:column; gap:8px; flex:1; }
 .case-body h3 { margin:0; }
