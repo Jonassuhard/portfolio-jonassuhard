@@ -77,7 +77,7 @@ export default function HomePage() {
         <div className="proof-grid">
           {featuredProjects.map((project) => (
             <article className="proof-card" key={project.slug}>
-              <img src={project.image} alt={`Aperçu du projet ${project.shortTitle}`} />
+              <img src={project.image} alt={`Aperçu du projet ${project.shortTitle}`} loading="lazy" decoding="async" />
               <div className="proof-body">
                 <p className="case-meta">{project.type}</p>
                 <h3>{project.shortTitle}</h3>

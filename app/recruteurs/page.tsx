@@ -112,7 +112,7 @@ export default function RecruitersPage() {
         <div className="proof-grid">
           {featuredProjects.map((project) => (
             <article className="proof-card" key={project.slug}>
-              <img src={project.image} alt={`Aperçu ${project.shortTitle}`} />
+              <img src={project.image} alt={`Aperçu ${project.shortTitle}`} loading="lazy" decoding="async" />
               <div className="proof-body">
                 <p className="case-meta">{project.status}</p>
                 <h3>{project.shortTitle}</h3>

@@ -41,7 +41,7 @@ export default function ProjectsPage() {
             <div className="case-grid">
               {list.map((project) => (
                 <article className="case-card" key={project.slug}>
-                  <img src={project.image} alt={`Aperçu du projet ${project.shortTitle}`} />
+                  <img src={project.image} alt={`Aperçu du projet ${project.shortTitle}`} loading="lazy" decoding="async" />
                   <div className="case-body">
                     <h3>
                       <Link className="case-card-title" href={`/projets/${project.slug}`}>
