@@ -77,7 +77,7 @@ export const projects: Project[] = [
     evidenceNote:
       "Captures anonymisées (home, CMS, assistant IA) et démo courte sur demande ou en entretien ; rapport Lighthouse daté disponible.",
     cardLine:
-      "Site client live, CMS maison, SEO local et assistant IA cadré. Signaux : prod réelle, contenus éditables, Lighthouse mobile 88 / SEO 100 / a11y 93.",
+      "Site client live, CMS maison, SEO local et assistant IA cadré. Prod réelle, contenus éditables, Lighthouse mobile 88 / SEO 100 / a11y 93.",
     architecture: [
       "Front Next.js (React) rendu et déployé sur Vercel.",
       "Contenus dynamiques (galerie, prestations, tarifs, FAQ) servis depuis Supabase, éditables via un CMS maison protégé.",
@@ -101,7 +101,7 @@ export const projects: Project[] = [
     recruiterProof: [
       "Livraison d'un site public réel avec domaine et contraintes de production.",
       "Connexion entre SEO local, UX de conversion, CMS et assistant IA.",
-      "Gestion d'incidents: domaine .fr, données DB, prix, galerie, cohérentisation contenu."
+      "Gestion d'incidents sur le domaine .fr, les données DB, les prix, la galerie et l'harmonisation du contenu."
     ],
     constraints: [
       "Contraintes de budget d'une TPE et besoin d'autonomie côté cliente.",
@@ -134,8 +134,7 @@ export const projects: Project[] = [
     ],
     results: [
       "Lighthouse mobile 88, SEO 100, accessibilité 93 (audit revérifié le 29/06).",
-      "Site client live en production, utilisé au quotidien par la gérante via son back-office.",
-      "Back-office utilisable par la cliente."
+      "Site client live en production, utilisé au quotidien par la gérante via son back-office."
     ],
     limits: [
       "Projet d'une TPE locale : vrai contexte de production, à petite échelle.",
@@ -211,7 +210,7 @@ export const projects: Project[] = [
       {
         decision: "Audits sécurité documentés",
         why: "Données mineurs = pas de validation au doigt mouillé.",
-        rejected: "Se contenter d'un 'ca marche'."
+        rejected: "Se contenter d'un 'ça marche'."
       }
     ],
     delivered: [
@@ -229,7 +228,7 @@ export const projects: Project[] = [
     limits: [
       "Aucune donnée élève ne doit apparaître publiquement.",
       "Certaines phases sécurité sont à contextualiser finement.",
-      "Projet très dense: la case study doit rester lisible."
+      "Projet très dense, donc la case study doit rester lisible."
     ],
     links: [
       { label: "Version Markdown", href: "/projects/educool-la-herse.md" }
@@ -273,12 +272,12 @@ export const projects: Project[] = [
     recruiterProof: [
       "Cadrage client et conversion, pas seulement exécution front.",
       "Capacité à travailler avec une stack existante imposée.",
-      "Présentation honnête: staging, mesures lab, limites et plan d'action."
+      "Présentation honnête du staging, des mesures lab, des limites et du plan d'action."
     ],
     constraints: [
       "Staging, pas prod finale.",
       "Client présent à l'oral MBA.",
-      "WordPress/Divi impose et risques de régression visuelle."
+      "WordPress et Divi imposés, avec un risque de régression visuelle."
     ],
     decisions: [
       {
@@ -354,7 +353,7 @@ export const projects: Project[] = [
     recruiterProof: [
       "Production à volume avec contrôle qualité.",
       "Capacité à transformer un audit SEO en décisions nommées.",
-      "Discipline sur actions sensibles: ne pas publier sans validation."
+      "Discipline sur les actions sensibles, avec validation avant publication."
     ],
     constraints: [
       "Publication CMS sensible.",
@@ -387,7 +386,7 @@ export const projects: Project[] = [
     ],
     limits: [
       "Ne pas publier accès CMS ni données internes.",
-      "Ne pas sur-vendre l'automatisation: validation humaine obligatoire.",
+      "Ne pas sur-vendre l'automatisation, la validation humaine reste obligatoire.",
       "Certaines preuves restent confidentielles."
     ],
     links: [
@@ -434,7 +433,7 @@ export const projects: Project[] = [
     stack: ["Next.js", "GEO / AEO", "LLM multi-modèles", "Schema JSON-LD", "PDF"],
     recruiterProof: [
       "Produit pensé de bout en bout : positionnement, offre, site, livraison.",
-      "Maîtrise concrète de l'optimisation pour les moteurs de réponse IA - le sujet même de ce portfolio.",
+      "Maîtrise concrète de l'optimisation pour les moteurs de réponse IA, sujet central de ce portfolio.",
       "Premiers audits clients réels livrés, pas une démo."
     ],
     constraints: [
@@ -509,9 +508,9 @@ export const projects: Project[] = [
       "Pipeline vidéo automatisé pour une chaîne YouTube de simulations 1v1 : rendu sous Godot, montage et encodage FFmpeg, interpolation d'images avec RIFE, le tout scripté en Python.",
     stack: ["Godot", "Python", "FFmpeg", "RIFE", "YouTube API"],
     recruiterProof: [
-      "Automatisation de pipeline creatif.",
+      "Automatisation de pipeline créatif.",
       "Orchestration fichiers, rendu et publication.",
-      "Capacité à industrialiser une idée personnelle."
+      "Passage d'une idée personnelle à un pipeline structuré."
     ],
     constraints: ["Contenu lab à cadrer pour ne pas brouiller le positionnement CDI."],
     decisions: [
@@ -562,7 +561,7 @@ export const projects: Project[] = [
     decisions: [
       {
         decision: "Le présenter comme archive honnête",
-        why: "La lucidite vaut mieux que le pitch startup vide.",
+        why: "La lucidité vaut mieux qu'un pitch startup vide.",
         rejected: "Le vendre comme SaaS abouti."
       }
     ],
@@ -590,7 +589,7 @@ export const projects: Project[] = [
       "Servir plusieurs clients sur un même backend RAG, en gardant les données isolées par client_id et en mesurant la qualité des réponses.",
     stack: ["FastAPI", "Qdrant", "Mistral AI", "LangChain", "SQLite", "pytest", "Next.js 16 / React 19", "Docker Compose"],
     recruiterProof: [
-      "Architecture RAG complète de bout en bout : ingestion multi-format, indexation vectorielle, génération avec citation des sources.",
+      "Architecture RAG complète de bout en bout, avec ingestion multi-format, indexation vectorielle et génération avec citation des sources.",
       "Isolation multi-tenant (un backend, plusieurs clients séparés par client_id) avec couche d'auth.",
       "Module d'évaluation de la qualité des réponses inspiré de Ragas, avec cas de scoring versionnés et suite pytest."
     ],
@@ -602,12 +601,12 @@ export const projects: Project[] = [
       {
         decision: "Qdrant comme base vectorielle, orchestration via LangChain.",
         why: "Stack RAG éprouvée, intégration directe avec les embeddings Mistral et les text-splitters.",
-        rejected: "Recherche full-text classique sans vecteurs - insuffisante pour de la similarité sémantique."
+        rejected: "Recherche full-text classique sans vecteurs, insuffisante pour gérer la similarité sémantique."
       },
       {
         decision: "Module d'évaluation type Ragas avec cas de scoring versionnés.",
         why: "Mesurer la qualité du retrieval au lieu de juger les réponses à l'œil.",
-        rejected: "Validation manuelle ad hoc - non reproductible, non comparable entre versions."
+        rejected: "Validation manuelle ad hoc, difficile à reproduire et à comparer entre versions."
       }
     ],
     delivered: [
@@ -645,23 +644,23 @@ export const projects: Project[] = [
     stack: ["Python / FastAPI", "Mistral Small + Large", "Qdrant (1 collection/agent)", "Celery + Redis", "Docker Compose"],
     recruiterProof: [
       "Conception d'un système multi-agents avec asymétrie d'information : chaque agent (financier, marché, client, ops, macro) a sa donnée exclusive.",
-      "Agrégation par un CIO déterministe (pondération explicite, pas un 6e LLM) avec quality gate sur le niveau de confiance.",
+      "Agrégation par un CIO déterministe à pondération explicite plutôt qu'un 6e LLM, avec quality gate sur le niveau de confiance.",
       "Architecture orientée souveraineté des données (Mistral, Qdrant self-hosted)."
     ],
     constraints: [
-      "Éviter le piège des comités d'agents qui se reformulent entre eux : forcer la divergence par l'isolation des données.",
+      "Éviter le piège des comités d'agents qui se reformulent entre eux, en forçant la divergence par l'isolation des données.",
       "POC à valeur business pour PME françaises : contrainte de souveraineté des données."
     ],
     decisions: [
       {
         decision: "CIO d'agrégation déterministe (règles de pondération), pas un LLM supplémentaire.",
         why: "Rendre la synthèse traçable et reproductible plutôt que de déléguer l'arbitrage à un modèle opaque.",
-        rejected: "Un 6e agent LLM de synthèse - moins traçable, risque de re-lissage des divergences."
+        rejected: "Un 6e agent LLM de synthèse, moins traçable et susceptible de lisser les divergences."
       },
       {
         decision: "Asymétrie d'information stricte entre les 5 agents.",
         why: "Obtenir de vraies divergences exploitables au lieu d'un consensus artificiel.",
-        rejected: "Agents partageant le même contexte - conclusions redondantes."
+        rejected: "Agents partageant le même contexte, ce qui donne des conclusions redondantes."
       }
     ],
     delivered: [
@@ -709,7 +708,7 @@ export const projects: Project[] = [
       {
         decision: "Vecteurs réduits puis stockés en binaire, un seul process Node servant le build et le WebSocket.",
         why: "Réduire l'empreinte et simplifier le déploiement sur une cible légère.",
-        rejected: "Appel à une API d'embeddings à chaque proposition - latence et coût incompatibles avec le temps réel."
+        rejected: "Appel à une API d'embeddings à chaque proposition, avec une latence et un coût incompatibles avec le temps réel."
       }
     ],
     delivered: [
@@ -742,7 +741,7 @@ export const projects: Project[] = [
       "Explorer des formats de données de jeu et écrire mes propres outils d'édition Python, sans publier d'assets ni de ROM.",
     stack: ["Python 3", "ndspy", "Format NARC", "Moteur de texte Gen 4 maison", "EmulatorJS (viewer web)"],
     recruiterProof: [
-      "Reverse-engineering d'un format binaire propriétaire : décodage/encodage du texte chiffré Gen 4 (charmap + chiffrement seed/XOR) écrit à la main.",
+      "Reverse-engineering d'un format binaire propriétaire, avec décodage et encodage du texte chiffré Gen 4 (charmap + chiffrement seed/XOR) écrits à la main.",
       "Outillage complet : édition des events (PNJ, warps, triggers), du bytecode des scripts, des stats/espèces, et cartographie des zones."
     ],
     constraints: [
@@ -753,7 +752,7 @@ export const projects: Project[] = [
       {
         decision: "Moteur de texte Gen 4 réimplémenté en Python plutôt qu'une dépendance d'un éditeur existant.",
         why: "Contrôle total du chiffrement/charmap et intégration au reste de l'outillage.",
-        rejected: "Éditeurs ROM grand public - boîtes noires, peu scriptables."
+        rejected: "Éditeurs ROM grand public, des boîtes noires peu scriptables."
       }
     ],
     delivered: [
@@ -786,7 +785,7 @@ export const projects: Project[] = [
     stack: ["Claude Code CLI", "Shell (hooks)", "Markdown", "macOS Keychain + Touch ID", "gitleaks"],
     recruiterProof: [
       "Conception d'un système de configuration en couches (identité, personnalité, workflow, skills, agents, hooks) documenté et installable via script.",
-      "Sécurité by design : Touch ID sur actions sensibles, secrets via Keychain, rédaction des secrets dans les transcrits, règle 0 PII / 0 chemin perso.",
+      "Sécurité pensée dès le départ, avec Touch ID sur actions sensibles, secrets via Keychain, rédaction des secrets dans les transcrits et règle 0 PII / 0 chemin perso.",
       "Publication open source propre (MIT) avec crédits explicites des packs tiers exclus."
     ],
     constraints: [
@@ -797,12 +796,12 @@ export const projects: Project[] = [
       {
         decision: "Séparer soul.md (identité/ton) de la config technique.",
         why: "Isoler l'âme de la config rend les deux plus lisibles et réutilisables.",
-        rejected: "Tout mélanger dans un seul fichier - illisible et non réutilisable."
+        rejected: "Tout mélanger dans un seul fichier, illisible et difficile à réutiliser."
       },
       {
         decision: "Lazy-load des MCP, LaunchAgents et agents lourds (à la demande, pas au startup).",
         why: "Réduire la consommation de tokens et de RAM au démarrage.",
-        rejected: "Tout charger au startup - coût tokens/RAM inutile."
+        rejected: "Tout charger au démarrage, avec un coût inutile en tokens et en RAM."
       }
     ],
     delivered: [
@@ -880,7 +879,7 @@ export const skills = [
     proofSlugs: ["les-petites-griffes", "battle-engine"],
     proofExtra: "ce portfolio",
     proof: "Les Petites Griffes, Battle Engine, ce portfolio",
-    note: "3 ans d'animation 2D/3D (Human Académie) + Suite Adobe ; je conçois la DA et produis les visuels moi-même."
+    note: "3 ans d'animation 2D/3D (Human Académie) et Suite Adobe ; conception de la DA et production des visuels en autonomie."
   }
 ];
 
