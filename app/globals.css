@@ -392,6 +392,41 @@ td { color:var(--color-ink-soft); }
 
 /* ===== MOTION ===== */
 
+/* Vrai glitch sur les titres — piloté par glitch-controller.tsx, déclenché toutes
+   les 10s (bien après le LCP, donc clip-path/copies RGB sans coût au chargement).
+   Deux copies décalées (cyan/rouge) se déchirent en bandes autour du titre ;
+   le texte de base reste net. data-text est posé par le contrôleur. */
+.glitch-title { position:relative; }
+.glitch-title.glitching::before,
+.glitch-title.glitching::after {
+  content:attr(data-text);
+  position:absolute; inset:0; z-index:1;
+  text-shadow:none; pointer-events:none; user-select:none;
+}
+.glitch-title.glitching::before {
+  color:var(--color-cyan);
+  animation:glitch-cyan .5s linear 1;
+}
+.glitch-title.glitching::after {
+  color:var(--color-red);
+  animation:glitch-red .5s linear 1;
+}
+@keyframes glitch-cyan {
+  0%   { clip-path:inset(0 0 82% 0);  transform:translate(-4px,-1px); opacity:.85; }
+  20%  { clip-path:inset(28% 0 45% 0); transform:translate(4px,1px); }
+  40%  { clip-path:inset(58% 0 12% 0); transform:translate(-4px,0); }
+  60%  { clip-path:inset(12% 0 68% 0); transform:translate(3px,-1px); }
+  80%  { clip-path:inset(44% 0 32% 0); transform:translate(-3px,1px); opacity:.85; }
+  100% { clip-path:inset(0 0 100% 0);  transform:translate(0); opacity:0; }
+}
+@keyframes glitch-red {
+  0%   { clip-path:inset(68% 0 10% 0); transform:translate(4px,1px); opacity:.85; }
+  25%  { clip-path:inset(8% 0 62% 0);  transform:translate(-4px,-1px); }
+  50%  { clip-path:inset(40% 0 30% 0); transform:translate(4px,0); }
+  75%  { clip-path:inset(78% 0 6% 0);  transform:translate(-3px,1px); }
+  100% { clip-path:inset(0 0 100% 0);  transform:translate(0); opacity:0; }
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width:960px) {
   .hero, .case-hero, .content-grid, .section-head { grid-template-columns:1fr; }
@@ -436,6 +471,7 @@ td { color:var(--color-ink-soft); }
 @media (prefers-reduced-motion:reduce) {
   html { scroll-behavior:auto; }
   h1 { animation:none; }
+  .glitch-title.glitching::before, .glitch-title.glitching::after { display:none; }
   .proof-card { transition:none; }
   .proof-card::after, .case-card::after { display:none; }
   .nixie-clock { animation:none; }
