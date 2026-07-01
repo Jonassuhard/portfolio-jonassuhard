@@ -55,7 +55,7 @@ export default function HomePage() {
           </div>
         </aside>
 
-        <a className="hero-scroll" href="#preuves" aria-label="Faire défiler vers les projets">
+        <a className="hero-scroll" href="#preuves">
           <span>Preuves</span>
           <span aria-hidden="true">↓</span>
         </a>
@@ -140,4 +140,3 @@ export default function HomePage() {
     </div>
   );
 }
-

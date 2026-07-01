@@ -9,7 +9,7 @@ Growth Engineer · IA appliquée & Automatisation — un profil hybride marketin
 
 - **Next.js 16** (App Router, Turbopack) · **React 19**
 - CSS natif (pas de framework), `next/font` (Google + local)
-- Déploiement **Vercel** · analytics **cookieless** (Vercel Web Analytics + Speed Insights, sans bannière)
+- Déploiement **Vercel** · Vercel Web Analytics / Speed Insights (mesure agrégée) + Microsoft Clarity chargé uniquement après consentement
 
 ## Ce que le projet démontre (mesuré)
 

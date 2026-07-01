@@ -4,20 +4,20 @@ Growth Engineer · IA appliquée & Automatisation — marketing, IA générative
 
 ## Positionnement
 
-Je construis des systemes marketing augmentes par l'IA : sites, automatisations, contenus, workflows LLM et dashboards qui transforment une strategie en produit utilisable.
+Je construis des systèmes marketing augmentés par l'IA : sites, automatisations, contenus, workflows LLM et dashboards qui transforment une stratégie en produit utilisable.
 
 ## Cibles
 
 - Growth Engineer
 - Marketing Technologist IA
-- Chef de projet IA oriente produit
+- Chef de projet IA orienté produit
 - AI Automation Specialist
 
 ## Localisation
 
 Paris, France. CDI à Paris ou hybride, disponible à partir du 1er septembre 2026.
 
-## Competences
+## Compétences
 
 ### Marketing
 
@@ -35,7 +35,7 @@ Paris, France. CDI à Paris ou hybride, disponible à partir du 1er septembre 20
 - Automatisation
 - Fact-check et QA de contenu IA
 
-### Developpement
+### Développement
 
 - Next.js
 - React
@@ -47,19 +47,18 @@ Paris, France. CDI à Paris ou hybride, disponible à partir du 1er septembre 20
 ## Projets principaux
 
 - Les Petites Griffes: site live, CMS, SEO local, assistant IA.
-- Educool / La Herse: app web education, Firebase, donnees sensibles, PDF.
-- Capsélys: refonte conversion, experimentation IA, workshop client.
-- ISCOM: SEO, Drupal, production editoriale, audits.
+- Educool / La Herse: app web éducation, Firebase, données sensibles, PDF.
+- Capsélys: refonte conversion, expérimentation IA, workshop client.
+- ISCOM: SEO, Drupal, production éditoriale, audits.
 
 ## Formation
 
-- 2024-2026, MyDigitalSchool Paris : MBA Expert Marketing Digital (en cours). Titre RNCP41809 Manager de la strategie marketing digital, niveau 7.
+- 2024-2026, MyDigitalSchool Paris : MBA Expert Marketing Digital (en cours). Titre RNCP41809 Manager de la stratégie marketing digital, niveau 7.
 - 2023-2024, La Digital School Angers : Bachelor Chef de projet digital. Titre RNCP niveau 6, Chef de projet e-business.
-- 2019-2021, Human Academy Angouleme : Animation 2D/3D, cursus 3 ans, certificat d'ecole (non inscrit au RNCP).
+- 2019-2021, Human Academy Angoulême : Animation 2D/3D, cursus 3 ans, certificat d'école (non inscrit au RNCP).
 
 ## Contact
 
 - Email: contact@jonassuhard.com
 - GitHub: https://github.com/Jonassuhard
 - LinkedIn: https://www.linkedin.com/in/jonas-suhard-b73923245/
-

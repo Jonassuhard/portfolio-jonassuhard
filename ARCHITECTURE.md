@@ -6,7 +6,7 @@ Notes d'ingénierie sur ce portfolio (Next.js 16) et sur le pattern d'assistant 
 
 ## 1. Couche de données : une source unique
 
-Tout le contenu (projets, profil, compétences) vit dans un seul module typé, `lib/projects.ts`. Il alimente trois sorties à partir des mêmes objets : les pages React, un `.md` par projet, et `profile.json`. Pas de duplication, pas de contenu qui dérive entre les formats.
+Le contenu applicatif (projets, profil, compétences) vit dans un module typé, `lib/projects.ts`. Il alimente les pages React et les données structurées. Les fichiers agent-readable publics (`profile.json`, `profile.md`, `skills.md`, `projects/*.md`, `llms.txt`) sont des miroirs statiques relus pendant les audits AEO pour éviter la dérive.
 
 ```ts
 export type Project = {
@@ -112,4 +112,4 @@ Captures de ces assistants en fonctionnement : [les cas concrets sur jonassuhard
 
 ## Stack
 
-Next.js 16 (App Router, Turbopack) · React 19 · CSS natif · Vercel · analytics cookieless. Côté missions : Python, Playwright, Firebase, Supabase, workflows LLM (RAG, prompt engineering, automatisation).
+Next.js 16 (App Router, Turbopack) · React 19 · CSS natif · Vercel · Vercel Web Analytics / Speed Insights (mesure agrégée) · Microsoft Clarity uniquement après consentement explicite. Côté missions : Python, Playwright, Firebase, Supabase, workflows LLM (RAG, prompt engineering, automatisation).
