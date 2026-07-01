@@ -128,15 +128,16 @@ h1 {
   60% { text-shadow:3px 0 rgba(127,216,212,.3),-3px 0 rgba(142,31,47,.25); }
   100% { text-shadow:1px 0 rgba(127,216,212,.18),-1px 0 rgba(142,31,47,.12); }
 }
-/* Transition de page : flou d'entrée sur TOUTE la page (1s) à chaque navigation.
-   Piloté par app/page-transition.tsx (key=pathname -> remount -> l'animation rejoue).
-   La classe n'est posée qu'APRÈS le premier mount : le hero garde son LCP intact
-   au boot, l'effet ne joue qu'aux transitions de route suivantes. */
-@keyframes page-blur-in { from { opacity:0; filter:blur(10px); } to { opacity:1; filter:blur(0); } }
+/* Flou d'entrée stylé sur TOUTE la page (1s) : au chargement / à l'arrivée sur le
+   site ET à chaque changement de page. Piloté par app/page-transition.tsx
+   (key=pathname -> remount -> l'animation rejoue). */
+@keyframes page-blur-in {
+  from { opacity:0; filter:blur(8px); transform:translateY(8px); }
+  to { opacity:1; filter:blur(0); transform:none; }
+}
 @media (prefers-reduced-motion:no-preference) {
-  /* fill:backwards -> l'état flou est posé avant le 1er frame (pas de flash), mais
-     l'élément REVIENT à son état net après : aucun filtre ni will-change résiduel
-     (donc pas de calque compositeur permanent sur toute la page). */
+  /* backwards -> l'état flou est posé avant le 1er frame (pas de flash au boot),
+     puis l'élément revient à son état net (aucun filtre résiduel). */
   .page-transition { animation:page-blur-in 1s ease-out backwards; }
 }
 h2 { font-family:var(--ft-title); font-weight:600; font-size:clamp(24px,3.4vw,34px); letter-spacing:-.02em; line-height:1.05; margin:0 0 8px; color:var(--color-ink); }
@@ -391,21 +392,6 @@ td { color:var(--color-ink-soft); }
 
 /* ===== MOTION ===== */
 
-/* Glitch Steins;Gate sur les titres (piloté en JS : burst d'entrée par page + ambiant).
-   PAS de clip-path : il rognerait la surface du titre, or le h1 hero est l'élément LCP
-   -> un clip-path le ferait ré-enregistrer plus tard (LCP +1s constaté). On garde donc
-   uniquement le RGB-split (text-shadow) + le jitter (transform), tous deux LCP-safe. */
-@keyframes glitch {
-  0% { transform:translate(0); }
-  15% { transform:translate(-2px,0); text-shadow:3px 0 rgba(127,216,212,.6),-3px 0 rgba(142,31,47,.5); }
-  30% { transform:translate(2px,0); text-shadow:-3px 0 rgba(119,183,184,.55),3px 0 rgba(142,31,47,.45); }
-  45% { transform:translate(-1.5px,0); text-shadow:2px 0 rgba(127,216,212,.45),-2px 0 rgba(142,31,47,.35); }
-  60% { transform:translate(1.5px,0); text-shadow:2px 0 rgba(127,216,212,.4),-2px 0 rgba(142,31,47,.3); }
-  80% { transform:translate(-0.5px,0); text-shadow:1px 0 rgba(127,216,212,.25),-1px 0 rgba(142,31,47,.2); }
-  100% { transform:translate(0); text-shadow:1px 0 rgba(127,216,212,.18),-1px 0 rgba(142,31,47,.12); }
-}
-.glitching { animation:glitch .45s steps(3,end) 1; will-change:transform; }
-
 /* ===== RESPONSIVE ===== */
 @media (max-width:960px) {
   .hero, .case-hero, .content-grid, .section-head { grid-template-columns:1fr; }
@@ -450,7 +436,6 @@ td { color:var(--color-ink-soft); }
 @media (prefers-reduced-motion:reduce) {
   html { scroll-behavior:auto; }
   h1 { animation:none; }
-  .glitching { animation:none; }
   .proof-card { transition:none; }
   .proof-card::after, .case-card::after { display:none; }
   .nixie-clock { animation:none; }

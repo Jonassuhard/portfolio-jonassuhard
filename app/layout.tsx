@@ -12,7 +12,6 @@ import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { personJsonLd, websiteJsonLd } from "@/lib/json-ld";
 import { site, siteUrl } from "@/lib/projects";
-import GlitchController from "./glitch-controller";
 import NixieClock from "./nixie-clock";
 import SiteNav from "./site-nav";
 import ConsentBanner from "./consent-banner";
@@ -170,7 +169,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <span>jonassuhard.com</span>
           </div>
         </footer>
-        <GlitchController />
         <ConsentBanner />
         <Analytics />
         <SpeedInsights />
