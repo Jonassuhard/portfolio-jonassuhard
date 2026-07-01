@@ -13,7 +13,7 @@ Growth Engineer · IA appliquée & Automatisation — un profil hybride marketin
 
 ## Ce que le projet démontre (mesuré)
 
-- **PageSpeed 100 / 100 / 100 / 100** (performance · accessibilité · best practices · SEO), mobile **et** desktop
+- **Lighthouse** : accessibilité · best practices · SEO à **100** sur mobile et desktop ; **performance ~99 desktop / 94 mobile** (LCP mobile ~3 s en 4G simulée)
 - **Sécurité A+** ([securityheaders.com](https://securityheaders.com)) : CSP, HSTS, X-Frame-Options, Referrer-Policy, Permissions-Policy
 - **Agent-readable** : JSON-LD (Person, WebSite, Project), `llms.txt`, `profile.json`, `profile.md`, un `.md` par projet
 - Optimisations LCP : `experimental.inlineCss`, `display:optional` + préchargement ciblé des fonts du hero
