@@ -15,6 +15,7 @@ import { site, siteUrl } from "@/lib/projects";
 import GlitchController from "./glitch-controller";
 import NixieClock from "./nixie-clock";
 import SiteNav from "./site-nav";
+import ConsentBanner from "./consent-banner";
 import "./globals.css";
 
 // Seuls le titre (h1) et le corps (lead/paragraphes) sont préchargés : ce sont
@@ -154,6 +155,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               <p className="foot-col-title">Légal</p>
               <Link href="/mentions-legales">Mentions légales</Link>
               <Link href="/confidentialite">Confidentialité</Link>
+              <button type="button" className="foot-link-btn" data-open-consent>
+                Gérer les cookies
+              </button>
             </div>
           </div>
           <div className="foot-bar">
@@ -162,6 +166,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           </div>
         </footer>
         <GlitchController />
+        <ConsentBanner />
         <Analytics />
         <SpeedInsights />
       </body>
