@@ -26,7 +26,10 @@
 * { box-sizing:border-box; }
 html { scroll-behavior:smooth; }
 body {
-  margin:0; color:var(--color-ink); background:var(--color-surface-strong);
+  margin:0; color:var(--color-ink);
+  background-color:var(--color-surface-strong);
+  background-image:linear-gradient(rgba(21,18,14,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(21,18,14,.04) 1px,transparent 1px);
+  background-size:32px 32px;
   font-family:var(--ft-body); line-height:1.72; font-size:15px;
 }
 body::after {
@@ -76,8 +79,6 @@ strong, b { color:var(--color-rust); }
 
 main {
   padding:32px 22px 72px; max-width:1120px; margin:0 auto;
-  background-image:linear-gradient(rgba(21,18,14,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(21,18,14,.04) 1px,transparent 1px);
-  background-size:32px 32px;
 }
 .page { display:flex; flex-direction:column; gap:34px; }
 /* Pages courtes qui doivent tenir dans l'écran (À propos) : tout centré sur une vue */
