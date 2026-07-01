@@ -21,7 +21,7 @@ export default function ProjectsPage() {
         <p className="eyebrow">Projets</p>
         <h1>Du projet principal au lab.</h1>
         <p className="lead">
-          Trois niveaux : les projets livrés que je mets en avant, les projets
+          Trois niveaux, les projets livrés que je mets en avant, les projets
           techniques, puis les labs personnels. Chaque carte indique ce qui est
           public, privé ou en cours de publication.
         </p>

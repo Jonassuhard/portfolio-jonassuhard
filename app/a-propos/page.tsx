@@ -15,13 +15,13 @@ export default function AboutPage() {
           <h1>Je relie marketing, IA et exécution.</h1>
           <p className="lead">
             Je viens du marketing digital, puis j'ai appris à construire pour ne plus
-            m'arrêter aux recommandations. Mon point fort : relier trois mondes —
+            m'arrêter aux recommandations. Mon point fort, c'est de relier trois mondes,
             acquisition, IA appliquée et développement web.
           </p>
           <p>
             Concrètement, je cadre un besoin, je construis une première version, je
             mesure ce qui marche et je documente ce qui reste à creuser. Je cherche un
-            CDI où ce profil hybride sert : une équipe qui doit produire vite, tester
+            CDI où ce profil hybride sert, dans une équipe qui doit produire vite, tester
             proprement et transformer l'IA en outils concrets.
           </p>
           <div className="button-row">
@@ -44,7 +44,7 @@ export default function AboutPage() {
           <h3>Ce site existe pour quoi ?</h3>
           <p>
             Montrer des projets réutilisables en candidature et en entretien.
-            Le but : donner à un recruteur des preuves rapides à vérifier.
+            Le but, donner à un recruteur des preuves rapides à vérifier.
           </p>
         </div>
       </section>

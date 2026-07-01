@@ -14,7 +14,7 @@ export default function RecruitersPage() {
       <section className="case-hero">
         <div>
           <p className="eyebrow">Résumé 30 secondes</p>
-          <h1>Mon poste cible : Growth Engineer · IA appliquée &amp; Automatisation.</h1>
+          <h1>Mon poste cible, c'est Growth Engineer · IA appliquée &amp; Automatisation.</h1>
           <p className="lead">
             Profil hybride marketing, IA générative et développement full-stack.
             Je transforme des problèmes d'acquisition, de contenu ou d'opération
@@ -74,7 +74,7 @@ export default function RecruitersPage() {
             <h2>Construire plutôt que promettre.</h2>
           </div>
           <p>
-            Je transforme un besoin marketing en livrable concret : page de
+            Je transforme un besoin marketing en livrable concret, une page de
             conversion, workflow IA, automatisation, audit SEO ou prototype web.
           </p>
         </div>
@@ -105,7 +105,7 @@ export default function RecruitersPage() {
             <h2>Ce que j'apporte à une équipe.</h2>
           </div>
           <p>
-            Mes projets montrent trois choses : je sais livrer en production, gérer
+            Mes projets montrent trois choses. Je sais livrer en production, gérer
             des données sensibles et cadrer une expérimentation marketing.
           </p>
         </div>

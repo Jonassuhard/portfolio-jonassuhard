@@ -68,7 +68,7 @@ export default function HomePage() {
             <h2>Trois projets pour comprendre mon profil.</h2>
           </div>
           <p>
-            Ces trois projets montrent trois choses : livrer un site en production,
+            Ces trois projets montrent trois choses. Livrer un site en production,
             construire une app métier sensible, et cadrer une expérimentation
             marketing avec IA.
           </p>

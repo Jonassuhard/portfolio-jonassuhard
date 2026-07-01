@@ -13,26 +13,26 @@ const SECTIONS = [
     kicker: "Cadrage",
     title: "Cadrer avant de coder.",
     items: [
-      "Je pars du vrai problème, pas de la demande littérale.",
-      "Action minimale d'abord : la réponse directe avant le plan en dix étapes.",
-      "Cause racine, pas rustine : je corrige le problème, pas le symptôme."
+      "Je cherche le vrai problème derrière la demande.",
+      "Je commence par la réponse directe. Le plan en dix étapes seulement s'il le faut vraiment.",
+      "Je remonte à la cause plutôt que de poser une rustine sur le symptôme."
     ]
   },
   {
     kicker: "Code",
     title: "Des standards d'équipe.",
     items: [
-      "Git propre : branches, commits atomiques, revue avant de merger.",
-      "Tests sur les parties sensibles, et un déploiement sur staging avant la prod.",
-      "Je documente les décisions et leurs compromis, pour qu'un autre puisse reprendre le projet."
+      "Git propre, commits atomiques, revue avant de merger.",
+      "Des tests sur les parties sensibles, et un passage par le staging avant la prod.",
+      "Je documente les décisions et leurs compromis, pour qu'un autre reprenne le projet sans moi."
     ]
   },
   {
     kicker: "Vérification",
     title: "Vérifier avant d'affirmer.",
     items: [
-      "Jamais « c'est fait » sans preuve : test, capture ou sortie de commande à l'appui.",
-      "Pas de chiffre inventé : une donnée sans source est marquée « non mesuré », pas comblée.",
+      "Jamais « c'est fait » sans une preuve à l'appui, un test, une capture ou une sortie de commande.",
+      "Pas de chiffre inventé. Une donnée sans source, je la marque « non mesuré » au lieu de la combler.",
       "Sur un sujet à enjeu, je confronte plusieurs sources avant de trancher."
     ]
   },
@@ -40,18 +40,18 @@ const SECTIONS = [
     kicker: "Sécurité",
     title: "Sécuriser les données et les accès.",
     items: [
-      "Secrets hors du code (trousseau système) et détection de fuite avant chaque commit.",
-      "Données clients et mineurs anonymisées (RGPD) : aucune donnée réelle publiée.",
-      "Actions sensibles (push, suppressions) verrouillées par une confirmation forte."
+      "Les secrets restent hors du code (trousseau système), avec une détection de fuite avant chaque commit.",
+      "Données clients et mineurs anonymisées, rien de réel n'est publié (RGPD).",
+      "Les actions sensibles comme un push ou une suppression sont verrouillées par une confirmation forte."
     ]
   },
   {
     kicker: "IA dans le workflow",
-    title: "L'IA comme outil, pas comme béquille.",
+    title: "L'IA accélère, je décide.",
     items: [
-      "Je m'appuie sur l'IA pour accélérer la recherche, la génération et la relecture croisée.",
-      "Un modèle adapté à chaque tâche, mais le code et les choix d'architecture restent vérifiés à la main.",
-      "Aller plus vite sans déléguer le jugement : la responsabilité du résultat reste la mienne."
+      "Je m'appuie sur l'IA pour la recherche, la génération et la relecture croisée.",
+      "Un modèle adapté à chaque tâche, mais je vérifie le code et l'architecture à la main.",
+      "J'avance plus vite sans déléguer le jugement. La responsabilité du résultat reste la mienne."
     ]
   }
 ];

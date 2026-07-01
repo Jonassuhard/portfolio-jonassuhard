@@ -69,9 +69,9 @@ export default function ConsentBanner() {
     <div className="consent" role="dialog" aria-label="Consentement aux cookies de mesure d'audience">
       <div className="consent-inner">
         <p className="consent-text">
-          Ce site peut utiliser Microsoft Clarity (cookies de mesure et enregistrement anonyme de
-          la navigation) pour comprendre comment les pages sont consultées. Rien n'est chargé sans
-          votre accord. <a href="/confidentialite">En savoir plus</a>.
+          Ce site peut mesurer son audience avec Microsoft Clarity (cookies et relecture anonyme de
+          la navigation) pour voir comment ses pages sont lues. Rien ne se charge tant que vous
+          n'avez pas accepté. <a href="/confidentialite">En savoir plus</a>.
         </p>
         <div className="consent-actions">
           <button type="button" className="button" onClick={() => decide("denied")}>

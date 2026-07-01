@@ -50,7 +50,7 @@ export const site = {
   name: "Jonas Suhard",
   title: "Growth Engineer · IA appliquée & Automatisation",
   description:
-    "Portfolio de Jonas Suhard : projets réels, décisions, contraintes, stacks et résultats — profil hybride marketing, IA appliquée et développement full-stack.",
+    "Portfolio de Jonas Suhard : projets réels, décisions, contraintes, stacks et résultats. Profil hybride marketing, IA appliquée et développement full-stack.",
   email: "contact@jonassuhard.com",
   github: "https://github.com/Jonassuhard",
   linkedin: "https://www.linkedin.com/in/jonas-suhard-b73923245/",
@@ -72,7 +72,7 @@ export const projects: Project[] = [
     status: "Prod live",
     tier: 1,
     image: "/assets/cards/les-petites-griffes.webp",
-    repoStatus: "Privé — code et données client",
+    repoStatus: "Privé, code et données client",
     liveLabel: "Live · URL communiquée en entretien",
     evidenceNote:
       "Captures anonymisées (home, CMS, assistant IA) et démo courte sur demande ou en entretien ; rapport Lighthouse daté disponible.",
@@ -142,9 +142,9 @@ export const projects: Project[] = [
       "Mesure business encore à consolider."
     ],
     gallery: [
-      { src: "/assets/proof/les-petites-griffes/lpg-home.webp", caption: "Home — studio de nail art, front Next.js déployé sur Vercel." },
+      { src: "/assets/proof/les-petites-griffes/lpg-home.webp", caption: "Home du studio de nail art, front Next.js déployé sur Vercel." },
       { src: "/assets/proof/les-petites-griffes/lpg-compose.webp", caption: "« Compose ta pose » : devis guidé qui cadre la demande de la cliente." },
-      { src: "/assets/proof/les-petites-griffes/lpg-assistant.webp", caption: "Assistant IA cadré : prix, durée, méthode, style — garde-fous, pas de promesse magique." },
+      { src: "/assets/proof/les-petites-griffes/lpg-assistant.webp", caption: "Assistant IA cadré sur les prix, la durée, la méthode et le style, avec garde-fous et sans promesse magique." },
       { src: "/assets/proof/les-petites-griffes/lpg-assistant-vision.webp", caption: "L'assistant analyse une photo d'ongles envoyée par la cliente." }
     ],
     links: [
@@ -161,7 +161,7 @@ export const projects: Project[] = [
     status: "Prod / maintenance",
     tier: 1,
     image: "/assets/cards/educool.webp",
-    repoStatus: "Privé — RGPD (données mineurs)",
+    repoStatus: "Privé, RGPD (données mineurs)",
     liveLabel: "Classe, non public",
     evidenceNote:
       "Captures anonymisées sur données fictives et démo sur demande ; aucune donnée élève réelle n'est publiée.",
@@ -245,7 +245,7 @@ export const projects: Project[] = [
     status: "Staging / workshop MBA",
     tier: 1,
     image: "/assets/cards/capselys.webp",
-    repoStatus: "Privé — projet client",
+    repoStatus: "Privé, projet client",
     liveLabel: "Staging (non public)",
     evidenceNote:
       "Captures du staging et présentation client (14 slides) sur demande ; mesures lab, pas une prod.",
@@ -262,7 +262,7 @@ export const projects: Project[] = [
       "Mesure des retombées conversion une fois en ligne."
     ],
     notMeasured: [
-      "Retombées business (conversion, adhésions) : non mesurées — staging, pas une prod utilisée.",
+      "Retombées business (conversion, adhésions) non mesurées, c'est un staging, pas une prod utilisée.",
       "Les gains attendus restent des hypothèses à valider après déploiement."
     ],
     proofLine:
@@ -332,7 +332,7 @@ export const projects: Project[] = [
     status: "Alternance / client interne",
     tier: 1,
     image: "/assets/cards/iscom.webp",
-    repoStatus: "CMS employeur — non publiable",
+    repoStatus: "CMS employeur, non publiable",
     liveLabel: "Actu publiée (lien)",
     architecture: [
       "Production éditoriale SEO saisie dans Drupal (CMS sensible).",
@@ -409,7 +409,7 @@ export const projects: Project[] = [
     status: "En activité - premiers audits livrés",
     tier: 1,
     image: "/assets/cards/preuvia.webp",
-    repoStatus: "Privé - produit commercial",
+    repoStatus: "Privé, produit commercial",
     liveLabel: "Site en ligne (preuvia.vercel.app)",
     evidenceNote:
       "Détail de l'offre et exemple de sortie d'audit sur le site ; la méthode interne n'est pas publiée.",
@@ -450,7 +450,7 @@ export const projects: Project[] = [
       },
       {
         decision: "Promesse explicitement non garantie",
-        why: "Crédibilité : personne ne contrôle ce que les modèles citent.",
+        why: "Question de crédibilité, personne ne contrôle ce que les modèles citent.",
         rejected: "Vendre une garantie d'apparition invérifiable."
       },
       {
@@ -737,7 +737,7 @@ export const projects: Project[] = [
     liveLabel: "Lab",
     noindex: true,
     proofLine:
-      "Boîte à outils Python (ndspy) pour explorer des formats de données de jeu (textes, events, scripts, stats) et écrire ses propres outils d'édition — aucune ROM ni asset distribué.",
+      "Boîte à outils Python (ndspy) pour explorer des formats de données de jeu (textes, events, scripts, stats) et écrire ses propres outils d'édition. Aucune ROM ni asset distribué.",
     summary:
       "Explorer des formats de données de jeu et écrire mes propres outils d'édition Python, sans publier d'assets ni de ROM.",
     stack: ["Python 3", "ndspy", "Format NARC", "Moteur de texte Gen 4 maison", "EmulatorJS (viewer web)"],
@@ -796,7 +796,7 @@ export const projects: Project[] = [
     decisions: [
       {
         decision: "Séparer soul.md (identité/ton) de la config technique.",
-        why: "Pattern communautaire : isoler l'âme de la config rend les deux plus lisibles et réutilisables.",
+        why: "Isoler l'âme de la config rend les deux plus lisibles et réutilisables.",
         rejected: "Tout mélanger dans un seul fichier - illisible et non réutilisable."
       },
       {
