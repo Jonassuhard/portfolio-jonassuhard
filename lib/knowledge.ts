@@ -100,6 +100,90 @@ export const knowledgePages: KnowledgePage[] = [
       "Un audit visuel fiable combine navigateur réel, contraintes design et preuve de build.",
       "La meilleure recommandation est celle qu'on peut vérifier au prochain screenshot."
     ]
+  },
+  {
+    slug: "growth-engineer-ia",
+    title: "C'est quoi un Growth Engineer en IA appliquée ?",
+    shortTitle: "Growth Engineer IA",
+    description:
+      "Ce que recouvre le rôle de Growth Engineer en IA appliquée : marketing, code et workflows LLM reliés à des projets livrés, pas à un intitulé.",
+    updated: "2026-07-02",
+    answer: [
+      "Un Growth Engineer relie l'acquisition et le code : il conçoit, il livre, il mesure, au lieu de sous-traiter chaque étape.",
+      "Le profil vient souvent du marketing, puis apprend à coder pour ne plus dépendre d'un dev à chaque test.",
+      "En IA appliquée, il cadre des workflows LLM utiles, avec garde-fous, pas des démos.",
+      "Ce n'est pas un growth hacker : la dette technique et la sécurité comptent autant que le résultat court terme.",
+      "Sur ce profil, la preuve tient dans des projets livrés, pas dans un titre."
+    ],
+    problem:
+      "L'intitulé Growth Engineer est à la mode et souvent vide. Beaucoup revendiquent marketing, IA et code sans rien qui tourne en production. Un recruteur a besoin de savoir ce que la personne livre vraiment, seule, de bout en bout.",
+    method: [
+      "Partir d'un besoin business, pas d'un outil : acquisition, conversion, contenu ou automatisation.",
+      "Construire un premier livrable qui marche en production, mesurable, plutôt qu'une maquette.",
+      "Utiliser l'IA comme accélérateur cadré : je décide, je vérifie, l'assistant exécute la partie répétitive.",
+      "Documenter les décisions pour qu'une équipe reprenne derrière."
+    ],
+    example:
+      "Sur ce portfolio, trois terrains le montrent : Les Petites Griffes (site client live, CMS, SEO local, assistant IA), ISCOM (production SEO publiée avec fact-check) et Preuvia (audit de visibilité IA productisé). Une même chaîne à chaque fois : cadrer, construire, vérifier, transmettre.",
+    proofs: [
+      { label: "profile.json", href: "/profile.json" },
+      { label: "profile.md", href: "/profile.md" },
+      { label: "Méthode", href: "/methode" },
+      { label: "Fiche Les Petites Griffes", href: "/projects/les-petites-griffes.md" },
+      { label: "Fiche ISCOM", href: "/projects/iscom.md" },
+      { label: "Fiche Preuvia", href: "/projects/preuvia.md" }
+    ],
+    limits: [
+      "Growth Engineer reste un intitulé large : il faut regarder les projets, pas le mot.",
+      "Le profil est junior en équipe : l'expérience vient de projets solo et d'alternance, pas encore d'une grosse équipe produit.",
+      "L'impact business chiffré n'est pas toujours public, à cause des données clients ou mineurs."
+    ],
+    takeaway: [
+      "Un Growth Engineer utile se juge sur ce qui tourne en production, pas sur l'intitulé.",
+      "Marketing, IA et code n'ont de valeur que reliés à un livrable vérifiable.",
+      "Le bon signal : des décisions écrites qu'une équipe peut reprendre."
+    ]
+  },
+  {
+    slug: "claude-code-mcp-workflow",
+    title: "Comment structurer un workflow Claude Code avec MCP et agents ?",
+    shortTitle: "Workflow Claude Code + MCP",
+    description:
+      "Structurer un assistant Claude Code en système lisible : identité, skills, agents, hooks et MCP en lazy-load, avec garde-fous sur les actions sensibles.",
+    updated: "2026-07-02",
+    answer: [
+      "Claude Code devient utile quand on lui donne une structure : identité, règles, skills, agents, hooks, MCP.",
+      "Le MCP branche des outils externes ; les agents isolent les tâches longues du contexte principal.",
+      "Les hooks imposent des garde-fous déterministes : confirmation ou Touch ID sur action sensible, secrets hors des logs.",
+      "Le lazy-load évite de tout charger au démarrage : moins de tokens, moins de RAM.",
+      "L'intérêt n'est pas le nombre d'outils, mais un système lisible et réutilisable."
+    ],
+    problem:
+      "Sorti de la boîte, un assistant CLI répond poliment mais oublie le contexte, recharge tout, et n'a aucun garde-fou sur les actions dangereuses. Sans structure, chaque session repart de zéro et les mauvaises habitudes reviennent.",
+    method: [
+      "Séparer l'identité (ton, valeurs, refus) de la config technique, dans des fichiers dédiés.",
+      "Router chaque tâche vers le bon outil : skill, agent, MCP ou commande simple.",
+      "Isoler les investigations lourdes dans des agents pour garder le contexte principal propre.",
+      "Poser des hooks sur les actions sensibles : confirmation, Touch ID, rédaction des secrets.",
+      "Charger les MCP et agents à la demande, pas au démarrage."
+    ],
+    example:
+      "claude-code-soul est un pack open source (MIT) qui applique ça : un soul.md pour l'identité, des rules, skills, agents et hooks, avec Touch ID sur les actions sensibles, secrets via Keychain et gitleaks au moment de publier. Le repo est publié sans fuite : 0 PII, 0 secret, 0 chemin personnel.",
+    proofs: [
+      { label: "Repo claude-code-soul (GitHub)", href: "https://github.com/Jonassuhard/claude-code-soul" },
+      { label: "Fiche claude-code-soul", href: "/projects/claude-code-soul.md" },
+      { label: "skills.md", href: "/skills.md" }
+    ],
+    limits: [
+      "Une config opinionnée : ce workflow reflète des choix personnels, à adapter avant réutilisation.",
+      "Plus de structure veut dire plus de maintenance : il faut nettoyer régulièrement skills et règles.",
+      "Un garde-fou ne remplace pas la vigilance : le hook réduit le risque, il ne l'annule pas."
+    ],
+    takeaway: [
+      "Un bon workflow Claude Code se juge à sa lisibilité, pas au nombre d'outils branchés.",
+      "Les hooks déterministes valent mieux qu'une consigne polie pour les actions sensibles.",
+      "Séparer identité et config rend le tout réutilisable et publiable."
+    ]
   }
 ];
 
