@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { projects, pageAlternates } from "@/lib/projects";
+import { projects, site, pageAlternates } from "@/lib/projects";
 
 export const metadata: Metadata = {
   title: "Projets",
@@ -67,6 +67,24 @@ export default function ProjectsPage() {
           </section>
         );
       })}
+
+      <section className="section">
+        <div className="notice">
+          <strong>La suite se passe en échange.</strong>
+          <p>
+            Je reprends n'importe lequel de ces projets en entretien :
+            architecture, décisions et limites, sans filtre.
+          </p>
+          <div className="button-row">
+            <Link className="button primary" href="/recruteurs">
+              Page recruteurs
+            </Link>
+            <a className="button" href={`mailto:${site.email}`}>
+              {site.email}
+            </a>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

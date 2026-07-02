@@ -86,7 +86,7 @@ export const projects: Project[] = [
     repoStatus: "Privé, code et données client",
     liveLabel: "Live · URL communiquée en entretien",
     evidenceNote:
-      "Captures anonymisées (home, CMS, assistant IA) et démo courte sur demande ou en entretien ; rapport Lighthouse daté disponible.",
+      "Captures anonymisées de la home, du CMS et de l'assistant IA, rapport Lighthouse daté, et démo courte en entretien.",
     cardLine:
       "Site client live, CMS maison, SEO local et assistant IA cadré. Prod réelle, contenus éditables, Lighthouse mobile 88 / SEO 100 / a11y 93.",
     architecture: [
@@ -174,7 +174,7 @@ export const projects: Project[] = [
     repoStatus: "Privé, RGPD (données mineurs)",
     liveLabel: "Classe, non public",
     evidenceNote:
-      "Captures anonymisées sur données fictives et démo sur demande ; aucune donnée élève réelle n'est publiée.",
+      "Captures sur données fictives (parcours élève, génération PDF) et démo en entretien.",
     cardLine:
       "Application utilisée en classe : suivi de compétences, génération PDF, Firebase, données élèves anonymisées.",
     architecture: [
@@ -257,7 +257,7 @@ export const projects: Project[] = [
     repoStatus: "Privé, projet client",
     liveLabel: "Staging (non public)",
     evidenceNote:
-      "Captures du staging et présentation client (14 slides) sur demande ; mesures lab, pas une prod.",
+      "Captures du staging et présentation client de 14 slides, détaillées en entretien.",
     cardLine:
       "Refonte de conversion en staging : audit UX, parcours d'adhésion et prototype d'assistant IA.",
     architecture: [
@@ -344,7 +344,7 @@ export const projects: Project[] = [
     repoStatus: "CMS employeur, non publiable",
     liveLabel: "Actu publiée (lien)",
     evidenceNote:
-      "Article publié en ligne (lien ci-dessous) ; checklist QA de pré-publication et extrait d'audit de cannibalisation anonymisés, montrables en entretien.",
+      "Article publié en ligne, plus une checklist QA de pré-publication et un extrait d'audit de cannibalisation anonymisés.",
     architecture: [
       "Production éditoriale SEO saisie dans Drupal (CMS sensible).",
       "Audits de cannibalisation et inter-marques via Semrush.",
@@ -423,7 +423,7 @@ export const projects: Project[] = [
     repoStatus: "Privé, produit commercial",
     liveLabel: "Site en ligne (preuvia.vercel.app)",
     evidenceNote:
-      "Détail de l'offre et exemple de sortie d'audit sur le site ; la méthode interne n'est pas publiée.",
+      "Détail de l'offre et exemple de sortie d'audit directement sur le site.",
     architecture: [
       "Site et tunnel de prise de contact en Next.js, déployés et suivis en production.",
       "Protocole d'audit reproductible : un jeu de requêtes testé sur plusieurs assistants (ChatGPT, Claude, Perplexity, Gemini, Mistral).",

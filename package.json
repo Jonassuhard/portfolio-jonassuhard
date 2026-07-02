@@ -4,6 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "generate:md": "tsx scripts/generate-project-md.ts",
+    "prebuild": "tsx scripts/generate-project-md.ts",
     "build": "next build",
     "start": "next start"
   },
@@ -27,6 +29,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "tsx": "^4.22.5",
     "typescript": "^5"
   }
 }

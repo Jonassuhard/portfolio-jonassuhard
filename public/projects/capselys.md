@@ -16,7 +16,7 @@ Refonte du site d'un client (WordPress / Divi) sur un staging sécurisé : nouve
 
 - Cadrage client et conversion, pas seulement exécution front.
 - Capacité à travailler avec une stack existante imposée.
-- Présentation honnête: staging, mesures lab, limites et plan d'action.
+- Présentation honnête du staging, des mesures lab, des limites et du plan d'action.
 
 ## Limites
 

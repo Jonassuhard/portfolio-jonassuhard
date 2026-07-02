@@ -70,9 +70,13 @@ const fontClock = localFont({
   display: "swap",
   preload: false
 });
+// Title de la home = nom + rôle (le nom manquait du <title>, mauvais CTR SERP).
+// `site.title` reste le rôle pur, réutilisé tel quel comme jobTitle dans le JSON-LD.
+const homeTitle = `${site.name} — ${site.title}`;
+
 export const metadata: Metadata = {
   title: {
-    default: site.title,
+    default: homeTitle,
     template: "%s | Jonas Suhard"
   },
   description: site.description,
@@ -84,7 +88,7 @@ export const metadata: Metadata = {
     }
   },
   openGraph: {
-    title: site.title,
+    title: homeTitle,
     description: site.description,
     type: "website",
     locale: "fr_FR"

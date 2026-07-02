@@ -15,7 +15,7 @@ Faire émerger de vraies divergences d'analyse plutôt qu'une synthèse lissée,
 ## Ce que ça montre
 
 - Conception d'un système multi-agents avec asymétrie d'information : chaque agent (financier, marché, client, ops, macro) a sa donnée exclusive.
-- Agrégation par un CIO déterministe (pondération explicite, pas un 6e LLM) avec quality gate sur le niveau de confiance.
+- Agrégation par un CIO déterministe à pondération explicite plutôt qu'un 6e LLM, avec quality gate sur le niveau de confiance.
 - Architecture orientée souveraineté des données (Mistral, Qdrant self-hosted).
 
 ## Limites

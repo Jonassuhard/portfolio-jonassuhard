@@ -14,9 +14,9 @@ Pipeline vidéo automatisé pour une chaîne YouTube de simulations 1v1 : rendu 
 
 ## Ce que ça montre
 
-- Automatisation de pipeline creatif.
+- Automatisation de pipeline créatif.
 - Orchestration fichiers, rendu et publication.
-- Capacité à industrialiser une idée personnelle.
+- Passage d'une idée personnelle à un pipeline structuré.
 
 ## Limites
 

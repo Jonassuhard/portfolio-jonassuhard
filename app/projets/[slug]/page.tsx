@@ -124,6 +124,12 @@ export default async function ProjectDetailPage({ params }: PageProps) {
               <th scope="row">En bref</th>
               <td>{project.proofLine}</td>
             </tr>
+            {project.evidenceNote ? (
+              <tr>
+                <th scope="row">Preuves</th>
+                <td>{project.evidenceNote}</td>
+              </tr>
+            ) : null}
           </tbody>
         </table>
       </section>

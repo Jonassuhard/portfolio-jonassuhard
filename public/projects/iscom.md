@@ -18,7 +18,7 @@ Production éditoriale SEO dans le Drupal d'ISCOM : rédaction et fact-check d'a
 
 - Livrer dans le process de publication d'un employeur sans court-circuiter la validation éditoriale.
 - Capacité à transformer un audit SEO en décisions nommées.
-- Sur une publication irréversible, la validation humaine passe avant l'automatisation.
+- Discipline sur les actions sensibles, avec validation avant publication.
 
 ## Limites
 

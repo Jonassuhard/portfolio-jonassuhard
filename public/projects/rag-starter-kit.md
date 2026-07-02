@@ -14,7 +14,7 @@ Servir plusieurs clients sur un même backend RAG, en gardant les données isol�
 
 ## Ce que ça montre
 
-- Architecture RAG complète de bout en bout : ingestion multi-format, indexation vectorielle, génération avec citation des sources.
+- Architecture RAG complète de bout en bout, avec ingestion multi-format, indexation vectorielle et génération avec citation des sources.
 - Isolation multi-tenant (un backend, plusieurs clients séparés par client_id) avec couche d'auth.
 - Module d'évaluation de la qualité des réponses inspiré de Ragas, avec cas de scoring versionnés et suite pytest.
 

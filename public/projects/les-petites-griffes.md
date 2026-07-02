@@ -16,7 +16,7 @@ Site vitrine d'un studio de nail art : front Next.js, un CMS maison pour que la 
 
 - Livraison d'un site public réel avec domaine et contraintes de production.
 - Connexion entre SEO local, UX de conversion, CMS et assistant IA.
-- Gestion d'incidents: domaine .fr, données DB, prix, galerie, harmonisation du contenu.
+- Gestion d'incidents sur le domaine .fr, les données DB, les prix, la galerie et l'harmonisation du contenu.
 
 ## Limites
 

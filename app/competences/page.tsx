@@ -44,6 +44,21 @@ export default function SkillsPage() {
           </article>
         ))}
       </section>
+
+      <section className="section">
+        <div className="notice">
+          <strong>Chaque compétence tient sur un projet réel.</strong>
+          <p>Le détail est dans les projets : décisions prises, limites comprises.</p>
+          <div className="button-row">
+            <Link className="button primary" href="/projets">
+              Voir les projets
+            </Link>
+            <Link className="button" href="/recruteurs">
+              Page recruteurs
+            </Link>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

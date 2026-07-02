@@ -6,7 +6,7 @@ Rôle : Conception et développement.
 Stack : Python 3, ndspy, Format NARC, Moteur de texte Gen 4 maison, EmulatorJS (viewer web).
 Statut : Copie publique anonymisée (ROM non incluse).
 
-En bref : Boîte à outils Python (ndspy) pour explorer des formats de données de jeu (textes, events, scripts, stats) et écrire ses propres outils d'édition — aucune ROM ni asset distribué.
+En bref : Boîte à outils Python (ndspy) pour explorer des formats de données de jeu (textes, events, scripts, stats) et écrire ses propres outils d'édition. Aucune ROM ni asset distribué.
 
 ## Problème
 
@@ -14,7 +14,7 @@ Explorer des formats de données de jeu et écrire mes propres outils d'édition
 
 ## Ce que ça montre
 
-- Reverse-engineering d'un format binaire propriétaire : décodage/encodage du texte chiffré Gen 4 (charmap + chiffrement seed/XOR) écrit à la main.
+- Reverse-engineering d'un format binaire propriétaire, avec décodage et encodage du texte chiffré Gen 4 (charmap + chiffrement seed/XOR) écrits à la main.
 - Outillage complet : édition des events (PNJ, warps, triggers), du bytecode des scripts, des stats/espèces, et cartographie des zones.
 
 ## Limites

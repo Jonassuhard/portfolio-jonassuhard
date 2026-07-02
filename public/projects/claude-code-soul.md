@@ -17,7 +17,7 @@ Séparer l'« âme » de l'assistant (ton, valeurs, refus) de la config techniqu
 ## Ce que ça montre
 
 - Conception d'un système de configuration en couches (identité, personnalité, workflow, skills, agents, hooks) documenté et installable via script.
-- Sécurité by design : Touch ID sur actions sensibles, secrets via Keychain, rédaction des secrets dans les transcrits, règle 0 PII / 0 chemin perso.
+- Sécurité pensée dès le départ, avec Touch ID sur actions sensibles, secrets via Keychain, rédaction des secrets dans les transcrits et règle 0 PII / 0 chemin perso.
 - Publication open source propre (MIT) avec crédits explicites des packs tiers exclus.
 
 ## Limites
