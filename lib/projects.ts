@@ -620,7 +620,7 @@ export const projects: Project[] = [
     shortTitle: "HoopSphere",
     type: "Prototype produit",
     period: "2025 - 2026",
-    role: "Marketing, personas, positionnement produit",
+    role: "Co-fondateur, responsable marketing et projections financières",
     status: "Archive / MBA",
     tier: 3,
     image: "/assets/cards/hoopsphere.webp",
@@ -635,14 +635,14 @@ export const projects: Project[] = [
       "Aucune traction marché ni revenu : projet scolaire."
     ],
     proofLine:
-      "Projet d'app basket amateur mené en MBA : ma part est le marketing et le cadrage produit.",
+      "Co-fondateur et responsable marketing d'une app basket amateur : audience construite à budget zéro, app publiée sur Google Play.",
     summary:
-      "Projet d'application mobile basket mené pendant le MBA. Ma part, c'est le marketing et le cadrage produit : personas, positionnement et go-to-market sur un marché de niche. L'app et les visuels ont été portés par l'équipe projet.",
-    stack: ["Étude de marché", "Personas", "Positionnement", "Business plan", "Go-to-market"],
+      "Application mobile de stats de basket amateur (lecture OCR des feuilles e-Marque FFBB), montée à quatre en MBA. Je suis co-fondateur et responsable marketing : acquisition, contenu et les projections financières du business plan. Le développement est porté par l'équipe, le design par une associée.",
+    stack: ["Business plan", "Projections financières", "Étude de marché", "Personas", "Instagram", "Emailing (Brevo)"],
     recruiterProof: [
-      "Cadrage marketing et positionnement produit.",
-      "Personas et go-to-market sur un marché de niche.",
-      "Lucidité sur ce qui relève de moi et de l'équipe."
+      "Co-fondateur en charge de tout le marketing d'un produit réel, à budget zéro.",
+      "Audience construite sans pub : 807 abonnés Instagram en 6 mois, emailing coachs à 58% d'ouverture.",
+      "Business plan et projections financières chiffrées et sourcées."
     ],
     constraints: ["Projet scolaire, pas de traction marché."],
     decisions: [
@@ -652,11 +652,20 @@ export const projects: Project[] = [
         rejected: "Le vendre comme SaaS abouti."
       }
     ],
-    delivered: ["Personas et positionnement", "Analyse marché", "Go-to-market"],
-    results: ["Support MBA, pas preuve commerciale."],
+    delivered: [
+      "Business plan et projections financières",
+      "Étude de marché et personas",
+      "Acquisition Instagram (807 abonnés en 6 mois, 0 budget)",
+      "Emailing coachs via Brevo (58% d'ouverture)"
+    ],
+    results: [
+      "App publiée sur Google Play, 15 bêta-testeurs actifs.",
+      "807 abonnés Instagram en 6 mois, zéro euro de budget pub.",
+      "Emailing coachs à 58% de taux d'ouverture (Brevo)."
+    ],
     limits: [
-      "Ma contribution porte sur le marketing et le cadrage produit. Le développement et les visuels ne sont pas de moi.",
-      "Projet scolaire, pas de traction payante."
+      "Le développement et le design ne sont pas de moi : ma part est le marketing, l'acquisition et le business plan.",
+      "Projet MBA : audience construite, mais pas encore de traction payante."
     ],
     links: [{ label: "Version Markdown", href: "/projects/hoopsphere.md" }]
   },

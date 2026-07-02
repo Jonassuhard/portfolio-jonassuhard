@@ -54,7 +54,7 @@ Dernière mise à jour : 2026-07-02
 
 ## Optional
 
-- [HoopSphere](https://jonassuhard.com/projects/hoopsphere.md): projet produit MBA, contribution marketing et cadrage produit (personas, positionnement)
+- [HoopSphere](https://jonassuhard.com/projects/hoopsphere.md): app basket amateur (projet MBA à 4), co-fondateur responsable marketing, 807 abonnés Instagram en 6 mois à budget zéro, app publiée sur Google Play
 - [Edusemantix](https://jonassuhard.com/projects/edusemantix.md): jeu sémantique multijoueur temps réel
 - [Index des projets](https://jonassuhard.com/projets): toutes les preuves classées par maturité, vérifiabilité et contexte
 - [Plan du site](https://jonassuhard.com/sitemap.xml): toutes les URLs
