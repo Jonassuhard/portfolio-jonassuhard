@@ -11,7 +11,14 @@ const aiAgents = [
   "Claude-User",
   "PerplexityBot",
   "Perplexity-User",
-  "Google-Extended"
+  "Google-Extended",
+  "CCBot",
+  "Bingbot",
+  "Applebot",
+  "Applebot-Extended",
+  "Amazonbot",
+  "Meta-ExternalAgent",
+  "Bytespider"
 ];
 
 export default function robots(): MetadataRoute.Robots {
@@ -20,7 +27,6 @@ export default function robots(): MetadataRoute.Robots {
       { userAgent: "*", allow: "/" },
       { userAgent: aiAgents, allow: "/" }
     ],
-    sitemap: `${siteUrl}/sitemap.xml`,
-    host: siteUrl
+    sitemap: `${siteUrl}/sitemap.xml`
   };
 }

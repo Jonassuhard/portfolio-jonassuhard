@@ -30,7 +30,26 @@ const nextConfig = {
           "frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests"
       }
     ];
-    return [{ source: "/:path*", headers: securityHeaders }];
+    const agentReadableNoIndex = {
+      key: "X-Robots-Tag",
+      value: "noindex, follow"
+    };
+
+    return [
+      { source: "/:path*", headers: securityHeaders },
+      {
+        source: "/:path*.md",
+        headers: [agentReadableNoIndex]
+      },
+      {
+        source: "/profile.json",
+        headers: [agentReadableNoIndex]
+      },
+      {
+        source: "/claims.json",
+        headers: [agentReadableNoIndex]
+      }
+    ];
   },
   turbopack: {
     root
