@@ -26,4 +26,3 @@ Aider une marque à savoir si elle apparaît dans les réponses des assistants I
 - Ne force pas les modèles à citer une marque.
 - Les scores sont datés : ils dépendent du modèle, du prompt et du moment du test.
 - Ne remplace pas le SEO classique ; il ajoute une couche de visibilité dans les moteurs de réponse.
-- Méthode interne volontairement non détaillée ici ; les exemples publics doivent rester anonymisés.

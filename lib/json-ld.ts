@@ -1,4 +1,5 @@
 import { projects, site, siteUrl, skills } from "./projects";
+import { faqItems } from "./faq";
 
 const personId = `${siteUrl}/#person`;
 
@@ -79,16 +80,21 @@ export function projectJsonLd(slug: string) {
 
   if (!project) return null;
 
-  return {
+  // Type CreativeWork forcé quand le code n'est pas de Jonas : on ne déclare pas
+  // une authorship de logiciel qu'il ne revendique pas (cohérence machine = argument Preuvia).
+  const type = project.codeByOthers ? "CreativeWork" : projectType(project);
+  const isCode = type === "SoftwareSourceCode";
+
+  const node: Record<string, unknown> & { "@context": string } = {
     "@context": "https://schema.org",
-    "@type": projectType(project),
+    "@type": type,
     "@id": projectId(project.slug),
     name: project.title,
     description: project.summary,
-    author: {
-      "@id": personId
-    },
-    programmingLanguage: project.stack,
+    // author pour ce qu'il a construit, contributor quand le dev vient de l'équipe.
+    ...(project.codeByOthers
+      ? { contributor: { "@id": personId } }
+      : { author: { "@id": personId } }),
     url: `${siteUrl}/projets/${project.slug}`,
     encoding: {
       "@type": "MediaObject",
@@ -101,6 +107,10 @@ export function projectJsonLd(slug: string) {
       ...project.limits.map((limit) => ({ "@type": "PropertyValue", name: "limits", value: limit }))
     ]
   };
+  // programmingLanguage n'a de sens que sur du code réellement écrit par Jonas.
+  if (isCode) node.programmingLanguage = project.stack;
+
+  return node;
 }
 
 export function websiteJsonLd() {
@@ -145,5 +155,38 @@ export function knowledgeGraphJsonLd() {
         return node ? withoutContext(node) : null;
       }).filter(Boolean)
     ]
+  };
+}
+
+// Article : rend une page knowledge citable (auteur, dates, langue) pour Google et les LLM.
+export function knowledgeJsonLd(page: {
+  slug: string;
+  title: string;
+  description: string;
+  updated: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: page.title,
+    description: page.description,
+    datePublished: page.updated,
+    dateModified: page.updated,
+    inLanguage: "fr-FR",
+    author: { "@type": "Person", name: site.name, "@id": personId },
+    url: `${siteUrl}/knowledge/${page.slug}`
+  };
+}
+
+// FAQPage : rend les Q/R factuelles éligibles aux rich results et citables par les LLM.
+export function faqPageJsonLd(items: Array<{ q: string; a: string }> = faqItems) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: { "@type": "Answer", text: item.a }
+    }))
   };
 }

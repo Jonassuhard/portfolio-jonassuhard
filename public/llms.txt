@@ -35,6 +35,9 @@ Dernière mise à jour : 2026-07-02
 
 - [Rendre un portfolio citable par un agent IA](https://jonassuhard.com/knowledge/llms-txt-portfolio): méthode llms.txt, profile.json, claims.json, Markdown et JSON-LD sur ce site
 - [Auditer visuellement avec Playwright](https://jonassuhard.com/knowledge/playwright-audit-visuel): captures multi-viewports, console, responsive et preuves avant modification
+- [C'est quoi un Growth Engineer en IA appliquée](https://jonassuhard.com/knowledge/growth-engineer-ia): le rôle relié à des projets livrés, pas à un intitulé
+- [Structurer un workflow Claude Code avec MCP et agents](https://jonassuhard.com/knowledge/claude-code-mcp-workflow): identité, skills, agents, hooks et MCP en lazy-load, avec garde-fous
+- [Organiser la mémoire d'un agent IA en Markdown](https://jonassuhard.com/knowledge/memoire-agent-markdown): identité, règles et contexte projet en fichiers Markdown lisibles par plusieurs modèles
 
 ## Projets techniques
 
@@ -51,7 +54,7 @@ Dernière mise à jour : 2026-07-02
 
 ## Optional
 
-- [HoopSphere](https://jonassuhard.com/projects/hoopsphere.md): prototype produit MBA (React Native, Firebase, OCR)
+- [HoopSphere](https://jonassuhard.com/projects/hoopsphere.md): projet produit MBA, contribution marketing et cadrage produit (personas, positionnement)
 - [Edusemantix](https://jonassuhard.com/projects/edusemantix.md): jeu sémantique multijoueur temps réel
 - [Index des projets](https://jonassuhard.com/projets): toutes les preuves classées par maturité, vérifiabilité et contexte
 - [Plan du site](https://jonassuhard.com/sitemap.xml): toutes les URLs

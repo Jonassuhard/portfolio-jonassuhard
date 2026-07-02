@@ -6,9 +6,13 @@ import { writeFileSync, mkdirSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { projects, type Project } from "../lib/projects";
+import { knowledgePages, type KnowledgePage } from "../lib/knowledge";
+import { faqMeta, faqItems } from "../lib/faq";
 
 const here = dirname(fileURLToPath(import.meta.url));
-const outDir = join(here, "..", "public", "projects");
+const publicDir = join(here, "..", "public");
+const outDir = join(publicDir, "projects");
+const knowledgeDir = join(publicDir, "knowledge");
 
 function bullets(items: string[]) {
   return items.map((item) => `- ${item}`).join("\n");
@@ -47,8 +51,63 @@ function toMarkdown(project: Project) {
   return `${lines.join("\n")}\n`;
 }
 
+function knowledgeToMarkdown(page: KnowledgePage) {
+  const lines = [
+    `# ${page.title}`,
+    "",
+    `Dernière vérification : ${page.updated}.`,
+    "",
+    "## Réponse courte",
+    "",
+    bullets(page.answer),
+    "",
+    "## Problème",
+    "",
+    page.problem,
+    "",
+    "## Méthode",
+    "",
+    bullets(page.method),
+    "",
+    "## Exemple",
+    "",
+    page.example,
+    "",
+    "## Limites",
+    "",
+    bullets(page.limits),
+    "",
+    "## À retenir",
+    "",
+    bullets(page.takeaway),
+    "",
+    "## Preuves",
+    "",
+    bullets(page.proofs.map((proof) => `${proof.label} : ${proof.href}`))
+  ];
+  if (page.faq && page.faq.length) {
+    lines.push("", "## FAQ", "");
+    for (const item of page.faq) {
+      lines.push(`### ${item.q}`, "", item.a, "");
+    }
+  }
+  return `${lines.join("\n").trimEnd()}\n`;
+}
+
 mkdirSync(outDir, { recursive: true });
 for (const project of projects as Project[]) {
   writeFileSync(join(outDir, `${project.slug}.md`), toMarkdown(project), "utf8");
 }
-console.log(`generate-project-md: ${projects.length} fichiers écrits dans public/projects/`);
+
+mkdirSync(knowledgeDir, { recursive: true });
+for (const page of knowledgePages as KnowledgePage[]) {
+  writeFileSync(join(knowledgeDir, `${page.slug}.md`), knowledgeToMarkdown(page), "utf8");
+}
+
+// claims.json régénéré depuis lib/faq (source unique partagée avec la FAQ humaine).
+const claims = { ...faqMeta, claims: faqItems.map((item) => ({ q: item.q, a: item.a })) };
+writeFileSync(join(publicDir, "claims.json"), `${JSON.stringify(claims, null, 2)}\n`, "utf8");
+
+console.log(
+  `generate: ${projects.length} projets, ${knowledgePages.length} knowledge, claims.json (${faqItems.length} Q/R)`
+);

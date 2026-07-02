@@ -35,6 +35,9 @@ export type Project = {
   cardLine?: string;
   video?: string;
   noindex?: boolean;
+  // Le code vient de l'équipe, pas de Jonas (ex. HoopSphere : sa part est le marketing).
+  // Pilote le JSON-LD : contributor au lieu d'author, pas de programmingLanguage.
+  codeByOthers?: boolean;
   gallery?: Array<{ src: string; caption: string }>;
   links: Array<{
     label: string;
@@ -309,7 +312,8 @@ export const projects: Project[] = [
       "WordPress + Divi imposés ; refonte sur un environnement de staging sécurisé.",
       "Audits de rendu multi-viewports via Playwright (le DOM Divi ne suffit pas à prouver le visuel).",
       "Déploiement séquentiel sur staging pour ne pas casser la prod client.",
-      "Prototype d'assistant IA qualifiant orientant vers le bon service."
+      "Prototype d'assistant IA qualifiant orientant vers le bon service.",
+      "Frontière nette entre le contenu éditable dans Divi (textes, images, modules) et les composants système gardés en code (assistant IA, popup d'adhésion, SEO, sécurité, formulaires)."
     ],
     v2: [
       "Passage en production après validation client.",
@@ -327,6 +331,7 @@ export const projects: Project[] = [
     recruiterProof: [
       "Cadrage client et conversion, pas seulement exécution front.",
       "Capacité à travailler avec une stack existante imposée.",
+      "Sait arbitrer entre un builder et du code selon qui maintiendra le site, pas par dogme.",
       "Présentation honnête du staging, des mesures lab, des limites et du plan d'action."
     ],
     constraints: [
@@ -349,6 +354,16 @@ export const projects: Project[] = [
         decision: "Assistant IA qualifiant",
         why: "Orienter vers le bon service et contact humain.",
         rejected: "Chatbot gadget sans cadre métier."
+      },
+      {
+        decision: "Contenu éditable dans Divi, système en code",
+        why: "La gérante modifie ses textes et ses images sans risquer de casser la sécurité, le SEO, les formulaires ou l'assistant IA.",
+        rejected: "Promettre du 100 % Divi, fragile et faux."
+      },
+      {
+        decision: "Rester sur Divi 4 pour la partie éditable",
+        why: "J'ai testé Divi 5, l'édition visuelle et les interactions cassaient une fois le contenu en place.",
+        rejected: "Migrer le site sur Divi 5."
       }
     ],
     delivered: [
@@ -361,6 +376,7 @@ export const projects: Project[] = [
     results: [
       "Support oral MBA prêt avec garde-fous client.",
       "Refonte staging auditée sur plusieurs tailles.",
+      "Frontière éditable/code documentée pour la cliente. Sur ce type de site, un CMS léger sur mesure évite souvent les limites d'un builder lourd.",
       "Mesures business réelles à qualifier après déploiement."
     ],
     limits: [
@@ -541,8 +557,7 @@ export const projects: Project[] = [
       "Ne garantit pas l'apparition dans les réponses IA.",
       "Ne force pas les modèles à citer une marque.",
       "Les scores sont datés : ils dépendent du modèle, du prompt et du moment du test.",
-      "Ne remplace pas le SEO classique ; il ajoute une couche de visibilité dans les moteurs de réponse.",
-      "Méthode interne volontairement non détaillée ici ; les exemples publics doivent rester anonymisés."
+      "Ne remplace pas le SEO classique ; il ajoute une couche de visibilité dans les moteurs de réponse."
     ],
     links: [
       { label: "Voir le site", href: "https://preuvia.vercel.app", external: true },
@@ -593,6 +608,10 @@ export const projects: Project[] = [
     delivered: ["Pipeline de rendu", "Vidéos publiées", "Scripts d'automatisation"],
     results: ["Audience YouTube à vérifier avant publication finale."],
     limits: ["Projet lab : automatisation créative, éloignée du poste visé, gardée comme preuve technique."],
+    gallery: [
+      { src: "/assets/proof/battle-engine/intro-platforms.webp", caption: "Séquence d'intro : les plateformes des deux combattants et le champ de particules, rendus par un shader custom sous Godot." },
+      { src: "/assets/proof/battle-engine/intro-buildup.webp", caption: "Montée du champ de particules avant le face-à-face, générée en temps réel côté moteur." }
+    ],
     links: [{ label: "Version Markdown", href: "/projects/battle-engine.md" }]
   },
   {
@@ -601,16 +620,14 @@ export const projects: Project[] = [
     shortTitle: "HoopSphere",
     type: "Prototype produit",
     period: "2025 - 2026",
-    role: "Produit, personas, prototype, OCR",
+    role: "Marketing, personas, positionnement produit",
     status: "Archive / MBA",
     tier: 3,
     image: "/assets/cards/hoopsphere.webp",
-    repoStatus: "Publication prévue après anonymisation",
+    repoStatus: "Projet d'équipe (MBA)",
     liveLabel: "Lab / archive",
     noindex: true,
-    architecture: [
-      "Prototype mobile React Native, backend Firebase, OCR via un service FastAPI."
-    ],
+    codeByOthers: true,
     v2: [
       "Aucune suite prévue : gardé comme apprentissage produit."
     ],
@@ -618,16 +635,16 @@ export const projects: Project[] = [
       "Aucune traction marché ni revenu : projet scolaire."
     ],
     proofLine:
-      "Prototype mobile basket amateur, utile pour montrer raisonnement produit et limites.",
+      "Projet d'app basket amateur mené en MBA : ma part est le marketing et le cadrage produit.",
     summary:
-      "Prototype d'application mobile basket (React Native) conçu pendant le MBA : cadrage de l'idée, personas, maquette et premières fonctions, jusqu'à ses limites.",
-    stack: ["React Native", "Firebase", "FastAPI", "OCR"],
+      "Projet d'application mobile basket mené pendant le MBA. Ma part, c'est le marketing et le cadrage produit : personas, positionnement et go-to-market sur un marché de niche. L'app et les visuels ont été portés par l'équipe projet.",
+    stack: ["Étude de marché", "Personas", "Positionnement", "Business plan", "Go-to-market"],
     recruiterProof: [
-      "Raisonnement produit.",
-      "Capacité à documenter aussi ce qui n'a pas marché.",
-      "Lien business/tech."
+      "Cadrage marketing et positionnement produit.",
+      "Personas et go-to-market sur un marché de niche.",
+      "Lucidité sur ce qui relève de moi et de l'équipe."
     ],
-    constraints: ["Projet scolaire, pas traction marche."],
+    constraints: ["Projet scolaire, pas de traction marché."],
     decisions: [
       {
         decision: "Le présenter comme archive honnête",
@@ -635,9 +652,12 @@ export const projects: Project[] = [
         rejected: "Le vendre comme SaaS abouti."
       }
     ],
-    delivered: ["Prototype", "Personas", "Analyse marche"],
+    delivered: ["Personas et positionnement", "Analyse marché", "Go-to-market"],
     results: ["Support MBA, pas preuve commerciale."],
-    limits: ["Pas de traction payante."],
+    limits: [
+      "Ma contribution porte sur le marketing et le cadrage produit. Le développement et les visuels ne sont pas de moi.",
+      "Projet scolaire, pas de traction payante."
+    ],
     links: [{ label: "Version Markdown", href: "/projects/hoopsphere.md" }]
   },
   {
@@ -787,6 +807,7 @@ export const projects: Project[] = [
     ],
     results: ["Jeu fonctionnel déployable.", "Audience / engagement : pas encore mesurés."],
     limits: [
+      "Projet lab plus ancien, avec une base de mots à rafraîchir et quelques correctifs à reprendre.",
       "Lab personnel, pas de démo publique maintenue.",
       "Persistance des stats dépend de Firebase (mode mémoire sans credentials)."
     ],

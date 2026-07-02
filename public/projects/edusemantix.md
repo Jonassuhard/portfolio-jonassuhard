@@ -19,5 +19,6 @@ Faire jouer plusieurs personnes en simultané sur une mécanique de proximité s
 
 ## Limites
 
+- Projet lab plus ancien, avec une base de mots à rafraîchir et quelques correctifs à reprendre.
 - Lab personnel, pas de démo publique maintenue.
 - Persistance des stats dépend de Firebase (mode mémoire sans credentials).

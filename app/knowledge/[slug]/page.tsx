@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getKnowledgePage, knowledgePages } from "@/lib/knowledge";
-import { pageAlternates } from "@/lib/projects";
+import { pageAlternates, ogImage } from "@/lib/projects";
+import { knowledgeJsonLd, faqPageJsonLd } from "@/lib/json-ld";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -17,10 +18,25 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   if (!page) return { title: "Knowledge introuvable" };
 
+  const ogTitle = `${page.shortTitle} | Jonas Suhard`;
   return {
     title: page.shortTitle,
     description: page.description,
-    alternates: pageAlternates(`/knowledge/${page.slug}`)
+    alternates: pageAlternates(`/knowledge/${page.slug}`),
+    openGraph: {
+      title: ogTitle,
+      description: page.description,
+      url: `/knowledge/${page.slug}`,
+      type: "article",
+      locale: "fr_FR",
+      images: [ogImage]
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: ogTitle,
+      description: page.description,
+      images: [ogImage]
+    }
   };
 }
 
@@ -32,6 +48,16 @@ export default async function KnowledgePage({ params }: PageProps) {
 
   return (
     <div className="page">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(knowledgeJsonLd(page)) }}
+      />
+      {page.faq ? (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageJsonLd(page.faq)) }}
+        />
+      ) : null}
       <section className="case-hero">
         <div>
           <p className="eyebrow">Knowledge · dernière vérif {page.updated}</p>
@@ -74,6 +100,19 @@ export default async function KnowledgePage({ params }: PageProps) {
             <p>{page.example}</p>
           </section>
 
+          {page.images ? (
+            <section>
+              <p className="section-kicker">Aperçu</p>
+              <h2>Illustrations.</h2>
+              {page.images.map((img) => (
+                <figure className="article-figure" key={img.src}>
+                  <img src={img.src} alt={img.alt} loading="lazy" decoding="async" />
+                  {img.caption ? <figcaption>{img.caption}</figcaption> : null}
+                </figure>
+              ))}
+            </section>
+          ) : null}
+
           <section>
             <p className="section-kicker">Limites</p>
             <h2>Ce que ça ne prouve pas.</h2>
@@ -105,6 +144,25 @@ export default async function KnowledgePage({ params }: PageProps) {
           </ul>
         </aside>
       </section>
+
+      {page.faq ? (
+        <section className="section">
+          <div className="section-head">
+            <div>
+              <p className="section-kicker">FAQ</p>
+              <h2>Questions fréquentes.</h2>
+            </div>
+          </div>
+          <div className="faq">
+            {page.faq.map((item) => (
+              <details className="faq-item" key={item.q}>
+                <summary>{item.q}</summary>
+                <p>{item.a}</p>
+              </details>
+            ))}
+          </div>
+        </section>
+      ) : null}
     </div>
   );
 }

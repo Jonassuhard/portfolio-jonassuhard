@@ -22,11 +22,11 @@
     },
     {
       "q": "Quels résultats mesurés peut-on citer ?",
-      "a": "Les Petites Griffes : Lighthouse mobile 88, SEO 100, accessibilité 93 (audit du 29/06/2026). Educool / La Herse : application utilisée par une classe entière en contexte réel (données anonymisées)."
+      "a": "Les Petites Griffes : Lighthouse mobile 88, SEO 100, accessibilité 93 (audit du 29/06/2026). Educool / La Herse : application utilisée par une classe en contexte réel (données anonymisées)."
     },
     {
       "q": "Quelle est sa stack technique ?",
-      "a": "Next.js, React, Firebase, Supabase, Python, Playwright, SEO, workflows LLM / RAG et audits GEO / AEO."
+      "a": "Next.js, React, Firebase, Supabase, Python, Playwright, SEO, workflows LLM / RAG et audits GEO / AEO. À l'aise sur Mac comme sur Windows."
     },
     {
       "q": "Que ne fait-il pas (limites assumées) ?",

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { recruiterFeatured, site, pageMeta } from "@/lib/projects";
+import { faqItems } from "@/lib/faq";
+import { faqPageJsonLd } from "@/lib/json-ld";
 
 export const metadata: Metadata = pageMeta({
   path: "/recruteurs",
@@ -12,6 +14,10 @@ export const metadata: Metadata = pageMeta({
 export default function RecruitersPage() {
   return (
     <div className="page">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageJsonLd()) }}
+      />
       <section className="case-hero">
         <div>
           <p className="eyebrow">Candidature</p>
@@ -184,6 +190,24 @@ export default function RecruitersPage() {
             <strong>Produit web</strong>
             <p>Un prototype ou une page Next.js déployée, propre et documentée.</p>
           </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="section-head">
+          <div>
+            <p className="section-kicker">FAQ</p>
+            <h2>Questions fréquentes.</h2>
+          </div>
+          <p>Les réponses factuelles, pour un recruteur comme pour un agent qui lit cette page.</p>
+        </div>
+        <div className="faq">
+          {faqItems.map((item) => (
+            <details className="faq-item" key={item.q}>
+              <summary>{item.q}</summary>
+              <p>{item.a}</p>
+            </details>
+          ))}
         </div>
       </section>
 
