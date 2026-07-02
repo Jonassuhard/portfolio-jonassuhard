@@ -149,6 +149,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               <p className="foot-col-title">Agent-readable</p>
               <a href="/profile.json">profile.json</a>
               <a href="/knowledge-graph.json">knowledge-graph.json</a>
+              <a href="/knowledge">knowledge</a>
               <a href="/llms.txt">llms.txt</a>
               <a href="/sitemap.xml">sitemap.xml</a>
             </div>

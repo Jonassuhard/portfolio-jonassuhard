@@ -31,6 +31,11 @@ Dernière mise à jour : 2026-07-02
 - [Méthode de travail](https://jonassuhard.com/methode): cadrer, construire, vérifier, transmettre — garde-fous IA, fact-check, anonymisation, validation humaine avant publication
 - [Compétences](https://jonassuhard.com/skills.md): compétences reliées aux projets qui les prouvent
 
+## Pages citables
+
+- [Rendre un portfolio citable par un agent IA](https://jonassuhard.com/knowledge/llms-txt-portfolio): méthode llms.txt, profile.json, claims.json, Markdown et JSON-LD sur ce site
+- [Auditer visuellement avec Playwright](https://jonassuhard.com/knowledge/playwright-audit-visuel): captures multi-viewports, console, responsive et preuves avant modification
+
 ## Projets techniques
 
 - [RAG Starter Kit](https://jonassuhard.com/projects/rag-starter-kit.md): API de retrieval augmenté multi-tenant (FastAPI, Qdrant, Mistral, citations de sources)
