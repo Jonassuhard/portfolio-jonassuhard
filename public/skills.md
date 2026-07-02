@@ -1,37 +1,49 @@
 # Compétences - Jonas Suhard
 
-## SEO / contenu
+## SEO / contenu / CMS
 
 Preuves : ISCOM, Capsélys, Les Petites Griffes.
 
-Recherche, structure, maillage, Drupal, vérification et publication encadrée.
+Recherche, structure, maillage, production éditoriale dans Drupal, vérification et publication encadrée.
 
-## Next.js / React
+Limite : pas encore de programmatic SEO à grande échelle ni de domaine à fort trafic historisé.
 
-Preuves : Les Petites Griffes, Educool, ce portfolio.
-
-Interfaces utiles, pages publiques, routes, rendu statique et production.
-
-## IA générative
-
-Preuves : Capsélys, Les Petites Griffes, RAG / workflows LLM.
-
-Assistant cadré, workflows LLM, fact-check, pas de promesse magique.
-
-## Automatisation
+## Automatisation / QA / Playwright
 
 Preuves : Battle Engine, audits Playwright, scripts Python.
 
-Pipelines Python, Playwright, génération, contrôles et vérification.
+Pipelines Python, audits Playwright multi-viewports, génération et contrôles automatisés.
 
-## Produit / arbitrage
+Limite : automatisation de projets perso ; pas encore de QA en CI/CD dans une équipe multi-dev.
 
-Preuves : Educool, Capsélys, HoopSphere.
+## IA appliquée / workflows LLM
 
-Contraintes terrain, limites explicites, décisions et alternatives rejetées.
+Preuves : Capsélys, Les Petites Griffes, ISCOM. Compléments : RAG Starter Kit, Board IA PME.
 
-## Sécurité / données
+Assistants cadrés, workflows LLM, fact-check, détection d'hallucinations et garde-fous avant publication.
+
+Limite : POC et projets cadrés ; pas encore de LLM en production sous charge avec SLA.
+
+## Full-stack web
+
+Preuves : Les Petites Griffes, Educool, ce portfolio.
+
+Next.js, React, pages publiques, CMS léger, rendu statique, déploiement et production.
+
+Limite : surtout front et intégrations ; pas de backend distribué à forte charge.
+
+## Documentation / transmission
+
+Preuves : claude-code-soul, Educool, ce portfolio.
+
+Décisions écrites, cadres réutilisables, fichiers lisibles par un agent ; un travail qu'un autre reprend.
+
+Limite : documentation de projets solo ; pas encore d'onboarding formalisé sur un codebase partagé.
+
+## Sécurité / RGPD / limites
 
 Preuves : Educool, Les Petites Griffes.
 
-Données sensibles, auth, rules, anonymisation et prudence de publication.
+Données sensibles et mineurs anonymisées, secrets hors du code, règles d'accès, prudence de publication.
+
+Limite : bonnes pratiques appliquées ; pas d'audit sécurité formel ni de conformité validée par un DPO.

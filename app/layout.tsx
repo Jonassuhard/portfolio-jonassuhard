@@ -10,7 +10,7 @@ import {
 import localFont from "next/font/local";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { personJsonLd, websiteJsonLd } from "@/lib/json-ld";
+import { knowledgeGraphJsonLd } from "@/lib/json-ld";
 import { site, siteUrl } from "@/lib/projects";
 import GlitchController from "./glitch-controller";
 import NixieClock from "./nixie-clock";
@@ -103,11 +103,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <BlueprintBg />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd()) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd()) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(knowledgeGraphJsonLd()) }}
         />
         <header className="site-header">
           <div className="titlebar">
@@ -152,6 +148,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <div>
               <p className="foot-col-title">Agent-readable</p>
               <a href="/profile.json">profile.json</a>
+              <a href="/knowledge-graph.json">knowledge-graph.json</a>
               <a href="/llms.txt">llms.txt</a>
               <a href="/sitemap.xml">sitemap.xml</a>
             </div>

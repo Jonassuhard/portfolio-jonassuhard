@@ -1,10 +1,12 @@
 # Jonas Suhard
 
-> Growth Engineer · IA appliquée & Automatisation basé à Paris : profil hybride marketing, IA générative et développement full-stack. Disponible en CDI à partir du 1er septembre 2026. Contact : contact@jonassuhard.com.
+> Growth Engineer · IA appliquée & Automatisation, basé à Paris. Profil hybride marketing, IA générative et développement full-stack, orienté delivery. Variante de poste : Marketing Technologist IA. Disponible en CDI à partir du 1er septembre 2026. Contact : contact@jonassuhard.com.
 
 Jonas construit des systèmes marketing augmentés par l'IA — sites, automatisations, contenus, workflows LLM et dashboards — qui transforment une stratégie en produit utilisable. Ce site rassemble ses projets de travail : projets réels, décisions, contraintes et résultats, sans métrique inventée.
 
-Dernière mise à jour : 2026-07-01
+Note de lecture : les pages HTML sont la version canonique pour les humains ; les fichiers Markdown et JSON ci-dessous sont la version destinée aux agents. Les projets clients sont anonymisés quand les données ou les accès ne sont pas publiables.
+
+Dernière mise à jour : 2026-07-02
 
 ## Profil
 
@@ -14,24 +16,37 @@ Dernière mise à jour : 2026-07-01
 - [Compétences](https://jonassuhard.com/skills.md): matrice de compétences reliées à des projets
 - [Page recruteurs](https://jonassuhard.com/recruteurs): où me ranger, preuves, périmètre, contact
 - [CV (PDF)](https://jonassuhard.com/cv.pdf): CV à jour
+- [Knowledge graph (JSON-LD)](https://jonassuhard.com/knowledge-graph.json): graphe Person, compétences et projets
 
 ## Projets principaux
 
-- [Les Petites Griffes](https://jonassuhard.com/projects/les-petites-griffes.md): site live + CMS maison + SEO local + assistant IA (Lighthouse mobile 88 / SEO 100 / accessibilité 93)
-- [Educool / La Herse](https://jonassuhard.com/projects/educool-la-herse.md): application web de classe (Firebase, données sensibles, PDF), utilisée par une classe entière (données anonymisées)
-- [Capsélys](https://jonassuhard.com/projects/capselys.md): refonte conversion, expérimentation IA et atelier client
-- [ISCOM](https://jonassuhard.com/projects/iscom.md): SEO, Drupal, production éditoriale et audits
-- [Preuvia](https://jonassuhard.com/projects/preuvia.md): offre productisée d'audit GEO — identifier qui les IA citent à la place d'une marque, puis livrer les contenus à publier (site : https://preuvia.vercel.app)
+- [Les Petites Griffes](https://jonassuhard.com/projects/les-petites-griffes.md): site client live, CMS maison, SEO local, assistant IA cadré (Lighthouse mobile 88 / SEO 100 / accessibilité 93, audit 2026-06-29)
+- [Educool / La Herse](https://jonassuhard.com/projects/educool-la-herse.md): application web utilisée en classe (Firebase, données sensibles, PDF), données mineurs anonymisées
+- [ISCOM](https://jonassuhard.com/projects/iscom.md): production SEO dans Drupal, fact-check claim par claim, audit de cannibalisation et validation humaine avant publication
+- [Preuvia](https://jonassuhard.com/projects/preuvia.md): audit GEO — mesurer qui les IA citent à la place d'une marque, puis livrer un plan de publication re-testable (site : https://preuvia.vercel.app)
+- [Capsélys](https://jonassuhard.com/projects/capselys.md): refonte conversion sur staging, audits Playwright multi-viewports, expérimentation IA et atelier client
+
+## Méthode
+
+- [Méthode de travail](https://jonassuhard.com/methode): cadrer, construire, vérifier, transmettre — garde-fous IA, fact-check, anonymisation, validation humaine avant publication
+- [Compétences](https://jonassuhard.com/skills.md): compétences reliées aux projets qui les prouvent
+
+## Projets techniques
+
+- [RAG Starter Kit](https://jonassuhard.com/projects/rag-starter-kit.md): API de retrieval augmenté multi-tenant (FastAPI, Qdrant, Mistral, citations de sources)
+- [Board IA PME](https://jonassuhard.com/projects/board-ia-pme.md): POC multi-agents avec avis contradictoires et agrégation de décision
+- [Battle Engine](https://jonassuhard.com/projects/battle-engine.md): pipeline vidéo automatisé (Godot, FFmpeg, RIFE, YouTube API)
 
 ## Contact
 
 - [Email](mailto:contact@jonassuhard.com): contact@jonassuhard.com
 - [GitHub](https://github.com/Jonassuhard): code et preuves auditables
 - [LinkedIn](https://www.linkedin.com/in/jonas-suhard-b73923245/): profil professionnel
+- [Malt](https://www.malt.fr/profile/jonassuhard): profil freelance
 
 ## Optional
 
-- [Battle Engine](https://jonassuhard.com/projects/battle-engine.md): pipeline vidéo automatisé (Godot, FFmpeg)
-- [HoopSphere](https://jonassuhard.com/projects/hoopsphere.md): application basket (Firebase, React Native, OCR)
+- [HoopSphere](https://jonassuhard.com/projects/hoopsphere.md): prototype produit MBA (React Native, Firebase, OCR)
+- [Edusemantix](https://jonassuhard.com/projects/edusemantix.md): jeu sémantique multijoueur temps réel
 - [Index des projets](https://jonassuhard.com/projets): toutes les preuves classées par maturité, vérifiabilité et contexte
 - [Plan du site](https://jonassuhard.com/sitemap.xml): toutes les URLs

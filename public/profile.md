@@ -30,7 +30,7 @@ Paris, France. CDI à Paris ou hybride, disponible à partir du 1er septembre 20
 ### IA
 
 - Workflows LLM
-- RAG simple
+- RAG
 - Prompt engineering
 - Automatisation
 - Fact-check et QA de contenu IA
@@ -50,6 +50,7 @@ Paris, France. CDI à Paris ou hybride, disponible à partir du 1er septembre 20
 - Educool / La Herse: app web éducation, Firebase, données sensibles, PDF.
 - Capsélys: refonte conversion, expérimentation IA, workshop client.
 - ISCOM: SEO, Drupal, production éditoriale, audits.
+- Preuvia: audit GEO, visibilité IA, plan de publication re-testable.
 
 ## Formation
 
@@ -62,3 +63,4 @@ Paris, France. CDI à Paris ou hybride, disponible à partir du 1er septembre 20
 - Email: contact@jonassuhard.com
 - GitHub: https://github.com/Jonassuhard
 - LinkedIn: https://www.linkedin.com/in/jonas-suhard-b73923245/
+- Malt: https://www.malt.fr/profile/jonassuhard
