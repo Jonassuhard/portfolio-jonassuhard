@@ -33,9 +33,13 @@ export default function AboutPage() {
             <a className="button primary" href={`mailto:${site.email}`}>Me contacter</a>
             <a className="button" href="/projets">Voir les projets</a>
           </div>
-          <p className="cta-sub">
-            CV : <a href={site.cvStyled}>version site</a> · <a href={site.cvClassic}>classique</a>
-          </p>
+          <div className="cv-block">
+            <span className="cv-label">CV — téléchargement direct</span>
+            <div className="button-row">
+              <a className="button primary" href={site.cvClassic} download>CV classique (PDF)</a>
+              <a className="button" href={site.cvStyled} download>CV version site (PDF)</a>
+            </div>
+          </div>
         </div>
         <div className="panel panel-sys">
           <div className="avatar-frame">
@@ -54,6 +58,41 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <section className="section" id="growth-engineer">
+        <div className="section-head">
+          <div>
+            <p className="section-kicker">Définition</p>
+            <h2>C'est quoi un Growth Engineer ?</h2>
+          </div>
+        </div>
+        <div className="prose">
+          <p>
+            Le terme vient de l'anglais et sonne creux quand on ne le rattache à rien.
+            Voilà ce que je mets derrière.
+          </p>
+          <p>
+            Un Growth Engineer relie deux métiers qu'on sépare d'habitude, l'acquisition
+            et le code. Je conçois, je livre, je mesure. Sans sous-traiter chaque étape.
+          </p>
+          <p>
+            Je viens du marketing. J'ai appris à coder pour ne plus dépendre d'un dev à
+            chaque test. En IA appliquée, je cadre des workflows LLM utiles, avec des
+            garde-fous. Pas des démos.
+          </p>
+          <p>
+            Ce n'est pas du growth hacking. La dette technique et la sécurité comptent
+            autant que le résultat de la semaine. Traduit en clair, c'est un profil
+            hybride qui mêle marketing, développement et IA, au service d'un produit qui
+            tourne. Je travaille aussi bien sur Mac que sur Windows.
+          </p>
+          <p>
+            <Link className="lk" href="/knowledge/growth-engineer-ia">
+              La version longue, avec les preuves.
+            </Link>
+          </p>
+        </div>
+      </section>
+
       <section className="section">
         <div className="section-head">
           <div>
@@ -61,7 +100,7 @@ export default function AboutPage() {
             <h2>Expérience.</h2>
           </div>
         </div>
-        <div className="matrix">
+        <div className="matrix matrix-2">
           <div className="matrix-item">
             <strong>Alternance — production éditoriale SEO</strong>
             <p>Depuis septembre 2024 · Eduservices (marque ISCOM)</p>
@@ -82,7 +121,12 @@ export default function AboutPage() {
             <h2>Formation.</h2>
           </div>
         </div>
-        <div className="matrix">
+        <div className="matrix matrix-2">
+          <div className="matrix-item">
+            <strong>Certification Anthropic (en préparation)</strong>
+            <p>2026 · à distance</p>
+            <p className="cert">Certification sur le développement d'applications avec Claude, en cours de préparation.</p>
+          </div>
           <div className="matrix-item">
             <strong>MBA Expert Marketing Digital (en cours)</strong>
             <p>2024–2026 · MyDigitalSchool, Paris</p>

@@ -62,12 +62,14 @@ const SECTIONS = [
     ]
   },
   {
-    kicker: "Limites",
-    title: "Ce que l'IA ne remplace pas.",
+    kicker: "Ce qui compte",
+    title: "Ce qui fait la différence avec l'IA.",
     items: [
-      "Le jugement : décider quoi construire, pour qui, et quand s'arrêter reste humain.",
-      "La responsabilité : ce qui part en production, je le signe.",
-      "La relation : comprendre un client ou une équipe ne se délègue pas à un modèle."
+      "L'IA avance vite et prend en charge une part croissante du travail, y compris une partie du jugement. Le nier serait malhonnête.",
+      "Ce qui fait la différence, c'est de savoir exactement ce qu'on veut, et de savoir l'expliquer, à un modèle comme à une équipe.",
+      "Choisir le bon modèle à chaque étape pèse autant que le prompt. Un modèle pour cadrer et planifier, un autre pour exécuter.",
+      "Le vrai enjeu aujourd'hui c'est le coût. On peut presque tout faire, la compétence c'est de le faire au bon prix.",
+      "La responsabilité de ce qui part en production reste signée par un humain. Moi, en l'occurrence."
     ]
   }
 ];

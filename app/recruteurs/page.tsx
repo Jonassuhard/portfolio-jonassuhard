@@ -15,7 +15,11 @@ export default function RecruitersPage() {
       <section className="case-hero">
         <div>
           <p className="eyebrow">Candidature</p>
-          <h1>Growth Engineer, IA appliquée et automatisation.</h1>
+          <h1>
+            Growth Engineer
+            <Link className="def-ref" href="/a-propos#growth-engineer" aria-label="Définition de Growth Engineer">*</Link>
+            , IA appliquée et automatisation.
+          </h1>
           <p className="lead">
             Profil marketing et développement : je cadre un besoin, je livre un
             premier outil qui marche, je vérifie les résultats et je documente
@@ -39,7 +43,7 @@ export default function RecruitersPage() {
               </tr>
               <tr>
                 <th scope="row">Disponibilité</th>
-                <td>À partir du 1er septembre 2026</td>
+                <td><strong>À partir du 1er septembre 2026</strong></td>
               </tr>
               <tr>
                 <th scope="row">Zone</th>
@@ -52,6 +56,10 @@ export default function RecruitersPage() {
               <tr>
                 <th scope="row">Stack</th>
                 <td>Next.js, React, Firebase, Supabase, Python, Playwright, SEO, workflows LLM</td>
+              </tr>
+              <tr>
+                <th scope="row">Environnements</th>
+                <td>Mac et Windows (deux postes de travail)</td>
               </tr>
               <tr>
                 <th scope="row">Code</th>
@@ -73,7 +81,7 @@ export default function RecruitersPage() {
             workflow IA, automatisation, audit SEO ou prototype web.
           </p>
         </div>
-        <div className="matrix">
+        <div className="matrix matrix-2">
           <div className="matrix-item">
             <strong>Acquisition</strong>
             <p>SEO, pages de conversion, contenus, audits, tracking et priorisation.</p>
@@ -105,7 +113,7 @@ export default function RecruitersPage() {
             reprenne sans moi.
           </p>
         </div>
-        <div className="matrix">
+        <div className="matrix matrix-2">
           <div className="matrix-item">
             <strong>Cadrage partagé</strong>
             <p>Les hypothèses posées avant de coder, les décisions écrites, pas gardées dans ma tête.</p>
@@ -159,7 +167,7 @@ export default function RecruitersPage() {
             <h2>Mes 30 premiers jours dans une équipe.</h2>
           </div>
         </div>
-        <div className="matrix">
+        <div className="matrix matrix-2">
           <div className="matrix-item">
             <strong>Acquisition</strong>
             <p>Audit et correctifs d'un tunnel, plus une landing ou une section de conversion livrée.</p>

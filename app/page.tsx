@@ -13,7 +13,11 @@ export default function HomePage() {
         <div className="hero-copy">
           <div>
             <p className="eyebrow">CDI · Paris ou hybride · disponible le 1er septembre 2026</p>
-            <h1>Growth Engineer · IA appliquée &amp; Automatisation</h1>
+            <h1>
+              Growth Engineer
+              <Link className="def-ref" href="/a-propos#growth-engineer" aria-label="Définition de Growth Engineer">*</Link>
+              {" "}· IA appliquée &amp; Automatisation
+            </h1>
             <p className="lead">
               Je viens du marketing et j'ai appris à coder pour livrer moi-même :
               sites, workflows IA, automatisations, contenus SEO. Je documente
@@ -134,7 +138,7 @@ export default function HomePage() {
             l'a fait. <Link href="/methode">Voir la méthode en détail.</Link>
           </p>
         </div>
-        <div className="matrix">
+        <div className="matrix matrix-2">
           <div className="matrix-item">
             <strong>Cadrer</strong>
             <p>Comprendre le besoin, poser les contraintes et les hypothèses avant d'écrire une ligne.</p>

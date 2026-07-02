@@ -129,7 +129,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               </div>
             </div>
             <p className="foot-pitch">
-              Marketing, IA générative et développement full-stack. Disponible à partir du {site.availability} · {site.location} ou hybride.
+              Marketing, IA générative et développement full-stack.
             </p>
           </div>
           <div className="foot-cols">
@@ -143,19 +143,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               ) : null}
             </div>
             <div>
-              <p className="foot-col-title">Documents</p>
-              <a href={site.cvClassic}>CV — classique (PDF)</a>
-              <a href={site.cvStyled}>CV — version site (PDF)</a>
-              <a href="/profile.md">profile.md</a>
-              <a href="/skills.md">skills.md</a>
-            </div>
-            <div>
-              <p className="foot-col-title">Agent-readable</p>
-              <a href="/profile.json">profile.json</a>
-              <a href="/knowledge-graph.json">knowledge-graph.json</a>
-              <a href="/knowledge">knowledge</a>
-              <a href="/llms.txt">llms.txt</a>
-              <a href="/sitemap.xml">sitemap.xml</a>
+              <p className="foot-col-title">Ressources</p>
+              <a href={site.cvClassic} download>CV — classique (PDF)</a>
+              <a href={site.cvStyled} download>CV — version site (PDF)</a>
+              <Link href="/knowledge">Knowledge</Link>
             </div>
             <div>
               <p className="foot-col-title">Légal</p>

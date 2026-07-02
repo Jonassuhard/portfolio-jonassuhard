@@ -377,13 +377,13 @@ td { color:var(--color-ink-soft); }
 
 /* ===== FOOTER (statusbar + colonnes) ===== */
 .site-footer { position:relative; z-index:1; border-top:1px solid var(--color-ink); background:var(--color-bg); }
-.foot-top { display:flex; justify-content:space-between; align-items:center; gap:24px; flex-wrap:wrap; padding:22px 22px 16px; border-bottom:1px solid var(--color-line); }
-.foot-id { display:flex; align-items:center; gap:14px; }
-.brand-mark.sm { width:46px; height:46px; }
-.foot-id strong { font-family:var(--ft-title); font-weight:700; color:var(--color-ink); font-size:20px; display:block; line-height:1; }
+.foot-top { display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap; padding:16px 22px 12px; border-bottom:1px solid var(--color-line); }
+.foot-id { display:flex; align-items:center; gap:12px; }
+.brand-mark.sm { width:38px; height:38px; }
+.foot-id strong { font-family:var(--ft-title); font-weight:700; color:var(--color-ink); font-size:17px; display:block; line-height:1; }
 .foot-id-sub { font-family:var(--ft-type); font-size:11px; letter-spacing:.08em; color:var(--color-muted); text-transform:uppercase; }
-.foot-pitch { font-family:var(--ft-body); font-size:13px; color:var(--color-ink-soft); max-width:44ch; margin:0; }
-.foot-cols { display:grid; grid-template-columns:repeat(auto-fit,minmax(170px,1fr)); gap:18px; padding:20px 22px; }
+.foot-pitch { font-family:var(--ft-body); font-size:12.5px; color:var(--color-ink-soft); max-width:44ch; margin:0; }
+.foot-cols { display:grid; grid-template-columns:repeat(auto-fit,minmax(170px,1fr)); gap:16px; padding:14px 22px; }
 .foot-cols .foot-col-title { font-family:var(--ft-type); font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.12em; color:var(--color-muted); margin:0 0 10px; }
 .foot-cols a { display:block; font-family:var(--ft-data); font-size:13px; color:var(--color-ink-soft); text-decoration:none; padding:3px 0; transition:color .12s; }
 .foot-cols a:hover { color:var(--color-nixie); }
@@ -499,3 +499,69 @@ td { color:var(--color-ink-soft); }
   .consent-actions .button { flex:1; justify-content:center; min-height:44px; }
   .foot-link-btn { min-height:40px; padding:10px 0; font-size:12.5px; }
 }
+
+/* détail des types de cookies (bannière) : replié par défaut */
+.consent-detail { flex:1 1 100%; margin:0; padding:10px 0 0; border-top:1px solid var(--color-line); font-family:var(--ft-data); font-size:12px; line-height:1.55; color:var(--color-ink-soft); }
+.consent-detail a { color:var(--color-rust); text-decoration:underline; text-underline-offset:2px; }
+.consent-toggle { font-family:var(--ft-data); font-size:12.5px; color:var(--color-rust); background:none; border:0; padding:0; cursor:pointer; text-decoration:underline; text-underline-offset:2px; }
+.consent-toggle:hover { color:var(--color-ink); }
+
+/* ============================================================
+   AJOUTS REVIEW JONAS 02/07 — additifs, aucune animation
+   verrouillée touchée (cf. ANIMATIONS_VERROUILLEES.md).
+   ============================================================ */
+
+/* ----- Aération desktop : chaque section respire, possède son écran -----
+   Le hero (.hero / .case-hero) n'est pas .section -> intact. La notice de
+   clôture (dernière .section) reste collée à la section précédente pour
+   former une paire (ex. home : Méthode + Ce que je cherche). */
+@media (min-width:1080px){
+  .page > .section { margin-top:clamp(56px,6.5vh,92px); }
+  .page > .section:first-child { margin-top:0; }
+  .page > .section:last-child { margin-top:0; }
+  /* /projets : volontairement dense, tous les projets visibles d'un coup */
+  .page-dense > .section { margin-top:40px; }
+  .page-dense > .section:first-child { margin-top:0; }
+}
+
+/* ----- Grilles sans case vide : force 2 colonnes (2x2) au lieu de 3+1 -----
+   Évite la cellule grise fantôme quand une rangée est incomplète. */
+@media (min-width:600px){
+  .matrix-2 { grid-template-columns:repeat(2,1fr); }
+}
+
+/* ----- Survol boutons : inversion douce + voile holographique -----
+   Le voile (::after) se peint entre le fond du bouton et son texte
+   (stacking context z-index:0 + ::after z-index:-1), donc lisibilité
+   intacte. La transition passe de .12s à .42s (inversion plus douce). */
+.button { position:relative; z-index:0; transition:background-color .42s ease, color .42s ease, border-color .42s ease; }
+.button::after {
+  content:""; position:absolute; inset:0; z-index:-1; pointer-events:none; opacity:0;
+  background:var(--holo); background-size:220% 220%; mix-blend-mode:screen;
+  transition:opacity .42s ease;
+}
+.button:hover::after { opacity:.24; animation:holo-btn 4.2s linear infinite; }
+@keyframes holo-btn { 0% { background-position:0% 0%; } 100% { background-position:200% 200%; } }
+@media (prefers-reduced-motion:reduce){
+  .button { transition:none; }
+  .button:hover::after { animation:none; }
+}
+
+/* ----- Flèche retour (header, sur les sous-pages projet / knowledge) ----- */
+.nav-back {
+  display:inline-flex; align-items:center; justify-content:center;
+  width:30px; height:30px; margin-right:4px; flex:0 0 auto;
+  border:1px solid var(--color-ink); color:var(--color-ink); text-decoration:none;
+  font-family:var(--ft-type); font-size:15px; line-height:1;
+  transition:background-color .18s ease, color .18s ease;
+}
+.nav-back:hover { background:var(--color-ink); color:var(--color-bg); }
+
+/* ----- CV mis en avant dans /a-propos ----- */
+.cv-block { border:1px solid var(--color-ink); background:var(--color-surface-strong); padding:18px 20px; margin-top:10px; }
+.cv-block .cv-label { font-family:var(--ft-type); text-transform:uppercase; letter-spacing:.1em; font-size:12px; color:var(--color-ink); display:block; margin:0 0 12px; }
+.cv-block .button-row { gap:12px; }
+
+/* ----- Astérisque de définition sur le titre (Growth Engineer -> /a-propos) ----- */
+.def-ref { color:var(--color-rust); text-decoration:none; font-family:var(--ft-data); font-size:.42em; vertical-align:super; line-height:0; padding:0 .12em; }
+.def-ref:hover { text-decoration:underline; }

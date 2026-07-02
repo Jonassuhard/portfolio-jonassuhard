@@ -27,6 +27,7 @@ function loadClarity() {
 
 export default function ConsentBanner() {
   const [show, setShow] = useState(false);
+  const [detail, setDetail] = useState(false);
 
   useEffect(() => {
     let choice: string | null = null;
@@ -69,9 +70,16 @@ export default function ConsentBanner() {
     <div className="consent" role="dialog" aria-label="Consentement aux cookies de mesure d'audience">
       <div className="consent-inner">
         <p className="consent-text">
-          Ce site peut mesurer son audience avec Microsoft Clarity (cookies et relecture anonyme de
-          la navigation) pour voir comment ses pages sont lues. Rien ne se charge tant que vous
-          n'avez pas accepté. <a href="/confidentialite">En savoir plus</a>.
+          Ce site peut mesurer son audience pour comprendre comment ses pages sont lues. Rien ne se
+          charge avant votre accord.{" "}
+          <button
+            type="button"
+            className="consent-toggle"
+            aria-expanded={detail}
+            onClick={() => setDetail((v) => !v)}
+          >
+            {detail ? "Masquer le détail" : "Voir le détail"}
+          </button>
         </p>
         <div className="consent-actions">
           <button type="button" className="button" onClick={() => decide("denied")}>
@@ -81,6 +89,14 @@ export default function ConsentBanner() {
             Accepter
           </button>
         </div>
+        {detail ? (
+          <p className="consent-detail">
+            Mesure d'audience (Microsoft Clarity) : cookies analytiques et relecture anonyme de la
+            navigation, pour voir quelles pages sont lues. Aucun cookie publicitaire, aucune revente
+            de données. Vous pouvez revenir sur ce choix à tout moment via « Gérer les cookies » en
+            bas de page. <a href="/confidentialite">Politique de confidentialité</a>.
+          </p>
+        ) : null}
       </div>
     </div>
   );

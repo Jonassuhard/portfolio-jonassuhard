@@ -17,7 +17,7 @@ const GROUPS = [
 
 export default function ProjectsPage() {
   return (
-    <div className="page">
+    <div className="page page-dense">
       <section>
         <p className="eyebrow">Projets</p>
         <h1>Du projet principal au lab.</h1>
