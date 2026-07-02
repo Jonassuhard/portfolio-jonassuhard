@@ -343,6 +343,8 @@ export const projects: Project[] = [
     image: "/assets/cards/iscom.webp",
     repoStatus: "CMS employeur, non publiable",
     liveLabel: "Actu publiée (lien)",
+    evidenceNote:
+      "Article publié en ligne (lien ci-dessous) ; checklist QA de pré-publication et extrait d'audit de cannibalisation anonymisés, montrables en entretien.",
     architecture: [
       "Production éditoriale SEO saisie dans Drupal (CMS sensible).",
       "Audits de cannibalisation et inter-marques via Semrush.",
@@ -356,12 +358,12 @@ export const projects: Project[] = [
       "Impact trafic SEO des contenus : suivi côté employeur, non publiable ici."
     ],
     proofLine:
-      "Production SEO dans Drupal, audits de cannibalisation et garde-fous de publication avant mise en ligne.",
+      "Contenus SEO qui vont réellement en ligne dans le CMS d'un employeur, avec fact-check de chaque affirmation et validation humaine avant publication.",
     summary:
       "Production éditoriale SEO dans le Drupal d'ISCOM : rédaction et fact-check d'articles, audits de cannibalisation avec Semrush, et automatisations Playwright pour la saisie, avec validation humaine avant chaque publication.",
     stack: ["Drupal", "Playwright", "Semrush", "SEO", "LLM-assisted QA"],
     recruiterProof: [
-      "Production à volume avec contrôle qualité.",
+      "Livrer dans le process de publication d'un employeur sans court-circuiter la validation éditoriale.",
       "Capacité à transformer un audit SEO en décisions nommées.",
       "Discipline sur les actions sensibles, avec validation avant publication."
     ],
@@ -425,8 +427,9 @@ export const projects: Project[] = [
     architecture: [
       "Site et tunnel de prise de contact en Next.js, déployés et suivis en production.",
       "Protocole d'audit reproductible : un jeu de requêtes testé sur plusieurs assistants (ChatGPT, Claude, Perplexity, Gemini, Mistral).",
+      "Grille de lecture publique : présence, exactitude, fraîcheur et citabilité, notées de 0 à 3 par assistant.",
       "Comparaison des sources citées (concurrents, comparatifs, forums) pour situer la marque.",
-      "Livrable PDF structuré : score de visibilité, écarts, contenus et balisage à publier."
+      "Livrable PDF structuré : score de visibilité, écarts, contenus et balisage à publier, puis éléments à re-tester au prochain audit."
     ],
     v2: [
       "Industrialiser la collecte multi-modèles.",
@@ -437,13 +440,13 @@ export const projects: Project[] = [
       "Effet réel sur les citations IA des clients : mesuré au cas par cas, pas de moyenne publiable."
     ],
     proofLine:
-      "Offre productisée d'audit GEO : identifier qui les IA citent à la place d'une marque, puis livrer les contenus à publier.",
+      "Audit GEO productisé : mesurer qui les IA citent à la place d'une marque, comparer les écarts, puis livrer un plan de publication re-testable.",
     summary:
-      "Aider une marque à savoir si elle apparaît dans les réponses des assistants IA, qui ressort à sa place, et quoi publier pour augmenter ses chances d'être reprise.",
+      "Aider une marque à savoir si elle apparaît dans les réponses des assistants IA, qui ressort à sa place, quoi publier, puis quoi re-tester au prochain audit.",
     stack: ["Next.js", "GEO / AEO", "LLM multi-modèles", "Schema JSON-LD", "PDF"],
     recruiterProof: [
       "Produit pensé de bout en bout : positionnement, offre, site, livraison.",
-      "Maîtrise concrète de l'optimisation pour les moteurs de réponse IA, sujet central de ce portfolio.",
+      "Méthode d'audit rejouable de la visibilité d'une marque dans les réponses des assistants IA.",
       "Premiers audits clients réels livrés, pas une démo."
     ],
     constraints: [
@@ -452,6 +455,11 @@ export const projects: Project[] = [
       "Méthode et template d'audit = actif commercial, non publiés."
     ],
     decisions: [
+      {
+        decision: "Score public sur 4 dimensions",
+        why: "Rendre l'audit vérifiable : présence, exactitude, fraîcheur et citabilité peuvent être re-testées au lieu de rester dans un score opaque.",
+        rejected: "Score propriétaire impossible à expliquer."
+      },
       {
         decision: "Offre productisée plutôt que SaaS",
         why: "Livrer une valeur claire et facturable tout de suite, sans construire une plateforme avant d'avoir des clients.",
@@ -471,7 +479,8 @@ export const projects: Project[] = [
     delivered: [
       "Site en ligne avec tunnel de prise de contact.",
       "Protocole d'audit multi-modèles reproductible.",
-      "Livrable PDF : score, sources citées, plan d'action.",
+      "Questions test séparant requêtes génériques et requêtes marque.",
+      "Livrable PDF : score, sources citées, écarts et plan d'action re-testable.",
       "Premiers mini-audits et audits clients livrés."
     ],
     results: [
@@ -481,8 +490,10 @@ export const projects: Project[] = [
     ],
     limits: [
       "Ne garantit pas l'apparition dans les réponses IA.",
-      "Résultats dépendants du modèle, du prompt et du moment du test.",
-      "Méthode interne volontairement non détaillée ici."
+      "Ne force pas les modèles à citer une marque.",
+      "Les scores sont datés : ils dépendent du modèle, du prompt et du moment du test.",
+      "Ne remplace pas le SEO classique ; il ajoute une couche de visibilité dans les moteurs de réponse.",
+      "Méthode interne volontairement non détaillée ici ; les exemples publics doivent rester anonymisés."
     ],
     links: [
       { label: "Voir le site", href: "https://preuvia.vercel.app", external: true },
@@ -894,4 +905,3 @@ export const skills = [
 export function getProject(slug: string) {
   return projects.find((project) => project.slug === slug);
 }
-

@@ -12,6 +12,7 @@ build/
 .vercel/
 .DS_Store
 *.log
+*.tsbuildinfo
 # artefacts locaux (non publiés)
 qa/screenshots/
 PROMPTS_IMAGES_PROJETS.md

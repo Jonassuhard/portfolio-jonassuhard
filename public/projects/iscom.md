@@ -6,7 +6,7 @@ Rôle : SEO, fact-check, contenu, audits, CMS, process qualité.
 Stack : Drupal, Playwright, Semrush, SEO, LLM-assisted QA.
 Statut : Alternance / client interne.
 
-En bref : Production SEO dans Drupal, audits de cannibalisation et garde-fous de publication avant mise en ligne.
+En bref : Contenus SEO qui vont réellement en ligne dans le CMS d'un employeur, avec fact-check de chaque affirmation et validation humaine avant publication.
 
 Lien : https://www.iscom.fr/actualites/lia-change-de-role-les-communicants-aussi
 
@@ -16,9 +16,9 @@ Production éditoriale SEO dans le Drupal d'ISCOM : rédaction et fact-check d'a
 
 ## Ce que ça montre
 
-- Production à volume avec contrôle qualité.
+- Livrer dans le process de publication d'un employeur sans court-circuiter la validation éditoriale.
 - Capacité à transformer un audit SEO en décisions nommées.
-- Discipline sur actions sensibles: ne pas publier sans validation.
+- Sur une publication irréversible, la validation humaine passe avant l'automatisation.
 
 ## Limites
 
