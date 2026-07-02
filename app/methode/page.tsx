@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { site, pageAlternates } from "@/lib/projects";
+import { site, pageMeta } from "@/lib/projects";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
+  path: "/methode",
   title: "Méthode",
   description:
-    "Comment Jonas Suhard travaille : cadrage, standards de code, vérification, sécurité des données et usage raisonné de l'IA.",
-  alternates: pageAlternates("/methode")
-};
+    "Comment Jonas Suhard travaille : cadrage, standards de code, vérification, sécurité des données et usage raisonné de l'IA."
+});
 
 const SECTIONS = [
   {

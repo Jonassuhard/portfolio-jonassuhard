@@ -24,7 +24,7 @@
 }
 
 * { box-sizing:border-box; }
-html { scroll-behavior:smooth; }
+html { scroll-behavior:smooth; scroll-padding-top:112px; }
 body {
   margin:0; color:var(--color-ink);
   background-color:var(--color-surface-strong);
@@ -52,8 +52,11 @@ body::after {
   content:""; position:fixed; inset:0; pointer-events:none; z-index:60;
   background-image:var(--noise); opacity:.05; mix-blend-mode:multiply;
 }
-img { display:block; max-width:100%; }
+img { display:block; max-width:100%; height:auto; }
 a { color:inherit; }
+/* Focus clavier visible (0 style focus auparavant) : anneau seulement au clavier,
+   pas au clic souris, via :focus-visible. */
+:focus-visible { outline:2px solid var(--color-rust); outline-offset:2px; border-radius:2px; }
 strong, b { color:var(--color-rust); }
 
 /* ===== TOPBAR (titlebar + menubar) ===== */

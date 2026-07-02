@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+
 export type ProjectTier = 1 | 2 | 3;
 
 export type Project = {
@@ -29,6 +31,7 @@ export type Project = {
   repoStatus?: string;
   liveLabel?: string;
   evidenceNote?: string;
+  metaDescription?: string;
   cardLine?: string;
   video?: string;
   noindex?: boolean;
@@ -72,6 +75,42 @@ export const pageAlternates = (path: string) => ({
   }
 });
 
+// Image OG partagée (fichier de convention app/opengraph-image.png, 1200x630).
+// À réinjecter à la main : dès qu'une page déclare son propre openGraph, Next
+// n'ajoute plus l'image de convention automatiquement.
+export const ogImage = "/opengraph-image.png";
+
+// Métadonnées d'une page statique : canonical + types agent-readable, plus un
+// bloc OpenGraph/Twitter PROPRE à la page. Sans ça, partager /recruteurs sert la
+// carte de la home (le layout ne porte pas d'url, chaque page pose la sienne).
+export const pageMeta = (opts: {
+  path: string;
+  title: string;
+  description: string;
+  ogTitle?: string;
+}): Metadata => {
+  const ogTitle = opts.ogTitle ?? `${opts.title} | Jonas Suhard`;
+  return {
+    title: opts.title,
+    description: opts.description,
+    alternates: pageAlternates(opts.path),
+    openGraph: {
+      title: ogTitle,
+      description: opts.description,
+      url: opts.path,
+      type: "website",
+      locale: "fr_FR",
+      images: [ogImage]
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: ogTitle,
+      description: opts.description,
+      images: [ogImage]
+    }
+  };
+};
+
 export const projects: Project[] = [
   {
     slug: "les-petites-griffes",
@@ -87,6 +126,8 @@ export const projects: Project[] = [
     liveLabel: "Live · URL communiquée en entretien",
     evidenceNote:
       "Captures anonymisées de la home, du CMS et de l'assistant IA, rapport Lighthouse daté, et démo courte en entretien.",
+    metaDescription:
+      "Site vitrine live d'un studio de nail art : Next.js, CMS maison pour éditer galerie et tarifs, assistant IA cadré. Lighthouse SEO 100.",
     cardLine:
       "Site client live, CMS maison, SEO local et assistant IA cadré. Prod réelle, contenus éditables, Lighthouse mobile 88 / SEO 100 / a11y 93.",
     architecture: [
@@ -175,6 +216,8 @@ export const projects: Project[] = [
     liveLabel: "Classe, non public",
     evidenceNote:
       "Captures sur données fictives (parcours élève, génération PDF) et démo en entretien.",
+    metaDescription:
+      "Application web utilisée en classe : suivi des compétences, livrets PDF, Firebase, données de mineurs anonymisées, opérations sensibles en Cloud Functions.",
     cardLine:
       "Application utilisée en classe : suivi de compétences, génération PDF, Firebase, données élèves anonymisées.",
     architecture: [
@@ -258,6 +301,8 @@ export const projects: Project[] = [
     liveLabel: "Staging (non public)",
     evidenceNote:
       "Captures du staging et présentation client de 14 slides, détaillées en entretien.",
+    metaDescription:
+      "Refonte de conversion (WordPress / Divi) sur staging sécurisé : nouveau parcours d'adhésion, audits Playwright multi-viewports, prototype d'assistant IA.",
     cardLine:
       "Refonte de conversion en staging : audit UX, parcours d'adhésion et prototype d'assistant IA.",
     architecture: [
@@ -345,6 +390,8 @@ export const projects: Project[] = [
     liveLabel: "Actu publiée (lien)",
     evidenceNote:
       "Article publié en ligne, plus une checklist QA de pré-publication et un extrait d'audit de cannibalisation anonymisés.",
+    metaDescription:
+      "Production éditoriale SEO dans Drupal : rédaction, fact-check claim par claim, audits de cannibalisation Semrush, validation humaine avant publication.",
     architecture: [
       "Production éditoriale SEO saisie dans Drupal (CMS sensible).",
       "Audits de cannibalisation et inter-marques via Semrush.",
@@ -424,6 +471,8 @@ export const projects: Project[] = [
     liveLabel: "Site en ligne (preuvia.vercel.app)",
     evidenceNote:
       "Détail de l'offre et exemple de sortie d'audit directement sur le site.",
+    metaDescription:
+      "Audit GEO productisé : savoir si une marque apparaît dans les réponses des IA, qui ressort à sa place, quoi publier, puis quoi re-tester au prochain audit.",
     architecture: [
       "Site et tunnel de prise de contact en Next.js, déployés et suivis en production.",
       "Protocole d'audit reproductible : un jeu de requêtes testé sur plusieurs assistants (ChatGPT, Claude, Perplexity, Gemini, Mistral).",

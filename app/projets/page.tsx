@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { projects, site, pageAlternates } from "@/lib/projects";
+import { projects, site, pageMeta } from "@/lib/projects";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
+  path: "/projets",
   title: "Projets",
   description:
-    "Projets de Jonas Suhard : projets principaux (livrés), projets techniques et labs personnels.",
-  alternates: pageAlternates("/projets")
-};
+    "Projets de Jonas Suhard : projets principaux (livrés), projets techniques et labs personnels."
+});
 
 const GROUPS = [
   { title: "Projets principaux", kicker: "Référence", tier: 1 as const },
@@ -42,7 +42,7 @@ export default function ProjectsPage() {
             <div className="case-grid">
               {list.map((project) => (
                 <article className="case-card" key={project.slug}>
-                  <img src={project.image} alt={`Aperçu du projet ${project.shortTitle}`} loading="lazy" decoding="async" />
+                  <img src={project.image} alt={`Aperçu du projet ${project.shortTitle}`} width={760} height={460} loading="lazy" decoding="async" />
                   <div className="case-body">
                     <h3>
                       <Link className="case-card-title" href={`/projets/${project.slug}`}>

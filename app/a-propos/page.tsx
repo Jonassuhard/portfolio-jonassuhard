@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { site, pageAlternates } from "@/lib/projects";
+import { site, pageMeta } from "@/lib/projects";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
+  path: "/a-propos",
   title: "À propos",
-  description: "Positionnement et contexte de Jonas Suhard.",
-  alternates: pageAlternates("/a-propos")
-};
+  description:
+    "Parcours et positionnement de Jonas Suhard : du marketing au développement, profil hybride orienté delivery."
+});
 
 export default function AboutPage() {
   return (

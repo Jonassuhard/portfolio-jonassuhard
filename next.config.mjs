@@ -27,16 +27,24 @@ const nextConfig = {
       {
         key: "Content-Security-Policy",
         value:
-          "frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests"
+          "frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-src 'none'; upgrade-insecure-requests"
       }
     ];
     const agentReadableNoIndex = {
       key: "X-Robots-Tag",
       value: "noindex, follow"
     };
+    // Images/logos servis depuis /public : non hashés, donc pas d'immutable.
+    // 1 jour de fraîcheur + SWR 30 j = repeat-view rapide sans figer une MAJ.
+    const assetCache = {
+      key: "Cache-Control",
+      value: "public, max-age=86400, stale-while-revalidate=2592000"
+    };
 
     return [
       { source: "/:path*", headers: securityHeaders },
+      { source: "/assets/:path*", headers: [assetCache] },
+      { source: "/brand/:path*", headers: [assetCache] },
       {
         source: "/:path*.md",
         headers: [agentReadableNoIndex]

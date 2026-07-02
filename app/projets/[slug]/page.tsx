@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { projectJsonLd, breadcrumbJsonLd } from "@/lib/json-ld";
-import { getProject, projects } from "@/lib/projects";
+import { getProject, projects, ogImage } from "@/lib/projects";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -19,9 +19,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return { title: "Projet introuvable" };
   }
 
+  const description = project.metaDescription ?? clampDescription(project.summary);
+  const ogTitle = `${project.shortTitle} | Jonas Suhard`;
+
   return {
     title: project.shortTitle,
-    description: project.summary,
+    description,
     robots: project.noindex ? { index: false, follow: true } : undefined,
     alternates: {
       canonical: `/projets/${project.slug}`,
@@ -29,8 +32,30 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         "application/json": "/profile.json",
         "text/markdown": `/projects/${project.slug}.md`
       }
+    },
+    openGraph: {
+      title: ogTitle,
+      description,
+      url: `/projets/${project.slug}`,
+      type: "article",
+      locale: "fr_FR",
+      images: [ogImage]
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: ogTitle,
+      description,
+      images: [ogImage]
     }
   };
+}
+
+// Fallback quand aucune metaDescription n'est fournie : coupe le résumé sur un mot
+// pour rester sous ~155 caractères (limite d'affichage SERP).
+function clampDescription(text: string) {
+  if (text.length <= 155) return text;
+  const cut = text.slice(0, 152);
+  return `${cut.slice(0, cut.lastIndexOf(" "))}…`;
 }
 
 export default async function ProjectDetailPage({ params }: PageProps) {
@@ -93,7 +118,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
             aria-label={`Aperçu animé (filtre ASCII) du projet ${project.shortTitle}`}
           />
         ) : (
-          <img src={project.image} alt={`Aperçu du projet ${project.shortTitle}`} />
+          <img src={project.image} alt={`Aperçu du projet ${project.shortTitle}`} width={760} height={460} />
         )}
       </section>
 
