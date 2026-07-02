@@ -61,6 +61,17 @@ export const site = {
   cvStyled: "/cv-portfolio.pdf"
 };
 
+// Canonical par page. En App Router, `alternates` défini dans une page REMPLACE
+// entièrement celui du layout (pas de merge profond) : ce helper réinjecte donc
+// les types agent-readable en même temps que le canonical propre à la page.
+export const pageAlternates = (path: string) => ({
+  canonical: path,
+  types: {
+    "application/json": "/profile.json",
+    "text/markdown": "/profile.md"
+  }
+});
+
 export const projects: Project[] = [
   {
     slug: "les-petites-griffes",
@@ -226,9 +237,8 @@ export const projects: Project[] = [
       "Incidents identifiés, documentés et corrigés progressivement."
     ],
     limits: [
-      "Aucune donnée élève ne doit apparaître publiquement.",
-      "Certaines phases sécurité sont à contextualiser finement.",
-      "Projet très dense, donc la case study doit rester lisible."
+      "Données de mineurs : rien n'est publiable, la preuve se montre sur données fictives ou en entretien.",
+      "Le durcissement des règles d'accès Firebase est un chantier continu, pas un état figé."
     ],
     links: [
       { label: "Version Markdown", href: "/projects/educool-la-herse.md" }
@@ -309,9 +319,9 @@ export const projects: Project[] = [
       "Mesures business réelles à qualifier après déploiement."
     ],
     limits: [
-      "Ne pas dire que le staging est une prod utilisée.",
+      "Environnement de staging, non déployé en production : les effets conversion restent à mesurer une fois en ligne.",
       "Retombées business non disponibles à court terme.",
-      "Certaines décisions dépendent de validation client."
+      "Certaines décisions dépendent de la validation du client."
     ],
     gallery: [
       { src: "/assets/proof/capselys/capselys-site.webp", caption: "Home Capsélys (staging) avec l'assistant IA ouvert en contexte." },
@@ -385,9 +395,9 @@ export const projects: Project[] = [
       "Process de pré-publication durci après erreurs."
     ],
     limits: [
-      "Ne pas publier accès CMS ni données internes.",
-      "Ne pas sur-vendre l'automatisation, la validation humaine reste obligatoire.",
-      "Certaines preuves restent confidentielles."
+      "Impact trafic mesuré côté employeur, non publiable ici.",
+      "Chaque publication passe par une validation humaine ; l'automatisation couvre la saisie et les contrôles.",
+      "Certaines preuves sont montrables en entretien, pas en ligne."
     ],
     links: [
       {
@@ -522,7 +532,7 @@ export const projects: Project[] = [
     ],
     delivered: ["Pipeline de rendu", "Vidéos publiées", "Scripts d'automatisation"],
     results: ["Audience YouTube à vérifier avant publication finale."],
-    limits: ["Ne pas laisser le côté meme-content dominer le portfolio."],
+    limits: ["Projet lab : automatisation créative, éloignée du poste visé, gardée comme preuve technique."],
     links: [{ label: "Version Markdown", href: "/projects/battle-engine.md" }]
   },
   {

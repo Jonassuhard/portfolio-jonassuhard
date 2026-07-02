@@ -20,6 +20,5 @@ Application web utilisée par une enseignante en classe : suivi des compétences
 
 ## Limites
 
-- Aucune donnée élève ne doit apparaître publiquement.
-- Certaines phases sécurité sont à contextualiser finement.
-- Projet très dense: la case study doit rester lisible.
+- Données de mineurs : rien n'est publiable, la preuve se montre sur données fictives ou en entretien.
+- Le durcissement des règles d'accès Firebase est un chantier continu, pas un état figé.

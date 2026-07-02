@@ -10,13 +10,13 @@ En bref : Site client live en production (URL communiquée en entretien · captu
 
 ## Problème
 
-Site vitrine d'un salon de toilettage : front Next.js, un CMS maison pour que la gérante édite seule sa galerie, ses tarifs et sa FAQ, et un assistant IA cadré sur ses prix et ses disponibilités.
+Site vitrine d'un studio de nail art : front Next.js, un CMS maison pour que la gérante édite seule sa galerie, ses tarifs et sa FAQ, et un assistant IA cadré sur ses prix et ses disponibilités.
 
 ## Ce que ça montre
 
 - Livraison d'un site public réel avec domaine et contraintes de production.
 - Connexion entre SEO local, UX de conversion, CMS et assistant IA.
-- Gestion d'incidents: domaine .fr, données DB, prix, galerie, cohérentisation contenu.
+- Gestion d'incidents: domaine .fr, données DB, prix, galerie, harmonisation du contenu.
 
 ## Limites
 

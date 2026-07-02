@@ -20,6 +20,6 @@ Refonte du site d'un client (WordPress / Divi) sur un staging sécurisé : nouve
 
 ## Limites
 
-- Ne pas dire que le staging est une prod utilisée.
+- Environnement de staging, non déployé en production : les effets conversion restent à mesurer une fois en ligne.
 - Retombées business non disponibles à court terme.
-- Certaines décisions dépendent de validation client.
+- Certaines décisions dépendent de la validation du client.

@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import { site } from "@/lib/projects";
+import { site, pageAlternates } from "@/lib/projects";
 
 export const metadata: Metadata = {
   title: "À propos",
-  description: "Positionnement et contexte de Jonas Suhard."
+  description: "Positionnement et contexte de Jonas Suhard.",
+  alternates: pageAlternates("/a-propos")
 };
 
 export default function AboutPage() {

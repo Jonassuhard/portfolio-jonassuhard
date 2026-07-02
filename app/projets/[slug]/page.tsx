@@ -26,6 +26,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     alternates: {
       canonical: `/projets/${project.slug}`,
       types: {
+        "application/json": "/profile.json",
         "text/markdown": `/projects/${project.slug}.md`
       }
     }

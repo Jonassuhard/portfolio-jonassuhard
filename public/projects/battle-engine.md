@@ -20,4 +20,4 @@ Pipeline vidéo automatisé pour une chaîne YouTube de simulations 1v1 : rendu 
 
 ## Limites
 
-- Ne pas laisser le côté meme-content dominer le portfolio.
+- Projet lab : automatisation créative, éloignée du poste visé, gardée comme preuve technique.

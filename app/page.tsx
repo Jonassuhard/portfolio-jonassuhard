@@ -1,5 +1,10 @@
+import type { Metadata } from "next";
 import Link from "next/link";
-import { featuredProjects, skills, site } from "@/lib/projects";
+import { featuredProjects, skills, site, pageAlternates } from "@/lib/projects";
+
+export const metadata: Metadata = {
+  alternates: pageAlternates("/")
+};
 
 export default function HomePage() {
   return (
@@ -10,8 +15,8 @@ export default function HomePage() {
             <p className="eyebrow">Paris / hybride · CDI · marketing · IA appliquée · full-stack</p>
             <h1>Growth Engineer · IA appliquée &amp; Automatisation</h1>
             <p className="lead">
-              Marketing, IA générative et développement full-stack pour construire
-              des systèmes d'acquisition mesurables.
+              Marketing, IA générative et développement full-stack : je transforme
+              une stratégie en outils qui tournent en production.
             </p>
             <p className="hero-human">
               Je viens du marketing digital et je code mes propres outils :

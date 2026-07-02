@@ -22,6 +22,6 @@ Production éditoriale SEO dans le Drupal d'ISCOM : rédaction et fact-check d'a
 
 ## Limites
 
-- Ne pas publier accès CMS ni données internes.
-- Ne pas sur-vendre l'automatisation: validation humaine obligatoire.
-- Certaines preuves restent confidentielles.
+- Impact trafic mesuré côté employeur, non publiable ici.
+- Chaque publication passe par une validation humaine ; l'automatisation couvre la saisie et les contrôles.
+- Certaines preuves sont montrables en entretien, pas en ligne.

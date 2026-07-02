@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { projects } from "@/lib/projects";
+import { projects, pageAlternates } from "@/lib/projects";
 
 export const metadata: Metadata = {
   title: "Projets",
   description:
-    "Projets de Jonas Suhard : projets principaux (livrés), projets techniques et labs personnels."
+    "Projets de Jonas Suhard : projets principaux (livrés), projets techniques et labs personnels.",
+  alternates: pageAlternates("/projets")
 };
 
 const GROUPS = [

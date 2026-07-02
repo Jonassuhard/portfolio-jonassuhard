@@ -78,7 +78,6 @@ export const metadata: Metadata = {
   description: site.description,
   metadataBase: new URL(siteUrl),
   alternates: {
-    canonical: "/",
     types: {
       "application/json": "/profile.json",
       "text/markdown": "/profile.md"

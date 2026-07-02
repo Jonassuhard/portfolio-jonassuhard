@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { featuredProjects, site } from "@/lib/projects";
+import { featuredProjects, site, pageAlternates } from "@/lib/projects";
 
 export const metadata: Metadata = {
   title: "Recruteurs",
   description:
-    "Résumé recruteur de Jonas Suhard : rôle cible, projets, stack, limites et contact."
+    "Résumé recruteur de Jonas Suhard : rôle cible, projets, stack, limites et contact.",
+  alternates: pageAlternates("/recruteurs")
 };
 
 export default function RecruitersPage() {

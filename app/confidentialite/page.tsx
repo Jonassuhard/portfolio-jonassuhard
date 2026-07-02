@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import { site } from "@/lib/projects";
+import { site, pageAlternates } from "@/lib/projects";
 
 export const metadata: Metadata = {
   title: "Confidentialité",
   description: "Politique de confidentialité du site de Jonas Suhard.",
-  robots: { index: false, follow: true }
+  robots: { index: false, follow: true },
+  alternates: pageAlternates("/confidentialite")
 };
 
 export default function ConfidentialitePage() {

@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { skills, getProject } from "@/lib/projects";
+import { skills, getProject, pageAlternates } from "@/lib/projects";
 
 export const metadata: Metadata = {
   title: "Compétences",
-  description: "Compétences de Jonas Suhard reliées à des projets livrés et documentés."
+  description: "Compétences de Jonas Suhard reliées à des projets livrés et documentés.",
+  alternates: pageAlternates("/competences")
 };
 
 export default function SkillsPage() {
