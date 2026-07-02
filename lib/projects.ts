@@ -830,66 +830,64 @@ export const projects: Project[] = [
   }
 ];
 
-export const featuredProjects = projects.filter((project) =>
-  ["les-petites-griffes", "educool-la-herse", "capselys"].includes(project.slug)
-);
+export const featuredProjects = ["les-petites-griffes", "educool-la-herse", "iscom"]
+  .map((slug) => projects.find((project) => project.slug === slug))
+  .filter((project): project is Project => Boolean(project));
+
+// Preuves recruteur découplées de la home : contexte employeur (ISCOM), livraison
+// client bout-en-bout (LPG), couche IA sur le sujet exact du poste (Preuvia).
+export const recruiterFeatured = ["iscom", "les-petites-griffes", "preuvia"]
+  .map((slug) => projects.find((project) => project.slug === slug))
+  .filter((project): project is Project => Boolean(project));
 
 export const skills = [
   {
-    name: "SEO / contenu",
+    name: "SEO / contenu / CMS",
     proofSlugs: ["iscom", "capselys", "les-petites-griffes"],
     proofExtra: "",
     proof: "ISCOM, Capsélys, Les Petites Griffes",
-    note: "Recherche, structure, maillage, Drupal, vérification et publication encadrée."
+    note: "Recherche, structure, maillage, production éditoriale dans Drupal, vérification et publication encadrée.",
+    limit: "Pas encore de programmatic SEO à grande échelle ni de domaine à fort trafic historisé."
   },
   {
-    name: "Next.js / React",
-    proofSlugs: ["les-petites-griffes", "educool-la-herse"],
-    proofExtra: "ce portfolio",
-    proof: "Les Petites Griffes, Educool, ce portfolio",
-    note: "Interfaces utiles, pages publiques, routes, rendu statique et production."
-  },
-  {
-    name: "IA générative",
-    proofSlugs: ["capselys", "les-petites-griffes"],
-    proofExtra: "RAG / workflows LLM",
-    proof: "Capsélys, Les Petites Griffes, RAG / workflows LLM",
-    note: "Assistants cadrés, workflows LLM, fact-check et garde-fous métier."
-  },
-  {
-    name: "Automatisation",
+    name: "Automatisation / QA / Playwright",
     proofSlugs: ["battle-engine"],
     proofExtra: "audits Playwright, scripts Python",
     proof: "Battle Engine, audits Playwright, scripts Python",
-    note: "Pipelines Python, Playwright, génération, contrôles et vérification."
+    note: "Pipelines Python, audits Playwright multi-viewports, génération et contrôles automatisés.",
+    limit: "Automatisation de projets perso ; pas encore de QA en CI/CD dans une équipe multi-dev."
   },
   {
-    name: "Produit / arbitrage",
-    proofSlugs: ["educool-la-herse", "capselys", "hoopsphere"],
-    proofExtra: "",
-    proof: "Educool, Capsélys, HoopSphere",
-    note: "Contraintes terrain, décisions documentées et compromis assumés."
+    name: "IA appliquée / workflows LLM",
+    proofSlugs: ["capselys", "les-petites-griffes", "iscom"],
+    proofExtra: "RAG Starter Kit, Board IA PME",
+    proof: "Capsélys, Les Petites Griffes, ISCOM",
+    note: "Assistants cadrés, workflows LLM, fact-check, détection d'hallucinations et garde-fous avant publication.",
+    limit: "POC et projets cadrés ; pas encore de LLM en production sous charge avec SLA."
   },
   {
-    name: "Sécurité / données",
+    name: "Full-stack web",
+    proofSlugs: ["les-petites-griffes", "educool-la-herse"],
+    proofExtra: "ce portfolio",
+    proof: "Les Petites Griffes, Educool, ce portfolio",
+    note: "Next.js, React, pages publiques, CMS léger, rendu statique, déploiement et production.",
+    limit: "Surtout front et intégrations ; pas de backend distribué à forte charge."
+  },
+  {
+    name: "Documentation / transmission",
+    proofSlugs: ["claude-code-soul", "educool-la-herse"],
+    proofExtra: "ce portfolio",
+    proof: "claude-code-soul, Educool, ce portfolio",
+    note: "Décisions écrites, cadres réutilisables, fichiers lisibles par un agent ; un travail qu'un autre reprend.",
+    limit: "Documentation de projets solo ; pas encore d'onboarding formalisé sur un codebase partagé."
+  },
+  {
+    name: "Sécurité / RGPD / limites",
     proofSlugs: ["educool-la-herse", "les-petites-griffes"],
     proofExtra: "",
     proof: "Educool, Les Petites Griffes",
-    note: "Données sensibles, authentification, règles d'accès, anonymisation et prudence de publication."
-  },
-  {
-    name: "Workflows LLM & QA de contenu IA",
-    proofSlugs: ["board-ia-pme", "rag-starter-kit", "iscom"],
-    proofExtra: "",
-    proof: "Board IA PME, RAG Starter Kit, ISCOM",
-    note: "Un modèle adapté à chaque tâche, détection d'hallucinations et vérification avant publication."
-  },
-  {
-    name: "Design & direction artistique",
-    proofSlugs: ["les-petites-griffes", "battle-engine"],
-    proofExtra: "ce portfolio",
-    proof: "Les Petites Griffes, Battle Engine, ce portfolio",
-    note: "3 ans d'animation 2D/3D (Human Académie) et Suite Adobe ; conception de la DA et production des visuels en autonomie."
+    note: "Données sensibles et mineurs anonymisées, secrets hors du code, règles d'accès, prudence de publication.",
+    limit: "Bonnes pratiques appliquées ; pas d'audit sécurité formel ni de conformité validée par un DPO."
   }
 ];
 

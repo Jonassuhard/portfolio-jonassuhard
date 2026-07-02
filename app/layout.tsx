@@ -111,7 +111,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         />
         <header className="site-header">
           <div className="titlebar">
-            <span>JONAS SUHARD — Evidence Archive</span>
+            <span>JONAS SUHARD — Growth Engineer</span>
             <span className="ver">{site.location} · <NixieClock /></span>
           </div>
           <SiteNav />

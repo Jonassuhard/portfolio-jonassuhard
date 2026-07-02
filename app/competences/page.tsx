@@ -15,8 +15,8 @@ export default function SkillsPage() {
         <p className="eyebrow">Compétences</p>
         <h1>Ce que je peux apporter à une équipe.</h1>
         <p className="lead">
-          Je ne liste pas des outils pour remplir une page. Chaque compétence
-          ci-dessous correspond à un projet livré, testé ou documenté.
+          Six domaines. Pour chacun : un projet où je l'ai utilisé, ce que je
+          sais faire aujourd'hui, et ce que je ne maîtrise pas encore.
         </p>
       </section>
 
@@ -40,6 +40,7 @@ export default function SkillsPage() {
               })}
               {skill.proofExtra ? ` · ${skill.proofExtra}` : ""}
             </p>
+            <p className="skill-limit">Limite : {skill.limit}</p>
           </article>
         ))}
       </section>

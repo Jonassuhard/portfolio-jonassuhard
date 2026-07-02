@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { site, pageAlternates } from "@/lib/projects";
 
 export const metadata: Metadata = {
@@ -9,21 +10,23 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="page about-fit">
+    <div className="page">
       <section className="case-hero">
         <div>
           <p className="eyebrow">À propos</p>
-          <h1>Je relie marketing, IA et exécution.</h1>
+          <h1>Je viens du marketing, j'ai appris à construire ce que je recommande.</h1>
           <p className="lead">
-            Je viens du marketing digital, puis j'ai appris à construire pour ne plus
-            m'arrêter aux recommandations. Mon point fort, c'est de relier trois mondes,
-            acquisition, IA appliquée et développement web.
+            J'ai commencé par le marketing digital : acquisition, SEO, contenu.
+            Vite, j'ai voulu produire les outils que je recommandais plutôt que
+            les décrire. Aujourd'hui je fais les deux dans le même geste, cadrer
+            un besoin d'équipe et livrer ce qui y répond.
           </p>
           <p>
-            Concrètement, je cadre un besoin, je construis une première version, je
-            mesure ce qui marche et je documente ce qui reste à creuser. Je cherche un
-            CDI où ce profil hybride sert, dans une équipe qui doit produire vite, tester
-            proprement et transformer l'IA en outils concrets.
+            Concrètement, je cadre un besoin, je construis une première version,
+            je mesure ce qui marche et je documente les décisions et ce qu'il
+            reste à construire. Je cherche un CDI où ce profil hybride sert, dans
+            une équipe qui produit vite, teste proprement et met l'IA au service
+            d'un travail utile.
           </p>
           <div className="button-row">
             <a className="button primary" href={`mailto:${site.email}`}>Me contacter</a>
@@ -40,13 +43,34 @@ export default function AboutPage() {
           <h2>Position cible</h2>
           <p>
             Growth Engineer / Marketing Technologist IA, dans une équipe qui
-            a besoin de construire vite et de transformer l'IA en outils concrets.
+            a besoin de construire vite et de mettre l'IA au service du produit.
           </p>
-          <h3>Ce site existe pour quoi ?</h3>
+          <h3>Ce que je cherche à construire</h3>
           <p>
-            Montrer des projets réutilisables en candidature et en entretien.
-            Le but, donner à un recruteur des preuves rapides à vérifier.
+            Des outils marketing et IA simples à vérifier, utiles à une équipe,
+            et documentés pour être repris.
           </p>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="section-head">
+          <div>
+            <p className="section-kicker">Parcours</p>
+            <h2>Expérience.</h2>
+          </div>
+        </div>
+        <div className="matrix">
+          <div className="matrix-item">
+            <strong>Alternance — production éditoriale SEO</strong>
+            <p>Depuis septembre 2024 · Eduservices (marque ISCOM)</p>
+            <p className="cert">Production SEO dans Drupal, audits de cannibalisation (Semrush), automatisations Playwright, fact-check et validation humaine avant publication.</p>
+          </div>
+          <div className="matrix-item">
+            <strong>Indépendant — sites, SEO et IA appliquée</strong>
+            <p>Depuis 2021 · Paris / hybride</p>
+            <p className="cert">Sites web (Next.js, WordPress), SEO local, assistants IA cadrés. Exemple livré en production : Les Petites Griffes.</p>
+          </div>
         </div>
       </section>
 
@@ -72,6 +96,21 @@ export default function AboutPage() {
             <strong>Animation 2D / 3D</strong>
             <p>2019–2021 · Human Academy, Angoulême</p>
             <p className="cert">Cursus 3 ans — certificat d'école</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="notice">
+          <strong>Ce que je vise.</strong>
+          <p>
+            Rejoindre une équipe où ce profil hybride sert : relier le marketing,
+            l'IA appliquée et le développement pour livrer des outils utiles, et
+            transmettre ce que je construis.
+          </p>
+          <div className="button-row">
+            <Link className="button primary" href="/recruteurs">Page recruteurs</Link>
+            <a className="button" href={`mailto:${site.email}`}>Me contacter</a>
           </div>
         </div>
       </section>

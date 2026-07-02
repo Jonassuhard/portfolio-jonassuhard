@@ -12,15 +12,12 @@ export default function HomePage() {
       <section className="hero">
         <div className="hero-copy">
           <div>
-            <p className="eyebrow">Paris / hybride · CDI · marketing · IA appliquée · full-stack</p>
+            <p className="eyebrow">CDI · Paris ou hybride · disponible le 1er septembre 2026</p>
             <h1>Growth Engineer · IA appliquée &amp; Automatisation</h1>
             <p className="lead">
-              Marketing, IA générative et développement full-stack : je transforme
-              une stratégie en outils qui tournent en production.
-            </p>
-            <p className="hero-human">
-              Je viens du marketing digital et je code mes propres outils :
-              sites, workflows IA, automatisations, contenus SEO et prototypes web.
+              Je viens du marketing et j'ai appris à coder pour livrer moi-même :
+              sites, workflows IA, automatisations, contenus SEO. Je documente
+              pour que l'équipe reprenne derrière.
             </p>
           </div>
           <div className="button-row">
@@ -39,7 +36,7 @@ export default function HomePage() {
         <aside className="ledger" aria-label="Journal de projets">
           <div>
             <p className="ledger-title">Journal de build</p>
-            <h2>Ce que j'ai vraiment construit.</h2>
+            <h2>Trois builds récents.</h2>
           </div>
           <div className="ledger-list">
             <div className="ledger-item">
@@ -54,8 +51,8 @@ export default function HomePage() {
             </div>
             <div className="ledger-item">
               <time>2026-06</time>
-              <strong>Refonte conversion + workshop client</strong>
-              <span>Capsélys, staging sécurisé, audits multi-viewports et présentation client.</span>
+              <strong>Production SEO + validation humaine</strong>
+              <span>ISCOM, articles publiés dans Drupal, fact-check avant mise en ligne.</span>
             </div>
           </div>
         </aside>
@@ -70,12 +67,12 @@ export default function HomePage() {
         <div className="section-head">
           <div>
             <p className="section-kicker">Projets phares</p>
-            <h2>Trois projets pour comprendre mon profil.</h2>
+            <h2>Mes trois projets les plus solides.</h2>
           </div>
           <p>
-            Ces trois projets montrent trois choses. Livrer un site en production,
-            construire une app métier sensible, et cadrer une expérimentation
-            marketing avec IA.
+            Trois terrains différents : un site client en production, une app
+            métier avec données sensibles, une production SEO en entreprise avec
+            preuve en ligne.
           </p>
         </div>
 
@@ -122,6 +119,38 @@ export default function HomePage() {
               <p className="case-meta">{skill.proof}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="section-head">
+          <div>
+            <p className="section-kicker">Méthode</p>
+            <h2>Cadrer, construire, vérifier, transmettre.</h2>
+          </div>
+          <p>
+            Quatre temps sur chaque projet. Le dernier compte autant que les
+            autres : un travail qui ne se transmet pas s'arrête avec celui qui
+            l'a fait. <Link href="/methode">Voir la méthode en détail.</Link>
+          </p>
+        </div>
+        <div className="matrix">
+          <div className="matrix-item">
+            <strong>Cadrer</strong>
+            <p>Comprendre le besoin, poser les contraintes et les hypothèses avant d'écrire une ligne.</p>
+          </div>
+          <div className="matrix-item">
+            <strong>Construire</strong>
+            <p>Livrer un premier outil qui marche, en production, pas une maquette.</p>
+          </div>
+          <div className="matrix-item">
+            <strong>Vérifier</strong>
+            <p>Tester, mesurer, fact-checker : jamais « c'est fait » sans preuve.</p>
+          </div>
+          <div className="matrix-item">
+            <strong>Transmettre</strong>
+            <p>Documenter pour qu'une équipe reprenne le travail sans moi.</p>
+          </div>
         </div>
       </section>
 

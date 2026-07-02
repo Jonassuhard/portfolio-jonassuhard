@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { featuredProjects, site, pageAlternates } from "@/lib/projects";
+import { recruiterFeatured, site, pageAlternates } from "@/lib/projects";
 
 export const metadata: Metadata = {
   title: "Recruteurs",
@@ -14,18 +14,12 @@ export default function RecruitersPage() {
     <div className="page">
       <section className="case-hero">
         <div>
-          <p className="eyebrow">Résumé 30 secondes</p>
-          <h1>Mon poste cible, c'est Growth Engineer · IA appliquée &amp; Automatisation.</h1>
+          <p className="eyebrow">Candidature</p>
+          <h1>Growth Engineer, IA appliquée et automatisation.</h1>
           <p className="lead">
-            Profil hybride marketing, IA générative et développement full-stack.
-            Je transforme des problèmes d'acquisition, de contenu ou d'opération
-            en outils web/IA utilisables.
-          </p>
-          <p>
-            <strong>En clair —</strong> Je prends un problème
-            d'acquisition ou de contenu, je le transforme en prototype web/IA,
-            je le documente, puis je le livre sans attendre une équipe produit
-            complète.
+            Profil marketing et développement : je cadre un besoin, je livre un
+            premier outil qui marche, je vérifie les résultats et je documente
+            pour que l'équipe reprenne derrière.
           </p>
           <div className="button-row">
             <a className="button primary" href={`mailto:${site.email}`}>Me contacter</a>
@@ -36,7 +30,7 @@ export default function RecruitersPage() {
           </p>
         </div>
         <div className="panel">
-          <h2>Signal utile</h2>
+          <h2>L'essentiel</h2>
           <table className="summary-table">
             <tbody>
               <tr>
@@ -61,7 +55,7 @@ export default function RecruitersPage() {
               </tr>
               <tr>
                 <th scope="row">Code</th>
-                <td>Open source sur GitHub (github.com/Jonassuhard).</td>
+                <td>Visible sur GitHub : ce portfolio et claude-code-soul. Le code client reste privé.</td>
               </tr>
             </tbody>
           </table>
@@ -72,11 +66,11 @@ export default function RecruitersPage() {
         <div className="section-head">
           <div>
             <p className="section-kicker">Ce que je peux prendre en charge</p>
-            <h2>Construire plutôt que promettre.</h2>
+            <h2>Ce que je peux livrer.</h2>
           </div>
           <p>
-            Je transforme un besoin marketing en livrable concret, une page de
-            conversion, workflow IA, automatisation, audit SEO ou prototype web.
+            Un besoin marketing devient un livrable concret : page de conversion,
+            workflow IA, automatisation, audit SEO ou prototype web.
           </p>
         </div>
         <div className="matrix">
@@ -102,16 +96,49 @@ export default function RecruitersPage() {
       <section className="section">
         <div className="section-head">
           <div>
-            <p className="section-kicker">Projets clés</p>
-            <h2>Ce que j'apporte à une équipe.</h2>
+            <p className="section-kicker">En équipe</p>
+            <h2>Où je suis utile dans une équipe.</h2>
           </div>
           <p>
-            Mes projets montrent trois choses. Je sais livrer en production, gérer
-            des données sensibles et cadrer une expérimentation marketing.
+            Je ne travaille pas en vase clos. Je pose mes questions tôt, je livre
+            par petits lots relisables, et je documente pour que le travail se
+            reprenne sans moi.
+          </p>
+        </div>
+        <div className="matrix">
+          <div className="matrix-item">
+            <strong>Cadrage partagé</strong>
+            <p>Les hypothèses posées avant de coder, les décisions écrites, pas gardées dans ma tête.</p>
+          </div>
+          <div className="matrix-item">
+            <strong>Revue et intégration</strong>
+            <p>Des PR courtes et relisables plutôt qu'un gros lot en fin de sprint.</p>
+          </div>
+          <div className="matrix-item">
+            <strong>Transmission</strong>
+            <p>Un livrable qu'un autre fait tourner sans moi : sur Les Petites Griffes, la gérante édite son site seule.</p>
+          </div>
+          <div className="matrix-item">
+            <strong>Pédagogie</strong>
+            <p>Trois ans à expliquer et transmettre (animation) : l'habitude de rendre un travail compréhensible.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="section-head">
+          <div>
+            <p className="section-kicker">Preuves principales</p>
+            <h2>Trois projets qui montrent comment je travaille.</h2>
+          </div>
+          <p>
+            Une production SEO en entreprise avec preuve en ligne, un site client
+            livré de bout en bout, et une méthode d'audit IA sur le sujet exact
+            du poste.
           </p>
         </div>
         <div className="proof-grid">
-          {featuredProjects.map((project) => (
+          {recruiterFeatured.map((project) => (
             <article className="proof-card" key={project.slug}>
               <img src={project.image} alt={`Aperçu ${project.shortTitle}`} loading="lazy" decoding="async" />
               <div className="proof-body">
@@ -160,6 +187,10 @@ export default function RecruitersPage() {
             produit. Pour du ML research pur ou du backend lourd, je m'appuie sur
             l'équipe.
           </p>
+          <div className="button-row">
+            <a className="button primary" href={`mailto:${site.email}`}>Me contacter</a>
+            <Link className="button" href="/methode">Ma méthode de travail</Link>
+          </div>
         </div>
       </section>
     </div>
