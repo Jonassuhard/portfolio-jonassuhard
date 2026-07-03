@@ -102,13 +102,18 @@ export default function AboutPage() {
         </div>
         <div className="matrix matrix-2">
           <div className="matrix-item">
-            <strong>Alternance — production éditoriale SEO</strong>
-            <p>Depuis septembre 2024 · Eduservices (marque ISCOM)</p>
+            <strong>Alternant communication digitale, SEO & IA appliquée</strong>
+            <p>Octobre 2025 – août 2026 · Eduservices (marque ISCOM)</p>
             <p className="cert">Production SEO dans Drupal, audits de cannibalisation (Semrush), automatisations Playwright, fact-check et validation humaine avant publication.</p>
           </div>
           <div className="matrix-item">
+            <strong>Alternant communication digitale & SEO</strong>
+            <p>Novembre 2024 – août 2025 · Attineos (Angers)</p>
+            <p className="cert">Refonte et optimisation du site WordPress, contenus LinkedIn, articles, SEO on-page, suivi GA4 et supports de communication.</p>
+          </div>
+          <div className="matrix-item">
             <strong>Indépendant — sites, SEO et IA appliquée</strong>
-            <p>Depuis 2021 · Paris / hybride</p>
+            <p>Depuis 2021 (micro-entreprise 2026) · Paris / hybride</p>
             <p className="cert">Sites web (Next.js, WordPress), SEO local, assistants IA cadrés. Exemple livré en production : Les Petites Griffes.</p>
           </div>
         </div>
