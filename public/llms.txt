@@ -16,6 +16,7 @@ Dernière mise à jour : 2026-07-02
 - [Compétences](https://jonassuhard.com/skills.md): matrice de compétences reliées à des projets
 - [Page recruteurs](https://jonassuhard.com/recruteurs): où me ranger, preuves, périmètre, contact
 - [CV (PDF)](https://jonassuhard.com/cv.pdf): CV à jour
+- [CV (Markdown)](https://jonassuhard.com/cv.md): CV en texte, lisible par agent (mêmes infos que le PDF)
 - [Knowledge graph (JSON-LD)](https://jonassuhard.com/knowledge-graph.json): graphe Person, compétences et projets
 
 ## Projets principaux
