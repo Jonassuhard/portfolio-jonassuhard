@@ -286,6 +286,11 @@ export const projects: Project[] = [
       "Données de mineurs : rien n'est publiable, la preuve se montre sur données fictives ou en entretien.",
       "Le durcissement des règles d'accès Firebase est un chantier continu, pas un état figé."
     ],
+    gallery: [
+      { src: "/assets/proof/educool/educool-dashboard.webp", caption: "Tableau de bord enseignante : progression de la classe, réussite par domaine et saisie rapide. Noms masqués sur toutes les captures : données de mineurs." },
+      { src: "/assets/proof/educool/educool-saisie-ceintures.webp", caption: "Saisie des ceintures : la matrice classe entière par matière, pensée pour valider un palier en quelques secondes pendant le cours." },
+      { src: "/assets/proof/educool/educool-livrets.webp", caption: "Livrets élèves : aperçu, personnalisation puis export PDF, individuel ou en lot (ZIP pour toute la classe)." }
+    ],
     links: [
       { label: "Version Markdown", href: "/projects/educool-la-herse.md" }
     ]
