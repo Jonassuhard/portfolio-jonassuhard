@@ -559,6 +559,9 @@ export const projects: Project[] = [
       "Les scores sont datés : ils dépendent du modèle, du prompt et du moment du test.",
       "Ne remplace pas le SEO classique ; il ajoute une couche de visibilité dans les moteurs de réponse."
     ],
+    gallery: [
+      { src: "/assets/proof/preuvia/preuvia-landing.webp", caption: "Landing Preuvia en ligne : la promesse (« qui les IA recommandent avant vous ») et le démonstrateur d'écart de visibilité — question posée, sources qui ressortent, marque non citée." }
+    ],
     links: [
       { label: "Voir le site", href: "https://preuvia.vercel.app", external: true },
       { label: "Version Markdown", href: "/projects/preuvia.md" }
