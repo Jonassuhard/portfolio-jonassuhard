@@ -25,11 +25,11 @@ Profil hybride marketing, IA générative et développement web. Je transforme d
 ### Projets web, SEO & IA appliquée · depuis 2021 · entreprise individuelle enregistrée en 2026
 - Création de sites web (WordPress, Next.js), SEO local et contenus ; déploiement et maintenance.
 - Automatisations et intégration d'outils IA dans les workflows clients (assistants cadrés, QA).
-- Exemple : Les Petites Griffes, site live, CMS maison, assistant IA ; rapport Lighthouse interne du 29/06/2026 : mobile 88 / SEO 100 / a11y 93.
+- Exemple : Les Petites Griffes, site live, CMS maison, assistant IA ; rapport Lighthouse interne du 29/06/2026 : mobile 88 / SEO 100 / accessibilité 93.
 
 ### Co-fondateur & responsable marketing · HoopSphere · projet MBA · 2024–2026
 - Marketing, acquisition et contenu ; business plan et projections financières (projet MBA à 4 associés).
-- Étude de marché, personas, plan d'acquisition organique et campagne d'emailing ; métriques retirées en attente d'exports vérifiables.
+- Étude de marché, personas, plan d'acquisition organique et campagne d'emailing ; aucune métrique d'acquisition citée.
 
 ### Community Manager · La Maison des Travaux · Orléans · 2023
 - Contenus réseaux sociaux, SEO/SEA (Semrush), Google Ads.
@@ -37,7 +37,7 @@ Profil hybride marketing, IA générative et développement web. Je transforme d
 ### Community Manager · CGAVF · Orléans · 2022
 - Réseaux sociaux, Google Ads, e-mailing (Sendinblue), reporting KPIs.
 
-## Formation & certification
+## Formations
 - MBA Expert Marketing Digital (en cours), préparation du RNCP41809 niveau 7 · MyDigitalSchool Paris · 2024–2026
 - Bachelor Chef de projet digital, RNCP34340 niveau 6 (preuve privée) · La Digital School, Angers · 2023–2024
 - Animation 2D/3D & Design, certificat d'école non RNCP · Human Academy · 2019–2021

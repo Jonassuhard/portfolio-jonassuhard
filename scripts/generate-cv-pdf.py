@@ -60,6 +60,21 @@ def rich(text: str) -> str:
     return re.sub(r"\*\*(.+?)\*\*", r"<b>\1</b>", escaped)
 
 
+def contact_rich(text: str) -> str:
+    escaped = html.escape(clean(text))
+    links = {
+        "contact@jonassuhard.com": "mailto:contact@jonassuhard.com",
+        "jonassuhard.com": "https://jonassuhard.com",
+        "github.com/Jonassuhard": "https://github.com/Jonassuhard",
+        "LinkedIn (Jonas Suhard)": "https://www.linkedin.com/in/jonas-suhard-b73923245/",
+    }
+    pattern = re.compile("|".join(re.escape(label) for label in links))
+    return pattern.sub(
+        lambda match: f'<a href="{links[match.group(0)]}">{match.group(0)}</a>',
+        escaped,
+    )
+
+
 def parse_cv() -> CvData:
     lines = SOURCE.read_text(encoding="utf-8").splitlines()
     title = clean(next(line for line in lines if line.startswith("**")).strip("*"))
@@ -94,7 +109,7 @@ def parse_cv() -> CvData:
             current_heading = clean(line[4:])
         elif line.startswith("- "):
             item = clean(line[2:])
-            if current_section in {"Formation & certification", "Compétences"}:
+            if current_section in {"Formations", "Compétences"}:
                 sections[current_section].append((item, []))
             else:
                 current_bullets.append(item)
@@ -208,7 +223,7 @@ def build_pdf(data: CvData, destination: Path, styled: bool) -> None:
         Paragraph("JONAS SUHARD", styles["name"]),
         Paragraph(html.escape(data.title.upper()), styles["title"]),
         Paragraph(html.escape(data.subtitle), styles["intro"]),
-        Paragraph(html.escape(f"{data.contact} | {data.availability}"), styles["contact"]),
+        Paragraph(f"{contact_rich(data.contact)} | {html.escape(data.availability)}", styles["contact"]),
     ]
     if LOGO.exists():
         logo = Image(str(LOGO), width=16 * mm, height=16 * mm)
@@ -246,7 +261,7 @@ def build_pdf(data: CvData, destination: Path, styled: bool) -> None:
         for bullet in bullets:
             story.append(Paragraph(f"- {html.escape(bullet)}", styles["bullet"]))
 
-    for section in ("Formation & certification", "Compétences"):
+    for section in ("Formations", "Compétences"):
         story.append(Paragraph(html.escape(section.upper()), styles["section"]))
         rows = []
         for heading, _ in data.sections.get(section, []):

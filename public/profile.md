@@ -67,4 +67,3 @@ Paris, France. CDI à Paris ou hybride, disponible à partir du 1er septembre 20
 - Email: contact@jonassuhard.com
 - GitHub: https://github.com/Jonassuhard
 - LinkedIn: https://www.linkedin.com/in/jonas-suhard-b73923245/
-- Malt: https://www.malt.fr/profile/jonassuhard

@@ -7,6 +7,11 @@ import { useEffect, useState } from "react";
 const KEY = "js-consent";
 const CLARITY_ID = "xfjx6pbupc";
 
+const clarityConsent = {
+  granted: { ad_Storage: "denied", analytics_Storage: "granted" },
+  denied: { ad_Storage: "denied", analytics_Storage: "denied" }
+} as const;
+
 function loadClarity() {
   const w = window as unknown as Record<string, any>;
   if (w.__clarityLoaded) return;
@@ -22,7 +27,19 @@ function loadClarity() {
   const first = document.getElementsByTagName("script")[0];
   if (first && first.parentNode) first.parentNode.insertBefore(s, first);
   else document.head.appendChild(s);
-  w.clarity("consent");
+  w.clarity("consentv2", clarityConsent.granted);
+}
+
+function revokeClarity() {
+  const w = window as unknown as Record<string, any>;
+  if (typeof w.clarity !== "function" || !w.__clarityLoaded) return false;
+
+  // Consent V2 coupe le stockage analytique et publicitaire. L'appel V1 avec
+  // false reste la commande documentée par Microsoft pour effacer les cookies
+  // Clarity existants ; le rechargement retire ensuite entièrement le script.
+  w.clarity("consentv2", clarityConsent.denied);
+  w.clarity("consent", false);
+  return true;
 }
 
 export default function ConsentBanner() {
@@ -60,7 +77,12 @@ export default function ConsentBanner() {
     } catch {
       /* ignore */
     }
-    if (value === "granted") loadClarity();
+    if (value === "granted") {
+      loadClarity();
+    } else if (revokeClarity()) {
+      window.location.reload();
+      return;
+    }
     setShow(false);
   }
 

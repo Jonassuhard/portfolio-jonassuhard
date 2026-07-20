@@ -33,7 +33,7 @@ export function personJsonLd() {
       "Profil junior à l'interface des besoins métier, de l'IA appliquée, de l'automatisation et du développement web.",
     email: `mailto:${site.email}`,
     url: siteUrl,
-    sameAs: [site.github, site.linkedin, site.malt],
+    sameAs: [site.github, site.linkedin, ...(site.malt ? [site.malt] : [])],
     seeks: {
       "@type": "Demand",
       name: "CDI junior Chef de projet IA appliquée et automatisation / Growth Engineer",
@@ -163,6 +163,7 @@ export function knowledgeJsonLd(page: {
   slug: string;
   title: string;
   description: string;
+  published: string;
   updated: string;
 }) {
   return {
@@ -170,7 +171,7 @@ export function knowledgeJsonLd(page: {
     "@type": "Article",
     headline: page.title,
     description: page.description,
-    datePublished: page.updated,
+    datePublished: page.published,
     dateModified: page.updated,
     inLanguage: "fr-FR",
     author: { "@type": "Person", name: site.name, "@id": personId },

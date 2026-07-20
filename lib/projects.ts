@@ -40,7 +40,7 @@ export type Project = {
   // Le code vient de l'équipe, pas de Jonas (ex. HoopSphere : sa part est le marketing).
   // Pilote le JSON-LD : contributor au lieu d'author, pas de programmingLanguage.
   codeByOthers?: boolean;
-  gallery?: Array<{ src: string; caption: string }>;
+  gallery?: Array<{ src: string; caption: string; width: number; height: number }>;
   links: Array<{
     label: string;
     href: string;
@@ -62,7 +62,9 @@ export const site = {
   email: "contact@jonassuhard.com",
   github: "https://github.com/Jonassuhard",
   linkedin: "https://www.linkedin.com/in/jonas-suhard-b73923245/",
-  malt: "https://www.malt.fr/profile/jonassuhard",
+  // Profil Malt temporairement masqué : son contenu doit être réaligné avec
+  // les affirmations vérifiables du portfolio avant de redevenir public ici.
+  malt: null as string | null,
   location: "Paris, France",
   availability: "1er septembre 2026",
   cvClassic: "/cv.pdf",
@@ -160,7 +162,7 @@ export const projects: Project[] = [
     evidenceNote:
       "Captures anonymisées, démo privée et rapport Lighthouse interne daté du 29/06/2026. Les scores ne sont pas vérifiables publiquement sans ce rapport.",
     metaDescription:
-      "Site vitrine live d'un studio de nail art : Next.js, CMS maison pour éditer galerie et tarifs, assistant IA cadré. Lighthouse SEO 100.",
+      "Site vitrine live d'un studio de nail art : Next.js, CMS maison et assistant IA cadré. Rapport Lighthouse interne du 29/06/2026 : SEO 100.",
     cardLine:
       "Site client live, CMS maison, SEO local et assistant IA cadré. Mesures Lighthouse issues d'un rapport interne daté du 29/06/2026.",
     architecture: [
@@ -226,10 +228,10 @@ export const projects: Project[] = [
       "Mesure business encore à consolider."
     ],
     gallery: [
-      { src: "/assets/proof/les-petites-griffes/lpg-home.webp", caption: "Home du studio de nail art, front Next.js déployé sur Vercel." },
-      { src: "/assets/proof/les-petites-griffes/lpg-compose.webp", caption: "« Compose ta pose » : devis guidé qui cadre la demande de la cliente." },
-      { src: "/assets/proof/les-petites-griffes/lpg-assistant.webp", caption: "Assistant IA cadré sur les prix, la durée, la méthode et le style, avec garde-fous et sans promesse magique." },
-      { src: "/assets/proof/les-petites-griffes/lpg-assistant-vision.webp", caption: "L'assistant analyse une photo d'ongles envoyée par la cliente." }
+      { src: "/assets/proof/les-petites-griffes/lpg-home.webp", caption: "Home du studio de nail art, front Next.js déployé sur Vercel.", width: 1400, height: 798 },
+      { src: "/assets/proof/les-petites-griffes/lpg-compose.webp", caption: "« Compose ta pose » : devis guidé qui cadre la demande de la cliente.", width: 1400, height: 810 },
+      { src: "/assets/proof/les-petites-griffes/lpg-assistant.webp", caption: "Assistant IA cadré sur les prix, la durée, la méthode et le style, avec garde-fous et sans promesse magique.", width: 816, height: 1142 },
+      { src: "/assets/proof/les-petites-griffes/lpg-assistant-vision.webp", caption: "L'assistant analyse une photo d'ongles envoyée par la cliente.", width: 810, height: 1114 }
     ],
     links: [
       { label: "Version Markdown", href: "/projects/les-petites-griffes.md" }
@@ -318,9 +320,9 @@ export const projects: Project[] = [
       "Le durcissement des règles d'accès Firebase est un chantier continu, pas un état figé."
     ],
     gallery: [
-      { src: "/assets/proof/educool/educool-dashboard.webp", caption: "Tableau de bord enseignante : progression de la classe, réussite par domaine et saisie rapide. Noms masqués sur toutes les captures : données de mineurs." },
-      { src: "/assets/proof/educool/educool-saisie-ceintures.webp", caption: "Saisie des ceintures : la matrice classe entière par matière, pensée pour valider un palier en quelques secondes pendant le cours." },
-      { src: "/assets/proof/educool/educool-livrets.webp", caption: "Livrets élèves : aperçu, personnalisation puis export PDF, individuel ou en lot (ZIP pour toute la classe)." }
+      { src: "/assets/proof/educool/educool-dashboard.webp", caption: "Tableau de bord enseignante : progression de la classe, réussite par domaine et saisie rapide. Noms masqués sur toutes les captures : données de mineurs.", width: 1600, height: 870 },
+      { src: "/assets/proof/educool/educool-saisie-ceintures.webp", caption: "Saisie des ceintures : la matrice classe entière par matière, pensée pour valider un palier en quelques secondes pendant le cours.", width: 1600, height: 873 },
+      { src: "/assets/proof/educool/educool-livrets.webp", caption: "Livrets élèves : aperçu, personnalisation puis export PDF, individuel ou en lot (ZIP pour toute la classe).", width: 1600, height: 870 }
     ],
     links: [
       { label: "Version Markdown", href: "/projects/educool-la-herse.md" }
@@ -422,8 +424,8 @@ export const projects: Project[] = [
       "Certaines décisions dépendent de la validation du client."
     ],
     gallery: [
-      { src: "/assets/proof/capselys/capselys-site.webp", caption: "Home Capsélys (staging) avec l'assistant IA ouvert en contexte." },
-      { src: "/assets/proof/capselys/capselys-assistant.webp", caption: "L'assistant répond à une vraie question (DUERP) : réponse cadrée, CTA et disclaimer « réponses générées automatiquement »." }
+      { src: "/assets/proof/capselys/capselys-site.webp", caption: "Home Capsélys (staging) avec l'assistant IA ouvert en contexte.", width: 1400, height: 800 },
+      { src: "/assets/proof/capselys/capselys-assistant.webp", caption: "L'assistant répond à une vraie question (DUERP) : réponse cadrée, CTA et disclaimer « réponses générées automatiquement ».", width: 900, height: 1063 }
     ],
     links: [
       { label: "Version Markdown", href: "/projects/capselys.md" }
@@ -588,7 +590,7 @@ export const projects: Project[] = [
       "Prototype de mini-audit et modèle de livrable."
     ],
     results: [
-      "Offre, site et méthode d'audit publiés.",
+      "Offre, site et principes de la méthode présentés publiquement.",
       "Grille de lecture et structure de livrable documentées.",
       "Ce portfolio est lui-même optimisé selon cette méthode (llms.txt, profile.json, données structurées)."
     ],
@@ -599,7 +601,7 @@ export const projects: Project[] = [
       "Ne remplace pas le SEO classique ; il ajoute une couche de visibilité dans les moteurs de réponse."
     ],
     gallery: [
-      { src: "/assets/proof/preuvia/preuvia-landing.webp", caption: "Landing Preuvia en ligne : la promesse (« qui les IA recommandent avant vous ») et le démonstrateur d'écart de visibilité — question posée, sources qui ressortent, marque non citée." }
+      { src: "/assets/proof/preuvia/preuvia-landing.webp", caption: "Landing Preuvia en ligne : la promesse (« qui les IA recommandent avant vous ») et le démonstrateur d'écart de visibilité — question posée, sources qui ressortent, marque non citée.", width: 1600, height: 921 }
     ],
     links: [
       { label: "Voir le site", href: "https://preuvia.vercel.app", external: true },
@@ -608,7 +610,7 @@ export const projects: Project[] = [
   },
   {
     slug: "battle-engine",
-    title: "Battle Engine - pipeline vidéo automatise",
+    title: "Battle Engine - pipeline vidéo automatisé",
     shortTitle: "Battle Engine",
     type: "Pipeline vidéo / automation",
     period: "2026",
@@ -645,15 +647,15 @@ export const projects: Project[] = [
       {
         decision: "Le garder en Tier 2",
         why: "Bonne preuve technique, mais moins directement recruteur marketing IA.",
-        rejected: "Le mettre en premiere ligne."
+        rejected: "Le mettre en première ligne."
       }
     ],
     delivered: ["Pipeline de rendu", "Vidéos de test générées", "Scripts d'automatisation"],
-    results: ["Audience YouTube à vérifier avant publication finale."],
+    results: ["Aucune métrique d'audience citée."],
     limits: ["Projet lab : automatisation créative, éloignée du poste visé, gardée comme preuve technique."],
     gallery: [
-      { src: "/assets/proof/battle-engine/intro-platforms.webp", caption: "Séquence d'intro : les plateformes des deux combattants et le champ de particules, rendus par un shader custom sous Godot." },
-      { src: "/assets/proof/battle-engine/intro-buildup.webp", caption: "Montée du champ de particules avant le face-à-face, générée en temps réel côté moteur." }
+      { src: "/assets/proof/battle-engine/intro-platforms.webp", caption: "Séquence d'intro : les plateformes des deux combattants et le champ de particules, rendus par un shader custom sous Godot.", width: 620, height: 1103 },
+      { src: "/assets/proof/battle-engine/intro-buildup.webp", caption: "Montée du champ de particules avant le face-à-face, générée en temps réel côté moteur.", width: 620, height: 1103 }
     ],
     links: [{ label: "Version Markdown", href: "/projects/battle-engine.md" }]
   },

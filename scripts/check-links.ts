@@ -32,7 +32,7 @@ const links = new Set<string>([
   `mailto:${site.email}`,
   site.github,
   site.linkedin,
-  site.malt,
+  ...(site.malt ? [site.malt] : []),
   site.cvClassic,
   site.cvStyled,
   "/profile.json",

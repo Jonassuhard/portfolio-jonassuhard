@@ -4,7 +4,7 @@
 
 Jonas construit des systèmes marketing augmentés par l'IA — sites, automatisations, contenus, workflows LLM et dashboards — qui transforment une stratégie en produit utilisable. Ce site rassemble ses projets de travail : projets réels, décisions, contraintes et résultats, sans métrique inventée.
 
-Note de lecture : les pages HTML sont la version canonique pour les humains ; les fichiers Markdown et JSON ci-dessous sont la version destinée aux agents. Les projets clients sont anonymisés quand les données ou les accès ne sont pas publiables.
+Note de lecture : les pages HTML sont la version canonique pour les humains ; les fichiers Markdown et JSON ci-dessous sont la version destinée aux agents. Les données, accès et captures sensibles des projets clients sont anonymisés quand ils ne sont pas publiables.
 
 Dernière mise à jour : 2026-07-20
 
@@ -53,7 +53,6 @@ Dernière mise à jour : 2026-07-20
 - [Email](mailto:contact@jonassuhard.com): contact@jonassuhard.com
 - [GitHub](https://github.com/Jonassuhard): code et preuves auditables
 - [LinkedIn](https://www.linkedin.com/in/jonas-suhard-b73923245/): profil professionnel
-- [Malt](https://www.malt.fr/profile/jonassuhard): profil freelance
 
 ## Optional
 

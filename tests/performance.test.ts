@@ -39,3 +39,14 @@ test("les assets publics ont un cache long sans être figés", () => {
   assert.match(config, /max-age=2592000, stale-while-revalidate=31536000/);
   assert.doesNotMatch(config, /assetCache[\s\S]*immutable/);
 });
+
+test("les médias projet réservent leur espace et respectent le mouvement réduit", () => {
+  const detailPage = read("app/projets/[slug]/page.tsx");
+  const video = read("app/project-video.tsx");
+
+  assert.match(detailPage, /width=\{shot\.width\}/);
+  assert.match(detailPage, /height=\{shot\.height\}/);
+  assert.match(video, /prefers-reduced-motion: reduce/);
+  assert.match(video, /controls/);
+  assert.doesNotMatch(detailPage, /<img src=\{shot\.src\}/);
+});

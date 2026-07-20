@@ -64,6 +64,7 @@ function knowledgeToMarkdown(page: KnowledgePage) {
   const lines = [
     `# ${page.title}`,
     "",
+    `Publication : ${page.published}.`,
     `Dernière vérification : ${page.updated}.`,
     "",
     "## Réponse courte",

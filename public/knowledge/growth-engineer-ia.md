@@ -1,5 +1,6 @@
 # C'est quoi un Growth Engineer en IA appliquée ?
 
+Publication : 2026-07-02.
 Dernière vérification : 2026-07-20.
 
 ## Réponse courte

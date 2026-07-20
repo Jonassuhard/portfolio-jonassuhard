@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { projectJsonLd, breadcrumbJsonLd } from "@/lib/json-ld";
 import { evidenceLevelMeta, getProject, projects, ogImage } from "@/lib/projects";
 import AnimatedTitle from "../../animated-title";
+import ProjectVideo from "../../project-video";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -112,15 +113,10 @@ export default async function ProjectDetailPage({ params }: PageProps) {
           </div>
         </div>
         {project.video ? (
-          <video
-            className="case-video"
+          <ProjectVideo
             src={project.video}
             poster={project.video.replace(".mp4", "-poster.webp")}
-            autoPlay
-            loop
-            muted
-            playsInline
-            aria-label={`Aperçu animé (filtre ASCII) du projet ${project.shortTitle}`}
+            label={`Aperçu animé (filtre ASCII) du projet ${project.shortTitle}`}
           />
         ) : (
           <Image
@@ -184,7 +180,15 @@ export default async function ProjectDetailPage({ params }: PageProps) {
           <div className="proof-gallery">
             {project.gallery.map((shot) => (
               <figure key={shot.src}>
-                <img src={shot.src} alt={shot.caption} loading="lazy" decoding="async" />
+                <Image
+                  src={shot.src}
+                  alt={shot.caption}
+                  width={shot.width}
+                  height={shot.height}
+                  sizes="(max-width: 640px) calc(100vw - 28px), 520px"
+                  quality={75}
+                  loading="lazy"
+                />
                 <figcaption>{shot.caption}</figcaption>
               </figure>
             ))}

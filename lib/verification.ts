@@ -106,12 +106,12 @@ export const verificationItems: VerificationItem[] = [
     note: "Les captures publiques utilisent des données fictives ; les données réelles restent privées."
   },
   {
-    id: "private-repositories",
-    claim: "RAG Starter Kit, Board IA PME, Edusemantix et Pokémon Gen-4 Toolkit sont privés à ce jour.",
-    scope: "GitHub",
+    id: "non-public-projects",
+    claim: "Le code de RAG Starter Kit, Board IA PME, Edusemantix et Pokémon Gen-4 Toolkit n'est pas public à ce jour.",
+    scope: "Projets",
     status: "removed-pending-proof",
     checkedAt: contentReviewDate,
-    note: "Les projets sont désormais décrits comme privés jusqu'à la publication effective d'un dépôt."
+    note: "Aucun dépôt GitHub précis n'est revendiqué tant qu'un lien public vérifiable n'est pas disponible."
   },
   {
     id: "hoopsphere-metrics",

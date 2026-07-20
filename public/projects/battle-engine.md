@@ -1,4 +1,4 @@
-# Battle Engine - pipeline vidéo automatise
+# Battle Engine - pipeline vidéo automatisé
 
 Type : Pipeline vidéo / automation.
 Période : 2026.

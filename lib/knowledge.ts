@@ -3,6 +3,7 @@ export type KnowledgePage = {
   title: string;
   shortTitle: string;
   description: string;
+  published: string;
   updated: string;
   answer: string[];
   problem: string;
@@ -23,6 +24,7 @@ export const knowledgePages: KnowledgePage[] = [
     shortTitle: "Portfolio citable par IA",
     description:
       "Méthode concrète pour rendre un portfolio lisible par les agents : llms.txt, profile.json, claims.json, Markdown et JSON-LD.",
+    published: "2026-07-02",
     updated: "2026-07-20",
     answer: [
       "Un agent IA ne lit pas un portfolio comme un recruteur : il extrait des faits, des liens et des preuves.",
@@ -70,6 +72,7 @@ export const knowledgePages: KnowledgePage[] = [
     shortTitle: "Audit visuel Playwright",
     description:
       "Méthode d'audit visuel multi-viewports : captures, console, responsive, preuves et limites avant modification.",
+    published: "2026-07-02",
     updated: "2026-07-20",
     answer: [
       "Un audit visuel utile ne commence pas par une opinion : il commence par des captures reproductibles.",
@@ -113,6 +116,7 @@ export const knowledgePages: KnowledgePage[] = [
     shortTitle: "Growth Engineer IA",
     description:
       "Ce que recouvre le rôle de Growth Engineer en IA appliquée : marketing, code et workflows LLM reliés à des projets livrés, pas à un intitulé.",
+    published: "2026-07-02",
     updated: "2026-07-20",
     answer: [
       "Un Growth Engineer relie l'acquisition et le code : il conçoit, il livre et prépare la mesure au lieu de sous-traiter chaque étape.",
@@ -156,6 +160,7 @@ export const knowledgePages: KnowledgePage[] = [
     shortTitle: "Workflow Claude Code + MCP",
     description:
       "Structurer un assistant Claude Code en système lisible : identité, skills, agents, hooks et MCP en lazy-load, avec garde-fous sur les actions sensibles.",
+    published: "2026-07-02",
     updated: "2026-07-20",
     answer: [
       "Claude Code devient utile quand on lui donne une structure : identité, règles, skills, agents, hooks, MCP.",
@@ -197,6 +202,7 @@ export const knowledgePages: KnowledgePage[] = [
     shortTitle: "Mémoire d'agent en Markdown",
     description:
       "Une méthode concrète pour donner une mémoire durable à un agent IA : des fichiers Markdown d'identité, de règles et de contexte projet, testée contre d'autres approches.",
+    published: "2026-07-02",
     updated: "2026-07-20",
     answer: [
       "Un agent sans mémoire repart de zéro à chaque session. La solution la plus simple qui tient dans le temps, c'est du Markdown en clair.",
