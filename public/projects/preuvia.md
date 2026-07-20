@@ -2,11 +2,14 @@
 
 Type : Produit - audit GEO (visibilité IA).
 Période : Juin 2026 - en cours.
-Rôle : Conception produit, méthode d'audit, site, livraison client.
+Rôle : Conception produit, méthode d'audit, site, prototypage du livrable.
 Stack : Next.js, GEO / AEO, LLM multi-modèles, Schema JSON-LD, PDF.
-Statut : En activité - premiers audits livrés.
+Statut : Offre en ligne - phase de lancement.
+Niveau de preuve : Preuve publique.
 
 En bref : Audit GEO productisé : mesurer qui les IA citent à la place d'une marque, comparer les écarts, puis livrer un plan de publication re-testable.
+
+Preuves : Site et détail public de l'offre accessibles en ligne. Les éventuelles missions clients restent hors du périmètre des preuves publiques.
 
 Lien : https://preuvia.vercel.app
 
@@ -18,7 +21,7 @@ Aider une marque à savoir si elle apparaît dans les réponses des assistants I
 
 - Produit pensé de bout en bout : positionnement, offre, site, livraison.
 - Méthode d'audit rejouable de la visibilité d'une marque dans les réponses des assistants IA.
-- Premiers audits clients réels livrés, pas une démo.
+- Protocole, grille de lecture et livrable conçus pour être rejoués et comparés dans le temps.
 
 ## Limites
 

@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { getKnowledgePage, knowledgePages } from "@/lib/knowledge";
 import { pageAlternates, ogImage } from "@/lib/projects";
 import { knowledgeJsonLd, faqPageJsonLd } from "@/lib/json-ld";
+import AnimatedTitle from "../../animated-title";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -61,7 +62,7 @@ export default async function KnowledgePage({ params }: PageProps) {
       <section className="case-hero">
         <div>
           <p className="eyebrow">Knowledge · dernière vérif {page.updated}</p>
-          <h1>{page.title}</h1>
+          <AnimatedTitle>{page.title}</AnimatedTitle>
           <p className="lead">{page.description}</p>
         </div>
       </section>

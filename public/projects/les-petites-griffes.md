@@ -5,8 +5,11 @@ Période : Avril 2026 - Juin 2026.
 Rôle : Stratégie, design, développement, SEO, déploiement, QA.
 Stack : Next.js, React, Supabase, Clerk, Vercel, LLM.
 Statut : Prod live.
+Niveau de preuve : Démo privée.
 
-En bref : Site client live en production (URL communiquée en entretien · captures anonymisées sur demande), CMS maison, SEO local, assistant IA cadré, Lighthouse mobile 88 / SEO 100 / a11y 93 (audit revérifié le 29/06).
+En bref : Site client live en production, URL et démo communiquées en entretien. Rapport Lighthouse interne du 29/06/2026 : mobile 88 / SEO 100 / accessibilité 93.
+
+Preuves : Captures anonymisées, démo privée et rapport Lighthouse interne daté du 29/06/2026. Les scores ne sont pas vérifiables publiquement sans ce rapport.
 
 ## Problème
 

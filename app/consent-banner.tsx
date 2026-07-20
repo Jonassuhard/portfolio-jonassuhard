@@ -67,11 +67,10 @@ export default function ConsentBanner() {
   if (!show) return null;
 
   return (
-    <div className="consent" role="dialog" aria-label="Consentement aux cookies de mesure d'audience">
+    <div className="consent" role="region" aria-labelledby="consent-title">
       <div className="consent-inner">
-        <p className="consent-text">
-          Ce site peut mesurer son audience pour comprendre comment ses pages sont lues. Rien ne se
-          charge avant votre accord.{" "}
+        <p className="consent-text" id="consent-title">
+          Microsoft Clarity peut mesurer la lecture des pages. Clarity ne se charge qu'après votre accord.{" "}
           <button
             type="button"
             className="consent-toggle"
@@ -91,10 +90,10 @@ export default function ConsentBanner() {
         </div>
         {detail ? (
           <p className="consent-detail">
-            Mesure d'audience (Microsoft Clarity) : cookies analytiques et relecture anonyme de la
-            navigation, pour voir quelles pages sont lues. Aucun cookie publicitaire, aucune revente
-            de données. Vous pouvez revenir sur ce choix à tout moment via « Gérer les cookies » en
-            bas de page. <a href="/confidentialite">Politique de confidentialité</a>.
+            Microsoft Clarity utilise des cookies analytiques et une relecture de navigation pour
+            comprendre les parcours. Vercel fournit séparément des mesures techniques agrégées.
+            Aucun cookie publicitaire, aucune revente de données. Vous pouvez revenir sur ce choix
+            via « Gérer les cookies » en bas de page. <a href="/confidentialite">Politique de confidentialité</a>.
           </p>
         ) : null}
       </div>

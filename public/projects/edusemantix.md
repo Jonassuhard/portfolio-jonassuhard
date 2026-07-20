@@ -4,7 +4,8 @@ Type : Lab / projet perso.
 Période : 2026.
 Rôle : Conception et développement.
 Stack : React 19 / Vite 6, Node.js / Express / Socket.io, ConceptNet Numberbatch, Python (pré-calcul), Firebase Firestore.
-Statut : Copie publique anonymisée.
+Statut : Lab privé.
+Niveau de preuve : Démo privée.
 
 En bref : Jeu multijoueur en temps réel où l'on cherche un mot secret : chaque proposition reçoit un score de proximité sémantique (similarité cosinus sur vecteurs de mots), scores en direct via WebSocket.
 

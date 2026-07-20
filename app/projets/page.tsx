@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { projects, site, pageMeta } from "@/lib/projects";
+import { evidenceLevelMeta, projects, site, pageMeta } from "@/lib/projects";
+import AnimatedTitle from "../animated-title";
+import ProjectCardImage from "../project-card-image";
 
 export const metadata: Metadata = pageMeta({
   path: "/projets",
@@ -20,7 +22,7 @@ export default function ProjectsPage() {
     <div className="page page-dense">
       <section>
         <p className="eyebrow">Projets</p>
-        <h1>Du projet principal au lab.</h1>
+        <AnimatedTitle>Du projet principal au lab.</AnimatedTitle>
         <p className="lead">
           Trois niveaux, les projets livrés que je mets en avant, les projets
           techniques, puis les labs personnels. Chaque carte indique ce qui est
@@ -42,8 +44,14 @@ export default function ProjectsPage() {
             <div className="case-grid">
               {list.map((project) => (
                 <article className="case-card" key={project.slug}>
-                  <img src={project.image} alt={`Aperçu du projet ${project.shortTitle}`} width={760} height={460} loading="lazy" decoding="async" />
+                  <ProjectCardImage
+                    src={project.image}
+                    alt={`Aperçu du projet ${project.shortTitle}`}
+                  />
                   <div className="case-body">
+                    <span className={`evidence-badge evidence-${project.evidenceLevel}`}>
+                      {evidenceLevelMeta[project.evidenceLevel].label}
+                    </span>
                     <h3>
                       <Link className="case-card-title" href={`/projets/${project.slug}`}>
                         {project.shortTitle}

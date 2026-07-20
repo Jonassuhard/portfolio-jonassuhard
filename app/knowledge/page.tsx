@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { knowledgePages } from "@/lib/knowledge";
 import { pageAlternates } from "@/lib/projects";
+import AnimatedTitle from "../animated-title";
 
 export const metadata: Metadata = {
   title: "Knowledge",
@@ -14,7 +15,7 @@ export default function KnowledgeIndexPage() {
     <div className="page">
       <section className="section">
         <p className="eyebrow">Knowledge</p>
-        <h1>Pages citables.</h1>
+        <AnimatedTitle>Pages citables.</AnimatedTitle>
         <p className="lead">
           Des pages courtes, reliées à des preuves existantes, pour expliquer une méthode sans
           transformer le portfolio en blog générique.

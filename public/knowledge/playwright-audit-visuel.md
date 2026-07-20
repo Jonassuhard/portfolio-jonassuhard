@@ -1,6 +1,6 @@
 # Comment auditer visuellement une page web avec Playwright ?
 
-Dernière vérification : 2026-07-02.
+Dernière vérification : 2026-07-20.
 
 ## Réponse courte
 

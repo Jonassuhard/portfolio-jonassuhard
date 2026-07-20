@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { featuredProjects, skills, site, pageAlternates } from "@/lib/projects";
+import { evidenceLevelMeta, featuredProjects, skills, site, pageAlternates } from "@/lib/projects";
+import AnimatedTitle from "./animated-title";
+import ProjectCardImage from "./project-card-image";
 
 export const metadata: Metadata = {
   alternates: pageAlternates("/")
@@ -13,15 +15,17 @@ export default function HomePage() {
         <div className="hero-copy">
           <div>
             <p className="eyebrow">CDI · Paris ou hybride · disponible le 1er septembre 2026</p>
-            <h1>
-              Growth Engineer
-              <Link className="def-ref" href="/a-propos#growth-engineer" aria-label="Définition de Growth Engineer">*</Link>
-              {" "}· IA appliquée &amp; Automatisation
-            </h1>
+            <AnimatedTitle glitch>
+              Chef de projet IA appliquée &amp; automatisation junior
+            </AnimatedTitle>
+            <p className="role-aliases">Growth Engineer junior · Product Builder IA</p>
+            <p className="title-definition">
+              <Link href="/a-propos#growth-engineer">Pourquoi je garde aussi le rôle Growth Engineer →</Link>
+            </p>
             <p className="lead">
-              Je viens du marketing et j'ai appris à coder pour livrer moi-même :
-              sites, workflows IA, automatisations, contenus SEO. Je documente
-              pour que l'équipe reprenne derrière.
+              Je transforme des besoins marketing et opérationnels en outils web,
+              automatisations et workflows IA mesurables. Je documente les choix
+              pour qu'une équipe puisse reprendre le travail.
             </p>
           </div>
           <div className="button-row">
@@ -74,17 +78,23 @@ export default function HomePage() {
             <h2>Mes trois projets les plus solides.</h2>
           </div>
           <p>
-            Trois terrains différents : un site client en production, une app
-            métier avec données sensibles, une production SEO en entreprise avec
-            preuve en ligne.
+            Trois terrains différents : un site client démontrable en entretien,
+            une application métier documentée sur données fictives et une
+            publication SEO vérifiable en ligne.
           </p>
         </div>
 
         <div className="proof-grid">
           {featuredProjects.map((project) => (
             <article className="proof-card" key={project.slug}>
-              <img src={project.image} alt={`Aperçu du projet ${project.shortTitle}`} width={760} height={460} loading="lazy" decoding="async" />
+              <ProjectCardImage
+                src={project.image}
+                alt={`Aperçu du projet ${project.shortTitle}`}
+              />
               <div className="proof-body">
+                <span className={`evidence-badge evidence-${project.evidenceLevel}`}>
+                  {evidenceLevelMeta[project.evidenceLevel].label}
+                </span>
                 <p className="case-meta">{project.type}</p>
                 <h3>{project.shortTitle}</h3>
                 <p>{project.cardLine ?? project.proofLine}</p>
@@ -112,7 +122,7 @@ export default function HomePage() {
             <p className="section-kicker">Compétences reliées</p>
             <h2>Ce que je sais faire, projets à l'appui.</h2>
           </div>
-          <p>Chaque compétence s'appuie sur des projets livrés et documentés.</p>
+          <p>Chaque compétence indique le projet associé et son niveau de preuve.</p>
         </div>
 
         <div className="matrix">
@@ -168,6 +178,9 @@ export default function HomePage() {
           <div className="button-row">
             <Link className="button primary" href="/recruteurs">
               Page recruteurs
+            </Link>
+            <Link className="button" href="/preuves">
+              Registre des preuves
             </Link>
             <a className="button" href={`mailto:${site.email}`}>
               {site.email}

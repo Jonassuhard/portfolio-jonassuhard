@@ -3,7 +3,7 @@
 Portfolio de preuves, **recruteur-first et agent-readable**.
 Live : **[jonassuhard.com](https://jonassuhard.com)**
 
-Growth Engineer · IA appliquée & Automatisation — un profil hybride marketing, IA générative et développement full-stack. Ce site présente des projets réels avec leurs décisions, contraintes, limites et résultats, plutôt qu'une liste de compétences.
+Chef de projet IA appliquée & automatisation junior — spécialisation Growth Engineer et Product Builder IA. Ce site présente les décisions, limites et niveaux de preuve de chaque projet, plutôt qu'une simple liste de compétences.
 
 ## Stack
 

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { site, pageAlternates } from "@/lib/projects";
+import AnimatedTitle from "../animated-title";
 
 export const metadata: Metadata = {
   title: "Mentions légales",
@@ -13,7 +14,7 @@ export default function MentionsLegalesPage() {
     <div className="page">
       <section>
         <p className="eyebrow">Informations légales</p>
-        <h1>Mentions légales.</h1>
+        <AnimatedTitle>Mentions légales.</AnimatedTitle>
         <p className="updated">Dernière mise à jour : 29 juin 2026</p>
       </section>
 

@@ -4,7 +4,8 @@ Type : POC / preuve technique.
 Période : 2026.
 Rôle : Conception et développement (POC).
 Stack : Python / FastAPI, Mistral Small + Large, Qdrant (1 collection/agent), Celery + Redis, Docker Compose.
-Statut : POC initié - copie publique anonymisée.
+Statut : POC privé initié.
+Niveau de preuve : Démo privée.
 
 En bref : POC d'audit stratégique pour TPE/PME : 5 agents Mistral analysent une question, chacun avec sa donnée exclusive (asymétrie d'information), puis un CIO déterministe agrège les verdicts par niveau de confiance.
 

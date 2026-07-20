@@ -1,18 +1,20 @@
 # Jonas Suhard
 
-> Growth Engineer · IA appliquée & Automatisation, basé à Paris. Profil hybride marketing, IA générative et développement full-stack, orienté delivery. Variante de poste : Marketing Technologist IA. Disponible en CDI à partir du 1er septembre 2026. Contact : contact@jonassuhard.com.
+> Chef de projet IA appliquée & automatisation junior, basé à Paris. Spécialisations : Growth Engineer junior et Product Builder IA. Disponible en CDI à partir du 1er septembre 2026. Contact : contact@jonassuhard.com.
 
 Jonas construit des systèmes marketing augmentés par l'IA — sites, automatisations, contenus, workflows LLM et dashboards — qui transforment une stratégie en produit utilisable. Ce site rassemble ses projets de travail : projets réels, décisions, contraintes et résultats, sans métrique inventée.
 
 Note de lecture : les pages HTML sont la version canonique pour les humains ; les fichiers Markdown et JSON ci-dessous sont la version destinée aux agents. Les projets clients sont anonymisés quand les données ou les accès ne sont pas publiables.
 
-Dernière mise à jour : 2026-07-02
+Dernière mise à jour : 2026-07-20
 
 ## Profil
 
 - [Profil (Markdown)](https://jonassuhard.com/profile.md): résumé lisible — positionnement, cibles, stack, contact
 - [Profil structuré (JSON)](https://jonassuhard.com/profile.json): source de vérité lisible par une machine
 - [Faits citables Q/R (JSON)](https://jonassuhard.com/claims.json): réponses factuelles prêtes à citer, sans chiffre inventé
+- [Registre des preuves](https://jonassuhard.com/preuves): sources publiques, preuves privées et affirmations retirées
+- [Registre structuré (JSON)](https://jonassuhard.com/verification.json): mêmes statuts de preuve, lisibles par machine
 - [Compétences](https://jonassuhard.com/skills.md): matrice de compétences reliées à des projets
 - [Page recruteurs](https://jonassuhard.com/recruteurs): où me ranger, preuves, périmètre, contact
 - [CV (PDF)](https://jonassuhard.com/cv.pdf): CV à jour
@@ -21,8 +23,8 @@ Dernière mise à jour : 2026-07-02
 
 ## Projets principaux
 
-- [Les Petites Griffes](https://jonassuhard.com/projects/les-petites-griffes.md): site client live, CMS maison, SEO local, assistant IA cadré (Lighthouse mobile 88 / SEO 100 / accessibilité 93, audit 2026-06-29)
-- [Educool / La Herse](https://jonassuhard.com/projects/educool-la-herse.md): application web utilisée en classe (Firebase, données sensibles, PDF), données mineurs anonymisées
+- [Les Petites Griffes](https://jonassuhard.com/projects/les-petites-griffes.md): site client, CMS maison et assistant IA démontrables en entretien ; rapport Lighthouse interne du 2026-06-29
+- [Educool / La Herse](https://jonassuhard.com/projects/educool-la-herse.md): application web démontrable sur données fictives ; aucune donnée de mineur publiée
 - [ISCOM](https://jonassuhard.com/projects/iscom.md): production SEO dans Drupal, fact-check claim par claim, audit de cannibalisation et validation humaine avant publication
 - [Preuvia](https://jonassuhard.com/projects/preuvia.md): audit GEO — mesurer qui les IA citent à la place d'une marque, puis livrer un plan de publication re-testable (site : https://preuvia.vercel.app)
 - [Capsélys](https://jonassuhard.com/projects/capselys.md): refonte conversion sur staging, audits Playwright multi-viewports, expérimentation IA et atelier client
@@ -55,7 +57,7 @@ Dernière mise à jour : 2026-07-02
 
 ## Optional
 
-- [HoopSphere](https://jonassuhard.com/projects/hoopsphere.md): app basket amateur (projet MBA à 4), co-fondateur responsable marketing, 807 abonnés Instagram en 6 mois à budget zéro, app publiée sur Google Play
+- [HoopSphere](https://jonassuhard.com/projects/hoopsphere.md): projet MBA à quatre, co-fondateur responsable marketing ; métriques d'acquisition retirées en attente de preuves
 - [Edusemantix](https://jonassuhard.com/projects/edusemantix.md): jeu sémantique multijoueur temps réel
 - [Index des projets](https://jonassuhard.com/projets): toutes les preuves classées par maturité, vérifiabilité et contexte
 - [Plan du site](https://jonassuhard.com/sitemap.xml): toutes les URLs

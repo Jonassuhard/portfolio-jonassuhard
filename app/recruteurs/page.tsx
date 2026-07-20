@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { recruiterFeatured, site, pageMeta } from "@/lib/projects";
+import { evidenceLevelMeta, recruiterFeatured, site, pageMeta } from "@/lib/projects";
 import { faqItems } from "@/lib/faq";
 import { faqPageJsonLd } from "@/lib/json-ld";
+import AnimatedTitle from "../animated-title";
+import ProjectCardImage from "../project-card-image";
 
 export const metadata: Metadata = pageMeta({
   path: "/recruteurs",
@@ -21,15 +23,17 @@ export default function RecruitersPage() {
       <section className="case-hero">
         <div>
           <p className="eyebrow">Candidature</p>
-          <h1>
-            Growth Engineer
-            <Link className="def-ref" href="/a-propos#growth-engineer" aria-label="Définition de Growth Engineer">*</Link>
-            , IA appliquée et automatisation.
-          </h1>
+          <AnimatedTitle>
+            Chef de projet IA appliquée &amp; automatisation junior.
+          </AnimatedTitle>
+          <p className="role-aliases">Growth Engineer junior · Product Builder IA</p>
+          <p className="title-definition">
+            <Link href="/a-propos#growth-engineer">Correspondance avec le rôle Growth Engineer →</Link>
+          </p>
           <p className="lead">
-            Profil marketing et développement : je cadre un besoin, je livre un
-            premier outil qui marche, je vérifie les résultats et je documente
-            pour que l'équipe reprenne derrière.
+            Profil marketing et développement : je cadre un besoin, je livre une
+            première version, je définis comment la mesurer et je documente pour
+            que l'équipe puisse reprendre derrière.
           </p>
           <div className="button-row">
             <a className="button primary" href={`mailto:${site.email}`}>Me contacter</a>
@@ -57,7 +61,7 @@ export default function RecruitersPage() {
               </tr>
               <tr>
                 <th scope="row">Rôles</th>
-                <td>Growth Engineer, Marketing Technologist IA, Chef de projet IA orienté produit</td>
+                <td>Chef de projet IA appliquée &amp; automatisation junior, Growth Engineer junior, Product Builder IA</td>
               </tr>
               <tr>
                 <th scope="row">Stack</th>
@@ -126,15 +130,38 @@ export default function RecruitersPage() {
           </div>
           <div className="matrix-item">
             <strong>Revue et intégration</strong>
-            <p>Des PR courtes et relisables plutôt qu'un gros lot en fin de sprint.</p>
+            <p>Des changements courts, relisables et documentés plutôt qu'un gros lot en fin de sprint.</p>
           </div>
           <div className="matrix-item">
             <strong>Transmission</strong>
             <p>Un livrable qu'un autre fait tourner sans moi : sur Les Petites Griffes, la gérante édite son site seule.</p>
           </div>
           <div className="matrix-item">
-            <strong>Pédagogie</strong>
-            <p>Trois ans à expliquer et transmettre (animation) : l'habitude de rendre un travail compréhensible.</p>
+            <strong>Synthèse visuelle</strong>
+            <p>Une formation en animation et design qui aide à rendre une interface, un rapport ou une décision compréhensible.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="section-head">
+          <div>
+            <p className="section-kicker">Marché français</p>
+            <h2>Le bon niveau, sans survendre.</h2>
+          </div>
+          <p>
+            Je suis déjà opérationnel sur le build web, le SEO et les workflows
+            IA. Je veux consolider en équipe la data produit et l'expérimentation.
+          </p>
+        </div>
+        <div className="matrix matrix-2">
+          <div className="matrix-item">
+            <strong>Apport immédiat</strong>
+            <p>Pages et outils Next.js, SEO, CMS, automatisations, assistants cadrés, documentation et QA.</p>
+          </div>
+          <div className="matrix-item">
+            <strong>À consolider</strong>
+            <p>SQL avancé, plan de tracking produit, A/B tests à volume significatif et pratiques d'une équipe logiciel multi-développeurs.</p>
           </div>
         </div>
       </section>
@@ -154,8 +181,14 @@ export default function RecruitersPage() {
         <div className="proof-grid">
           {recruiterFeatured.map((project) => (
             <article className="proof-card" key={project.slug}>
-              <img src={project.image} alt={`Aperçu ${project.shortTitle}`} loading="lazy" decoding="async" />
+              <ProjectCardImage
+                src={project.image}
+                alt={`Aperçu ${project.shortTitle}`}
+              />
               <div className="proof-body">
+                <span className={`evidence-badge evidence-${project.evidenceLevel}`}>
+                  {evidenceLevelMeta[project.evidenceLevel].label}
+                </span>
                 <p className="case-meta">{project.status}</p>
                 <h3>{project.shortTitle}</h3>
                 <p>{project.recruiterProof[0]}</p>
@@ -222,6 +255,7 @@ export default function RecruitersPage() {
           <div className="button-row">
             <a className="button primary" href={`mailto:${site.email}`}>Me contacter</a>
             <Link className="button" href="/methode">Ma méthode de travail</Link>
+            <Link className="button" href="/preuves">Vérifier les affirmations</Link>
           </div>
         </div>
       </section>

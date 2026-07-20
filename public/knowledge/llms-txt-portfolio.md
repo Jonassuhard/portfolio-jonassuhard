@@ -1,6 +1,6 @@
 # Comment rendre un portfolio citable par un agent IA ?
 
-Dernière vérification : 2026-07-02.
+Dernière vérification : 2026-07-20.
 
 ## Réponse courte
 
@@ -8,7 +8,7 @@ Dernière vérification : 2026-07-02.
 - La page HTML reste la version canonique pour les humains.
 - Les fichiers Markdown et JSON servent de carte lisible par machine.
 - Le but n'est pas de forcer une citation, mais de rendre les faits vérifiables.
-- Ce site utilise llms.txt, profile.json, claims.json, skills.md, des fiches projet Markdown et un knowledge graph JSON-LD.
+- Ce site utilise llms.txt, profile.json, claims.json, verification.json, skills.md, des fiches projet Markdown et un knowledge graph JSON-LD.
 
 ## Problème
 
@@ -19,6 +19,7 @@ Un beau portfolio peut rester flou pour un agent : titre, disponibilité, compé
 - Créer un llms.txt court qui joue le rôle de carte d'entrée.
 - Maintenir un profile.json pour les faits stables : titre, disponibilité, stack, projets et limites.
 - Ajouter un claims.json en questions-réponses pour les réponses que l'agent doit pouvoir citer sans inventer.
+- Publier un registre de preuves qui sépare source publique, preuve privée, déclaratif et affirmation retirée.
 - Publier une version Markdown des pages clés pour réduire le bruit de layout.
 - Exposer un graphe JSON-LD qui relie personne, compétences et projets par des IDs stables.
 
@@ -43,6 +44,8 @@ Sur ce portfolio, Preuvia sert de cas produit GEO/AEO ; la couche agent-readable
 - llms.txt : /llms.txt
 - profile.json : /profile.json
 - claims.json : /claims.json
+- verification.json : /verification.json
+- Registre des preuves : /preuves
 - skills.md : /skills.md
 - knowledge-graph.json : /knowledge-graph.json
 - Fiche Preuvia : /projects/preuvia.md

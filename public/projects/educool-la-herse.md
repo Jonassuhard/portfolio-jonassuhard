@@ -5,8 +5,11 @@ Période : 2026.
 Rôle : Développement, UX, sécurité, PDF, Firebase, maintenance.
 Stack : Next.js, Firebase, Firestore, Cloud Functions, Vitest, PDF.
 Statut : Prod / maintenance.
+Niveau de preuve : Démo privée.
 
 En bref : Application utilisée par une classe, Firebase, données sensibles, PDF et audits de sécurité.
+
+Preuves : Captures sur données fictives et démonstration privée. L'usage en classe ne peut pas être vérifié publiquement en raison des données de mineurs.
 
 ## Problème
 

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import AnimatedTitle from "./animated-title";
 
 export const metadata = {
   title: "404 — Ligne temporelle introuvable"
@@ -9,7 +10,7 @@ export default function NotFound() {
     <div className="page">
       <section className="notfound">
         <p className="eyebrow">Erreur de divergence · 404</p>
-        <h1>Cette ligne temporelle n'existe pas.</h1>
+        <AnimatedTitle>Cette ligne temporelle n'existe pas.</AnimatedTitle>
         <p className="lead">
           La page que tu cherches appartient à une autre worldline. Le Reading Steiner
           n'a rien détecté à cette adresse — lien périmé, mal recopié, ou jamais advenu.

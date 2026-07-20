@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 
@@ -21,7 +22,15 @@ export default function SiteNav() {
   return (
     <div className="menubar">
       <Link className="brand" href="/" aria-label="Accueil Jonas Suhard" onClick={close}>
-        <img className="brand-mark" src="/brand/js-medallion-sm.webp" alt="Jonas Suhard" width={36} height={36} />
+        <Image
+          className="brand-mark"
+          src="/brand/js-medallion-sm.webp"
+          alt="Jonas Suhard"
+          width={36}
+          height={36}
+          sizes="36px"
+          quality={85}
+        />
       </Link>
       {parent ? (
         <Link className="nav-back" href={parent} aria-label="Retour" onClick={close}>
@@ -44,6 +53,7 @@ export default function SiteNav() {
         <Link href="/projets" onClick={close}>Projets</Link>
         <Link href="/competences" onClick={close}>Compétences</Link>
         <Link href="/methode" onClick={close}>Méthode</Link>
+        <Link href="/preuves" onClick={close}>Preuves</Link>
         <Link href="/a-propos" onClick={close}>À propos</Link>
       </nav>
     </div>

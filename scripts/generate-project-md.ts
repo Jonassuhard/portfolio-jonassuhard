@@ -5,9 +5,14 @@
 import { writeFileSync, mkdirSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
-import { projects, type Project } from "../lib/projects";
+import { evidenceLevelMeta, projects, type Project } from "../lib/projects";
 import { knowledgePages, type KnowledgePage } from "../lib/knowledge";
 import { faqMeta, faqItems } from "../lib/faq";
+import {
+  claimStatusMeta,
+  contentReviewDate,
+  verificationItems
+} from "../lib/verification";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const publicDir = join(here, "..", "public");
@@ -28,9 +33,13 @@ function toMarkdown(project: Project) {
     `Rôle : ${project.role}.`,
     `Stack : ${project.stack.join(", ")}.`,
     `Statut : ${project.status}.`,
+    `Niveau de preuve : ${evidenceLevelMeta[project.evidenceLevel].label}.`,
     "",
     `En bref : ${project.proofLine}`
   ];
+  if (project.evidenceNote) {
+    lines.push("", `Preuves : ${project.evidenceNote}`);
+  }
   if (externalLink) {
     lines.push("", `Lien : ${externalLink.href}`);
   }
@@ -108,6 +117,19 @@ for (const page of knowledgePages as KnowledgePage[]) {
 const claims = { ...faqMeta, claims: faqItems.map((item) => ({ q: item.q, a: item.a })) };
 writeFileSync(join(publicDir, "claims.json"), `${JSON.stringify(claims, null, 2)}\n`, "utf8");
 
+const verification = {
+  reviewed_at: contentReviewDate,
+  methodology: Object.fromEntries(
+    Object.entries(claimStatusMeta).map(([status, meta]) => [status, meta.description])
+  ),
+  claims: verificationItems
+};
+writeFileSync(
+  join(publicDir, "verification.json"),
+  `${JSON.stringify(verification, null, 2)}\n`,
+  "utf8"
+);
+
 console.log(
-  `generate: ${projects.length} projets, ${knowledgePages.length} knowledge, claims.json (${faqItems.length} Q/R)`
+  `generate: ${projects.length} projets, ${knowledgePages.length} knowledge, claims.json (${faqItems.length} Q/R), verification.json (${verificationItems.length} entrées)`
 );

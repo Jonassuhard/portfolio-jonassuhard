@@ -15,4 +15,6 @@ build/
 *.tsbuildinfo
 # artefacts locaux (non publiés)
 qa/screenshots/
+.lighthouseci/
+tmp/
 PROMPTS_IMAGES_PROJETS.md

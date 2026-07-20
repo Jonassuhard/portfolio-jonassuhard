@@ -1,16 +1,16 @@
 {
   "subject": "Jonas Suhard",
-  "purpose": "Réponses factuelles citables par un agent IA. Aucune métrique inventée : chaque chiffre est tiré d'un audit ou d'un projet réel.",
-  "verified_at": "2026-07-02",
+  "purpose": "Réponses factuelles citables par un agent IA. Chaque métrique indique si sa preuve est publique ou privée.",
+  "verified_at": "2026-07-20",
   "source_of_truth": "https://jonassuhard.com/profile.json",
   "claims": [
     {
       "q": "Qui est Jonas Suhard ?",
-      "a": "Growth Engineer · IA appliquée & Automatisation basé à Paris, profil hybride marketing, IA générative et développement full-stack orienté delivery."
+      "a": "Chef de projet IA appliquée & automatisation junior basé à Paris, avec une spécialisation Growth Engineer et Product Builder IA."
     },
     {
       "q": "Quel poste cherche-t-il ?",
-      "a": "Un CDI comme Growth Engineer, Marketing Technologist IA, Chef de projet IA orienté produit ou AI Automation Specialist."
+      "a": "Un CDI junior comme Chef de projet IA appliquée & automatisation, Growth Engineer ou Product Builder IA."
     },
     {
       "q": "Quand est-il disponible et où ?",
@@ -22,7 +22,7 @@
     },
     {
       "q": "Quels résultats mesurés peut-on citer ?",
-      "a": "Les Petites Griffes : Lighthouse mobile 88, SEO 100, accessibilité 93 (audit du 29/06/2026). Educool / La Herse : application utilisée par une classe en contexte réel (données anonymisées)."
+      "a": "Les Petites Griffes : rapport Lighthouse interne du 29/06/2026, mobile 88, SEO 100, accessibilité 93. Educool / La Herse : démonstration privée sur données fictives ; aucune donnée de mineur n'est publiée."
     },
     {
       "q": "Quelle est sa stack technique ?",

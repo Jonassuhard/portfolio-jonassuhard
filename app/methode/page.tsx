@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { site, pageMeta } from "@/lib/projects";
+import AnimatedTitle from "../animated-title";
 
 export const metadata: Metadata = pageMeta({
   path: "/methode",
@@ -79,7 +80,7 @@ export default function MethodePage() {
     <div className="page">
       <section>
         <p className="eyebrow">Méthode</p>
-        <h1>Comment je travaille.</h1>
+        <AnimatedTitle>Comment je travaille.</AnimatedTitle>
         <p className="lead">
           Voici comment je cadre, code, sécurise et livre. L'IA accélère mon
           travail, mais les décisions, la vérification et la responsabilité du

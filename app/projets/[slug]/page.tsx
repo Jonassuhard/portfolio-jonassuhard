@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { projectJsonLd, breadcrumbJsonLd } from "@/lib/json-ld";
-import { getProject, projects, ogImage } from "@/lib/projects";
+import { evidenceLevelMeta, getProject, projects, ogImage } from "@/lib/projects";
+import AnimatedTitle from "../../animated-title";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -87,7 +89,10 @@ export default async function ProjectDetailPage({ params }: PageProps) {
       <section className="case-hero">
         <div>
           <p className="eyebrow">Case study</p>
-          <h1>{project.title}</h1>
+          <span className={`evidence-badge evidence-${project.evidenceLevel}`}>
+            {evidenceLevelMeta[project.evidenceLevel].label}
+          </span>
+          <AnimatedTitle>{project.title}</AnimatedTitle>
           <p className="lead">{project.summary}</p>
           {project.noindex ? (
             <p className="case-meta">Lab / archive — non mis en avant pour la candidature.</p>
@@ -118,7 +123,16 @@ export default async function ProjectDetailPage({ params }: PageProps) {
             aria-label={`Aperçu animé (filtre ASCII) du projet ${project.shortTitle}`}
           />
         ) : (
-          <img src={project.image} alt={`Aperçu du projet ${project.shortTitle}`} width={760} height={460} />
+          <Image
+            src={project.image}
+            alt={`Aperçu du projet ${project.shortTitle}`}
+            width={760}
+            height={460}
+            sizes="(max-width: 960px) calc(100vw - 28px), 520px"
+            quality={75}
+            loading="eager"
+            fetchPriority="high"
+          />
         )}
       </section>
 
@@ -140,6 +154,10 @@ export default async function ProjectDetailPage({ params }: PageProps) {
             <tr>
               <th scope="row">Statut</th>
               <td>{project.status}</td>
+            </tr>
+            <tr>
+              <th scope="row">Niveau de preuve</th>
+              <td>{evidenceLevelMeta[project.evidenceLevel].description}</td>
             </tr>
             <tr>
               <th scope="row">Stack</th>

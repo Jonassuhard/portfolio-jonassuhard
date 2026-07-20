@@ -6,6 +6,13 @@ const root = dirname(fileURLToPath(import.meta.url));
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   poweredByHeader: false,
+  images: {
+    // Les cartes et portraits sont servis via /_next/image avec un srcset
+    // responsive. Ce TTL évite de retraiter les mêmes variantes à chaque visite.
+    formats: ["image/avif", "image/webp"],
+    minimumCacheTTL: 2678400,
+    qualities: [65, 70, 75, 85]
+  },
   // Inline le CSS critique dans le HTML -> supprime la requête CSS render-blocking
   // (le dernier verrou du LCP mobile sur 4G lente).
   experimental: {
@@ -34,11 +41,11 @@ const nextConfig = {
       key: "X-Robots-Tag",
       value: "noindex, follow"
     };
-    // Images/logos servis depuis /public : non hashés, donc pas d'immutable.
-    // 1 jour de fraîcheur + SWR 30 j = repeat-view rapide sans figer une MAJ.
+    // Les sources publiques restent modifiables : cache 30 j, sans immutable.
+    // Les variantes optimisées de next/image ont leur propre clé et leur TTL.
     const assetCache = {
       key: "Cache-Control",
-      value: "public, max-age=86400, stale-while-revalidate=2592000"
+      value: "public, max-age=2592000, stale-while-revalidate=31536000"
     };
 
     return [
@@ -55,6 +62,10 @@ const nextConfig = {
       },
       {
         source: "/claims.json",
+        headers: [agentReadableNoIndex]
+      },
+      {
+        source: "/verification.json",
         headers: [agentReadableNoIndex]
       }
     ];

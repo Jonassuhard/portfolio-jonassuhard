@@ -5,8 +5,11 @@ Période : 2026.
 Rôle : SEO, fact-check, contenu, audits, CMS, process qualité.
 Stack : Drupal, Playwright, Semrush, SEO, LLM-assisted QA.
 Statut : Alternance / client interne.
+Niveau de preuve : Preuve publique.
 
 En bref : Contenus SEO qui vont réellement en ligne dans le CMS d'un employeur, avec fact-check de chaque affirmation et validation humaine avant publication.
+
+Preuves : Article publié en ligne, plus une checklist QA de pré-publication et un extrait d'audit de cannibalisation anonymisés.
 
 Lien : https://www.iscom.fr/actualites/lia-change-de-role-les-communicants-aussi
 

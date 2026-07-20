@@ -4,7 +4,8 @@ Type : Lab / projet perso.
 Période : 2026.
 Rôle : Conception et développement.
 Stack : Python 3, ndspy, Format NARC, Moteur de texte Gen 4 maison, EmulatorJS (viewer web).
-Statut : Copie publique anonymisée (ROM non incluse).
+Statut : Lab privé - aucune ROM distribuée.
+Niveau de preuve : Démo privée.
 
 En bref : Boîte à outils Python (ndspy) pour explorer des formats de données de jeu (textes, events, scripts, stats) et écrire ses propres outils d'édition. Aucune ROM ni asset distribué.
 

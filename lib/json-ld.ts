@@ -1,4 +1,4 @@
-import { projects, site, siteUrl, skills } from "./projects";
+import { evidenceLevelMeta, projects, site, siteUrl, skills, toAnchorId } from "./projects";
 import { faqItems } from "./faq";
 
 const personId = `${siteUrl}/#person`;
@@ -8,12 +8,7 @@ function projectId(slug: string) {
 }
 
 function skillId(name: string) {
-  return `${siteUrl}/skills#${name
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-|-$/g, "")}`;
+  return `${siteUrl}/competences#${toAnchorId(name)}`;
 }
 
 function projectType(project: (typeof projects)[number]) {
@@ -33,15 +28,15 @@ export function personJsonLd() {
     "@type": "Person",
     "@id": personId,
     name: site.name,
-    jobTitle: "Growth Engineer · IA appliquée & Automatisation",
+    jobTitle: site.title,
     description:
-      "Profil hybride marketing, IA générative et développement full-stack, orienté delivery.",
+      "Profil junior à l'interface des besoins métier, de l'IA appliquée, de l'automatisation et du développement web.",
     email: `mailto:${site.email}`,
     url: siteUrl,
     sameAs: [site.github, site.linkedin, site.malt],
     seeks: {
       "@type": "Demand",
-      name: "CDI Growth Engineer / Marketing Technologist IA",
+      name: "CDI junior Chef de projet IA appliquée et automatisation / Growth Engineer",
       availabilityStarts: "2026-09-01",
       areaServed: "Paris / hybride"
     },
@@ -49,12 +44,12 @@ export function personJsonLd() {
       {
         "@type": "EducationalOrganization",
         name: "MyDigitalSchool Paris",
-        description: "MBA Expert Marketing Digital - RNCP41809 niveau 7 (en cours, 2024-2026)"
+        description: "MBA Expert Marketing Digital - préparation du titre RNCP41809 niveau 7 (en cours, 2024-2026)"
       },
       {
         "@type": "EducationalOrganization",
         name: "La Digital School Angers",
-        description: "Bachelor Chef de projet digital - RNCP niveau 6 (2023-2024)"
+        description: "Bachelor Chef de projet digital - titre RNCP34340 niveau 6 (2023-2024, preuve privée)"
       }
     ],
     address: {
@@ -104,6 +99,11 @@ export function projectJsonLd(slug: string) {
     creativeWorkStatus: project.status,
     about: [
       { "@type": "PropertyValue", name: "evidence", value: project.proofLine },
+      {
+        "@type": "PropertyValue",
+        name: "evidenceLevel",
+        value: evidenceLevelMeta[project.evidenceLevel].label
+      },
       ...project.limits.map((limit) => ({ "@type": "PropertyValue", name: "limits", value: limit }))
     ]
   };

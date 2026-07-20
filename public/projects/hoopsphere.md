@@ -5,8 +5,9 @@ Période : 2025 - 2026.
 Rôle : Co-fondateur, responsable marketing et projections financières.
 Stack : Business plan, Projections financières, Étude de marché, Personas, Instagram, Emailing (Brevo).
 Statut : Archive / MBA.
+Niveau de preuve : À documenter.
 
-En bref : Co-fondateur et responsable marketing d'une app basket amateur : audience construite à budget zéro, app publiée sur Google Play.
+En bref : Projet MBA à quatre : responsabilité marketing, étude de marché et projections financières. Les résultats d'acquisition restent à documenter avant citation.
 
 ## Problème
 
@@ -14,9 +15,9 @@ Application mobile de stats de basket amateur (lecture OCR des feuilles e-Marque
 
 ## Ce que ça montre
 
-- Co-fondateur en charge de tout le marketing d'un produit réel, à budget zéro.
-- Audience construite sans pub : 807 abonnés Instagram en 6 mois, emailing coachs à 58% d'ouverture.
-- Business plan et projections financières chiffrées et sourcées.
+- Responsabilité du marketing dans un projet MBA mené à quatre.
+- Étude de marché, personas, plan d'acquisition et campagnes organiques.
+- Business plan et projections financières à présenter avec leurs sources en entretien.
 
 ## Limites
 
