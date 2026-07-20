@@ -30,7 +30,7 @@ export default function ProjectsPage() {
         </p>
       </section>
 
-      {GROUPS.map((group) => {
+      {GROUPS.map((group, groupIndex) => {
         const list = projects.filter((project) => project.tier === group.tier);
         if (!list.length) return null;
         return (
@@ -42,11 +42,12 @@ export default function ProjectsPage() {
               </div>
             </div>
             <div className="case-grid">
-              {list.map((project) => (
+              {list.map((project, projectIndex) => (
                 <article className="case-card" key={project.slug}>
                   <ProjectCardImage
                     src={project.image}
                     alt={`Aperçu du projet ${project.shortTitle}`}
+                    preload={groupIndex === 0 && projectIndex === 0}
                   />
                   <div className="case-body">
                     <span className={`evidence-badge evidence-${project.evidenceLevel}`}>

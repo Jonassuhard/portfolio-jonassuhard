@@ -15,6 +15,8 @@ test("les cartes utilisent une image responsive sans JavaScript client", () => {
 
   assert.match(component, /from "next\/image"/);
   assert.match(component, /sizes=/);
+  assert.match(component, /preload=\{preload\}/);
+  assert.match(read("app/projets/page.tsx"), /preload=\{groupIndex === 0 && projectIndex === 0\}/);
   assert.doesNotMatch(cardPages, /<img[^>]+src=\{project\.image\}/);
 });
 
