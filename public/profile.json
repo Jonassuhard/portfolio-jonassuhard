@@ -1,31 +1,30 @@
 {
   "name": "Jonas Suhard",
-  "title": "Growth Engineer · IA appliquée & Automatisation",
+  "title": "Chef de projet IA appliquée & automatisation junior",
   "location": "Paris, France",
   "target_contract": "CDI",
   "seniority": "junior",
   "availability": "1er septembre 2026",
-  "verified_at": "2026-07-01",
+  "verified_at": "2026-07-20",
   "citable_facts": {
-    "les_petites_griffes_lighthouse": "mobile 88 / SEO 100 / accessibilité 93 (audit 2026-06-29)",
-    "educool_context": "application utilisée en contexte de classe, données élèves anonymisées"
+    "les_petites_griffes_lighthouse": "rapport interne du 2026-06-29 : mobile 88 / SEO 100 / accessibilité 93 ; preuve privée",
+    "educool_context": "démonstration privée sur données fictives ; aucune donnée de mineur n'est publiée"
   },
   "target_roles": [
-    "Growth Engineer",
-    "Marketing Technologist IA",
-    "Chef de projet IA orienté produit",
-    "AI Automation Specialist"
+    "Chef de projet IA appliquée & automatisation junior",
+    "Growth Engineer junior",
+    "Product Builder IA"
   ],
-  "positioning": "Marketing, IA générative et développement full-stack pour transformer une stratégie en outils qui tournent en production.",
+  "positioning": "Cadrer et livrer des projets d'IA appliquée et d'automatisation, avec une spécialisation growth et développement web.",
   "skills": {
     "marketing": ["SEO", "content strategy", "conversion", "analytics", "marketing operations"],
     "ai": ["LLM workflows", "RAG", "prompt engineering", "automation", "AI-assisted content QA"],
     "development": ["Next.js", "React", "Firebase", "Supabase", "Python", "Playwright"]
   },
   "education": [
-    { "degree": "MBA Expert Marketing Digital", "status": "en cours", "period": "2024–2026", "school": "MyDigitalSchool, Paris", "certification": "RNCP41809 — Manager de la stratégie marketing digital, niveau 7" },
-    { "degree": "Bachelor Chef de projet digital", "period": "2023–2024", "school": "La Digital School, Angers", "certification": "titre RNCP niveau 6 — Chef de projet e-business" },
-    { "degree": "Animation 2D / 3D", "period": "2019–2021", "school": "Human Academy, Angoulême", "certification": "certificat d'école (cursus 3 ans, non inscrit au RNCP)" }
+    { "degree": "MBA Expert Marketing Digital", "status": "en cours", "period": "2024–2026", "school": "MyDigitalSchool, Paris", "certification": "prépare le RNCP41809 — Manager de la stratégie marketing digital, niveau 7" },
+    { "degree": "Bachelor Chef de projet digital", "period": "2023–2024", "school": "La Digital School, Angers", "certification": "RNCP34340 niveau 6 — Chef de projet e-business ; preuve privée" },
+    { "degree": "Animation 2D / 3D", "period": "2019–2021", "school": "Human Academy, Angoulême", "certification": "certificat d'école, non inscrit au RNCP" }
   ],
   "projects": [
     {
@@ -36,7 +35,7 @@
       "stack": ["Next.js", "Supabase", "Clerk", "Vercel", "LLM"],
       "case_study": "/projets/les-petites-griffes",
       "markdown": "/projects/les-petites-griffes.md",
-      "evidence": "Site client live en production, CMS maison, SEO local, Lighthouse mobile 88 / SEO 100 / accessibilité 93 (audit 2026-06-29).",
+      "evidence": "Site client et CMS démontrables en entretien ; rapport Lighthouse interne du 2026-06-29 : mobile 88 / SEO 100 / accessibilité 93.",
       "limits": "Impact business non mesuré à ce stade.",
       "confidentiality": "données privées anonymisées",
       "repo_status": "privé — code et données client"
@@ -49,7 +48,7 @@
       "stack": ["Next.js", "Firebase", "Firestore", "Cloud Functions"],
       "case_study": "/projets/educool-la-herse",
       "markdown": "/projects/educool-la-herse.md",
-      "evidence": "Application utilisée en contexte de classe, données élèves anonymisées ; rules Firebase, Cloud Functions, génération PDF et tests documentés sur les lots.",
+      "evidence": "Démonstration privée sur données fictives ; rules Firebase, Cloud Functions, génération PDF et tests documentés sur les lots.",
       "limits": "Aucune donnée élève publiable (mineurs) ; gain de temps enseignant observé, non chiffré publiquement.",
       "confidentiality": "données enfants anonymisées",
       "repo_status": "privé — RGPD (données mineurs)"
@@ -84,12 +83,12 @@
       "project": "Preuvia",
       "type": "produit — audit GEO (visibilité IA)",
       "period": "Juin 2026 - en cours",
-      "role": "conception produit, méthode d'audit, site, livraison client",
+      "role": "conception produit, méthode d'audit, site, prototypage du livrable",
       "stack": ["Next.js", "GEO / AEO", "LLM multi-modèles", "Schema JSON-LD", "PDF"],
       "case_study": "/projets/preuvia",
       "markdown": "/projects/preuvia.md",
       "site": "https://preuvia.vercel.app",
-      "evidence": "Offre productisée d'audit GEO en activité : site en ligne, protocole d'audit multi-modèles, livrable PDF, premiers audits clients livrés.",
+      "evidence": "Offre d'audit GEO en ligne, protocole multi-modèles et structure de livrable documentés ; aucun volume client revendiqué.",
       "limits": "Ne garantit pas l'apparition dans les IA ; résultats variables selon modèle et prompt ; méthode interne non publiée.",
       "confidentiality": "produit commercial — méthode interne non divulguée",
       "repo_status": "privé — produit commercial"
@@ -99,6 +98,7 @@
     "email": "contact@jonassuhard.com",
     "github": "https://github.com/Jonassuhard",
     "linkedin": "https://www.linkedin.com/in/jonas-suhard-b73923245/",
-    "site": "https://jonassuhard.com"
+    "site": "https://jonassuhard.com",
+    "evidence_register": "https://jonassuhard.com/preuves"
   }
 }

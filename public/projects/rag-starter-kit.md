@@ -4,7 +4,8 @@ Type : Projet perso / preuve technique.
 Période : 2026.
 Rôle : Conception et développement (full-stack).
 Stack : FastAPI, Qdrant, Mistral AI, LangChain, SQLite, pytest, Next.js 16 / React 19, Docker Compose.
-Statut : Copie publique anonymisée.
+Statut : Prototype privé - publication à préparer.
+Niveau de preuve : Démo privée.
 
 En bref : API FastAPI qui ingère des documents (PDF, DOCX, Markdown, texte), les indexe dans Qdrant et répond en citant ses sources, avec auth multi-tenant et un module d'évaluation type Ragas.
 
@@ -20,5 +21,5 @@ Servir plusieurs clients sur un même backend RAG, en gardant les données isol�
 
 ## Limites
 
-- Copie anonymisée : données et clients réels remplacés par des placeholders, pas de démo publique hébergée.
+- Code et démonstration non publics à ce jour ; l'architecture décrite n'est donc pas auditée publiquement.
 - Le module d'évaluation fournit le harnais ; les scores de qualité ne sont pas publiés.

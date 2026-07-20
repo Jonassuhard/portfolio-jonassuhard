@@ -1,17 +1,16 @@
 # Jonas Suhard
 
-Growth Engineer · IA appliquée & Automatisation — marketing, IA générative et développement full-stack.
+Chef de projet IA appliquée & automatisation junior — spécialisation Growth Engineer et Product Builder IA.
 
 ## Positionnement
 
-Je construis des systèmes marketing augmentés par l'IA : sites, automatisations, contenus, workflows LLM et dashboards qui transforment une stratégie en produit utilisable.
+Je cadre et livre des projets d'IA appliquée et d'automatisation, avec une spécialisation growth et développement web.
 
 ## Cibles
 
-- Growth Engineer
-- Marketing Technologist IA
-- Chef de projet IA orienté produit
-- AI Automation Specialist
+- Chef de projet IA appliquée & automatisation junior
+- Growth Engineer junior
+- Product Builder IA
 
 ## Localisation
 
@@ -54,13 +53,17 @@ Paris, France. CDI à Paris ou hybride, disponible à partir du 1er septembre 20
 
 ## Formation
 
-- 2024-2026, MyDigitalSchool Paris : MBA Expert Marketing Digital (en cours). Titre RNCP41809 Manager de la stratégie marketing digital, niveau 7.
-- 2023-2024, La Digital School Angers : Bachelor Chef de projet digital. Titre RNCP niveau 6, Chef de projet e-business.
-- 2019-2021, Human Academy Angoulême : Animation 2D/3D, cursus 3 ans, certificat d'école (non inscrit au RNCP).
+- 2024-2026, MyDigitalSchool Paris : MBA Expert Marketing Digital (en cours), préparation du titre RNCP41809 Manager de la stratégie marketing digital, niveau 7.
+- 2023-2024, La Digital School Angers : Bachelor Chef de projet digital, titre RNCP34340 niveau 6 Chef de projet e-business (preuve privée).
+- 2019-2021, Human Academy Angoulême : Animation 2D/3D, certificat d'école non inscrit au RNCP.
+
+## Vérification
+
+- Registre des preuves : https://jonassuhard.com/preuves
+- Revue des contenus : 2026-07-20
 
 ## Contact
 
 - Email: contact@jonassuhard.com
 - GitHub: https://github.com/Jonassuhard
 - LinkedIn: https://www.linkedin.com/in/jonas-suhard-b73923245/
-- Malt: https://www.malt.fr/profile/jonassuhard

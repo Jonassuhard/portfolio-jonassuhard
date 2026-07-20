@@ -3,6 +3,7 @@ export type KnowledgePage = {
   title: string;
   shortTitle: string;
   description: string;
+  published: string;
   updated: string;
   answer: string[];
   problem: string;
@@ -23,13 +24,14 @@ export const knowledgePages: KnowledgePage[] = [
     shortTitle: "Portfolio citable par IA",
     description:
       "Méthode concrète pour rendre un portfolio lisible par les agents : llms.txt, profile.json, claims.json, Markdown et JSON-LD.",
-    updated: "2026-07-02",
+    published: "2026-07-02",
+    updated: "2026-07-20",
     answer: [
       "Un agent IA ne lit pas un portfolio comme un recruteur : il extrait des faits, des liens et des preuves.",
       "La page HTML reste la version canonique pour les humains.",
       "Les fichiers Markdown et JSON servent de carte lisible par machine.",
       "Le but n'est pas de forcer une citation, mais de rendre les faits vérifiables.",
-      "Ce site utilise llms.txt, profile.json, claims.json, skills.md, des fiches projet Markdown et un knowledge graph JSON-LD."
+      "Ce site utilise llms.txt, profile.json, claims.json, verification.json, skills.md, des fiches projet Markdown et un knowledge graph JSON-LD."
     ],
     problem:
       "Un beau portfolio peut rester flou pour un agent : titre, disponibilité, compétences, projets et limites sont dispersés dans le design. Sans source structurée, le modèle résume au jugé.",
@@ -37,6 +39,7 @@ export const knowledgePages: KnowledgePage[] = [
       "Créer un llms.txt court qui joue le rôle de carte d'entrée.",
       "Maintenir un profile.json pour les faits stables : titre, disponibilité, stack, projets et limites.",
       "Ajouter un claims.json en questions-réponses pour les réponses que l'agent doit pouvoir citer sans inventer.",
+      "Publier un registre de preuves qui sépare source publique, preuve privée, déclaratif et affirmation retirée.",
       "Publier une version Markdown des pages clés pour réduire le bruit de layout.",
       "Exposer un graphe JSON-LD qui relie personne, compétences et projets par des IDs stables."
     ],
@@ -46,6 +49,8 @@ export const knowledgePages: KnowledgePage[] = [
       { label: "llms.txt", href: "/llms.txt" },
       { label: "profile.json", href: "/profile.json" },
       { label: "claims.json", href: "/claims.json" },
+      { label: "verification.json", href: "/verification.json" },
+      { label: "Registre des preuves", href: "/preuves" },
       { label: "skills.md", href: "/skills.md" },
       { label: "knowledge-graph.json", href: "/knowledge-graph.json" },
       { label: "Fiche Preuvia", href: "/projects/preuvia.md" }
@@ -67,7 +72,8 @@ export const knowledgePages: KnowledgePage[] = [
     shortTitle: "Audit visuel Playwright",
     description:
       "Méthode d'audit visuel multi-viewports : captures, console, responsive, preuves et limites avant modification.",
-    updated: "2026-07-02",
+    published: "2026-07-02",
+    updated: "2026-07-20",
     answer: [
       "Un audit visuel utile ne commence pas par une opinion : il commence par des captures reproductibles.",
       "Playwright permet de vérifier mobile, tablette et desktop avec les mêmes étapes.",
@@ -110,19 +116,20 @@ export const knowledgePages: KnowledgePage[] = [
     shortTitle: "Growth Engineer IA",
     description:
       "Ce que recouvre le rôle de Growth Engineer en IA appliquée : marketing, code et workflows LLM reliés à des projets livrés, pas à un intitulé.",
-    updated: "2026-07-02",
+    published: "2026-07-02",
+    updated: "2026-07-20",
     answer: [
-      "Un Growth Engineer relie l'acquisition et le code : il conçoit, il livre, il mesure, au lieu de sous-traiter chaque étape.",
+      "Un Growth Engineer relie l'acquisition et le code : il conçoit, il livre et prépare la mesure au lieu de sous-traiter chaque étape.",
       "Le profil vient souvent du marketing, puis apprend à coder pour ne plus dépendre d'un dev à chaque test.",
       "En IA appliquée, il cadre des workflows LLM utiles, avec garde-fous, pas des démos.",
       "Ce n'est pas un growth hacker : la dette technique et la sécurité comptent autant que le résultat court terme.",
-      "Sur ce profil, la preuve tient dans des projets livrés, pas dans un titre."
+      "Pour le marché français, ce portfolio utilise Chef de projet IA appliquée & automatisation comme titre principal et Growth Engineer comme spécialisation."
     ],
     problem:
       "L'intitulé Growth Engineer est à la mode et souvent vide. Beaucoup revendiquent marketing, IA et code sans rien qui tourne en production. Un recruteur a besoin de savoir ce que la personne livre vraiment, seule, de bout en bout.",
     method: [
       "Partir d'un besoin business, pas d'un outil : acquisition, conversion, contenu ou automatisation.",
-      "Construire un premier livrable qui marche en production, mesurable, plutôt qu'une maquette.",
+      "Construire un premier livrable testable et définir les indicateurs qui permettraient d'en mesurer l'impact.",
       "Utiliser l'IA comme accélérateur cadré : je décide, je vérifie, l'assistant exécute la partie répétitive.",
       "Documenter les décisions pour qu'une équipe reprenne derrière."
     ],
@@ -142,7 +149,7 @@ export const knowledgePages: KnowledgePage[] = [
       "L'impact business chiffré n'est pas toujours public, à cause des données clients ou mineurs."
     ],
     takeaway: [
-      "Un Growth Engineer utile se juge sur ce qui tourne en production, pas sur l'intitulé.",
+      "Un Growth Engineer utile se juge sur ce qu'il livre et documente, pas sur l'intitulé.",
       "Marketing, IA et code n'ont de valeur que reliés à un livrable vérifiable.",
       "Le bon signal : des décisions écrites qu'une équipe peut reprendre."
     ]
@@ -153,7 +160,8 @@ export const knowledgePages: KnowledgePage[] = [
     shortTitle: "Workflow Claude Code + MCP",
     description:
       "Structurer un assistant Claude Code en système lisible : identité, skills, agents, hooks et MCP en lazy-load, avec garde-fous sur les actions sensibles.",
-    updated: "2026-07-02",
+    published: "2026-07-02",
+    updated: "2026-07-20",
     answer: [
       "Claude Code devient utile quand on lui donne une structure : identité, règles, skills, agents, hooks, MCP.",
       "Le MCP branche des outils externes ; les agents isolent les tâches longues du contexte principal.",
@@ -194,7 +202,8 @@ export const knowledgePages: KnowledgePage[] = [
     shortTitle: "Mémoire d'agent en Markdown",
     description:
       "Une méthode concrète pour donner une mémoire durable à un agent IA : des fichiers Markdown d'identité, de règles et de contexte projet, testée contre d'autres approches.",
-    updated: "2026-07-02",
+    published: "2026-07-02",
+    updated: "2026-07-20",
     answer: [
       "Un agent sans mémoire repart de zéro à chaque session. La solution la plus simple qui tient dans le temps, c'est du Markdown en clair.",
       "Je sépare trois couches. L'identité de l'agent, sa méthode de travail, et son contexte projet du moment.",

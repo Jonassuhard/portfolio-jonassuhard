@@ -1,14 +1,15 @@
 # C'est quoi un Growth Engineer en IA appliquée ?
 
-Dernière vérification : 2026-07-02.
+Publication : 2026-07-02.
+Dernière vérification : 2026-07-20.
 
 ## Réponse courte
 
-- Un Growth Engineer relie l'acquisition et le code : il conçoit, il livre, il mesure, au lieu de sous-traiter chaque étape.
+- Un Growth Engineer relie l'acquisition et le code : il conçoit, il livre et prépare la mesure au lieu de sous-traiter chaque étape.
 - Le profil vient souvent du marketing, puis apprend à coder pour ne plus dépendre d'un dev à chaque test.
 - En IA appliquée, il cadre des workflows LLM utiles, avec garde-fous, pas des démos.
 - Ce n'est pas un growth hacker : la dette technique et la sécurité comptent autant que le résultat court terme.
-- Sur ce profil, la preuve tient dans des projets livrés, pas dans un titre.
+- Pour le marché français, ce portfolio utilise Chef de projet IA appliquée & automatisation comme titre principal et Growth Engineer comme spécialisation.
 
 ## Problème
 
@@ -17,7 +18,7 @@ L'intitulé Growth Engineer est à la mode et souvent vide. Beaucoup revendiquen
 ## Méthode
 
 - Partir d'un besoin business, pas d'un outil : acquisition, conversion, contenu ou automatisation.
-- Construire un premier livrable qui marche en production, mesurable, plutôt qu'une maquette.
+- Construire un premier livrable testable et définir les indicateurs qui permettraient d'en mesurer l'impact.
 - Utiliser l'IA comme accélérateur cadré : je décide, je vérifie, l'assistant exécute la partie répétitive.
 - Documenter les décisions pour qu'une équipe reprenne derrière.
 
@@ -33,7 +34,7 @@ Sur ce portfolio, trois terrains le montrent : Les Petites Griffes (site client 
 
 ## À retenir
 
-- Un Growth Engineer utile se juge sur ce qui tourne en production, pas sur l'intitulé.
+- Un Growth Engineer utile se juge sur ce qu'il livre et documente, pas sur l'intitulé.
 - Marketing, IA et code n'ont de valeur que reliés à un livrable vérifiable.
 - Le bon signal : des décisions écrites qu'une équipe peut reprendre.
 

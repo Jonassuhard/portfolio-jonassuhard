@@ -4,7 +4,14 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "generate:cv": "python scripts/generate-cv-pdf.py",
     "generate:md": "tsx scripts/generate-project-md.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test tests/*.test.ts",
+    "check:content": "tsx scripts/check-content.ts",
+    "check:links": "tsx scripts/check-links.ts",
+    "check:links:external": "tsx scripts/check-links.ts --external",
+    "check": "tsx scripts/generate-project-md.ts && tsc --noEmit && tsx --test tests/*.test.ts && tsx scripts/check-content.ts && tsx scripts/check-links.ts",
     "prebuild": "tsx scripts/generate-project-md.ts",
     "build": "next build",
     "start": "next start"
@@ -19,12 +26,6 @@
   "overrides": {
     "postcss": "^8.5.10"
   },
-  "browserslist": [
-    "chrome >= 100",
-    "edge >= 100",
-    "firefox >= 100",
-    "safari >= 15.4"
-  ],
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^19",

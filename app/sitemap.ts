@@ -1,14 +1,15 @@
 import type { MetadataRoute } from "next";
 import { knowledgePages } from "@/lib/knowledge";
 import { projects, siteUrl } from "@/lib/projects";
+import { contentReviewDate } from "@/lib/verification";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes = ["", "/recruteurs", "/projets", "/competences", "/methode", "/a-propos", "/knowledge"];
+  const staticRoutes = ["", "/recruteurs", "/projets", "/competences", "/methode", "/preuves", "/a-propos", "/knowledge"];
   const indexedProjects = projects.filter((project) => !project.noindex);
   const projectRoutes = indexedProjects.map((project) => `/projets/${project.slug}`);
   const knowledgeRoutes = knowledgePages.map((page) => `/knowledge/${page.slug}`);
   const infrastructureRoutes = ["/llms.txt"];
-  const lastModified = new Date("2026-07-02");
+  const lastModified = new Date(contentReviewDate);
 
   return [...staticRoutes, ...projectRoutes, ...knowledgeRoutes, ...infrastructureRoutes].map((path) => ({
     url: `${siteUrl}${path === "" ? "/" : path}`,

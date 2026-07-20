@@ -3,7 +3,7 @@
 Portfolio de preuves, **recruteur-first et agent-readable**.
 Live : **[jonassuhard.com](https://jonassuhard.com)**
 
-Growth Engineer · IA appliquée & Automatisation — un profil hybride marketing, IA générative et développement full-stack. Ce site présente des projets réels avec leurs décisions, contraintes, limites et résultats, plutôt qu'une liste de compétences.
+Chef de projet IA appliquée & automatisation junior — spécialisation Growth Engineer et Product Builder IA. Ce site présente les décisions, limites et niveaux de preuve de chaque projet, plutôt qu'une simple liste de compétences.
 
 ## Stack
 
@@ -13,7 +13,7 @@ Growth Engineer · IA appliquée & Automatisation — un profil hybride marketin
 
 ## Ce que le projet démontre (mesuré)
 
-- **Lighthouse** : accessibilité · best practices · SEO à **100** sur mobile et desktop ; **performance ~99 desktop / 94 mobile** (LCP mobile ~3 s en 4G simulée)
+- **Lighthouse** : la CI du 20 juillet 2026 vérifie quatre pages à **100** en accessibilité, bonnes pratiques et SEO. Baseline PageSpeed mobile de production avant cette série d'optimisations : **96/100** ; nouvelle mesure publique à effectuer après déploiement.
 - **Sécurité A+** ([securityheaders.com](https://securityheaders.com)) : CSP, HSTS, X-Frame-Options, Referrer-Policy, Permissions-Policy
 - **Agent-readable** : JSON-LD (Person, WebSite, Project), `llms.txt`, `profile.json`, `profile.md`, un `.md` par projet
 - Optimisations LCP : `experimental.inlineCss`, `display:optional` + préchargement ciblé des fonts du hero

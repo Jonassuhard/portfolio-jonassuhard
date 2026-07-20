@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { skills, getProject, pageMeta } from "@/lib/projects";
+import { skills, getProject, pageMeta, toAnchorId } from "@/lib/projects";
+import AnimatedTitle from "../animated-title";
 
 export const metadata: Metadata = pageMeta({
   path: "/competences",
@@ -13,7 +14,7 @@ export default function SkillsPage() {
     <div className="page">
       <section>
         <p className="eyebrow">Compétences</p>
-        <h1>Ce que je peux apporter à une équipe.</h1>
+        <AnimatedTitle>Ce que je peux apporter à une équipe.</AnimatedTitle>
         <p className="lead">
           Six domaines. Pour chacun : un projet où je l'ai utilisé, ce que je
           sais faire aujourd'hui, et ce que je ne maîtrise pas encore.
@@ -22,7 +23,7 @@ export default function SkillsPage() {
 
       <section className="section matrix">
         {skills.map((skill) => (
-          <article className="matrix-item" key={skill.name}>
+          <article className="matrix-item" id={toAnchorId(skill.name)} key={skill.name}>
             <strong>{skill.name}</strong>
             <p>{skill.note}</p>
             <p className="case-meta">

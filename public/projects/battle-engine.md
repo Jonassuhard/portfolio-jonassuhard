@@ -1,10 +1,11 @@
-# Battle Engine - pipeline vidéo automatise
+# Battle Engine - pipeline vidéo automatisé
 
 Type : Pipeline vidéo / automation.
 Période : 2026.
 Rôle : Pipeline Python, Godot, rendu, FFmpeg, publication.
 Stack : Godot, Python, FFmpeg, RIFE, YouTube API.
 Statut : Actif / lab.
+Niveau de preuve : Démo privée.
 
 En bref : Pipeline Godot -> FFmpeg -> interpolation -> YouTube API pour vidéos 1VS1.
 

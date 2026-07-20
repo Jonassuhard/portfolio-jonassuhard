@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import {
   Cormorant_Garamond,
@@ -20,6 +21,8 @@ import BlueprintBg from "./blueprint-bg";
 import PageTransition from "./page-transition";
 import "./globals.css";
 
+const hasVercelObservability = process.env.VERCEL === "1";
+
 // Seuls le titre (h1) et le corps (lead/paragraphes) sont préchargés : ce sont
 // les fonts du hero qui pilotent le LCP. Les autres (titlebar, eyebrow, clock)
 // sont petites et chargées en swap -> on libère la bande passante mobile 4G.
@@ -28,7 +31,7 @@ import "./globals.css";
 // font custom prend la main dès qu'elle est en cache. Zéro CLS, LCP ≈ FCP.
 const fontTitle = Cormorant_Garamond({
   subsets: ["latin"],
-  weight: ["500", "600", "700"],
+  weight: ["600", "700"],
   variable: "--font-title",
   display: "optional",
   preload: true
@@ -111,7 +114,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         />
         <header className="site-header">
           <div className="titlebar">
-            <span>JONAS SUHARD — Growth Engineer</span>
+            <span>JONAS SUHARD — Chef de projet IA junior</span>
             <span className="ver">{site.location} · <NixieClock /></span>
           </div>
           <SiteNav />
@@ -122,14 +125,22 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <footer className="site-footer">
           <div className="foot-top">
             <div className="foot-id">
-              <img className="brand-mark sm" src="/brand/js-medallion-sm.webp" alt="" width={46} height={46} />
+              <Image
+                className="brand-mark sm"
+                src="/brand/js-medallion-sm.webp"
+                alt=""
+                width={38}
+                height={38}
+                sizes="38px"
+                quality={85}
+              />
               <div>
                 <strong>Jonas Suhard</strong>
-                <span className="foot-id-sub">Growth Engineer · IA appliquée &amp; Automatisation</span>
+                <span className="foot-id-sub">Chef de projet IA appliquée &amp; automatisation junior</span>
               </div>
             </div>
             <p className="foot-pitch">
-              Marketing, IA générative et développement full-stack.
+              Marketing, IA générative, automatisation et développement web.
             </p>
           </div>
           <div className="foot-cols">
@@ -147,6 +158,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               <a href={site.cvClassic} download>CV — classique (PDF)</a>
               <a href={site.cvStyled} download>CV — version site (PDF)</a>
               <Link href="/knowledge">Knowledge</Link>
+              <Link href="/preuves">Preuves</Link>
             </div>
             <div>
               <p className="foot-col-title">Légal</p>
@@ -164,8 +176,12 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         </footer>
         <GlitchController />
         <ConsentBanner />
-        <Analytics />
-        <SpeedInsights />
+        {hasVercelObservability ? (
+          <>
+            <Analytics />
+            <SpeedInsights />
+          </>
+        ) : null}
       </body>
     </html>
   );

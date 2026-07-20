@@ -5,8 +5,11 @@ Période : Juin 2026 - Juillet 2026.
 Rôle : Stratégie, audit, UX, contenus, expérimentation IA, présentation client.
 Stack : WordPress, Divi, Playwright, PHP, PDF, LLM workflows.
 Statut : Staging / workshop MBA.
+Niveau de preuve : Démo privée.
 
 En bref : Refonte orientée conversion, staging WordPress sécurisé, présentation orale client et audits multi-viewports.
+
+Preuves : Captures du staging et présentation client de 14 slides, détaillées en entretien.
 
 ## Problème
 

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export type ProjectTier = 1 | 2 | 3;
+export type EvidenceLevel = "public" | "private" | "self-declared";
 
 export type Project = {
   slug: string;
@@ -10,6 +11,7 @@ export type Project = {
   period: string;
   role: string;
   status: string;
+  evidenceLevel: EvidenceLevel;
   tier: ProjectTier;
   image: string;
   proofLine: string;
@@ -38,7 +40,7 @@ export type Project = {
   // Le code vient de l'équipe, pas de Jonas (ex. HoopSphere : sa part est le marketing).
   // Pilote le JSON-LD : contributor au lieu d'author, pas de programmingLanguage.
   codeByOthers?: boolean;
-  gallery?: Array<{ src: string; caption: string }>;
+  gallery?: Array<{ src: string; caption: string; width: number; height: number }>;
   links: Array<{
     label: string;
     href: string;
@@ -49,23 +51,52 @@ export type Project = {
 // Origine canonique unique : env en prod (jonassuhard.com dès SSL), sinon URL Vercel live.
 // Pilote metadataBase, sitemap, robots et JSON-LD pour qu'ils pointent tous la même origine crawlable.
 export const siteUrl = (
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://portfolio-jonassuhard.vercel.app"
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://jonassuhard.com"
 ).replace(/\/$/, "");
 
 export const site = {
   name: "Jonas Suhard",
-  title: "Growth Engineer · IA appliquée & Automatisation",
+  title: "Chef de projet IA appliquée & automatisation junior",
   description:
-    "Portfolio de Jonas Suhard : projets réels, décisions, contraintes, stacks et résultats. Profil hybride marketing, IA appliquée et développement full-stack.",
+    "Portfolio de Jonas Suhard, Chef de projet IA appliquée & automatisation junior : projets, décisions, limites et niveau de preuve.",
   email: "contact@jonassuhard.com",
   github: "https://github.com/Jonassuhard",
   linkedin: "https://www.linkedin.com/in/jonas-suhard-b73923245/",
-  malt: "https://www.malt.fr/profile/jonassuhard",
+  // Profil Malt temporairement masqué : son contenu doit être réaligné avec
+  // les affirmations vérifiables du portfolio avant de redevenir public ici.
+  malt: null as string | null,
   location: "Paris, France",
   availability: "1er septembre 2026",
   cvClassic: "/cv.pdf",
   cvStyled: "/cv-portfolio.pdf"
 };
+
+export const evidenceLevelMeta: Record<
+  EvidenceLevel,
+  { label: string; description: string }
+> = {
+  public: {
+    label: "Preuve publique",
+    description: "Un lien public permet de contrôler au moins l'élément principal."
+  },
+  private: {
+    label: "Démo privée",
+    description: "La preuve existe hors ligne ou contient des données qui ne peuvent pas être publiées."
+  },
+  "self-declared": {
+    label: "À documenter",
+    description: "L'élément est conservé comme contexte, sans métrique citée tant que la preuve manque."
+  }
+};
+
+export function toAnchorId(value: string) {
+  return value
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+}
 
 // Canonical par page. En App Router, `alternates` défini dans une page REMPLACE
 // entièrement celui du layout (pas de merge profond) : ce helper réinjecte donc
@@ -123,16 +154,17 @@ export const projects: Project[] = [
     period: "Avril 2026 - Juin 2026",
     role: "Stratégie, design, développement, SEO, déploiement, QA",
     status: "Prod live",
+    evidenceLevel: "private",
     tier: 1,
     image: "/assets/cards/les-petites-griffes.webp",
     repoStatus: "Privé, code et données client",
     liveLabel: "Live · URL communiquée en entretien",
     evidenceNote:
-      "Captures anonymisées de la home, du CMS et de l'assistant IA, rapport Lighthouse daté, et démo courte en entretien.",
+      "Captures anonymisées, démo privée et rapport Lighthouse interne daté du 29/06/2026. Les scores ne sont pas vérifiables publiquement sans ce rapport.",
     metaDescription:
-      "Site vitrine live d'un studio de nail art : Next.js, CMS maison pour éditer galerie et tarifs, assistant IA cadré. Lighthouse SEO 100.",
+      "Site vitrine live d'un studio de nail art : Next.js, CMS maison et assistant IA cadré. Rapport Lighthouse interne du 29/06/2026 : SEO 100.",
     cardLine:
-      "Site client live, CMS maison, SEO local et assistant IA cadré. Prod réelle, contenus éditables, Lighthouse mobile 88 / SEO 100 / a11y 93.",
+      "Site client live, CMS maison, SEO local et assistant IA cadré. Mesures Lighthouse issues d'un rapport interne daté du 29/06/2026.",
     architecture: [
       "Front Next.js (React) rendu et déployé sur Vercel.",
       "Contenus dynamiques (galerie, prestations, tarifs, FAQ) servis depuis Supabase, éditables via un CMS maison protégé.",
@@ -149,7 +181,7 @@ export const projects: Project[] = [
       "Taux d'usage de l'assistant côté visiteurs : non instrumenté."
     ],
     proofLine:
-      "Site client live en production (URL communiquée en entretien · captures anonymisées sur demande), CMS maison, SEO local, assistant IA cadré, Lighthouse mobile 88 / SEO 100 / a11y 93 (audit revérifié le 29/06).",
+      "Site client live en production, URL et démo communiquées en entretien. Rapport Lighthouse interne du 29/06/2026 : mobile 88 / SEO 100 / accessibilité 93.",
     summary:
       "Site vitrine d'un studio de nail art : front Next.js, un CMS maison pour que la gérante édite seule sa galerie, ses tarifs et sa FAQ, et un assistant IA cadré sur ses prix et ses disponibilités.",
     stack: ["Next.js", "React", "Supabase", "Clerk", "Vercel", "LLM"],
@@ -188,18 +220,18 @@ export const projects: Project[] = [
       "SEO local, JSON-LD, sitemap et contenus structurants."
     ],
     results: [
-      "Lighthouse mobile 88, SEO 100, accessibilité 93 (audit revérifié le 29/06).",
-      "Site client live en production, utilisé au quotidien par la gérante via son back-office."
+      "Rapport Lighthouse interne du 29/06/2026 : mobile 88, SEO 100, accessibilité 93.",
+      "Site et back-office livrés pour permettre à la gérante de mettre ses contenus à jour."
     ],
     limits: [
       "Projet d'une TPE locale : vrai contexte de production, à petite échelle.",
       "Mesure business encore à consolider."
     ],
     gallery: [
-      { src: "/assets/proof/les-petites-griffes/lpg-home.webp", caption: "Home du studio de nail art, front Next.js déployé sur Vercel." },
-      { src: "/assets/proof/les-petites-griffes/lpg-compose.webp", caption: "« Compose ta pose » : devis guidé qui cadre la demande de la cliente." },
-      { src: "/assets/proof/les-petites-griffes/lpg-assistant.webp", caption: "Assistant IA cadré sur les prix, la durée, la méthode et le style, avec garde-fous et sans promesse magique." },
-      { src: "/assets/proof/les-petites-griffes/lpg-assistant-vision.webp", caption: "L'assistant analyse une photo d'ongles envoyée par la cliente." }
+      { src: "/assets/proof/les-petites-griffes/lpg-home.webp", caption: "Home du studio de nail art, front Next.js déployé sur Vercel.", width: 1400, height: 798 },
+      { src: "/assets/proof/les-petites-griffes/lpg-compose.webp", caption: "« Compose ta pose » : devis guidé qui cadre la demande de la cliente.", width: 1400, height: 810 },
+      { src: "/assets/proof/les-petites-griffes/lpg-assistant.webp", caption: "Assistant IA cadré sur les prix, la durée, la méthode et le style, avec garde-fous et sans promesse magique.", width: 816, height: 1142 },
+      { src: "/assets/proof/les-petites-griffes/lpg-assistant-vision.webp", caption: "L'assistant analyse une photo d'ongles envoyée par la cliente.", width: 810, height: 1114 }
     ],
     links: [
       { label: "Version Markdown", href: "/projects/les-petites-griffes.md" }
@@ -213,12 +245,13 @@ export const projects: Project[] = [
     period: "2026",
     role: "Développement, UX, sécurité, PDF, Firebase, maintenance",
     status: "Prod / maintenance",
+    evidenceLevel: "private",
     tier: 1,
     image: "/assets/cards/educool.webp",
     repoStatus: "Privé, RGPD (données mineurs)",
     liveLabel: "Classe, non public",
     evidenceNote:
-      "Captures sur données fictives (parcours élève, génération PDF) et démo en entretien.",
+      "Captures sur données fictives et démonstration privée. L'usage en classe ne peut pas être vérifié publiquement en raison des données de mineurs.",
     metaDescription:
       "Application web utilisée en classe : suivi des compétences, livrets PDF, Firebase, données de mineurs anonymisées, opérations sensibles en Cloud Functions.",
     cardLine:
@@ -287,9 +320,9 @@ export const projects: Project[] = [
       "Le durcissement des règles d'accès Firebase est un chantier continu, pas un état figé."
     ],
     gallery: [
-      { src: "/assets/proof/educool/educool-dashboard.webp", caption: "Tableau de bord enseignante : progression de la classe, réussite par domaine et saisie rapide. Noms masqués sur toutes les captures : données de mineurs." },
-      { src: "/assets/proof/educool/educool-saisie-ceintures.webp", caption: "Saisie des ceintures : la matrice classe entière par matière, pensée pour valider un palier en quelques secondes pendant le cours." },
-      { src: "/assets/proof/educool/educool-livrets.webp", caption: "Livrets élèves : aperçu, personnalisation puis export PDF, individuel ou en lot (ZIP pour toute la classe)." }
+      { src: "/assets/proof/educool/educool-dashboard.webp", caption: "Tableau de bord enseignante : progression de la classe, réussite par domaine et saisie rapide. Noms masqués sur toutes les captures : données de mineurs.", width: 1600, height: 870 },
+      { src: "/assets/proof/educool/educool-saisie-ceintures.webp", caption: "Saisie des ceintures : la matrice classe entière par matière, pensée pour valider un palier en quelques secondes pendant le cours.", width: 1600, height: 873 },
+      { src: "/assets/proof/educool/educool-livrets.webp", caption: "Livrets élèves : aperçu, personnalisation puis export PDF, individuel ou en lot (ZIP pour toute la classe).", width: 1600, height: 870 }
     ],
     links: [
       { label: "Version Markdown", href: "/projects/educool-la-herse.md" }
@@ -303,6 +336,7 @@ export const projects: Project[] = [
     period: "Juin 2026 - Juillet 2026",
     role: "Stratégie, audit, UX, contenus, expérimentation IA, présentation client",
     status: "Staging / workshop MBA",
+    evidenceLevel: "private",
     tier: 1,
     image: "/assets/cards/capselys.webp",
     repoStatus: "Privé, projet client",
@@ -390,8 +424,8 @@ export const projects: Project[] = [
       "Certaines décisions dépendent de la validation du client."
     ],
     gallery: [
-      { src: "/assets/proof/capselys/capselys-site.webp", caption: "Home Capsélys (staging) avec l'assistant IA ouvert en contexte." },
-      { src: "/assets/proof/capselys/capselys-assistant.webp", caption: "L'assistant répond à une vraie question (DUERP) : réponse cadrée, CTA et disclaimer « réponses générées automatiquement »." }
+      { src: "/assets/proof/capselys/capselys-site.webp", caption: "Home Capsélys (staging) avec l'assistant IA ouvert en contexte.", width: 1400, height: 800 },
+      { src: "/assets/proof/capselys/capselys-assistant.webp", caption: "L'assistant répond à une vraie question (DUERP) : réponse cadrée, CTA et disclaimer « réponses générées automatiquement ».", width: 900, height: 1063 }
     ],
     links: [
       { label: "Version Markdown", href: "/projects/capselys.md" }
@@ -405,6 +439,7 @@ export const projects: Project[] = [
     period: "2026",
     role: "SEO, fact-check, contenu, audits, CMS, process qualité",
     status: "Alternance / client interne",
+    evidenceLevel: "public",
     tier: 1,
     image: "/assets/cards/iscom.webp",
     repoStatus: "CMS employeur, non publiable",
@@ -484,14 +519,15 @@ export const projects: Project[] = [
     shortTitle: "Preuvia",
     type: "Produit - audit GEO (visibilité IA)",
     period: "Juin 2026 - en cours",
-    role: "Conception produit, méthode d'audit, site, livraison client",
-    status: "En activité - premiers audits livrés",
+    role: "Conception produit, méthode d'audit, site, prototypage du livrable",
+    status: "Offre en ligne - phase de lancement",
+    evidenceLevel: "public",
     tier: 1,
     image: "/assets/cards/preuvia.webp",
     repoStatus: "Privé, produit commercial",
     liveLabel: "Site en ligne (preuvia.vercel.app)",
     evidenceNote:
-      "Détail de l'offre et exemple de sortie d'audit directement sur le site.",
+      "Site et détail public de l'offre accessibles en ligne. Les éventuelles missions clients restent hors du périmètre des preuves publiques.",
     metaDescription:
       "Audit GEO productisé : savoir si une marque apparaît dans les réponses des IA, qui ressort à sa place, quoi publier, puis quoi re-tester au prochain audit.",
     architecture: [
@@ -517,7 +553,7 @@ export const projects: Project[] = [
     recruiterProof: [
       "Produit pensé de bout en bout : positionnement, offre, site, livraison.",
       "Méthode d'audit rejouable de la visibilité d'une marque dans les réponses des assistants IA.",
-      "Premiers audits clients réels livrés, pas une démo."
+      "Protocole, grille de lecture et livrable conçus pour être rejoués et comparés dans le temps."
     ],
     constraints: [
       "Sujet mouvant : les réponses des IA varient selon le modèle, le prompt et le moment.",
@@ -551,11 +587,11 @@ export const projects: Project[] = [
       "Protocole d'audit multi-modèles reproductible.",
       "Questions test séparant requêtes génériques et requêtes marque.",
       "Livrable PDF : score, sources citées, écarts et plan d'action re-testable.",
-      "Premiers mini-audits et audits clients livrés."
+      "Prototype de mini-audit et modèle de livrable."
     ],
     results: [
-      "Premiers audits clients livrés en conditions réelles.",
-      "Méthode et livrable stabilisés sur des cas concrets.",
+      "Offre, site et principes de la méthode présentés publiquement.",
+      "Grille de lecture et structure de livrable documentées.",
       "Ce portfolio est lui-même optimisé selon cette méthode (llms.txt, profile.json, données structurées)."
     ],
     limits: [
@@ -565,7 +601,7 @@ export const projects: Project[] = [
       "Ne remplace pas le SEO classique ; il ajoute une couche de visibilité dans les moteurs de réponse."
     ],
     gallery: [
-      { src: "/assets/proof/preuvia/preuvia-landing.webp", caption: "Landing Preuvia en ligne : la promesse (« qui les IA recommandent avant vous ») et le démonstrateur d'écart de visibilité — question posée, sources qui ressortent, marque non citée." }
+      { src: "/assets/proof/preuvia/preuvia-landing.webp", caption: "Landing Preuvia en ligne : la promesse (« qui les IA recommandent avant vous ») et le démonstrateur d'écart de visibilité — question posée, sources qui ressortent, marque non citée.", width: 1600, height: 921 }
     ],
     links: [
       { label: "Voir le site", href: "https://preuvia.vercel.app", external: true },
@@ -574,12 +610,13 @@ export const projects: Project[] = [
   },
   {
     slug: "battle-engine",
-    title: "Battle Engine - pipeline vidéo automatise",
+    title: "Battle Engine - pipeline vidéo automatisé",
     shortTitle: "Battle Engine",
     type: "Pipeline vidéo / automation",
     period: "2026",
     role: "Pipeline Python, Godot, rendu, FFmpeg, publication",
     status: "Actif / lab",
+    evidenceLevel: "private",
     tier: 2,
     image: "/assets/cards/battle-engine.webp",
     video: "/assets/video/battle-engine.mp4",
@@ -610,15 +647,15 @@ export const projects: Project[] = [
       {
         decision: "Le garder en Tier 2",
         why: "Bonne preuve technique, mais moins directement recruteur marketing IA.",
-        rejected: "Le mettre en premiere ligne."
+        rejected: "Le mettre en première ligne."
       }
     ],
-    delivered: ["Pipeline de rendu", "Vidéos publiées", "Scripts d'automatisation"],
-    results: ["Audience YouTube à vérifier avant publication finale."],
+    delivered: ["Pipeline de rendu", "Vidéos de test générées", "Scripts d'automatisation"],
+    results: ["Aucune métrique d'audience citée."],
     limits: ["Projet lab : automatisation créative, éloignée du poste visé, gardée comme preuve technique."],
     gallery: [
-      { src: "/assets/proof/battle-engine/intro-platforms.webp", caption: "Séquence d'intro : les plateformes des deux combattants et le champ de particules, rendus par un shader custom sous Godot." },
-      { src: "/assets/proof/battle-engine/intro-buildup.webp", caption: "Montée du champ de particules avant le face-à-face, générée en temps réel côté moteur." }
+      { src: "/assets/proof/battle-engine/intro-platforms.webp", caption: "Séquence d'intro : les plateformes des deux combattants et le champ de particules, rendus par un shader custom sous Godot.", width: 620, height: 1103 },
+      { src: "/assets/proof/battle-engine/intro-buildup.webp", caption: "Montée du champ de particules avant le face-à-face, générée en temps réel côté moteur.", width: 620, height: 1103 }
     ],
     links: [{ label: "Version Markdown", href: "/projects/battle-engine.md" }]
   },
@@ -630,6 +667,7 @@ export const projects: Project[] = [
     period: "2025 - 2026",
     role: "Co-fondateur, responsable marketing et projections financières",
     status: "Archive / MBA",
+    evidenceLevel: "self-declared",
     tier: 3,
     image: "/assets/cards/hoopsphere.webp",
     repoStatus: "Projet d'équipe (MBA)",
@@ -643,14 +681,14 @@ export const projects: Project[] = [
       "Aucune traction marché ni revenu : projet scolaire."
     ],
     proofLine:
-      "Co-fondateur et responsable marketing d'une app basket amateur : audience construite à budget zéro, app publiée sur Google Play.",
+      "Projet MBA à quatre : responsabilité marketing, étude de marché et projections financières. Les résultats d'acquisition restent à documenter avant citation.",
     summary:
       "Application mobile de stats de basket amateur (lecture OCR des feuilles e-Marque FFBB), montée à quatre en MBA. Je suis co-fondateur et responsable marketing : acquisition, contenu et les projections financières du business plan. Le développement est porté par l'équipe, le design par une associée.",
     stack: ["Business plan", "Projections financières", "Étude de marché", "Personas", "Instagram", "Emailing (Brevo)"],
     recruiterProof: [
-      "Co-fondateur en charge de tout le marketing d'un produit réel, à budget zéro.",
-      "Audience construite sans pub : 807 abonnés Instagram en 6 mois, emailing coachs à 58% d'ouverture.",
-      "Business plan et projections financières chiffrées et sourcées."
+      "Responsabilité du marketing dans un projet MBA mené à quatre.",
+      "Étude de marché, personas, plan d'acquisition et campagnes organiques.",
+      "Business plan et projections financières à présenter avec leurs sources en entretien."
     ],
     constraints: ["Projet scolaire, pas de traction marché."],
     decisions: [
@@ -663,13 +701,12 @@ export const projects: Project[] = [
     delivered: [
       "Business plan et projections financières",
       "Étude de marché et personas",
-      "Acquisition Instagram (807 abonnés en 6 mois, 0 budget)",
-      "Emailing coachs via Brevo (58% d'ouverture)"
+      "Plan d'acquisition Instagram",
+      "Campagne d'emailing coachs via Brevo"
     ],
     results: [
-      "App publiée sur Google Play, 15 bêta-testeurs actifs.",
-      "807 abonnés Instagram en 6 mois, zéro euro de budget pub.",
-      "Emailing coachs à 58% de taux d'ouverture (Brevo)."
+      "Prototype produit et plan de lancement réalisés dans le cadre du MBA.",
+      "Métriques d'acquisition et statut de publication à confirmer par des exports ou liens publics avant de les citer."
     ],
     limits: [
       "Le développement et le design ne sont pas de moi : ma part est le marketing, l'acquisition et le business plan.",
@@ -684,7 +721,8 @@ export const projects: Project[] = [
     type: "Projet perso / preuve technique",
     period: "2026",
     role: "Conception et développement (full-stack)",
-    status: "Copie publique anonymisée",
+    status: "Prototype privé - publication à préparer",
+    evidenceLevel: "private",
     tier: 2,
     image: "/assets/cards/rag-starter-kit.webp",
     repoStatus: "Publication prévue après anonymisation",
@@ -701,7 +739,7 @@ export const projects: Project[] = [
       "Module d'évaluation de la qualité des réponses inspiré de Ragas, avec cas de scoring versionnés et suite pytest."
     ],
     constraints: [
-      "Données clients, secrets et identités réelles retirés pour publier le code comme projet.",
+      "Données de démonstration, secrets et identités retirés avant toute future publication.",
       "Backend unique servant plusieurs clients : isolation stricte des données par tenant."
     ],
     decisions: [
@@ -726,7 +764,7 @@ export const projects: Project[] = [
       "Performance et qualité chiffrées du RAG : pas encore mesurées publiquement."
     ],
     limits: [
-      "Copie anonymisée : données et clients réels remplacés par des placeholders, pas de démo publique hébergée.",
+      "Code et démonstration non publics à ce jour ; l'architecture décrite n'est donc pas auditée publiquement.",
       "Le module d'évaluation fournit le harnais ; les scores de qualité ne sont pas publiés."
     ],
     links: [{ label: "Version Markdown", href: "/projects/rag-starter-kit.md" }]
@@ -738,7 +776,8 @@ export const projects: Project[] = [
     type: "POC / preuve technique",
     period: "2026",
     role: "Conception et développement (POC)",
-    status: "POC initié - copie publique anonymisée",
+    status: "POC privé initié",
+    evidenceLevel: "private",
     tier: 2,
     image: "/assets/cards/board-ia-pme.webp",
     repoStatus: "Publication prévue après anonymisation",
@@ -792,7 +831,8 @@ export const projects: Project[] = [
     type: "Lab / projet perso",
     period: "2026",
     role: "Conception et développement",
-    status: "Copie publique anonymisée",
+    status: "Lab privé",
+    evidenceLevel: "private",
     tier: 3,
     image: "/assets/cards/edusemantix.webp",
     repoStatus: "Publication prévue après anonymisation",
@@ -837,7 +877,8 @@ export const projects: Project[] = [
     type: "Lab / projet perso",
     period: "2026",
     role: "Conception et développement",
-    status: "Copie publique anonymisée (ROM non incluse)",
+    status: "Lab privé - aucune ROM distribuée",
+    evidenceLevel: "private",
     tier: 3,
     image: "/assets/cards/pokemon-gen4-toolkit.webp",
     repoStatus: "Publication prévue après anonymisation",
@@ -882,6 +923,7 @@ export const projects: Project[] = [
     period: "2026",
     role: "Auteur",
     status: "Public",
+    evidenceLevel: "public",
     tier: 3,
     image: "/assets/cards/claude-code-soul.webp",
     repoStatus: "Public",

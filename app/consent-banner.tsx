@@ -7,6 +7,11 @@ import { useEffect, useState } from "react";
 const KEY = "js-consent";
 const CLARITY_ID = "xfjx6pbupc";
 
+const clarityConsent = {
+  granted: { ad_Storage: "denied", analytics_Storage: "granted" },
+  denied: { ad_Storage: "denied", analytics_Storage: "denied" }
+} as const;
+
 function loadClarity() {
   const w = window as unknown as Record<string, any>;
   if (w.__clarityLoaded) return;
@@ -22,7 +27,19 @@ function loadClarity() {
   const first = document.getElementsByTagName("script")[0];
   if (first && first.parentNode) first.parentNode.insertBefore(s, first);
   else document.head.appendChild(s);
-  w.clarity("consent");
+  w.clarity("consentv2", clarityConsent.granted);
+}
+
+function revokeClarity() {
+  const w = window as unknown as Record<string, any>;
+  if (typeof w.clarity !== "function" || !w.__clarityLoaded) return false;
+
+  // Consent V2 coupe le stockage analytique et publicitaire. L'appel V1 avec
+  // false reste la commande documentée par Microsoft pour effacer les cookies
+  // Clarity existants ; le rechargement retire ensuite entièrement le script.
+  w.clarity("consentv2", clarityConsent.denied);
+  w.clarity("consent", false);
+  return true;
 }
 
 export default function ConsentBanner() {
@@ -60,18 +77,22 @@ export default function ConsentBanner() {
     } catch {
       /* ignore */
     }
-    if (value === "granted") loadClarity();
+    if (value === "granted") {
+      loadClarity();
+    } else if (revokeClarity()) {
+      window.location.reload();
+      return;
+    }
     setShow(false);
   }
 
   if (!show) return null;
 
   return (
-    <div className="consent" role="dialog" aria-label="Consentement aux cookies de mesure d'audience">
+    <div className="consent" role="region" aria-labelledby="consent-title">
       <div className="consent-inner">
-        <p className="consent-text">
-          Ce site peut mesurer son audience pour comprendre comment ses pages sont lues. Rien ne se
-          charge avant votre accord.{" "}
+        <p className="consent-text" id="consent-title">
+          Microsoft Clarity peut mesurer la lecture des pages. Clarity ne se charge qu'après votre accord.{" "}
           <button
             type="button"
             className="consent-toggle"
@@ -91,10 +112,10 @@ export default function ConsentBanner() {
         </div>
         {detail ? (
           <p className="consent-detail">
-            Mesure d'audience (Microsoft Clarity) : cookies analytiques et relecture anonyme de la
-            navigation, pour voir quelles pages sont lues. Aucun cookie publicitaire, aucune revente
-            de données. Vous pouvez revenir sur ce choix à tout moment via « Gérer les cookies » en
-            bas de page. <a href="/confidentialite">Politique de confidentialité</a>.
+            Microsoft Clarity utilise des cookies analytiques et une relecture de navigation pour
+            comprendre les parcours. Vercel fournit séparément des mesures techniques agrégées.
+            Aucun cookie publicitaire, aucune revente de données. Vous pouvez revenir sur ce choix
+            via « Gérer les cookies » en bas de page. <a href="/confidentialite">Politique de confidentialité</a>.
           </p>
         ) : null}
       </div>

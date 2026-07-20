@@ -5,6 +5,7 @@ Période : 2026.
 Rôle : Auteur.
 Stack : Claude Code CLI, Shell (hooks), Markdown, macOS Keychain + Touch ID, gitleaks.
 Statut : Public.
+Niveau de preuve : Preuve publique.
 
 En bref : Pack de configuration open source pour Claude Code CLI : un soul.md (identité/ton/refus) plus skills, agents, hooks et rules, pour transformer le CLI en assistant à personnalité dosée plutôt qu'en chatbot poli.
 

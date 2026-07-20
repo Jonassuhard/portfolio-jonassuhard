@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { site, pageAlternates } from "@/lib/projects";
+import AnimatedTitle from "../animated-title";
 
 export const metadata: Metadata = {
   title: "Confidentialité",
@@ -13,8 +14,8 @@ export default function ConfidentialitePage() {
     <div className="page">
       <section>
         <p className="eyebrow">Protection des données</p>
-        <h1>Confidentialité.</h1>
-        <p className="updated">Dernière mise à jour : 1er juillet 2026</p>
+        <AnimatedTitle>Confidentialité.</AnimatedTitle>
+        <p className="updated">Dernière mise à jour : 20 juillet 2026</p>
       </section>
 
       <div className="legal">
@@ -56,6 +57,8 @@ export default function ConfidentialitePage() {
             Rien de tout cela ne se déclenche tant que vous n'avez pas cliqué sur « Accepter ». Si
             vous refusez, aucun cookie Clarity n'est posé et aucune session n'est enregistrée. Vous
             pouvez changer d'avis à tout moment avec le lien « Gérer les cookies » en bas de page.
+            Le retrait transmet un refus à Clarity, efface ses cookies puis recharge la page sans
+            le script de mesure.
           </p>
         </section>
 

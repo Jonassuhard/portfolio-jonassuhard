@@ -32,7 +32,7 @@ Les pages projet (`app/projets/[slug]/page.tsx`) sont générées statiquement d
 
 ## 2. Performance : tenir le LCP
 
-Lighthouse : accessibilité, best practices et SEO à 100 sur mobile et desktop ; performance ~99 desktop, 94 mobile (le LCP mobile ~3 s en 4G simulée est le plafond, hero en police serif custom). Deux décisions font le gros du travail.
+La CI Lighthouse du 20 juillet 2026 vérifie quatre pages à 100 en accessibilité, bonnes pratiques et SEO. Le rapport PageSpeed mobile de production fourni avant cette série d'optimisations donnait 96/100 en performance ; une nouvelle mesure publique est nécessaire après déploiement. Deux décisions font le gros du travail.
 
 **Le CSS critique est inliné dans le HTML**, ce qui supprime la requête CSS bloquante (le dernier verrou du LCP en 4G lente).
 

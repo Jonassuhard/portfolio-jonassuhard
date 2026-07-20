@@ -1,6 +1,7 @@
 # Comment organiser la mémoire d'un agent IA en Markdown ?
 
-Dernière vérification : 2026-07-02.
+Publication : 2026-07-02.
+Dernière vérification : 2026-07-20.
 
 ## Réponse courte
 

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { site, pageMeta } from "@/lib/projects";
+import AnimatedTitle from "../animated-title";
 
 export const metadata: Metadata = pageMeta({
   path: "/a-propos",
@@ -15,7 +17,9 @@ export default function AboutPage() {
       <section className="case-hero">
         <div>
           <p className="eyebrow">À propos</p>
-          <h1>Je viens du marketing, j'ai appris à construire ce que je recommande.</h1>
+          <AnimatedTitle>
+            Je viens du marketing, j'ai appris à construire ce que je recommande.
+          </AnimatedTitle>
           <p className="lead">
             J'ai commencé par le marketing digital : acquisition, SEO, contenu.
             Vite, j'ai voulu produire les outils que je recommandais plutôt que
@@ -24,7 +28,7 @@ export default function AboutPage() {
           </p>
           <p>
             Concrètement, je cadre un besoin, je construis une première version,
-            je mesure ce qui marche et je documente les décisions et ce qu'il
+            je définis ce qui doit être mesuré et je documente les décisions et ce qu'il
             reste à construire. Je cherche un CDI où ce profil hybride sert, dans
             une équipe qui produit vite, teste proprement et met l'IA au service
             d'un travail utile.
@@ -43,12 +47,20 @@ export default function AboutPage() {
         </div>
         <div className="panel panel-sys">
           <div className="avatar-frame">
-            <img src="/brand/jonas-avatar.jpg" alt="Portrait de Jonas Suhard" />
+            <Image
+              src="/brand/jonas-avatar.jpg"
+              alt="Portrait de Jonas Suhard"
+              width={640}
+              height={640}
+              sizes="(max-width: 430px) 126px, 152px"
+              quality={70}
+            />
           </div>
           <h2>Position cible</h2>
           <p>
-            Growth Engineer / Marketing Technologist IA, dans une équipe qui
-            a besoin de construire vite et de mettre l'IA au service du produit.
+            Chef de projet IA appliquée &amp; automatisation junior, avec une
+            spécialisation Growth Engineer et Product Builder IA,
+            dans une équipe qui relie besoins métier et exécution produit.
           </p>
           <h3>Ce que je cherche à construire</h3>
           <p>
@@ -112,8 +124,8 @@ export default function AboutPage() {
             <p className="cert">Refonte et optimisation du site WordPress, contenus LinkedIn, articles, SEO on-page, suivi GA4 et supports de communication.</p>
           </div>
           <div className="matrix-item">
-            <strong>Indépendant — sites, SEO et IA appliquée</strong>
-            <p>Depuis 2021 (micro-entreprise 2026) · Paris / hybride</p>
+            <strong>Projets web, SEO et IA appliquée</strong>
+            <p>Projets depuis 2021 · entreprise individuelle enregistrée en 2026 · Paris / hybride</p>
             <p className="cert">Sites web (Next.js, WordPress), SEO local, assistants IA cadrés. Exemple livré en production : Les Petites Griffes.</p>
           </div>
         </div>
@@ -128,24 +140,24 @@ export default function AboutPage() {
         </div>
         <div className="matrix matrix-2">
           <div className="matrix-item">
-            <strong>Certification Anthropic (en préparation)</strong>
-            <p>2026 · à distance</p>
-            <p className="cert">Certification sur le développement d'applications avec Claude, en cours de préparation.</p>
+            <strong>Parcours Anthropic Academy (en cours)</strong>
+            <p>2026 · formation à distance</p>
+            <p className="cert">Ressources de formation sur Claude, les API, les outils et les évaluations. Aucune certification obtenue n'est revendiquée.</p>
           </div>
           <div className="matrix-item">
             <strong>MBA Expert Marketing Digital (en cours)</strong>
             <p>2024–2026 · MyDigitalSchool, Paris</p>
-            <p className="cert">RNCP41809 — « Manager de la stratégie marketing digital », niveau 7</p>
+            <p className="cert">Prépare le titre RNCP41809 — « Manager de la stratégie marketing digital », niveau 7</p>
           </div>
           <div className="matrix-item">
             <strong>Bachelor Chef de projet digital</strong>
             <p>2023–2024 · La Digital School, Angers</p>
-            <p className="cert">Titre RNCP niveau 6 — « Chef de projet e-business »</p>
+            <p className="cert">Titre RNCP34340, niveau 6 — « Chef de projet e-business » · preuve privée</p>
           </div>
           <div className="matrix-item">
             <strong>Animation 2D / 3D</strong>
             <p>2019–2021 · Human Academy, Angoulême</p>
-            <p className="cert">Cursus 3 ans — certificat d'école</p>
+            <p className="cert">Formation suivie de 2019 à 2021 — certificat d'école, non inscrit au RNCP</p>
           </div>
         </div>
       </section>
