@@ -303,8 +303,8 @@ p { margin:0 0 10px; }
 .tag { font-family:var(--ft-data); font-size:11px; color:var(--color-ink-soft); border:1px solid var(--color-line); padding:3px 8px; background:var(--color-bg); }
 .evidence-badge { display:inline-flex; align-items:center; align-self:flex-start; width:fit-content; min-height:24px; padding:3px 8px; border:1px solid currentColor; font-family:var(--ft-data); font-size:10.5px; line-height:1.3; letter-spacing:.04em; text-transform:uppercase; background:var(--color-bg); }
 .evidence-public, .evidence-publicly-verified { color:var(--color-ok); }
-.evidence-private, .evidence-private-evidence { color:var(--color-blue); }
-.evidence-self-declared { color:var(--color-gold); }
+.evidence-private, .evidence-private-evidence { color:#455f7f; }
+.evidence-self-declared { color:#765515; }
 .evidence-removed-pending-proof { color:var(--color-red); }
 .access-block { display:flex; flex-direction:column; gap:3px; }
 .access-label { font-family:var(--ft-data); font-size:10.5px; letter-spacing:0.08em; text-transform:uppercase; color:var(--color-ink-soft); margin:0; }

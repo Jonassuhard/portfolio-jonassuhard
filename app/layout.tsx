@@ -21,6 +21,8 @@ import BlueprintBg from "./blueprint-bg";
 import PageTransition from "./page-transition";
 import "./globals.css";
 
+const hasVercelObservability = process.env.VERCEL === "1";
+
 // Seuls le titre (h1) et le corps (lead/paragraphes) sont préchargés : ce sont
 // les fonts du hero qui pilotent le LCP. Les autres (titlebar, eyebrow, clock)
 // sont petites et chargées en swap -> on libère la bande passante mobile 4G.
@@ -174,8 +176,12 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         </footer>
         <GlitchController />
         <ConsentBanner />
-        <Analytics />
-        <SpeedInsights />
+        {hasVercelObservability ? (
+          <>
+            <Analytics />
+            <SpeedInsights />
+          </>
+        ) : null}
       </body>
     </html>
   );
