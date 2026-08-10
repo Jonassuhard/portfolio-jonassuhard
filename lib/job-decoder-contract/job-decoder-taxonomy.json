@@ -53,7 +53,7 @@
     {"id": "sen-intern-title", "target": "intern", "weight": 4, "patterns": ["\\bstage\\b", "internship", "alternance", "apprentissage"]},
     {"id": "sen-confirmed-title", "target": "confirmed", "weight": 3, "patterns": ["confirmé", "confirmed", "mid[- ]level"]},
     {"id": "sen-senior-title", "target": "senior", "weight": 4, "patterns": ["\\bsenior\\b", "\\bsr\\.?\\b", "\\bstaff\\b", "\\bprincipal\\b", "\\blead\\b", "head of", "director", "directeur"]},
-    {"id": "sen-architecture", "target": "senior", "weight": 3, "patterns": ["own the architecture", "architecture globale", "define the architecture", "définir l'architecture"]},
+    {"id": "sen-architecture", "target": "senior", "weight": 3, "patterns": ["own the architecture", "architecture globale", "define the architecture", "définir l'architecture"], "negative_patterns": ["(?:sans|pas|not|no)\\s+(?:être\\s+|be\\s+)?(?:responsable\\s+de\\s+|own(?:er)?\\s+(?:of\\s+)?)?(?:l['’])?architecture"]},
     {"id": "sen-management", "target": "senior", "weight": 3, "patterns": ["manage a team", "manager une équipe", "people management", "recruter et encadrer", "mentor\\w*.{0,30}(?:engineers?|développeurs?)"]},
     {"id": "sen-budget", "target": "senior", "weight": 2, "patterns": ["budget ownership", "responsable du budget", "p&l ownership"]}
   ],

@@ -36,5 +36,6 @@
   {"id":"model-security-governance","language":"en","title":"AI Governance Specialist","description":"Audit model risk, AI Act compliance and independent model evaluation.","expected":{"position":"governance"}},
   {"id":"product-ops-non-ai","language":"en","title":"Product Operations Associate","description":"Support the product team, roadmap rituals and internal tooling.","expected":{"relation":"unknown","position":"product"}},
   {"id":"marketing-automation-non-ai","language":"fr","title":"Marketing Automation Specialist","description":"Automatiser les campagnes lifecycle dans HubSpot et mesurer la conversion.","expected":{"relation":"unknown","technical":"unknown"}},
-  {"id":"rag-no-client","language":"en","title":"RAG Engineer","description":"Build retrieval-augmented generation services and model evaluation pipelines for an internal product.","expected":{"relation":"applied-ai","technical":"integrate-model","position":"product"}}
+  {"id":"rag-no-client","language":"en","title":"RAG Engineer","description":"Build retrieval-augmented generation services and model evaluation pipelines for an internal product.","expected":{"relation":"applied-ai","technical":"integrate-model","position":"product"}},
+  {"id":"not-senior-negated-architecture","language":"fr","title":"Consultant IA générative junior","description":"Déployer des workflows RAG. Vous suivrez les résultats sans être responsable de l'architecture globale.","expected":{"seniority":"true-junior"}}
 ]
