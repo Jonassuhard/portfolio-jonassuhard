@@ -105,7 +105,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   const fonts = `${fontTitle.variable} ${fontBody.variable} ${fontType.variable} ${fontItalic.variable} ${fontData.variable} ${fontClock.variable}`;
   return (
-    <html lang="fr" className={fonts}>
+    <html lang="fr" className={fonts} data-scroll-behavior="smooth">
       <body>
         <BlueprintBg />
         <script
