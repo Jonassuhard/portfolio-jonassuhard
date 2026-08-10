@@ -1,0 +1,99 @@
+{
+  "taxonomy_version": "2026-08-10.1",
+  "confidence": {
+    "clear_min": 6,
+    "clear_margin": 3,
+    "mixed_min": 4,
+    "max_citations": 3,
+    "citation_length": 220
+  },
+  "generic_terms": ["\\bai\\b", "\\bia\\b", "\\bllm\\b", "machine learning", "intelligence artificielle"],
+  "axes": {
+    "relation": {
+      "label": "Relation à l'IA",
+      "values": ["applied-ai", "ai-infrastructure", "rebranded-role", "mixed", "unknown"],
+      "rules": [
+        {"id": "rel-applied-deploy", "target": "applied-ai", "weight": 4, "label": "Déploiement d'une solution IA", "patterns": ["(?:deploy|déploy|implement|implément|integr|intégr)\\w*.{0,80}(?:ai|ia|llm|genai|rag|agent)", "(?:ai|ia|llm|genai|rag|agent)\\w*.{0,80}(?:deploy|déploy|implement|implément|integr|intégr)\\w*"]},
+        {"id": "rel-applied-workflow", "target": "applied-ai", "weight": 4, "label": "Workflow ou automatisation IA", "patterns": ["(?:build|constru|workflow|automation|automatis|orchestr)\\w*.{0,60}(?:\\bai\\b|\\bia\\b|\\bllm\\b|\\bgenai\\b|\\brag\\b|\\bagents?\\b|intelligence artificielle)", "(?:\\brag\\b|\\bagentic\\b|\\bagents? ia\\b|\\bai agents?\\b)"]},
+        {"id": "rel-applied-evaluation", "target": "applied-ai", "weight": 3, "label": "Évaluation de systèmes IA", "patterns": ["(?:evaluat|évaluat|quality|qualité|guardrail|monitor)\\w*.{0,70}(?:ai|ia|llm|model|modèle)"]},
+        {"id": "rel-infra-platform", "target": "ai-infrastructure", "weight": 4, "label": "Plateforme ou infrastructure IA", "patterns": ["(?:mlops|model serving|feature store|gpu cluster|ai platform|plateforme ia|infrastructure ia)"]},
+        {"id": "rel-infra-data", "target": "ai-infrastructure", "weight": 3, "label": "Pipeline de données pour modèles", "patterns": ["(?:data pipeline|pipeline de données|vector database|base vectorielle).{0,70}(?:model|modèle|ai|ia|llm)"]},
+        {"id": "rel-rebrand-tools", "target": "rebranded-role", "weight": 4, "label": "Usage d'outils IA sans responsabilité produit", "patterns": ["(?:use|utiliser|maîtriser|maitriser).{0,50}(?:chatgpt|copilot|ai tools|outils ia)"]},
+        {"id": "rel-rebrand-content", "target": "rebranded-role", "weight": 3, "label": "Production de contenu assistée par IA", "patterns": ["(?:content|contenu|copywriting|rédaction).{0,70}(?:assist|génér|generat)\\w*.{0,40}(?:ai|ia)"]}
+      ]
+    },
+    "technical": {
+      "label": "Nature technique",
+      "values": ["build-model", "integrate-model", "mixed", "unknown"],
+      "rules": [
+        {"id": "tech-build-training", "target": "build-model", "weight": 4, "label": "Entraînement de modèles", "patterns": ["(?:train|entraîn|entrain)\\w*.{0,60}(?:model|modèle|neural network|réseau de neurones)"]},
+        {"id": "tech-build-research", "target": "build-model", "weight": 4, "label": "Recherche ou architecture de modèles", "patterns": ["(?:research scientist|chercheur|model architecture|architecture de modèles|deep learning research)"]},
+        {"id": "tech-build-finetune", "target": "build-model", "weight": 4, "label": "Fine-tuning substantiel", "patterns": ["(?:fine[- ]?tun|rlhf|lora training|instruction tuning)"]},
+        {"id": "tech-integrate-rag", "target": "integrate-model", "weight": 4, "label": "RAG et recherche augmentée", "patterns": ["\\brag\\b|retrieval[- ]augmented|recherche augmentée"]},
+        {"id": "tech-integrate-api", "target": "integrate-model", "weight": 3, "label": "Intégration d'API de modèles", "patterns": ["(?:model api|llm api|api de modèles|openai api|anthropic api|mistral api)"]},
+        {"id": "tech-integrate-agents", "target": "integrate-model", "weight": 4, "label": "Agents et orchestration", "patterns": ["(?:ai agents?|agents? ia|agentic|tool calling|function calling|orchestr)\\w*"]},
+        {"id": "tech-integrate-production", "target": "integrate-model", "weight": 3, "label": "Mise en production autour de modèles", "patterns": ["(?:production|monitoring|observability|observabilité|evaluation|évaluation).{0,60}(?:llm|ai|ia|model|modèle)"]}
+      ]
+    },
+    "position": {
+      "label": "Position dans l'organisation",
+      "values": ["product", "field", "governance", "mixed", "unknown"],
+      "rules": [
+        {"id": "pos-product-roadmap", "target": "product", "weight": 4, "label": "Responsabilité produit ou roadmap", "patterns": ["(?:product roadmap|roadmap produit|product discovery|produit interne|internal product)"]},
+        {"id": "pos-product-team", "target": "product", "weight": 4, "label": "Équipe produit ou plateforme", "patterns": ["(?:product team|équipe produit|platform team|équipe plateforme|product operations)"]},
+        {"id": "pos-field-client", "target": "field", "weight": 4, "label": "Déploiement auprès de clients", "patterns": ["(?:chez|auprès de|with|for).{0,30}(?:clients?|customers?)", "client deployment|déploiement client"]},
+        {"id": "pos-field-change", "target": "field", "weight": 3, "label": "Conseil ou conduite du changement", "patterns": ["(?:change management|conduite du changement|implementation consultant|consultant implémentation|customer enablement)"]},
+        {"id": "pos-governance-risk", "target": "governance", "weight": 4, "label": "Risque, conformité ou gouvernance IA", "patterns": ["(?:ai governance|gouvernance ia|ai risk|risque ia|ai act|model risk|conformité ia|compliance).{0,30}"]},
+        {"id": "pos-governance-audit", "target": "governance", "weight": 4, "label": "Audit ou évaluation indépendante", "patterns": ["(?:audit|assurance|independent evaluation|évaluation indépendante).{0,70}(?:ai|ia|model|modèle)"]}
+      ]
+    }
+  },
+  "seniority_rules": [
+    {"id": "sen-junior-title", "target": "junior", "weight": 3, "patterns": ["\\bjunior\\b", "entry[- ]level", "graduate", "débutant"]},
+    {"id": "sen-intern-title", "target": "intern", "weight": 4, "patterns": ["\\bstage\\b", "internship", "alternance", "apprentissage"]},
+    {"id": "sen-confirmed-title", "target": "confirmed", "weight": 3, "patterns": ["confirmé", "confirmed", "mid[- ]level"]},
+    {"id": "sen-senior-title", "target": "senior", "weight": 4, "patterns": ["\\bsenior\\b", "\\bsr\\.?\\b", "\\bstaff\\b", "\\bprincipal\\b", "\\blead\\b", "head of", "director", "directeur"]},
+    {"id": "sen-architecture", "target": "senior", "weight": 3, "patterns": ["own the architecture", "architecture globale", "define the architecture", "définir l'architecture"]},
+    {"id": "sen-management", "target": "senior", "weight": 3, "patterns": ["manage a team", "manager une équipe", "people management", "recruter et encadrer", "mentor\\w*.{0,30}(?:engineers?|développeurs?)"]},
+    {"id": "sen-budget", "target": "senior", "weight": 2, "patterns": ["budget ownership", "responsable du budget", "p&l ownership"]}
+  ],
+  "evidence_categories": {
+    "deployed-system": "Système réellement déployé",
+    "evaluation-tests": "Évaluations ou jeux de tests",
+    "rag-agents": "RAG, agents ou orchestration",
+    "security-governance": "Sécurité, confidentialité ou gouvernance",
+    "infrastructure-cloud": "Infrastructure, MLOps ou cloud",
+    "domain-knowledge": "Connaissance métier",
+    "client-change": "Travail client et conduite du changement",
+    "measured-outcomes": "Coût, qualité ou performance mesurée",
+    "model-training": "Recherche ou entraînement de modèles"
+  },
+  "skill_taxonomy": {
+    "seo": {"label": "SEO", "patterns": ["\\bseo\\b", "référencement naturel", "technical seo"]},
+    "geo_aeo": {"label": "GEO/AEO", "patterns": ["\\bgeo\\b", "\\baeo\\b", "generative engine optimization", "answer engine optimization"], "negative_patterns": ["géomètre", "géométr", "géograph", "geo[- ]?spatial", "geomatic"]},
+    "growth": {"label": "Growth", "patterns": ["\\bgrowth\\b", "growth engineering", "expérimentation", "\\bcro\\b"]},
+    "acquisition_marketing": {"label": "Acquisition marketing", "patterns": ["user acquisition", "acquisition digitale", "acquisition marketing", "paid acquisition"], "negative_patterns": ["nationalité", "investment", "investissement", "merger", "fusion", "rachat"]},
+    "crm": {"label": "CRM marketing", "patterns": ["\\bcrm\\b", "lifecycle", "customer journey", "lead nurturing"]},
+    "marketing_automation": {"label": "Marketing automation", "patterns": ["marketing automation", "campaign automation", "automatisation marketing", "lifecycle automation"]},
+    "ai_llm": {"label": "IA/LLM", "patterns": ["\\bia\\b", "\\bai\\b", "\\bllm\\b", "genai", "intelligence artificielle"]},
+    "rag": {"label": "RAG", "patterns": ["\\brag\\b", "retrieval[- ]augmented", "recherche augmentée"]},
+    "prompt_engineering": {"label": "Prompt engineering", "patterns": ["prompt engineering", "prompt design", "conception de prompts"]},
+    "python": {"label": "Python", "patterns": ["\\bpython\\b"]},
+    "sql": {"label": "SQL", "patterns": ["\\bsql\\b"]},
+    "typescript": {"label": "TypeScript", "patterns": ["\\btypescript\\b"]},
+    "javascript": {"label": "JavaScript", "patterns": ["\\bjavascript\\b"]},
+    "react": {"label": "React", "patterns": ["\\breact(?:\\.js)?\\b"]},
+    "nextjs": {"label": "Next.js", "patterns": ["\\bnext\\.?js\\b"]},
+    "nodejs": {"label": "Node.js", "patterns": ["\\bnode\\.?js\\b"]},
+    "playwright": {"label": "Playwright", "patterns": ["\\bplaywright\\b"]},
+    "automation": {"label": "Automatisation", "patterns": ["\\bautomation\\b", "automatisation", "\\bn8n\\b", "\\bzapier\\b"], "negative_patterns": ["qa automation", "test automation", "robotic", "robotique", "industrial automation", "automatisme industriel"]},
+    "analytics": {"label": "Analytics", "patterns": ["analytics", "\\bga4\\b", "google analytics"]},
+    "product_marketing": {"label": "Product marketing", "patterns": ["product marketing", "go[- ]to[- ]market", "\\bgtm\\b", "sales enablement"]},
+    "hubspot": {"label": "HubSpot", "patterns": ["\\bhubspot\\b"]},
+    "salesforce": {"label": "Salesforce", "patterns": ["\\bsalesforce\\b"]},
+    "power_bi": {"label": "Power BI", "patterns": ["power bi", "\\btableau\\b", "\\blooker\\b"]},
+    "docker": {"label": "Docker", "patterns": ["\\bdocker\\b", "containerisation"]},
+    "kubernetes": {"label": "Kubernetes", "patterns": ["\\bkubernetes\\b", "\\bk8s\\b"]},
+    "ab_testing": {"label": "A/B testing", "patterns": ["a/b test", "ab test", "test a/b", "optimizely"]}
+  }
+}

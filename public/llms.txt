@@ -34,6 +34,10 @@ Dernière mise à jour : 2026-07-20
 - [Méthode de travail](https://jonassuhard.com/methode): cadrer, construire, vérifier, transmettre — garde-fous IA, fact-check, anonymisation, validation humaine avant publication
 - [Compétences](https://jonassuhard.com/skills.md): compétences reliées aux projets qui les prouvent
 
+## Outils
+
+- [Décodeur d'offres IA](https://jonassuhard.com/outils/decodeur-offre-ia): analyse locale et explicable des missions, de la technicité, de la position et de la séniorité réellement décrites par une offre
+
 ## Pages citables
 
 - [Rendre un portfolio citable par un agent IA](https://jonassuhard.com/knowledge/llms-txt-portfolio): méthode llms.txt, profile.json, claims.json, Markdown et JSON-LD sur ce site

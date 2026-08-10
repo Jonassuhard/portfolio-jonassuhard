@@ -38,6 +38,7 @@ export default function RecruitersPage() {
           <div className="button-row">
             <a className="button primary" href={`mailto:${site.email}`}>Me contacter</a>
             <a className="button" href={site.github}>GitHub</a>
+            <Link className="button" href="/outils/decodeur-offre-ia">Décoder une offre IA</Link>
           </div>
           <p className="cta-sub">
             CV : <a href={site.cvStyled}>version site</a> · <a href={site.cvClassic}>classique</a>
@@ -262,4 +263,3 @@ export default function RecruitersPage() {
     </div>
   );
 }
-

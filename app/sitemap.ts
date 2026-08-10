@@ -4,7 +4,7 @@ import { projects, siteUrl } from "@/lib/projects";
 import { contentReviewDate } from "@/lib/verification";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes = ["", "/recruteurs", "/projets", "/competences", "/methode", "/preuves", "/a-propos", "/knowledge"];
+  const staticRoutes = ["", "/recruteurs", "/projets", "/competences", "/methode", "/preuves", "/a-propos", "/knowledge", "/outils/decodeur-offre-ia"];
   const indexedProjects = projects.filter((project) => !project.noindex);
   const projectRoutes = indexedProjects.map((project) => `/projets/${project.slug}`);
   const knowledgeRoutes = knowledgePages.map((page) => `/knowledge/${page.slug}`);
