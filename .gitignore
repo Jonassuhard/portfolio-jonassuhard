@@ -18,3 +18,4 @@ qa/screenshots/
 .lighthouseci/
 tmp/
 PROMPTS_IMAGES_PROJETS.md
+.gstack/
