@@ -143,27 +143,27 @@ git commit -m "perf(ui): remove redundant fonts and glitch client"
 - Consumes: `NixieClock()`.
 - Produces: `.titlebar-name`, `.titlebar-role`, `.nixie-seconds` et menu ouvert en 500 ms maximum.
 
-- [ ] **Step 1: Écrire les tests rouges**
+- [x] **Step 1: Écrire les tests rouges**
 
 Exiger les trois sélecteurs, la dissimulation du rôle et des secondes sous 640 px, une ouverture de menu au plus égale à `.55s` et des délais au plus égaux à `.18s`.
 
-- [ ] **Step 2: Vérifier l'échec**
+- [x] **Step 2: Vérifier l'échec**
 
 Run: `npx tsx --test tests/performance.test.ts`
 
 Expected: FAIL sur les classes absentes et les durées actuelles.
 
-- [ ] **Step 3: Implémenter**
+- [x] **Step 3: Implémenter**
 
 Séparer le nom du rôle, formater l'heure et les secondes dans deux spans, réduire la hauteur du header mobile et borner les transitions.
 
-- [ ] **Step 4: Vérifier**
+- [x] **Step 4: Vérifier**
 
 Run: `npx tsx --test tests/performance.test.ts && npm run typecheck`
 
 Expected: PASS.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add app/layout.tsx app/nixie-clock.tsx app/globals.css tests/performance.test.ts

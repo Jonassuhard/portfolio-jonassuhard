@@ -45,6 +45,22 @@ test("les assets publics ont un cache long sans être figés", () => {
   assert.doesNotMatch(config, /assetCache[\s\S]*immutable/);
 });
 
+test("le header mobile reste compact et le menu répond en moins de 550 ms", () => {
+  const layout = read("app/layout.tsx");
+  const clock = read("app/nixie-clock.tsx");
+  const css = read("app/globals.css");
+
+  assert.match(layout, /className="titlebar-name"/);
+  assert.match(layout, /className="titlebar-role"/);
+  assert.match(clock, /className="nixie-seconds"/);
+  assert.match(clock, /className="nixie-date"/);
+  assert.match(css, /\.titlebar-role[^{]*\{[^}]*display:none/);
+  assert.match(css, /\.nixie-seconds[^{]*\{[^}]*display:none/);
+  assert.match(css, /\.main-nav\.open[^}]*transition:clip-path \.5s/);
+  assert.match(css, /\.main-nav\.open a:nth-child\(6\)[^{]*\{[^}]*transition-delay:\.18s/);
+  assert.doesNotMatch(css, /\.main-nav\.open[^}]*transition:clip-path 1\.4s/);
+});
+
 test("les médias projet réservent leur espace et respectent le mouvement réduit", () => {
   const detailPage = read("app/projets/[slug]/page.tsx");
   const video = read("app/project-video.tsx");

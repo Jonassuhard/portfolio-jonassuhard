@@ -10,8 +10,7 @@ const dateFormatter = new Intl.DateTimeFormat("fr-FR", {
 });
 const timeFormatter = new Intl.DateTimeFormat("fr-FR", {
   hour: "2-digit",
-  minute: "2-digit",
-  second: "2-digit"
+  minute: "2-digit"
 });
 
 // Horloge live (jour · date · heure) en style nixie. Rendu client only :
@@ -28,17 +27,22 @@ export default function NixieClock() {
   if (!now) {
     return (
       <time className="nixie-clock" suppressHydrationWarning>
-        lun. 00 sept. 0000 · 00:00:00
+        <span className="nixie-date">lun. 00 sept. 0000</span>
+        <span className="nixie-date-separator"> · </span>
+        00:00<span className="nixie-seconds">:00</span>
       </time>
     );
   }
 
   const date = dateFormatter.format(now);
   const time = timeFormatter.format(now);
+  const seconds = String(now.getSeconds()).padStart(2, "0");
 
   return (
     <time className="nixie-clock" dateTime={now.toISOString()} suppressHydrationWarning>
-      {date} · {time}
+      <span className="nixie-date">{date}</span>
+      <span className="nixie-date-separator"> · </span>
+      {time}<span className="nixie-seconds">:{seconds}</span>
     </time>
   );
 }
