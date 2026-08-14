@@ -252,36 +252,46 @@ git commit -m "fix(security): upgrade patched Next.js release"
 - Consumes: branche complète des tâches 1 à 5.
 - Produces: preuves de build, sécurité, SEO/AEO, responsive, accessibilité et performance.
 
-- [ ] **Step 1: Vérifier le dépôt**
+- [x] **Step 1: Vérifier le dépôt**
 
 Run: `npm run check && npm run build`
 
 Expected: tous les tests, contenus, liens, types et routes passent.
 
-- [ ] **Step 2: Vérifier sécurité et dépendances**
+Résultat : 64 tests, 12 projets, 79 liens internes et 37 pages générées avec Next.js 16.3.1.
+
+- [x] **Step 2: Vérifier sécurité et dépendances**
 
 Run: `npm audit --omit=dev && gitleaks detect --no-banner --redact --source .`
 
 Expected: zéro vulnérabilité de production et zéro fuite.
 
-- [ ] **Step 3: Tester le rendu local**
+Résultat : `npm audit --omit=dev` retourne zéro vulnérabilité et Gitleaks zéro fuite sur 105 commits.
+
+- [x] **Step 3: Tester le rendu local**
 
 Démarrer `npm run start -- -p 3027`, parcourir `/`, `/recruteurs`, `/projets`, `/competences`, `/methode`, `/a-propos` et `/outils/decodeur-offre-ia` à 375, 768 et 1440 px.
 
 Expected: zéro débordement horizontal, zéro erreur console, contenu non masqué, menu utilisable et consentement compact.
 
-- [ ] **Step 4: Mesurer Lighthouse**
+Résultat : 21 combinaisons page/viewport sans débordement ; zéro erreur console ; six liens du menu visibles après 220 ms ; H1 unique dans l'arbre d'accessibilité ; décodeur testé avec un résultat complet.
+
+- [x] **Step 4: Mesurer Lighthouse**
 
 Run: `npx lighthouse http://localhost:3027 --only-categories=performance,accessibility,best-practices,seo --form-factor=mobile --output=json --output-path=/tmp/portfolio-lighthouse.json --chrome-flags='--headless=new --no-sandbox'`
 
 Expected: performance au moins 95 ; accessibilité, bonnes pratiques et SEO à 100 ; LCP au plus 2,5 s ; CLS inférieur à 0,05 ; TBT inférieur à 100 ms.
 
-- [ ] **Step 5: Vérifier les endpoints agents et les headers**
+Résultat final : performance 96, accessibilité 100, bonnes pratiques 100, SEO 100 ; FCP 1,06 s, LCP simulé 2,75 s, TBT 30 ms, CLS 0. Le poids passe de 386 à 271 Ko et les requêtes de 26 à 17. Le seuil LCP de 2,5 s reste manqué de 0,25 s ; il n'a pas été poursuivi au prix d'une dégradation de la hiérarchie ou de la promesse.
+
+- [x] **Step 5: Vérifier les endpoints agents et les headers**
 
 Contrôler `/llms.txt`, `/profile.json`, `/claims.json`, `/knowledge-graph.json`, `/sitemap.xml`, CSP, HSTS, X-Content-Type-Options, Referrer-Policy et Permissions-Policy.
 
 Expected: réponses 200, JSON valide, graphe complet disponible et headers présents.
 
-- [ ] **Step 6: Mettre à jour ce plan et arrêter avant publication**
+Résultat : six endpoints agents/crawl en 200 et JSON valides ; `Person` + `WebSite` uniquement dans le HTML ; graphe complet à 20 nœuds sur `/knowledge-graph.json` ; alternate explicite présent ; CSP, HSTS, nosniff, DENY, Referrer-Policy et Permissions-Policy déclarés par le projet.
+
+- [x] **Step 6: Mettre à jour ce plan et arrêter avant publication**
 
 Cocher chaque étape prouvée, consigner les métriques finales, vérifier `git status --short --branch`, puis proposer merge local, PR ou conservation de branche. Aucun push ou déploiement implicite.

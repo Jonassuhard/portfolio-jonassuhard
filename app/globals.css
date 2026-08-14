@@ -16,7 +16,7 @@
   --holo:linear-gradient(180deg,#7fd8d4,#a7d878,#d8b35a,#d78aa8,#6e8fd8);
   --ft-title:var(--font-title),Georgia,serif;
   --ft-body:var(--font-body),"Courier New",monospace;
-  --ft-type:var(--font-type),"Courier New",monospace;
+  --ft-type:var(--font-body),"Courier New",monospace;
   --ft-italic:Georgia,serif;
   --ft-data:var(--font-body),"Courier New",monospace;
   --ft-clock:var(--font-clock),"Oslo II","Courier New",monospace;
@@ -136,7 +136,7 @@ h1 {
 .chroma-title { position:relative; isolation:isolate; }
 .chroma-title::before,
 .chroma-title::after {
-  content:attr(data-text);
+  content:attr(data-text) / "";
   position:absolute; inset:0; pointer-events:none; user-select:none;
   text-shadow:none; opacity:0; z-index:-1;
 }
@@ -180,13 +180,18 @@ h1 {
   51.2% { clip-path:inset(78% 0 6% 0); transform:translate3d(-3px,1px,0); opacity:.85; }
   51.7%,100% { clip-path:inset(0 0 100% 0); transform:none; opacity:0; }
 }
-/* Transition courte : le contenu reste lisible dès le premier frame. */
-@keyframes page-fade-in {
-  from { opacity:.72; transform:translateY(3px); }
-  to { opacity:1; transform:none; }
+/* Le repère d'entrée s'anime sans retarder le paint du contenu. */
+.page-transition { position:relative; }
+@keyframes page-marker-enter {
+  from { transform:translateX(-12px); opacity:0; }
+  to { transform:none; opacity:.55; }
 }
 @media (prefers-reduced-motion:no-preference) {
-  .page-transition { animation:page-fade-in .28s ease-out both; }
+  .page-transition::before {
+    content:""; position:absolute; top:-8px; left:0; width:52px;
+    border-top:1px solid var(--color-rust); pointer-events:none;
+    animation:page-marker-enter .28s ease-out both;
+  }
 }
 h2 { font-family:var(--ft-title); font-weight:600; font-size:clamp(24px,3.4vw,34px); letter-spacing:-.02em; line-height:1.14; margin:0 0 8px; color:var(--color-ink); }
 h3 { font-family:var(--ft-title); font-weight:600; font-size:22px; margin:4px 0 6px; color:var(--color-ink); }
@@ -197,6 +202,7 @@ h1, h2, h3 { text-wrap:balance; }
   font-family:var(--ft-type); text-transform:uppercase; letter-spacing:.14em; font-size:12px; color:var(--color-muted); margin:0 0 4px;
 }
 .lead { font-family:var(--ft-body); font-size:16px; color:var(--color-ink-soft); max-width:56ch; margin:8px 0 0; }
+.hero .lead { font-family:"Courier New",monospace; }
 .hero-human { font-family:var(--ft-body); font-size:14.5px; line-height:1.6; color:var(--color-ink-soft); max-width:56ch; margin:12px 0 0; }
 .cta-sub { font-family:var(--ft-data); font-size:12.5px; color:var(--color-muted); margin:12px 0 0; }
 .cta-sub a { color:var(--color-rust); text-decoration:none; }

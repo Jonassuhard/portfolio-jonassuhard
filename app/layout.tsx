@@ -3,8 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   Cormorant_Garamond,
-  Courier_Prime,
-  Special_Elite
+  Courier_Prime
 } from "next/font/google";
 import localFont from "next/font/local";
 import { Analytics } from "@vercel/analytics/next";
@@ -20,32 +19,24 @@ import "./globals.css";
 
 const hasVercelObservability = process.env.VERCEL === "1";
 
-// Seuls le titre (h1) et le corps (lead/paragraphes) sont préchargés : ce sont
-// les fonts du hero qui pilotent le LCP. Les autres (titlebar, eyebrow, clock)
-// sont petites et chargées en swap -> on libère la bande passante mobile 4G.
+// Seuls le titre (h1) et le corps sont préchargés : ce sont les fontes du hero.
+// Les labels réutilisent Courier Prime et l'horloge reste chargée sans preload.
 // display:optional sur les fonts du hero -> pas de swap tardif qui décale le LCP.
 // Le fallback métrique-ajusté (Georgia / Courier New) rend le premier paint, la
 // font custom prend la main dès qu'elle est en cache. Zéro CLS, LCP ≈ FCP.
 const fontTitle = Cormorant_Garamond({
   subsets: ["latin"],
-  weight: ["600", "700"],
+  weight: "700",
   variable: "--font-title",
   display: "optional",
   preload: true
 });
 const fontBody = Courier_Prime({
   subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: "400",
   variable: "--font-body",
   display: "optional",
   preload: true
-});
-const fontType = Special_Elite({
-  subsets: ["latin"],
-  weight: "400",
-  variable: "--font-type",
-  display: "swap",
-  preload: false
 });
 const fontClock = localFont({
   src: [
@@ -70,7 +61,6 @@ export const metadata: Metadata = {
   alternates: {
     types: {
       "application/json": "/profile.json",
-      "application/ld+json": "/knowledge-graph.json",
       "text/markdown": "/profile.md"
     }
   },
@@ -87,9 +77,12 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  const fonts = `${fontTitle.variable} ${fontBody.variable} ${fontType.variable} ${fontClock.variable}`;
+  const fonts = `${fontTitle.variable} ${fontBody.variable} ${fontClock.variable}`;
   return (
     <html lang="fr" className={fonts} data-scroll-behavior="smooth">
+      <head>
+        <link rel="alternate" type="application/ld+json" href="/knowledge-graph.json" />
+      </head>
       <body>
         <BlueprintBg />
         <script

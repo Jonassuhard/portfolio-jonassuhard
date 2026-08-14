@@ -20,7 +20,7 @@ export default function HomePage() {
             </AnimatedTitle>
             <p className="role-aliases">Growth Engineer junior · Product Builder IA</p>
             <p className="title-definition">
-              <Link href="/a-propos#growth-engineer">Pourquoi je garde aussi le rôle Growth Engineer →</Link>
+              <Link href="/a-propos#growth-engineer" prefetch={false}>Pourquoi je garde aussi le rôle Growth Engineer →</Link>
             </p>
             <p className="lead">
               Je transforme des besoins marketing et opérationnels en outils web,
@@ -32,7 +32,7 @@ export default function HomePage() {
             <a className="button primary" href={`mailto:${site.email}`}>
               Me contacter
             </a>
-            <Link className="button" href="/projets">
+            <Link className="button" href="/projets" prefetch={false}>
               Voir les projets
             </Link>
           </div>

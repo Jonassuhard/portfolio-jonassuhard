@@ -68,13 +68,13 @@ typography:
     lineHeight: 1.6
     letterSpacing: 0em
   label-lg:
-    fontFamily: Special Elite
+    fontFamily: Courier Prime
     fontSize: 13px
     fontWeight: 400
     lineHeight: 1.4
     letterSpacing: 0em
   label-md:
-    fontFamily: Special Elite
+    fontFamily: Courier Prime
     fontSize: 12px
     fontWeight: 400
     lineHeight: 1.35
@@ -159,7 +159,7 @@ Le corps `ink` sur `surface` doit rester supérieur à WCAG AA. Le texte `muted`
 
 ## Typography
 
-Trois voix suffisent : **Cormorant Garamond** pour les titres éditoriaux, **Courier Prime** pour le corps et les données, **Special Elite** pour les marques d'archive. Oslo II reste une exception locale pour l'horloge nixie. Aucun quatrième téléchargement de police n'est ajouté.
+Deux voix suffisent : **Cormorant Garamond** pour les titres éditoriaux et **Courier Prime** pour le corps, les données et les marques d'archive. Oslo II reste une exception locale pour l'horloge nixie. Cette discipline évite qu'une fonte décorative de 53 Ko ralentisse chaque première visite.
 
 - Les titres restent courts, fermes, avec une taille responsive bornée et sans espacement négatif.
 - Le corps conserve une hauteur de ligne généreuse pour compenser la texture monospace.

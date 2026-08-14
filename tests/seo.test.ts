@@ -15,7 +15,10 @@ test("le layout injecte seulement Person et WebSite", () => {
   const layout = read("app/layout.tsx");
   assert.match(layout, /import \{ rootJsonLd \} from "@\/lib\/json-ld"/);
   assert.match(layout, /JSON\.stringify\(rootJsonLd\(\)\)/);
-  assert.match(layout, /"application\/ld\+json": "\/knowledge-graph\.json"/);
+  assert.match(
+    layout,
+    /<link rel="alternate" type="application\/ld\+json" href="\/knowledge-graph\.json" \/>/
+  );
   assert.doesNotMatch(layout, /knowledgeGraphJsonLd/);
 });
 

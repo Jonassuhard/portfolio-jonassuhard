@@ -19,7 +19,7 @@ Rendre le portfolio plus rapide à comprendre et à charger sans changer son ide
 ## Décisions
 
 - Conserver Archive Worldline, la grille, le blueprint et les animations de page, texte et fond.
-- Garder Cormorant Garamond, Courier Prime, Special Elite et Oslo II.
+- Garder Cormorant Garamond, Courier Prime et Oslo II ; retirer Special Elite après mesure de son coût réseau de 53 Ko.
 - Remplacer Newsreader italic par Georgia et IBM Plex Mono par Courier Prime.
 - Injecter `Person` et `WebSite` dans le layout ; conserver le graphe complet sur `/knowledge-graph.json`.
 - Remplacer les copies DOM et `GlitchController` par un titre réel et deux pseudo-éléments CSS.

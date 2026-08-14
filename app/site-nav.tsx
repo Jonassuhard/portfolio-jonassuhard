@@ -21,7 +21,7 @@ export default function SiteNav() {
 
   return (
     <div className="menubar">
-      <Link className="brand" href="/" aria-label="Accueil Jonas Suhard" onClick={close}>
+      <Link className="brand" href="/" aria-label="Accueil Jonas Suhard" prefetch={false} onClick={close}>
         <Image
           className="brand-mark"
           src="/brand/js-medallion-sm.webp"
@@ -33,7 +33,7 @@ export default function SiteNav() {
         />
       </Link>
       {parent ? (
-        <Link className="nav-back" href={parent} aria-label="Retour" onClick={close}>
+        <Link className="nav-back" href={parent} aria-label="Retour" prefetch={false} onClick={close}>
           ←
         </Link>
       ) : null}
@@ -49,12 +49,12 @@ export default function SiteNav() {
         <span />
       </button>
       <nav className={open ? "main-nav open" : "main-nav"} aria-label="Navigation principale">
-        <Link href="/recruteurs" onClick={close}>Recruteurs</Link>
-        <Link href="/projets" onClick={close}>Projets</Link>
-        <Link href="/competences" onClick={close}>Compétences</Link>
-        <Link href="/methode" onClick={close}>Méthode</Link>
-        <Link href="/preuves" onClick={close}>Preuves</Link>
-        <Link href="/a-propos" onClick={close}>À propos</Link>
+        <Link href="/recruteurs" prefetch={false} onClick={close}>Recruteurs</Link>
+        <Link href="/projets" prefetch={false} onClick={close}>Projets</Link>
+        <Link href="/competences" prefetch={false} onClick={close}>Compétences</Link>
+        <Link href="/methode" prefetch={false} onClick={close}>Méthode</Link>
+        <Link href="/preuves" prefetch={false} onClick={close}>Preuves</Link>
+        <Link href="/a-propos" prefetch={false} onClick={close}>À propos</Link>
       </nav>
     </div>
   );
