@@ -421,6 +421,9 @@ td { color:var(--color-ink-soft); }
 .case-body h3 { margin:0; }
 .case-body p { font-size:13.5px; color:var(--color-ink-soft); margin:0; flex:1; }
 .case-body .button { margin-top:4px; align-self:flex-start; }
+.case-grid-compact .case-card img { height:112px; }
+.case-grid-compact .case-body { padding:12px; gap:6px; }
+.case-grid-compact .case-body p { font-size:13px; line-height:1.55; }
 
 /* ===== CONTENT GRID (prose + aside, case study) ===== */
 .content-grid { display:grid; grid-template-columns:minmax(0,1.7fr) minmax(0,1fr); gap:28px; align-items:start; }
@@ -537,7 +540,7 @@ td { color:var(--color-ink-soft); }
 .foot-link-btn:hover { color:var(--color-nixie); }
 @media (max-width:640px) {
   .consent { left:10px; right:10px; bottom:10px; width:auto; }
-  .consent-inner { padding:12px; grid-template-columns:1fr; gap:10px; }
+  .consent-inner { padding:10px; grid-template-columns:1fr; gap:8px; }
   .consent-actions { width:100%; }
   .consent-actions .button { flex:1; justify-content:center; min-height:44px; }
   .foot-link-btn { min-height:40px; padding:10px 0; font-size:12.5px; }

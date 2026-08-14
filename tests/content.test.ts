@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
 import test from "node:test";
 import { knowledgePages } from "../lib/knowledge";
 import { featuredProjects, projects, recruiterFeatured, site } from "../lib/projects";
@@ -53,4 +54,14 @@ test("le registre ne revendique pas de dépôt GitHub privé invérifiable", () 
   const item = verificationItems.find((claim) => claim.id === "non-public-projects");
   assert.ok(item);
   assert.doesNotMatch(item.claim, /dépôts? GitHub|repositories/i);
+});
+
+test("les projets secondaires utilisent une preuve courte sans perdre leur détail", () => {
+  const page = readFileSync(new URL("../app/projets/page.tsx", import.meta.url), "utf8");
+
+  assert.match(
+    page,
+    /group\.tier === 1\s*\? project\.summary\s*:\s*project\.cardLine \?\? project\.proofLine \?\? project\.summary/
+  );
+  assert.match(page, /group\.tier === 1 \? "case-grid" : "case-grid case-grid-compact"/);
 });

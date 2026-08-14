@@ -41,7 +41,7 @@ export default function ProjectsPage() {
                 <h2>{group.title}</h2>
               </div>
             </div>
-            <div className="case-grid">
+            <div className={group.tier === 1 ? "case-grid" : "case-grid case-grid-compact"}>
               {list.map((project, projectIndex) => (
                 <article className="case-card" key={project.slug}>
                   <ProjectCardImage
@@ -58,7 +58,11 @@ export default function ProjectsPage() {
                         {project.shortTitle}
                       </Link>
                     </h3>
-                    <p>{project.summary}</p>
+                    <p>
+                      {group.tier === 1
+                        ? project.summary
+                        : project.cardLine ?? project.proofLine ?? project.summary}
+                    </p>
                     <div className="access-links">
                       <a className="lk" href={`/projects/${project.slug}.md`}>Markdown</a>
                       {project.links

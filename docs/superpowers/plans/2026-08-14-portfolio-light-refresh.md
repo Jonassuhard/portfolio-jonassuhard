@@ -182,27 +182,27 @@ git commit -m "fix(ui): tighten mobile header and navigation"
 - Consumes: `Project.cardLine`, `Project.proofLine`, `Project.summary` et `Project.tier`.
 - Produces: cartes compactes pour tiers 2 et 3, sans modifier les pages détaillées ni le consentement.
 
-- [ ] **Step 1: Écrire les tests rouges**
+- [x] **Step 1: Écrire les tests rouges**
 
 Exiger `cardLine ?? proofLine ?? summary` pour les groupes secondaires, la classe `case-grid-compact`, deux actions de consentement et `min-height:44px` sur mobile.
 
-- [ ] **Step 2: Vérifier l'échec**
+- [x] **Step 2: Vérifier l'échec**
 
 Run: `npx tsx --test tests/content.test.ts tests/privacy.test.ts`
 
 Expected: FAIL sur le format court et la classe compacte.
 
-- [ ] **Step 3: Implémenter**
+- [x] **Step 3: Implémenter**
 
 Calculer le texte de carte selon le niveau, appliquer la classe compacte et réduire image, marges et interlignes secondaires. Compacter uniquement l'espacement de la bannière mobile.
 
-- [ ] **Step 4: Vérifier**
+- [x] **Step 4: Vérifier**
 
 Run: `npx tsx --test tests/content.test.ts tests/privacy.test.ts && npm run typecheck`
 
 Expected: PASS et logique de consentement inchangée.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add app/projets/page.tsx app/globals.css tests/content.test.ts tests/privacy.test.ts
