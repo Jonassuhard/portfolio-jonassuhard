@@ -21,15 +21,20 @@ test("les cartes utilisent une image responsive sans JavaScript client", () => {
 });
 
 test("les optimisations de performance ne retirent aucune animation", () => {
-  const controller = read("app/glitch-controller.tsx");
+  const layout = read("app/layout.tsx");
+  const title = read("app/animated-title.tsx");
   const css = read("app/globals.css");
 
-  assert.match(controller, /setInterval\(fireAll, 30000\)/);
-  assert.match(controller, /querySelector<HTMLElement>\("\.title-text"\)/);
-  assert.match(css, /@keyframes glitch-cyan/);
-  assert.match(css, /@keyframes glitch-red/);
+  assert.doesNotMatch(layout, /Newsreader|IBM_Plex_Mono|GlitchController/);
+  assert.match(title, /data-text=\{children\}/);
+  assert.equal((title.match(/className="title-text"/g) ?? []).length, 1);
+  assert.doesNotMatch(title, /chroma-layer/);
+  assert.match(css, /\.chroma-title::before/);
+  assert.match(css, /\.chroma-title::after/);
+  assert.match(css, /@keyframes glitch-cyan-cycle/);
+  assert.match(css, /@keyframes glitch-red-cycle/);
   assert.match(css, /@keyframes chroma-cyan/);
-  assert.match(css, /will-change:transform,opacity/);
+  assert.match(css, /prefers-reduced-motion:reduce[\s\S]*\.chroma-title::before/);
   assert.match(css, /@keyframes holo-diag/);
   assert.match(css, /@keyframes hero-bounce/);
 });

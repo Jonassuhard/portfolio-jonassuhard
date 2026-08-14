@@ -17,9 +17,9 @@
   --ft-title:var(--font-title),Georgia,serif;
   --ft-body:var(--font-body),"Courier New",monospace;
   --ft-type:var(--font-type),"Courier New",monospace;
-  --ft-italic:var(--font-italic),Georgia,serif;
-  --ft-data:var(--font-data),"JetBrains Mono",monospace;
-  --ft-clock:var(--font-clock),"Oslo II","IBM Plex Mono",monospace;
+  --ft-italic:Georgia,serif;
+  --ft-data:var(--font-body),"Courier New",monospace;
+  --ft-clock:var(--font-clock),"Oslo II","Courier New",monospace;
   --noise:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
 }
 
@@ -132,22 +132,25 @@ h1 {
   font-size:clamp(38px,6vw,68px); margin:6px 0 12px; color:var(--color-ink);
   text-shadow:1px 0 rgba(127,216,212,.18),-1px 0 rgba(142,31,47,.12);
 }
-/* Aberration chromatique d'entrée : deux copies colorées du texte bougent sur
-   leur propre couche. Seuls transform et opacity sont animés. */
+/* Les copies colorées sont des pseudo-éléments : aucun texte dupliqué dans le DOM. */
 .chroma-title { position:relative; isolation:isolate; }
-.chroma-layer {
+.chroma-title::before,
+.chroma-title::after {
+  content:attr(data-text);
   position:absolute; inset:0; pointer-events:none; user-select:none;
-  text-shadow:none; opacity:0; will-change:transform,opacity;
+  text-shadow:none; opacity:0; z-index:-1;
 }
 .title-text { position:relative; display:block; }
-.chroma-layer-cyan {
+.chroma-title::before {
   color:rgba(67,174,169,.7);
   animation:chroma-cyan .45s ease-out both;
 }
-.chroma-layer-red {
+.chroma-title::after {
   color:rgba(142,31,47,.6);
   animation:chroma-red .45s ease-out both;
 }
+.chroma-title[data-glitch="true"]::before { animation:glitch-cyan-cycle 30s linear infinite; }
+.chroma-title[data-glitch="true"]::after { animation:glitch-red-cycle 30s linear infinite; }
 @keyframes chroma-cyan {
   0% { transform:translate3d(6px,0,0); opacity:.62; }
   60% { transform:translate3d(3px,0,0); opacity:.38; }
@@ -157,6 +160,25 @@ h1 {
   0% { transform:translate3d(-6px,0,0); opacity:.55; }
   60% { transform:translate3d(-3px,0,0); opacity:.32; }
   100% { transform:translate3d(-1px,0,0); opacity:0; }
+}
+/* Une entrée courte, puis une déchirure à 15 s ; le cycle recommence toutes les 30 s. */
+@keyframes glitch-cyan-cycle {
+  0% { clip-path:inset(0); transform:translate3d(6px,0,0); opacity:.62; }
+  1.5%,49.9% { clip-path:inset(0 0 100% 0); transform:none; opacity:0; }
+  50% { clip-path:inset(0 0 82% 0); transform:translate3d(-4px,-1px,0); opacity:.85; }
+  50.4% { clip-path:inset(28% 0 45% 0); transform:translate3d(4px,1px,0); opacity:.85; }
+  50.8% { clip-path:inset(58% 0 12% 0); transform:translate3d(-4px,0,0); opacity:.85; }
+  51.2% { clip-path:inset(12% 0 68% 0); transform:translate3d(3px,-1px,0); opacity:.85; }
+  51.7%,100% { clip-path:inset(0 0 100% 0); transform:none; opacity:0; }
+}
+@keyframes glitch-red-cycle {
+  0% { clip-path:inset(0); transform:translate3d(-6px,0,0); opacity:.55; }
+  1.5%,49.9% { clip-path:inset(0 0 100% 0); transform:none; opacity:0; }
+  50% { clip-path:inset(68% 0 10% 0); transform:translate3d(4px,1px,0); opacity:.85; }
+  50.4% { clip-path:inset(8% 0 62% 0); transform:translate3d(-4px,-1px,0); opacity:.85; }
+  50.8% { clip-path:inset(40% 0 30% 0); transform:translate3d(4px,0,0); opacity:.85; }
+  51.2% { clip-path:inset(78% 0 6% 0); transform:translate3d(-3px,1px,0); opacity:.85; }
+  51.7%,100% { clip-path:inset(0 0 100% 0); transform:none; opacity:0; }
 }
 /* Transition courte : le contenu reste lisible dès le premier frame. */
 @keyframes page-fade-in {
@@ -444,41 +466,6 @@ td { color:var(--color-ink-soft); }
 
 /* ===== MOTION ===== */
 
-/* Vrai glitch sur les titres — piloté par glitch-controller.tsx, déclenché toutes
-   les 10s (bien après le LCP, donc clip-path/copies RGB sans coût au chargement).
-   Deux copies décalées (cyan/rouge) se déchirent en bandes autour du titre ;
-   le texte de base reste net. data-text est posé par le contrôleur. */
-.glitch-title { position:relative; }
-.glitch-title.glitching::before,
-.glitch-title.glitching::after {
-  content:attr(data-text);
-  position:absolute; inset:0; z-index:1;
-  text-shadow:none; pointer-events:none; user-select:none;
-}
-.glitch-title.glitching::before {
-  color:var(--color-cyan);
-  animation:glitch-cyan .5s linear 1;
-}
-.glitch-title.glitching::after {
-  color:var(--color-red);
-  animation:glitch-red .5s linear 1;
-}
-@keyframes glitch-cyan {
-  0%   { clip-path:inset(0 0 82% 0);  transform:translate(-4px,-1px); opacity:.85; }
-  20%  { clip-path:inset(28% 0 45% 0); transform:translate(4px,1px); }
-  40%  { clip-path:inset(58% 0 12% 0); transform:translate(-4px,0); }
-  60%  { clip-path:inset(12% 0 68% 0); transform:translate(3px,-1px); }
-  80%  { clip-path:inset(44% 0 32% 0); transform:translate(-3px,1px); opacity:.85; }
-  100% { clip-path:inset(0 0 100% 0);  transform:translate(0); opacity:0; }
-}
-@keyframes glitch-red {
-  0%   { clip-path:inset(68% 0 10% 0); transform:translate(4px,1px); opacity:.85; }
-  25%  { clip-path:inset(8% 0 62% 0);  transform:translate(-4px,-1px); }
-  50%  { clip-path:inset(40% 0 30% 0); transform:translate(4px,0); }
-  75%  { clip-path:inset(78% 0 6% 0);  transform:translate(-3px,1px); }
-  100% { clip-path:inset(0 0 100% 0);  transform:translate(0); opacity:0; }
-}
-
 /* ===== RESPONSIVE ===== */
 @media (max-width:960px) {
   .hero, .case-hero, .content-grid, .section-head { grid-template-columns:1fr; }
@@ -528,8 +515,7 @@ td { color:var(--color-ink-soft); }
 }
 @media (prefers-reduced-motion:reduce) {
   html { scroll-behavior:auto; }
-  .chroma-layer { display:none; }
-  .glitch-title.glitching::before, .glitch-title.glitching::after { display:none; }
+  .chroma-title::before, .chroma-title::after { display:none; }
   .proof-card { transition:none; }
   .proof-card::after, .case-card::after { display:none; }
   .nixie-clock { animation:none; }

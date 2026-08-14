@@ -3,20 +3,15 @@ type AnimatedTitleProps = {
   glitch?: boolean;
 };
 
-// Le texte réel reste visible dès la première frame. Les deux copies colorées
-// sont des pseudo-éléments animés uniquement avec transform + opacity.
+// Le texte réel reste unique et visible dès la première frame. Les copies
+// colorées viennent de pseudo-éléments CSS alimentés côté serveur.
 export default function AnimatedTitle({ children, glitch = false }: AnimatedTitleProps) {
   return (
     <h1
       className="chroma-title"
+      data-text={children}
       data-glitch={glitch ? "true" : undefined}
     >
-      <span className="chroma-layer chroma-layer-cyan" aria-hidden="true">
-        {children}
-      </span>
-      <span className="chroma-layer chroma-layer-red" aria-hidden="true">
-        {children}
-      </span>
       <span className="title-text">{children}</span>
     </h1>
   );

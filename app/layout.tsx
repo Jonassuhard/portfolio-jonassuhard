@@ -4,16 +4,13 @@ import Link from "next/link";
 import {
   Cormorant_Garamond,
   Courier_Prime,
-  Special_Elite,
-  Newsreader,
-  IBM_Plex_Mono
+  Special_Elite
 } from "next/font/google";
 import localFont from "next/font/local";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { rootJsonLd } from "@/lib/json-ld";
 import { site, siteUrl } from "@/lib/projects";
-import GlitchController from "./glitch-controller";
 import NixieClock from "./nixie-clock";
 import SiteNav from "./site-nav";
 import ConsentBanner from "./consent-banner";
@@ -47,20 +44,6 @@ const fontType = Special_Elite({
   subsets: ["latin"],
   weight: "400",
   variable: "--font-type",
-  display: "swap",
-  preload: false
-});
-const fontItalic = Newsreader({
-  subsets: ["latin"],
-  style: ["italic"],
-  variable: "--font-italic",
-  display: "swap",
-  preload: false
-});
-const fontData = IBM_Plex_Mono({
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  variable: "--font-data",
   display: "swap",
   preload: false
 });
@@ -104,7 +87,7 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  const fonts = `${fontTitle.variable} ${fontBody.variable} ${fontType.variable} ${fontItalic.variable} ${fontData.variable} ${fontClock.variable}`;
+  const fonts = `${fontTitle.variable} ${fontBody.variable} ${fontType.variable} ${fontClock.variable}`;
   return (
     <html lang="fr" className={fonts} data-scroll-behavior="smooth">
       <body>
@@ -175,7 +158,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <span>jonassuhard.com</span>
           </div>
         </footer>
-        <GlitchController />
         <ConsentBanner />
         {hasVercelObservability ? (
           <>

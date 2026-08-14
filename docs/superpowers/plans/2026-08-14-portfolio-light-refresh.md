@@ -103,27 +103,27 @@ git commit -m "perf(seo): trim root structured data"
 - Consumes: `AnimatedTitle({ children, glitch })` inchangé pour les pages.
 - Produces: un seul nœud texte visible, `data-text` serveur et glitch CSS périodique.
 
-- [ ] **Step 1: Écrire les tests rouges**
+- [x] **Step 1: Écrire les tests rouges**
 
 Exiger l'absence de `Newsreader`, `IBM_Plex_Mono` et `GlitchController`, un seul `.title-text`, `data-text={children}` lorsque `glitch` est vrai, et une désactivation en mouvement réduit.
 
-- [ ] **Step 2: Vérifier l'échec**
+- [x] **Step 2: Vérifier l'échec**
 
 Run: `npx tsx --test tests/performance.test.ts`
 
 Expected: FAIL sur les imports de polices et le contrôleur.
 
-- [ ] **Step 3: Implémenter**
+- [x] **Step 3: Implémenter**
 
 Supprimer les deux imports `next/font`, faire pointer `--ft-data` vers `--ft-body` et `--ft-italic` vers Georgia, rendre un seul span visible et déplacer le glitch sur `::before` et `::after`.
 
-- [ ] **Step 4: Vérifier**
+- [x] **Step 4: Vérifier**
 
 Run: `npx tsx --test tests/performance.test.ts && npm run typecheck`
 
 Expected: PASS, aucun import orphelin et aucun changement d'API des pages.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add app/layout.tsx app/animated-title.tsx app/globals.css tests/performance.test.ts
