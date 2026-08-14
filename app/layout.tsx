@@ -11,7 +11,7 @@ import {
 import localFont from "next/font/local";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { knowledgeGraphJsonLd } from "@/lib/json-ld";
+import { rootJsonLd } from "@/lib/json-ld";
 import { site, siteUrl } from "@/lib/projects";
 import GlitchController from "./glitch-controller";
 import NixieClock from "./nixie-clock";
@@ -87,6 +87,7 @@ export const metadata: Metadata = {
   alternates: {
     types: {
       "application/json": "/profile.json",
+      "application/ld+json": "/knowledge-graph.json",
       "text/markdown": "/profile.md"
     }
   },
@@ -110,7 +111,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <BlueprintBg />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(knowledgeGraphJsonLd()) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(rootJsonLd()) }}
         />
         <header className="site-header">
           <div className="titlebar">

@@ -158,6 +158,13 @@ export function knowledgeGraphJsonLd() {
   };
 }
 
+export function rootJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@graph": [withoutContext(personJsonLd()), withoutContext(websiteJsonLd())]
+  };
+}
+
 // Article : rend une page knowledge citable (auteur, dates, langue) pour Google et les LLM.
 export function knowledgeJsonLd(page: {
   slug: string;

@@ -63,27 +63,27 @@ git commit -m "docs(design): restore Archive Worldline source of truth"
 - Consumes: `personJsonLd()`, `websiteJsonLd()` et `knowledgeGraphJsonLd()`.
 - Produces: `rootJsonLd()` avec exactement `Person` et `WebSite`.
 
-- [ ] **Step 1: Écrire le test rouge**
+- [x] **Step 1: Écrire le test rouge**
 
 Tester que `rootJsonLd()` expose deux nœuds `Person` et `WebSite`, que `knowledgeGraphJsonLd()` conserve les projets et que le layout appelle la fonction compacte.
 
-- [ ] **Step 2: Vérifier l'échec**
+- [x] **Step 2: Vérifier l'échec**
 
 Run: `npx tsx --test tests/seo.test.ts`
 
 Expected: FAIL car `rootJsonLd` n'existe pas.
 
-- [ ] **Step 3: Implémenter la fonction compacte**
+- [x] **Step 3: Implémenter la fonction compacte**
 
 Ajouter `rootJsonLd()` dans `lib/json-ld.ts`, l'utiliser dans `app/layout.tsx` et déclarer `/knowledge-graph.json` dans les alternates de métadonnées.
 
-- [ ] **Step 4: Vérifier le contrat**
+- [x] **Step 4: Vérifier le contrat**
 
 Run: `npx tsx --test tests/seo.test.ts && npm run typecheck`
 
 Expected: PASS et zéro erreur TypeScript.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add lib/json-ld.ts app/layout.tsx tests/seo.test.ts
