@@ -209,7 +209,41 @@ git add app/projets/page.tsx app/globals.css tests/content.test.ts tests/privacy
 git commit -m "fix(ui): reduce secondary project density"
 ```
 
-### Task 6: Validation intégrale
+### Task 6: Dépendances de production corrigées
+
+**Files:**
+- Modify: `package.json`
+- Modify: `package-lock.json`
+- Modify: `docs/superpowers/specs/2026-08-14-portfolio-light-refresh-design.md`
+
+**Interfaces:**
+- Consumes: Next.js 16.2.9 et PostCSS 8.5.15 résolus avant correction.
+- Produces: Next.js 16.3.1, PostCSS 8.5.26 et transitives corrigées sans changement de ligne majeure.
+
+- [x] **Step 1: Capturer l'échec sécurité**
+
+Run: `npm audit --omit=dev`
+
+Résultat initial : FAIL, quatre vulnérabilités élevées dans Next, PostCSS, Sharp et Nanoid.
+
+- [x] **Step 2: Mettre à jour les versions corrigées**
+
+Modifier `next` vers `^16.3.1`, l'override `postcss` vers `^8.5.26`, puis exécuter `npm install`.
+
+- [x] **Step 3: Vérifier audit, tests et build**
+
+Run: `npm audit --omit=dev && npm run check && npm run build`
+
+Résultat : zéro vulnérabilité, 62 tests verts et 37 pages générées avec Next.js 16.3.1.
+
+- [x] **Step 4: Commit**
+
+```bash
+git add package.json package-lock.json docs/superpowers
+git commit -m "fix(security): upgrade patched Next.js release"
+```
+
+### Task 7: Validation intégrale
 
 **Files:**
 - Modify: `docs/superpowers/plans/2026-08-14-portfolio-light-refresh.md`

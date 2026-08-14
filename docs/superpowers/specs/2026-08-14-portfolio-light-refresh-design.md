@@ -14,6 +14,7 @@ Rendre le portfolio plus rapide à comprendre et à charger sans changer son ide
 6. La liste des projets applique la même densité aux preuves principales et aux travaux secondaires.
 7. La bannière de consentement mobile est correcte mais occupe plus de hauteur que nécessaire.
 8. La charte existante tient en onze lignes et ne permet pas une reprise fiable du chantier.
+9. La résolution initiale Next.js 16.2.9 expose quatre vulnérabilités élevées via Next, PostCSS, Sharp et Nanoid.
 
 ## Décisions
 
@@ -27,6 +28,7 @@ Rendre le portfolio plus rapide à comprendre et à charger sans changer son ide
 - Utiliser `cardLine ?? proofLine ?? summary` sur les niveaux 2 et 3 ; ne supprimer aucun contenu des pages projet.
 - Compacter la bannière de consentement sans toucher à sa logique ni aux cibles tactiles de 44 px.
 - Ne modifier ni la promesse, ni les CTA, ni les données de projet hors format court déjà disponible.
+- Passer à Next.js 16.3.1 et PostCSS 8.5.26, versions corrigées disponibles dans la même ligne majeure.
 
 ## Budgets et critères
 
