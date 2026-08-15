@@ -36,7 +36,7 @@
       "stack": ["Next.js", "Supabase", "Clerk", "Vercel", "LLM"],
       "case_study": "/projets/les-petites-griffes",
       "markdown": "/projects/les-petites-griffes.md",
-      "evidence": "L'audit live du 2026-08-01 couvre 18 pages publiques contrôlées à 390 px et 1440 px, 36 captures pleine page, 30 images uniques chargées sur le live et cinq scores de performance Lighthouse mobile : Accueil 91, Galerie 87, Compose 97, Méthode 97, Le studio 66. Preuve privée montrable en entretien, pas une source publique autonome.",
+      "evidence": "L'audit live du 2026-08-01 couvre 18 pages publiques contrôlées à 390 px et 1440 px, 36 captures pleine page, 30 images uniques chargées sur le live et cinq scores de performance Lighthouse mobile : Accueil 91, Galerie 87, Compose 97, Méthode 97, Le studio 66.",
       "limits": "Projet familial non facturé ; aucune vente à un client externe n'est prouvée ; mesures datées du 2026-08-01, non continues.",
       "confidentiality": "données privées anonymisées",
       "repo_status": "privé — code et données client"
