@@ -160,11 +160,11 @@ export const projects: Project[] = [
     repoStatus: "Privé, code et données client",
     liveLabel: "Live · URL communiquée en entretien",
     evidenceNote:
-      "Captures anonymisées, démo privée et rapport Lighthouse interne daté du 29/06/2026. Les scores ne sont pas vérifiables publiquement sans ce rapport.",
+      "Captures anonymisées, démo privée et audit live daté du 2026-08-01. L'audit complet reste une preuve privée montrable en entretien, pas une source publique autonome.",
     metaDescription:
-      "Site vitrine live d'un studio de nail art : Next.js, CMS maison et assistant IA cadré. Rapport Lighthouse interne du 29/06/2026 : SEO 100.",
+      "Site vitrine live d'un studio de nail art : Next.js, CMS maison, assistant IA cadré et audit live du 2026-08-01 sur 18 pages publiques.",
     cardLine:
-      "Site client live, CMS maison, SEO local et assistant IA cadré. Mesures Lighthouse issues d'un rapport interne daté du 29/06/2026.",
+      "Site live, CMS maison, SEO local et assistant IA cadré. Audit du 2026-08-01 : 18 pages publiques, 36 captures et cinq scores Lighthouse mobile.",
     architecture: [
       "Front Next.js (React) rendu et déployé sur Vercel.",
       "Contenus dynamiques (galerie, prestations, tarifs, FAQ) servis depuis Supabase, éditables via un CMS maison protégé.",
@@ -181,7 +181,7 @@ export const projects: Project[] = [
       "Taux d'usage de l'assistant côté visiteurs : non instrumenté."
     ],
     proofLine:
-      "Site client live en production, URL et démo communiquées en entretien. Rapport Lighthouse interne du 29/06/2026 : mobile 88 / SEO 100 / accessibilité 93.",
+      "L'audit live du 2026-08-01 couvre 18 pages publiques contrôlées à 390 px et 1440 px, 36 captures pleine page, 30 images uniques chargées sur le live et cinq scores de performance Lighthouse mobile : Accueil 91, Galerie 87, Compose 97, Méthode 97, Le studio 66.",
     summary:
       "Site vitrine d'un studio de nail art : front Next.js, un CMS maison pour que la gérante édite seule sa galerie, ses tarifs et sa FAQ, et un assistant IA cadré sur ses prix et ses disponibilités.",
     stack: ["Next.js", "React", "Supabase", "Clerk", "Vercel", "LLM"],
@@ -220,12 +220,11 @@ export const projects: Project[] = [
       "SEO local, JSON-LD, sitemap et contenus structurants."
     ],
     results: [
-      "Rapport Lighthouse interne du 29/06/2026 : mobile 88, SEO 100, accessibilité 93.",
+      "L'audit live du 2026-08-01 couvre 18 pages publiques contrôlées à 390 px et 1440 px, 36 captures pleine page, 30 images uniques chargées sur le live et cinq scores de performance Lighthouse mobile : Accueil 91, Galerie 87, Compose 97, Méthode 97, Le studio 66.",
       "Site et back-office livrés pour permettre à la gérante de mettre ses contenus à jour."
     ],
     limits: [
-      "Projet d'une TPE locale : vrai contexte de production, à petite échelle.",
-      "Mesure business encore à consolider."
+      "Projet familial non facturé ; aucune vente à un client externe n'est prouvée ; mesures datées du 2026-08-01, non continues."
     ],
     gallery: [
       { src: "/assets/proof/les-petites-griffes/lpg-home.webp", caption: "Home du studio de nail art, front Next.js déployé sur Vercel.", width: 1400, height: 798 },

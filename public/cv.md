@@ -25,7 +25,7 @@ Profil hybride marketing, IA générative et développement web. Je transforme d
 ### Projets web, SEO & IA appliquée · depuis 2021 · entreprise individuelle enregistrée en 2026
 - Création de sites web (WordPress, Next.js), SEO local et contenus ; déploiement et maintenance.
 - Automatisations et intégration d'outils IA dans les workflows clients (assistants cadrés, QA).
-- Exemple : Les Petites Griffes, site live, CMS maison, assistant IA ; rapport Lighthouse interne du 29/06/2026 : mobile 88 / SEO 100 / accessibilité 93.
+- Exemple : Les Petites Griffes. L'audit live du 2026-08-01 couvre 18 pages publiques contrôlées à 390 px et 1440 px, 36 captures pleine page, 30 images uniques chargées sur le live et cinq scores de performance Lighthouse mobile : Accueil 91, Galerie 87, Compose 97, Méthode 97, Le studio 66. Projet familial non facturé ; aucune vente à un client externe n'est prouvée ; mesures datées du 2026-08-01, non continues.
 
 ### Co-fondateur & responsable marketing · HoopSphere · projet MBA · 2024–2026
 - Marketing, acquisition et contenu ; business plan et projections financières (projet MBA à 4 associés).

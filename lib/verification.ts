@@ -1,5 +1,5 @@
-export const contentReviewDate = "2026-07-20";
-export const contentReviewDateLabel = "20 juillet 2026";
+export const contentReviewDate = "2026-08-15";
+export const contentReviewDateLabel = "15 août 2026";
 
 export type ClaimStatus =
   | "publicly-verified"
@@ -90,12 +90,12 @@ export const verificationItems: VerificationItem[] = [
     note: "Aucun volume de clients ni résultat commercial n'est revendiqué dans le portfolio."
   },
   {
-    id: "lpg-lighthouse",
-    claim: "Rapport Lighthouse Les Petites Griffes : mobile 88, SEO 100, accessibilité 93, daté du 29/06/2026.",
+    id: "lpg-live-audit-2026-08-01",
+    claim: "L'audit live du 2026-08-01 couvre 18 pages publiques contrôlées à 390 px et 1440 px, 36 captures pleine page, 30 images uniques chargées sur le live et cinq scores de performance Lighthouse mobile : Accueil 91, Galerie 87, Compose 97, Méthode 97, Le studio 66.",
     scope: "Projet",
     status: "private-evidence",
     checkedAt: contentReviewDate,
-    note: "Les scores sont explicitement présentés comme issus d'un rapport interne montrable en entretien."
+    note: "Projet familial non facturé ; aucune vente à un client externe n'est prouvée ; mesures datées du 2026-08-01, non continues."
   },
   {
     id: "educool-classroom",

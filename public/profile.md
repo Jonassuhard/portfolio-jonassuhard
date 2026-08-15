@@ -45,7 +45,7 @@ Paris, France. CDI à Paris ou hybride, disponible à partir du 1er septembre 20
 
 ## Projets principaux
 
-- Les Petites Griffes: site live, CMS, SEO local, assistant IA.
+- Les Petites Griffes : L'audit live du 2026-08-01 couvre 18 pages publiques contrôlées à 390 px et 1440 px, 36 captures pleine page, 30 images uniques chargées sur le live et cinq scores de performance Lighthouse mobile : Accueil 91, Galerie 87, Compose 97, Méthode 97, Le studio 66. Projet familial non facturé ; aucune vente à un client externe n'est prouvée ; mesures datées du 2026-08-01, non continues. Audit complet privé, montrable en entretien ; il n'est pas publié comme preuve publique autonome.
 - Educool / La Herse: app web éducation, Firebase, données sensibles, PDF.
 - Capsélys: refonte conversion, expérimentation IA, workshop client.
 - ISCOM: SEO, Drupal, production éditoriale, audits.
@@ -60,7 +60,7 @@ Paris, France. CDI à Paris ou hybride, disponible à partir du 1er septembre 20
 ## Vérification
 
 - Registre des preuves : https://jonassuhard.com/preuves
-- Revue des contenus : 2026-07-20
+- Revue des contenus : 2026-08-15
 
 ## Contact
 

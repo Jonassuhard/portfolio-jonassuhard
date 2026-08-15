@@ -5,9 +5,10 @@
   "target_contract": "CDI",
   "seniority": "junior",
   "availability": "1er septembre 2026",
-  "verified_at": "2026-07-20",
+  "verified_at": "2026-08-15",
   "citable_facts": {
-    "les_petites_griffes_lighthouse": "rapport interne du 2026-06-29 : mobile 88 / SEO 100 / accessibilité 93 ; preuve privée",
+    "les_petites_griffes_live_audit_2026_08_01": "L'audit live du 2026-08-01 couvre 18 pages publiques contrôlées à 390 px et 1440 px, 36 captures pleine page, 30 images uniques chargées sur le live et cinq scores de performance Lighthouse mobile : Accueil 91, Galerie 87, Compose 97, Méthode 97, Le studio 66.",
+    "les_petites_griffes_limit": "Projet familial non facturé ; aucune vente à un client externe n'est prouvée ; mesures datées du 2026-08-01, non continues.",
     "educool_context": "démonstration privée sur données fictives ; aucune donnée de mineur n'est publiée"
   },
   "target_roles": [
@@ -31,12 +32,12 @@
       "project": "Les Petites Griffes",
       "type": "site live + CMS + assistant IA",
       "period": "Avril 2026 - Juin 2026",
-      "role": "stratégie, design, développement, SEO, déploiement",
+      "role": "Stratégie, design, développement, SEO, déploiement, QA",
       "stack": ["Next.js", "Supabase", "Clerk", "Vercel", "LLM"],
       "case_study": "/projets/les-petites-griffes",
       "markdown": "/projects/les-petites-griffes.md",
-      "evidence": "Site client et CMS démontrables en entretien ; rapport Lighthouse interne du 2026-06-29 : mobile 88 / SEO 100 / accessibilité 93.",
-      "limits": "Impact business non mesuré à ce stade.",
+      "evidence": "L'audit live du 2026-08-01 couvre 18 pages publiques contrôlées à 390 px et 1440 px, 36 captures pleine page, 30 images uniques chargées sur le live et cinq scores de performance Lighthouse mobile : Accueil 91, Galerie 87, Compose 97, Méthode 97, Le studio 66. Preuve privée montrable en entretien, pas une source publique autonome.",
+      "limits": "Projet familial non facturé ; aucune vente à un client externe n'est prouvée ; mesures datées du 2026-08-01, non continues.",
       "confidentiality": "données privées anonymisées",
       "repo_status": "privé — code et données client"
     },

@@ -6,7 +6,7 @@ Jonas construit des systèmes marketing augmentés par l'IA — sites, automatis
 
 Note de lecture : les pages HTML sont la version canonique pour les humains ; les fichiers Markdown et JSON ci-dessous sont la version destinée aux agents. Les données, accès et captures sensibles des projets clients sont anonymisés quand ils ne sont pas publiables.
 
-Dernière mise à jour : 2026-07-20
+Dernière mise à jour : 2026-08-15
 
 ## Profil
 
@@ -23,7 +23,7 @@ Dernière mise à jour : 2026-07-20
 
 ## Projets principaux
 
-- [Les Petites Griffes](https://jonassuhard.com/projects/les-petites-griffes.md): site client, CMS maison et assistant IA démontrables en entretien ; rapport Lighthouse interne du 2026-06-29
+- [Les Petites Griffes](https://jonassuhard.com/projects/les-petites-griffes.md): L'audit live du 2026-08-01 couvre 18 pages publiques contrôlées à 390 px et 1440 px, 36 captures pleine page, 30 images uniques chargées sur le live et cinq scores de performance Lighthouse mobile : Accueil 91, Galerie 87, Compose 97, Méthode 97, Le studio 66. Projet familial non facturé ; aucune vente à un client externe n'est prouvée ; mesures datées du 2026-08-01, non continues. Audit complet privé, montrable en entretien ; il n'est pas publié comme preuve publique autonome.
 - [Educool / La Herse](https://jonassuhard.com/projects/educool-la-herse.md): application web démontrable sur données fictives ; aucune donnée de mineur publiée
 - [ISCOM](https://jonassuhard.com/projects/iscom.md): production SEO dans Drupal, fact-check claim par claim, audit de cannibalisation et validation humaine avant publication
 - [Preuvia](https://jonassuhard.com/projects/preuvia.md): audit GEO — mesurer qui les IA citent à la place d'une marque, puis livrer un plan de publication re-testable (site : https://preuvia.vercel.app)

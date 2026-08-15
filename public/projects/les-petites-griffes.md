@@ -7,9 +7,9 @@ Stack : Next.js, React, Supabase, Clerk, Vercel, LLM.
 Statut : Prod live.
 Niveau de preuve : Démo privée.
 
-En bref : Site client live en production, URL et démo communiquées en entretien. Rapport Lighthouse interne du 29/06/2026 : mobile 88 / SEO 100 / accessibilité 93.
+En bref : L'audit live du 2026-08-01 couvre 18 pages publiques contrôlées à 390 px et 1440 px, 36 captures pleine page, 30 images uniques chargées sur le live et cinq scores de performance Lighthouse mobile : Accueil 91, Galerie 87, Compose 97, Méthode 97, Le studio 66.
 
-Preuves : Captures anonymisées, démo privée et rapport Lighthouse interne daté du 29/06/2026. Les scores ne sont pas vérifiables publiquement sans ce rapport.
+Preuves : Captures anonymisées, démo privée et audit live daté du 2026-08-01. L'audit complet reste une preuve privée montrable en entretien, pas une source publique autonome.
 
 ## Problème
 
@@ -23,5 +23,4 @@ Site vitrine d'un studio de nail art : front Next.js, un CMS maison pour que la 
 
 ## Limites
 
-- Projet d'une TPE locale : vrai contexte de production, à petite échelle.
-- Mesure business encore à consolider.
+- Projet familial non facturé ; aucune vente à un client externe n'est prouvée ; mesures datées du 2026-08-01, non continues.

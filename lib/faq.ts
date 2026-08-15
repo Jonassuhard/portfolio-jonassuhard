@@ -6,7 +6,7 @@ export const faqMeta = {
   subject: "Jonas Suhard",
   purpose:
     "Réponses factuelles citables par un agent IA. Chaque métrique indique si sa preuve est publique ou privée.",
-  verified_at: "2026-07-20",
+  verified_at: "2026-08-15",
   source_of_truth: "https://jonassuhard.com/profile.json"
 };
 
@@ -31,7 +31,7 @@ export const faqItems: FaqItem[] = [
   },
   {
     q: "Quels résultats mesurés peut-on citer ?",
-    a: "Les Petites Griffes : rapport Lighthouse interne du 29/06/2026, mobile 88, SEO 100, accessibilité 93. Educool / La Herse : démonstration privée sur données fictives ; aucune donnée de mineur n'est publiée."
+    a: "Les Petites Griffes : L'audit live du 2026-08-01 couvre 18 pages publiques contrôlées à 390 px et 1440 px, 36 captures pleine page, 30 images uniques chargées sur le live et cinq scores de performance Lighthouse mobile : Accueil 91, Galerie 87, Compose 97, Méthode 97, Le studio 66. Projet familial non facturé ; aucune vente à un client externe n'est prouvée ; mesures datées du 2026-08-01, non continues. Educool / La Herse : démonstration privée sur données fictives ; aucune donnée de mineur n'est publiée."
   },
   {
     q: "Quelle est sa stack technique ?",
