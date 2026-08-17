@@ -258,7 +258,7 @@ Run: `npm run check && npm run build`
 
 Expected: tous les tests, contenus, liens, types et routes passent.
 
-Résultat : 64 tests, 12 projets, 79 liens internes et 37 pages générées avec Next.js 16.3.1.
+Résultat final du 17 août 2026 : 67 tests, 12 projets, 79 liens internes et 37 pages générées avec Next.js 16.3.1.
 
 - [x] **Step 2: Vérifier sécurité et dépendances**
 
@@ -266,7 +266,7 @@ Run: `npm audit --omit=dev && gitleaks detect --no-banner --redact --source .`
 
 Expected: zéro vulnérabilité de production et zéro fuite.
 
-Résultat : `npm audit --omit=dev` retourne zéro vulnérabilité et Gitleaks zéro fuite sur 105 commits.
+Résultat final du 17 août 2026 : `npm audit --omit=dev` retourne zéro vulnérabilité et Gitleaks zéro fuite sur 108 commits.
 
 - [x] **Step 3: Tester le rendu local**
 
@@ -274,24 +274,26 @@ Démarrer `npm run start -- -p 3027`, parcourir `/`, `/recruteurs`, `/projets`, 
 
 Expected: zéro débordement horizontal, zéro erreur console, contenu non masqué, menu utilisable et consentement compact.
 
-Résultat : 21 combinaisons page/viewport sans débordement ; zéro erreur console ; six liens du menu visibles après 220 ms ; H1 unique dans l'arbre d'accessibilité ; décodeur testé avec un résultat complet.
+Résultat final du 17 août 2026 : 21 combinaisons page/viewport sans débordement ni erreur console ; six liens du menu visibles après 220 ms ; H1 unique ; trois engrenages rendus ; aucune requête externe avant consentement. Le décodeur produit sept sections, douze titres et place le focus sur le résultat.
 
 - [x] **Step 4: Mesurer Lighthouse**
 
-Run: `npx lighthouse http://localhost:3027 --only-categories=performance,accessibility,best-practices,seo --form-factor=mobile --output=json --output-path=/tmp/portfolio-lighthouse.json --chrome-flags='--headless=new --no-sandbox'`
+Run: trois passes distinctes de `lighthouse http://localhost:3027 --only-categories=performance,accessibility,best-practices,seo --form-factor=mobile --output=json --chrome-flags='--headless --no-sandbox'`, avec contrôle de `finalDisplayedUrl` et médiane.
 
 Expected: performance au moins 95 ; accessibilité, bonnes pratiques et SEO à 100 ; LCP au plus 2,5 s ; CLS inférieur à 0,05 ; TBT inférieur à 100 ms.
 
-Résultat final : performance 96, accessibilité 100, bonnes pratiques 100, SEO 100 ; FCP 1,06 s, LCP simulé 2,75 s, TBT 30 ms, CLS 0. Le poids passe de 386 à 271 Ko et les requêtes de 26 à 17. Le seuil LCP de 2,5 s reste manqué de 0,25 s ; il n'a pas été poursuivi au prix d'une dégradation de la hiérarchie ou de la promesse.
+Résultat final du 17 août 2026 : scores 95/97/98 en performance et 100/100/100 pour accessibilité, bonnes pratiques et SEO sur chaque passe. Médiane : LCP simulé 2,466 s, TBT 65 ms, CLS 0, transfert 240,2 Kio, HTML 38,8 Kio et 16 requêtes. Les seuils sont atteints sans retirer Cormorant Garamond, Courier Prime, le blueprint ni les animations.
 
 - [x] **Step 5: Vérifier les endpoints agents et les headers**
 
-Contrôler `/llms.txt`, `/profile.json`, `/claims.json`, `/knowledge-graph.json`, `/sitemap.xml`, CSP, HSTS, X-Content-Type-Options, Referrer-Policy et Permissions-Policy.
+Contrôler `/llms.txt`, `/profile.json`, `/claims.json`, `/verification.json`, `/knowledge-graph.json`, `/sitemap.xml`, `/robots.txt`, CSP, HSTS, X-Content-Type-Options, Referrer-Policy et Permissions-Policy.
 
 Expected: réponses 200, JSON valide, graphe complet disponible et headers présents.
 
-Résultat : six endpoints agents/crawl en 200 et JSON valides ; `Person` + `WebSite` uniquement dans le HTML ; graphe complet à 20 nœuds sur `/knowledge-graph.json` ; alternate explicite présent ; CSP, HSTS, nosniff, DENY, Referrer-Policy et Permissions-Policy déclarés par le projet.
+Résultat final du 17 août 2026 : sept endpoints agents/crawl en 200 avec MIME correct et JSON valides ; graphe racine limité à `Person` + `WebSite` ; graphe complet disponible sur `/knowledge-graph.json` ; alternate explicite présent ; CSP, HSTS, nosniff, DENY, Referrer-Policy et Permissions-Policy déclarés par le projet.
 
 - [x] **Step 6: Mettre à jour ce plan et arrêter avant publication**
 
 Cocher chaque étape prouvée, consigner les métriques finales, vérifier `git status --short --branch`, puis proposer merge local, PR ou conservation de branche. Aucun push ou déploiement implicite.
+
+Résultat : plan et charte alignés sur le build final. La branche reste locale ; aucun push, merge ou déploiement n'est effectué sans choix explicite de Jonas.

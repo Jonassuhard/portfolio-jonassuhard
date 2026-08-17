@@ -46,7 +46,7 @@ typography:
   headline-sm:
     fontFamily: Cormorant Garamond
     fontSize: 24px
-    fontWeight: 600
+    fontWeight: 700
     lineHeight: 1.18
     letterSpacing: 0em
   body-lg:
@@ -82,7 +82,7 @@ typography:
   data-md:
     fontFamily: Courier Prime
     fontSize: 12px
-    fontWeight: 700
+    fontWeight: 400
     lineHeight: 1.45
     letterSpacing: 0em
   caption:
@@ -161,6 +161,8 @@ Le corps `ink` sur `surface` doit rester supérieur à WCAG AA. Le texte `muted`
 
 Deux voix suffisent : **Cormorant Garamond** pour les titres éditoriaux et **Courier Prime** pour le corps, les données et les marques d'archive. Oslo II reste une exception locale pour l'horloge nixie. Cette discipline évite qu'une fonte décorative de 53 Ko ralentisse chaque première visite.
 
+Cormorant Garamond 700 est servi depuis un WOFF2 local sous-ensemblé au corpus français et anglais du site. Courier Prime 400 reste fourni par `next/font`. Ces deux fontes critiques sont préchargées ; aucune graisse synthétique n'est autorisée.
+
 - Les titres restent courts, fermes, avec une taille responsive bornée et sans espacement négatif.
 - Le corps conserve une hauteur de ligne généreuse pour compenser la texture monospace.
 - Les labels utilisent la casse naturelle ou des capitales courtes ; l'espacement des lettres reste à zéro.
@@ -171,7 +173,7 @@ Deux voix suffisent : **Cormorant Garamond** pour les titres éditoriaux et **Co
 
 Le contenu est centré dans une largeur maximale de **1120 px**. Les pages utilisent des bandes et sections non encartées ; les cartes sont réservées aux éléments réellement répétés : projets, preuves, résultats du décodeur et blocs comparables.
 
-La grille de fond possède des lignes mineures tous les **32 px** et majeures tous les **160 px**. Les schémas SVG sont fixes, sans interaction, plus pâles que la grille et dégagent la zone centrale. La hiérarchie est construite par l'ordre titre, promesse, preuve, détail, action.
+La grille de fond possède des lignes mineures tous les **32 px** et majeures tous les **160 px**. Les schémas SVG sont fixes, inline, sans interaction, plus pâles que la grille et dégagent la zone centrale. Leur balisage statique reste compact afin de ne pas gonfler le payload RSC. La hiérarchie est construite par l'ordre titre, promesse, preuve, détail, action.
 
 Les seuils de référence sont 430, 640, 760, 960 et 1080 px. Tout composant fixe possède des dimensions stables. Sur mobile, le header tient autour de 96 à 104 px, le menu est immédiatement compréhensible et les cibles tactiles mesurent au moins 44 px.
 

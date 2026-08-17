@@ -1,35 +1,28 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  Cormorant_Garamond,
-  Courier_Prime
-} from "next/font/google";
+import { Courier_Prime } from "next/font/google";
 import localFont from "next/font/local";
-import { Analytics } from "@vercel/analytics/next";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import { rootJsonLd } from "@/lib/json-ld";
 import { site, siteUrl } from "@/lib/projects";
 import NixieClock from "./nixie-clock";
 import SiteNav from "./site-nav";
 import ConsentBanner from "./consent-banner";
 import BlueprintBg from "./blueprint-bg";
-import PageTransition from "./page-transition";
+import Observability from "./observability";
 import "./globals.css";
 
 const hasVercelObservability = process.env.VERCEL === "1";
 
-// Seuls le titre (h1) et le corps sont préchargés : ce sont les fontes du hero.
-// Les labels réutilisent Courier Prime et l'horloge reste chargée sans preload.
-// display:optional sur les fonts du hero -> pas de swap tardif qui décale le LCP.
-// Le fallback métrique-ajusté (Georgia / Courier New) rend le premier paint, la
-// font custom prend la main dès qu'elle est en cache. Zéro CLS, LCP ≈ FCP.
-const fontTitle = Cormorant_Garamond({
-  subsets: ["latin"],
-  weight: "700",
+// La DA utilise une graisse réelle par famille : 700 pour les titres, 400 pour
+// le texte. Cela évite les synthèses et limite le chemin critique à deux fontes.
+const fontTitle = localFont({
+  src: [{ path: "./fonts/cormorant-garamond-700.woff2", weight: "700", style: "normal" }],
   variable: "--font-title",
   display: "optional",
-  preload: true
+  preload: true,
+  fallback: ["Georgia"],
+  adjustFontFallback: "Times New Roman"
 });
 const fontBody = Courier_Prime({
   subsets: ["latin"],
@@ -39,12 +32,9 @@ const fontBody = Courier_Prime({
   preload: true
 });
 const fontClock = localFont({
-  src: [
-    { path: "./fonts/oslo-ii.regular.ttf", weight: "400", style: "normal" },
-    { path: "./fonts/oslo-ii.bold.ttf", weight: "700", style: "normal" }
-  ],
+  src: [{ path: "./fonts/oslo-ii.bold.woff2", weight: "700", style: "normal" }],
   variable: "--font-clock",
-  display: "swap",
+  display: "optional",
   preload: false
 });
 // Title de la home = nom + rôle (le nom manquait du <title>, mauvais CTR SERP).
@@ -98,9 +88,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           </div>
           <SiteNav />
         </header>
-        <main>
-          <PageTransition>{children}</PageTransition>
-        </main>
+        <main>{children}</main>
         <footer className="site-footer">
           <div className="foot-top">
             <div className="foot-id">
@@ -154,12 +142,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           </div>
         </footer>
         <ConsentBanner />
-        {hasVercelObservability ? (
-          <>
-            <Analytics />
-            <SpeedInsights />
-          </>
-        ) : null}
+        {hasVercelObservability ? <Observability /> : null}
       </body>
     </html>
   );

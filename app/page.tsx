@@ -24,8 +24,10 @@ export default function HomePage() {
             </p>
             <p className="lead">
               Je transforme des besoins marketing et opérationnels en outils web,
-              automatisations et workflows IA mesurables. Je documente les choix
-              pour qu'une équipe puisse reprendre le travail.
+              automatisations et workflows IA mesurables.
+            </p>
+            <p className="hero-human">
+              Je documente les choix pour qu'une équipe puisse reprendre le travail.
             </p>
           </div>
           <div className="button-row">

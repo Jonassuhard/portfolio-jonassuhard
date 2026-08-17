@@ -65,3 +65,18 @@ test("les projets secondaires utilisent une preuve courte sans perdre leur déta
   );
   assert.match(page, /group\.tier === 1 \? "case-grid" : "case-grid case-grid-compact"/);
 });
+
+test("la source machine qualifie l'audit LPG comme preuve privée", () => {
+  const profile = JSON.parse(
+    readFileSync(new URL("../public/profile.json", import.meta.url), "utf8")
+  );
+  const fact = profile.citable_facts.les_petites_griffes_live_audit_2026_08_01;
+  const project = profile.projects.find(
+    (item: { project: string }) => item.project === "Les Petites Griffes"
+  );
+
+  assert.equal(fact.status, "private-evidence");
+  assert.equal(fact.verification_id, "lpg-live-audit-2026-08-01");
+  assert.equal(project.evidence_status, "private-evidence");
+  assert.equal(project.verification_id, "lpg-live-audit-2026-08-01");
+});

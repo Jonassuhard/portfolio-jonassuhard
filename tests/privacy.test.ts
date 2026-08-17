@@ -21,4 +21,6 @@ test("la bannière mobile reste compacte avec deux actions tactiles", () => {
   assert.equal((banner.match(/onClick=\{\(\) => decide\("(?:denied|granted)"\)\}/g) ?? []).length, 2);
   assert.match(css, /@media \(max-width:640px\)[\s\S]*?\.consent-inner \{ padding:10px; grid-template-columns:1fr; gap:8px; \}/);
   assert.match(css, /\.consent-actions \.button \{[^}]*min-height:44px/);
+  assert.match(css, /\.foot-link-btn \{[^}]*min-height:44px/);
+  assert.match(css, /\.consent-toggle \{[^}]*min-height:44px/);
 });
