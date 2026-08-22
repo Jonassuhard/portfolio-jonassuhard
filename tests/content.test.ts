@@ -51,10 +51,14 @@ test("Cortex Bridge reste une preuve logicielle publique et qualifiée", () => {
   assert.ok(cortex);
   assert.equal(cortex.evidenceLevel, "public");
   assert.ok(cortex.stack.includes("Next.js"));
-  assert.match(cortex.evidenceNote ?? "", /431 tests backend/);
+  assert.match(cortex.evidenceNote ?? "", /434 tests backend/);
   assert.ok(release);
   assert.equal(release.status, "publicly-verified");
   assert.equal(release.checkedAt, "2026-08-22");
+  assert.equal(
+    release.sourceHref,
+    "https://github.com/Jonassuhard/cortex-bridge/blob/64af9ce1e88dea8404acb11893eb96d75dd1baaa/docs/verification/v0.5.2.json"
+  );
   assert.match(release.note, /ne prouve pas une compatibilité continue/i);
 });
 
