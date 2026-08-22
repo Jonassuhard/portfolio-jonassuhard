@@ -149,8 +149,8 @@ h1 {
   color:rgba(142,31,47,.6);
   animation:chroma-red .45s ease-out both;
 }
-.chroma-title[data-glitch="true"]::before { animation:glitch-cyan-cycle 30s linear infinite; }
-.chroma-title[data-glitch="true"]::after { animation:glitch-red-cycle 30s linear infinite; }
+.chroma-title[data-glitch="true"]::before { animation:glitch-cyan-cycle 20s linear infinite; }
+.chroma-title[data-glitch="true"]::after { animation:glitch-red-cycle 20s linear infinite; }
 @keyframes chroma-cyan {
   0% { transform:translate3d(6px,0,0); opacity:.62; }
   60% { transform:translate3d(3px,0,0); opacity:.38; }
@@ -161,7 +161,7 @@ h1 {
   60% { transform:translate3d(-3px,0,0); opacity:.32; }
   100% { transform:translate3d(-1px,0,0); opacity:0; }
 }
-/* Une entrée courte, puis une déchirure à 15 s ; le cycle recommence toutes les 30 s. */
+/* Une entrée courte, puis une déchirure post-LCP à 10 s ; cycle de 20 s. */
 @keyframes glitch-cyan-cycle {
   0% { clip-path:inset(0); transform:translate3d(6px,0,0); opacity:.62; }
   1.5%,49.9% { clip-path:inset(0 0 100% 0); transform:none; opacity:0; }

@@ -18,11 +18,11 @@
     },
     {
       "q": "Quelles sont ses preuves de travail principales ?",
-      "a": "ISCOM (SEO + Drupal + production éditoriale en contexte employeur), Les Petites Griffes (site live + CMS maison + assistant IA), Educool / La Herse (application web de classe sur Firebase) et Preuvia (audit GEO / visibilité IA)."
+      "a": "Cortex Bridge (agent local open source : extension Chrome, console et exécuteur contrôlé), Les Petites Griffes (site live + CMS maison + assistant IA), Educool / La Herse (application web de classe sur Firebase), Preuvia (audit GEO / visibilité IA) et ISCOM (SEO + Drupal + production éditoriale en contexte employeur)."
     },
     {
       "q": "Quels résultats mesurés peut-on citer ?",
-      "a": "Les Petites Griffes : L'audit live du 2026-08-01 couvre 18 pages publiques contrôlées à 390 px et 1440 px, 36 captures pleine page, 30 images uniques chargées sur le live et cinq scores de performance Lighthouse mobile : Accueil 91, Galerie 87, Compose 97, Méthode 97, Le studio 66. Projet familial non facturé ; aucune vente à un client externe n'est prouvée ; mesures datées du 2026-08-01, non continues. Educool / La Herse : démonstration privée sur données fictives ; aucune donnée de mineur n'est publiée."
+      "a": "Cortex Bridge v0.5.2 : preuve de release publique du 22/08/2026 avec 431 tests backend, 127 frontend, 56 extension, 12 E2E et 4 accessibilité sans échec ; un test E2E est ignoré et les suites automatisées ne prouvent pas une compatibilité continue avec ChatGPT. Les Petites Griffes : audit privé du 01/08/2026 couvrant 18 pages, 36 captures et cinq scores Lighthouse mobile ; projet familial non facturé, sans vente externe prouvée. Educool / La Herse : démonstration privée sur données fictives ; aucune donnée de mineur n'est publiée."
     },
     {
       "q": "Quelle est sa stack technique ?",

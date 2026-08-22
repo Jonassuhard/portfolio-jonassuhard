@@ -29,6 +29,16 @@ test("le blueprint reste inline, statique et sans requête décorative", () => {
   assert.doesNotMatch(blueprint, /Array\.from|polarPoint|radialLine/);
 });
 
+test("tous les grands titres rejouent un glitch chromatique discret après le LCP", () => {
+  const title = read("app/animated-title.tsx");
+  const css = read("app/globals.css");
+
+  assert.match(title, /glitch = true/);
+  assert.match(title, /data-glitch=\{glitch \? "true" : undefined\}/);
+  assert.match(css, /\.chroma-title\[data-glitch="true"\]::before \{ animation:glitch-cyan-cycle 20s linear infinite; \}/);
+  assert.match(css, /\.chroma-title\[data-glitch="true"\]::after \{ animation:glitch-red-cycle 20s linear infinite; \}/);
+});
+
 test("les optimisations de performance ne retirent aucune animation", () => {
   const layout = read("app/layout.tsx");
   const title = read("app/animated-title.tsx");

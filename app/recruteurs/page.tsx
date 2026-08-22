@@ -174,9 +174,8 @@ export default function RecruitersPage() {
             <h2>Trois projets qui montrent comment je travaille.</h2>
           </div>
           <p>
-            Une production SEO en entreprise avec preuve en ligne, un site client
-            livré de bout en bout, et une méthode d'audit IA sur le sujet exact
-            du poste.
+            Un produit IA open source conçu et testé de bout en bout, un site
+            client livré et une méthode d'audit IA alignée sur le poste.
           </p>
         </div>
         <div className="proof-grid">

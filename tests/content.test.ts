@@ -28,6 +28,36 @@ test("les sélections recruteur ne contiennent que des projets principaux", () =
   }
 });
 
+test("Cortex Bridge remplace ISCOM dans les sélections de trois projets", () => {
+  assert.deepEqual(
+    featuredProjects.map((project) => project.slug),
+    ["cortex-bridge", "les-petites-griffes", "educool-la-herse"]
+  );
+  assert.deepEqual(
+    recruiterFeatured.map((project) => project.slug),
+    ["cortex-bridge", "les-petites-griffes", "preuvia"]
+  );
+  assert.equal(featuredProjects.some((project) => project.slug === "iscom"), false);
+  assert.equal(recruiterFeatured.some((project) => project.slug === "iscom"), false);
+  assert.ok(projects.some((project) => project.slug === "iscom"));
+});
+
+test("Cortex Bridge reste une preuve logicielle publique et qualifiée", () => {
+  const cortex = projects.find((project) => project.slug === "cortex-bridge");
+  const release = verificationItems.find(
+    (claim) => claim.id === "cortex-bridge-release-0-5-2"
+  );
+
+  assert.ok(cortex);
+  assert.equal(cortex.evidenceLevel, "public");
+  assert.ok(cortex.stack.includes("Next.js"));
+  assert.match(cortex.evidenceNote ?? "", /431 tests backend/);
+  assert.ok(release);
+  assert.equal(release.status, "publicly-verified");
+  assert.equal(release.checkedAt, "2026-08-22");
+  assert.match(release.note, /ne prouve pas une compatibilité continue/i);
+});
+
 test("aucun projet privé ne se présente comme copie publique", () => {
   for (const project of projects.filter((item) => item.evidenceLevel !== "public")) {
     assert.doesNotMatch(project.status, /copie publique/i);
@@ -79,4 +109,21 @@ test("la source machine qualifie l'audit LPG comme preuve privée", () => {
   assert.equal(fact.verification_id, "lpg-live-audit-2026-08-01");
   assert.equal(project.evidence_status, "private-evidence");
   assert.equal(project.verification_id, "lpg-live-audit-2026-08-01");
+});
+
+test("la source machine rattache Cortex Bridge à ses preuves publiques", () => {
+  const profile = JSON.parse(
+    readFileSync(new URL("../public/profile.json", import.meta.url), "utf8")
+  );
+  const fact = profile.citable_facts.cortex_bridge_release_0_5_2;
+  const project = profile.projects.find(
+    (item: { project: string }) => item.project === "Cortex Bridge"
+  );
+
+  assert.equal(fact.status, "publicly-verified");
+  assert.equal(fact.verification_id, "cortex-bridge-release-0-5-2");
+  assert.deepEqual(project.verification_ids, [
+    "cortex-bridge-repo",
+    "cortex-bridge-release-0-5-2"
+  ]);
 });

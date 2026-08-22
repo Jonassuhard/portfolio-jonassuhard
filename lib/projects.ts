@@ -608,6 +608,108 @@ export const projects: Project[] = [
     ]
   },
   {
+    slug: "cortex-bridge",
+    title: "Cortex Bridge - orchestration ChatGPT et exécution locale contrôlée",
+    shortTitle: "Cortex Bridge",
+    type: "Agent local open source : extension Chrome, console et exécuteur",
+    period: "Juillet - août 2026 · v0.5.2",
+    role: "Conception produit, architecture, extension MV3, backend FastAPI, sécurité, QA",
+    status: "Preview technique open source v0.5.2",
+    evidenceLevel: "public",
+    tier: 1,
+    image: "/assets/cards/cortex-bridge.webp",
+    repoStatus: "Repo public sous MIT : github.com/Jonassuhard/cortex-bridge",
+    liveLabel: "Repo GitHub (lien)",
+    evidenceNote:
+      "Code public sous licence MIT. Preuve de release v0.5.2 publiée le 22/08/2026 : 431 tests backend, 127 frontend, 56 extension, 12 E2E et 4 accessibilité sans échec ; 1 test E2E ignoré.",
+    metaDescription:
+      "Cortex Bridge relie ChatGPT à un exécuteur local contrôlé via une extension Chrome, une console FastAPI et des validations humaines.",
+    architecture: [
+      "Extension Chrome MV3 : service worker, scripts de contenu, commandes DOM structurées en liste blanche.",
+      "Console FastAPI en loopback (port 8420) : appairage WebSocket à token unique, chat, pièces jointes, captures d'onglet, missions.",
+      "Interface React et Next.js statique en français : appairage, états d'envoi explicites, navigation sur 50 conversations.",
+      "Orchestration SQLite + exécuteur déterministe confiné au workspace ; Ollama optionnel pour les modèles locaux.",
+      "Boucle contrôlée : ChatGPT planifie, Cortex extrait la décision, l'exécuteur local agit après validation, puis le rapport revient dans la conversation."
+    ],
+    v2: [
+      "Sonde DOM quotidienne pour détecter une mise à jour de ChatGPT cassant le bridge avant usage.",
+      "Transport officiellement supporté par le fournisseur si une option locale compatible devient disponible.",
+      "Distribution de l'extension au-delà de l'installation locale manuelle."
+    ],
+    notMeasured: [
+      "Stabilité de la boucle sur plusieurs semaines d'usage réel : pas encore de métrique publiable.",
+      "Compatibilité continue avec l'interface ChatGPT : les preuves restent datées et une modification du DOM peut casser le transport."
+    ],
+    proofLine:
+      "Relier une conversation ChatGPT à un exécuteur local borné : le modèle planifie, l'utilisateur valide, Cortex agit dans le workspace et renvoie un rapport auditable.",
+    summary:
+      "Cortex Bridge relie une conversation ChatGPT ouverte dans Chrome à un exécuteur déterministe sur Mac. Chaque action locale reste confinée au workspace, présentée avant exécution et traçable. Le projet réunit extension navigateur, backend, interface, orchestration, sécurité et protocole de preuve dans un dépôt public.",
+    stack: ["Chrome MV3", "FastAPI", "Next.js", "React", "SQLite", "Python", "Ollama"],
+    recruiterProof: [
+      "Piloter un produit technique complet : extension navigateur, backend local, interface, orchestration, documentation et QA.",
+      "Transformer une boucle IA en système inspectable : validations humaines, permissions minimales, workspace borné et comportements fail-closed testés.",
+      "Publier les preuves et les limites : dépôt MIT, matrice de release, risque fournisseur et frontières de validation documentés."
+    ],
+    constraints: [
+      "Éviter le copier-coller entre la conversation et l'exécution locale sans laisser le modèle agir librement.",
+      "Fonctionner dans le vrai profil Chrome de l'utilisateur, avec un exécuteur déterministe disponible sans Ollama.",
+      "Lignes rouges assumées : pas d'endpoints privés, pas de cookies de session, pas de contournement de protections ou de limites.",
+      "Transport ChatGPT grand public en opt-in explicite, jamais présenté comme affilié, autorisé ou supporté par OpenAI."
+    ],
+    decisions: [
+      {
+        decision: "Exécuteur déterministe confiné au workspace",
+        why: "L'IA propose, mais seule une action bornée et validée s'exécute ; le système reste utile même sans modèle local disponible.",
+        rejected: "Laisser le LLM lancer librement des commandes shell."
+      },
+      {
+        decision: "Bridge DOM en module opt-in explicite",
+        why: "Le conflit avec les conditions du fournisseur est réel : l'utilisateur doit comprendre le risque avant d'activer ce transport.",
+        rejected: "Activer le bridge par défaut ou le présenter comme officiellement supporté."
+      },
+      {
+        decision: "Transport extension MV3 par défaut",
+        why: "Travailler dans le vrai Chrome avec la vraie session, sans environnement parallèle fragile.",
+        rejected: "Piloter un navigateur Playwright séparé comme produit principal."
+      },
+      {
+        decision: "Fail-closed partout",
+        why: "Un validateur mal formé fait échouer la mission au lieu de la valider : vérifié par test.",
+        rejected: "Mode permissif avec simples alertes."
+      }
+    ],
+    delivered: [
+      "Extension Chrome MV3 (service worker, scripts de contenu, commandes DOM en liste blanche).",
+      "Console FastAPI loopback : appairage à token unique, chat, pièces jointes, captures d'onglet, missions.",
+      "Interface React et Next.js statique en français avec états d'envoi explicites.",
+      "Orchestration SQLite et exécuteur déterministe confiné au workspace, fonctionnel sans Ollama.",
+      "Installation macOS contrôlée par plan immuable et diagnostic local reproductible."
+    ],
+    results: [
+      "Preuve de release v0.5.2 du 22/08/2026 : 431 tests backend, 127 frontend, 56 extension, 12 E2E et 4 accessibilité sans échec ; 1 E2E ignoré.",
+      "Dix scénarios à deux conversations exécutés sans croisement ; le brouillon du troisième writer est conservé lors du refus.",
+      "Auto-diagnostic v0.5.2 validé dans un worktree jetable : installation, consentement, démarrage, API loopback et arrêt propre."
+    ],
+    limits: [
+      "Les suites automatisées utilisent aussi des fixtures : elles ne prouvent pas une compatibilité continue avec un compte ChatGPT réel.",
+      "Le transport automatique par l'interface ChatGPT entre en conflit avec les conditions du fournisseur : activation opt-in et risque de restriction du compte.",
+      "Preview technique macOS/Chrome : extension installée manuellement et dépendance à un DOM externe susceptible de changer."
+    ],
+    links: [
+      {
+        label: "Repo GitHub",
+        href: "https://github.com/Jonassuhard/cortex-bridge",
+        external: true
+      },
+      {
+        label: "Preuve de release v0.5.2",
+        href: "https://github.com/Jonassuhard/cortex-bridge/blob/eb3d740a1a5dafba738a7aa2e921ac95a082f942/docs/verification/v0.5.2.json",
+        external: true
+      },
+      { label: "Version Markdown", href: "/projects/cortex-bridge.md" }
+    ]
+  },
+  {
     slug: "battle-engine",
     title: "Battle Engine - pipeline vidéo automatisé",
     shortTitle: "Battle Engine",
@@ -969,13 +1071,13 @@ export const projects: Project[] = [
   }
 ];
 
-export const featuredProjects = ["les-petites-griffes", "educool-la-herse", "iscom"]
+export const featuredProjects = ["cortex-bridge", "les-petites-griffes", "educool-la-herse"]
   .map((slug) => projects.find((project) => project.slug === slug))
   .filter((project): project is Project => Boolean(project));
 
-// Preuves recruteur découplées de la home : contexte employeur (ISCOM), livraison
-// client bout-en-bout (LPG), couche IA sur le sujet exact du poste (Preuvia).
-export const recruiterFeatured = ["iscom", "les-petites-griffes", "preuvia"]
+// Preuves recruteur découplées de la home : produit IA open source (Cortex),
+// livraison client bout-en-bout (LPG), couche IA sur le sujet du poste (Preuvia).
+export const recruiterFeatured = ["cortex-bridge", "les-petites-griffes", "preuvia"]
   .map((slug) => projects.find((project) => project.slug === slug))
   .filter((project): project is Project => Boolean(project));
 
@@ -990,25 +1092,25 @@ export const skills = [
   },
   {
     name: "Automatisation / QA / Playwright",
-    proofSlugs: ["battle-engine"],
+    proofSlugs: ["cortex-bridge", "battle-engine"],
     proofExtra: "audits Playwright, scripts Python",
-    proof: "Battle Engine, audits Playwright, scripts Python",
-    note: "Pipelines Python, audits Playwright multi-viewports, génération et contrôles automatisés.",
+    proof: "Cortex Bridge, Battle Engine, audits Playwright, scripts Python",
+    note: "Boucles IA contrôlées, pipelines Python, audits Playwright multi-viewports, génération et contrôles automatisés.",
     limit: "Automatisation de projets perso ; pas encore de QA en CI/CD dans une équipe multi-dev."
   },
   {
     name: "IA appliquée / workflows LLM",
-    proofSlugs: ["capselys", "les-petites-griffes", "iscom"],
+    proofSlugs: ["cortex-bridge", "capselys", "les-petites-griffes", "iscom"],
     proofExtra: "RAG Starter Kit, Board IA PME",
-    proof: "Capsélys, Les Petites Griffes, ISCOM",
-    note: "Assistants cadrés, workflows LLM, fact-check, détection d'hallucinations et garde-fous avant publication.",
+    proof: "Cortex Bridge, Capsélys, Les Petites Griffes, ISCOM",
+    note: "Orchestration ChatGPT vers un exécuteur local borné, assistants cadrés, workflows LLM, fact-check et garde-fous avant publication.",
     limit: "POC et projets cadrés ; pas encore de LLM en production sous charge avec SLA."
   },
   {
     name: "Full-stack web",
-    proofSlugs: ["les-petites-griffes", "educool-la-herse"],
+    proofSlugs: ["cortex-bridge", "les-petites-griffes", "educool-la-herse"],
     proofExtra: "ce portfolio",
-    proof: "Les Petites Griffes, Educool, ce portfolio",
+    proof: "Cortex Bridge, Les Petites Griffes, Educool, ce portfolio",
     note: "Next.js, React, pages publiques, CMS léger, rendu statique, déploiement et production.",
     limit: "Surtout front et intégrations ; pas de backend distribué à forte charge."
   },
@@ -1022,10 +1124,10 @@ export const skills = [
   },
   {
     name: "Sécurité / RGPD / limites",
-    proofSlugs: ["educool-la-herse", "les-petites-griffes"],
+    proofSlugs: ["cortex-bridge", "educool-la-herse", "les-petites-griffes"],
     proofExtra: "",
-    proof: "Educool, Les Petites Griffes",
-    note: "Données sensibles et mineurs anonymisées, secrets hors du code, règles d'accès, prudence de publication.",
+    proof: "Cortex Bridge, Educool, Les Petites Griffes",
+    note: "Exécution confinée au workspace, comportements fail-closed, données sensibles anonymisées, secrets hors du code et prudence de publication.",
     limit: "Bonnes pratiques appliquées ; pas d'audit sécurité formel ni de conformité validée par un DPO."
   }
 ];

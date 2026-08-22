@@ -10,23 +10,23 @@ Limite : pas encore de programmatic SEO à grande échelle ni de domaine à fort
 
 ## Automatisation / QA / Playwright
 
-Preuves : Battle Engine, audits Playwright, scripts Python.
+Preuves : Cortex Bridge, Battle Engine, audits Playwright, scripts Python.
 
-Pipelines Python, audits Playwright multi-viewports, génération et contrôles automatisés.
+Boucles IA contrôlées, pipelines Python, audits Playwright multi-viewports, génération et contrôles automatisés.
 
 Limite : automatisation de projets perso ; pas encore de QA en CI/CD dans une équipe multi-dev.
 
 ## IA appliquée / workflows LLM
 
-Preuves : Capsélys, Les Petites Griffes, ISCOM. Compléments : RAG Starter Kit, Board IA PME.
+Preuves : Cortex Bridge, Capsélys, Les Petites Griffes, ISCOM. Compléments : RAG Starter Kit, Board IA PME.
 
-Assistants cadrés, workflows LLM, fact-check, détection d'hallucinations et garde-fous avant publication.
+Orchestration ChatGPT vers un exécuteur local borné, assistants cadrés, workflows LLM, fact-check et garde-fous avant publication.
 
 Limite : POC et projets cadrés ; pas encore de LLM en production sous charge avec SLA.
 
 ## Full-stack web
 
-Preuves : Les Petites Griffes, Educool, ce portfolio.
+Preuves : Cortex Bridge, Les Petites Griffes, Educool, ce portfolio.
 
 Next.js, React, pages publiques, CMS léger, rendu statique, déploiement et production.
 
@@ -42,8 +42,8 @@ Limite : documentation de projets solo ; pas encore d'onboarding formalisé sur 
 
 ## Sécurité / RGPD / limites
 
-Preuves : Educool, Les Petites Griffes.
+Preuves : Cortex Bridge, Educool, Les Petites Griffes.
 
-Données sensibles et mineurs anonymisées, secrets hors du code, règles d'accès, prudence de publication.
+Exécution confinée au workspace, comportements fail-closed, données sensibles anonymisées, secrets hors du code et prudence de publication.
 
 Limite : bonnes pratiques appliquées ; pas d'audit sécurité formel ni de conformité validée par un DPO.

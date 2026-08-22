@@ -6,7 +6,7 @@ Jonas construit des systèmes marketing augmentés par l'IA — sites, automatis
 
 Note de lecture : les pages HTML sont la version canonique pour les humains ; les fichiers Markdown et JSON ci-dessous sont la version destinée aux agents. Les données, accès et captures sensibles des projets clients sont anonymisés quand ils ne sont pas publiables.
 
-Dernière mise à jour : 2026-08-15
+Revue générale : 2026-08-15. Cortex Bridge vérifié le 2026-08-22.
 
 ## Profil
 
@@ -23,6 +23,7 @@ Dernière mise à jour : 2026-08-15
 
 ## Projets principaux
 
+- [Cortex Bridge](https://jonassuhard.com/projects/cortex-bridge.md): agent local open source reliant ChatGPT à un exécuteur borné ; dépôt MIT et preuve de release v0.5.2 publique (431 backend, 127 frontend, 56 extension, 12 E2E, 4 accessibilité sans échec ; 1 E2E ignoré). Preview macOS/Chrome opt-in, non affiliée ni autorisée par OpenAI.
 - [Les Petites Griffes](https://jonassuhard.com/projects/les-petites-griffes.md): L'audit live du 2026-08-01 couvre 18 pages publiques contrôlées à 390 px et 1440 px, 36 captures pleine page, 30 images uniques chargées sur le live et cinq scores de performance Lighthouse mobile : Accueil 91, Galerie 87, Compose 97, Méthode 97, Le studio 66. Projet familial non facturé ; aucune vente à un client externe n'est prouvée ; mesures datées du 2026-08-01, non continues. Audit complet privé, montrable en entretien ; il n'est pas publié comme preuve publique autonome.
 - [Educool / La Herse](https://jonassuhard.com/projects/educool-la-herse.md): application web démontrable sur données fictives ; aucune donnée de mineur publiée
 - [ISCOM](https://jonassuhard.com/projects/iscom.md): production SEO dans Drupal, fact-check claim par claim, audit de cannibalisation et validation humaine avant publication

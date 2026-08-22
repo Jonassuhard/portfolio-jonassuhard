@@ -56,6 +56,26 @@
       "note": "Aucun volume de clients ni résultat commercial n'est revendiqué dans le portfolio."
     },
     {
+      "id": "cortex-bridge-repo",
+      "claim": "Le code de Cortex Bridge est public sur GitHub sous licence MIT.",
+      "scope": "Projet",
+      "status": "publicly-verified",
+      "checkedAt": "2026-08-22",
+      "sourceLabel": "Repo GitHub Cortex Bridge",
+      "sourceHref": "https://github.com/Jonassuhard/cortex-bridge",
+      "note": "Le dépôt public, sa branche principale et sa licence ont été contrôlés le 22/08/2026."
+    },
+    {
+      "id": "cortex-bridge-release-0-5-2",
+      "claim": "La preuve de release Cortex Bridge v0.5.2 rapporte 431 tests backend, 127 frontend, 56 extension, 12 E2E et 4 accessibilité sans échec ; un test E2E est ignoré.",
+      "scope": "Projet",
+      "status": "publicly-verified",
+      "checkedAt": "2026-08-22",
+      "sourceLabel": "Preuve de release Cortex Bridge v0.5.2",
+      "sourceHref": "https://github.com/Jonassuhard/cortex-bridge/blob/eb3d740a1a5dafba738a7aa2e921ac95a082f942/docs/verification/v0.5.2.json",
+      "note": "Résultats automatisés datés et publiés dans le dépôt. Le document signale un environnement de simulation ; il ne prouve pas une compatibilité continue avec ChatGPT."
+    },
+    {
       "id": "lpg-live-audit-2026-08-01",
       "claim": "L'audit live du 2026-08-01 couvre 18 pages publiques contrôlées à 390 px et 1440 px, 36 captures pleine page, 30 images uniques chargées sur le live et cinq scores de performance Lighthouse mobile : Accueil 91, Galerie 87, Compose 97, Méthode 97, Le studio 66.",
       "scope": "Projet",
