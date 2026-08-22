@@ -37,13 +37,9 @@ const fontClock = localFont({
   display: "optional",
   preload: false
 });
-// Title de la home = nom + rôle (le nom manquait du <title>, mauvais CTR SERP).
-// `site.title` reste le rôle pur, réutilisé tel quel comme jobTitle dans le JSON-LD.
-const homeTitle = `${site.name} — ${site.title}`;
-
 export const metadata: Metadata = {
   title: {
-    default: homeTitle,
+    default: site.seoTitle,
     template: "%s | Jonas Suhard"
   },
   description: site.description,
@@ -55,7 +51,7 @@ export const metadata: Metadata = {
     }
   },
   openGraph: {
-    title: homeTitle,
+    title: site.seoTitle,
     description: site.description,
     type: "website",
     locale: "fr_FR"
@@ -82,7 +78,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <header className="site-header">
           <div className="titlebar">
             <span className="titlebar-name">
-              JONAS SUHARD <span className="titlebar-role">— Chef de projet IA junior</span>
+              JONAS SUHARD <span className="titlebar-role">— {site.title}</span>
             </span>
             <span className="ver">{site.location} · <NixieClock /></span>
           </div>
@@ -103,7 +99,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               />
               <div>
                 <strong>Jonas Suhard</strong>
-                <span className="foot-id-sub">Chef de projet IA appliquée &amp; automatisation junior</span>
+                <span className="foot-id-sub">{site.headline}</span>
               </div>
             </div>
             <p className="foot-pitch">

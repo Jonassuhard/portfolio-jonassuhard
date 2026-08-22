@@ -16,11 +16,11 @@ export default function HomePage() {
           <div>
             <p className="eyebrow">CDI · Paris ou hybride · disponible le 1er septembre 2026</p>
             <AnimatedTitle glitch>
-              Chef de projet IA appliquée &amp; automatisation junior
+              {site.headline}
             </AnimatedTitle>
-            <p className="role-aliases">Growth Engineer junior · Product Builder IA</p>
+            <p className="role-aliases">{site.roleAliases.join(" · ")}</p>
             <p className="title-definition">
-              <Link href="/a-propos#growth-engineer" prefetch={false}>Pourquoi je garde aussi le rôle Growth Engineer →</Link>
+              <Link href="/a-propos#growth-engineer" prefetch={false}>Ce que je mets derrière ce rôle →</Link>
             </p>
             <p className="lead">
               Je transforme des besoins marketing et opérationnels en outils web,

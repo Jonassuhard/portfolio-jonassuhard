@@ -1,6 +1,6 @@
 {
   "name": "Jonas Suhard",
-  "title": "Chef de projet IA appliquée & automatisation junior",
+  "title": "Growth Engineer junior",
   "location": "Paris, France",
   "target_contract": "CDI",
   "seniority": "junior",
@@ -30,12 +30,16 @@
       "proof_note": "Sources locales privées et démonstrations sur données fictives ; aucune donnée de mineur n'est publiée."
     }
   },
-  "target_roles": [
-    "Chef de projet IA appliquée & automatisation junior",
-    "Growth Engineer junior",
-    "Product Builder IA"
+  "role_aliases": [
+    "Product Builder IA",
+    "Chef de projet IA junior"
   ],
-  "positioning": "Cadrer et livrer des projets d'IA appliquée et d'automatisation, avec une spécialisation growth et développement web.",
+  "target_roles": [
+    "Growth Engineer junior",
+    "Product Builder IA",
+    "Chef de projet IA junior"
+  ],
+  "positioning": "Relier acquisition, IA appliquée et exécution produit pour livrer des outils web, automatisations et workflows LLM vérifiables.",
   "skills": {
     "marketing": ["SEO", "content strategy", "conversion", "analytics", "marketing operations"],
     "ai": ["LLM workflows", "RAG", "prompt engineering", "automation", "AI-assisted content QA"],

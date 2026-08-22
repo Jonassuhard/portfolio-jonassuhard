@@ -58,9 +58,8 @@ export default function AboutPage() {
           </div>
           <h2>Position cible</h2>
           <p>
-            Chef de projet IA appliquée &amp; automatisation junior, avec une
-            spécialisation Growth Engineer et Product Builder IA,
-            dans une équipe qui relie besoins métier et exécution produit.
+            {site.headline}, avec les rôles voisins {site.roleAliases.join(" et ")},
+            dans une équipe qui relie besoins métier, acquisition et exécution produit.
           </p>
           <h3>Ce que je cherche à construire</h3>
           <p>
@@ -179,4 +178,3 @@ export default function AboutPage() {
     </div>
   );
 }
-

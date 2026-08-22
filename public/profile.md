@@ -1,16 +1,18 @@
 # Jonas Suhard
 
-Chef de projet IA appliquée & automatisation junior — spécialisation Growth Engineer et Product Builder IA.
+Growth Engineer junior — IA appliquée & automatisation.
+
+Rôles voisins : Product Builder IA et Chef de projet IA junior.
 
 ## Positionnement
 
-Je cadre et livre des projets d'IA appliquée et d'automatisation, avec une spécialisation growth et développement web.
+Je relie acquisition, IA appliquée et exécution produit pour livrer des outils web, automatisations et workflows LLM vérifiables.
 
 ## Cibles
 
-- Chef de projet IA appliquée & automatisation junior
 - Growth Engineer junior
 - Product Builder IA
+- Chef de projet IA junior
 
 ## Localisation
 

@@ -1,8 +1,8 @@
 # CV · Jonas Suhard
 
-**Chef de projet IA appliquée & automatisation junior**
+**Growth Engineer junior · IA appliquée & automatisation**
 
-Spécialisation Growth Engineer et Product Builder IA : je transforme des besoins métier en outils, automatisations et workflows IA mesurables.
+Product Builder IA · Chef de projet IA junior : je transforme des besoins métier en outils, automatisations et workflows IA mesurables.
 
 Contact : contact@jonassuhard.com · jonassuhard.com · github.com/Jonassuhard · LinkedIn (Jonas Suhard) · Paris / hybride
 Disponible en CDI à partir du 1er septembre 2026.

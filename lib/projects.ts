@@ -64,9 +64,12 @@ export const siteUrl = (
 
 export const site = {
   name: "Jonas Suhard",
-  title: "Chef de projet IA appliquée & automatisation junior",
+  title: "Growth Engineer junior",
+  seoTitle: "Growth Engineer IA & automatisation à Paris | Jonas Suhard",
+  headline: "Growth Engineer junior · IA appliquée & automatisation",
+  roleAliases: ["Product Builder IA", "Chef de projet IA junior"] as const,
   description:
-    "Portfolio de Jonas Suhard, Chef de projet IA appliquée & automatisation junior : projets, décisions, limites et niveau de preuve.",
+    "Growth Engineer junior à Paris : IA appliquée, automatisations, sites Next.js, workflows LLM et dashboards. Projets documentés, preuves, CV et contact.",
   email: "contact@jonassuhard.com",
   github: "https://github.com/Jonassuhard",
   linkedin: "https://www.linkedin.com/in/jonas-suhard-b73923245/",

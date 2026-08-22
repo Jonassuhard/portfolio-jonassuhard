@@ -15,11 +15,11 @@ export type FaqItem = { q: string; a: string };
 export const faqItems: FaqItem[] = [
   {
     q: "Qui est Jonas Suhard ?",
-    a: "Chef de projet IA appliquée & automatisation junior basé à Paris, avec une spécialisation Growth Engineer et Product Builder IA."
+    a: "Growth Engineer junior basé à Paris, spécialisé en IA appliquée et automatisation, avec les rôles voisins Product Builder IA et Chef de projet IA junior."
   },
   {
     q: "Quel poste cherche-t-il ?",
-    a: "Un CDI junior comme Chef de projet IA appliquée & automatisation, Growth Engineer ou Product Builder IA."
+    a: "Un CDI junior comme Growth Engineer, Product Builder IA ou Chef de projet IA, à l'interface du marketing, du produit et de l'exécution technique."
   },
   {
     q: "Quand est-il disponible et où ?",

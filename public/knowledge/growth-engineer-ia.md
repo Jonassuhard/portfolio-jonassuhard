@@ -1,7 +1,7 @@
 # C'est quoi un Growth Engineer en IA appliquée ?
 
 Publication : 2026-07-02.
-Dernière vérification : 2026-07-20.
+Dernière vérification : 2026-08-23.
 
 ## Réponse courte
 
@@ -9,7 +9,7 @@ Dernière vérification : 2026-07-20.
 - Le profil vient souvent du marketing, puis apprend à coder pour ne plus dépendre d'un dev à chaque test.
 - En IA appliquée, il cadre des workflows LLM utiles, avec garde-fous, pas des démos.
 - Ce n'est pas un growth hacker : la dette technique et la sécurité comptent autant que le résultat court terme.
-- Pour le marché français, ce portfolio utilise Chef de projet IA appliquée & automatisation comme titre principal et Growth Engineer comme spécialisation.
+- Pour le marché français, ce portfolio utilise Growth Engineer comme titre principal, avec Product Builder IA et Chef de projet IA comme rôles voisins.
 
 ## Problème
 

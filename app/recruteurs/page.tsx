@@ -24,9 +24,9 @@ export default function RecruitersPage() {
         <div>
           <p className="eyebrow">Candidature</p>
           <AnimatedTitle>
-            Chef de projet IA appliquée &amp; automatisation junior.
+            {site.headline}
           </AnimatedTitle>
-          <p className="role-aliases">Growth Engineer junior · Product Builder IA</p>
+          <p className="role-aliases">{site.roleAliases.join(" · ")}</p>
           <p className="title-definition">
             <Link href="/a-propos#growth-engineer">Correspondance avec le rôle Growth Engineer →</Link>
           </p>
@@ -62,7 +62,7 @@ export default function RecruitersPage() {
               </tr>
               <tr>
                 <th scope="row">Rôles</th>
-                <td>Chef de projet IA appliquée &amp; automatisation junior, Growth Engineer junior, Product Builder IA</td>
+                <td>{site.title}, {site.roleAliases.join(", ")}</td>
               </tr>
               <tr>
                 <th scope="row">Stack</th>

@@ -36,7 +36,7 @@ export function personJsonLd() {
     sameAs: [site.github, site.linkedin, ...(site.malt ? [site.malt] : [])],
     seeks: {
       "@type": "Demand",
-      name: "CDI junior Chef de projet IA appliquée et automatisation / Growth Engineer",
+      name: "CDI junior Growth Engineer / Product Builder IA / Chef de projet IA",
       availabilityStarts: "2026-09-01",
       areaServed: "Paris / hybride"
     },

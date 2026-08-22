@@ -117,13 +117,13 @@ export const knowledgePages: KnowledgePage[] = [
     description:
       "Ce que recouvre le rôle de Growth Engineer en IA appliquée : marketing, code et workflows LLM reliés à des projets livrés, pas à un intitulé.",
     published: "2026-07-02",
-    updated: "2026-07-20",
+    updated: "2026-08-23",
     answer: [
       "Un Growth Engineer relie l'acquisition et le code : il conçoit, il livre et prépare la mesure au lieu de sous-traiter chaque étape.",
       "Le profil vient souvent du marketing, puis apprend à coder pour ne plus dépendre d'un dev à chaque test.",
       "En IA appliquée, il cadre des workflows LLM utiles, avec garde-fous, pas des démos.",
       "Ce n'est pas un growth hacker : la dette technique et la sécurité comptent autant que le résultat court terme.",
-      "Pour le marché français, ce portfolio utilise Chef de projet IA appliquée & automatisation comme titre principal et Growth Engineer comme spécialisation."
+      "Pour le marché français, ce portfolio utilise Growth Engineer comme titre principal, avec Product Builder IA et Chef de projet IA comme rôles voisins."
     ],
     problem:
       "L'intitulé Growth Engineer est à la mode et souvent vide. Beaucoup revendiquent marketing, IA et code sans rien qui tourne en production. Un recruteur a besoin de savoir ce que la personne livre vraiment, seule, de bout en bout.",
