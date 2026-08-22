@@ -26,7 +26,7 @@ Limite : POC et projets cadrés ; pas encore de LLM en production sous charge av
 
 ## Full-stack web
 
-Preuves : Cortex Bridge, Les Petites Griffes, Educool, ce portfolio.
+Preuves : Cortex Bridge, Les Petites Griffes, Cool Bank / La Herse, ce portfolio.
 
 Next.js, React, pages publiques, CMS léger, rendu statique, déploiement et production.
 
@@ -34,7 +34,7 @@ Limite : surtout front et intégrations ; pas de backend distribué à forte cha
 
 ## Documentation / transmission
 
-Preuves : claude-code-soul, Educool, ce portfolio.
+Preuves : claude-code-soul, Cool Bank / La Herse, ce portfolio.
 
 Décisions écrites, cadres réutilisables, fichiers lisibles par un agent ; un travail qu'un autre reprend.
 
@@ -42,7 +42,7 @@ Limite : documentation de projets solo ; pas encore d'onboarding formalisé sur 
 
 ## Sécurité / RGPD / limites
 
-Preuves : Cortex Bridge, Educool, Les Petites Griffes.
+Preuves : Cortex Bridge, Cool Bank / La Herse, Les Petites Griffes.
 
 Exécution confinée au workspace, comportements fail-closed, données sensibles anonymisées, secrets hors du code et prudence de publication.
 

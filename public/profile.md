@@ -47,7 +47,7 @@ Paris, France. CDI à Paris ou hybride, disponible à partir du 1er septembre 20
 
 - Cortex Bridge : agent local open source reliant ChatGPT à un exécuteur borné ; dépôt MIT et preuve de release v0.5.2 publique (431 backend, 127 frontend, 56 extension, 12 E2E et 4 accessibilité sans échec ; 1 E2E ignoré). Preview macOS/Chrome opt-in, non affiliée ni autorisée par OpenAI.
 - Les Petites Griffes : L'audit live du 2026-08-01 couvre 18 pages publiques contrôlées à 390 px et 1440 px, 36 captures pleine page, 30 images uniques chargées sur le live et cinq scores de performance Lighthouse mobile : Accueil 91, Galerie 87, Compose 97, Méthode 97, Le studio 66. Projet familial non facturé ; aucune vente à un client externe n'est prouvée ; mesures datées du 2026-08-01, non continues. Audit complet privé, montrable en entretien ; il n'est pas publié comme preuve publique autonome.
-- Educool / La Herse: app web éducation, Firebase, données sensibles, PDF.
+- Cool Bank / La Herse : V2 multijoueur local au statut LOCAL_SINGLE_DEVICE_READY ; V3 en monde 3D au statut READY_FOR_HUMAN_RECIPE. Interface Educool, Firebase et économie serveur ; preuves privées sur données fictives, sans donnée de mineur publiée.
 - Capsélys: refonte conversion, expérimentation IA, workshop client.
 - ISCOM: SEO, Drupal, production éditoriale, audits.
 - Preuvia: audit GEO, visibilité IA, plan de publication re-testable.
@@ -63,6 +63,8 @@ Paris, France. CDI à Paris ou hybride, disponible à partir du 1er septembre 20
 - Registre des preuves : https://jonassuhard.com/preuves
 - Revue générale des contenus : 2026-08-15
 - Cortex Bridge : vérifié le 2026-08-22
+- Cool Bank V2 : vérifiée le 2026-08-22
+- Cool Bank V3 : vérifiée le 2026-08-06
 
 ## Contact
 

@@ -104,6 +104,11 @@ export function projectJsonLd(slug: string) {
         name: "evidenceLevel",
         value: evidenceLevelMeta[project.evidenceLevel].label
       },
+      ...(project.versions ?? []).map((version) => ({
+        "@type": "PropertyValue",
+        name: `${version.label} — ${version.name}`,
+        value: `${version.status}. ${version.summary}`
+      })),
       ...project.limits.map((limit) => ({ "@type": "PropertyValue", name: "limits", value: limit }))
     ]
   };

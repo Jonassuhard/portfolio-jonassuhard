@@ -28,6 +28,14 @@ export type Project = {
   results: string[];
   limits: string[];
   architecture?: string[];
+  versions?: Array<{
+    label: string;
+    name: string;
+    status: string;
+    summary: string;
+    evidence: string[];
+    limits: string[];
+  }>;
   v2?: string[];
   notMeasured?: string[];
   repoStatus?: string;
@@ -238,90 +246,121 @@ export const projects: Project[] = [
   },
   {
     slug: "educool-la-herse",
-    title: "Educool / La Herse - app web pour une classe",
-    shortTitle: "Educool / La Herse",
-    type: "Application web éducation",
-    period: "2026",
-    role: "Développement, UX, sécurité, PDF, Firebase, maintenance",
-    status: "Prod / maintenance",
+    title: "Cool Bank / La Herse - du jeu local V2 au monde 3D V3",
+    shortTitle: "Cool Bank / La Herse",
+    type: "Jeu scolaire multijoueur + interface métier",
+    period: "Juillet - août 2026",
+    role: "Conception produit, UX, développement full-stack, systèmes de jeu, sécurité, QA",
+    status: "V2 : LOCAL_SINGLE_DEVICE_READY · V3 : READY_FOR_HUMAN_RECIPE",
     evidenceLevel: "private",
     tier: 1,
-    image: "/assets/cards/educool.webp",
+    image: "/assets/cards/cool-bank-la-herse.webp",
     repoStatus: "Privé, RGPD (données mineurs)",
-    liveLabel: "Classe, non public",
+    liveLabel: "Démo locale sur données fictives",
     evidenceNote:
-      "Captures sur données fictives et démonstration privée. L'usage en classe ne peut pas être vérifié publiquement en raison des données de mineurs.",
+      "Preuves privées et datées : état V2 vérifié le 22/08/2026, candidate V3 vérifiée le 06/08/2026. Démonstrations et captures uniquement sur données fictives ; aucune donnée de mineur n'est publiée.",
     metaDescription:
-      "Application web utilisée en classe : suivi des compétences, livrets PDF, Firebase, données de mineurs anonymisées, opérations sensibles en Cloud Functions.",
+      "Cool Bank / La Herse : V2 multijoueur local et V3 en monde 3D, trois rôles, économie serveur et interface Educool sur données fictives.",
     cardLine:
-      "Application utilisée en classe : suivi de compétences, génération PDF, Firebase, données élèves anonymisées.",
+      "Deux versions documentées : V2 jouable localement, V3 prête pour recette humaine, jamais sur données réelles d'enfants.",
     architecture: [
-      "Application web / PWA Next.js utilisable sur tablette par une non-dev.",
-      "Données et authentification sur Firebase / Firestore.",
-      "Opérations sensibles déportées en Cloud Functions (l'autorité métier n'est pas seulement côté client).",
-      "Génération de livrets PDF et export ZIP.",
-      "Rules Firebase et tests (Vitest) sur les lots livrés."
+      "V2 sépare le jeu web multijoueur, le runtime 3D et l'interface scolaire Educool, tout en partageant les contrats Firebase.",
+      "V3 sépare quatre autorités : Game, Control, Product/UI Kit et Educool, réunies par une pile locale reproductible.",
+      "Économie centicool, mouvements, collisions, rôles, soldes et récompenses restent autoritaires côté serveur.",
+      "Authentification et données scolaires utilisent Firebase / Firestore / Cloud Functions sur un projet fictif local.",
+      "Les preuves de test, manifestes de release et limites sont conservés séparément pour empêcher toute confusion entre V2 et V3."
     ],
-    v2: [
-      "Durcissement continu des rules et des audits de sécurité.",
-      "Industrialisation des exports PDF."
+    versions: [
+      {
+        label: "V2",
+        name: "Jeu local multijoueur relié à Educool",
+        status: "LOCAL_SINGLE_DEVICE_READY : GO · V2_PRODUCT_COMPLETE et ONLINE_READY : NO-GO",
+        summary:
+          "Version web locale avec parcours élève, professeure et banquier, maisons, quêtes, économie et interface Educool reliée à Firebase.",
+        evidence: [
+          "État du 22/08/2026 : 12 123 tests réussis sur 12 148, 11 échecs et 14 ignorés ; les 3 échecs stables restants concernent l'i18n.",
+          "Educool : 645/645 tests, TypeScript vert et build Next de 42 pages réussi.",
+          "Parcours navigateur élève, professeure et banquier rejoués ; HUD, clavier et premier choix : 18/18."
+        ],
+        limits: [
+          "Deux PC et une tablette physique, coupure Wi-Fi et audio multi-appareils restent à rejouer ensemble.",
+          "Le pré-RC reste bloqué par 3 échecs i18n, 20 assets provisoires et une gate online à 87/89."
+        ]
+      },
+      {
+        label: "V3",
+        name: "Monde 3D et économie centicool serveur",
+        status: "READY_FOR_HUMAN_RECIPE · GO_PILOTE_LOCAL : en attente",
+        summary:
+          "Version 3D plus ambitieuse avec 22 zones, trois rôles, économie serveur, maisons, marchands, lecture écrite et interface Educool locale.",
+        evidence: [
+          "Game : gate 9/9, 12 064 tests réussis et 14 ignorés ; Control : 383/383 ; Product/UI Kit : 333/333.",
+          "Educool : 735 tests unitaires, 162 tests de règles Auth/Firestore et 174 tests Functions, avec builds Next et Node 20 réussis.",
+          "Candidate restaurable 20260806_FINAL_RECIPE : 9 ZIP et 97 259 entrées extraites et vérifiées."
+        ],
+        limits: [
+          "Validation de la direction artistique, test sur appareil enfant modeste et observation de la compréhension par un enfant encore requis.",
+          "Aucun déploiement, aucune donnée réelle d'enfant et aucun verdict d'usage terrain ne sont revendiqués."
+        ]
+      }
     ],
     notMeasured: [
-      "Aucune métrique élève n'est publiable (données de mineurs).",
-      "Gain de temps enseignant : observé en retours terrain, non chiffré publiquement."
+      "Compréhension, plaisir et autonomie des enfants : recette terrain non publiée.",
+      "Gain de temps pour l'enseignante : non chiffré publiquement."
     ],
     proofLine:
-      "Application utilisée par une classe, Firebase, données sensibles, PDF et audits de sécurité.",
+      "Deux versions d'un même système scolaire : V2 jouable localement et V3 techniquement prête pour recette humaine, avec preuves et limites séparées.",
     summary:
-      "Application web utilisée par une enseignante en classe : suivi des compétences des élèves et génération de livrets PDF, sur Firebase, avec les opérations sensibles déportées en Cloud Functions.",
-    stack: ["Next.js", "Firebase", "Firestore", "Cloud Functions", "Vitest", "PDF"],
+      "Cool Bank transforme une logique de banque scolaire en jeu multijoueur relié à l'interface métier Educool. La fiche distingue la V2 locale, déjà jouable sur un appareil, de la V3 en monde 3D, techniquement validée mais encore soumise à une recette humaine.",
+    stack: ["Next.js", "Firebase", "Firestore", "Cloud Functions", "TypeScript", "Vite", "Node.js", "Playwright"],
     recruiterProof: [
-      "Produit utilisé par une vraie utilisatrice avec retours terrain.",
-      "Conscience sécurité sur données enfants et rules Firebase.",
-      "Capacité à investiguer des bugs PDF, déploiement, auth et données."
+      "Piloter deux générations d'un produit complexe sans confondre leurs preuves ni leurs niveaux de maturité.",
+      "Concevoir ensemble jeu, économie serveur, interfaces par rôle, Firebase, sécurité et QA multi-surface.",
+      "Documenter les verdicts NO-GO et les données non publiables avec la même précision que les réussites techniques."
     ],
     constraints: [
-      "Données enfants strictement anonymisées.",
-      "Usage tablette/PWA par une non-dev.",
-      "PDF imprimables et logique métier dense."
+      "Aucune donnée réelle de mineur dans les preuves, captures ou environnements de démonstration.",
+      "Trois rôles distincts : élève, professeure et banquier, sans classement financier humiliant.",
+      "Usage clavier, tactile et tablette, y compris sur matériel modeste.",
+      "V2 et V3 physiquement et techniquement séparées : aucune preuve recyclée d'une version à l'autre."
     ],
     decisions: [
       {
-        decision: "Firebase / Firestore",
-        why: "Rapide pour auth, données, functions et déploiement.",
-        rejected: "Backend custom trop coûteux pour le contexte."
+        decision: "Deux versions conservées comme autorités séparées",
+        why: "V2 est une base locale jouable ; V3 change l'architecture, la carte et le niveau de validation.",
+        rejected: "Présenter V3 comme une simple mise à jour visuelle de V2."
       },
       {
-        decision: "Cloud Functions pour opérations sensibles",
-        why: "Éviter de mettre l'autorité métier uniquement côté client.",
-        rejected: "Tout faire dans le front."
+        decision: "Autorité serveur pour l'économie et les actions sensibles",
+        why: "Les soldes, récompenses, mouvements et rôles ne doivent pas dépendre d'un client modifiable.",
+        rejected: "Faire confiance au navigateur pour valider les transactions."
       },
       {
-        decision: "Audits sécurité documentés",
-        why: "Données mineurs = pas de validation au doigt mouillé.",
-        rejected: "Se contenter d'un 'ça marche'."
+        decision: "Fixtures exclusivement fictives dans les preuves",
+        why: "Le contexte scolaire implique des mineurs et interdit toute démonstration publique sur données réelles.",
+        rejected: "Publier des captures de classe pour rendre la preuve plus spectaculaire."
       }
     ],
     delivered: [
-      "Application web/PWA.",
-      "Suivi élèves et compétences.",
-      "Génération PDF et ZIP.",
-      "Rules Firebase, Cloud Functions et tests.",
-      "Refontes UX successives après retours."
+      "V2 : jeu local multijoueur, trois rôles, quêtes, maisons, mini-jeux et pont Educool/Firebase.",
+      "V3 : monde 3D, économie centicool serveur, 22 zones, marchands, PNJ et maisons complètes.",
+      "Interface Educool : authentification, rôles, règles Firestore, Cloud Functions et suivi scolaire.",
+      "Harnais de tests, preuves responsive, manifestes de candidate et scripts de démarrage/arrêt locaux."
     ],
     results: [
-      "Usage en contexte de classe, données élèves strictement anonymisées.",
-      "Tests documentés sur les lots livrés (génération PDF, rules, parcours).",
-      "Incidents identifiés, documentés et corrigés progressivement."
+      "V2 : LOCAL_SINGLE_DEVICE_READY ; multi-appareils physique, produit complet et mise en ligne encore NO-GO.",
+      "V3 : candidate READY_FOR_HUMAN_RECIPE, pile locale démarrée, contrôlée puis arrêtée proprement.",
+      "Les deux versions disposent de preuves de tests distinctes et utilisent uniquement des données fictives pour la QA publiée."
     ],
     limits: [
-      "Données de mineurs : rien n'est publiable, la preuve se montre sur données fictives ou en entretien.",
-      "Le durcissement des règles d'accès Firebase est un chantier continu, pas un état figé."
+      "Preuve privée : code, captures complètes et données de contexte se montrent uniquement sur fixtures anonymisées.",
+      "V2 n'est pas prête pour Internet ; V3 n'est pas validée comme pilote local auprès d'enfants.",
+      "Les volumes de tests prouvent le comportement technique, pas l'utilité pédagogique ni l'adoption."
     ],
     gallery: [
-      { src: "/assets/proof/educool/educool-dashboard.webp", caption: "Tableau de bord enseignante : progression de la classe, réussite par domaine et saisie rapide. Noms masqués sur toutes les captures : données de mineurs.", width: 1600, height: 870 },
-      { src: "/assets/proof/educool/educool-saisie-ceintures.webp", caption: "Saisie des ceintures : la matrice classe entière par matière, pensée pour valider un palier en quelques secondes pendant le cours.", width: 1600, height: 873 },
-      { src: "/assets/proof/educool/educool-livrets.webp", caption: "Livrets élèves : aperçu, personnalisation puis export PDF, individuel ou en lot (ZIP pour toute la classe).", width: 1600, height: 870 }
+      { src: "/assets/proof/educool/educool-dashboard.webp", caption: "Interface Educool liée au système : tableau de bord sur données fictives, sans identité d'enfant publiée.", width: 1600, height: 870 },
+      { src: "/assets/proof/educool/educool-saisie-ceintures.webp", caption: "Saisie des progressions : matrice de classe anonymisée, commune au contexte métier de Cool Bank.", width: 1600, height: 873 },
+      { src: "/assets/proof/educool/educool-livrets.webp", caption: "Exports pédagogiques : aperçu et génération PDF/ZIP depuis l'interface scolaire associée.", width: 1600, height: 870 }
     ],
     links: [
       { label: "Version Markdown", href: "/projects/educool-la-herse.md" }
@@ -1110,7 +1149,7 @@ export const skills = [
     name: "Full-stack web",
     proofSlugs: ["cortex-bridge", "les-petites-griffes", "educool-la-herse"],
     proofExtra: "ce portfolio",
-    proof: "Cortex Bridge, Les Petites Griffes, Educool, ce portfolio",
+    proof: "Cortex Bridge, Les Petites Griffes, Cool Bank / La Herse, ce portfolio",
     note: "Next.js, React, pages publiques, CMS léger, rendu statique, déploiement et production.",
     limit: "Surtout front et intégrations ; pas de backend distribué à forte charge."
   },
@@ -1118,7 +1157,7 @@ export const skills = [
     name: "Documentation / transmission",
     proofSlugs: ["claude-code-soul", "educool-la-herse"],
     proofExtra: "ce portfolio",
-    proof: "claude-code-soul, Educool, ce portfolio",
+    proof: "claude-code-soul, Cool Bank / La Herse, ce portfolio",
     note: "Décisions écrites, cadres réutilisables, fichiers lisibles par un agent ; un travail qu'un autre reprend.",
     limit: "Documentation de projets solo ; pas encore d'onboarding formalisé sur un codebase partagé."
   },
@@ -1126,7 +1165,7 @@ export const skills = [
     name: "Sécurité / RGPD / limites",
     proofSlugs: ["cortex-bridge", "educool-la-herse", "les-petites-griffes"],
     proofExtra: "",
-    proof: "Cortex Bridge, Educool, Les Petites Griffes",
+    proof: "Cortex Bridge, Cool Bank / La Herse, Les Petites Griffes",
     note: "Exécution confinée au workspace, comportements fail-closed, données sensibles anonymisées, secrets hors du code et prudence de publication.",
     limit: "Bonnes pratiques appliquées ; pas d'audit sécurité formel ni de conformité validée par un DPO."
   }

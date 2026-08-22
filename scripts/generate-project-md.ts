@@ -43,6 +43,27 @@ function toMarkdown(project: Project) {
   if (externalLink) {
     lines.push("", `Lien : ${externalLink.href}`);
   }
+  if (project.versions?.length) {
+    lines.push("", "## Versions", "");
+    for (const version of project.versions) {
+      lines.push(
+        `### ${version.label} — ${version.name}`,
+        "",
+        `Statut : ${version.status}.`,
+        "",
+        version.summary,
+        "",
+        "Preuves :",
+        "",
+        bullets(version.evidence),
+        "",
+        "Limites :",
+        "",
+        bullets(version.limits),
+        ""
+      );
+    }
+  }
   lines.push(
     "",
     "## Problème",

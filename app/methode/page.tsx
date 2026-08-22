@@ -111,7 +111,7 @@ export default function MethodePage() {
         <div className="notice">
           <strong>En pratique.</strong>
           <p>
-            C'est la méthode appliquée sur Les Petites Griffes, Educool, Capsélys
+            C'est la méthode appliquée sur Les Petites Griffes, Cool Bank / La Herse, Capsélys
             et ISCOM, sur des stacks différentes. De quoi m'intégrer dans une
             équipe qui doit produire sans casser.
           </p>

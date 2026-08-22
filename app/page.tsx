@@ -57,7 +57,7 @@ export default function HomePage() {
             <div className="ledger-item">
               <time>2026-06</time>
               <strong>App classe + données sensibles</strong>
-              <span>Educool, Firebase, PDF, sécurité et retours terrain.</span>
+              <span>Cool Bank / La Herse, Firebase, sécurité et QA multi-rôles.</span>
             </div>
             <div className="ledger-item">
               <time>2026-06</time>
@@ -80,9 +80,9 @@ export default function HomePage() {
             <h2>Mes trois projets les plus solides.</h2>
           </div>
           <p>
-            Trois terrains différents : un site client démontrable en entretien,
-            une application métier documentée sur données fictives et une
-            publication SEO vérifiable en ligne.
+            Trois terrains différents : un produit IA open source, un site client
+            démontrable en entretien et un jeu scolaire documenté en deux versions
+            sur données fictives.
           </p>
         </div>
 

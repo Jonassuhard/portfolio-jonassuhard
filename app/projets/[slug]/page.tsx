@@ -173,6 +173,34 @@ export default async function ProjectDetailPage({ params }: PageProps) {
         </table>
       </section>
 
+      {project.versions?.length ? (
+        <section className="section">
+          <p className="section-kicker">Versions</p>
+          <h2>Deux versions, deux niveaux de maturité.</h2>
+          <div className="matrix matrix-2">
+            {project.versions.map((version) => (
+              <article className="matrix-item" key={version.label}>
+                <p className="case-meta">{version.status}</p>
+                <h3>{version.label} — {version.name}</h3>
+                <p>{version.summary}</p>
+                <strong>Preuves</strong>
+                <ul>
+                  {version.evidence.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+                <strong>Limites</strong>
+                <ul>
+                  {version.limits.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
+        </section>
+      ) : null}
+
       {project.gallery ? (
         <section className="section">
           <p className="section-kicker">Aperçu</p>
@@ -323,4 +351,3 @@ export default async function ProjectDetailPage({ params }: PageProps) {
     </div>
   );
 }
-

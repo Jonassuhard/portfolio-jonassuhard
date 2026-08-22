@@ -58,6 +58,37 @@ test("Cortex Bridge reste une preuve logicielle publique et qualifiée", () => {
   assert.match(release.note, /ne prouve pas une compatibilité continue/i);
 });
 
+test("Cool Bank / La Herse expose séparément les versions V2 et V3", () => {
+  const project = projects.find((item) => item.slug === "educool-la-herse") as
+    | ((typeof projects)[number] & {
+        versions?: Array<{ label: string; status: string }>;
+      })
+    | undefined;
+  const llms = readFileSync(new URL("../public/llms.txt", import.meta.url), "utf8");
+  const markdown = readFileSync(
+    new URL("../public/projects/educool-la-herse.md", import.meta.url),
+    "utf8"
+  );
+  const profile = JSON.parse(
+    readFileSync(new URL("../public/profile.json", import.meta.url), "utf8")
+  );
+  const machineProject = profile.projects.find(
+    (item: { project: string }) => item.project === "Cool Bank / La Herse"
+  );
+
+  assert.ok(project);
+  assert.equal(project.shortTitle, "Cool Bank / La Herse");
+  assert.deepEqual(project.versions?.map((version) => version.label), ["V2", "V3"]);
+  assert.match(project.versions?.[0].status ?? "", /LOCAL_SINGLE_DEVICE_READY/);
+  assert.match(project.versions?.[1].status ?? "", /READY_FOR_HUMAN_RECIPE/);
+  assert.match(llms, /Cortex Bridge/);
+  assert.match(llms, /Cool Bank \/ La Herse/);
+  assert.match(llms, /V2[^\n]*LOCAL_SINGLE_DEVICE_READY/);
+  assert.match(llms, /V3[^\n]*READY_FOR_HUMAN_RECIPE/);
+  assert.match(markdown, /## Versions[\s\S]*### V2[\s\S]*### V3/);
+  assert.equal(machineProject.versions.length, 2);
+});
+
 test("aucun projet privé ne se présente comme copie publique", () => {
   for (const project of projects.filter((item) => item.evidenceLevel !== "public")) {
     assert.doesNotMatch(project.status, /copie publique/i);

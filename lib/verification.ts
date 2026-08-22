@@ -118,12 +118,12 @@ export const verificationItems: VerificationItem[] = [
     note: "Projet familial non facturé ; aucune vente à un client externe n'est prouvée ; mesures datées du 2026-08-01, non continues."
   },
   {
-    id: "educool-classroom",
-    claim: "Educool a été conçu pour un usage réel en classe avec des données de mineurs.",
+    id: "cool-bank-la-herse-versions",
+    claim: "Cool Bank / La Herse distingue une V2 au statut LOCAL_SINGLE_DEVICE_READY et une V3 au statut READY_FOR_HUMAN_RECIPE.",
     scope: "Projet",
     status: "private-evidence",
-    checkedAt: contentReviewDate,
-    note: "Les captures publiques utilisent des données fictives ; les données réelles restent privées."
+    checkedAt: "2026-08-22",
+    note: "États vérifiés dans les sources locales V2 du 22/08/2026 et V3 du 06/08/2026. Les démonstrations utilisent des données fictives ; aucune donnée de mineur n'est publiée."
   },
   {
     id: "non-public-projects",
