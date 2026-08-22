@@ -8,11 +8,11 @@
   "verified_at": "2026-08-15",
   "citable_facts": {
     "cortex_bridge_release_0_5_2": {
-      "claim": "La preuve de release Cortex Bridge v0.5.2 rapporte 431 tests backend, 127 frontend, 56 extension, 12 E2E et 4 accessibilité sans échec ; un test E2E est ignoré.",
+      "claim": "La preuve de release Cortex Bridge v0.5.2 rapporte 434 tests backend, 127 frontend, 56 extension, 12 E2E et 4 accessibilité sans échec ; un test E2E est ignoré.",
       "status": "publicly-verified",
       "verification_id": "cortex-bridge-release-0-5-2",
       "checked_at": "2026-08-22",
-      "source": "https://github.com/Jonassuhard/cortex-bridge/blob/eb3d740a1a5dafba738a7aa2e921ac95a082f942/docs/verification/v0.5.2.json",
+      "source": "https://github.com/Jonassuhard/cortex-bridge/blob/64af9ce1e88dea8404acb11893eb96d75dd1baaa/docs/verification/v0.5.2.json",
       "proof_note": "Résultats automatisés datés ; ils ne prouvent pas une compatibilité continue avec un compte ChatGPT réel."
     },
     "les_petites_griffes_live_audit_2026_08_01": {
@@ -60,7 +60,7 @@
       "case_study": "/projets/cortex-bridge",
       "markdown": "/projects/cortex-bridge.md",
       "repository": "https://github.com/Jonassuhard/cortex-bridge",
-      "evidence": "Release v0.5.2 : 431 tests backend, 127 frontend, 56 extension, 12 E2E et 4 accessibilité sans échec ; un test E2E est ignoré.",
+      "evidence": "Release v0.5.2 : 434 tests backend, 127 frontend, 56 extension, 12 E2E et 4 accessibilité sans échec ; un test E2E est ignoré.",
       "evidence_status": "publicly-verified",
       "verification_ids": ["cortex-bridge-repo", "cortex-bridge-release-0-5-2"],
       "verified_at": "2026-08-22",

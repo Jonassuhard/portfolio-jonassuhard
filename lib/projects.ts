@@ -663,7 +663,7 @@ export const projects: Project[] = [
     repoStatus: "Repo public sous MIT : github.com/Jonassuhard/cortex-bridge",
     liveLabel: "Repo GitHub (lien)",
     evidenceNote:
-      "Code public sous licence MIT. Preuve de release v0.5.2 publiée le 22/08/2026 : 431 tests backend, 127 frontend, 56 extension, 12 E2E et 4 accessibilité sans échec ; 1 test E2E ignoré.",
+      "Code public sous licence MIT. Preuve de release v0.5.2 publiée le 22/08/2026 : 434 tests backend, 127 frontend, 56 extension, 12 E2E et 4 accessibilité sans échec ; 1 test E2E ignoré.",
     metaDescription:
       "Cortex Bridge relie ChatGPT à un exécuteur local contrôlé via une extension Chrome, une console FastAPI et des validations humaines.",
     architecture: [
@@ -728,7 +728,7 @@ export const projects: Project[] = [
       "Installation macOS contrôlée par plan immuable et diagnostic local reproductible."
     ],
     results: [
-      "Preuve de release v0.5.2 du 22/08/2026 : 431 tests backend, 127 frontend, 56 extension, 12 E2E et 4 accessibilité sans échec ; 1 E2E ignoré.",
+      "Preuve de release v0.5.2 du 22/08/2026 : 434 tests backend, 127 frontend, 56 extension, 12 E2E et 4 accessibilité sans échec ; 1 E2E ignoré.",
       "Dix scénarios à deux conversations exécutés sans croisement ; le brouillon du troisième writer est conservé lors du refus.",
       "Auto-diagnostic v0.5.2 validé dans un worktree jetable : installation, consentement, démarrage, API loopback et arrêt propre."
     ],
@@ -745,7 +745,7 @@ export const projects: Project[] = [
       },
       {
         label: "Preuve de release v0.5.2",
-        href: "https://github.com/Jonassuhard/cortex-bridge/blob/eb3d740a1a5dafba738a7aa2e921ac95a082f942/docs/verification/v0.5.2.json",
+        href: "https://github.com/Jonassuhard/cortex-bridge/blob/64af9ce1e88dea8404acb11893eb96d75dd1baaa/docs/verification/v0.5.2.json",
         external: true
       },
       { label: "Version Markdown", href: "/projects/cortex-bridge.md" }

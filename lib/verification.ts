@@ -101,12 +101,12 @@ export const verificationItems: VerificationItem[] = [
   },
   {
     id: "cortex-bridge-release-0-5-2",
-    claim: "La preuve de release Cortex Bridge v0.5.2 rapporte 431 tests backend, 127 frontend, 56 extension, 12 E2E et 4 accessibilité sans échec ; un test E2E est ignoré.",
+    claim: "La preuve de release Cortex Bridge v0.5.2 rapporte 434 tests backend, 127 frontend, 56 extension, 12 E2E et 4 accessibilité sans échec ; un test E2E est ignoré.",
     scope: "Projet",
     status: "publicly-verified",
     checkedAt: "2026-08-22",
     sourceLabel: "Preuve de release Cortex Bridge v0.5.2",
-    sourceHref: "https://github.com/Jonassuhard/cortex-bridge/blob/eb3d740a1a5dafba738a7aa2e921ac95a082f942/docs/verification/v0.5.2.json",
+    sourceHref: "https://github.com/Jonassuhard/cortex-bridge/blob/64af9ce1e88dea8404acb11893eb96d75dd1baaa/docs/verification/v0.5.2.json",
     note: "Résultats automatisés datés et publiés dans le dépôt. Le document signale un environnement de simulation ; il ne prouve pas une compatibilité continue avec ChatGPT."
   },
   {

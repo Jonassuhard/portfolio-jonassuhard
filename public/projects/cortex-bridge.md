@@ -9,7 +9,7 @@ Niveau de preuve : Preuve publique.
 
 En bref : Relier une conversation ChatGPT à un exécuteur local borné : le modèle planifie, l'utilisateur valide, Cortex agit dans le workspace et renvoie un rapport auditable.
 
-Preuves : Code public sous licence MIT. Preuve de release v0.5.2 publiée le 22/08/2026 : 431 tests backend, 127 frontend, 56 extension, 12 E2E et 4 accessibilité sans échec ; 1 test E2E ignoré.
+Preuves : Code public sous licence MIT. Preuve de release v0.5.2 publiée le 22/08/2026 : 434 tests backend, 127 frontend, 56 extension, 12 E2E et 4 accessibilité sans échec ; 1 test E2E ignoré.
 
 Lien : https://github.com/Jonassuhard/cortex-bridge
 
