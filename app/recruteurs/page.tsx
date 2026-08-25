@@ -26,14 +26,15 @@ export default function RecruitersPage() {
           <AnimatedTitle>
             {site.headline}
           </AnimatedTitle>
-          <p className="role-aliases">{site.roleAliases.join(" · ")}</p>
-          <p className="title-definition">
-            <Link href="/a-propos#growth-engineer">Correspondance avec le rôle Growth Engineer →</Link>
-          </p>
           <p className="lead">
-            Profil marketing et développement : je cadre un besoin, je livre une
-            première version, je définis comment la mesurer et je documente pour
-            que l'équipe puisse reprendre derrière.
+            Je relie le marketing et le développement. Je cadre le besoin, je
+            livre une première version, je définis comment la mesurer et je
+            documente la suite pour l'équipe.
+          </p>
+          <p>
+            {site.careerGoal} Un Forward Deployed Engineer part du terrain,
+            construit avec les personnes concernées, puis vérifie que la
+            solution sert vraiment.
           </p>
           <div className="button-row">
             <a className="button primary" href={`mailto:${site.email}`}>Me contacter</a>
@@ -119,15 +120,14 @@ export default function RecruitersPage() {
             <h2>Où je suis utile dans une équipe.</h2>
           </div>
           <p>
-            Je ne travaille pas en vase clos. Je pose mes questions tôt, je livre
-            par petits lots relisables, et je documente pour que le travail se
-            reprenne sans moi.
+            Je pose mes questions tôt, je livre par petits lots relisables et
+            je documente ce qui doit être repris.
           </p>
         </div>
         <div className="matrix matrix-2">
           <div className="matrix-item">
             <strong>Cadrage partagé</strong>
-            <p>Les hypothèses posées avant de coder, les décisions écrites, pas gardées dans ma tête.</p>
+            <p>Les hypothèses sont posées avant de coder et les décisions sont écrites.</p>
           </div>
           <div className="matrix-item">
             <strong>Revue et intégration</strong>
@@ -139,7 +139,7 @@ export default function RecruitersPage() {
           </div>
           <div className="matrix-item">
             <strong>Synthèse visuelle</strong>
-            <p>Une formation en animation et design qui aide à rendre une interface, un rapport ou une décision compréhensible.</p>
+            <p>Ma formation en animation et design aide à rendre une interface, un rapport ou une décision compréhensible.</p>
           </div>
         </div>
       </section>
@@ -148,7 +148,7 @@ export default function RecruitersPage() {
         <div className="section-head">
           <div>
             <p className="section-kicker">Marché français</p>
-            <h2>Le bon niveau, sans survendre.</h2>
+            <h2>Ce que je maîtrise, ce que je consolide.</h2>
           </div>
           <p>
             Je suis déjà opérationnel sur le build web, le SEO et les workflows
@@ -174,8 +174,8 @@ export default function RecruitersPage() {
             <h2>Trois projets qui montrent comment je travaille.</h2>
           </div>
           <p>
-            Un produit IA open source conçu et testé de bout en bout, un site
-            client livré et une méthode d'audit IA alignée sur le poste.
+            Un produit IA open source, un site familial en production et un
+            audit de visibilité dans les réponses des assistants IA.
           </p>
         </div>
         <div className="proof-grid">
@@ -192,7 +192,7 @@ export default function RecruitersPage() {
                 <p className="case-meta">{project.status}</p>
                 <h3>{project.shortTitle}</h3>
                 <p>{project.recruiterProof[0]}</p>
-                <Link className="button" href={`/projets/${project.slug}`}>Ouvrir</Link>
+                <Link className="button" href={`/projets/${project.slug}`}>Voir le projet</Link>
               </div>
             </article>
           ))}
@@ -232,7 +232,7 @@ export default function RecruitersPage() {
             <p className="section-kicker">FAQ</p>
             <h2>Questions fréquentes.</h2>
           </div>
-          <p>Les réponses factuelles, pour un recruteur comme pour un agent qui lit cette page.</p>
+          <p>Les réponses factuelles, prêtes à citer.</p>
         </div>
         <div className="faq">
           {faqItems.map((item) => (

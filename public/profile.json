@@ -6,6 +6,17 @@
   "seniority": "junior",
   "availability": "1er septembre 2026",
   "verified_at": "2026-08-15",
+  "current_profile": {
+    "title": "Growth Engineer junior",
+    "summary": "Je relie acquisition, IA appliquée et exécution produit pour livrer des outils web, automatisations et workflows LLM vérifiables."
+  },
+  "career_goal": "Je cherche à évoluer vers un rôle de Forward Deployed Engineer. Je veux comprendre un besoin concret, construire une première solution avec l'équipe ou le client, la tester, puis la rendre facile à reprendre.",
+  "career_objective": {
+    "title": "Forward Deployed Engineer",
+    "statement": "Je cherche à évoluer vers un rôle de Forward Deployed Engineer. Je veux comprendre un besoin concret, construire une première solution avec l'équipe ou le client, la tester, puis la rendre facile à reprendre.",
+    "plain_language": "Partir d'un besoin terrain, construire avec les personnes concernées, livrer puis vérifier l'usage.",
+    "current_employment": false
+  },
   "citable_facts": {
     "cortex_bridge_release_0_5_2": {
       "claim": "La preuve de release Cortex Bridge v0.5.2 rapporte 434 tests backend, 127 frontend, 56 extension, 12 E2E et 4 accessibilité sans échec ; un test E2E est ignoré.",
@@ -37,7 +48,8 @@
   "target_roles": [
     "Growth Engineer junior",
     "Product Builder IA",
-    "Chef de projet IA junior"
+    "Chef de projet IA junior",
+    "Forward Deployed Engineer (objectif de progression)"
   ],
   "positioning": "Relier acquisition, IA appliquée et exécution produit pour livrer des outils web, automatisations et workflows LLM vérifiables.",
   "skills": {

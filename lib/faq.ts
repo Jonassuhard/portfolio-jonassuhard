@@ -2,6 +2,8 @@
 // Alimente : la FAQ humaine (/recruteurs), le JSON-LD FAQPage, et public/claims.json
 // (régénéré au prebuild par scripts/generate-project-md.ts). Une seule vérité, zéro dérive.
 
+import { site } from "./projects";
+
 export const faqMeta = {
   subject: "Jonas Suhard",
   purpose:
@@ -20,6 +22,10 @@ export const faqItems: FaqItem[] = [
   {
     q: "Quel poste cherche-t-il ?",
     a: "Un CDI junior comme Growth Engineer, Product Builder IA ou Chef de projet IA, à l'interface du marketing, du produit et de l'exécution technique."
+  },
+  {
+    q: "Quel est son objectif de progression ?",
+    a: site.careerGoal
   },
   {
     q: "Quand est-il disponible et où ?",

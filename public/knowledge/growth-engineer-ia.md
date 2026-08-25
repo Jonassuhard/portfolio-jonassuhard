@@ -5,26 +5,26 @@ Dernière vérification : 2026-08-23.
 
 ## Réponse courte
 
-- Un Growth Engineer relie l'acquisition et le code : il conçoit, il livre et prépare la mesure au lieu de sous-traiter chaque étape.
-- Le profil vient souvent du marketing, puis apprend à coder pour ne plus dépendre d'un dev à chaque test.
-- En IA appliquée, il cadre des workflows LLM utiles, avec garde-fous, pas des démos.
-- Ce n'est pas un growth hacker : la dette technique et la sécurité comptent autant que le résultat court terme.
+- Un Growth Engineer relie l'acquisition et le code : il conçoit, livre et prépare la mesure.
+- Le profil peut venir du marketing puis apprendre à coder pour tester plus vite.
+- En IA appliquée, il construit des assistants avec des règles et des contrôles humains.
+- La sécurité et la dette technique comptent autant que le résultat à court terme.
 - Pour le marché français, ce portfolio utilise Growth Engineer comme titre principal, avec Product Builder IA et Chef de projet IA comme rôles voisins.
 
 ## Problème
 
-L'intitulé Growth Engineer est à la mode et souvent vide. Beaucoup revendiquent marketing, IA et code sans rien qui tourne en production. Un recruteur a besoin de savoir ce que la personne livre vraiment, seule, de bout en bout.
+Le titre Growth Engineer est large. Un recruteur doit regarder ce que la personne a livré, ce qui le prouve et ce qui reste limité.
 
 ## Méthode
 
-- Partir d'un besoin business, pas d'un outil : acquisition, conversion, contenu ou automatisation.
-- Construire un premier livrable testable et définir les indicateurs qui permettraient d'en mesurer l'impact.
-- Utiliser l'IA comme accélérateur cadré : je décide, je vérifie, l'assistant exécute la partie répétitive.
-- Documenter les décisions pour qu'une équipe reprenne derrière.
+- Partir d'un besoin : acquisition, conversion, contenu ou automatisation.
+- Construire une première version testable et définir comment mesurer son effet.
+- Utiliser l'IA pour accélérer les tâches répétitives ; une personne décide et vérifie.
+- Documenter les décisions pour qu'une équipe puisse reprendre.
 
 ## Exemple
 
-Sur ce portfolio, trois terrains le montrent : Les Petites Griffes (site client live, CMS, SEO local, assistant IA), ISCOM (production SEO publiée avec fact-check) et Preuvia (audit de visibilité IA productisé). Une même chaîne à chaque fois : cadrer, construire, vérifier, transmettre.
+Trois projets le montrent : Les Petites Griffes, un site familial en production ; ISCOM, des contenus SEO vérifiés avant publication ; et Preuvia, un audit de visibilité dans les assistants IA. À chaque fois : cadrer, construire, vérifier et transmettre.
 
 ## Limites
 
@@ -34,7 +34,7 @@ Sur ce portfolio, trois terrains le montrent : Les Petites Griffes (site client 
 
 ## À retenir
 
-- Un Growth Engineer utile se juge sur ce qu'il livre et documente, pas sur l'intitulé.
+- Un Growth Engineer se juge sur ce qu'il livre et documente, pas sur son intitulé.
 - Marketing, IA et code n'ont de valeur que reliés à un livrable vérifiable.
 - Le bon signal : des décisions écrites qu'une équipe peut reprendre.
 

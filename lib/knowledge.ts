@@ -23,28 +23,28 @@ export const knowledgePages: KnowledgePage[] = [
     title: "Comment rendre un portfolio citable par un agent IA ?",
     shortTitle: "Portfolio citable par IA",
     description:
-      "Méthode concrète pour rendre un portfolio lisible par les agents : llms.txt, profile.json, claims.json, Markdown et JSON-LD.",
+      "Méthode pour rendre un portfolio lisible par les agents IA avec des fichiers Markdown et JSON.",
     published: "2026-07-02",
     updated: "2026-07-20",
     answer: [
-      "Un agent IA ne lit pas un portfolio comme un recruteur : il extrait des faits, des liens et des preuves.",
-      "La page HTML reste la version canonique pour les humains.",
-      "Les fichiers Markdown et JSON servent de carte lisible par machine.",
-      "Le but n'est pas de forcer une citation, mais de rendre les faits vérifiables.",
-      "Ce site utilise llms.txt, profile.json, claims.json, verification.json, skills.md, des fiches projet Markdown et un knowledge graph JSON-LD."
+      "Un agent IA cherche des faits, des liens et des preuves.",
+      "La page HTML est faite pour les humains.",
+      "Les fichiers Markdown et JSON donnent les mêmes informations sous une forme simple à lire par machine.",
+      "Le but est de rendre les faits vérifiables, pas d'imposer une citation.",
+      "Ce site publie un guide llms.txt, des profils JSON, des questions-réponses, des preuves et des fiches projet en Markdown."
     ],
     problem:
-      "Un beau portfolio peut rester flou pour un agent : titre, disponibilité, compétences, projets et limites sont dispersés dans le design. Sans source structurée, le modèle résume au jugé.",
+      "Un portfolio peut être clair pour un humain et difficile à lire pour un agent. Le titre, les projets et leurs limites sont souvent dispersés dans la page.",
     method: [
-      "Créer un llms.txt court qui joue le rôle de carte d'entrée.",
-      "Maintenir un profile.json pour les faits stables : titre, disponibilité, stack, projets et limites.",
-      "Ajouter un claims.json en questions-réponses pour les réponses que l'agent doit pouvoir citer sans inventer.",
-      "Publier un registre de preuves qui sépare source publique, preuve privée, déclaratif et affirmation retirée.",
-      "Publier une version Markdown des pages clés pour réduire le bruit de layout.",
-      "Exposer un graphe JSON-LD qui relie personne, compétences et projets par des IDs stables."
+      "Créer un llms.txt court pour orienter l'agent.",
+      "Garder un profile.json pour les faits stables : titre, disponibilité, outils, projets et limites.",
+      "Ajouter un claims.json en questions-réponses pour éviter les réponses inventées.",
+      "Publier un registre qui sépare les preuves publiques, privées, déclarées et retirées.",
+      "Publier les pages clés aussi en Markdown, sans la mise en page.",
+      "Relier la personne, les compétences et les projets dans du JSON-LD, un format de données structuré."
     ],
     example:
-      "Sur ce portfolio, Preuvia sert de cas produit GEO/AEO ; la couche agent-readable du site sert de démonstrateur vivant. Un recruteur lit les pages HTML, un agent peut suivre llms.txt puis vérifier les mêmes faits dans les JSON et Markdown.",
+      "Sur ce portfolio, Preuvia sert de cas d'audit de visibilité dans les assistants IA. Un recruteur lit les pages HTML ; un agent peut suivre llms.txt et vérifier les mêmes faits dans les fichiers JSON et Markdown.",
     proofs: [
       { label: "llms.txt", href: "/llms.txt" },
       { label: "profile.json", href: "/profile.json" },
@@ -61,9 +61,9 @@ export const knowledgePages: KnowledgePage[] = [
       "La couche machine doit rester cohérente avec les pages humaines ; sinon elle devient une seconde version du site."
     ],
     takeaway: [
-      "Un agent cite plus facilement une page quand il peut extraire des faits autonomes.",
-      "La bonne unité n'est pas un slogan : c'est un fait vérifiable relié à une preuve.",
-      "HTML pour les humains, Markdown/JSON pour les agents, une seule vérité éditoriale."
+      "Un agent peut mieux reprendre une page quand les faits sont séparés et sourcés.",
+      "Un fait utile est relié à une preuve, pas à un slogan.",
+      "HTML pour les humains, Markdown et JSON pour les agents, avec les mêmes informations."
     ]
   },
   {
@@ -71,27 +71,27 @@ export const knowledgePages: KnowledgePage[] = [
     title: "Comment auditer visuellement une page web avec Playwright ?",
     shortTitle: "Audit visuel Playwright",
     description:
-      "Méthode d'audit visuel multi-viewports : captures, console, responsive, preuves et limites avant modification.",
+      "Méthode pour vérifier une page sur plusieurs écrans avant de la modifier.",
     published: "2026-07-02",
     updated: "2026-07-20",
     answer: [
-      "Un audit visuel utile ne commence pas par une opinion : il commence par des captures reproductibles.",
-      "Playwright permet de vérifier mobile, tablette et desktop avec les mêmes étapes.",
-      "Le contrôle porte sur le rendu, les erreurs console, l'overflow, les éléments masqués et les preuves visuelles.",
-      "L'objectif n'est pas de remplacer le jugement design, mais d'éviter les angles morts mécaniques.",
-      "Chaque recommandation doit finir en patch vérifiable, pas en préférence de goût."
+      "Un audit visuel commence par des captures qu'on peut refaire.",
+      "Playwright vérifie mobile, tablette et ordinateur avec les mêmes étapes.",
+      "Le contrôle regarde le rendu, les erreurs, le débordement et les éléments masqués.",
+      "Il complète le regard humain ; il ne le remplace pas.",
+      "Chaque constat doit mener à une correction vérifiable."
     ],
     problem:
       "Une page peut sembler correcte sur un écran et casser ailleurs : texte trop long, bouton compressé, image absente, header qui couvre le contenu ou animation qui masque la lecture.",
     method: [
       "Lister les parcours à vérifier avant d'ouvrir le navigateur.",
       "Capturer au moins mobile 390px et desktop 1440px pour les pages clés.",
-      "Contrôler les erreurs console, les requêtes échouées et l'overflow horizontal.",
-      "Comparer les captures avec les contraintes DA au lieu de chercher un style générique.",
+      "Contrôler les erreurs, les requêtes échouées et le débordement horizontal.",
+      "Comparer les captures avec la direction visuelle prévue.",
       "Transformer chaque défaut en changement de fichier précis, puis reconstruire."
     ],
     example:
-      "Sur les chantiers Capsélys et Les Petites Griffes, les captures servent à vérifier le rendu avant de parler de conversion : textes, blocs, assistant IA, preuves visuelles et contraintes client.",
+      "Sur Capsélys et Les Petites Griffes, les captures servent à vérifier les textes, les blocs, l'assistant IA et les contraintes client avant de parler de conversion.",
     proofs: [
       { label: "Fiche Capsélys", href: "/projects/capselys.md" },
       { label: "Capture assistant Capsélys", href: "/assets/proof/capselys/capselys-assistant.webp" },
@@ -106,8 +106,8 @@ export const knowledgePages: KnowledgePage[] = [
     ],
     takeaway: [
       "Capturer avant de corriger évite les débats flous.",
-      "Un audit visuel fiable combine navigateur réel, contraintes design et preuve de build.",
-      "La meilleure recommandation est celle qu'on peut vérifier au prochain screenshot."
+      "Un audit visuel fiable combine navigateur, règles visuelles et build réussi.",
+      "Une recommandation utile peut être vérifiée à la capture suivante."
     ]
   },
   {
@@ -115,26 +115,26 @@ export const knowledgePages: KnowledgePage[] = [
     title: "C'est quoi un Growth Engineer en IA appliquée ?",
     shortTitle: "Growth Engineer IA",
     description:
-      "Ce que recouvre le rôle de Growth Engineer en IA appliquée : marketing, code et workflows LLM reliés à des projets livrés, pas à un intitulé.",
+      "Le rôle de Growth Engineer en IA appliquée : marketing, code et assistants IA reliés à des projets réels.",
     published: "2026-07-02",
     updated: "2026-08-23",
     answer: [
-      "Un Growth Engineer relie l'acquisition et le code : il conçoit, il livre et prépare la mesure au lieu de sous-traiter chaque étape.",
-      "Le profil vient souvent du marketing, puis apprend à coder pour ne plus dépendre d'un dev à chaque test.",
-      "En IA appliquée, il cadre des workflows LLM utiles, avec garde-fous, pas des démos.",
-      "Ce n'est pas un growth hacker : la dette technique et la sécurité comptent autant que le résultat court terme.",
+      "Un Growth Engineer relie l'acquisition et le code : il conçoit, livre et prépare la mesure.",
+      "Le profil peut venir du marketing puis apprendre à coder pour tester plus vite.",
+      "En IA appliquée, il construit des assistants avec des règles et des contrôles humains.",
+      "La sécurité et la dette technique comptent autant que le résultat à court terme.",
       "Pour le marché français, ce portfolio utilise Growth Engineer comme titre principal, avec Product Builder IA et Chef de projet IA comme rôles voisins."
     ],
     problem:
-      "L'intitulé Growth Engineer est à la mode et souvent vide. Beaucoup revendiquent marketing, IA et code sans rien qui tourne en production. Un recruteur a besoin de savoir ce que la personne livre vraiment, seule, de bout en bout.",
+      "Le titre Growth Engineer est large. Un recruteur doit regarder ce que la personne a livré, ce qui le prouve et ce qui reste limité.",
     method: [
-      "Partir d'un besoin business, pas d'un outil : acquisition, conversion, contenu ou automatisation.",
-      "Construire un premier livrable testable et définir les indicateurs qui permettraient d'en mesurer l'impact.",
-      "Utiliser l'IA comme accélérateur cadré : je décide, je vérifie, l'assistant exécute la partie répétitive.",
-      "Documenter les décisions pour qu'une équipe reprenne derrière."
+      "Partir d'un besoin : acquisition, conversion, contenu ou automatisation.",
+      "Construire une première version testable et définir comment mesurer son effet.",
+      "Utiliser l'IA pour accélérer les tâches répétitives ; une personne décide et vérifie.",
+      "Documenter les décisions pour qu'une équipe puisse reprendre."
     ],
     example:
-      "Sur ce portfolio, trois terrains le montrent : Les Petites Griffes (site client live, CMS, SEO local, assistant IA), ISCOM (production SEO publiée avec fact-check) et Preuvia (audit de visibilité IA productisé). Une même chaîne à chaque fois : cadrer, construire, vérifier, transmettre.",
+      "Trois projets le montrent : Les Petites Griffes, un site familial en production ; ISCOM, des contenus SEO vérifiés avant publication ; et Preuvia, un audit de visibilité dans les assistants IA. À chaque fois : cadrer, construire, vérifier et transmettre.",
     proofs: [
       { label: "profile.json", href: "/profile.json" },
       { label: "profile.md", href: "/profile.md" },
@@ -149,7 +149,7 @@ export const knowledgePages: KnowledgePage[] = [
       "L'impact business chiffré n'est pas toujours public, à cause des données clients ou mineurs."
     ],
     takeaway: [
-      "Un Growth Engineer utile se juge sur ce qu'il livre et documente, pas sur l'intitulé.",
+      "Un Growth Engineer se juge sur ce qu'il livre et documente, pas sur son intitulé.",
       "Marketing, IA et code n'ont de valeur que reliés à un livrable vérifiable.",
       "Le bon signal : des décisions écrites qu'une équipe peut reprendre."
     ]
@@ -159,41 +159,41 @@ export const knowledgePages: KnowledgePage[] = [
     title: "Comment structurer un workflow Claude Code avec MCP et agents ?",
     shortTitle: "Workflow Claude Code + MCP",
     description:
-      "Structurer un assistant Claude Code en système lisible : identité, skills, agents, hooks et MCP en lazy-load, avec garde-fous sur les actions sensibles.",
+      "Organiser Claude Code avec des règles, des outils et des contrôles pour les actions sensibles.",
     published: "2026-07-02",
     updated: "2026-07-20",
     answer: [
-      "Claude Code devient utile quand on lui donne une structure : identité, règles, skills, agents, hooks, MCP.",
-      "Le MCP branche des outils externes ; les agents isolent les tâches longues du contexte principal.",
-      "Les hooks imposent des garde-fous déterministes : confirmation ou Touch ID sur action sensible, secrets hors des logs.",
-      "Le lazy-load évite de tout charger au démarrage : moins de tokens, moins de RAM.",
-      "L'intérêt n'est pas le nombre d'outils, mais un système lisible et réutilisable."
+      "Claude Code gagne à avoir une identité, des règles et des outils séparés.",
+      "Le protocole MCP relie des outils externes ; les agents prennent les tâches longues à part.",
+      "Les hooks, des contrôles automatiques, demandent une confirmation ou Touch ID avant une action sensible et évitent les secrets dans les journaux.",
+      "Le chargement à la demande évite de tout ouvrir au démarrage.",
+      "Le but est un système lisible et réutilisable, pas une collection d'outils."
     ],
     problem:
-      "Sorti de la boîte, un assistant CLI répond poliment mais oublie le contexte, recharge tout, et n'a aucun garde-fou sur les actions dangereuses. Sans structure, chaque session repart de zéro et les mauvaises habitudes reviennent.",
+      "Sans règles ni contexte écrit, un assistant peut oublier les décisions et agir sans les contrôles attendus. Chaque session repart alors de zéro.",
     method: [
-      "Séparer l'identité (ton, valeurs, refus) de la config technique, dans des fichiers dédiés.",
-      "Router chaque tâche vers le bon outil : skill, agent, MCP ou commande simple.",
-      "Isoler les investigations lourdes dans des agents pour garder le contexte principal propre.",
-      "Poser des hooks sur les actions sensibles : confirmation, Touch ID, rédaction des secrets.",
-      "Charger les MCP et agents à la demande, pas au démarrage."
+      "Séparer l'identité de l'assistant et sa configuration technique dans des fichiers dédiés.",
+      "Choisir le bon outil pour chaque tâche : règle, agent, MCP ou commande simple.",
+      "Mettre les recherches lourdes dans des agents pour garder le contexte principal lisible.",
+      "Ajouter des contrôles sur les actions sensibles : confirmation, Touch ID et masquage des secrets.",
+      "Charger les MCP et les agents seulement quand ils servent."
     ],
     example:
-      "claude-code-soul est un pack open source (MIT) qui applique ça : un soul.md pour l'identité, des rules, skills, agents et hooks, avec Touch ID sur les actions sensibles, secrets via Keychain et gitleaks au moment de publier. Le repo est publié sans fuite : 0 PII, 0 secret, 0 chemin personnel.",
+      "claude-code-soul est un projet open source sous licence MIT. Il rassemble un fichier d'identité, des règles, des outils et des contrôles : Touch ID pour les actions sensibles, secrets dans Keychain et contrôle avant publication. Le dépôt publié ne contient ni donnée personnelle, ni secret, ni chemin local.",
     proofs: [
       { label: "Repo claude-code-soul (GitHub)", href: "https://github.com/Jonassuhard/claude-code-soul" },
       { label: "Fiche claude-code-soul", href: "/projects/claude-code-soul.md" },
       { label: "skills.md", href: "/skills.md" }
     ],
     limits: [
-      "Une config opinionnée : ce workflow reflète des choix personnels, à adapter avant réutilisation.",
-      "Plus de structure veut dire plus de maintenance : il faut nettoyer régulièrement skills et règles.",
-      "Un garde-fou ne remplace pas la vigilance : le hook réduit le risque, il ne l'annule pas."
+      "Cette configuration reflète des choix personnels et doit être adaptée avant réutilisation.",
+      "Plus de structure demande plus d'entretien : il faut nettoyer les outils et les règles.",
+      "Un contrôle automatique réduit un risque, il ne le supprime pas."
     ],
     takeaway: [
-      "Un bon workflow Claude Code se juge à sa lisibilité, pas au nombre d'outils branchés.",
-      "Les hooks déterministes valent mieux qu'une consigne polie pour les actions sensibles.",
-      "Séparer identité et config rend le tout réutilisable et publiable."
+      "Un bon workflow Claude Code est lisible, pas seulement riche en outils.",
+      "Un contrôle automatique est plus fiable qu'une simple consigne pour une action sensible.",
+      "Séparer l'identité et la configuration aide à réutiliser et publier le système."
     ]
   },
   {
@@ -201,50 +201,50 @@ export const knowledgePages: KnowledgePage[] = [
     title: "Comment organiser la mémoire d'un agent IA en Markdown ?",
     shortTitle: "Mémoire d'agent en Markdown",
     description:
-      "Une méthode concrète pour donner une mémoire durable à un agent IA : des fichiers Markdown d'identité, de règles et de contexte projet, testée contre d'autres approches.",
+      "Une méthode pour donner une mémoire durable à un agent IA avec des fichiers Markdown d'identité, de règles et de contexte projet.",
     published: "2026-07-02",
     updated: "2026-07-20",
     answer: [
-      "Un agent sans mémoire repart de zéro à chaque session. La solution la plus simple qui tient dans le temps, c'est du Markdown en clair.",
-      "Je sépare trois couches. L'identité de l'agent, sa méthode de travail, et son contexte projet du moment.",
-      "Chaque projet garde son propre contexte, chargé quand on l'ouvre, pas empilé dans un fichier géant.",
-      "Les corrections deviennent des règles écrites, pour ne pas refaire deux fois la même erreur.",
-      "J'ai testé d'autres pistes. Le Markdown en masse reste le plus lisible quand plusieurs agents travaillent sur le même projet."
+      "Sans mémoire, un agent repart de zéro à chaque session. Des fichiers Markdown simples peuvent garder le contexte.",
+      "Je sépare l'identité de l'agent, sa méthode de travail et le contexte du projet.",
+      "Chaque projet garde son contexte, chargé quand on l'ouvre, au lieu d'un fichier unique très long.",
+      "Les corrections deviennent des règles écrites pour éviter la même erreur.",
+      "Le Markdown reste simple à lire quand plusieurs agents travaillent sur un même projet."
     ],
     problem:
-      "Sorti de la boîte, un assistant oublie tout entre deux sessions. On lui réexplique le contexte, les préférences, les erreurs déjà commises. Sans structure, la mémoire devient soit un dump illisible, soit une base de données que l'agent ne relit jamais au bon moment.",
+      "Entre deux sessions, un assistant peut perdre le contexte, les préférences et les erreurs déjà connues. Sans structure, les notes deviennent trop longues ou ne sont pas relues au bon moment.",
     method: [
-      "Poser un fichier d'identité stable, avec le ton, les valeurs et ce que l'agent refuse de faire.",
-      "Séparer les règles de méthode dans leurs propres fichiers, courts et actionnables.",
-      "Donner à chaque projet son fichier de contexte, lu à l'ouverture et mis à jour à la fin de chaque tâche.",
-      "Transformer chaque correction en une ligne de règle, datée, avec la cause et le correctif.",
-      "Garder chaque fichier court. Quand il dépasse sa limite, on externalise et on pointe, on n'empile pas."
+      "Créer un fichier d'identité stable avec le ton, les valeurs et les refus de l'agent.",
+      "Garder les règles de méthode dans des fichiers courts et utilisables.",
+      "Donner à chaque projet un fichier de contexte, lu au début et mis à jour à la fin de la tâche.",
+      "Transformer une correction en règle datée, avec sa cause et son correctif.",
+      "Garder les fichiers courts. Quand ils deviennent trop longs, créer un fichier séparé et faire un lien."
     ],
     example:
-      "Sur claude-code-soul, la mémoire tient dans des fichiers Markdown versionnés. Un fichier d'âme pour l'identité, des règles séparées, un contexte par projet et un journal de leçons. Plusieurs modèles lisent les mêmes fichiers, Claude, Gemini et Codex, sans se marcher dessus. L'agent relit le fichier à jour au lieu de se fier à un résumé qui se dégrade.",
+      "Sur claude-code-soul, la mémoire tient dans des fichiers Markdown versionnés : identité, règles, contexte par projet et leçons. Claude, Gemini et Codex lisent les mêmes fichiers. L'agent relit le fichier à jour au lieu de se fier à un ancien résumé.",
     proofs: [
       { label: "Repo claude-code-soul (GitHub)", href: "https://github.com/Jonassuhard/claude-code-soul" },
       { label: "Fiche claude-code-soul", href: "/projects/claude-code-soul.md" },
       { label: "skills.md", href: "/skills.md" }
     ],
     limits: [
-      "C'est du Markdown, pas une base vectorielle. Pour retrouver un fait précis dans des milliers de notes, une recherche sémantique reste plus adaptée.",
-      "La méthode demande de la discipline. Un fichier qu'on ne met pas à jour ment vite.",
-      "Cette organisation reflète une façon de travailler. Elle s'adapte, elle ne se copie pas telle quelle."
+      "C'est du Markdown, pas une base de recherche sémantique. Pour retrouver un fait parmi des milliers de notes, une recherche dédiée est plus adaptée.",
+      "La méthode demande de la discipline. Un fichier non mis à jour devient vite faux.",
+      "Cette organisation reflète une façon de travailler. Il faut l'adapter, pas la copier telle quelle."
     ],
     takeaway: [
-      "La mémoire utile d'un agent, c'est celle qu'il relit au bon moment, pas la plus grosse.",
+      "La mémoire utile est celle que l'agent relit au bon moment, pas la plus longue.",
       "Trois couches suffisent : identité, méthode, contexte projet.",
       "Le Markdown en clair gagne quand plusieurs agents doivent lire la même mémoire."
     ],
     faq: [
       {
         q: "Pourquoi pas Obsidian ou une base de notes ?",
-        a: "Obsidian est très bien pour un cerveau humain. Pour un agent, le plus fiable reste des fichiers texte simples qu'il lit et réécrit directement, sans passer par une couche d'application. Le Markdown en clair se versionne, se compare et se partage entre plusieurs modèles."
+        a: "Obsidian convient bien à des notes humaines. Pour un agent, des fichiers texte simples sont plus faciles à lire et modifier directement. Le Markdown se versionne, se compare et se partage entre plusieurs modèles."
       },
       {
         q: "Ça marche avec d'autres modèles que Claude ?",
-        a: "Oui. Les mêmes fichiers Markdown sont lus par Claude, Gemini et Codex. Le format neutre, c'est justement ce qui permet de changer de modèle sans réécrire la mémoire."
+        a: "Oui. Claude, Gemini et Codex peuvent lire les mêmes fichiers Markdown. Ce format permet de changer de modèle sans réécrire la mémoire."
       }
     ]
   }

@@ -24,59 +24,74 @@ function bullets(items: string[]) {
 }
 
 function toMarkdown(project: Project) {
-  const externalLink = project.links.find((link) => link.external);
   const lines = [
     `# ${project.title}`,
     "",
-    `Type : ${project.type}.`,
-    `Période : ${project.period}.`,
-    `Rôle : ${project.role}.`,
-    `Stack : ${project.stack.join(", ")}.`,
-    `Statut : ${project.status}.`,
-    `Niveau de preuve : ${evidenceLevelMeta[project.evidenceLevel].label}.`,
+    "## Repères",
     "",
-    `En bref : ${project.proofLine}`
+    "| Repère | Détail |",
+    "| --- | --- |",
+    `| Format | ${project.type} |`,
+    `| Période | ${project.period} |`,
+    `| Rôle de Jonas | ${project.role} |`,
+    `| Statut | ${project.status} |`,
+    `| Niveau de preuve | ${evidenceLevelMeta[project.evidenceLevel].label} |`,
+    `| Stack | ${project.stack.join(", ")} |`,
+    "",
+    "## À quoi ça sert",
+    "",
+    project.summary,
+    "",
+    "## Ce que Jonas a fait",
+    "",
+    bullets(project.delivered),
+    "",
+    "## Ce que ça prouve",
+    "",
+    project.proofLine,
+    "",
+    bullets(project.recruiterProof)
   ];
   if (project.evidenceNote) {
-    lines.push("", `Preuves : ${project.evidenceNote}`);
-  }
-  if (externalLink) {
-    lines.push("", `Lien : ${externalLink.href}`);
+    lines.push("", project.evidenceNote);
   }
   if (project.versions?.length) {
-    lines.push("", "## Versions", "");
+    lines.push("", "### Versions", "");
     for (const version of project.versions) {
       lines.push(
-        `### ${version.label} — ${version.name}`,
+        `#### ${version.label} — ${version.name}`,
         "",
-        `Statut : ${version.status}.`,
+        "| Repère | Détail |",
+        "| --- | --- |",
+        `| État actuel | ${version.status} |`,
         "",
         version.summary,
         "",
-        "Preuves :",
+        "##### Éléments vérifiés",
         "",
         bullets(version.evidence),
-        "",
-        "Limites :",
-        "",
-        bullets(version.limits),
         ""
       );
     }
   }
   lines.push(
     "",
-    "## Problème",
-    "",
-    project.summary,
-    "",
-    "## Ce que ça montre",
-    "",
-    bullets(project.recruiterProof),
-    "",
     "## Limites",
     "",
-    bullets(project.limits)
+    bullets([
+      ...project.limits,
+      ...(project.versions ?? []).flatMap((version) =>
+        version.limits.map((limit) => `${version.label} : ${limit}`)
+      ),
+      ...(project.notMeasured ?? [])
+    ]),
+    "",
+    "## Liens",
+    "",
+    `- [Étude de cas](/projets/${project.slug})`,
+    ...project.links
+      .filter((link) => link.href !== `/projects/${project.slug}.md`)
+      .map((link) => `- [${link.label}](${link.href})`)
   );
   return `${lines.join("\n")}\n`;
 }

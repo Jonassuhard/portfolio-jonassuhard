@@ -22,11 +22,11 @@ export default function ProjectsPage() {
     <div className="page page-dense">
       <section>
         <p className="eyebrow">Projets</p>
-        <AnimatedTitle>Du projet principal au lab.</AnimatedTitle>
+        <AnimatedTitle>Des projets livrés aux essais.</AnimatedTitle>
         <p className="lead">
-          Trois niveaux, les projets livrés que je mets en avant, les projets
-          techniques, puis les labs personnels. Chaque carte indique ce qui est
-          public, privé ou en cours de publication.
+          Les projets principaux, les projets techniques et les essais
+          personnels. Chaque carte indique ce qui est public, privé ou encore
+          en préparation.
         </p>
       </section>
 
@@ -83,10 +83,10 @@ export default function ProjectsPage() {
 
       <section className="section">
         <div className="notice">
-          <strong>La suite se passe en échange.</strong>
+          <strong>Parlons des projets.</strong>
           <p>
-            Je reprends n'importe lequel de ces projets en entretien :
-            architecture, décisions et limites, sans filtre.
+            En entretien, je peux expliquer le besoin, les choix, les preuves
+            et les limites de chaque projet.
           </p>
           <div className="button-row">
             <Link className="button primary" href="/recruteurs">

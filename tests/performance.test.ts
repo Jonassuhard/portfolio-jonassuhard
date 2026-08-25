@@ -80,13 +80,13 @@ test("le premier écran précharge les deux fontes critiques", () => {
   assert.match(layout, /oslo-ii\.bold\.woff2/);
   assert.match(read("app/globals.css"), /@media \(max-width:640px\)[\s\S]*?\.nixie-clock \{[^}]*font-family:var\(--ft-body\); font-weight:400/);
   assert.equal((nav.match(/<Link\b/g) ?? []).length, (nav.match(/prefetch=\{false\}/g) ?? []).length);
-  assert.match(home, /href="\/a-propos#growth-engineer" prefetch=\{false\}/);
+  assert.match(home, /<p className="eyebrow">CDI · Paris ou hybride/);
   assert.match(home, /className="button" href="\/projets" prefetch=\{false\}/);
   const css = read("app/globals.css");
   assert.match(css, /h1 \{[\s\S]*?font-family:var\(--ft-title\)/);
   assert.doesNotMatch(css, /\.hero \.lead \{ font-family:"Courier New",monospace; \}/);
   assert.match(css, /\.hero \.lead \{ line-height:1\.6; \}/);
-  assert.match(home, /<p className="lead">[\s\S]*?IA mesurables\.[\s\S]*?<p className="hero-human">[\s\S]*?reprendre le travail\./);
+  assert.match(home, /<p className="lead">[\s\S]*?je construis[\s\S]*?recommande\./i);
   assert.match(css, /h1 \{ font-size:clamp\(34px,9vw,42px\); \}/);
 });
 
@@ -94,6 +94,18 @@ test("les assets publics ont un cache long sans être figés", () => {
   const config = read("next.config.mjs");
   assert.match(config, /max-age=2592000, stale-while-revalidate=31536000/);
   assert.doesNotMatch(config, /assetCache[\s\S]*immutable/);
+});
+
+test("les ajustements responsive préservent les dimensions et comportements critiques", () => {
+  const css = read("app/globals.css");
+  const clock = read("app/nixie-clock.tsx");
+
+  assert.match(css, /@media \(min-width:641px\) and \(max-width:840px\)[\s\S]*?\.menubar \{ justify-content:flex-end; padding-left:80px; \}/);
+  assert.match(css, /@media \(min-width:641px\) and \(max-width:960px\)[\s\S]*?\.nixie-clock \{ min-inline-size:5ch;/);
+  assert.match(css, /@media \(max-width:640px\)[\s\S]*?\.consent-actions \.button \{ flex:1; justify-content:center; min-height:44px; \}/);
+  assert.match(css, /\.decoder-hero h1 \{ max-width:18ch; hyphens:none; overflow-wrap:normal; word-break:normal; \}/);
+  assert.match(clock, /<span className="nixie-date">—<\/span>/);
+  assert.doesNotMatch(clock, /<span className="nixie-date">lun\. 00 sept\. 0000<\/span>/);
 });
 
 test("l'observabilité Vercel reste hors du bundle critique", () => {

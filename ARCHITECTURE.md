@@ -6,7 +6,9 @@ Notes d'ingénierie sur ce portfolio (Next.js 16) et sur le pattern d'assistant 
 
 ## 1. Couche de données : une source unique
 
-Le contenu applicatif (projets, profil, compétences) vit dans un module typé, `lib/projects.ts`. Il alimente les pages React et les données structurées. Les fichiers agent-readable publics (`profile.json`, `profile.md`, `skills.md`, `projects/*.md`, `llms.txt`) sont des miroirs statiques relus pendant les audits AEO pour éviter la dérive.
+Les données de projet vivent dans le module typé `lib/projects.ts`. Il alimente les pages React, les données structurées et, via `npm run generate:md`, les fiches `public/projects/*.md`. `lib/knowledge.ts`, `lib/faq.ts` et `lib/verification.ts` génèrent respectivement les fiches knowledge, `claims.json` et `verification.json`.
+
+Les fichiers `public/llms.txt`, `profile.md`, `profile.json`, `skills.md` et `cv.md` sont des surfaces manuelles : ils sont alignés lors de la revue éditoriale, mais ne sont pas générés depuis `lib/projects.ts`. Les deux PDF du CV sont la référence de `cv.md`.
 
 ```ts
 export type Project = {
@@ -44,11 +46,11 @@ experimental: { inlineCss: true }
 **Les polices sont chargées avec parcimonie.** Seules les fonts du hero (titre + corps) sont préchargées, en `display: optional` pour ne pas décaler le texte quand la police custom arrive. Le reste passe en `swap`, non préchargé, pour libérer la bande passante mobile.
 
 ```ts
-const fontTitle = Cormorant_Garamond({ display: "optional", preload: true /* … */ });
-const fontType  = Special_Elite({ display: "swap", preload: false /* … */ });
+const fontTitle = localFont({ display: "optional", preload: true /* … */ });
+const fontBody = Courier_Prime({ display: "optional", preload: true /* … */ });
 ```
 
-Résultat : le premier paint se fait sur un fallback métrique-ajusté (Georgia / Courier New), la font custom prend la main dès qu'elle est en cache. Zéro décalage de mise en page, LCP ≈ FCP.
+Résultat : le premier paint se fait sur un fallback métrique-ajusté. Courier Prime est la police de corps chargée ; Courier New n'est qu'un fallback CSS. La police custom prend la main dès qu'elle est en cache, sans décalage de mise en page notable.
 
 ---
 
@@ -73,7 +75,7 @@ Surface d'attaque minimale par construction : site statique, pas d'auth, pas de 
 
 ## 4. Lisible par les agents IA
 
-Un recruteur lit le site. Un agent (ou un crawler LLM) lit les versions structurées. Le même contenu est exposé en JSON-LD (Person, WebSite, Project), en `profile.json`, en `profile.md`, et via `llms.txt`. C'est volontaire : quand un assistant IA résume mon profil, il tape dans une source que je contrôle, pas dans une supposition.
+Un recruteur lit le site. Un agent (ou un crawler LLM) peut suivre `llms.txt`, puis vérifier le profil, les fiches projet, les faits citables et le JSON-LD. Les surfaces générées restent rattachées à leur source TypeScript ; les surfaces manuelles sont relues contre les CV PDF et le registre de preuves. C'est volontaire : un résumé peut s'appuyer sur une source contrôlée plutôt que sur une supposition.
 
 ---
 

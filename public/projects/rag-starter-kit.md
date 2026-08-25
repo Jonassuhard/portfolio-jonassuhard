@@ -1,25 +1,39 @@
-# RAG Starter Kit - API de retrieval augmenté multi-tenant
+# RAG Starter Kit - rechercher dans des documents avec leurs sources
 
-Type : Projet perso / preuve technique.
-Période : 2026.
-Rôle : Conception et développement (full-stack).
-Stack : FastAPI, Qdrant, Mistral AI, LangChain, SQLite, pytest, Next.js 16 / React 19, Docker Compose.
-Statut : Prototype privé - publication à préparer.
-Niveau de preuve : Démo privée.
+## Repères
 
-En bref : API FastAPI qui ingère des documents (PDF, DOCX, Markdown, texte), les indexe dans Qdrant et répond en citant ses sources, avec auth multi-tenant et un module d'évaluation type Ragas.
+| Repère | Détail |
+| --- | --- |
+| Format | Projet perso / preuve technique |
+| Période | 2026 |
+| Rôle de Jonas | Conception et développement (full-stack) |
+| Statut | Prototype privé - publication à préparer |
+| Niveau de preuve | Démo privée |
+| Stack | FastAPI, Qdrant, Mistral AI, LangChain, SQLite, pytest, Next.js 16 / React 19, Docker Compose |
 
-## Problème
+## À quoi ça sert
 
-Servir plusieurs clients sur un même backend RAG, en gardant les données isolées par client_id et en mesurant la qualité des réponses.
+Permettre à plusieurs clients d'interroger leurs documents sans mélanger leurs données, puis vérifier la qualité des réponses.
 
-## Ce que ça montre
+## Ce que Jonas a fait
 
-- Architecture RAG complète de bout en bout, avec ingestion multi-format, indexation vectorielle et génération avec citation des sources.
-- Isolation multi-tenant (un backend, plusieurs clients séparés par client_id) avec couche d'auth.
-- Module d'évaluation de la qualité des réponses inspiré de Ragas, avec cas de scoring versionnés et suite pytest.
+- Backend FastAPI pour recevoir les documents, retrouver les passages, répondre avec les sources, authentifier les clients et journaliser l'usage.
+- Frontend Next.js 16 / React 19 (App Router, TypeScript, Tailwind 4).
+- Stack dockerisée (Qdrant + backend + frontend) lançable via docker compose, + docs d'onboarding.
+
+## Ce que ça prouve
+
+Une API reçoit des documents, retrouve les passages utiles et répond en citant ses sources. Les données de chaque client restent séparées.
+
+- Recevoir plusieurs formats de documents, retrouver les bons passages et citer les sources dans la réponse.
+- Séparer les données de chaque client sur un même serveur, avec authentification.
+- Tester la qualité des réponses avec des cas versionnés et une suite pytest.
 
 ## Limites
 
 - Code et démonstration non publics à ce jour ; l'architecture décrite n'est donc pas auditée publiquement.
 - Le module d'évaluation fournit le harnais ; les scores de qualité ne sont pas publiés.
+
+## Liens
+
+- [Étude de cas](/projets/rag-starter-kit)

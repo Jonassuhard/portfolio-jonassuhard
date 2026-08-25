@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { evidenceLevelMeta, featuredProjects, skills, site, pageAlternates } from "@/lib/projects";
+import { evidenceLevelMeta, featuredProjects, skillGroups, skills, site, pageAlternates } from "@/lib/projects";
 import AnimatedTitle from "./animated-title";
 import ProjectCardImage from "./project-card-image";
 
@@ -18,17 +18,12 @@ export default function HomePage() {
             <AnimatedTitle glitch>
               {site.headline}
             </AnimatedTitle>
-            <p className="role-aliases">{site.roleAliases.join(" · ")}</p>
-            <p className="title-definition">
-              <Link href="/a-propos#growth-engineer" prefetch={false}>Ce que je mets derrière ce rôle →</Link>
-            </p>
             <p className="lead">
-              Je transforme des besoins marketing et opérationnels en outils web,
-              automatisations et workflows IA mesurables.
+              Je viens du marketing et j'ai appris à coder. Je construis
+              moi-même les sites, les automatisations et les outils IA que je
+              recommande.
             </p>
-            <p className="hero-human">
-              Je documente les choix pour qu'une équipe puisse reprendre le travail.
-            </p>
+            <p>{site.careerGoalShort}</p>
           </div>
           <div className="button-row">
             <a className="button primary" href={`mailto:${site.email}`}>
@@ -43,26 +38,20 @@ export default function HomePage() {
           </p>
         </div>
 
-        <aside className="ledger" aria-label="Journal de projets">
-          <div>
-            <p className="ledger-title">Journal de build</p>
-            <h2>Trois builds récents.</h2>
-          </div>
-          <div className="ledger-list">
-            <div className="ledger-item">
-              <time>2026-06</time>
-              <strong>Site live + CMS + assistant IA</strong>
-              <span>Les Petites Griffes, prod live et contenus éditables.</span>
+        <aside className="panel stats-panel" aria-label="Repères sur les projets">
+          <p className="ledger-title">Trois preuves à lire</p>
+          <div className="stats-list">
+            <div className="stat-item">
+              <strong>Cortex Bridge</strong>
+              <span>Un outil open source qui relie ChatGPT à des actions locales contrôlées.</span>
             </div>
-            <div className="ledger-item">
-              <time>2026-06</time>
-              <strong>App classe + données sensibles</strong>
-              <span>Cool Bank / La Herse, Firebase, sécurité et QA multi-rôles.</span>
+            <div className="stat-item">
+              <strong>Les Petites Griffes</strong>
+              <span>Un site familial en production, avec CMS et assistant IA cadré.</span>
             </div>
-            <div className="ledger-item">
-              <time>2026-06</time>
-              <strong>Production SEO + validation humaine</strong>
-              <span>ISCOM, articles publiés dans Drupal, fact-check avant mise en ligne.</span>
+            <div className="stat-item">
+              <strong>Cool Bank / La Herse</strong>
+              <span>Un jeu scolaire : V2 jouable localement, V3 encore en recette humaine.</span>
             </div>
           </div>
         </aside>
@@ -80,41 +69,56 @@ export default function HomePage() {
             <h2>Mes trois projets les plus solides.</h2>
           </div>
           <p>
-            Trois terrains différents : un produit IA open source, un site client
-            démontrable en entretien et un jeu scolaire documenté en deux versions
-            sur données fictives.
+            Cortex Bridge, Les Petites Griffes et Cool Bank / La Herse : un
+            outil IA open source, un site familial en production et un jeu
+            scolaire dont les deux versions sont séparées.
           </p>
         </div>
 
         <div className="proof-grid">
-          {featuredProjects.map((project) => (
-            <article className="proof-card" key={project.slug}>
-              <ProjectCardImage
-                src={project.image}
-                alt={`Aperçu du projet ${project.shortTitle}`}
-              />
-              <div className="proof-body">
-                <span className={`evidence-badge evidence-${project.evidenceLevel}`}>
-                  {evidenceLevelMeta[project.evidenceLevel].label}
-                </span>
-                <p className="case-meta">{project.type}</p>
-                <h3>{project.shortTitle}</h3>
-                <p>{project.cardLine ?? project.proofLine}</p>
-                <div className="tag-row">
-                  {project.stack.slice(0, 4).map((item) => (
-                    <span className="tag" key={item}>{item}</span>
-                  ))}
+          {featuredProjects.map((project) => {
+            const externalLink = project.links.find((link) => link.external);
+            return (
+              <article className="proof-card" key={project.slug}>
+                <ProjectCardImage
+                  src={project.image}
+                  alt={`Aperçu du projet ${project.shortTitle}`}
+                />
+                <div className="proof-body">
+                  <span className={`evidence-badge evidence-${project.evidenceLevel}`}>
+                    {evidenceLevelMeta[project.evidenceLevel].label}
+                  </span>
+                  <p className="case-meta">{project.type}</p>
+                  <h3>{project.shortTitle}</h3>
+                  <p>{project.cardLine ?? project.proofLine}</p>
+                  <div className="tag-row">
+                    {project.stack.slice(0, 4).map((item) => (
+                      <span className="tag" key={item}>{item}</span>
+                    ))}
+                  </div>
+                  <div className="card-actions">
+                    <Link
+                      className="button"
+                      href={`/projets/${project.slug}`}
+                      aria-label={`Voir le projet ${project.shortTitle}`}
+                    >
+                      Voir le projet
+                    </Link>
+                    {externalLink ? (
+                      <a
+                        className="button secondary-link"
+                        href={externalLink.href}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        {externalLink.label}
+                      </a>
+                    ) : null}
+                  </div>
                 </div>
-                <Link
-                  className="button"
-                  href={`/projets/${project.slug}`}
-                  aria-label={`Voir le projet ${project.shortTitle}`}
-                >
-                  Voir le projet
-                </Link>
-              </div>
-            </article>
-          ))}
+              </article>
+            );
+          })}
         </div>
       </section>
 
@@ -122,17 +126,26 @@ export default function HomePage() {
         <div className="section-head">
           <div>
             <p className="section-kicker">Compétences reliées</p>
-            <h2>Ce que je sais faire, projets à l'appui.</h2>
+            <h2>Ce que je construis.</h2>
           </div>
-          <p>Chaque compétence indique le projet associé et son niveau de preuve.</p>
+          <p>Chaque compétence est prouvée par un projet livré.</p>
         </div>
 
-        <div className="matrix">
-          {skills.map((skill) => (
-            <div className="matrix-item" key={skill.name}>
-              <strong>{skill.name}</strong>
-              <p>{skill.note}</p>
-              <p className="case-meta">{skill.proof}</p>
+        <div className="skills-groups">
+          {skillGroups.map((group) => (
+            <div className="skills-group" key={group}>
+              <h3>{group}</h3>
+              <div className="matrix">
+                {skills
+                  .filter((skill) => skill.group === group)
+                  .map((skill) => (
+                    <div className="matrix-item" key={skill.name}>
+                      <strong>{skill.name}</strong>
+                      <p>{skill.note}</p>
+                      <p className="case-meta">{skill.proof}</p>
+                    </div>
+                  ))}
+              </div>
             </div>
           ))}
         </div>
@@ -145,9 +158,8 @@ export default function HomePage() {
             <h2>Cadrer, construire, vérifier, transmettre.</h2>
           </div>
           <p>
-            Quatre temps sur chaque projet. Le dernier compte autant que les
-            autres : un travail qui ne se transmet pas s'arrête avec celui qui
-            l'a fait. <Link href="/methode">Voir la méthode en détail.</Link>
+            Quatre temps sur chaque projet, du cadrage à la transmission.{" "}
+            <Link href="/methode">Voir la méthode en détail.</Link>
           </p>
         </div>
         <div className="matrix matrix-2">
@@ -157,11 +169,11 @@ export default function HomePage() {
           </div>
           <div className="matrix-item">
             <strong>Construire</strong>
-            <p>Livrer un premier outil qui marche, en production, pas une maquette.</p>
+            <p>Livrer une première version qui peut être testée.</p>
           </div>
           <div className="matrix-item">
             <strong>Vérifier</strong>
-            <p>Tester, mesurer, fact-checker : jamais « c'est fait » sans preuve.</p>
+            <p>Tester, mesurer, vérifier : jamais « c'est fait » sans preuve.</p>
           </div>
           <div className="matrix-item">
             <strong>Transmettre</strong>
@@ -172,10 +184,10 @@ export default function HomePage() {
 
       <section className="section">
         <div className="notice">
-          <strong>Ce que je cherche.</strong>
+          <strong>Où je suis utile.</strong>
           <p>
-            Un CDI à Paris ou hybride, dans une équipe qui relie acquisition,
-            IA appliquée et exécution produit.
+            Une équipe qui doit produire vite, tester proprement et mettre l'IA
+            au service d'un travail réel. CDI à Paris ou hybride.
           </p>
           <div className="button-row">
             <Link className="button primary" href="/recruteurs">

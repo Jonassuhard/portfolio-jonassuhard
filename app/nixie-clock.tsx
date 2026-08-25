@@ -25,11 +25,13 @@ export default function NixieClock() {
   }, []);
 
   if (!now) {
+    // Rendu serveur / pré-hydratation : placeholder neutre, jamais une fausse
+    // date (« 00 sept. 0000 » serait lu tel quel par les crawlers et agents IA).
     return (
       <time className="nixie-clock" suppressHydrationWarning>
-        <span className="nixie-date">lun. 00 sept. 0000</span>
+        <span className="nixie-date">—</span>
         <span className="nixie-date-separator"> · </span>
-        00:00<span className="nixie-seconds">:00</span>
+        —:—<span className="nixie-seconds">:—</span>
       </time>
     );
   }

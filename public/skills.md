@@ -1,49 +1,105 @@
 # Compétences - Jonas Suhard
 
-## SEO / contenu / CMS
+## Approche terrain et transmission
 
-Preuves : ISCOM, Capsélys, Les Petites Griffes.
+Je pars d'un besoin concret, construis une première solution, la teste avec les personnes concernées puis documente la reprise. Cette pratique prépare une évolution vers un rôle de Forward Deployed Engineer ; ce n'est pas un poste actuel.
+
+**Projets liés**
+
+- Les Petites Griffes
+- Cool Bank / La Herse
+- ISCOM
+- Cortex Bridge
+
+**À consolider**
+
+- Je n'ai pas encore tenu ce rôle dans une organisation cliente à grande échelle.
+
+## SEO / contenu / CMS
 
 Recherche, structure, maillage, production éditoriale dans Drupal, vérification et publication encadrée.
 
-Limite : pas encore de programmatic SEO à grande échelle ni de domaine à fort trafic historisé.
+**Projets liés**
+
+- ISCOM
+- Capsélys
+- Les Petites Griffes
+
+**À consolider**
+
+- Je n'ai pas encore mené de SEO programmatique à grande échelle ni travaillé sur un domaine avec un long historique de fort trafic.
 
 ## Automatisation / QA / Playwright
 
-Preuves : Cortex Bridge, Battle Engine, audits Playwright, scripts Python.
-
 Boucles IA contrôlées, pipelines Python, audits Playwright multi-viewports, génération et contrôles automatisés.
 
-Limite : automatisation de projets perso ; pas encore de QA en CI/CD dans une équipe multi-dev.
+**Projets liés**
+
+- Cortex Bridge
+- Battle Engine
+- Audits Playwright
+- Scripts Python
+
+**À consolider**
+
+- Je n'ai pas encore géré la QA en CI/CD dans une équipe avec plusieurs développeurs.
 
 ## IA appliquée / workflows LLM
 
-Preuves : Cortex Bridge, Capsélys, Les Petites Griffes, ISCOM. Compléments : RAG Starter Kit, Board IA PME.
+Je construis des assistants IA avec des actions limitées, des contrôles avant publication et une trace des décisions.
 
-Orchestration ChatGPT vers un exécuteur local borné, assistants cadrés, workflows LLM, fact-check et garde-fous avant publication.
+**Projets liés**
 
-Limite : POC et projets cadrés ; pas encore de LLM en production sous charge avec SLA.
+- Cortex Bridge
+- Capsélys
+- Les Petites Griffes
+- ISCOM
+- RAG Starter Kit
+- Board IA PME
+
+**À consolider**
+
+- Je n'ai pas encore exploité un LLM en production sous forte charge avec un engagement de disponibilité.
 
 ## Full-stack web
 
-Preuves : Cortex Bridge, Les Petites Griffes, Cool Bank / La Herse, ce portfolio.
-
 Next.js, React, pages publiques, CMS léger, rendu statique, déploiement et production.
 
-Limite : surtout front et intégrations ; pas de backend distribué à forte charge.
+**Projets liés**
+
+- Cortex Bridge
+- Les Petites Griffes
+- Cool Bank / La Herse
+- Ce portfolio
+
+**À consolider**
+
+- Mon expérience porte surtout sur le front et les intégrations, pas sur des backends distribués à forte charge.
 
 ## Documentation / transmission
 
-Preuves : claude-code-soul, Cool Bank / La Herse, ce portfolio.
+J'écris les décisions, les procédures et les limites pour qu'une autre personne puisse reprendre le travail.
 
-Décisions écrites, cadres réutilisables, fichiers lisibles par un agent ; un travail qu'un autre reprend.
+**Projets liés**
 
-Limite : documentation de projets solo ; pas encore d'onboarding formalisé sur un codebase partagé.
+- claude-code-soul
+- Cool Bank / La Herse
+- Ce portfolio
+
+**À consolider**
+
+- Je n'ai pas encore conduit un parcours d'arrivée formalisé sur une base de code partagée.
 
 ## Sécurité / RGPD / limites
 
-Preuves : Cortex Bridge, Cool Bank / La Herse, Les Petites Griffes.
+Je limite les actions au dossier prévu, bloque le système en cas de doute, anonymise les données sensibles et garde les secrets hors du code.
 
-Exécution confinée au workspace, comportements fail-closed, données sensibles anonymisées, secrets hors du code et prudence de publication.
+**Projets liés**
 
-Limite : bonnes pratiques appliquées ; pas d'audit sécurité formel ni de conformité validée par un DPO.
+- Cortex Bridge
+- Cool Bank / La Herse
+- Les Petites Griffes
+
+**À consolider**
+
+- Ces pratiques n'ont pas encore fait l'objet d'un audit de sécurité formel ni d'une validation par un DPO.

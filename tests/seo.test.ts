@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
 import { knowledgeGraphJsonLd, personJsonLd, rootJsonLd } from "../lib/json-ld";
+import { faqItems } from "../lib/faq";
 import { site } from "../lib/projects";
 
 const read = (relativePath: string) =>
@@ -67,10 +68,34 @@ test("le positionnement Growth Engineer reste cohérent sur les surfaces humaine
   assert.match(cv, /^\*\*Growth Engineer junior · IA appliquée & automatisation\*\*$/m);
   assert.match(growthKnowledge, /^Dernière vérification : 2026-08-23\.$/m);
 
+  // La home porte une seule promesse (headline) ; les rôles voisins vivent
+  // sur /recruteurs, dans le tableau « Rôles » et le JSON-LD.
   assert.match(home, /\{site\.headline\}/);
-  assert.match(home, /\{site\.roleAliases\.join\(" · "\)\}/);
+  assert.doesNotMatch(home, /roleAliases/);
   assert.match(recruiters, /\{site\.headline\}/);
-  assert.match(recruiters, /\{site\.roleAliases\.join\(" · "\)\}/);
+  assert.match(recruiters, /site\.roleAliases\.join\(", "\)/);
   assert.match(layout, /default: site\.seoTitle/);
   assert.match(layout, /title: site\.seoTitle/);
+});
+
+test("Forward Deployed Engineer reste un objectif de progression", () => {
+  const careerGoal = site.careerGoal;
+  const profile = JSON.parse(read("public/profile.json"));
+  const llms = read("public/llms.txt");
+  const home = read("app/page.tsx");
+  const recruiters = read("app/recruteurs/page.tsx");
+  const person = personJsonLd();
+
+  assert.match(careerGoal, /Forward Deployed Engineer/);
+  assert.match(careerGoal, /Je cherche à évoluer/i);
+  assert.match(home, /site\.careerGoal(?:Short)?/);
+  assert.match(recruiters, /site\.careerGoal/);
+  assert.equal(profile.career_goal, careerGoal);
+  assert.match(llms, /Forward Deployed Engineer/);
+  assert.match(llms, /Ce n'est pas un poste actuel/i);
+  assert.ok(faqItems.some((item) => item.a.includes(careerGoal)));
+
+  for (const label of [site.title, site.headline, profile.title, person.jobTitle]) {
+    assert.doesNotMatch(label, /Forward Deployed Engineer/i);
+  }
 });

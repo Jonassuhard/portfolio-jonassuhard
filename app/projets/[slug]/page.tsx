@@ -89,7 +89,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
 
       <section className="case-hero">
         <div>
-          <p className="eyebrow">Case study</p>
+          <p className="eyebrow">Projet</p>
           <span className={`evidence-badge evidence-${project.evidenceLevel}`}>
             {evidenceLevelMeta[project.evidenceLevel].label}
           </span>
@@ -160,7 +160,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
               <td>{project.stack.join(", ")}</td>
             </tr>
             <tr>
-              <th scope="row">En bref</th>
+              <th scope="row">Ce que ça prouve</th>
               <td>{project.proofLine}</td>
             </tr>
             {project.evidenceNote ? (
@@ -176,7 +176,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
       {project.versions?.length ? (
         <section className="section">
           <p className="section-kicker">Versions</p>
-          <h2>Deux versions, deux niveaux de maturité.</h2>
+          <h2>V2 et V3 n'ont pas le même statut.</h2>
           <div className="matrix matrix-2">
             {project.versions.map((version) => (
               <article className="matrix-item" key={version.label}>
@@ -204,7 +204,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
       {project.gallery ? (
         <section className="section">
           <p className="section-kicker">Aperçu</p>
-          <h2>Preuves visuelles.</h2>
+          <h2>Ce qui est visible.</h2>
           <div className="proof-gallery">
             {project.gallery.map((shot) => (
               <figure key={shot.src}>
@@ -228,7 +228,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
         <div className="prose">
           <section>
             <p className="section-kicker">Contraintes</p>
-            <h2>Contexte et contraintes.</h2>
+            <h2>Ce qu'il fallait respecter.</h2>
             <ul>
               {project.constraints.map((item) => (
                 <li key={item}>{item}</li>
@@ -238,8 +238,8 @@ export default async function ProjectDetailPage({ params }: PageProps) {
 
           {project.architecture ? (
             <section>
-              <p className="section-kicker">Architecture / workflow</p>
-              <h2>Architecture.</h2>
+              <p className="section-kicker">Fonctionnement</p>
+              <h2>Comment ça fonctionne.</h2>
               <ul>
                 {project.architecture.map((item) => (
                   <li key={item}>{item}</li>
@@ -250,7 +250,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
 
           <section>
             <p className="section-kicker">Décisions</p>
-            <h2>Les choix et leurs compromis.</h2>
+            <h2>Pourquoi ces choix.</h2>
             <div className="table-scroll">
               <table className="decision-table">
                 <thead>
@@ -275,7 +275,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
 
           <section>
             <p className="section-kicker">Livraison</p>
-            <h2>Livrables.</h2>
+            <h2>Ce que j'ai livré.</h2>
             <ul>
               {project.delivered.map((item) => (
                 <li key={item}>{item}</li>
@@ -285,7 +285,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
 
           <section>
             <p className="section-kicker">Résultats</p>
-            <h2>Résultats.</h2>
+            <h2>Ce qui fonctionne aujourd'hui.</h2>
             <ul>
               {project.results.map((item) => (
                 <li key={item}>{item}</li>
@@ -296,7 +296,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
           {project.notMeasured ? (
             <section>
               <p className="section-kicker">Pas encore mesuré</p>
-              <h2>Ce qui reste à creuser.</h2>
+              <h2>Ce qui n'est pas encore mesuré.</h2>
               <ul>
                 {project.notMeasured.map((item) => (
                   <li key={item}>{item}</li>
@@ -308,7 +308,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
           {project.v2 ? (
             <section>
               <p className="section-kicker">V2 / suite</p>
-              <h2>Prochaine itération.</h2>
+              <h2>La prochaine étape.</h2>
               <ul>
                 {project.v2.map((item) => (
                   <li key={item}>{item}</li>
@@ -319,7 +319,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
         </div>
 
         <aside className="panel">
-          <h2>Signal pour une équipe</h2>
+          <h2>Ce que ce projet montre</h2>
           <ul>
             {project.recruiterProof.map((item) => (
               <li key={item}>{item}</li>

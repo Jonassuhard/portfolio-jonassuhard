@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { skills, getProject, pageMeta, toAnchorId } from "@/lib/projects";
+import { skills, skillGroups, getProject, pageMeta, toAnchorId } from "@/lib/projects";
 import AnimatedTitle from "../animated-title";
 
 export const metadata: Metadata = pageMeta({
@@ -16,40 +16,52 @@ export default function SkillsPage() {
         <p className="eyebrow">Compétences</p>
         <AnimatedTitle>Ce que je peux apporter à une équipe.</AnimatedTitle>
         <p className="lead">
-          Six domaines. Pour chacun : un projet où je l'ai utilisé, ce que je
-          sais faire aujourd'hui, et ce que je ne maîtrise pas encore.
+          Chaque domaine est relié à des projets et à ses limites actuelles.
         </p>
       </section>
 
-      <section className="section matrix">
-        {skills.map((skill) => (
-          <article className="matrix-item" id={toAnchorId(skill.name)} key={skill.name}>
-            <strong>{skill.name}</strong>
-            <p>{skill.note}</p>
-            <p className="case-meta">
-              {skill.proofSlugs.map((slug, i) => {
-                const project = getProject(slug);
-                if (!project) return null;
-                return (
-                  <span key={slug}>
-                    {i > 0 ? " · " : ""}
-                    <Link className="lk" href={`/projets/${project.slug}`}>
-                      {project.shortTitle}
-                    </Link>
-                  </span>
-                );
-              })}
-              {skill.proofExtra ? ` · ${skill.proofExtra}` : ""}
-            </p>
-            <p className="skill-limit">Limite : {skill.limit}</p>
-          </article>
+      <section className="section skills-groups">
+        {skillGroups.map((group) => (
+          <div className="skills-group" key={group}>
+            <h3>{group}</h3>
+            <div className="matrix">
+              {skills
+                .filter((skill) => skill.group === group)
+                .map((skill) => (
+                  <article
+                    className="matrix-item"
+                    id={toAnchorId(skill.name)}
+                    key={skill.name}
+                  >
+                    <strong>{skill.name}</strong>
+                    <p>{skill.note}</p>
+                    <p className="case-meta">
+                      {skill.proofSlugs.map((slug, i) => {
+                        const project = getProject(slug);
+                        if (!project) return null;
+                        return (
+                          <span key={slug}>
+                            {i > 0 ? " · " : ""}
+                            <Link className="lk" href={`/projets/${project.slug}`}>
+                              {project.shortTitle}
+                            </Link>
+                          </span>
+                        );
+                      })}
+                      {skill.proofExtra ? ` · ${skill.proofExtra}` : ""}
+                    </p>
+                    <p className="skill-limit">Limite : {skill.limit}</p>
+                  </article>
+                ))}
+            </div>
+          </div>
         ))}
       </section>
 
       <section className="section">
         <div className="notice">
-          <strong>Chaque compétence tient sur un projet réel.</strong>
-          <p>Le détail est dans les projets : décisions prises, limites comprises.</p>
+          <strong>Chaque compétence renvoie à un projet réel.</strong>
+          <p>Les fiches détaillent ce qui a été fait, ce qui le prouve et les limites.</p>
           <div className="button-row">
             <Link className="button primary" href="/projets">
               Voir les projets

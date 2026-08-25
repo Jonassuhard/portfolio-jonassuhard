@@ -12,46 +12,46 @@ export const metadata: Metadata = pageMeta({
 
 const SECTIONS = [
   {
-    kicker: "Avant — cadrer",
+    kicker: "Avant de construire",
     title: "Cadrer avant de coder.",
     items: [
-      "Je cherche le vrai problème derrière la demande.",
-      "Je commence par la réponse directe. Le plan en dix étapes seulement s'il le faut vraiment.",
-      "Je remonte à la cause plutôt que de poser une rustine sur le symptôme."
+      "Je clarifie le besoin, les contraintes et le résultat attendu.",
+      "Je commence par une réponse simple et j'ajoute du détail seulement si nécessaire.",
+      "Je cherche la cause du problème avant de modifier le produit."
     ]
   },
   {
-    kicker: "Pendant — déléguer avec contexte",
-    title: "Déléguer à l'IA, avec le contexte.",
+    kicker: "Pendant la construction",
+    title: "Utiliser l'IA avec contrôle.",
     items: [
-      "J'utilise les agents IA comme un système de production que je contrôle : je cadre, je donne le contexte, je délègue la partie répétitive.",
-      "Un modèle adapté à chaque tâche ; l'IA ne décide pas et ne signe pas.",
-      "Je vérifie le code et l'architecture à la main avant de les garder."
+      "Je donne à l'IA le contexte et des règles claires pour les tâches répétitives.",
+      "Je choisis l'outil selon la tâche ; l'IA ne prend pas les décisions à ma place.",
+      "Je relis le code et la structure avant de les garder."
     ],
     example:
-      "Sur la refonte Capsélys, j'ai automatisé les contrôles avec Playwright pour repérer les régressions, doublés d'un audit visuel à l'œil sur les écrans clés. Les décisions de refonte, elles, sont sorties d'un atelier avec l'équipe, pas d'une recommandation d'outil. L'automatisation fait le travail répétitif, le cadrage reste une décision partagée."
+      "Sur Capsélys, j'ai utilisé Playwright pour repérer les régressions sur plusieurs écrans, puis j'ai vérifié le rendu à l'œil. Les choix de refonte ont été faits avec l'équipe. L'automatisation contrôle le répétitif ; le cadrage reste humain."
   },
   {
-    kicker: "Après — vérifier",
+    kicker: "Avant d'affirmer",
     title: "Vérifier avant d'affirmer.",
     items: [
-      "Jamais « c'est fait » sans une preuve : un test, une capture ou une sortie de commande.",
-      "Pas de chiffre inventé. Une donnée sans source, je la marque « non mesuré » au lieu de la combler.",
+      "Je ne dis pas « c'est fait » sans preuve : test, capture ou résultat de commande.",
+      "Je n'invente pas de chiffre. Une donnée sans source reste « non mesuré ».",
       "Sur un sujet à enjeu, je confronte plusieurs sources avant de trancher."
     ],
     example:
-      "Sur ISCOM, j'ai produit des articles et une FAQ dans Drupal avec de l'IA pour accélérer la recherche et la première rédaction. Rien n'est publié tel quel : chaque affirmation passe un fact-check, et un humain valide avant mise en ligne. L'IA écrit une version de départ, je garde la responsabilité de ce qui sort au nom de l'école."
+      "Sur ISCOM, l'IA accélère la recherche et le premier brouillon d'articles et de FAQ dans Drupal. Chaque information est vérifiée et un humain valide avant publication."
   },
   {
-    kicker: "Livraison — documenter et transmettre",
+    kicker: "À la livraison",
     title: "Documenter pour qu'un autre reprenne.",
     items: [
-      "Git propre, commits atomiques, revue avant de merger (chaque changement isolé et relu avant d'atteindre le produit).",
-      "Des tests sur les parties sensibles, un passage par le staging avant la prod.",
-      "Je documente les décisions et leurs compromis, pour qu'une équipe reprenne le projet sans moi."
+      "Chaque changement est isolé, relu et ajouté à Git avant d'arriver au produit.",
+      "Je teste les parties sensibles et je passe par le staging avant la production.",
+      "Je documente les décisions et leurs compromis pour qu'une équipe puisse reprendre le projet."
     ],
     example:
-      "claude-code-soul est le cadre que j'ai construit pour piloter des agents IA de façon reproductible : un fichier d'identité, des règles, des skills et des hooks, documentés pour être repris. C'est ma méthode rendue transmissible : au lieu de garder mes réglages dans la tête, je les écris pour qu'ils tiennent d'un projet à l'autre. Ce qui n'est pas documenté ne se transmet pas."
+      "claude-code-soul rassemble des règles, des outils et des contrôles pour faire travailler des agents IA de façon répétable. Je les ai écrits pour qu'ils puissent être relus et adaptés d'un projet à l'autre."
   },
   {
     kicker: "Sécurité",
@@ -63,14 +63,14 @@ const SECTIONS = [
     ]
   },
   {
-    kicker: "Ce qui compte",
-    title: "Ce qui fait la différence avec l'IA.",
+    kicker: "Avec l'IA",
+    title: "Garder la responsabilité humaine.",
     items: [
-      "L'IA avance vite et prend en charge une part croissante du travail, y compris une partie du jugement. Le nier serait malhonnête.",
-      "Ce qui fait la différence, c'est de savoir exactement ce qu'on veut, et de savoir l'expliquer, à un modèle comme à une équipe.",
-      "Choisir le bon modèle à chaque étape pèse autant que le prompt. Un modèle pour cadrer et planifier, un autre pour exécuter.",
-      "Le vrai enjeu aujourd'hui c'est le coût. On peut presque tout faire, la compétence c'est de le faire au bon prix.",
-      "La responsabilité de ce qui part en production reste signée par un humain. Moi, en l'occurrence."
+      "L'IA accélère une partie du travail, mais elle peut se tromper.",
+      "Il faut savoir expliquer le besoin à un modèle comme à une équipe.",
+      "Je choisis le modèle selon la tâche : préparation, exécution ou contrôle.",
+      "Je regarde aussi le coût : un outil utile doit rester soutenable.",
+      "Un humain reste responsable de ce qui part en production."
     ]
   }
 ];
@@ -82,9 +82,9 @@ export default function MethodePage() {
         <p className="eyebrow">Méthode</p>
         <AnimatedTitle>Comment je travaille.</AnimatedTitle>
         <p className="lead">
-          Voici comment je cadre, code, sécurise et livre. L'IA accélère mon
-          travail, mais les décisions, la vérification et la responsabilité du
-          résultat restent les miennes.
+          Je clarifie le besoin, je construis, je sécurise et je vérifie. L'IA
+          accélère le travail ; les décisions et la responsabilité restent
+          humaines.
         </p>
       </section>
 
@@ -111,9 +111,8 @@ export default function MethodePage() {
         <div className="notice">
           <strong>En pratique.</strong>
           <p>
-            C'est la méthode appliquée sur Les Petites Griffes, Cool Bank / La Herse, Capsélys
-            et ISCOM, sur des stacks différentes. De quoi m'intégrer dans une
-            équipe qui doit produire sans casser.
+            Cette méthode sert sur Les Petites Griffes, Cool Bank / La Herse,
+            Capsélys et ISCOM. Elle aide à livrer sans casser ce qui existe.
           </p>
           <div className="button-row">
             <Link className="button primary" href="/recruteurs">Page recruteurs</Link>

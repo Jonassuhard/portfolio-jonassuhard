@@ -22,16 +22,15 @@ export default function AboutPage() {
           </AnimatedTitle>
           <p className="lead">
             J'ai commencé par le marketing digital : acquisition, SEO, contenu.
-            Vite, j'ai voulu produire les outils que je recommandais plutôt que
-            les décrire. Aujourd'hui je fais les deux dans le même geste, cadrer
-            un besoin d'équipe et livrer ce qui y répond.
+            J'ai ensuite appris à construire les outils que je recommandais.
+            Aujourd'hui, je relie les deux : comprendre un besoin et livrer une
+            première réponse.
           </p>
           <p>
-            Concrètement, je cadre un besoin, je construis une première version,
-            je définis ce qui doit être mesuré et je documente les décisions et ce qu'il
-            reste à construire. Je cherche un CDI où ce profil hybride sert, dans
-            une équipe qui produit vite, teste proprement et met l'IA au service
-            d'un travail utile.
+            Je cadre un besoin, je construis une première version, je définis ce
+            qui doit être mesuré et je documente les décisions. Je cherche un
+            CDI dans une équipe qui produit, teste et utilise l'IA pour un
+            travail concret.
           </p>
           <div className="button-row">
             <a className="button primary" href={`mailto:${site.email}`}>Me contacter</a>
@@ -56,15 +55,18 @@ export default function AboutPage() {
               quality={70}
             />
           </div>
-          <h2>Position cible</h2>
+          <h2>Rôle actuel</h2>
           <p>
             {site.headline}, avec les rôles voisins {site.roleAliases.join(" et ")},
             dans une équipe qui relie besoins métier, acquisition et exécution produit.
           </p>
-          <h3>Ce que je cherche à construire</h3>
+          <h3>Objectif d'évolution</h3>
           <p>
-            Des outils marketing et IA simples à vérifier, utiles à une équipe,
-            et documentés pour être repris.
+            {site.careerGoal}
+          </p>
+          <p>
+            Il s'agit de partir d'un besoin terrain, de construire avec l'équipe
+            ou le client, puis de livrer et vérifier l'usage.
           </p>
         </div>
       </section>
@@ -78,23 +80,21 @@ export default function AboutPage() {
         </div>
         <div className="prose">
           <p>
-            Le terme vient de l'anglais et sonne creux quand on ne le rattache à rien.
-            Voilà ce que je mets derrière.
+            C'est un rôle qui relie l'acquisition et le développement.
           </p>
           <p>
-            Un Growth Engineer relie deux métiers qu'on sépare d'habitude, l'acquisition
-            et le code. Je conçois, je livre, je mesure. Sans sous-traiter chaque étape.
+            Je conçois une réponse, je la livre et je prépare sa mesure. Je peux
+            donc passer du besoin marketing au produit sans séparer chaque étape.
           </p>
           <p>
-            Je viens du marketing. J'ai appris à coder pour ne plus dépendre d'un dev à
-            chaque test. En IA appliquée, je cadre des workflows LLM utiles, avec des
-            garde-fous. Pas des démos.
+            Je viens du marketing. J'ai appris à coder pour tester plus vite. En
+            IA appliquée, je construis des assistants avec des règles et une
+            vérification humaine.
           </p>
           <p>
-            Ce n'est pas du growth hacking. La dette technique et la sécurité comptent
-            autant que le résultat de la semaine. Traduit en clair, c'est un profil
-            hybride qui mêle marketing, développement et IA, au service d'un produit qui
-            tourne. Je travaille aussi bien sur Mac que sur Windows.
+            La sécurité et la dette technique comptent autant que le résultat.
+            C'est un rôle à la croisée du marketing, du développement et de
+            l'IA. Je travaille sur Mac comme sur Windows.
           </p>
           <p>
             <Link className="lk" href="/knowledge/growth-engineer-ia">
@@ -165,9 +165,7 @@ export default function AboutPage() {
         <div className="notice">
           <strong>Ce que je vise.</strong>
           <p>
-            Rejoindre une équipe où ce profil hybride sert : relier le marketing,
-            l'IA appliquée et le développement pour livrer des outils utiles, et
-            transmettre ce que je construis.
+            {site.careerGoal}
           </p>
           <div className="button-row">
             <Link className="button primary" href="/recruteurs">Page recruteurs</Link>

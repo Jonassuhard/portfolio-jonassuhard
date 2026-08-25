@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { readFileSync } from "node:fs";
+import { readFileSync, readdirSync } from "node:fs";
 import test from "node:test";
 import { knowledgePages } from "../lib/knowledge";
 import { featuredProjects, projects, recruiterFeatured, site } from "../lib/projects";
@@ -144,6 +144,39 @@ test("la source machine qualifie l'audit LPG comme preuve privée", () => {
   assert.equal(fact.verification_id, "lpg-live-audit-2026-08-01");
   assert.equal(project.evidence_status, "private-evidence");
   assert.equal(project.verification_id, "lpg-live-audit-2026-08-01");
+});
+
+test("la limite LPG reste explicite sur les surfaces humaine et machine", () => {
+  const profile = JSON.parse(
+    readFileSync(new URL("../public/profile.json", import.meta.url), "utf8")
+  );
+  const project = projects.find((item) => item.slug === "les-petites-griffes");
+  const machineProject = profile.projects.find(
+    (item: { project: string }) => item.project === "Les Petites Griffes"
+  );
+  const surfaces = [
+    project?.limits.join("\n") ?? "",
+    profile.citable_facts.les_petites_griffes_limit,
+    machineProject?.limits ?? "",
+    readFileSync(new URL("../public/llms.txt", import.meta.url), "utf8"),
+    readFileSync(new URL("../public/profile.md", import.meta.url), "utf8"),
+    readFileSync(new URL("../public/projects/les-petites-griffes.md", import.meta.url), "utf8")
+  ];
+
+  for (const surface of surfaces) {
+    assert.match(surface, /projet familial non factur[ée]/i);
+  }
+});
+
+test("les fiches Markdown générées évitent les libellés décoratifs", () => {
+  const projectDir = new URL("../public/projects/", import.meta.url);
+  const markdownFiles = readdirSync(projectDir).filter((file) => file.endsWith(".md"));
+
+  assert.ok(markdownFiles.length > 0);
+  for (const file of markdownFiles) {
+    const markdown = readFileSync(new URL(`../public/projects/${file}`, import.meta.url), "utf8");
+    assert.doesNotMatch(markdown, /^(?:Type|En bref|Preuves)\s*:/m, file);
+  }
 });
 
 test("la source machine rattache Cortex Bridge à ses preuves publiques", () => {

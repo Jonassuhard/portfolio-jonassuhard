@@ -36,7 +36,9 @@ export function personJsonLd() {
     sameAs: [site.github, site.linkedin, ...(site.malt ? [site.malt] : [])],
     seeks: {
       "@type": "Demand",
-      name: "CDI junior Growth Engineer / Product Builder IA / Chef de projet IA",
+      name: "Objectif de progression : Forward Deployed Engineer",
+      description:
+        "Évoluer vers un rôle de Forward Deployed Engineer : comprendre un besoin concret, construire une première solution avec l'équipe ou le client, puis la tester et la rendre transmissible.",
       availabilityStarts: "2026-09-01",
       areaServed: "Paris / hybride"
     },

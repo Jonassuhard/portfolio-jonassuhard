@@ -68,10 +68,16 @@ export const site = {
   seoTitle: "Growth Engineer IA & automatisation à Paris | Jonas Suhard",
   headline: "Growth Engineer junior · IA appliquée & automatisation",
   roleAliases: ["Product Builder IA", "Chef de projet IA junior"] as const,
+  careerGoalTitle: "Forward Deployed Engineer",
+  careerGoalShort:
+    "Je cherche à évoluer vers un rôle de Forward Deployed Engineer.",
+  careerGoal:
+    "Je cherche à évoluer vers un rôle de Forward Deployed Engineer. Je veux comprendre un besoin concret, construire une première solution avec l'équipe ou le client, la tester, puis la rendre facile à reprendre.",
   description:
     "Growth Engineer junior à Paris : IA appliquée, automatisations, sites Next.js, workflows LLM et dashboards. Projets documentés, preuves, CV et contact.",
   email: "contact@jonassuhard.com",
   github: "https://github.com/Jonassuhard",
+  portfolioRepo: "https://github.com/Jonassuhard/portfolio-jonassuhard",
   linkedin: "https://www.linkedin.com/in/jonas-suhard-b73923245/",
   // Profil Malt temporairement masqué : son contenu doit être réaligné avec
   // les affirmations vérifiables du portfolio avant de redevenir public ici.
@@ -254,11 +260,11 @@ export const projects: Project[] = [
     type: "Jeu scolaire multijoueur + interface métier",
     period: "Juillet - août 2026",
     role: "Conception produit, UX, développement full-stack, systèmes de jeu, sécurité, QA",
-    status: "V2 : LOCAL_SINGLE_DEVICE_READY · V3 : READY_FOR_HUMAN_RECIPE",
+    status: "V2 jouable localement · V3 prête pour recette humaine",
     evidenceLevel: "private",
     tier: 1,
     image: "/assets/cards/cool-bank-la-herse.webp",
-    repoStatus: "Privé, RGPD (données mineurs)",
+    repoStatus: "Dépôts privés, données scolaires exclues des preuves",
     liveLabel: "Démo locale sur données fictives",
     evidenceNote:
       "Preuves privées et datées : état V2 vérifié le 22/08/2026, candidate V3 vérifiée le 06/08/2026. Démonstrations et captures uniquement sur données fictives ; aucune donnée de mineur n'est publiée.",
@@ -277,7 +283,7 @@ export const projects: Project[] = [
       {
         label: "V2",
         name: "Jeu local multijoueur relié à Educool",
-        status: "LOCAL_SINGLE_DEVICE_READY : GO · V2_PRODUCT_COMPLETE et ONLINE_READY : NO-GO",
+        status: "Jouable localement · LOCAL_SINGLE_DEVICE_READY : GO · V2_PRODUCT_COMPLETE et ONLINE_READY : NO-GO",
         summary:
           "Version web locale avec parcours élève, professeure et banquier, maisons, quêtes, économie et interface Educool reliée à Firebase.",
         evidence: [
@@ -293,7 +299,7 @@ export const projects: Project[] = [
       {
         label: "V3",
         name: "Monde 3D et économie centicool serveur",
-        status: "READY_FOR_HUMAN_RECIPE · GO_PILOTE_LOCAL : en attente",
+        status: "Prête pour recette humaine · READY_FOR_HUMAN_RECIPE · GO_PILOTE_LOCAL : en attente",
         summary:
           "Version 3D plus ambitieuse avec 22 zones, trois rôles, économie serveur, maisons, marchands, lecture écrite et interface Educool locale.",
         evidence: [
@@ -312,14 +318,14 @@ export const projects: Project[] = [
       "Gain de temps pour l'enseignante : non chiffré publiquement."
     ],
     proofLine:
-      "Deux versions d'un même système scolaire : V2 jouable localement et V3 techniquement prête pour recette humaine, avec preuves et limites séparées.",
+      "La V2 se joue déjà sur un appareil. La V3 fonctionne techniquement, mais doit encore être testée par des humains avant tout pilote.",
     summary:
-      "Cool Bank transforme une logique de banque scolaire en jeu multijoueur relié à l'interface métier Educool. La fiche distingue la V2 locale, déjà jouable sur un appareil, de la V3 en monde 3D, techniquement validée mais encore soumise à une recette humaine.",
+      "Cool Bank transforme une banque scolaire en jeu multijoueur relié à Educool. La V2 est jouable localement. La V3 ajoute un monde 3D, mais attend encore une recette humaine.",
     stack: ["Next.js", "Firebase", "Firestore", "Cloud Functions", "TypeScript", "Vite", "Node.js", "Playwright"],
     recruiterProof: [
-      "Piloter deux générations d'un produit complexe sans confondre leurs preuves ni leurs niveaux de maturité.",
-      "Concevoir ensemble jeu, économie serveur, interfaces par rôle, Firebase, sécurité et QA multi-surface.",
-      "Documenter les verdicts NO-GO et les données non publiables avec la même précision que les réussites techniques."
+      "Faire évoluer un produit complexe sans mélanger les preuves de la V2 et de la V3.",
+      "Relier le jeu, les trois rôles, Firebase, la sécurité et les tests.",
+      "Dire clairement ce qui fonctionne et ce qui reste bloqué avant un pilote."
     ],
     constraints: [
       "Aucune donnée réelle de mineur dans les preuves, captures ou environnements de démonstration.",
@@ -406,7 +412,7 @@ export const projects: Project[] = [
     proofLine:
       "Refonte orientée conversion, staging WordPress sécurisé, présentation orale client et audits multi-viewports.",
     summary:
-      "Refonte du site d'un client (WordPress / Divi) sur un staging sécurisé : nouveau parcours d'adhésion, audits de rendu multi-viewports avec Playwright, et prototype d'assistant IA qui oriente vers le bon service.",
+      "J'ai revu sur un staging le parcours d'adhésion d'un site WordPress. J'ai aussi testé le rendu sur plusieurs écrans et construit un assistant qui oriente vers le bon service.",
     stack: ["WordPress", "Divi", "Playwright", "PHP", "PDF", "LLM workflows"],
     recruiterProof: [
       "Cadrage client et conversion, pas seulement exécution front.",
@@ -488,12 +494,12 @@ export const projects: Project[] = [
     evidenceNote:
       "Article publié en ligne, plus une checklist QA de pré-publication et un extrait d'audit de cannibalisation anonymisés.",
     metaDescription:
-      "Production éditoriale SEO dans Drupal : rédaction, fact-check claim par claim, audits de cannibalisation Semrush, validation humaine avant publication.",
+      "Production SEO dans Drupal : rédaction, vérification de chaque information, audits Semrush et validation humaine avant publication.",
     architecture: [
       "Production éditoriale SEO saisie dans Drupal (CMS sensible).",
       "Audits de cannibalisation et inter-marques via Semrush.",
       "Automatisations Playwright pour la saisie et les contrôles.",
-      "Checklist de pré-publication et fact-check claim par claim avant mise en ligne."
+      "Checklist de pré-publication et vérification de chaque information avant mise en ligne."
     ],
     v2: [
       "Étendre les garde-fous qualité à d'autres types de contenus."
@@ -502,9 +508,9 @@ export const projects: Project[] = [
       "Impact trafic SEO des contenus : suivi côté employeur, non publiable ici."
     ],
     proofLine:
-      "Contenus SEO qui vont réellement en ligne dans le CMS d'un employeur, avec fact-check de chaque affirmation et validation humaine avant publication.",
+      "Des articles SEO publiés en ligne dans le CMS d'un employeur, vérifiés avant mise en ligne.",
     summary:
-      "Production éditoriale SEO dans le Drupal d'ISCOM : rédaction et fact-check d'articles, audits de cannibalisation avec Semrush, et automatisations Playwright pour la saisie, avec validation humaine avant chaque publication.",
+      "Je prépare et saisis des contenus SEO dans Drupal. Je vérifie chaque information, j'utilise Semrush pour éviter les pages qui se concurrencent et je laisse la validation finale à l'équipe éditoriale.",
     stack: ["Drupal", "Playwright", "Semrush", "SEO", "LLM-assisted QA"],
     recruiterProof: [
       "Livrer dans le process de publication d'un employeur sans court-circuiter la validation éditoriale.",
@@ -523,7 +529,7 @@ export const projects: Project[] = [
         rejected: "Automatiser le bouton enregistrer."
       },
       {
-        decision: "Fact-check claim par claim",
+        decision: "Vérifier chaque information",
         why: "Les contenus IA inventent vite des chiffres plausibles.",
         rejected: "Rédaction IA brute."
       }
@@ -587,7 +593,7 @@ export const projects: Project[] = [
       "Effet réel sur les citations IA des clients : mesuré au cas par cas, pas de moyenne publiable."
     ],
     proofLine:
-      "Audit GEO productisé : mesurer qui les IA citent à la place d'une marque, comparer les écarts, puis livrer un plan de publication re-testable.",
+      "Un audit qui montre si les assistants IA citent une marque, qui apparaît à sa place et quoi publier avant le prochain contrôle.",
     summary:
       "Aider une marque à savoir si elle apparaît dans les réponses des assistants IA, qui ressort à sa place, quoi publier, puis quoi re-tester au prochain audit.",
     stack: ["Next.js", "GEO / AEO", "LLM multi-modèles", "Schema JSON-LD", "PDF"],
@@ -627,7 +633,7 @@ export const projects: Project[] = [
       "Site en ligne avec tunnel de prise de contact.",
       "Protocole d'audit multi-modèles reproductible.",
       "Questions test séparant requêtes génériques et requêtes marque.",
-      "Livrable PDF : score, sources citées, écarts et plan d'action re-testable.",
+      "Livrable PDF avec le score, les sources citées, les écarts et un plan d'action à vérifier lors du prochain audit.",
       "Prototype de mini-audit et modèle de livrable."
     ],
     results: [
@@ -683,14 +689,14 @@ export const projects: Project[] = [
       "Compatibilité continue avec l'interface ChatGPT : les preuves restent datées et une modification du DOM peut casser le transport."
     ],
     proofLine:
-      "Relier une conversation ChatGPT à un exécuteur local borné : le modèle planifie, l'utilisateur valide, Cortex agit dans le workspace et renvoie un rapport auditable.",
+      "ChatGPT propose une action. Vous la validez. Cortex l'exécute dans le dossier choisi et garde une trace de chaque étape.",
     summary:
-      "Cortex Bridge relie une conversation ChatGPT ouverte dans Chrome à un exécuteur déterministe sur Mac. Chaque action locale reste confinée au workspace, présentée avant exécution et traçable. Le projet réunit extension navigateur, backend, interface, orchestration, sécurité et protocole de preuve dans un dépôt public.",
+      "Cortex Bridge relie ChatGPT à un programme local sur Mac. Les actions restent limitées au dossier choisi, sont montrées avant exécution et sont bloquées en cas de doute. Le code et la preuve de release sont publics.",
     stack: ["Chrome MV3", "FastAPI", "Next.js", "React", "SQLite", "Python", "Ollama"],
     recruiterProof: [
-      "Piloter un produit technique complet : extension navigateur, backend local, interface, orchestration, documentation et QA.",
-      "Transformer une boucle IA en système inspectable : validations humaines, permissions minimales, workspace borné et comportements fail-closed testés.",
-      "Publier les preuves et les limites : dépôt MIT, matrice de release, risque fournisseur et frontières de validation documentés."
+      "Construire un produit complet avec une extension, un backend local, une interface et des tests.",
+      "Limiter les actions au dossier choisi et bloquer l'exécution en cas de doute.",
+      "Publier le code, les preuves de release et les limites du projet."
     ],
     constraints: [
       "Éviter le copier-coller entre la conversation et l'exécution locale sans laisser le modèle agir librement.",
@@ -715,8 +721,8 @@ export const projects: Project[] = [
         rejected: "Piloter un navigateur Playwright séparé comme produit principal."
       },
       {
-        decision: "Fail-closed partout",
-        why: "Un validateur mal formé fait échouer la mission au lieu de la valider : vérifié par test.",
+        decision: "Bloquer en cas de doute",
+        why: "Une validation mal formée arrête la mission au lieu de l'autoriser : ce comportement est testé.",
         rejected: "Mode permissif avec simples alertes."
       }
     ],
@@ -758,14 +764,16 @@ export const projects: Project[] = [
     type: "Pipeline vidéo / automation",
     period: "2026",
     role: "Pipeline Python, Godot, rendu, FFmpeg, publication",
-    status: "Actif / lab",
+    status: "Actif / lab · pipeline repris le 23 août 2026",
     evidenceLevel: "private",
     tier: 2,
     image: "/assets/cards/battle-engine.webp",
     video: "/assets/video/battle-engine.mp4",
-    repoStatus: "Publication prévue après anonymisation",
+    repoStatus: "Dépôt privé",
     liveLabel: "Lab",
     noindex: true,
+    evidenceNote:
+      "Preuve locale privée : le commit du 23/08/2026 rend la publication nightly reprenable après une interruption.",
     architecture: [
       "Pipeline Python orchestrant : rendu Godot → FFmpeg → interpolation RIFE → publication via l'API YouTube."
     ],
@@ -776,14 +784,14 @@ export const projects: Project[] = [
       "Audience YouTube : à vérifier, non avancée comme preuve recruteur."
     ],
     proofLine:
-      "Pipeline Godot -> FFmpeg -> interpolation -> YouTube API pour vidéos 1VS1.",
+      "Un pipeline Python lance le combat dans Godot, prépare la vidéo avec FFmpeg et reprend la publication si une étape est interrompue.",
     summary:
-      "Pipeline vidéo automatisé pour une chaîne YouTube de simulations 1v1 : rendu sous Godot, montage et encodage FFmpeg, interpolation d'images avec RIFE, le tout scripté en Python.",
+      "Battle Engine automatise la fabrication de vidéos de combats 1 contre 1. Python pilote le rendu Godot, le montage FFmpeg, l'interpolation d'images et la publication YouTube.",
     stack: ["Godot", "Python", "FFmpeg", "RIFE", "YouTube API"],
     recruiterProof: [
-      "Automatisation de pipeline créatif.",
-      "Orchestration fichiers, rendu et publication.",
-      "Passage d'une idée personnelle à un pipeline structuré."
+      "Automatiser un travail qui traverse plusieurs outils.",
+      "Reprendre une publication après une interruption sans recommencer tout le rendu.",
+      "Documenter les droits audio, les contrôles qualité et les étapes d'exploitation."
     ],
     constraints: ["Contenu lab à cadrer pour ne pas brouiller le positionnement CDI."],
     decisions: [
@@ -794,7 +802,10 @@ export const projects: Project[] = [
       }
     ],
     delivered: ["Pipeline de rendu", "Vidéos de test générées", "Scripts d'automatisation"],
-    results: ["Aucune métrique d'audience citée."],
+    results: [
+      "Le pipeline nightly peut reprendre après une interruption au lieu de recommencer toute la chaîne.",
+      "Aucune métrique d'audience n'est citée."
+    ],
     limits: ["Projet lab : automatisation créative, éloignée du poste visé, gardée comme preuve technique."],
     gallery: [
       { src: "/assets/proof/battle-engine/intro-platforms.webp", caption: "Séquence d'intro : les plateformes des deux combattants et le champ de particules, rendus par un shader custom sous Godot.", width: 620, height: 1103 },
@@ -859,7 +870,7 @@ export const projects: Project[] = [
   },
   {
     slug: "rag-starter-kit",
-    title: "RAG Starter Kit - API de retrieval augmenté multi-tenant",
+    title: "RAG Starter Kit - rechercher dans des documents avec leurs sources",
     shortTitle: "RAG Starter Kit",
     type: "Projet perso / preuve technique",
     period: "2026",
@@ -872,14 +883,14 @@ export const projects: Project[] = [
     liveLabel: "Démo locale",
     noindex: true,
     proofLine:
-      "API FastAPI qui ingère des documents (PDF, DOCX, Markdown, texte), les indexe dans Qdrant et répond en citant ses sources, avec auth multi-tenant et un module d'évaluation type Ragas.",
+      "Une API reçoit des documents, retrouve les passages utiles et répond en citant ses sources. Les données de chaque client restent séparées.",
     summary:
-      "Servir plusieurs clients sur un même backend RAG, en gardant les données isolées par client_id et en mesurant la qualité des réponses.",
+      "Permettre à plusieurs clients d'interroger leurs documents sans mélanger leurs données, puis vérifier la qualité des réponses.",
     stack: ["FastAPI", "Qdrant", "Mistral AI", "LangChain", "SQLite", "pytest", "Next.js 16 / React 19", "Docker Compose"],
     recruiterProof: [
-      "Architecture RAG complète de bout en bout, avec ingestion multi-format, indexation vectorielle et génération avec citation des sources.",
-      "Isolation multi-tenant (un backend, plusieurs clients séparés par client_id) avec couche d'auth.",
-      "Module d'évaluation de la qualité des réponses inspiré de Ragas, avec cas de scoring versionnés et suite pytest."
+      "Recevoir plusieurs formats de documents, retrouver les bons passages et citer les sources dans la réponse.",
+      "Séparer les données de chaque client sur un même serveur, avec authentification.",
+      "Tester la qualité des réponses avec des cas versionnés et une suite pytest."
     ],
     constraints: [
       "Données de démonstration, secrets et identités retirés avant toute future publication.",
@@ -898,7 +909,7 @@ export const projects: Project[] = [
       }
     ],
     delivered: [
-      "Backend FastAPI : ingestion, retriever, chat avec sources, auth multi-tenant, logs d'usage et d'audit.",
+      "Backend FastAPI pour recevoir les documents, retrouver les passages, répondre avec les sources, authentifier les clients et journaliser l'usage.",
       "Frontend Next.js 16 / React 19 (App Router, TypeScript, Tailwind 4).",
       "Stack dockerisée (Qdrant + backend + frontend) lançable via docker compose, + docs d'onboarding."
     ],
@@ -927,14 +938,14 @@ export const projects: Project[] = [
     liveLabel: "Lab",
     noindex: true,
     proofLine:
-      "POC d'audit stratégique pour TPE/PME : 5 agents Mistral analysent une question, chacun avec sa donnée exclusive (asymétrie d'information), puis un CIO déterministe agrège les verdicts par niveau de confiance.",
+      "Cinq agents analysent la même question avec des informations différentes. Des règles explicites regroupent leurs réponses et signalent les désaccords.",
     summary:
-      "Faire émerger de vraies divergences d'analyse plutôt qu'une synthèse lissée, en privant chaque agent de la vue des autres et en agrégeant via des règles explicites.",
+      "Faire ressortir les désaccords utiles entre plusieurs analyses, puis produire une synthèse dont les règles restent lisibles.",
     stack: ["Python / FastAPI", "Mistral Small + Large", "Qdrant (1 collection/agent)", "Celery + Redis", "Docker Compose"],
     recruiterProof: [
-      "Conception d'un système multi-agents avec asymétrie d'information : chaque agent (financier, marché, client, ops, macro) a sa donnée exclusive.",
-      "Agrégation par un CIO déterministe à pondération explicite plutôt qu'un 6e LLM, avec quality gate sur le niveau de confiance.",
-      "Architecture orientée souveraineté des données (Mistral, Qdrant self-hosted)."
+      "Donner une source différente à chaque agent pour éviter cinq réponses identiques.",
+      "Regrouper les réponses avec des règles de pondération visibles plutôt qu'avec un sixième modèle opaque.",
+      "Garder les données sur une infrastructure contrôlée avec Mistral et Qdrant auto-hébergé."
     ],
     constraints: [
       "Éviter le piège des comités d'agents qui se reformulent entre eux, en forçant la divergence par l'isolation des données.",
@@ -953,7 +964,7 @@ export const projects: Project[] = [
       }
     ],
     delivered: [
-      "Backend Python : 5 agents spécialisés, CIO déterministe, orchestrateur run_board.",
+      "Backend Python avec cinq agents spécialisés et un module qui regroupe leurs réponses selon des règles fixes.",
       "Structure d'orchestration async (Celery/Redis) et RAG Qdrant par agent.",
       "Documentation de l'architecture, du concept et de la roadmap."
     ],
@@ -1123,53 +1134,63 @@ export const recruiterFeatured = ["cortex-bridge", "les-petites-griffes", "preuv
   .map((slug) => projects.find((project) => project.slug === slug))
   .filter((project): project is Project => Boolean(project));
 
+export type SkillGroup = "IA & automatisation" | "Web & produit" | "Growth & SEO";
+
+export const skillGroups: SkillGroup[] = ["IA & automatisation", "Web & produit", "Growth & SEO"];
+
 export const skills = [
   {
     name: "SEO / contenu / CMS",
+    group: "Growth & SEO" as SkillGroup,
     proofSlugs: ["iscom", "capselys", "les-petites-griffes"],
     proofExtra: "",
     proof: "ISCOM, Capsélys, Les Petites Griffes",
-    note: "Recherche, structure, maillage, production éditoriale dans Drupal, vérification et publication encadrée.",
+    note: "Je recherche les sujets, j'organise les pages, je prépare les contenus et je vérifie chaque information avant publication.",
     limit: "Pas encore de programmatic SEO à grande échelle ni de domaine à fort trafic historisé."
   },
   {
     name: "Automatisation / QA / Playwright",
+    group: "IA & automatisation" as SkillGroup,
     proofSlugs: ["cortex-bridge", "battle-engine"],
     proofExtra: "audits Playwright, scripts Python",
     proof: "Cortex Bridge, Battle Engine, audits Playwright, scripts Python",
-    note: "Boucles IA contrôlées, pipelines Python, audits Playwright multi-viewports, génération et contrôles automatisés.",
+    note: "J'automatise les tâches répétitives et je contrôle le résultat sur plusieurs tailles d'écran.",
     limit: "Automatisation de projets perso ; pas encore de QA en CI/CD dans une équipe multi-dev."
   },
   {
     name: "IA appliquée / workflows LLM",
+    group: "IA & automatisation" as SkillGroup,
     proofSlugs: ["cortex-bridge", "capselys", "les-petites-griffes", "iscom"],
     proofExtra: "RAG Starter Kit, Board IA PME",
     proof: "Cortex Bridge, Capsélys, Les Petites Griffes, ISCOM",
-    note: "Orchestration ChatGPT vers un exécuteur local borné, assistants cadrés, workflows LLM, fact-check et garde-fous avant publication.",
+    note: "Je construis des assistants avec des sources, des limites claires et une vérification humaine avant publication.",
     limit: "POC et projets cadrés ; pas encore de LLM en production sous charge avec SLA."
   },
   {
     name: "Full-stack web",
+    group: "Web & produit" as SkillGroup,
     proofSlugs: ["cortex-bridge", "les-petites-griffes", "educool-la-herse"],
     proofExtra: "ce portfolio",
     proof: "Cortex Bridge, Les Petites Griffes, Cool Bank / La Herse, ce portfolio",
-    note: "Next.js, React, pages publiques, CMS léger, rendu statique, déploiement et production.",
+    note: "Je construis des sites et des outils web, du premier écran au déploiement.",
     limit: "Surtout front et intégrations ; pas de backend distribué à forte charge."
   },
   {
     name: "Documentation / transmission",
+    group: "Web & produit" as SkillGroup,
     proofSlugs: ["claude-code-soul", "educool-la-herse"],
     proofExtra: "ce portfolio",
     proof: "claude-code-soul, Cool Bank / La Herse, ce portfolio",
-    note: "Décisions écrites, cadres réutilisables, fichiers lisibles par un agent ; un travail qu'un autre reprend.",
+    note: "Je note les décisions et les étapes pour qu'une autre personne puisse reprendre le projet.",
     limit: "Documentation de projets solo ; pas encore d'onboarding formalisé sur un codebase partagé."
   },
   {
     name: "Sécurité / RGPD / limites",
+    group: "IA & automatisation" as SkillGroup,
     proofSlugs: ["cortex-bridge", "educool-la-herse", "les-petites-griffes"],
     proofExtra: "",
     proof: "Cortex Bridge, Cool Bank / La Herse, Les Petites Griffes",
-    note: "Exécution confinée au workspace, comportements fail-closed, données sensibles anonymisées, secrets hors du code et prudence de publication.",
+    note: "Je limite les droits, bloque en cas de doute, anonymise les données sensibles et garde les secrets hors du code.",
     limit: "Bonnes pratiques appliquées ; pas d'audit sécurité formel ni de conformité validée par un DPO."
   }
 ];
