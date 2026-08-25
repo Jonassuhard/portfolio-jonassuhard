@@ -41,12 +41,53 @@ body::before {
   background-size:32px 32px,32px 32px,160px 160px,160px 160px;
 }
 .blueprint-bg {
-  position:fixed; inset:0; width:100%; height:100%; pointer-events:none; z-index:0;
-  opacity:.9;
+  position:fixed; inset:0; width:100%; height:100%; overflow:hidden;
+  pointer-events:none; z-index:0; opacity:.075; mix-blend-mode:multiply;
+}
+.blueprint-bg__asset {
+  position:absolute; display:block; object-fit:contain; object-position:center;
+}
+.blueprint-bg__gears {
+  left:2%; bottom:-2%; width:47%; height:47%;
+}
+.blueprint-bg__gauge {
+  right:2%; top:7%; width:27%; height:31%;
+}
+.blueprint-bg__signal {
+  left:16%; top:12%; width:18%; height:48%;
+}
+.blueprint-bg__axis-horizontal {
+  left:8%; top:46%; width:84%; height:12%;
+}
+.blueprint-bg__axis-vertical {
+  left:46%; top:7%; width:8%; height:86%;
+}
+.blueprint-bg__target {
+  left:46.5%; top:45%; width:7%; aspect-ratio:1;
+}
+.blueprint-bg__ruler {
+  left:32%; top:9%; width:35%; height:18%;
+}
+.blueprint-bg__dimension {
+  left:4%; bottom:1%; width:12%; height:35%;
+}
+.blueprint-bg__callout {
+  left:34%; top:49%; width:12%; height:14%;
+}
+.blueprint-bg__frame {
+  inset:4% 4%;
+}
+.blueprint-bg__title-block {
+  right:3%; bottom:6%; width:22%; height:16%;
 }
 @media (max-width:640px) {
-  .blueprint-bg { opacity:.72; }
+  .blueprint-bg { opacity:.06; }
   .blueprint-bg__mobile-muted { display:none; }
+  .blueprint-bg__axis-horizontal { left:-28%; top:46%; width:156%; height:12%; }
+  .blueprint-bg__axis-vertical { left:42%; top:5%; width:16%; height:90%; }
+  .blueprint-bg__target { left:39%; top:43%; width:22%; }
+  .blueprint-bg__ruler { left:14%; top:10%; width:72%; height:10%; }
+  .blueprint-bg__callout { left:51%; top:53%; width:40%; height:14%; }
 }
 body::after {
   content:""; position:fixed; inset:0; pointer-events:none; z-index:60;
@@ -159,43 +200,43 @@ h1 {
 }
 .title-text { position:relative; display:block; }
 .chroma-title::before {
-  color:rgba(67,174,169,.7);
-  animation:chroma-cyan .45s ease-out both;
+  color:rgba(67,174,169,.82);
+  animation:chroma-cyan .9s ease-out both;
 }
 .chroma-title::after {
-  color:rgba(142,31,47,.6);
-  animation:chroma-red .45s ease-out both;
+  color:rgba(142,31,47,.78);
+  animation:chroma-red .9s ease-out both;
 }
-.chroma-title[data-glitch="true"]::before { animation:glitch-cyan-cycle 20s linear infinite; }
-.chroma-title[data-glitch="true"]::after { animation:glitch-red-cycle 20s linear infinite; }
+.chroma-title[data-glitch="true"]::before { animation:glitch-cyan-cycle 40s linear infinite; }
+.chroma-title[data-glitch="true"]::after { animation:glitch-red-cycle 40s linear infinite; }
 @keyframes chroma-cyan {
-  0% { transform:translate3d(6px,0,0); opacity:.62; }
-  60% { transform:translate3d(3px,0,0); opacity:.38; }
-  100% { transform:translate3d(1px,0,0); opacity:0; }
+  0% { transform:translate3d(2px,0,0); opacity:.72; }
+  65% { transform:translate3d(1px,0,0); opacity:.46; }
+  100% { transform:none; opacity:0; }
 }
 @keyframes chroma-red {
-  0% { transform:translate3d(-6px,0,0); opacity:.55; }
-  60% { transform:translate3d(-3px,0,0); opacity:.32; }
-  100% { transform:translate3d(-1px,0,0); opacity:0; }
+  0% { transform:translate3d(-2px,0,0); opacity:.68; }
+  65% { transform:translate3d(-1px,0,0); opacity:.42; }
+  100% { transform:none; opacity:0; }
 }
-/* Une entrée courte, puis une déchirure post-LCP à 10 s ; cycle de 20 s. */
+/* Entrée chromatique de 1,2 s, puis déchirure lente de 1,4 s à mi-cycle. */
 @keyframes glitch-cyan-cycle {
-  0% { clip-path:inset(0); transform:translate3d(6px,0,0); opacity:.62; }
-  1.5%,49.9% { clip-path:inset(0 0 100% 0); transform:none; opacity:0; }
-  50% { clip-path:inset(0 0 82% 0); transform:translate3d(-4px,-1px,0); opacity:.85; }
-  50.4% { clip-path:inset(28% 0 45% 0); transform:translate3d(4px,1px,0); opacity:.85; }
-  50.8% { clip-path:inset(58% 0 12% 0); transform:translate3d(-4px,0,0); opacity:.85; }
-  51.2% { clip-path:inset(12% 0 68% 0); transform:translate3d(3px,-1px,0); opacity:.85; }
-  51.7%,100% { clip-path:inset(0 0 100% 0); transform:none; opacity:0; }
+  0% { clip-path:inset(0); transform:translate3d(2px,0,0); opacity:.72; }
+  3%,49.9% { clip-path:inset(0 0 100% 0); transform:none; opacity:0; }
+  50% { clip-path:inset(0 0 82% 0); transform:translate3d(-2px,-1px,0); opacity:.9; }
+  50.8% { clip-path:inset(28% 0 45% 0); transform:translate3d(2px,1px,0); opacity:.9; }
+  51.6% { clip-path:inset(58% 0 12% 0); transform:translate3d(-2px,0,0); opacity:.9; }
+  52.4% { clip-path:inset(12% 0 68% 0); transform:translate3d(1px,-1px,0); opacity:.9; }
+  53.5%,100% { clip-path:inset(0 0 100% 0); transform:none; opacity:0; }
 }
 @keyframes glitch-red-cycle {
-  0% { clip-path:inset(0); transform:translate3d(-6px,0,0); opacity:.55; }
-  1.5%,49.9% { clip-path:inset(0 0 100% 0); transform:none; opacity:0; }
-  50% { clip-path:inset(68% 0 10% 0); transform:translate3d(4px,1px,0); opacity:.85; }
-  50.4% { clip-path:inset(8% 0 62% 0); transform:translate3d(-4px,-1px,0); opacity:.85; }
-  50.8% { clip-path:inset(40% 0 30% 0); transform:translate3d(4px,0,0); opacity:.85; }
-  51.2% { clip-path:inset(78% 0 6% 0); transform:translate3d(-3px,1px,0); opacity:.85; }
-  51.7%,100% { clip-path:inset(0 0 100% 0); transform:none; opacity:0; }
+  0% { clip-path:inset(0); transform:translate3d(-2px,0,0); opacity:.68; }
+  3%,49.9% { clip-path:inset(0 0 100% 0); transform:none; opacity:0; }
+  50% { clip-path:inset(68% 0 10% 0); transform:translate3d(2px,1px,0); opacity:.88; }
+  50.8% { clip-path:inset(8% 0 62% 0); transform:translate3d(-2px,-1px,0); opacity:.88; }
+  51.6% { clip-path:inset(40% 0 30% 0); transform:translate3d(2px,0,0); opacity:.88; }
+  52.4% { clip-path:inset(78% 0 6% 0); transform:translate3d(-1px,1px,0); opacity:.88; }
+  53.5%,100% { clip-path:inset(0 0 100% 0); transform:none; opacity:0; }
 }
 /* Le template Next est recréé à chaque navigation ; son repère rejoue alors
    l'entrée sans placer tout le contenu derrière une frontière client. */

@@ -173,7 +173,7 @@ Cormorant Garamond 700 est servi depuis un WOFF2 local sous-ensemblé au corpus 
 
 Le contenu est centré dans une largeur maximale de **1120 px**. Les pages utilisent des bandes et sections non encartées ; les cartes sont réservées aux éléments réellement répétés : projets, preuves, résultats du décodeur et blocs comparables.
 
-La grille de fond possède des lignes mineures tous les **32 px** et majeures tous les **160 px**. Les schémas SVG sont fixes, inline, sans interaction, plus pâles que la grille et dégagent la zone centrale. Leur balisage statique reste compact afin de ne pas gonfler le payload RSC. La hiérarchie est construite par l'ordre titre, promesse, preuve, détail, action.
+La grille de fond possède des lignes mineures tous les **32 px** et majeures tous les **160 px**. Onze motifs techniques noirs sur fond transparent forment un calque bitmap fixe, sans interaction, plus pâle que la grille et allégé sur mobile. Les fichiers restent locaux, en WebP avec alpha, et les formes décoratives mobiles sont masquées avant chargement. La hiérarchie est construite par l'ordre titre, promesse, preuve, détail, action.
 
 Les seuils de référence sont 430, 640, 760, 960 et 1080 px. Tout composant fixe possède des dimensions stables. Sur mobile, le header tient autour de 96 à 104 px, le menu est immédiatement compréhensible et les cibles tactiles mesurent au moins 44 px.
 
@@ -197,7 +197,7 @@ Le header sticky regroupe une titlebar compacte et la navigation. Sur mobile, le
 
 ### Titres animés
 
-Le texte réel est présent dès la première frame. L'aberration cyan et rouge est produite en CSS par pseudo-éléments non exposés à l'arbre d'accessibilité. Le glitch périodique ne doit pas nécessiter de contrôleur JavaScript. `prefers-reduced-motion` désactive les copies et transitions.
+Le texte réel est présent dès la première frame. L'aberration cyan et rouge est produite en CSS par pseudo-éléments non exposés à l'arbre d'accessibilité. Le cycle dure 40 secondes : l'entrée chromatique reste visible 1,2 seconde, la déchirure périodique environ 1,4 seconde, et le décalage ne dépasse pas 2 px. Le glitch ne doit pas nécessiter de contrôleur JavaScript. `prefers-reduced-motion` désactive les copies et transitions.
 
 ### Cartes de projet
 

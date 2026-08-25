@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import test from "node:test";
 
 const read = (relativePath: string) =>
@@ -20,23 +20,55 @@ test("les cartes utilisent une image responsive sans JavaScript client", () => {
   assert.doesNotMatch(cardPages, /<img[^>]+src=\{project\.image\}/);
 });
 
-test("le blueprint reste inline, statique et sans requête décorative", () => {
+test("le blueprint utilise exactement onze images locales transparentes", () => {
   const blueprint = read("app/blueprint-bg.tsx");
+  const css = read("app/globals.css");
+  const assets = [
+    "01-gears.webp",
+    "02-gauge.webp",
+    "03-signal-diagram.webp",
+    "04-axis-horizontal.webp",
+    "05-axis-vertical.webp",
+    "06-registration-target.webp",
+    "07-construction-ruler.webp",
+    "08-dimension-line.webp",
+    "09-callout-line.webp",
+    "10-frame-corners.webp",
+    "11-title-block.webp"
+  ];
 
-  assert.match(blueprint, /dangerouslySetInnerHTML=\{\{ __html: blueprintMarkup \}\}/);
-  assert.equal((blueprint.match(/id="bp-gear-/g) ?? []).length, 3);
-  assert.doesNotMatch(blueprint, /https?:\/\/|url\(/);
-  assert.doesNotMatch(blueprint, /Array\.from|polarPoint|radialLine/);
+  assert.equal((blueprint.match(/name: "/g) ?? []).length, 11);
+  assert.equal((blueprint.match(/src: "\/assets\/blueprint\//g) ?? []).length, 11);
+  assert.doesNotMatch(css, /background-image:url\("\/assets\/blueprint\//);
+  assert.match(blueprint, /loading="lazy"/);
+  assert.match(blueprint, /fetchPriority="low"/);
+  assert.doesNotMatch(blueprint, /<svg|dangerouslySetInnerHTML|blueprintMarkup/);
+  assert.doesNotMatch(blueprint + "\n" + css, /https?:\/\/[^"')]*blueprint/i);
+  assert.match(css, /\.blueprint-bg__mobile-muted \{ display:none; \}/);
+  assert.match(
+    css,
+    /@media \(max-width:640px\)[\s\S]*\.blueprint-bg__ruler \{ left:14%; top:10%; width:72%; height:10%; \}/
+  );
+  for (const asset of assets) {
+    assert.ok(
+      existsSync(new URL("../public/assets/blueprint/" + asset, import.meta.url)),
+      asset + " manque"
+    );
+  }
 });
 
-test("tous les grands titres rejouent un glitch chromatique discret après le LCP", () => {
+test("tous les grands titres rejouent un glitch chromatique lent et lisible", () => {
   const title = read("app/animated-title.tsx");
   const css = read("app/globals.css");
 
   assert.match(title, /glitch = true/);
   assert.match(title, /data-glitch=\{glitch \? "true" : undefined\}/);
-  assert.match(css, /\.chroma-title\[data-glitch="true"\]::before \{ animation:glitch-cyan-cycle 20s linear infinite; \}/);
-  assert.match(css, /\.chroma-title\[data-glitch="true"\]::after \{ animation:glitch-red-cycle 20s linear infinite; \}/);
+  assert.match(css, /\.chroma-title\[data-glitch="true"\]::before \{ animation:glitch-cyan-cycle 40s linear infinite; \}/);
+  assert.match(css, /\.chroma-title\[data-glitch="true"\]::after \{ animation:glitch-red-cycle 40s linear infinite; \}/);
+  assert.match(css, /53\.5%,100% \{ clip-path:inset\(0 0 100% 0\); transform:none; opacity:0; \}/);
+  assert.match(css, /color:rgba\(67,174,169,\.82\)/);
+  assert.match(css, /color:rgba\(142,31,47,\.78\)/);
+  assert.doesNotMatch(css, /@keyframes glitch-(?:cyan|red)-cycle[\s\S]*?translate3d\([^)]*[3-9]px/);
 });
 
 test("les optimisations de performance ne retirent aucune animation", () => {
