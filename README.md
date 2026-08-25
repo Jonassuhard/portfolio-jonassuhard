@@ -13,7 +13,7 @@ Growth Engineer junior spécialisé en IA appliquée et automatisation, avec les
 
 ## Ce que le projet démontre (mesuré)
 
-- **Lighthouse local du 25 août 2026** : desktop **100/100/100/100** ; mobile **97/100/100/100**, LCP 2,6 s, CLS 0 et TBT 30 ms. Une mesure publique reste nécessaire après déploiement.
+- **Lighthouse production du 26 août 2026** : mobile **100/100/100/100**, LCP 1,4 s ; desktop **99/100/100/100**, LCP 0,9 s. CLS nul sur les deux profils, TBT de 30 ms sur mobile et 0 ms sur desktop.
 - **Sécurité A+** ([securityheaders.com](https://securityheaders.com)) : CSP, HSTS, X-Frame-Options, Referrer-Policy, Permissions-Policy
 - **Agent-readable** : JSON-LD (Person, WebSite, Project), `llms.txt`, profils machine, fiches Markdown et registre de preuves
 - Optimisations LCP : `experimental.inlineCss`, `display:optional` + préchargement ciblé des fonts du hero
@@ -32,7 +32,7 @@ Les fichiers `public/llms.txt`, `public/profile.md`, `public/profile.json`, `pub
 
 > Détails d'ingénierie (perf/LCP, sécurité, données structurées) + le pattern de l'assistant IA cadré, avec snippets : **[ARCHITECTURE.md](ARCHITECTURE.md)**
 
-> Dernière validation visuelle et technique : **[rapport blueprint et glitch du 25 août 2026](docs/audits/2026-08-25-portfolio-blueprint-glitch-report.md)**
+> Dernière validation visuelle et technique : **[rapport blueprint et glitch, vérifié en production le 26 août 2026](docs/audits/2026-08-25-portfolio-blueprint-glitch-report.md)**
 
 ## Lancer en local
 

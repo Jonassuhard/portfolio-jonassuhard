@@ -34,7 +34,7 @@ Les pages projet (`app/projets/[slug]/page.tsx`) sont générées statiquement d
 
 ## 2. Performance : tenir le LCP
 
-La validation locale du 25 août 2026 mesure la home à 100/100/100/100 sur desktop et 97/100/100/100 sur mobile. Le mobile affiche un LCP de 2,6 s, un CLS nul et un TBT de 30 ms. Une nouvelle mesure publique reste nécessaire après déploiement. Trois décisions font le gros du travail.
+La validation de production du 26 août 2026 mesure la home à 100/100/100/100 sur mobile et 99/100/100/100 sur desktop. Le LCP atteint 1,4 s sur mobile et 0,9 s sur desktop ; le CLS est nul sur les deux profils et le TBT atteint respectivement 30 ms et 0 ms. Trois décisions font le gros du travail.
 
 **Le CSS critique est inliné dans le HTML**, ce qui supprime la requête CSS bloquante (le dernier verrou du LCP en 4G lente).
 

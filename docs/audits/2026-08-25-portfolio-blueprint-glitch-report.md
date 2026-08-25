@@ -57,22 +57,27 @@ Toutes les pages HTML utilisent `AnimatedTitle` pour leur H1. Le texte réel res
 | Console | 0 erreur |
 | Responsive | 0 débordement horizontal |
 | Images | 0 image cassée |
+| Médias après défilement | 10/10 mobile et 16/16 desktop sur les pages principales |
 | Menu mobile | 6 liens visibles, ouverture validée |
 | Consentement Clarity | Refus persistant après rechargement |
 | Gitleaks | Aucun secret détecté au commit |
+| GitHub Actions | Workflow Quality `32901558922` réussi |
+| Production | Déploiement Vercel `FhxZHGmKrrAwwgasWkGXikZ7PMTt` prêt et aliasé sur `jonassuhard.com` |
 
-## Lighthouse local
+## Lighthouse production — 26 août 2026
 
 | Profil | Performance | Accessibilité | Bonnes pratiques | SEO | LCP | CLS | TBT |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| Mobile | 97 | 100 | 100 | 100 | 2,6 s | 0 | 30 ms |
-| Desktop | 100 | 100 | 100 | 100 | 0,6 s | 0 | 0 ms |
+| Mobile | 100 | 100 | 100 | 100 | 1,4 s | 0 | 30 ms |
+| Desktop | 99 | 100 | 100 | 100 | 0,9 s | 0 | 0 ms |
 
-Le transfert mesuré est de 279 Kio sur mobile et 474 Kio sur desktop. Les six images décoratives masquées sur mobile ne sont pas chargées pendant le test.
+Le transfert mesuré est de 266 Kio sur mobile et 458 Kio sur desktop. Les six images décoratives masquées sur mobile ne sont pas chargées pendant le test.
 
 ## État de livraison
 
 - Le code et les onze images sont commités dans `7032766`.
-- Aucun push ou déploiement n'est inclus dans ce rapport.
+- Les commits `7032766` et `fbb130d` ont été poussés sur `origin/master`.
+- Le domaine sert le nouveau blueprint, le cycle de 40 s et la nouvelle copy ; l'ancien journal de build n'est plus présent.
+- L'intégration Git Vercel n'a pas déclenché de build après le push. Le déploiement a été lancé avec le CLI Vercel sur le projet existant `portfolio-jonassuhard`, sans création de doublon.
 - `AGENTS.md` et `CLAUDE.md` restent des fichiers de consignes locaux non suivis.
-- Une vérification Lighthouse et un crawl de production restent nécessaires après déploiement.
+- La production a été vérifiée sur 21 URLs, 40 rendus navigateur et six captures complètes après défilement.
