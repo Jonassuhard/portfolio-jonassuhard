@@ -13,7 +13,7 @@ Growth Engineer junior spécialisé en IA appliquée et automatisation, avec les
 
 ## Ce que le projet démontre (mesuré)
 
-- **Lighthouse** : la CI du 20 juillet 2026 vérifie quatre pages à **100** en accessibilité, bonnes pratiques et SEO. Baseline PageSpeed mobile de production avant cette série d'optimisations : **96/100** ; nouvelle mesure publique à effectuer après déploiement.
+- **Lighthouse local du 25 août 2026** : desktop **100/100/100/100** ; mobile **97/100/100/100**, LCP 2,6 s, CLS 0 et TBT 30 ms. Une mesure publique reste nécessaire après déploiement.
 - **Sécurité A+** ([securityheaders.com](https://securityheaders.com)) : CSP, HSTS, X-Frame-Options, Referrer-Policy, Permissions-Policy
 - **Agent-readable** : JSON-LD (Person, WebSite, Project), `llms.txt`, profils machine, fiches Markdown et registre de preuves
 - Optimisations LCP : `experimental.inlineCss`, `display:optional` + préchargement ciblé des fonts du hero
@@ -25,10 +25,14 @@ Growth Engineer junior spécialisé en IA appliquée et automatisation, avec les
 - `lib/json-ld.ts` — données structurées schema.org
 - `next.config.mjs` — headers de sécurité + inline CSS
 - `app/` — App Router (home, projets, case studies, recruteurs, méthode, à-propos, mentions légales, confidentialité)
+- `app/blueprint-bg.tsx` + `public/assets/blueprint/` — onze schémas techniques WebP transparents, locaux et allégés sur mobile
+- `app/animated-title.tsx` + `app/globals.css` — titre sémantique unique, aberration cyan/rouge en pseudo-éléments et mouvement réduit respecté
 
 Les fichiers `public/llms.txt`, `public/profile.md`, `public/profile.json`, `public/skills.md` et `public/cv.md` sont maintenus manuellement. Ils sont relus avec les PDF du CV et les sources de preuve ; ils ne sont pas écrasés par `generate:md`.
 
 > Détails d'ingénierie (perf/LCP, sécurité, données structurées) + le pattern de l'assistant IA cadré, avec snippets : **[ARCHITECTURE.md](ARCHITECTURE.md)**
+
+> Dernière validation visuelle et technique : **[rapport blueprint et glitch du 25 août 2026](docs/audits/2026-08-25-portfolio-blueprint-glitch-report.md)**
 
 ## Lancer en local
 

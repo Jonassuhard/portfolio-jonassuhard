@@ -1,5 +1,7 @@
 # Rapport de remise à niveau du portfolio
 
+> Ce rapport décrit le lot éditorial contrôlé avant le commit visuel. Pour l'état actuel du fond technique, du glitch et des performances, voir le [rapport blueprint et glitch du 25 août 2026](2026-08-25-portfolio-blueprint-glitch-report.md).
+
 Date : 25 août 2026
 
 Cible auditée : build local de `jonassuhard.com`

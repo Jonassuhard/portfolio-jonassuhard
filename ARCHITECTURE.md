@@ -34,7 +34,7 @@ Les pages projet (`app/projets/[slug]/page.tsx`) sont générées statiquement d
 
 ## 2. Performance : tenir le LCP
 
-La CI Lighthouse du 20 juillet 2026 vérifie quatre pages à 100 en accessibilité, bonnes pratiques et SEO. Le rapport PageSpeed mobile de production fourni avant cette série d'optimisations donnait 96/100 en performance ; une nouvelle mesure publique est nécessaire après déploiement. Deux décisions font le gros du travail.
+La validation locale du 25 août 2026 mesure la home à 100/100/100/100 sur desktop et 97/100/100/100 sur mobile. Le mobile affiche un LCP de 2,6 s, un CLS nul et un TBT de 30 ms. Une nouvelle mesure publique reste nécessaire après déploiement. Trois décisions font le gros du travail.
 
 **Le CSS critique est inliné dans le HTML**, ce qui supprime la requête CSS bloquante (le dernier verrou du LCP en 4G lente).
 
@@ -51,6 +51,10 @@ const fontBody = Courier_Prime({ display: "optional", preload: true /* … */ })
 ```
 
 Résultat : le premier paint se fait sur un fallback métrique-ajusté. Courier Prime est la police de corps chargée ; Courier New n'est qu'un fallback CSS. La police custom prend la main dès qu'elle est en cache, sans décalage de mise en page notable.
+
+**Le décor technique reste hors du chemin critique.** Les onze schémas sont des WebP locaux avec canal alpha, rendus une seule fois dans `app/blueprint-bg.tsx`. Desktop affiche les onze formes à 7,5 % d'opacité. Mobile masque les six formes les plus lourdes, conserve cinq repères à 6 % et limite la grande règle à 270 × 81 px sur un viewport de 375 px. Cette limite empêche une image décorative transparente de devenir le LCP à la place du titre.
+
+**L'animation de titre ne duplique pas le contenu accessible.** `AnimatedTitle` rend un seul H1 réel. Les couches cyan et rouge viennent de pseudo-éléments CSS : cycle de 40 s, entrée visible 1,2 s, déchirure environ 1,4 s et déplacement maximal de 2 px. `prefers-reduced-motion` retire entièrement ces deux animations.
 
 ---
 
