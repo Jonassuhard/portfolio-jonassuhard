@@ -78,6 +78,6 @@ Le transfert mesuré est de 266 Kio sur mobile et 458 Kio sur desktop. Les six i
 - Le code et les onze images sont commités dans `7032766`.
 - Les commits `7032766` et `fbb130d` ont été poussés sur `origin/master`.
 - Le domaine sert le nouveau blueprint, le cycle de 40 s et la nouvelle copy ; l'ancien journal de build n'est plus présent.
-- L'intégration Git Vercel n'a pas déclenché de build après le push. Le déploiement a été lancé avec le CLI Vercel sur le projet existant `portfolio-jonassuhard`, sans création de doublon.
+- Lors du premier push, le projet Vercel n'était plus relié à aucun dépôt (`link: null`). Le déploiement a été lancé avec le CLI sur le projet existant `portfolio-jonassuhard`, sans création de doublon. La liaison GitHub a ensuite été rétablie vers `Jonassuhard/portfolio-jonassuhard`, avec `master` comme branche de production.
 - `AGENTS.md` et `CLAUDE.md` restent des fichiers de consignes locaux non suivis.
 - La production a été vérifiée sur 21 URLs, 40 rendus navigateur et six captures complètes après défilement.
