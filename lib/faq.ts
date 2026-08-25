@@ -33,7 +33,7 @@ export const faqItems: FaqItem[] = [
   },
   {
     q: "Quelles sont ses preuves de travail principales ?",
-    a: "Cortex Bridge (agent local open source : extension Chrome, console et exécuteur contrôlé), Les Petites Griffes (site live + CMS maison + assistant IA), Cool Bank / La Herse (jeu scolaire V2 local et monde 3D V3 reliés à Educool), Preuvia (audit GEO / visibilité IA) et ISCOM (SEO + Drupal + production éditoriale en contexte employeur)."
+    a: "Cortex Bridge (agent de code local open source piloté par ChatGPT, avec validation humaine), Les Petites Griffes (site live + CMS maison + assistant IA), Cool Bank / La Herse (jeu scolaire V2 local et monde 3D V3 reliés à Educool), Preuvia (audit GEO / visibilité IA) et ISCOM (SEO + Drupal + production éditoriale en contexte employeur)."
   },
   {
     q: "Quels résultats mesurés peut-on citer ?",

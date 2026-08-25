@@ -1,10 +1,10 @@
-# Cortex Bridge - orchestration ChatGPT et exécution locale contrôlée
+# Cortex Bridge - ChatGPT comme cerveau d'un agent de code local
 
 ## Repères
 
 | Repère | Détail |
 | --- | --- |
-| Format | Agent local open source : extension Chrome, console et exécuteur |
+| Format | Agent de code local open source piloté par ChatGPT |
 | Période | Juillet - août 2026 · v0.5.2 |
 | Rôle de Jonas | Conception produit, architecture, extension MV3, backend FastAPI, sécurité, QA |
 | Statut | Preview technique open source v0.5.2 |
@@ -13,7 +13,7 @@
 
 ## À quoi ça sert
 
-Cortex Bridge relie ChatGPT à un programme local sur Mac. Les actions restent limitées au dossier choisi, sont montrées avant exécution et sont bloquées en cas de doute. Le code et la preuve de release sont publics.
+Cortex Bridge transforme ChatGPT en cerveau d'un agent de code local open source. ChatGPT analyse et planifie ; vous validez ; Cortex exécute uniquement dans le dossier choisi et garde une trace. Le projet vise l'usage d'un agent de code sans ajouter un second abonnement dédié. Le code et la preuve de release sont publics.
 
 ## Ce que Jonas a fait
 
@@ -25,7 +25,7 @@ Cortex Bridge relie ChatGPT à un programme local sur Mac. Les actions restent l
 
 ## Ce que ça prouve
 
-ChatGPT propose une action. Vous la validez. Cortex l'exécute dans le dossier choisi et garde une trace de chaque étape.
+ChatGPT réfléchit et prépare le travail. Vous validez. Cortex exécute dans le dossier choisi et garde une trace de chaque étape.
 
 - Construire un produit complet avec une extension, un backend local, une interface et des tests.
 - Limiter les actions au dossier choisi et bloquer l'exécution en cas de doute.

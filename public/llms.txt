@@ -22,7 +22,7 @@ Je cherche à évoluer vers un rôle de Forward Deployed Engineer. Je veux compr
 
 ## Projets à lire d'abord
 
-- [Cortex Bridge](https://jonassuhard.com/projects/cortex-bridge.md) : agent local open source, release v0.5.2 publique ; preview macOS/Chrome opt-in, sans affiliation OpenAI.
+- [Cortex Bridge](https://jonassuhard.com/projects/cortex-bridge.md) : agent de code local open source qui utilise ChatGPT comme cerveau ; l'utilisateur valide avant l'exécution. Le projet vise l'usage d'un agent de code sans second abonnement dédié. Release v0.5.2 publique ; preview macOS/Chrome opt-in, sans affiliation OpenAI.
 - [Les Petites Griffes](https://jonassuhard.com/projects/les-petites-griffes.md) : site live, CMS et assistant IA cadré ; audit privé daté, projet familial non facturé.
 - [Cool Bank / La Herse](https://jonassuhard.com/projects/educool-la-herse.md) : V2 `LOCAL_SINGLE_DEVICE_READY`, V3 `READY_FOR_HUMAN_RECIPE` ; preuves privées sur données fictives, aucun pilote revendiqué.
 - [ISCOM](https://jonassuhard.com/projects/iscom.md) : SEO publié dans Drupal avec vérification humaine.

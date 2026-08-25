@@ -43,7 +43,7 @@ export default function HomePage() {
           <div className="stats-list">
             <div className="stat-item">
               <strong>Cortex Bridge</strong>
-              <span>Un outil open source qui relie ChatGPT à des actions locales contrôlées.</span>
+              <span>Un agent de code local open source qui utilise ChatGPT comme cerveau.</span>
             </div>
             <div className="stat-item">
               <strong>Les Petites Griffes</strong>
@@ -70,8 +70,8 @@ export default function HomePage() {
           </div>
           <p>
             Cortex Bridge, Les Petites Griffes et Cool Bank / La Herse : un
-            outil IA open source, un site familial en production et un jeu
-            scolaire dont les deux versions sont séparées.
+            agent de code local piloté par ChatGPT, un site familial en
+            production et un jeu scolaire dont les deux versions sont séparées.
           </p>
         </div>
 

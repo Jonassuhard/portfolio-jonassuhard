@@ -51,6 +51,8 @@ test("Cortex Bridge reste une preuve logicielle publique et qualifiée", () => {
   assert.ok(cortex);
   assert.equal(cortex.evidenceLevel, "public");
   assert.ok(cortex.stack.includes("Next.js"));
+  assert.match(cortex.summary, /ChatGPT en cerveau d'un agent de code local/i);
+  assert.match(cortex.summary, /sans ajouter un second abonnement dédié/i);
   assert.match(cortex.evidenceNote ?? "", /434 tests backend/);
   assert.ok(release);
   assert.equal(release.status, "publicly-verified");

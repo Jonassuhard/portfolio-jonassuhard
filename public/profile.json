@@ -65,7 +65,8 @@
   "projects": [
     {
       "project": "Cortex Bridge",
-      "type": "agent local open source : extension Chrome, console et exécuteur contrôlé",
+      "type": "agent de code local open source piloté par ChatGPT, avec validation humaine",
+      "purpose": "Utiliser ChatGPT comme cerveau d'un agent de code local et retrouver cet usage sans ajouter un second abonnement dédié.",
       "period": "Juillet - août 2026",
       "role": "conception produit, architecture, extension MV3, backend FastAPI, sécurité et QA",
       "stack": ["Chrome MV3", "FastAPI", "Next.js", "React", "SQLite", "Python", "Ollama"],
