@@ -6,6 +6,7 @@
     "dev": "next dev",
     "generate:cv": "python scripts/generate-cv-pdf.py",
     "generate:md": "tsx scripts/generate-project-md.ts",
+    "generate:proof-schematics": "node scripts/generate-proof-schematics.mjs",
     "typecheck": "tsc --noEmit",
     "test": "tsx --test tests/*.test.ts",
     "check:content": "tsx scripts/check-content.ts",

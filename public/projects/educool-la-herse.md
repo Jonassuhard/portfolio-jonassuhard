@@ -63,6 +63,19 @@ Version 3D plus ambitieuse avec 22 zones, trois rôles, économie serveur, maiso
 - Candidate restaurable 20260806_FINAL_RECIPE : 9 ZIP et 97 259 entrées extraites et vérifiées.
 
 
+## Visuels
+
+![Interface Educool liée au système : tableau de bord sur données fictives, sans identité d'enfant publiée.](/assets/proof/educool/educool-dashboard.webp)
+
+![Saisie des progressions : matrice de classe anonymisée, commune au contexte métier de Cool Bank.](/assets/proof/educool/educool-saisie-ceintures.webp)
+
+![Exports pédagogiques : aperçu et génération PDF/ZIP depuis l'interface scolaire associée.](/assets/proof/educool/educool-livrets.webp)
+
+![Marché de Cool Bank V2 lancé localement sur des données de démonstration fictives.](/assets/proof/educool/cool-bank-v2-market.webp)
+
+![Schéma des deux versions : V2 relie le jeu web à Educool ; V3 sépare le monde 3D, les contrôles et l'interface scolaire.](/assets/proof/educool/cool-bank-v2-v3-worldline.webp)
+
+
 ## Limites
 
 - Preuve privée : code, captures complètes et données de contexte se montrent uniquement sur fixtures anonymisées.

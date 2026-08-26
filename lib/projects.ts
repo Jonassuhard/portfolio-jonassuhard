@@ -369,7 +369,9 @@ export const projects: Project[] = [
     gallery: [
       { src: "/assets/proof/educool/educool-dashboard.webp", caption: "Interface Educool liée au système : tableau de bord sur données fictives, sans identité d'enfant publiée.", width: 1600, height: 870 },
       { src: "/assets/proof/educool/educool-saisie-ceintures.webp", caption: "Saisie des progressions : matrice de classe anonymisée, commune au contexte métier de Cool Bank.", width: 1600, height: 873 },
-      { src: "/assets/proof/educool/educool-livrets.webp", caption: "Exports pédagogiques : aperçu et génération PDF/ZIP depuis l'interface scolaire associée.", width: 1600, height: 870 }
+      { src: "/assets/proof/educool/educool-livrets.webp", caption: "Exports pédagogiques : aperçu et génération PDF/ZIP depuis l'interface scolaire associée.", width: 1600, height: 870 },
+      { src: "/assets/proof/educool/cool-bank-v2-market.webp", caption: "Marché de Cool Bank V2 lancé localement sur des données de démonstration fictives.", width: 1600, height: 1000 },
+      { src: "/assets/proof/educool/cool-bank-v2-v3-worldline.webp", caption: "Schéma des deux versions : V2 relie le jeu web à Educool ; V3 sépare le monde 3D, les contrôles et l'interface scolaire.", width: 1600, height: 960 }
     ],
     links: [
       { label: "Version Markdown", href: "/projects/educool-la-herse.md" }
@@ -472,7 +474,8 @@ export const projects: Project[] = [
     ],
     gallery: [
       { src: "/assets/proof/capselys/capselys-site.webp", caption: "Home Capsélys (staging) avec l'assistant IA ouvert en contexte.", width: 1400, height: 800 },
-      { src: "/assets/proof/capselys/capselys-assistant.webp", caption: "L'assistant répond à une vraie question (DUERP) : réponse cadrée, CTA et disclaimer « réponses générées automatiquement ».", width: 900, height: 1063 }
+      { src: "/assets/proof/capselys/capselys-assistant.webp", caption: "L'assistant répond à une vraie question (DUERP) : réponse cadrée, CTA et disclaimer « réponses générées automatiquement ».", width: 900, height: 1063 },
+      { src: "/assets/proof/capselys/capselys-audit-roadmap.webp", caption: "Extrait du rapport d'audit : problèmes observés, priorité et correction proposée pour la suite de la refonte.", width: 1600, height: 456 }
     ],
     links: [
       { label: "Version Markdown", href: "/projects/capselys.md" }
@@ -550,6 +553,11 @@ export const projects: Project[] = [
       "Impact trafic mesuré côté employeur, non publiable ici.",
       "Chaque publication passe par une validation humaine ; l'automatisation couvre la saisie et les contrôles.",
       "Certaines preuves sont montrables en entretien, pas en ligne."
+    ],
+    gallery: [
+      { src: "/assets/proof/iscom/iscom-article-hero.webp", caption: "Article publié sur iscom.fr : titre, date et introduction visibles sur la page publique.", width: 1440, height: 1000 },
+      { src: "/assets/proof/iscom/iscom-article-agent.webp", caption: "Passage de l'article qui explique simplement le rôle des agents IA dans les métiers de la communication.", width: 1440, height: 1000 },
+      { src: "/assets/proof/iscom/iscom-article-method.webp", caption: "Suite de l'article public : méthode, limites et mise en contexte éditoriale vérifiables sur le site ISCOM.", width: 1440, height: 1000 }
     ],
     links: [
       {
@@ -648,7 +656,9 @@ export const projects: Project[] = [
       "Ne remplace pas le SEO classique ; il ajoute une couche de visibilité dans les moteurs de réponse."
     ],
     gallery: [
-      { src: "/assets/proof/preuvia/preuvia-landing.webp", caption: "Landing Preuvia en ligne : la promesse (« qui les IA recommandent avant vous ») et le démonstrateur d'écart de visibilité — question posée, sources qui ressortent, marque non citée.", width: 1600, height: 921 }
+      { src: "/assets/proof/preuvia/preuvia-hero-live.webp", caption: "Page d'accueil publique de Preuvia : la promesse explique directement ce que l'audit vérifie.", width: 1440, height: 1000 },
+      { src: "/assets/proof/preuvia/preuvia-process-live.webp", caption: "Process public de l'audit : tester les réponses, repérer les écarts, puis prioriser ce qu'il faut publier.", width: 1440, height: 1000 },
+      { src: "/assets/proof/preuvia/preuvia-output-live.webp", caption: "Exemple fictif du livrable public : sources citées, manque observé et actions proposées, sans résultat client inventé.", width: 1440, height: 1000 }
     ],
     links: [
       { label: "Voir le site", href: "https://preuvia.vercel.app", external: true },
@@ -743,6 +753,11 @@ export const projects: Project[] = [
       "Le transport automatique par l'interface ChatGPT entre en conflit avec les conditions du fournisseur : activation opt-in et risque de restriction du compte.",
       "Preview technique macOS/Chrome : extension installée manuellement et dépendance à un DOM externe susceptible de changer."
     ],
+    gallery: [
+      { src: "/assets/proof/cortex-bridge/cortex-onboarding.webp", caption: "Onboarding public de Cortex Bridge : choix du dossier local et consentement avant toute exécution.", width: 1440, height: 900 },
+      { src: "/assets/proof/cortex-bridge/cortex-preflight.webp", caption: "Contrôle avant exécution : commande proposée, dossier ciblé et niveau de risque restent visibles avant validation.", width: 1440, height: 900 },
+      { src: "/assets/proof/cortex-bridge/cortex-execution.webp", caption: "Trace d'exécution : chaque étape, sa sortie et son état restent consultables dans l'interface locale.", width: 1440, height: 900 }
+    ],
     links: [
       {
         label: "Repo GitHub",
@@ -808,6 +823,7 @@ export const projects: Project[] = [
     ],
     limits: ["Projet lab : automatisation créative, éloignée du poste visé, gardée comme preuve technique."],
     gallery: [
+      { src: "/assets/proof/battle-engine/pipeline-resumable.webp", caption: "Schéma du pipeline reprenable : Godot rend le combat, FFmpeg et RIFE préparent la vidéo, puis l'API YouTube publie.", width: 1600, height: 960 },
       { src: "/assets/proof/battle-engine/intro-platforms.webp", caption: "Séquence d'intro : les plateformes des deux combattants et le champ de particules, rendus par un shader custom sous Godot.", width: 620, height: 1103 },
       { src: "/assets/proof/battle-engine/intro-buildup.webp", caption: "Montée du champ de particules avant le face-à-face, générée en temps réel côté moteur.", width: 620, height: 1103 }
     ],
@@ -866,6 +882,11 @@ export const projects: Project[] = [
       "Le développement et le design ne sont pas de moi : ma part est le marketing, l'acquisition et le business plan.",
       "Projet MBA : audience construite, mais pas encore de traction payante."
     ],
+    gallery: [
+      { src: "/assets/proof/hoopsphere/hoopsphere-landing-team.webp", caption: "Vue du prototype produit réalisé en équipe. Je la montre pour situer HoopSphere ; le design et le développement ne sont pas les miens.", width: 1600, height: 900 },
+      { src: "/assets/proof/hoopsphere/hoopsphere-product-context.webp", caption: "Section de la landing du prototype d'équipe consacrée à l'expérience communautaire. Ma contribution porte sur le marketing et le lancement.", width: 1600, height: 900 },
+      { src: "/assets/proof/hoopsphere/hoopsphere-acquisition-plan.webp", caption: "Extrait du plan d'acquisition préparé pour le projet MBA : canaux, cibles et séquence de lancement, sans les présenter comme des résultats obtenus.", width: 1600, height: 555 }
+    ],
     links: [{ label: "Version Markdown", href: "/projects/hoopsphere.md" }]
   },
   {
@@ -920,6 +941,11 @@ export const projects: Project[] = [
     limits: [
       "Code et démonstration non publics à ce jour ; l'architecture décrite n'est donc pas auditée publiquement.",
       "Le module d'évaluation fournit le harnais ; les scores de qualité ne sont pas publiés."
+    ],
+    gallery: [
+      { src: "/assets/proof/rag-starter-kit/rag-document-pipeline.webp", caption: "Schéma du parcours d'un document : ingestion, découpage, indexation, recherche puis réponse avec ses sources.", width: 1600, height: 960 },
+      { src: "/assets/proof/rag-starter-kit/rag-tenant-isolation.webp", caption: "Isolation des clients : chaque requête reste dans son espace de données et ne peut pas récupérer les documents d'un autre client.", width: 1600, height: 960 },
+      { src: "/assets/proof/rag-starter-kit/rag-evaluation-loop.webp", caption: "Boucle d'évaluation : cas versionnés, mesure du retrieval, comparaison et correction avant une nouvelle exécution.", width: 1600, height: 960 }
     ],
     links: [{ label: "Version Markdown", href: "/projects/rag-starter-kit.md" }]
   },
@@ -976,6 +1002,11 @@ export const projects: Project[] = [
       "POC initié, non terminé : le dashboard React Flow et l'export PDF décrits ne sont pas implémentés.",
       "Pas de test automatisé côté backend pour l'instant."
     ],
+    gallery: [
+      { src: "/assets/proof/board-ia-pme/board-isolated-agents.webp", caption: "Schéma des cinq agents : chacun reçoit une source différente pour produire de vrais points de vue séparés.", width: 1600, height: 960 },
+      { src: "/assets/proof/board-ia-pme/board-orchestration.webp", caption: "Orchestration prévue : les analyses parallèles remontent vers des règles de pondération lisibles, sans sixième modèle opaque.", width: 1600, height: 960 },
+      { src: "/assets/proof/board-ia-pme/board-status.webp", caption: "État honnête du POC : backend et règles posés ; dashboard, export PDF et validation client restent à construire.", width: 1600, height: 960 }
+    ],
     links: [{ label: "Version Markdown", href: "/projects/board-ia-pme.md" }]
   },
   {
@@ -1022,6 +1053,11 @@ export const projects: Project[] = [
       "Lab personnel, pas de démo publique maintenue.",
       "Persistance des stats dépend de Firebase (mode mémoire sans credentials)."
     ],
+    gallery: [
+      { src: "/assets/proof/edusemantix/edusemantix-login.webp", caption: "Écran de connexion de la démo locale, lancé avec un profil fictif créé uniquement pour cette capture.", width: 1440, height: 1000 },
+      { src: "/assets/proof/edusemantix/edusemantix-game.webp", caption: "Partie locale : une proposition reçoit immédiatement un score de proximité avec le mot secret.", width: 1440, height: 1000 },
+      { src: "/assets/proof/edusemantix/edusemantix-score.webp", caption: "Retour après une proposition fictive : score sémantique, progression et historique affichés par l'interface réelle.", width: 1440, height: 1000 }
+    ],
     links: [{ label: "Version Markdown", href: "/projects/edusemantix.md" }]
   },
   {
@@ -1066,6 +1102,11 @@ export const projects: Project[] = [
     limits: [
       "Sans ROM légale fournie, le toolkit ne fait rien : aucun contenu jouable distribué.",
       "Lab ciblé sur la 4e génération NDS, non généralisé."
+    ],
+    gallery: [
+      { src: "/assets/proof/pokemon-gen4-toolkit/narc-anatomy.webp", caption: "Schéma d'une archive NARC : en-tête, table de fichiers, noms et données sont séparés avant toute édition.", width: 1600, height: 960 },
+      { src: "/assets/proof/pokemon-gen4-toolkit/text-codec.webp", caption: "Chaîne du codec de texte réimplémenté en Python : caractères, codes Gen 4, seed puis chiffrement XOR.", width: 1600, height: 960 },
+      { src: "/assets/proof/pokemon-gen4-toolkit/editor-surface.webp", caption: "Périmètre des outils : textes, événements, scripts et statistiques, sans ROM ni asset distribué.", width: 1600, height: 960 }
     ],
     links: [{ label: "Version Markdown", href: "/projects/pokemon-gen4-toolkit.md" }]
   },
@@ -1116,6 +1157,11 @@ export const projects: Project[] = [
     limits: [
       "Config opinionnée (ton majordome, workflow personnel) : à adapter avant réutilisation.",
       "Certaines briques tierces sont exclues du repo et doivent être réinstallées séparément."
+    ],
+    gallery: [
+      { src: "/assets/proof/claude-code-soul/soul-layers.webp", caption: "Architecture du pack : l'identité, les règles, les skills, les agents et les hooks restent dans des couches séparées.", width: 1600, height: 960 },
+      { src: "/assets/proof/claude-code-soul/soul-security-gates.webp", caption: "Garde-fous de publication : secrets dans le trousseau, validation locale et contrôle gitleaks avant le dépôt public.", width: 1600, height: 960 },
+      { src: "/assets/proof/claude-code-soul/soul-install-flow.webp", caption: "Installation du pack : audit local, choix des couches, copie contrôlée puis vérification sans donnée personnelle.", width: 1600, height: 960 }
     ],
     links: [
       { label: "Version Markdown", href: "/projects/claude-code-soul.md" },

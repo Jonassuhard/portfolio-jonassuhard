@@ -31,6 +31,15 @@ Un pipeline Python lance le combat dans Godot, prépare la vidéo avec FFmpeg et
 
 Preuve locale privée : le commit du 23/08/2026 rend la publication nightly reprenable après une interruption.
 
+## Visuels
+
+![Schéma du pipeline reprenable : Godot rend le combat, FFmpeg et RIFE préparent la vidéo, puis l'API YouTube publie.](/assets/proof/battle-engine/pipeline-resumable.webp)
+
+![Séquence d'intro : les plateformes des deux combattants et le champ de particules, rendus par un shader custom sous Godot.](/assets/proof/battle-engine/intro-platforms.webp)
+
+![Montée du champ de particules avant le face-à-face, générée en temps réel côté moteur.](/assets/proof/battle-engine/intro-buildup.webp)
+
+
 ## Limites
 
 - Projet lab : automatisation créative, éloignée du poste visé, gardée comme preuve technique.

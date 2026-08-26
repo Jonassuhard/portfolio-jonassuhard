@@ -33,6 +33,17 @@ L'audit live du 2026-08-01 couvre 18 pages publiques contrôlées à 390 px et 1
 
 Captures anonymisées, démo privée et audit live daté du 2026-08-01. L'audit complet reste une preuve privée montrable en entretien, pas une source publique autonome.
 
+## Visuels
+
+![Home du studio de nail art, front Next.js déployé sur Vercel.](/assets/proof/les-petites-griffes/lpg-home.webp)
+
+![« Compose ta pose » : devis guidé qui cadre la demande de la cliente.](/assets/proof/les-petites-griffes/lpg-compose.webp)
+
+![Assistant IA cadré sur les prix, la durée, la méthode et le style, avec garde-fous et sans promesse magique.](/assets/proof/les-petites-griffes/lpg-assistant.webp)
+
+![L'assistant analyse une photo d'ongles envoyée par la cliente.](/assets/proof/les-petites-griffes/lpg-assistant-vision.webp)
+
+
 ## Limites
 
 - Projet familial non facturé ; aucune vente à un client externe n'est prouvée ; mesures datées du 2026-08-01, non continues.

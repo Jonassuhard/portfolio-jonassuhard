@@ -33,6 +33,15 @@ Des articles SEO publiés en ligne dans le CMS d'un employeur, vérifiés avant 
 
 Article publié en ligne, plus une checklist QA de pré-publication et un extrait d'audit de cannibalisation anonymisés.
 
+## Visuels
+
+![Article publié sur iscom.fr : titre, date et introduction visibles sur la page publique.](/assets/proof/iscom/iscom-article-hero.webp)
+
+![Passage de l'article qui explique simplement le rôle des agents IA dans les métiers de la communication.](/assets/proof/iscom/iscom-article-agent.webp)
+
+![Suite de l'article public : méthode, limites et mise en contexte éditoriale vérifiables sur le site ISCOM.](/assets/proof/iscom/iscom-article-method.webp)
+
+
 ## Limites
 
 - Impact trafic mesuré côté employeur, non publiable ici.

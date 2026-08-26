@@ -33,6 +33,15 @@ Un audit qui montre si les assistants IA citent une marque, qui apparaît à sa 
 
 Site et détail public de l'offre accessibles en ligne. Les éventuelles missions clients restent hors du périmètre des preuves publiques.
 
+## Visuels
+
+![Page d'accueil publique de Preuvia : la promesse explique directement ce que l'audit vérifie.](/assets/proof/preuvia/preuvia-hero-live.webp)
+
+![Process public de l'audit : tester les réponses, repérer les écarts, puis prioriser ce qu'il faut publier.](/assets/proof/preuvia/preuvia-process-live.webp)
+
+![Exemple fictif du livrable public : sources citées, manque observé et actions proposées, sans résultat client inventé.](/assets/proof/preuvia/preuvia-output-live.webp)
+
+
 ## Limites
 
 - Ne garantit pas l'apparition dans les réponses IA.

@@ -30,6 +30,15 @@ Projet MBA à quatre : responsabilité marketing, étude de marché et projectio
 - Étude de marché, personas, plan d'acquisition et campagnes organiques.
 - Business plan et projections financières à présenter avec leurs sources en entretien.
 
+## Visuels
+
+![Vue du prototype produit réalisé en équipe. Je la montre pour situer HoopSphere ; le design et le développement ne sont pas les miens.](/assets/proof/hoopsphere/hoopsphere-landing-team.webp)
+
+![Section de la landing du prototype d'équipe consacrée à l'expérience communautaire. Ma contribution porte sur le marketing et le lancement.](/assets/proof/hoopsphere/hoopsphere-product-context.webp)
+
+![Extrait du plan d'acquisition préparé pour le projet MBA : canaux, cibles et séquence de lancement, sans les présenter comme des résultats obtenus.](/assets/proof/hoopsphere/hoopsphere-acquisition-plan.webp)
+
+
 ## Limites
 
 - Le développement et le design ne sont pas de moi : ma part est le marketing, l'acquisition et le business plan.

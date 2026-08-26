@@ -29,6 +29,15 @@ Une API reçoit des documents, retrouve les passages utiles et répond en citant
 - Séparer les données de chaque client sur un même serveur, avec authentification.
 - Tester la qualité des réponses avec des cas versionnés et une suite pytest.
 
+## Visuels
+
+![Schéma du parcours d'un document : ingestion, découpage, indexation, recherche puis réponse avec ses sources.](/assets/proof/rag-starter-kit/rag-document-pipeline.webp)
+
+![Isolation des clients : chaque requête reste dans son espace de données et ne peut pas récupérer les documents d'un autre client.](/assets/proof/rag-starter-kit/rag-tenant-isolation.webp)
+
+![Boucle d'évaluation : cas versionnés, mesure du retrieval, comparaison et correction avant une nouvelle exécution.](/assets/proof/rag-starter-kit/rag-evaluation-loop.webp)
+
+
 ## Limites
 
 - Code et démonstration non publics à ce jour ; l'architecture décrite n'est donc pas auditée publiquement.

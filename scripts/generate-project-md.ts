@@ -74,6 +74,12 @@ function toMarkdown(project: Project) {
       );
     }
   }
+  if (project.gallery?.length) {
+    lines.push("", "## Visuels", "");
+    for (const visual of project.gallery) {
+      lines.push(`![${visual.caption}](${visual.src})`, "");
+    }
+  }
   lines.push(
     "",
     "## Limites",

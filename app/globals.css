@@ -430,9 +430,13 @@ p { margin:0 0 10px; }
 /* ===== PROOF GALLERY (case study) ===== */
 .proof-gallery { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-top:18px; align-items:start; }
 .proof-gallery figure { margin:0; border:1px solid var(--color-line); background:var(--color-surface-strong); }
+.proof-gallery figure:first-child:nth-last-child(3) { grid-column:1 / -1; }
 .proof-gallery img { display:block; width:100%; height:auto; border-bottom:1px solid var(--color-line); }
 .proof-gallery figcaption { padding:10px 12px; font-family:var(--ft-type); font-size:12.5px; line-height:1.5; color:var(--color-ink-soft); letter-spacing:.01em; }
-@media (max-width:640px){ .proof-gallery { grid-template-columns:1fr; } }
+@media (max-width:640px){
+  .proof-gallery { grid-template-columns:1fr; }
+  .proof-gallery figure:first-child:nth-last-child(3) { grid-column:auto; }
+}
 
 /* ===== REGISTRE DE VÉRIFICATION ===== */
 .verification-legend { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }

@@ -29,6 +29,15 @@ Cinq agents analysent la même question avec des informations différentes. Des 
 - Regrouper les réponses avec des règles de pondération visibles plutôt qu'avec un sixième modèle opaque.
 - Garder les données sur une infrastructure contrôlée avec Mistral et Qdrant auto-hébergé.
 
+## Visuels
+
+![Schéma des cinq agents : chacun reçoit une source différente pour produire de vrais points de vue séparés.](/assets/proof/board-ia-pme/board-isolated-agents.webp)
+
+![Orchestration prévue : les analyses parallèles remontent vers des règles de pondération lisibles, sans sixième modèle opaque.](/assets/proof/board-ia-pme/board-orchestration.webp)
+
+![État honnête du POC : backend et règles posés ; dashboard, export PDF et validation client restent à construire.](/assets/proof/board-ia-pme/board-status.webp)
+
+
 ## Limites
 
 - POC initié, non terminé : le dashboard React Flow et l'export PDF décrits ne sont pas implémentés.

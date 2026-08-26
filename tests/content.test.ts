@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { readFileSync, readdirSync } from "node:fs";
+import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
 import test from "node:test";
 import { knowledgePages } from "../lib/knowledge";
 import { featuredProjects, projects, recruiterFeatured, site } from "../lib/projects";
@@ -112,8 +112,17 @@ test("les dates de publication et de modification des articles restent distincte
 });
 
 test("les galeries réservent leurs dimensions intrinsèques", () => {
-  for (const image of projects.flatMap((project) => project.gallery ?? [])) {
-    assert.ok(image.width > 0 && image.height > 0, `${image.src} n'a pas de dimensions`);
+  const sources = projects.flatMap((project) => project.gallery ?? []).map((image) => image.src);
+
+  assert.equal(new Set(sources).size, sources.length, "Une image est réutilisée dans plusieurs galeries");
+  for (const project of projects) {
+    assert.ok((project.gallery?.length ?? 0) >= 3, `${project.slug} a moins de trois visuels`);
+    for (const image of project.gallery ?? []) {
+      const asset = new URL(`../public${image.src}`, import.meta.url);
+      assert.ok(image.width > 0 && image.height > 0, `${image.src} n'a pas de dimensions`);
+      assert.ok(existsSync(asset), `${image.src} est absent du dossier public`);
+      assert.ok(statSync(asset).size < 700_000, `${image.src} dépasse 700 ko`);
+    }
   }
 });
 

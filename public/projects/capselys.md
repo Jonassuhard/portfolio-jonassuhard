@@ -34,6 +34,15 @@ Refonte orientée conversion, staging WordPress sécurisé, présentation orale 
 
 Captures du staging et présentation client de 14 slides, détaillées en entretien.
 
+## Visuels
+
+![Home Capsélys (staging) avec l'assistant IA ouvert en contexte.](/assets/proof/capselys/capselys-site.webp)
+
+![L'assistant répond à une vraie question (DUERP) : réponse cadrée, CTA et disclaimer « réponses générées automatiquement ».](/assets/proof/capselys/capselys-assistant.webp)
+
+![Extrait du rapport d'audit : problèmes observés, priorité et correction proposée pour la suite de la refonte.](/assets/proof/capselys/capselys-audit-roadmap.webp)
+
+
 ## Limites
 
 - Environnement de staging, non déployé en production : les effets conversion restent à mesurer une fois en ligne.

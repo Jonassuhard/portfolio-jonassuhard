@@ -28,6 +28,15 @@ Pack de configuration open source pour Claude Code CLI : un soul.md (identité/t
 - Sécurité pensée dès le départ, avec Touch ID sur actions sensibles, secrets via Keychain, rédaction des secrets dans les transcrits et règle 0 PII / 0 chemin perso.
 - Publication open source propre (MIT) avec crédits explicites des packs tiers exclus.
 
+## Visuels
+
+![Architecture du pack : l'identité, les règles, les skills, les agents et les hooks restent dans des couches séparées.](/assets/proof/claude-code-soul/soul-layers.webp)
+
+![Garde-fous de publication : secrets dans le trousseau, validation locale et contrôle gitleaks avant le dépôt public.](/assets/proof/claude-code-soul/soul-security-gates.webp)
+
+![Installation du pack : audit local, choix des couches, copie contrôlée puis vérification sans donnée personnelle.](/assets/proof/claude-code-soul/soul-install-flow.webp)
+
+
 ## Limites
 
 - Config opinionnée (ton majordome, workflow personnel) : à adapter avant réutilisation.

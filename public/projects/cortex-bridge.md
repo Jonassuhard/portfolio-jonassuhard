@@ -33,6 +33,15 @@ ChatGPT réfléchit et prépare le travail. Vous validez. Cortex exécute dans l
 
 Code public sous licence MIT. Preuve de release v0.5.2 publiée le 22/08/2026 : 434 tests backend, 127 frontend, 56 extension, 12 E2E et 4 accessibilité sans échec ; 1 test E2E ignoré.
 
+## Visuels
+
+![Onboarding public de Cortex Bridge : choix du dossier local et consentement avant toute exécution.](/assets/proof/cortex-bridge/cortex-onboarding.webp)
+
+![Contrôle avant exécution : commande proposée, dossier ciblé et niveau de risque restent visibles avant validation.](/assets/proof/cortex-bridge/cortex-preflight.webp)
+
+![Trace d'exécution : chaque étape, sa sortie et son état restent consultables dans l'interface locale.](/assets/proof/cortex-bridge/cortex-execution.webp)
+
+
 ## Limites
 
 - Les suites automatisées utilisent aussi des fixtures : elles ne prouvent pas une compatibilité continue avec un compte ChatGPT réel.

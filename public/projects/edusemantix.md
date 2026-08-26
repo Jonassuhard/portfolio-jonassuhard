@@ -27,6 +27,15 @@ Jeu multijoueur en temps réel où l'on cherche un mot secret : chaque propositi
 - Scoring sémantique sur vecteurs de mots (similarité cosinus) avec pré-calcul Python et stockage binaire pour la performance.
 - Temps réel multijoueur via Socket.io (parties simultanées, scores en direct).
 
+## Visuels
+
+![Écran de connexion de la démo locale, lancé avec un profil fictif créé uniquement pour cette capture.](/assets/proof/edusemantix/edusemantix-login.webp)
+
+![Partie locale : une proposition reçoit immédiatement un score de proximité avec le mot secret.](/assets/proof/edusemantix/edusemantix-game.webp)
+
+![Retour après une proposition fictive : score sémantique, progression et historique affichés par l'interface réelle.](/assets/proof/edusemantix/edusemantix-score.webp)
+
+
 ## Limites
 
 - Projet lab plus ancien, avec une base de mots à rafraîchir et quelques correctifs à reprendre.

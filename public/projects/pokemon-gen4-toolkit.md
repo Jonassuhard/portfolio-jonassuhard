@@ -27,6 +27,15 @@ Boîte à outils Python (ndspy) pour explorer des formats de données de jeu (te
 - Reverse-engineering d'un format binaire propriétaire, avec décodage et encodage du texte chiffré Gen 4 (charmap + chiffrement seed/XOR) écrits à la main.
 - Outillage complet : édition des events (PNJ, warps, triggers), du bytecode des scripts, des stats/espèces, et cartographie des zones.
 
+## Visuels
+
+![Schéma d'une archive NARC : en-tête, table de fichiers, noms et données sont séparés avant toute édition.](/assets/proof/pokemon-gen4-toolkit/narc-anatomy.webp)
+
+![Chaîne du codec de texte réimplémenté en Python : caractères, codes Gen 4, seed puis chiffrement XOR.](/assets/proof/pokemon-gen4-toolkit/text-codec.webp)
+
+![Périmètre des outils : textes, événements, scripts et statistiques, sans ROM ni asset distribué.](/assets/proof/pokemon-gen4-toolkit/editor-surface.webp)
+
+
 ## Limites
 
 - Sans ROM légale fournie, le toolkit ne fait rien : aucun contenu jouable distribué.
