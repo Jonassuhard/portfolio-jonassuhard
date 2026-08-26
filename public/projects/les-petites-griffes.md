@@ -53,3 +53,4 @@ Captures anonymisées, démo privée et audit live daté du 2026-08-01. L'audit 
 ## Liens
 
 - [Étude de cas](/projets/les-petites-griffes)
+- [Site live](https://lespetitesgriffes.fr/)

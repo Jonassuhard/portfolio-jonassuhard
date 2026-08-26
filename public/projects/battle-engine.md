@@ -48,3 +48,4 @@ Preuve locale privée : le commit du 23/08/2026 rend la publication nightly repr
 ## Liens
 
 - [Étude de cas](/projets/battle-engine)
+- [Chaîne YouTube](https://www.youtube.com/channel/UCBdIZLI1Z_EmaZgalR8GsHw)

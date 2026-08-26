@@ -270,7 +270,12 @@ export const projects: Project[] = [
       { src: "/assets/proof/les-petites-griffes/lpg-assistant-vision.webp", caption: "L'assistant analyse une photo d'ongles envoyée par la cliente.", width: 810, height: 1114 }
     ],
     links: [
-      { label: "Version Markdown", href: "/projects/les-petites-griffes.md" }
+      { label: "Version Markdown", href: "/projects/les-petites-griffes.md" },
+      {
+        label: "Site live",
+        href: "https://lespetitesgriffes.fr/",
+        external: true
+      }
     ]
   },
   {
@@ -564,7 +569,12 @@ export const projects: Project[] = [
       { src: "/assets/proof/capselys/capselys-audit-roadmap.webp", caption: "Extrait du rapport d'audit : problèmes observés, priorité et correction proposée pour la suite de la refonte.", width: 1600, height: 456 }
     ],
     links: [
-      { label: "Version Markdown", href: "/projects/capselys.md" }
+      { label: "Version Markdown", href: "/projects/capselys.md" },
+      {
+        label: "Site public",
+        href: "https://www.capselys.fr/",
+        external: true
+      }
     ]
   },
   {
@@ -647,7 +657,7 @@ export const projects: Project[] = [
     ],
     links: [
       {
-        label: "Actu live",
+        label: "Article public",
         href: "https://www.iscom.fr/actualites/lia-change-de-role-les-communicants-aussi",
         external: true
       },
@@ -747,7 +757,7 @@ export const projects: Project[] = [
       { src: "/assets/proof/preuvia/preuvia-output-live.webp", caption: "Exemple fictif du livrable public : sources citées, manque observé et actions proposées, sans résultat client inventé.", width: 1440, height: 1000 }
     ],
     links: [
-      { label: "Voir le site", href: "https://preuvia.vercel.app", external: true },
+      { label: "Site live", href: "https://preuvia.vercel.app", external: true },
       { label: "Version Markdown", href: "/projects/preuvia.md" }
     ]
   },
@@ -846,7 +856,7 @@ export const projects: Project[] = [
     ],
     links: [
       {
-        label: "Repo GitHub",
+        label: "GitHub",
         href: "https://github.com/Jonassuhard/cortex-bridge",
         external: true
       },
@@ -913,7 +923,14 @@ export const projects: Project[] = [
       { src: "/assets/proof/battle-engine/intro-platforms.webp", caption: "Séquence d'intro : les plateformes des deux combattants et le champ de particules, rendus par un shader custom sous Godot.", width: 620, height: 1103 },
       { src: "/assets/proof/battle-engine/intro-buildup.webp", caption: "Montée du champ de particules avant le face-à-face, générée en temps réel côté moteur.", width: 620, height: 1103 }
     ],
-    links: [{ label: "Version Markdown", href: "/projects/battle-engine.md" }]
+    links: [
+      { label: "Version Markdown", href: "/projects/battle-engine.md" },
+      {
+        label: "Chaîne YouTube",
+        href: "https://www.youtube.com/channel/UCBdIZLI1Z_EmaZgalR8GsHw",
+        external: true
+      }
+    ]
   },
   {
     slug: "hoopsphere",
@@ -1251,7 +1268,7 @@ export const projects: Project[] = [
     ],
     links: [
       { label: "Version Markdown", href: "/projects/claude-code-soul.md" },
-      { label: "Repo GitHub", href: "https://github.com/Jonassuhard/claude-code-soul", external: true }
+      { label: "GitHub", href: "https://github.com/Jonassuhard/claude-code-soul", external: true }
     ]
   }
 ];

@@ -45,4 +45,4 @@ Pack de configuration open source pour Claude Code CLI : un soul.md (identité/t
 ## Liens
 
 - [Étude de cas](/projets/claude-code-soul)
-- [Repo GitHub](https://github.com/Jonassuhard/claude-code-soul)
+- [GitHub](https://github.com/Jonassuhard/claude-code-soul)

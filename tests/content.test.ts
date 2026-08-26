@@ -22,6 +22,53 @@ test("un projet publiquement vérifiable expose une source externe", () => {
   }
 });
 
+test("les cartes de projets exposent leurs destinations publiques vérifiées", () => {
+  const expectedDestinations = {
+    "les-petites-griffes": {
+      label: "Site live",
+      href: "https://lespetitesgriffes.fr/"
+    },
+    capselys: {
+      label: "Site public",
+      href: "https://www.capselys.fr/"
+    },
+    iscom: {
+      label: "Article public",
+      href: "https://www.iscom.fr/actualites/lia-change-de-role-les-communicants-aussi"
+    },
+    preuvia: {
+      label: "Site live",
+      href: "https://preuvia.vercel.app"
+    },
+    "cortex-bridge": {
+      label: "GitHub",
+      href: "https://github.com/Jonassuhard/cortex-bridge"
+    },
+    "battle-engine": {
+      label: "Chaîne YouTube",
+      href: "https://www.youtube.com/channel/UCBdIZLI1Z_EmaZgalR8GsHw"
+    },
+    "claude-code-soul": {
+      label: "GitHub",
+      href: "https://github.com/Jonassuhard/claude-code-soul"
+    }
+  } as const;
+
+  for (const [slug, destination] of Object.entries(expectedDestinations)) {
+    const project = projects.find((item) => item.slug === slug);
+    assert.ok(project, `${slug} est absent du portfolio`);
+    assert.ok(
+      project.links.some(
+        (link) =>
+          link.external &&
+          link.label === destination.label &&
+          link.href === destination.href
+      ),
+      `${slug} n'expose pas ${destination.label} sur sa carte`
+    );
+  }
+});
+
 test("les sélections recruteur ne contiennent que des projets principaux", () => {
   for (const project of [...featuredProjects, ...recruiterFeatured]) {
     assert.equal(project.tier, 1, `${project.slug} n'est pas un projet principal`);

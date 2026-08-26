@@ -54,3 +54,4 @@ Captures du staging et présentation client de 14 slides, détaillées en entret
 ## Liens
 
 - [Étude de cas](/projets/capselys)
+- [Site public](https://www.capselys.fr/)

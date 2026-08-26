@@ -54,4 +54,4 @@ Site et détail public de l'offre accessibles en ligne. Les éventuelles mission
 ## Liens
 
 - [Étude de cas](/projets/preuvia)
-- [Voir le site](https://preuvia.vercel.app)
+- [Site live](https://preuvia.vercel.app)

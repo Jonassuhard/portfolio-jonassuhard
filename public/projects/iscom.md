@@ -52,4 +52,4 @@ Article publié en ligne, plus une checklist QA de pré-publication et un extrai
 ## Liens
 
 - [Étude de cas](/projets/iscom)
-- [Actu live](https://www.iscom.fr/actualites/lia-change-de-role-les-communicants-aussi)
+- [Article public](https://www.iscom.fr/actualites/lia-change-de-role-les-communicants-aussi)

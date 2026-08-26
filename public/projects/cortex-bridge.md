@@ -53,5 +53,5 @@ Code public sous licence MIT. Preuve de release v0.5.2 publiée le 22/08/2026 : 
 ## Liens
 
 - [Étude de cas](/projets/cortex-bridge)
-- [Repo GitHub](https://github.com/Jonassuhard/cortex-bridge)
+- [GitHub](https://github.com/Jonassuhard/cortex-bridge)
 - [Preuve de release v0.5.2](https://github.com/Jonassuhard/cortex-bridge/blob/64af9ce1e88dea8404acb11893eb96d75dd1baaa/docs/verification/v0.5.2.json)
