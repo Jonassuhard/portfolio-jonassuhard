@@ -6,6 +6,16 @@ import { useEffect, useState } from "react";
 // Aucun cookie ni enregistrement de session avant le clic « Accepter ».
 const KEY = "js-consent";
 const CLARITY_ID = "xfjx6pbupc";
+const CONSENT_VERSION = "2026-08-26";
+const CONSENT_MAX_AGE_MS = 180 * 24 * 60 * 60 * 1000;
+
+type ConsentChoice = "granted" | "denied";
+
+type ConsentRecord = {
+  choice: ConsentChoice;
+  decidedAt: number;
+  version: string;
+};
 
 const clarityConsent = {
   granted: { ad_Storage: "denied", analytics_Storage: "granted" },
@@ -42,17 +52,42 @@ function revokeClarity() {
   return true;
 }
 
+function readChoice(): ConsentChoice | null {
+  try {
+    const raw = localStorage.getItem(KEY);
+    if (!raw) return null;
+
+    const record = JSON.parse(raw) as Partial<ConsentRecord>;
+    const now = Date.now();
+    const isFresh =
+      typeof record.decidedAt === "number" &&
+      record.decidedAt <= now &&
+      now - record.decidedAt < CONSENT_MAX_AGE_MS;
+
+    if (
+      (record.choice === "granted" || record.choice === "denied") &&
+      isFresh &&
+      record.version === CONSENT_VERSION
+    ) {
+      return record.choice;
+    }
+    localStorage.removeItem(KEY);
+  } catch {
+    try {
+      localStorage.removeItem(KEY);
+    } catch {
+      /* stockage indisponible */
+    }
+  }
+  return null;
+}
+
 export default function ConsentBanner() {
   const [show, setShow] = useState(false);
   const [detail, setDetail] = useState(false);
 
   useEffect(() => {
-    let choice: string | null = null;
-    try {
-      choice = localStorage.getItem(KEY);
-    } catch {
-      /* localStorage indisponible */
-    }
+    const choice = readChoice();
     if (choice === "granted") {
       loadClarity();
     } else if (choice !== "denied") {
@@ -71,9 +106,14 @@ export default function ConsentBanner() {
     return () => document.removeEventListener("click", onClick);
   }, []);
 
-  function decide(value: "granted" | "denied") {
+  function decide(value: ConsentChoice) {
     try {
-      localStorage.setItem(KEY, value);
+      const record: ConsentRecord = {
+        choice: value,
+        decidedAt: Date.now(),
+        version: CONSENT_VERSION
+      };
+      localStorage.setItem(KEY, JSON.stringify(record));
     } catch {
       /* ignore */
     }
@@ -92,7 +132,8 @@ export default function ConsentBanner() {
     <div className="consent" role="region" aria-labelledby="consent-title">
       <div className="consent-inner">
         <p className="consent-text" id="consent-title">
-          Microsoft Clarity peut mesurer la lecture des pages. Clarity ne se charge qu'après votre accord.{" "}
+          Microsoft Clarity peut enregistrer les clics, défilements et parcours pour améliorer
+          l'ergonomie. Il ne se charge qu'après votre accord.{" "}
           <button
             type="button"
             className="consent-toggle"
@@ -106,7 +147,7 @@ export default function ConsentBanner() {
           <button type="button" className="button" onClick={() => decide("denied")}>
             Refuser
           </button>
-          <button type="button" className="button primary" onClick={() => decide("granted")}>
+          <button type="button" className="button" onClick={() => decide("granted")}>
             Accepter
           </button>
         </div>
@@ -115,7 +156,8 @@ export default function ConsentBanner() {
             Microsoft Clarity utilise des cookies analytiques et une relecture de navigation pour
             comprendre les parcours. Vercel fournit séparément des mesures techniques agrégées.
             Aucun cookie publicitaire, aucune revente de données. Vous pouvez revenir sur ce choix
-            via « Gérer les cookies » en bas de page. <a href="/confidentialite">Politique de confidentialité</a>.
+            via « Gérer les cookies » en bas de page. Le choix est redemandé après six mois.{" "}
+            <a href="/confidentialite">Politique de confidentialité</a>.
           </p>
         ) : null}
       </div>
