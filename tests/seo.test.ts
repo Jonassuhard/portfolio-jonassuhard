@@ -4,6 +4,7 @@ import test from "node:test";
 import { knowledgeGraphJsonLd, personJsonLd, rootJsonLd } from "../lib/json-ld";
 import { faqItems } from "../lib/faq";
 import { site } from "../lib/projects";
+import sitemap from "../app/sitemap";
 
 const read = (relativePath: string) =>
   readFileSync(new URL(`../${relativePath}`, import.meta.url), "utf8");
@@ -98,4 +99,30 @@ test("Forward Deployed Engineer reste un objectif de progression", () => {
   for (const label of [site.title, site.headline, profile.title, person.jobTitle]) {
     assert.doesNotMatch(label, /Forward Deployed Engineer/i);
   }
+});
+
+test("le sitemap date seulement les surfaces modifiées par la refonte Cool Bank", () => {
+  const entries = sitemap();
+  const modifiedToday = [
+    "https://jonassuhard.com/",
+    "https://jonassuhard.com/recruteurs",
+    "https://jonassuhard.com/projets",
+    "https://jonassuhard.com/projets/educool-la-herse",
+    "https://jonassuhard.com/llms.txt"
+  ];
+
+  for (const url of modifiedToday) {
+    const entry = entries.find((item) => item.url === url);
+    assert.ok(entry, `URL absente du sitemap : ${url}`);
+    assert.equal(new Date(entry.lastModified ?? 0).toISOString(), "2026-08-26T00:00:00.000Z");
+  }
+
+  const untouched = entries.find(
+    (item) => item.url === "https://jonassuhard.com/competences"
+  );
+  assert.ok(untouched);
+  assert.equal(
+    new Date(untouched.lastModified ?? 0).toISOString(),
+    "2026-08-15T00:00:00.000Z"
+  );
 });
