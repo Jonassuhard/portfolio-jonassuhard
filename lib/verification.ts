@@ -119,11 +119,11 @@ export const verificationItems: VerificationItem[] = [
   },
   {
     id: "cool-bank-la-herse-versions",
-    claim: "Cool Bank / La Herse distingue une V2 au statut LOCAL_SINGLE_DEVICE_READY et une V3 au statut READY_FOR_HUMAN_RECIPE.",
+    claim: "Cool Bank / La Herse distingue une V2 3D déjà jouable localement sur un appareil et une V3 reconstruite séparément, encore en recette humaine.",
     scope: "Projet",
     status: "private-evidence",
-    checkedAt: "2026-08-22",
-    note: "États vérifiés dans les sources locales V2 du 22/08/2026 et V3 du 06/08/2026. Les démonstrations utilisent des données fictives ; aucune donnée de mineur n'est publiée."
+    checkedAt: "2026-08-26",
+    note: "Sources V2 vérifiées le 22/08/2026 ; parcours visuels V3 élève, banquier et professeure rejoués le 26/08/2026 sur données fictives. Aucun pilote ni résultat pédagogique n'est revendiqué."
   },
   {
     id: "non-public-projects",

@@ -1,19 +1,36 @@
-# Cool Bank / La Herse - du jeu local V2 au monde 3D V3
-
-## Repères
-
-| Repère | Détail |
-| --- | --- |
-| Format | Jeu scolaire multijoueur + interface métier |
-| Période | Juillet - août 2026 |
-| Rôle de Jonas | Conception produit, UX, développement full-stack, systèmes de jeu, sécurité, QA |
-| Statut | V2 jouable localement · V3 prête pour recette humaine |
-| Niveau de preuve | Démo privée |
-| Stack | Next.js, Firebase, Firestore, Cloud Functions, TypeScript, Vite, Node.js, Playwright |
+# Cool Bank - donner vie à une banque de classe
 
 ## À quoi ça sert
 
-Cool Bank transforme une banque scolaire en jeu multijoueur relié à Educool. La V2 est jouable localement. La V3 ajoute un monde 3D, mais attend encore une recette humaine.
+Une banque de classe transformée en petit monde vivant : les élèves explorent, économisent et tiennent des rôles, pendant que l'enseignante garde un outil de pilotage séparé.
+
+## Rendre l'argent et la responsabilité plus concrets.
+
+La banque existait déjà dans la classe. Le projet lui donne des lieux, des personnages et des conséquences visibles, sans transformer l'outil de l'enseignante en jeu.
+
+- Les élèves explorent le bourg, accomplissent des missions, économisent et font évoluer progressivement leur maison.
+- Un élève peut tenir le guichet pendant une période donnée, avec des plafonds clairs et un registre vérifiable.
+- L'enseignante conserve les commandes essentielles et peut interrompre le monde ou les échanges sans perdre son espace de travail calme.
+
+## Trois rôles
+
+- L'élève — Il explore le bourg, parle aux habitants, accomplit des missions, économise et choisit comment utiliser ses centicools.
+- Le banquier — C'est un élève responsabilisé. Il tient un guichet guidé, applique des plafonds et laisse une trace de chaque opération.
+- L'enseignante — Elle suit la classe, garde le contrôle du monde et valide les progressions depuis une interface séparée du jeu.
+
+## Versions
+
+### V2 — Boucle 3D locale déjà jouable
+
+État public : Jouable localement sur un appareil.
+
+La V2 relie déjà un monde 3D multijoueur, les trois rôles et Educool. Elle permet de parcourir l'expérience localement sur un appareil avec des données fictives.
+
+### V3 — Reconstruction séparée plus large
+
+État public : Prototype local prêt pour des tests humains.
+
+La V3 est une reconstruction séparée, avec une carte, une architecture et un périmètre plus larges. Ses parcours locaux fonctionnent, mais elle doit encore être comprise, éprouvée et jugée par des humains.
 
 ## Ce que Jonas a fait
 
@@ -24,56 +41,49 @@ Cool Bank transforme une banque scolaire en jeu multijoueur relié à Educool. L
 
 ## Ce que ça prouve
 
-La V2 se joue déjà sur un appareil. La V3 fonctionne techniquement, mais doit encore être testée par des humains avant tout pilote.
+La V2 permet déjà de vivre la boucle 3D sur un appareil. La V3 élargit le projet, mais aucune efficacité pédagogique ni utilisation en classe n'est encore revendiquée.
 
-- Faire évoluer un produit complexe sans mélanger les preuves de la V2 et de la V3.
+- Partir d'un besoin réel de classe, construire une expérience testable, puis séparer clairement ce qui fonctionne de ce qui reste à valider.
 - Relier le jeu, les trois rôles, Firebase, la sécurité et les tests.
 - Dire clairement ce qui fonctionne et ce qui reste bloqué avant un pilote.
 
-Preuves privées et datées : état V2 vérifié le 22/08/2026, candidate V3 vérifiée le 06/08/2026. Démonstrations et captures uniquement sur données fictives ; aucune donnée de mineur n'est publiée.
-
-### Versions
-
-#### V2 — Jeu local multijoueur relié à Educool
-
-| Repère | Détail |
-| --- | --- |
-| État actuel | Jouable localement · LOCAL_SINGLE_DEVICE_READY : GO · V2_PRODUCT_COMPLETE et ONLINE_READY : NO-GO |
-
-Version web locale avec parcours élève, professeure et banquier, maisons, quêtes, économie et interface Educool reliée à Firebase.
-
-##### Éléments vérifiés
-
-- État du 22/08/2026 : 12 123 tests réussis sur 12 148, 11 échecs et 14 ignorés ; les 3 échecs stables restants concernent l'i18n.
-- Educool : 645/645 tests, TypeScript vert et build Next de 42 pages réussi.
-- Parcours navigateur élève, professeure et banquier rejoués ; HUD, clavier et premier choix : 18/18.
-
-#### V3 — Monde 3D et économie centicool serveur
-
-| Repère | Détail |
-| --- | --- |
-| État actuel | Prête pour recette humaine · READY_FOR_HUMAN_RECIPE · GO_PILOTE_LOCAL : en attente |
-
-Version 3D plus ambitieuse avec 22 zones, trois rôles, économie serveur, maisons, marchands, lecture écrite et interface Educool locale.
-
-##### Éléments vérifiés
-
-- Game : gate 9/9, 12 064 tests réussis et 14 ignorés ; Control : 383/383 ; Product/UI Kit : 333/333.
-- Educool : 735 tests unitaires, 162 tests de règles Auth/Firestore et 174 tests Functions, avec builds Next et Node 20 réussis.
-- Candidate restaurable 20260806_FINAL_RECIPE : 9 ZIP et 97 259 entrées extraites et vérifiées.
-
+Preuves privées et datées : état V2 vérifié le 22/08/2026 ; parcours visuels V3 rejoués le 26/08/2026. Les démonstrations utilisent uniquement des données fictives ; aucune donnée de mineur n'est publiée.
 
 ## Visuels
 
-![Interface Educool liée au système : tableau de bord sur données fictives, sans identité d'enfant publiée.](/assets/proof/educool/educool-dashboard.webp)
+### V3 — la reconstruction locale
 
-![Saisie des progressions : matrice de classe anonymisée, commune au contexte métier de Cool Bank.](/assets/proof/educool/educool-saisie-ceintures.webp)
+Captures réelles du 26 août 2026 sur données fictives. Elles montrent les trois rôles et des interactions rejouées localement, pas une validation en classe.
 
-![Exports pédagogiques : aperçu et génération PDF/ZIP depuis l'interface scolaire associée.](/assets/proof/educool/educool-livrets.webp)
+![V3 : l'élève entre dans le bourg, découvre sa première quête et apprend à déplacer la caméra.](/assets/proof/educool/cool-bank-v3-world.webp)
 
-![Marché de Cool Bank V2 lancé localement sur des données de démonstration fictives.](/assets/proof/educool/cool-bank-v2-market.webp)
+![V3 : élève, banquier et professeure entrent avec des responsabilités différentes.](/assets/proof/educool/cool-bank-v3-roles.webp)
 
-![Schéma des deux versions : V2 relie le jeu web à Educool ; V3 sépare le monde 3D, les contrôles et l'interface scolaire.](/assets/proof/educool/cool-bank-v2-v3-worldline.webp)
+![V3 : l'élève peut choisir une question ou écrire la sienne à un personnage du bourg.](/assets/proof/educool/cool-bank-v3-dialogue.webp)
+
+![V3 : le guichet du banquier guide l'opération et affiche une limite de transaction.](/assets/proof/educool/cool-bank-v3-banker.webp)
+
+![V3 : la professeure peut bloquer le monde, couper les échanges et rouvrir l'expérience.](/assets/proof/educool/cool-bank-v3-teacher.webp)
+
+### V2 — la boucle 3D déjà jouable
+
+La V2 est déjà un monde 3D multijoueur. Ces écrans prouvent la boucle locale sur un appareil ; ils ne doivent jamais être présentés comme une ancienne version 2D.
+
+![V2 : monde 3D, personnages, HUD et économie visibles dans la boucle locale jouable.](/assets/proof/educool/cool-bank-v2-world.webp)
+
+![V2 : le maire donne une mission qui relie le déplacement dans le bourg à l'économie de classe.](/assets/proof/educool/cool-bank-v2-dialogue.webp)
+
+![V2 : le guichet banquier encadre le camarade, le motif, le montant et le registre du jour.](/assets/proof/educool/cool-bank-v2-banker.webp)
+
+### Educool — l'outil de pilotage
+
+Educool reste séparé du jeu. Il sert à suivre la classe et produire les documents utiles sans exposer les données réelles dans le portfolio.
+
+![Tableau de bord Educool sur données fictives, sans identité réelle d'enfant.](/assets/proof/educool/educool-dashboard.webp)
+
+![Saisie des progressions dans l'interface de travail de l'enseignante.](/assets/proof/educool/educool-saisie-ceintures.webp)
+
+![Aperçu et génération des livrets depuis l'outil Educool associé.](/assets/proof/educool/educool-livrets.webp)
 
 
 ## Limites
@@ -87,6 +97,35 @@ Version 3D plus ambitieuse avec 22 zones, trois rôles, économie serveur, maiso
 - V3 : Aucun déploiement, aucune donnée réelle d'enfant et aucun verdict d'usage terrain ne sont revendiqués.
 - Compréhension, plaisir et autonomie des enfants : recette terrain non publiée.
 - Gain de temps pour l'enseignante : non chiffré publiquement.
+
+## Repères techniques
+
+| Repère | Détail |
+| --- | --- |
+| Format | Jeu scolaire 3D + outil enseignant |
+| Période | Juillet - août 2026 |
+| Rôle de Jonas | Conception produit, UX, développement full-stack, systèmes de jeu, sécurité, QA |
+| Statut | V2 jouable localement sur un appareil · V3 en recette humaine |
+| Niveau de preuve | Démo privée |
+| Stack | Three.js, Next.js, Firebase, Firestore, Cloud Functions, TypeScript, Vite, Node.js, Playwright |
+
+## Preuves techniques
+
+### V2
+
+Statut interne : Jouable localement · LOCAL_SINGLE_DEVICE_READY : GO · V2_PRODUCT_COMPLETE et ONLINE_READY : NO-GO.
+
+- État daté du 22/08/2026 avec parcours élève, professeure et banquier rejoués localement.
+- HUD, clavier, première mission, guichet et pont Educool contrôlés sur des profils fictifs.
+- Le monde 3D vient déjà du fork World of ClaudeCraft ; la V3 n'est pas le passage de la 2D à la 3D.
+
+### V3
+
+Statut interne : READY_FOR_HUMAN_RECIPE (dernier verdict documenté) · gate complète actuelle à rejouer · aucun pilote revendiqué.
+
+- Recette visuelle du 26/08/2026 : trois rôles entrés dans le monde, mouvements réels et 396 placements chargés.
+- Dialogues, guichet banquier et télécommande professeure rejoués localement sans requête externe.
+- Les compteurs de tests exacts et les anciennes candidates restent hors de l'accroche tant que la gate complète actuelle n'est pas rejouée.
 
 ## Liens
 

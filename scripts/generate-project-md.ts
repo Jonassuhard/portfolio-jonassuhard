@@ -23,7 +23,117 @@ function bullets(items: string[]) {
   return items.map((item) => `- ${item}`).join("\n");
 }
 
+function storyToMarkdown(project: Project) {
+  const story = project.story;
+  if (!story) return "";
+
+  const lines = [
+    `# ${project.title}`,
+    "",
+    "## À quoi ça sert",
+    "",
+    project.summary,
+    "",
+    `## ${story.purposeTitle}`,
+    "",
+    story.purposeLead,
+    "",
+    bullets(story.purpose),
+    "",
+    "## Trois rôles",
+    "",
+    bullets(story.roles.map((role) => `${role.title} — ${role.text}`)),
+    "",
+    "## Versions",
+    ""
+  ];
+
+  for (const version of project.versions ?? []) {
+    lines.push(
+      `### ${version.label} — ${version.name}`,
+      "",
+      `État public : ${version.publicStatus ?? version.status}.`,
+      "",
+      version.summary,
+      ""
+    );
+  }
+
+  lines.push(
+    "## Ce que Jonas a fait",
+    "",
+    bullets(project.delivered),
+    "",
+    "## Ce que ça prouve",
+    "",
+    project.proofLine,
+    "",
+    bullets(project.recruiterProof)
+  );
+
+  if (project.evidenceNote) lines.push("", project.evidenceNote);
+
+  lines.push("", "## Visuels", "");
+  for (const group of story.galleryGroups) {
+    lines.push(`### ${group.title}`, "", group.description, "");
+    for (const visual of group.images) {
+      lines.push(`![${visual.caption}](${visual.src})`, "");
+    }
+  }
+
+  lines.push(
+    "",
+    "## Limites",
+    "",
+    bullets([
+      ...project.limits,
+      ...(project.versions ?? []).flatMap((version) =>
+        version.limits.map((limit) => `${version.label} : ${limit}`)
+      ),
+      ...(project.notMeasured ?? [])
+    ]),
+    "",
+    "## Repères techniques",
+    "",
+    "| Repère | Détail |",
+    "| --- | --- |",
+    `| Format | ${project.type} |`,
+    `| Période | ${project.period} |`,
+    `| Rôle de Jonas | ${project.role} |`,
+    `| Statut | ${project.status} |`,
+    `| Niveau de preuve | ${evidenceLevelMeta[project.evidenceLevel].label} |`,
+    `| Stack | ${project.stack.join(", ")} |`,
+    "",
+    "## Preuves techniques",
+    ""
+  );
+
+  for (const version of project.versions ?? []) {
+    lines.push(
+      `### ${version.label}`,
+      "",
+      `Statut interne : ${version.status}.`,
+      "",
+      bullets(version.evidence),
+      ""
+    );
+  }
+
+  lines.push(
+    "## Liens",
+    "",
+    `- [Étude de cas](/projets/${project.slug})`,
+    ...project.links
+      .filter((link) => link.href !== `/projects/${project.slug}.md`)
+      .map((link) => `- [${link.label}](${link.href})`)
+  );
+
+  return `${lines.join("\n").trimEnd()}\n`;
+}
+
 function toMarkdown(project: Project) {
+  if (project.story) return storyToMarkdown(project);
+
   const lines = [
     `# ${project.title}`,
     "",

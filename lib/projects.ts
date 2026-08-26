@@ -2,6 +2,21 @@ import type { Metadata } from "next";
 
 export type ProjectTier = 1 | 2 | 3;
 export type EvidenceLevel = "public" | "private" | "self-declared";
+export type ProofImage = { src: string; caption: string; width: number; height: number };
+
+export type ProjectStory = {
+  purposeTitle: string;
+  purposeLead: string;
+  purpose: string[];
+  roles: Array<{ title: string; text: string }>;
+  galleryGroups: Array<{
+    kicker: string;
+    title: string;
+    description: string;
+    featuredFirst?: boolean;
+    images: ProofImage[];
+  }>;
+};
 
 export type Project = {
   slug: string;
@@ -14,6 +29,10 @@ export type Project = {
   evidenceLevel: EvidenceLevel;
   tier: ProjectTier;
   image: string;
+  heroImage?: ProofImage;
+  fullColorMedia?: boolean;
+  cardStatus?: string;
+  story?: ProjectStory;
   proofLine: string;
   summary: string;
   stack: string[];
@@ -31,6 +50,7 @@ export type Project = {
   versions?: Array<{
     label: string;
     name: string;
+    publicStatus?: string;
     status: string;
     summary: string;
     evidence: string[];
@@ -48,7 +68,7 @@ export type Project = {
   // Le code vient de l'équipe, pas de Jonas (ex. HoopSphere : sa part est le marketing).
   // Pilote le JSON-LD : contributor au lieu d'author, pas de programmingLanguage.
   codeByOthers?: boolean;
-  gallery?: Array<{ src: string; caption: string; width: number; height: number }>;
+  gallery?: ProofImage[];
   links: Array<{
     label: string;
     href: string;
@@ -255,23 +275,93 @@ export const projects: Project[] = [
   },
   {
     slug: "educool-la-herse",
-    title: "Cool Bank / La Herse - du jeu local V2 au monde 3D V3",
+    title: "Cool Bank - donner vie à une banque de classe",
     shortTitle: "Cool Bank / La Herse",
-    type: "Jeu scolaire multijoueur + interface métier",
+    type: "Jeu scolaire 3D + outil enseignant",
     period: "Juillet - août 2026",
     role: "Conception produit, UX, développement full-stack, systèmes de jeu, sécurité, QA",
-    status: "V2 jouable localement · V3 prête pour recette humaine",
+    status: "V2 jouable localement sur un appareil · V3 en recette humaine",
     evidenceLevel: "private",
     tier: 1,
-    image: "/assets/cards/cool-bank-la-herse.webp",
+    image: "/assets/cards/cool-bank-roles.webp",
+    heroImage: {
+      src: "/assets/proof/educool/cool-bank-v3-world.webp",
+      caption: "Capture locale V3 : l'élève entre dans le bourg, découvre sa première quête et prend ses repères dans le monde 3D.",
+      width: 1440,
+      height: 900
+    },
+    fullColorMedia: true,
+    cardStatus: "Prototype local · trois rôles · données fictives",
     repoStatus: "Dépôts privés, données scolaires exclues des preuves",
     liveLabel: "Démo locale sur données fictives",
     evidenceNote:
-      "Preuves privées et datées : état V2 vérifié le 22/08/2026, candidate V3 vérifiée le 06/08/2026. Démonstrations et captures uniquement sur données fictives ; aucune donnée de mineur n'est publiée.",
+      "Preuves privées et datées : état V2 vérifié le 22/08/2026 ; parcours visuels V3 rejoués le 26/08/2026. Les démonstrations utilisent uniquement des données fictives ; aucune donnée de mineur n'est publiée.",
     metaDescription:
-      "Cool Bank / La Herse : V2 multijoueur local et V3 en monde 3D, trois rôles, économie serveur et interface Educool sur données fictives.",
+      "Cool Bank transforme une banque de classe en monde 3D partagé : élève, banquier et enseignante y vivent trois responsabilités différentes.",
     cardLine:
-      "Deux versions documentées : V2 jouable localement, V3 prête pour recette humaine, jamais sur données réelles d'enfants.",
+      "Un jeu scolaire local où les responsabilités de classe deviennent des rôles, des choix et des aventures dans un monde 3D partagé.",
+    story: {
+      purposeTitle: "Rendre l'argent et la responsabilité plus concrets.",
+      purposeLead:
+        "La banque existait déjà dans la classe. Le projet lui donne des lieux, des personnages et des conséquences visibles, sans transformer l'outil de l'enseignante en jeu.",
+      purpose: [
+        "Les élèves explorent le bourg, accomplissent des missions, économisent et font évoluer progressivement leur maison.",
+        "Un élève peut tenir le guichet pendant une période donnée, avec des plafonds clairs et un registre vérifiable.",
+        "L'enseignante conserve les commandes essentielles et peut interrompre le monde ou les échanges sans perdre son espace de travail calme."
+      ],
+      roles: [
+        {
+          title: "L'élève",
+          text: "Il explore le bourg, parle aux habitants, accomplit des missions, économise et choisit comment utiliser ses centicools."
+        },
+        {
+          title: "Le banquier",
+          text: "C'est un élève responsabilisé. Il tient un guichet guidé, applique des plafonds et laisse une trace de chaque opération."
+        },
+        {
+          title: "L'enseignante",
+          text: "Elle suit la classe, garde le contrôle du monde et valide les progressions depuis une interface séparée du jeu."
+        }
+      ],
+      galleryGroups: [
+        {
+          kicker: "Reconstruction V3",
+          title: "V3 — la reconstruction locale",
+          description:
+            "Captures réelles du 26 août 2026 sur données fictives. Elles montrent les trois rôles et des interactions rejouées localement, pas une validation en classe.",
+          featuredFirst: true,
+          images: [
+            { src: "/assets/proof/educool/cool-bank-v3-world.webp", caption: "V3 : l'élève entre dans le bourg, découvre sa première quête et apprend à déplacer la caméra.", width: 1440, height: 900 },
+            { src: "/assets/proof/educool/cool-bank-v3-roles.webp", caption: "V3 : élève, banquier et professeure entrent avec des responsabilités différentes.", width: 1440, height: 900 },
+            { src: "/assets/proof/educool/cool-bank-v3-dialogue.webp", caption: "V3 : l'élève peut choisir une question ou écrire la sienne à un personnage du bourg.", width: 1440, height: 900 },
+            { src: "/assets/proof/educool/cool-bank-v3-banker.webp", caption: "V3 : le guichet du banquier guide l'opération et affiche une limite de transaction.", width: 1440, height: 900 },
+            { src: "/assets/proof/educool/cool-bank-v3-teacher.webp", caption: "V3 : la professeure peut bloquer le monde, couper les échanges et rouvrir l'expérience.", width: 1440, height: 900 }
+          ]
+        },
+        {
+          kicker: "Version jouable",
+          title: "V2 — la boucle 3D déjà jouable",
+          description:
+            "La V2 est déjà un monde 3D multijoueur. Ces écrans prouvent la boucle locale sur un appareil ; ils ne doivent jamais être présentés comme une ancienne version 2D.",
+          images: [
+            { src: "/assets/proof/educool/cool-bank-v2-world.webp", caption: "V2 : monde 3D, personnages, HUD et économie visibles dans la boucle locale jouable.", width: 1440, height: 900 },
+            { src: "/assets/proof/educool/cool-bank-v2-dialogue.webp", caption: "V2 : le maire donne une mission qui relie le déplacement dans le bourg à l'économie de classe.", width: 1440, height: 900 },
+            { src: "/assets/proof/educool/cool-bank-v2-banker.webp", caption: "V2 : le guichet banquier encadre le camarade, le motif, le montant et le registre du jour.", width: 1124, height: 899 }
+          ]
+        },
+        {
+          kicker: "Outil enseignant",
+          title: "Educool — l'outil de pilotage",
+          description:
+            "Educool reste séparé du jeu. Il sert à suivre la classe et produire les documents utiles sans exposer les données réelles dans le portfolio.",
+          images: [
+            { src: "/assets/proof/educool/educool-dashboard.webp", caption: "Tableau de bord Educool sur données fictives, sans identité réelle d'enfant.", width: 1600, height: 870 },
+            { src: "/assets/proof/educool/educool-saisie-ceintures.webp", caption: "Saisie des progressions dans l'interface de travail de l'enseignante.", width: 1600, height: 873 },
+            { src: "/assets/proof/educool/educool-livrets.webp", caption: "Aperçu et génération des livrets depuis l'outil Educool associé.", width: 1600, height: 870 }
+          ]
+        }
+      ]
+    },
     architecture: [
       "V2 sépare le jeu web multijoueur, le runtime 3D et l'interface scolaire Educool, tout en partageant les contrats Firebase.",
       "V3 sépare quatre autorités : Game, Control, Product/UI Kit et Educool, réunies par une pile locale reproductible.",
@@ -282,14 +372,15 @@ export const projects: Project[] = [
     versions: [
       {
         label: "V2",
-        name: "Jeu local multijoueur relié à Educool",
+        name: "Boucle 3D locale déjà jouable",
+        publicStatus: "Jouable localement sur un appareil",
         status: "Jouable localement · LOCAL_SINGLE_DEVICE_READY : GO · V2_PRODUCT_COMPLETE et ONLINE_READY : NO-GO",
         summary:
-          "Version web locale avec parcours élève, professeure et banquier, maisons, quêtes, économie et interface Educool reliée à Firebase.",
+          "La V2 relie déjà un monde 3D multijoueur, les trois rôles et Educool. Elle permet de parcourir l'expérience localement sur un appareil avec des données fictives.",
         evidence: [
-          "État du 22/08/2026 : 12 123 tests réussis sur 12 148, 11 échecs et 14 ignorés ; les 3 échecs stables restants concernent l'i18n.",
-          "Educool : 645/645 tests, TypeScript vert et build Next de 42 pages réussi.",
-          "Parcours navigateur élève, professeure et banquier rejoués ; HUD, clavier et premier choix : 18/18."
+          "État daté du 22/08/2026 avec parcours élève, professeure et banquier rejoués localement.",
+          "HUD, clavier, première mission, guichet et pont Educool contrôlés sur des profils fictifs.",
+          "Le monde 3D vient déjà du fork World of ClaudeCraft ; la V3 n'est pas le passage de la 2D à la 3D."
         ],
         limits: [
           "Deux PC et une tablette physique, coupure Wi-Fi et audio multi-appareils restent à rejouer ensemble.",
@@ -298,14 +389,16 @@ export const projects: Project[] = [
       },
       {
         label: "V3",
-        name: "Monde 3D et économie centicool serveur",
-        status: "Prête pour recette humaine · READY_FOR_HUMAN_RECIPE · GO_PILOTE_LOCAL : en attente",
+        name: "Reconstruction séparée plus large",
+        publicStatus: "Prototype local prêt pour des tests humains",
+        status:
+          "READY_FOR_HUMAN_RECIPE (dernier verdict documenté) · gate complète actuelle à rejouer · aucun pilote revendiqué",
         summary:
-          "Version 3D plus ambitieuse avec 22 zones, trois rôles, économie serveur, maisons, marchands, lecture écrite et interface Educool locale.",
+          "La V3 est une reconstruction séparée, avec une carte, une architecture et un périmètre plus larges. Ses parcours locaux fonctionnent, mais elle doit encore être comprise, éprouvée et jugée par des humains.",
         evidence: [
-          "Game : gate 9/9, 12 064 tests réussis et 14 ignorés ; Control : 383/383 ; Product/UI Kit : 333/333.",
-          "Educool : 735 tests unitaires, 162 tests de règles Auth/Firestore et 174 tests Functions, avec builds Next et Node 20 réussis.",
-          "Candidate restaurable 20260806_FINAL_RECIPE : 9 ZIP et 97 259 entrées extraites et vérifiées."
+          "Recette visuelle du 26/08/2026 : trois rôles entrés dans le monde, mouvements réels et 396 placements chargés.",
+          "Dialogues, guichet banquier et télécommande professeure rejoués localement sans requête externe.",
+          "Les compteurs de tests exacts et les anciennes candidates restent hors de l'accroche tant que la gate complète actuelle n'est pas rejouée."
         ],
         limits: [
           "Validation de la direction artistique, test sur appareil enfant modeste et observation de la compréhension par un enfant encore requis.",
@@ -318,12 +411,12 @@ export const projects: Project[] = [
       "Gain de temps pour l'enseignante : non chiffré publiquement."
     ],
     proofLine:
-      "La V2 se joue déjà sur un appareil. La V3 fonctionne techniquement, mais doit encore être testée par des humains avant tout pilote.",
+      "La V2 permet déjà de vivre la boucle 3D sur un appareil. La V3 élargit le projet, mais aucune efficacité pédagogique ni utilisation en classe n'est encore revendiquée.",
     summary:
-      "Cool Bank transforme une banque scolaire en jeu multijoueur relié à Educool. La V2 est jouable localement. La V3 ajoute un monde 3D, mais attend encore une recette humaine.",
-    stack: ["Next.js", "Firebase", "Firestore", "Cloud Functions", "TypeScript", "Vite", "Node.js", "Playwright"],
+      "Une banque de classe transformée en petit monde vivant : les élèves explorent, économisent et tiennent des rôles, pendant que l'enseignante garde un outil de pilotage séparé.",
+    stack: ["Three.js", "Next.js", "Firebase", "Firestore", "Cloud Functions", "TypeScript", "Vite", "Node.js", "Playwright"],
     recruiterProof: [
-      "Faire évoluer un produit complexe sans mélanger les preuves de la V2 et de la V3.",
+      "Partir d'un besoin réel de classe, construire une expérience testable, puis séparer clairement ce qui fonctionne de ce qui reste à valider.",
       "Relier le jeu, les trois rôles, Firebase, la sécurité et les tests.",
       "Dire clairement ce qui fonctionne et ce qui reste bloqué avant un pilote."
     ],
@@ -357,21 +450,14 @@ export const projects: Project[] = [
       "Harnais de tests, preuves responsive, manifestes de candidate et scripts de démarrage/arrêt locaux."
     ],
     results: [
-      "V2 : LOCAL_SINGLE_DEVICE_READY ; multi-appareils physique, produit complet et mise en ligne encore NO-GO.",
-      "V3 : candidate READY_FOR_HUMAN_RECIPE, pile locale démarrée, contrôlée puis arrêtée proprement.",
-      "Les deux versions disposent de preuves de tests distinctes et utilisent uniquement des données fictives pour la QA publiée."
+      "La boucle V2 se joue localement sur un appareil avec les trois rôles et des données fictives.",
+      "Les parcours visuels V3 élève, banquier et professeure ont été rejoués localement le 26/08/2026.",
+      "Les deux versions gardent des preuves séparées ; aucune utilisation réelle en classe n'est inventée."
     ],
     limits: [
       "Preuve privée : code, captures complètes et données de contexte se montrent uniquement sur fixtures anonymisées.",
       "V2 n'est pas prête pour Internet ; V3 n'est pas validée comme pilote local auprès d'enfants.",
       "Les volumes de tests prouvent le comportement technique, pas l'utilité pédagogique ni l'adoption."
-    ],
-    gallery: [
-      { src: "/assets/proof/educool/educool-dashboard.webp", caption: "Interface Educool liée au système : tableau de bord sur données fictives, sans identité d'enfant publiée.", width: 1600, height: 870 },
-      { src: "/assets/proof/educool/educool-saisie-ceintures.webp", caption: "Saisie des progressions : matrice de classe anonymisée, commune au contexte métier de Cool Bank.", width: 1600, height: 873 },
-      { src: "/assets/proof/educool/educool-livrets.webp", caption: "Exports pédagogiques : aperçu et génération PDF/ZIP depuis l'interface scolaire associée.", width: 1600, height: 870 },
-      { src: "/assets/proof/educool/cool-bank-v2-market.webp", caption: "Marché de Cool Bank V2 lancé localement sur des données de démonstration fictives.", width: 1600, height: 1000 },
-      { src: "/assets/proof/educool/cool-bank-v2-v3-worldline.webp", caption: "Schéma des deux versions : V2 relie le jeu web à Educool ; V3 sépare le monde 3D, les contrôles et l'interface scolaire.", width: 1600, height: 960 }
     ],
     links: [
       { label: "Version Markdown", href: "/projects/educool-la-herse.md" }
@@ -1174,9 +1260,9 @@ export const featuredProjects = ["cortex-bridge", "les-petites-griffes", "educoo
   .map((slug) => projects.find((project) => project.slug === slug))
   .filter((project): project is Project => Boolean(project));
 
-// Preuves recruteur découplées de la home : produit IA open source (Cortex),
-// livraison client bout-en-bout (LPG), couche IA sur le sujet du poste (Preuvia).
-export const recruiterFeatured = ["cortex-bridge", "les-petites-griffes", "preuvia"]
+// Preuves recruteur : produit IA open source, livraison client en production,
+// puis besoin terrain transformé en produit local testable.
+export const recruiterFeatured = ["cortex-bridge", "les-petites-griffes", "educool-la-herse"]
   .map((slug) => projects.find((project) => project.slug === slug))
   .filter((project): project is Project => Boolean(project));
 

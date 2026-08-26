@@ -48,6 +48,7 @@ export default function ProjectsPage() {
                     src={project.image}
                     alt={`Aperçu du projet ${project.shortTitle}`}
                     preload={groupIndex === 0 && projectIndex === 0}
+                    fullColor={project.fullColorMedia}
                   />
                   <div className="case-body">
                     <span className={`evidence-badge evidence-${project.evidenceLevel}`}>

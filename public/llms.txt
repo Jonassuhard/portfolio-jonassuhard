@@ -24,7 +24,7 @@ Je cherche à évoluer vers un rôle de Forward Deployed Engineer. Je veux compr
 
 - [Cortex Bridge](https://jonassuhard.com/projects/cortex-bridge.md) : agent de code local open source qui utilise ChatGPT comme cerveau ; l'utilisateur valide avant l'exécution. Le projet vise l'usage d'un agent de code sans second abonnement dédié. Release v0.5.2 publique ; preview macOS/Chrome opt-in, sans affiliation OpenAI.
 - [Les Petites Griffes](https://jonassuhard.com/projects/les-petites-griffes.md) : site live, CMS et assistant IA cadré ; audit privé daté, projet familial non facturé.
-- [Cool Bank / La Herse](https://jonassuhard.com/projects/educool-la-herse.md) : V2 `LOCAL_SINGLE_DEVICE_READY`, V3 `READY_FOR_HUMAN_RECIPE` ; preuves privées sur données fictives, aucun pilote revendiqué.
+- [Cool Bank / La Herse](https://jonassuhard.com/projects/educool-la-herse.md) : une banque de classe transformée en monde 3D avec trois rôles. La V2 est déjà jouable localement sur un appareil (`LOCAL_SINGLE_DEVICE_READY`) ; la V3 est une reconstruction séparée en recette humaine (`READY_FOR_HUMAN_RECIPE`). Preuves privées sur données fictives, aucun pilote revendiqué.
 - [ISCOM](https://jonassuhard.com/projects/iscom.md) : SEO publié dans Drupal avec vérification humaine.
 - [Preuvia](https://jonassuhard.com/projects/preuvia.md) : audit de visibilité dans les réponses des assistants IA et plan d'action à vérifier lors du prochain audit.
 

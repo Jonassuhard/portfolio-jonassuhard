@@ -18,6 +18,9 @@ test("les cartes utilisent une image responsive sans JavaScript client", () => {
   assert.match(component, /preload=\{preload\}/);
   assert.match(read("app/projets/page.tsx"), /preload=\{groupIndex === 0 && projectIndex === 0\}/);
   assert.doesNotMatch(cardPages, /<img[^>]+src=\{project\.image\}/);
+  assert.match(component, /fullColor/);
+  assert.match(component, /className=\{fullColor \? "full-color-media" : undefined\}/);
+  assert.match(cardPages, /fullColor=\{project\.fullColorMedia\}/);
 });
 
 test("le blueprint utilise exactement onze images locales transparentes", () => {

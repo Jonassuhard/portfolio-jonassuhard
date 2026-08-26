@@ -51,7 +51,7 @@ export default function HomePage() {
             </div>
             <div className="stat-item">
               <strong>Cool Bank / La Herse</strong>
-              <span>Un jeu scolaire : V2 jouable localement, V3 encore en recette humaine.</span>
+              <span>Une banque de classe transformée en monde 3D avec trois rôles.</span>
             </div>
           </div>
         </aside>
@@ -83,6 +83,7 @@ export default function HomePage() {
                 <ProjectCardImage
                   src={project.image}
                   alt={`Aperçu du projet ${project.shortTitle}`}
+                  fullColor={project.fullColorMedia}
                 />
                 <div className="proof-body">
                   <span className={`evidence-badge evidence-${project.evidenceLevel}`}>

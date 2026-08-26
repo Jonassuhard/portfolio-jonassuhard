@@ -175,7 +175,7 @@ export default function RecruitersPage() {
           </div>
           <p>
             Un produit IA open source, un site familial en production et un
-            audit de visibilité dans les réponses des assistants IA.
+            besoin de classe transformé en produit local testable.
           </p>
         </div>
         <div className="proof-grid">
@@ -184,12 +184,13 @@ export default function RecruitersPage() {
               <ProjectCardImage
                 src={project.image}
                 alt={`Aperçu ${project.shortTitle}`}
+                fullColor={project.fullColorMedia}
               />
               <div className="proof-body">
                 <span className={`evidence-badge evidence-${project.evidenceLevel}`}>
                   {evidenceLevelMeta[project.evidenceLevel].label}
                 </span>
-                <p className="case-meta">{project.status}</p>
+                <p className="case-meta">{project.cardStatus ?? project.status}</p>
                 <h3>{project.shortTitle}</h3>
                 <p>{project.recruiterProof[0]}</p>
                 <Link className="button" href={`/projets/${project.slug}`}>Voir le projet</Link>

@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { projectJsonLd, breadcrumbJsonLd } from "@/lib/json-ld";
-import { evidenceLevelMeta, getProject, projects, ogImage } from "@/lib/projects";
+import { evidenceLevelMeta, getProject, projects, ogImage, type Project } from "@/lib/projects";
 import AnimatedTitle from "../../animated-title";
 import ProjectVideo from "../../project-video";
+import ProjectStory from "./project-story";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -59,6 +60,25 @@ function clampDescription(text: string) {
   if (text.length <= 155) return text;
   const cut = text.slice(0, 152);
   return `${cut.slice(0, cut.lastIndexOf(" "))}…`;
+}
+
+function ProjectSummaryTable({ project }: { project: Project }) {
+  return (
+    <table className="summary-table">
+      <tbody>
+        <tr><th scope="row">Type</th><td>{project.type}</td></tr>
+        <tr><th scope="row">Période</th><td>{project.period}</td></tr>
+        <tr><th scope="row">Rôle</th><td>{project.role}</td></tr>
+        <tr><th scope="row">Statut</th><td>{project.status}</td></tr>
+        <tr><th scope="row">Niveau de preuve</th><td>{evidenceLevelMeta[project.evidenceLevel].description}</td></tr>
+        <tr><th scope="row">Stack</th><td>{project.stack.join(", ")}</td></tr>
+        <tr><th scope="row">Ce que ça prouve</th><td>{project.proofLine}</td></tr>
+        {project.evidenceNote ? (
+          <tr><th scope="row">Preuves</th><td>{project.evidenceNote}</td></tr>
+        ) : null}
+      </tbody>
+    </table>
+  );
 }
 
 export default async function ProjectDetailPage({ params }: PageProps) {
@@ -120,60 +140,24 @@ export default async function ProjectDetailPage({ params }: PageProps) {
           />
         ) : (
           <Image
-            src={project.image}
-            alt={`Aperçu du projet ${project.shortTitle}`}
-            width={760}
-            height={460}
+            src={project.heroImage?.src ?? project.image}
+            alt={project.heroImage?.caption ?? `Aperçu du projet ${project.shortTitle}`}
+            width={project.heroImage?.width ?? 760}
+            height={project.heroImage?.height ?? 460}
             sizes="(max-width: 960px) calc(100vw - 28px), 520px"
             quality={75}
             loading="eager"
             fetchPriority="high"
+            className={project.fullColorMedia ? "full-color-media" : undefined}
           />
         )}
       </section>
 
-      <section>
-        <table className="summary-table">
-          <tbody>
-            <tr>
-              <th scope="row">Type</th>
-              <td>{project.type}</td>
-            </tr>
-            <tr>
-              <th scope="row">Période</th>
-              <td>{project.period}</td>
-            </tr>
-            <tr>
-              <th scope="row">Rôle</th>
-              <td>{project.role}</td>
-            </tr>
-            <tr>
-              <th scope="row">Statut</th>
-              <td>{project.status}</td>
-            </tr>
-            <tr>
-              <th scope="row">Niveau de preuve</th>
-              <td>{evidenceLevelMeta[project.evidenceLevel].description}</td>
-            </tr>
-            <tr>
-              <th scope="row">Stack</th>
-              <td>{project.stack.join(", ")}</td>
-            </tr>
-            <tr>
-              <th scope="row">Ce que ça prouve</th>
-              <td>{project.proofLine}</td>
-            </tr>
-            {project.evidenceNote ? (
-              <tr>
-                <th scope="row">Preuves</th>
-                <td>{project.evidenceNote}</td>
-              </tr>
-            ) : null}
-          </tbody>
-        </table>
-      </section>
+      {project.story ? <ProjectStory project={project} /> : (
+        <section><ProjectSummaryTable project={project} /></section>
+      )}
 
-      {project.versions?.length ? (
+      {!project.story && project.versions?.length ? (
         <section className="section">
           <p className="section-kicker">Versions</p>
           <h2>V2 et V3 n'ont pas le même statut.</h2>
@@ -201,7 +185,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
         </section>
       ) : null}
 
-      {project.gallery ? (
+      {!project.story && project.gallery ? (
         <section className="section">
           <p className="section-kicker">Aperçu</p>
           <h2>Ce qui est visible.</h2>
@@ -236,7 +220,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
             </ul>
           </section>
 
-          {project.architecture ? (
+          {!project.story && project.architecture ? (
             <section>
               <p className="section-kicker">Fonctionnement</p>
               <h2>Comment ça fonctionne.</h2>
@@ -348,6 +332,48 @@ export default async function ProjectDetailPage({ params }: PageProps) {
           </ul>
         </aside>
       </section>
+
+      {project.story ? (
+        <section className="section project-technical">
+          <div className="section-head">
+            <div>
+              <p className="section-kicker">Preuves techniques</p>
+              <h2>Le dossier de validation, à sa juste place.</h2>
+            </div>
+            <p>
+              Ces éléments servent à contrôler le projet. Ils ne remplacent ni
+              un test en classe ni l'observation des enfants et de l'enseignante.
+            </p>
+          </div>
+          <ProjectSummaryTable project={project} />
+          {project.architecture ? (
+            <div className="technical-architecture">
+              <h3>Architecture</h3>
+              <ul>
+                {project.architecture.map((item) => <li key={item}>{item}</li>)}
+              </ul>
+            </div>
+          ) : null}
+          {project.versions?.length ? (
+            <div className="technical-details-grid">
+              {project.versions.map((version) => (
+                <details key={version.label}>
+                  <summary>{version.label} — preuves et limites techniques</summary>
+                  <p className="case-meta">{version.status}</p>
+                  <strong>Preuves</strong>
+                  <ul>
+                    {version.evidence.map((item) => <li key={item}>{item}</li>)}
+                  </ul>
+                  <strong>Limites</strong>
+                  <ul>
+                    {version.limits.map((item) => <li key={item}>{item}</li>)}
+                  </ul>
+                </details>
+              ))}
+            </div>
+          ) : null}
+        </section>
+      ) : null}
     </div>
   );
 }

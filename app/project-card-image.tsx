@@ -4,12 +4,18 @@ type ProjectCardImageProps = {
   src: string;
   alt: string;
   preload?: boolean;
+  fullColor?: boolean;
 };
 
 // Image serveur uniquement : Next génère un srcset adapté au viewport sans
 // ajouter de JavaScript côté client. La qualité 65 reste nette sous le filtre
 // éditorial des cartes et réduit le transfert mesuré par PageSpeed.
-export default function ProjectCardImage({ src, alt, preload = false }: ProjectCardImageProps) {
+export default function ProjectCardImage({
+  src,
+  alt,
+  preload = false,
+  fullColor = false
+}: ProjectCardImageProps) {
   return (
     <Image
       src={src}
@@ -20,6 +26,7 @@ export default function ProjectCardImage({ src, alt, preload = false }: ProjectC
       quality={65}
       preload={preload}
       loading={preload ? undefined : "lazy"}
+      className={fullColor ? "full-color-media" : undefined}
     />
   );
 }

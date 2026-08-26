@@ -34,11 +34,11 @@
     },
     "les_petites_griffes_limit": "Projet familial non facturé ; aucune vente à un client externe n'est prouvée ; mesures datées du 2026-08-01, non continues.",
     "cool_bank_la_herse_versions": {
-      "claim": "Cool Bank / La Herse distingue une V2 au statut LOCAL_SINGLE_DEVICE_READY et une V3 au statut READY_FOR_HUMAN_RECIPE.",
+      "claim": "Cool Bank / La Herse distingue une V2 3D déjà jouable localement sur un appareil et une V3 reconstruite séparément, encore en recette humaine.",
       "status": "private-evidence",
       "verification_id": "cool-bank-la-herse-versions",
-      "checked_at": "2026-08-22",
-      "proof_note": "Sources locales privées et démonstrations sur données fictives ; aucune donnée de mineur n'est publiée."
+      "checked_at": "2026-08-26",
+      "proof_note": "Sources locales privées ; parcours visuels V3 élève, banquier et professeure rejoués sur données fictives. Aucune donnée de mineur n'est publiée."
     }
   },
   "role_aliases": [
@@ -98,25 +98,26 @@
     },
     {
       "project": "Cool Bank / La Herse",
-      "type": "jeu scolaire multijoueur + interface métier Educool",
+      "type": "jeu scolaire 3D + outil enseignant Educool",
+      "purpose": "Rendre l'argent, l'épargne et la responsabilité plus concrets dans une banque de classe, sans retirer le contrôle à l'enseignante.",
       "period": "Juillet - août 2026",
       "role": "conception produit, UX, développement full-stack, systèmes de jeu, sécurité et QA",
-      "stack": ["Next.js", "Firebase", "Firestore", "Cloud Functions", "TypeScript", "Vite", "Node.js", "Playwright"],
+      "stack": ["Three.js", "Next.js", "Firebase", "Firestore", "Cloud Functions", "TypeScript", "Vite", "Node.js", "Playwright"],
       "case_study": "/projets/educool-la-herse",
       "markdown": "/projects/educool-la-herse.md",
-      "evidence": "V2 vérifiée le 22/08/2026 ; V3 vérifiée le 06/08/2026 ; preuves privées et démonstrations sur données fictives.",
+      "evidence": "V2 vérifiée le 22/08/2026 ; parcours visuels V3 élève, banquier et professeure rejoués le 26/08/2026 sur données fictives.",
       "evidence_status": "private-evidence",
       "verification_id": "cool-bank-la-herse-versions",
       "versions": [
         {
           "version": "V2",
           "status": "LOCAL_SINGLE_DEVICE_READY : GO ; V2_PRODUCT_COMPLETE et ONLINE_READY : NO-GO",
-          "evidence": "12 123 tests réussis sur 12 148 ; Educool 645/645 ; parcours navigateur élève, professeure et banquier rejoués."
+          "evidence": "Monde 3D, HUD, première mission, guichet et parcours des trois rôles rejoués localement sur un appareil."
         },
         {
           "version": "V3",
           "status": "READY_FOR_HUMAN_RECIPE ; GO_PILOTE_LOCAL : en attente",
-          "evidence": "Game 12 064 tests réussis ; Control 383/383 ; Product/UI Kit 333/333 ; Educool 735 unités, 162 règles et 174 Functions."
+          "evidence": "Recette visuelle du 26/08/2026 : trois rôles, mouvements réels, dialogues, guichet et télécommande rejoués localement ; aucun pilote revendiqué."
         }
       ],
       "limits": "V2 non prête en ligne ; V3 en attente de validation DA, appareil enfant modeste et compréhension par un enfant ; aucune utilité pédagogique chiffrée.",

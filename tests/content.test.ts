@@ -28,18 +28,64 @@ test("les sélections recruteur ne contiennent que des projets principaux", () =
   }
 });
 
-test("Cortex Bridge remplace ISCOM dans les sélections de trois projets", () => {
+test("les sélections principales gardent Cortex et placent Cool Bank côté recruteurs", () => {
   assert.deepEqual(
     featuredProjects.map((project) => project.slug),
     ["cortex-bridge", "les-petites-griffes", "educool-la-herse"]
   );
   assert.deepEqual(
     recruiterFeatured.map((project) => project.slug),
-    ["cortex-bridge", "les-petites-griffes", "preuvia"]
+    ["cortex-bridge", "les-petites-griffes", "educool-la-herse"]
   );
   assert.equal(featuredProjects.some((project) => project.slug === "iscom"), false);
   assert.equal(recruiterFeatured.some((project) => project.slug === "iscom"), false);
   assert.ok(projects.some((project) => project.slug === "iscom"));
+});
+
+test("Cool Bank raconte deux versions 3D distinctes avant ses statuts techniques", () => {
+  const project = projects.find((item) => item.slug === "educool-la-herse") as
+    | ((typeof projects)[number] & {
+        fullColorMedia?: boolean;
+        heroImage?: { src: string };
+        story?: {
+          purpose: string[];
+          roles: Array<{ title: string }>;
+          galleryGroups: Array<{ title: string; images: unknown[] }>;
+        };
+      })
+    | undefined;
+
+  assert.ok(project);
+  assert.equal(project.title, "Cool Bank - donner vie à une banque de classe");
+  assert.equal(project.fullColorMedia, true);
+  assert.match(project.heroImage?.src ?? "", /cool-bank-v3-world/);
+  assert.deepEqual(project.story?.roles.map((role) => role.title), [
+    "L'élève",
+    "Le banquier",
+    "L'enseignante"
+  ]);
+  assert.deepEqual(project.story?.galleryGroups.map((group) => group.title), [
+    "V3 — la reconstruction locale",
+    "V2 — la boucle 3D déjà jouable",
+    "Educool — l'outil de pilotage"
+  ]);
+  assert.ok(project.story?.galleryGroups.every((group) => group.images.length >= 3));
+
+  const publicCopy = [
+    project.title,
+    project.summary,
+    project.cardLine,
+    ...(project.versions ?? []).flatMap((version) => [version.name, version.summary])
+  ].join("\n");
+  assert.doesNotMatch(publicCopy, /V2[^\n]*2D|V3 ajoute (?:un )?monde 3D|2D[^\n]*V3[^\n]*3D/i);
+  assert.match(project.versions?.[0].summary ?? "", /monde 3D/i);
+  assert.match(project.versions?.[1].summary ?? "", /reconstruction séparée/i);
+
+  const storyComponent = readFileSync(
+    new URL("../app/projets/[slug]/project-story.tsx", import.meta.url),
+    "utf8"
+  );
+  assert.doesNotMatch(storyComponent, /version\.limits/);
 });
 
 test("Cortex Bridge reste une preuve logicielle publique et qualifiée", () => {
@@ -67,7 +113,7 @@ test("Cortex Bridge reste une preuve logicielle publique et qualifiée", () => {
 test("Cool Bank / La Herse expose séparément les versions V2 et V3", () => {
   const project = projects.find((item) => item.slug === "educool-la-herse") as
     | ((typeof projects)[number] & {
-        versions?: Array<{ label: string; status: string }>;
+        versions?: Array<{ label: string; status: string; publicStatus?: string }>;
       })
     | undefined;
   const llms = readFileSync(new URL("../public/llms.txt", import.meta.url), "utf8");
@@ -87,6 +133,10 @@ test("Cool Bank / La Herse expose séparément les versions V2 et V3", () => {
   assert.deepEqual(project.versions?.map((version) => version.label), ["V2", "V3"]);
   assert.match(project.versions?.[0].status ?? "", /LOCAL_SINGLE_DEVICE_READY/);
   assert.match(project.versions?.[1].status ?? "", /READY_FOR_HUMAN_RECIPE/);
+  assert.doesNotMatch(
+    project.versions?.[1].publicStatus ?? "",
+    /READY_FOR_HUMAN_RECIPE|GO_PILOTE_LOCAL/
+  );
   assert.match(llms, /Cortex Bridge/);
   assert.match(llms, /Cool Bank \/ La Herse/);
   assert.match(llms, /V2[^\n]*LOCAL_SINGLE_DEVICE_READY/);
@@ -112,12 +162,15 @@ test("les dates de publication et de modification des articles restent distincte
 });
 
 test("les galeries réservent leurs dimensions intrinsèques", () => {
-  const sources = projects.flatMap((project) => project.gallery ?? []).map((image) => image.src);
+  const imagesFor = (project: (typeof projects)[number]) =>
+    project.story?.galleryGroups.flatMap((group) => group.images) ?? project.gallery ?? [];
+  const sources = projects.flatMap(imagesFor).map((image) => image.src);
 
   assert.equal(new Set(sources).size, sources.length, "Une image est réutilisée dans plusieurs galeries");
   for (const project of projects) {
-    assert.ok((project.gallery?.length ?? 0) >= 3, `${project.slug} a moins de trois visuels`);
-    for (const image of project.gallery ?? []) {
+    const images = imagesFor(project);
+    assert.ok(images.length >= 3, `${project.slug} a moins de trois visuels`);
+    for (const image of images) {
       const asset = new URL(`../public${image.src}`, import.meta.url);
       assert.ok(image.width > 0 && image.height > 0, `${image.src} n'a pas de dimensions`);
       assert.ok(existsSync(asset), `${image.src} est absent du dossier public`);
