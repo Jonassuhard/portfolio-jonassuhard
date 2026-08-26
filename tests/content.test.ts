@@ -88,6 +88,37 @@ test("Cool Bank raconte deux versions 3D distinctes avant ses statuts techniques
   assert.doesNotMatch(storyComponent, /version\.limits/);
 });
 
+test("la carte Cool Bank utilise le schéma d'archive et non l'écran de rôles", () => {
+  const project = projects.find((item) => item.slug === "educool-la-herse");
+  const schematic = new URL(
+    "../public/assets/cards/cool-bank-schema.webp",
+    import.meta.url
+  );
+  const formerScreen = new URL(
+    "../public/assets/cards/cool-bank-roles.webp",
+    import.meta.url
+  );
+
+  assert.ok(project);
+  assert.equal(project.image, "/assets/cards/cool-bank-schema.webp");
+  assert.equal(existsSync(schematic), true);
+  assert.equal(existsSync(formerScreen), false);
+});
+
+test("le générateur de la carte Cool Bank décrit deux versions 3D", () => {
+  const generator = new URL(
+    "../scripts/generate-card-schematics.mjs",
+    import.meta.url
+  );
+
+  assert.equal(existsSync(generator), true);
+  const source = readFileSync(generator, "utf8");
+  assert.match(source, /V2 · 3D LOCALE/);
+  assert.match(source, /V3 · 3D SÉPARÉE/);
+  assert.match(source, /ÉLÈVE · BANQUIER · ENSEIGNANTE/);
+  assert.doesNotMatch(source, /V2[^\n]*2D/);
+});
+
 test("Cortex Bridge reste une preuve logicielle publique et qualifiée", () => {
   const cortex = projects.find((project) => project.slug === "cortex-bridge");
   const release = verificationItems.find(

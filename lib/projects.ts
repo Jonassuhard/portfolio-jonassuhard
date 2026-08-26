@@ -283,7 +283,7 @@ export const projects: Project[] = [
     status: "V2 jouable localement sur un appareil · V3 en recette humaine",
     evidenceLevel: "private",
     tier: 1,
-    image: "/assets/cards/cool-bank-roles.webp",
+    image: "/assets/cards/cool-bank-schema.webp",
     heroImage: {
       src: "/assets/proof/educool/cool-bank-v3-world.webp",
       caption: "Capture locale V3 : l'élève entre dans le bourg, découvre sa première quête et prend ses repères dans le monde 3D.",
