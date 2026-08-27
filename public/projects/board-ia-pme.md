@@ -7,40 +7,43 @@
 | Format | POC / preuve technique |
 | Période | 2026 |
 | Rôle de Jonas | Conception et développement (POC) |
-| Statut | Concept documenté · source à retrouver |
-| Niveau de preuve | À documenter |
-| Stack | Systèmes multi-agents, Sources séparées, Règles de pondération, Traçabilité |
+| Statut | Prototype privé historique · source à restaurer |
+| Niveau de preuve | Démo privée |
+| Stack | Python, Mistral Large, Pondération déterministe, JSON |
 
 ## À quoi ça sert
 
-Faire ressortir les désaccords utiles entre plusieurs analyses, puis produire une synthèse dont les règles restent lisibles.
+Prototype privé historique conçu pour faire ressortir les désaccords entre cinq analyses. Le petit socle Python a existé, mais sa source n'est plus présente et les infrastructures décrites dans le README n'étaient pas implémentées.
 
 ## Ce que Jonas a fait
 
-- Schémas conceptuels des cinq points de vue, de l'orchestration et des règles de synthèse.
-- Documentation du concept, de ses limites et des validations encore nécessaires.
+- Prototype historique de 437 lignes réparties dans 10 fichiers : cinq agents, cio.py et run_board.py.
+- Classement, pondération et gate déterministes, puis conclusion narrative par Mistral Large.
 
 ## Ce que ça prouve
 
-Concept de cinq points de vue séparés sur une même question, puis d'une synthèse fondée sur des règles explicites. Le code correspondant reste à retrouver.
+Un prototype Python historique de 437 lignes faisait travailler cinq agents, puis appliquait un classement, une pondération et une gate déterministes avant une conclusion rédigée par Mistral Large.
 
-- Donner une source différente à chaque agent pour éviter cinq réponses identiques.
-- Regrouper les réponses avec des règles de pondération visibles plutôt qu'avec un sixième modèle opaque.
-- Prévoir une infrastructure contrôlée sans en revendiquer l'implémentation tant que la source n'est pas retrouvée.
+- Prototyper cinq rôles d'analyse et une orchestration minimale dans un socle Python court.
+- Garder le classement, la pondération et la gate de confiance lisibles dans cio.py.
+- Distinguer le code réellement audité de l'infrastructure seulement décrite dans les dépendances et le README.
+
+Audit privé du 29 juin 2026 : commit unique 0b9a4cb, 437 lignes dans 10 fichiers, cinq agents, cio.py et run_board.py. Les octets de la source et de sa copie de publication sont absents des volumes montés au 28 août 2026.
 
 ## Visuels
 
-![Schéma des cinq agents : chacun reçoit une source différente pour produire de vrais points de vue séparés.](/assets/proof/board-ia-pme/board-isolated-agents.webp)
+![Reconstitution éditoriale des cinq rôles du prototype historique ; ce n'est pas une capture d'exécution.](/assets/proof/board-ia-pme/board-isolated-agents-20260828.webp)
 
-![Orchestration prévue : les analyses parallèles remontent vers des règles de pondération lisibles, sans sixième modèle opaque.](/assets/proof/board-ia-pme/board-orchestration.webp)
+![Structure auditée : cinq agents, règles de classement et conclusion Mistral Large, sans infrastructure distribuée implémentée.](/assets/proof/board-ia-pme/board-orchestration-20260828.webp)
 
-![État honnête du POC : backend et règles posés ; dashboard, export PDF et validation client restent à construire.](/assets/proof/board-ia-pme/board-status.webp)
+![État vérifié : 437 lignes et 10 fichiers historiques ; source absente, frontend et tests non implémentés.](/assets/proof/board-ia-pme/board-status-20260828.webp)
 
 
 ## Limites
 
-- Source locale non retrouvée lors de l'audit du 27 août 2026.
-- Les schémas montrent une direction de produit, pas un POC techniquement prouvé.
+- Source d'origine et copie de publication absentes après migration ; aucune exécution actuelle n'est possible.
+- FastAPI, Celery, Redis et Qdrant apparaissaient dans le README ou les dépendances, pas dans l'implémentation auditée.
+- Frontend, tests et documentation applicative étaient vides ; aucun résultat client n'est revendiqué.
 
 ## Liens
 

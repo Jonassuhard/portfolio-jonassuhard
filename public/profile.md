@@ -69,7 +69,7 @@ Paris, France. CDI à Paris ou hybride, disponible à partir du 1er septembre 20
 ## Vérification
 
 - Registre des preuves : https://jonassuhard.com/preuves
-- Revue générale des contenus : 2026-08-27
+- Revue générale des contenus : 2026-08-28
 - Cortex Bridge : tag v0.5.3 vérifié le 2026-08-26
 - Cool Bank V2 : vérifiée le 2026-08-22
 - Cool Bank V3 : parcours visuels vérifiés le 2026-08-26

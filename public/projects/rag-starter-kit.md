@@ -7,40 +7,44 @@
 | Format | Projet perso / preuve technique |
 | Période | 2026 |
 | Rôle de Jonas | Conception et développement (full-stack) |
-| Statut | Concept documenté · source à retrouver |
-| Niveau de preuve | À documenter |
-| Stack | RAG, Recherche sémantique, Citations, Isolation des données, Évaluation |
+| Statut | Prototype privé historique · source à restaurer |
+| Niveau de preuve | Démo privée |
+| Stack | FastAPI, Qdrant, Mistral AI, LangChain, SQLite, Next.js 15, React 19, Docker Compose |
 
 ## À quoi ça sert
 
-Permettre à plusieurs clients d'interroger leurs documents sans mélanger leurs données, puis vérifier la qualité des réponses.
+Prototype privé historique pour interroger des documents sans mélanger les données de plusieurs clients. Son architecture et son historique Git sont documentés, mais le code n'est plus présent localement et aucune exécution actuelle n'est revendiquée.
 
 ## Ce que Jonas a fait
 
-- Schémas conceptuels du parcours documentaire, de l'isolation des clients et de la boucle d'évaluation.
-- Cadrage des preuves à produire avant de présenter le concept comme un produit fonctionnel.
+- Le prototype historique audité réunissait ingestion, retriever, chat avec citations, authentification multi-tenant et journaux d'usage.
+- Interface historique Next.js 15 / React 19 avec espaces cabinet, administration et portail.
+- Docker Compose, documentation d'onboarding et cas d'évaluation inspirés de Ragas.
 
 ## Ce que ça prouve
 
-Concept d'un outil qui retrouverait les passages utiles d'un document et répondrait avec leurs sources. Le code correspondant reste à retrouver.
+Un prototype privé multi-tenant a été audité en juin 2026 : ingestion de documents, recherche Qdrant, réponses Mistral avec citations et cas d'évaluation. Sa source doit maintenant être restaurée.
 
-- Cadrer un parcours de recherche documentaire qui remonte les passages utilisés dans la réponse.
-- Prévoir la séparation des données de chaque client dès la conception.
-- Documenter une boucle d'évaluation avant de retrouver ou reconstruire une implémentation.
+- Construire historiquement un parcours complet : ingestion, recherche, réponse et citations.
+- Séparer les données par client_id avec authentification, journaux d'usage et filtres de recherche.
+- Prévoir des cas versionnés pour mesurer le retrieval sans inventer de score actuel.
+
+Audit privé du 29 juin 2026 : dépôt master au commit 1fc9629, quatre commits et structure complète documentés. Le manifeste du 29 avril recensait 3,4 Go. Les octets de la source et de sa copie de publication sont absents des volumes montés au 28 août 2026.
 
 ## Visuels
 
-![Schéma du parcours d'un document : ingestion, découpage, indexation, recherche puis réponse avec ses sources.](/assets/proof/rag-starter-kit/rag-document-pipeline.webp)
+![Reconstitution éditoriale du parcours historique : ingestion, indexation, recherche puis réponse avec ses sources.](/assets/proof/rag-starter-kit/rag-document-pipeline-20260828.webp)
 
-![Isolation des clients : chaque requête reste dans son espace de données et ne peut pas récupérer les documents d'un autre client.](/assets/proof/rag-starter-kit/rag-tenant-isolation.webp)
+![Reconstitution de l'isolation historique par client_id ; ce schéma n'est pas une certification de sécurité actuelle.](/assets/proof/rag-starter-kit/rag-tenant-isolation-20260828.webp)
 
-![Boucle d'évaluation : cas versionnés, mesure du retrieval, comparaison et correction avant une nouvelle exécution.](/assets/proof/rag-starter-kit/rag-evaluation-loop.webp)
+![Cas d'évaluation présents dans le dépôt historique ; aucun résultat actuel n'est publié sans restauration de la source.](/assets/proof/rag-starter-kit/rag-evaluation-loop-20260828.webp)
 
 
 ## Limites
 
-- Source locale non retrouvée lors de l'audit du 27 août 2026.
-- Les schémas montrent une intention de conception, pas une application prouvée.
+- Source d'origine et copie de publication absentes après migration ; le prototype n'est pas exécutable aujourd'hui.
+- La présence historique de fichiers de test ne prouve pas leur réussite actuelle.
+- L'ancienne copie anonymisée conservait encore des coordonnées professionnelles et son historique Git ; elle n'était pas publiable telle quelle.
 
 ## Liens
 

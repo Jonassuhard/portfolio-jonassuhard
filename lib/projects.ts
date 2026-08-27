@@ -1002,23 +1002,25 @@ export const projects: Project[] = [
     type: "Projet perso / preuve technique",
     period: "2026",
     role: "Conception et développement (full-stack)",
-    status: "Concept documenté · source à retrouver",
-    evidenceLevel: "self-declared",
+    status: "Prototype privé historique · source à restaurer",
+    evidenceLevel: "private",
     tier: 2,
     image: "/assets/cards/rag-starter-kit-art.webp",
     fullColorMedia: true,
-    repoStatus: "Source locale non retrouvée lors de l'audit du 27 août 2026",
-    liveLabel: "Concept documenté",
+    repoStatus: "Source d'origine absente après migration · historique Git privé conservé",
+    liveLabel: "Archive privée non exécutable",
     noindex: true,
+    evidenceNote:
+      "Audit privé du 29 juin 2026 : dépôt master au commit 1fc9629, quatre commits et structure complète documentés. Le manifeste du 29 avril recensait 3,4 Go. Les octets de la source et de sa copie de publication sont absents des volumes montés au 28 août 2026.",
     proofLine:
-      "Concept d'un outil qui retrouverait les passages utiles d'un document et répondrait avec leurs sources. Le code correspondant reste à retrouver.",
+      "Un prototype privé multi-tenant a été audité en juin 2026 : ingestion de documents, recherche Qdrant, réponses Mistral avec citations et cas d'évaluation. Sa source doit maintenant être restaurée.",
     summary:
-      "Permettre à plusieurs clients d'interroger leurs documents sans mélanger leurs données, puis vérifier la qualité des réponses.",
-    stack: ["RAG", "Recherche sémantique", "Citations", "Isolation des données", "Évaluation"],
+      "Prototype privé historique pour interroger des documents sans mélanger les données de plusieurs clients. Son architecture et son historique Git sont documentés, mais le code n'est plus présent localement et aucune exécution actuelle n'est revendiquée.",
+    stack: ["FastAPI", "Qdrant", "Mistral AI", "LangChain", "SQLite", "Next.js 15", "React 19", "Docker Compose"],
     recruiterProof: [
-      "Cadrer un parcours de recherche documentaire qui remonte les passages utilisés dans la réponse.",
-      "Prévoir la séparation des données de chaque client dès la conception.",
-      "Documenter une boucle d'évaluation avant de retrouver ou reconstruire une implémentation."
+      "Construire historiquement un parcours complet : ingestion, recherche, réponse et citations.",
+      "Séparer les données par client_id avec authentification, journaux d'usage et filtres de recherche.",
+      "Prévoir des cas versionnés pour mesurer le retrieval sans inventer de score actuel."
     ],
     constraints: [
       "Données de démonstration, secrets et identités retirés avant toute future publication.",
@@ -1027,7 +1029,7 @@ export const projects: Project[] = [
     decisions: [
       {
         decision: "Séparer l'ingestion, la recherche, les citations et l'évaluation.",
-        why: "Rendre le concept vérifiable étape par étape lorsqu'une implémentation sera retrouvée ou reconstruite.",
+        why: "Le dépôt historique séparait déjà ces étapes pour permettre leur vérification et leur maintenance.",
         rejected: "Recherche full-text classique sans vecteurs, insuffisante pour gérer la similarité sémantique."
       },
       {
@@ -1037,21 +1039,23 @@ export const projects: Project[] = [
       }
     ],
     delivered: [
-      "Schémas conceptuels du parcours documentaire, de l'isolation des clients et de la boucle d'évaluation.",
-      "Cadrage des preuves à produire avant de présenter le concept comme un produit fonctionnel."
+      "Le prototype historique audité réunissait ingestion, retriever, chat avec citations, authentification multi-tenant et journaux d'usage.",
+      "Interface historique Next.js 15 / React 19 avec espaces cabinet, administration et portail.",
+      "Docker Compose, documentation d'onboarding et cas d'évaluation inspirés de Ragas."
     ],
     results: [
-      "Architecture conceptuelle documentée dans le portfolio.",
-      "Aucune performance ni qualité de réponse n'est revendiquée sans source retrouvée."
+      "L'audit privé du 29/06/2026 a documenté quatre commits, les modules du prototype et les cas d'évaluation présents dans le dépôt.",
+      "Aucune performance, qualité de réponse ou exécution actuelle n'est revendiquée sans les octets de la source."
     ],
     limits: [
-      "Source locale non retrouvée lors de l'audit du 27 août 2026.",
-      "Les schémas montrent une intention de conception, pas une application prouvée."
+      "Source d'origine et copie de publication absentes après migration ; le prototype n'est pas exécutable aujourd'hui.",
+      "La présence historique de fichiers de test ne prouve pas leur réussite actuelle.",
+      "L'ancienne copie anonymisée conservait encore des coordonnées professionnelles et son historique Git ; elle n'était pas publiable telle quelle."
     ],
     gallery: [
-      { src: "/assets/proof/rag-starter-kit/rag-document-pipeline.webp", caption: "Schéma du parcours d'un document : ingestion, découpage, indexation, recherche puis réponse avec ses sources.", width: 1600, height: 960 },
-      { src: "/assets/proof/rag-starter-kit/rag-tenant-isolation.webp", caption: "Isolation des clients : chaque requête reste dans son espace de données et ne peut pas récupérer les documents d'un autre client.", width: 1600, height: 960 },
-      { src: "/assets/proof/rag-starter-kit/rag-evaluation-loop.webp", caption: "Boucle d'évaluation : cas versionnés, mesure du retrieval, comparaison et correction avant une nouvelle exécution.", width: 1600, height: 960 }
+      { src: "/assets/proof/rag-starter-kit/rag-document-pipeline-20260828.webp", caption: "Reconstitution éditoriale du parcours historique : ingestion, indexation, recherche puis réponse avec ses sources.", width: 1600, height: 960 },
+      { src: "/assets/proof/rag-starter-kit/rag-tenant-isolation-20260828.webp", caption: "Reconstitution de l'isolation historique par client_id ; ce schéma n'est pas une certification de sécurité actuelle.", width: 1600, height: 960 },
+      { src: "/assets/proof/rag-starter-kit/rag-evaluation-loop-20260828.webp", caption: "Cas d'évaluation présents dans le dépôt historique ; aucun résultat actuel n'est publié sans restauration de la source.", width: 1600, height: 960 }
     ],
     links: [{ label: "Version Markdown", href: "/projects/rag-starter-kit.md" }]
   },
@@ -1062,23 +1066,25 @@ export const projects: Project[] = [
     type: "POC / preuve technique",
     period: "2026",
     role: "Conception et développement (POC)",
-    status: "Concept documenté · source à retrouver",
-    evidenceLevel: "self-declared",
+    status: "Prototype privé historique · source à restaurer",
+    evidenceLevel: "private",
     tier: 2,
     image: "/assets/cards/board-ia-pme-art.webp",
     fullColorMedia: true,
-    repoStatus: "Source locale non retrouvée lors de l'audit du 27 août 2026",
-    liveLabel: "Concept documenté",
+    repoStatus: "Source d'origine absente après migration · historique Git privé conservé",
+    liveLabel: "Archive privée non exécutable",
     noindex: true,
+    evidenceNote:
+      "Audit privé du 29 juin 2026 : commit unique 0b9a4cb, 437 lignes dans 10 fichiers, cinq agents, cio.py et run_board.py. Les octets de la source et de sa copie de publication sont absents des volumes montés au 28 août 2026.",
     proofLine:
-      "Concept de cinq points de vue séparés sur une même question, puis d'une synthèse fondée sur des règles explicites. Le code correspondant reste à retrouver.",
+      "Un prototype Python historique de 437 lignes faisait travailler cinq agents, puis appliquait un classement, une pondération et une gate déterministes avant une conclusion rédigée par Mistral Large.",
     summary:
-      "Faire ressortir les désaccords utiles entre plusieurs analyses, puis produire une synthèse dont les règles restent lisibles.",
-    stack: ["Systèmes multi-agents", "Sources séparées", "Règles de pondération", "Traçabilité"],
+      "Prototype privé historique conçu pour faire ressortir les désaccords entre cinq analyses. Le petit socle Python a existé, mais sa source n'est plus présente et les infrastructures décrites dans le README n'étaient pas implémentées.",
+    stack: ["Python", "Mistral Large", "Pondération déterministe", "JSON"],
     recruiterProof: [
-      "Donner une source différente à chaque agent pour éviter cinq réponses identiques.",
-      "Regrouper les réponses avec des règles de pondération visibles plutôt qu'avec un sixième modèle opaque.",
-      "Prévoir une infrastructure contrôlée sans en revendiquer l'implémentation tant que la source n'est pas retrouvée."
+      "Prototyper cinq rôles d'analyse et une orchestration minimale dans un socle Python court.",
+      "Garder le classement, la pondération et la gate de confiance lisibles dans cio.py.",
+      "Distinguer le code réellement audité de l'infrastructure seulement décrite dans les dépendances et le README."
     ],
     constraints: [
       "Éviter le piège des comités d'agents qui se reformulent entre eux, en forçant la divergence par l'isolation des données.",
@@ -1086,32 +1092,33 @@ export const projects: Project[] = [
     ],
     decisions: [
       {
-        decision: "CIO d'agrégation déterministe (règles de pondération), pas un LLM supplémentaire.",
-        why: "Rendre la synthèse traçable et reproductible plutôt que de déléguer l'arbitrage à un modèle opaque.",
-        rejected: "Un 6e agent LLM de synthèse, moins traçable et susceptible de lisser les divergences."
+        decision: "Classement, pondération et gate de confiance déterministes.",
+        why: "Garder une partie de l'arbitrage lisible et reproductible avant la rédaction finale.",
+        rejected: "Déléguer aussi le classement et la gate au modèle."
       },
       {
-        decision: "Asymétrie d'information stricte entre les 5 agents.",
-        why: "Obtenir de vraies divergences exploitables au lieu d'un consensus artificiel.",
-        rejected: "Agents partageant le même contexte, ce qui donne des conclusions redondantes."
+        decision: "Mistral Large pour la conclusion narrative.",
+        why: "Transformer les sorties classées en une réponse lisible, sans prétendre que toute la synthèse est déterministe.",
+        rejected: "Présenter la conclusion comme entièrement produite par des règles fixes."
       }
     ],
     delivered: [
-      "Schémas conceptuels des cinq points de vue, de l'orchestration et des règles de synthèse.",
-      "Documentation du concept, de ses limites et des validations encore nécessaires."
+      "Prototype historique de 437 lignes réparties dans 10 fichiers : cinq agents, cio.py et run_board.py.",
+      "Classement, pondération et gate déterministes, puis conclusion narrative par Mistral Large."
     ],
     results: [
-      "Concept et règles de synthèse documentés ; aucune exécution fonctionnelle n'est revendiquée.",
+      "L'audit privé du 29/06/2026 confirme le commit 0b9a4cb et la structure du prototype.",
       "Validation sur cas client réel : pas encore mesurée."
     ],
     limits: [
-      "Source locale non retrouvée lors de l'audit du 27 août 2026.",
-      "Les schémas montrent une direction de produit, pas un POC techniquement prouvé."
+      "Source d'origine et copie de publication absentes après migration ; aucune exécution actuelle n'est possible.",
+      "FastAPI, Celery, Redis et Qdrant apparaissaient dans le README ou les dépendances, pas dans l'implémentation auditée.",
+      "Frontend, tests et documentation applicative étaient vides ; aucun résultat client n'est revendiqué."
     ],
     gallery: [
-      { src: "/assets/proof/board-ia-pme/board-isolated-agents.webp", caption: "Schéma des cinq agents : chacun reçoit une source différente pour produire de vrais points de vue séparés.", width: 1600, height: 960 },
-      { src: "/assets/proof/board-ia-pme/board-orchestration.webp", caption: "Orchestration prévue : les analyses parallèles remontent vers des règles de pondération lisibles, sans sixième modèle opaque.", width: 1600, height: 960 },
-      { src: "/assets/proof/board-ia-pme/board-status.webp", caption: "État honnête du POC : backend et règles posés ; dashboard, export PDF et validation client restent à construire.", width: 1600, height: 960 }
+      { src: "/assets/proof/board-ia-pme/board-isolated-agents-20260828.webp", caption: "Reconstitution éditoriale des cinq rôles du prototype historique ; ce n'est pas une capture d'exécution.", width: 1600, height: 960 },
+      { src: "/assets/proof/board-ia-pme/board-orchestration-20260828.webp", caption: "Structure auditée : cinq agents, règles de classement et conclusion Mistral Large, sans infrastructure distribuée implémentée.", width: 1600, height: 960 },
+      { src: "/assets/proof/board-ia-pme/board-status-20260828.webp", caption: "État vérifié : 437 lignes et 10 fichiers historiques ; source absente, frontend et tests non implémentés.", width: 1600, height: 960 }
     ],
     links: [{ label: "Version Markdown", href: "/projects/board-ia-pme.md" }]
   },

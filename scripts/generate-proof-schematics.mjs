@@ -158,10 +158,10 @@ const diagrams = [
     note: "Architecture issue du pipeline local Godot, Python, FFmpeg, RIFE et YouTube API."
   },
   {
-    file: "rag-starter-kit/rag-document-pipeline.webp",
+    file: "rag-starter-kit/rag-document-pipeline-20260828.webp",
     code: "RAG / DOCUMENTS",
-    title: "Répondre avec les passages sources",
-    subtitle: "Le prototype ingère des documents, retrouve les extraits utiles et garde la citation dans la réponse.",
+    title: "Le parcours du prototype historique",
+    subtitle: "L'audit privé documente l'ingestion, la recherche et les citations ; la source reste à restaurer.",
     nodes: [
       { id: "docs", x: 80, y: 330, w: 250, h: 180, title: "Documents", body: "PDF, DOCX\nTXT, HTML", accent: palette.blue },
       { id: "ingest", x: 390, y: 330, w: 250, h: 180, title: "Ingestion", body: "Extraction\nDécoupage\nMétadonnées", accent: palette.rust },
@@ -170,76 +170,76 @@ const diagrams = [
       { id: "answer", x: 1320, y: 330, w: 200, h: 180, title: "Réponse", body: "Mistral\nCitations", accent: palette.green, max: 18 }
     ],
     edges: [{ from: "docs", to: "ingest" }, { from: "ingest", to: "qdrant" }, { from: "qdrant", to: "retrieve" }, { from: "retrieve", to: "answer" }],
-    note: "Schéma factuel du prototype privé. Aucun score de qualité n'est revendiqué."
+    note: "Reconstitution depuis l'audit privé du 29 juin 2026. Aucune exécution actuelle n'est revendiquée."
   },
   {
-    file: "rag-starter-kit/rag-tenant-isolation.webp",
+    file: "rag-starter-kit/rag-tenant-isolation-20260828.webp",
     code: "RAG / ISOLATION",
-    title: "Séparer les documents de chaque client",
-    subtitle: "L'identité du client borne la recherche, les documents et les journaux d'usage.",
+    title: "L'isolation prévue dans le prototype historique",
+    subtitle: "L'audit documente un client_id sur la recherche, les documents et les journaux d'usage.",
     nodes: [
       { id: "auth", x: 570, y: 220, w: 460, h: 145, title: "Authentification", body: "Clé ou session → tenant_id obligatoire", accent: palette.rust, tag: "ENTRÉE" },
       { id: "a", x: 130, y: 510, w: 550, h: 230, title: "Client A", body: "Collection / filtre A\nDocuments A\nLogs A\nAucun passage de B", accent: palette.blue, tag: "ISOLÉ" },
       { id: "b", x: 920, y: 510, w: 550, h: 230, title: "Client B", body: "Collection / filtre B\nDocuments B\nLogs B\nAucun passage de A", accent: palette.green, tag: "ISOLÉ" }
     ],
     edges: [{ from: "auth", to: "a", label: "tenant A" }, { from: "auth", to: "b", label: "tenant B" }],
-    note: "La séparation par tenant est une contrainte d'architecture, pas une certification de sécurité."
+    note: "Reconstitution historique, pas une certification de sécurité ni un contrôle d'exécution actuel."
   },
   {
-    file: "rag-starter-kit/rag-evaluation-loop.webp",
+    file: "rag-starter-kit/rag-evaluation-loop-20260828.webp",
     code: "RAG / ÉVALUATION",
-    title: "Tester la recherche au lieu de la juger à l'œil",
-    subtitle: "Des cas versionnés permettent de rejouer le retrieval et de comparer une modification.",
+    title: "Les cas d'évaluation retrouvés dans l'audit",
+    subtitle: "Des fichiers de scoring existaient dans le dépôt ; aucun résultat actuel n'est revendiqué.",
     nodes: [
       { id: "cases", x: 110, y: 330, w: 330, h: 200, title: "Cas versionnés", body: "Question\nSources attendues\nRéponse de référence", accent: palette.blue },
       { id: "run", x: 635, y: 330, w: 330, h: 200, title: "Exécution", body: "pytest\nRetrieval\nRéponse générée", accent: palette.rust },
       { id: "report", x: 1160, y: 330, w: 330, h: 200, title: "Rapport", body: "Écarts\nRégressions\nComparaison", accent: palette.green, tag: "HARNAIS" },
-      { id: "limit", x: 520, y: 650, w: 560, h: 130, title: "Limite publiée", body: "Le harnais existe ; aucun score RAG public n'est encore annoncé.", accent: palette.red, tag: "PAS DE SCORE" }
+      { id: "limit", x: 520, y: 650, w: 560, h: 130, title: "Limite publiée", body: "Fichiers historiques présents ; source absente et aucun run actuel.", accent: palette.red, tag: "PAS DE SCORE" }
     ],
     edges: [{ from: "cases", to: "run" }, { from: "run", to: "report" }, { from: "report", to: "cases", label: "corriger", dashed: true }],
-    note: "Boucle de vérification issue des tests et cas de scoring décrits dans le projet."
+    note: "Reconstitution depuis les noms de modules et cas de scoring audités le 29 juin 2026."
   },
   {
-    file: "board-ia-pme/board-isolated-agents.webp",
+    file: "board-ia-pme/board-isolated-agents-20260828.webp",
     code: "BOARD IA / DIVERGENCE",
-    title: "Cinq agents, cinq sources différentes",
-    subtitle: "La divergence vient de l'information disponible, pas de cinq reformulations du même contexte.",
+    title: "Cinq rôles dans le prototype historique",
+    subtitle: "L'audit privé confirme cinq agents Python ; le visuel reconstitue leurs périmètres d'analyse.",
     nodes: [
-      { id: "q", x: 560, y: 210, w: 480, h: 130, title: "Question PME", body: "Même question, périmètres documentaires séparés", accent: palette.rust },
-      { id: "a1", x: 65, y: 490, w: 250, h: 190, title: "Finance", body: "Sources A\nRisques\nCoûts", accent: palette.blue },
-      { id: "a2", x: 370, y: 490, w: 250, h: 190, title: "Marketing", body: "Sources B\nMarché\nClients", accent: palette.cyan },
-      { id: "a3", x: 675, y: 490, w: 250, h: 190, title: "Opérations", body: "Sources C\nProcess\nCapacité", accent: palette.gold },
-      { id: "a4", x: 980, y: 490, w: 250, h: 190, title: "Juridique", body: "Sources D\nContraintes\nExposition", accent: palette.red },
-      { id: "a5", x: 1285, y: 490, w: 250, h: 190, title: "Direction", body: "Sources E\nPriorités\nArbitrage", accent: palette.green }
+      { id: "q", x: 560, y: 210, w: 480, h: 130, title: "Question PME", body: "Même question, cinq rôles d'analyse", accent: palette.rust },
+      { id: "a1", x: 65, y: 490, w: 250, h: 190, title: "Finance", body: "Prompt dédié\nRisques\nCoûts", accent: palette.blue },
+      { id: "a2", x: 370, y: 490, w: 250, h: 190, title: "Marché", body: "Prompt dédié\nConcurrence\nDemande", accent: palette.cyan },
+      { id: "a3", x: 675, y: 490, w: 250, h: 190, title: "Client", body: "Prompt dédié\nBesoins\nFriction", accent: palette.gold },
+      { id: "a4", x: 980, y: 490, w: 250, h: 190, title: "Opérations", body: "Prompt dédié\nProcess\nCapacité", accent: palette.red },
+      { id: "a5", x: 1285, y: 490, w: 250, h: 190, title: "Macro", body: "Prompt dédié\nContexte\nTendances", accent: palette.green }
     ],
     edges: ["a1", "a2", "a3", "a4", "a5"].map((to) => ({ from: "q", to })),
-    note: "Concept du POC privé. Les rôles illustrent l'asymétrie d'information décrite."
+    note: "Reconstitution depuis les fichiers audités ; ce n'est pas une capture d'exécution."
   },
   {
-    file: "board-ia-pme/board-orchestration.webp",
+    file: "board-ia-pme/board-orchestration-20260828.webp",
     code: "BOARD IA / ORCHESTRATION",
-    title: "Orchestrer sans masquer les désaccords",
-    subtitle: "Les tâches tournent en parallèle ; un agrégateur à règles fixes conserve les écarts entre agents.",
+    title: "Ce que faisait réellement l'orchestration",
+    subtitle: "Les règles classent et filtrent ; Mistral Large rédige ensuite la conclusion narrative.",
     nodes: [
-      { id: "api", x: 80, y: 330, w: 260, h: 190, title: "FastAPI", body: "Question\nContexte\nIdentité", accent: palette.blue },
-      { id: "queue", x: 420, y: 330, w: 260, h: 190, title: "Celery / Redis", body: "File de tâches\nParallélisme\nReprise", accent: palette.rust },
-      { id: "agents", x: 760, y: 330, w: 300, h: 190, title: "5 agents", body: "Mistral\nQdrant séparé\nRéponses tracées", accent: palette.cyan },
-      { id: "cio", x: 1140, y: 330, w: 380, h: 190, title: "Agrégateur déterministe", body: "Pondérations visibles\nDésaccords signalés\nPas de 6e LLM", accent: palette.green, tag: "RÈGLES" }
+      { id: "input", x: 70, y: 330, w: 260, h: 190, title: "Entrée", body: "Question\nContexte JSON", accent: palette.blue },
+      { id: "agents", x: 400, y: 330, w: 300, h: 190, title: "5 agents Python", body: "Analyses\nScores\nConfiance", accent: palette.cyan },
+      { id: "cio", x: 770, y: 330, w: 350, h: 190, title: "cio.py", body: "Classement\nPondération\nGate", accent: palette.green, tag: "RÈGLES" },
+      { id: "final", x: 1190, y: 330, w: 330, h: 190, title: "Conclusion", body: "Mistral Large\nRédaction finale", accent: palette.rust, tag: "LLM" }
     ],
-    edges: [{ from: "api", to: "queue" }, { from: "queue", to: "agents" }, { from: "agents", to: "cio" }],
-    note: "Architecture déclarée du POC ; dashboard et export PDF ne sont pas présentés comme livrés."
+    edges: [{ from: "input", to: "agents" }, { from: "agents", to: "cio" }, { from: "cio", to: "final" }],
+    note: "FastAPI, Celery, Redis et Qdrant n'étaient pas implémentés dans les fichiers audités."
   },
   {
-    file: "board-ia-pme/board-status.webp",
+    file: "board-ia-pme/board-status-20260828.webp",
     code: "BOARD IA / STATUT",
-    title: "Ce qui existe et ce qui reste à construire",
-    subtitle: "Le visuel sépare volontairement le socle posé des fonctions encore prévues.",
+    title: "Ce que l'audit a retrouvé, puis ce qui a disparu",
+    subtitle: "Le prototype a existé ; ses octets ne sont plus présents sur les volumes montés.",
     nodes: [
-      { id: "done", x: 115, y: 280, w: 620, h: 420, title: "Implémenté dans le POC", body: "Backend Python\nCinq agents spécialisés\nRAG Qdrant par agent\nAgrégation à règles fixes\nStructure Celery / Redis", accent: palette.green, tag: "FAIT", max: 46, size: 20, leading: 34 },
-      { id: "todo", x: 865, y: 280, w: 620, h: 420, title: "Encore planifié", body: "Dashboard React Flow\nExport PDF\nTests E2E\nValidation client réelle\nMesures d'impact", accent: palette.gold, tag: "À FAIRE", max: 46, size: 20, leading: 34 }
+      { id: "done", x: 115, y: 280, w: 620, h: 420, title: "Audité le 29 juin 2026", body: "437 lignes / 10 fichiers\nCinq agents Python\ncio.py + run_board.py\nCommit 0b9a4cb\nConclusion Mistral Large", accent: palette.green, tag: "HISTORIQUE", max: 46, size: 20, leading: 34 },
+      { id: "todo", x: 865, y: 280, w: 620, h: 420, title: "Non prouvé aujourd'hui", body: "Source à restaurer\nFrontend vide\nTests vides\nInfra distribuée absente\nAucune validation client", accent: palette.gold, tag: "LIMITE", max: 46, size: 20, leading: 34 }
     ],
     edges: [],
-    note: "Statut honnête du projet : POC initié, non terminé et non validé sur un cas client."
+    note: "Reconstitution depuis un audit privé ; aucun repo public ni exécution actuelle."
   },
   {
     file: "pokemon-gen4-toolkit/narc-anatomy.webp",

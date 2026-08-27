@@ -1,5 +1,5 @@
-export const contentReviewDate = "2026-08-27";
-export const contentReviewDateLabel = "27 août 2026";
+export const contentReviewDate = "2026-08-28";
+export const contentReviewDateLabel = "28 août 2026";
 
 export type ClaimStatus =
   | "publicly-verified"
@@ -126,12 +126,12 @@ export const verificationItems: VerificationItem[] = [
     note: "Sources V2 vérifiées le 22/08/2026 ; parcours visuels V3 élève, banquier et professeure rejoués le 26/08/2026. Les captures publiées ne contiennent aucune donnée de mineur. Aucun pilote ni résultat pédagogique n'est revendiqué."
   },
   {
-    id: "non-public-projects",
-    claim: "RAG Starter Kit et Board IA PME restent des concepts sans source locale retrouvée ; Edusemantix et Pokémon Gen-4 Toolkit restent privés.",
+    id: "rag-board-historical-prototypes",
+    claim: "RAG Starter Kit et Board IA PME ont existé comme prototypes privés audités en juin 2026, mais leurs sources d'origine ne sont plus présentes sur les volumes montés.",
     scope: "Projets",
-    status: "removed-pending-proof",
+    status: "private-evidence",
     checkedAt: contentReviewDate,
-    note: "L'audit local du 27/08/2026 a retrouvé les dépôts privés Edusemantix et Pokémon, mais pas les sources de RAG Starter Kit ni de Board IA PME. Aucun dépôt GitHub n'est inventé."
+    note: "Les audits privés du 29/06/2026 documentent l'historique Git et la structure des deux prototypes. Au 28/08/2026, leurs octets sont absents du Mac, des volumes montés et des dépôts GitHub accessibles ; aucune exécution actuelle n'est revendiquée."
   },
   {
     id: "hoopsphere-metrics",

@@ -1,5 +1,5 @@
 {
-  "reviewed_at": "2026-08-27",
+  "reviewed_at": "2026-08-28",
   "methodology": {
     "publicly-verified": "Une source publique directe permet de contrôler l'affirmation.",
     "private-evidence": "La preuve est annoncée comme montrable en entretien, mais n'est pas publiée.",
@@ -12,7 +12,7 @@
       "claim": "Recherche d'un CDI junior à Paris ou en hybride à partir du 1er septembre 2026.",
       "scope": "Positionnement",
       "status": "self-declared",
-      "checkedAt": "2026-08-27",
+      "checkedAt": "2026-08-28",
       "note": "Intention professionnelle déclarée par Jonas Suhard."
     },
     {
@@ -20,7 +20,7 @@
       "claim": "Le titre RNCP41809 « Manager de la stratégie marketing digital » est un niveau 7 actif.",
       "scope": "Formation",
       "status": "publicly-verified",
-      "checkedAt": "2026-08-27",
+      "checkedAt": "2026-08-28",
       "sourceLabel": "France Compétences — RNCP41809",
       "sourceHref": "https://www.francecompetences.fr/recherche/rncp/41809/",
       "note": "Le portfolio indique que Jonas prépare le titre ; il ne prétend pas l'avoir déjà obtenu."
@@ -30,7 +30,7 @@
       "claim": "Le titre RNCP34340 « Chef de projet e-business » correspond à un niveau 6 historique.",
       "scope": "Formation",
       "status": "private-evidence",
-      "checkedAt": "2026-08-27",
+      "checkedAt": "2026-08-28",
       "sourceLabel": "France Compétences — RNCP34340",
       "sourceHref": "https://www.francecompetences.fr/recherche/RNCP/34340/",
       "note": "La fiche publique vérifie le titre ; l'obtention personnelle doit être confirmée par le diplôme."
@@ -40,7 +40,7 @@
       "claim": "L'article associé à l'étude de cas ISCOM est accessible publiquement sur iscom.fr.",
       "scope": "Expérience",
       "status": "publicly-verified",
-      "checkedAt": "2026-08-27",
+      "checkedAt": "2026-08-28",
       "sourceLabel": "Article ISCOM",
       "sourceHref": "https://www.iscom.fr/actualites/lia-change-de-role-les-communicants-aussi",
       "note": "Le lien public prouve la publication, pas l'ensemble des tâches internes décrites."
@@ -50,7 +50,7 @@
       "claim": "L'offre Preuvia et sa méthode d'audit GEO sont présentées sur un site public.",
       "scope": "Projet",
       "status": "publicly-verified",
-      "checkedAt": "2026-08-27",
+      "checkedAt": "2026-08-28",
       "sourceLabel": "Preuvia",
       "sourceHref": "https://preuvia.vercel.app/",
       "note": "Aucun volume de clients ni résultat commercial n'est revendiqué dans le portfolio."
@@ -80,7 +80,7 @@
       "claim": "L'audit live du 2026-08-01 couvre 18 pages publiques contrôlées à 390 px et 1440 px, 36 captures pleine page, 30 images uniques chargées sur le live et cinq scores de performance Lighthouse mobile : Accueil 91, Galerie 87, Compose 97, Méthode 97, Le studio 66.",
       "scope": "Projet",
       "status": "private-evidence",
-      "checkedAt": "2026-08-27",
+      "checkedAt": "2026-08-28",
       "note": "Projet familial non facturé ; aucune vente à un client externe n'est prouvée ; mesures datées du 2026-08-01, non continues."
     },
     {
@@ -92,19 +92,19 @@
       "note": "Sources V2 vérifiées le 22/08/2026 ; parcours visuels V3 élève, banquier et professeure rejoués le 26/08/2026. Les captures publiées ne contiennent aucune donnée de mineur. Aucun pilote ni résultat pédagogique n'est revendiqué."
     },
     {
-      "id": "non-public-projects",
-      "claim": "RAG Starter Kit et Board IA PME restent des concepts sans source locale retrouvée ; Edusemantix et Pokémon Gen-4 Toolkit restent privés.",
+      "id": "rag-board-historical-prototypes",
+      "claim": "RAG Starter Kit et Board IA PME ont existé comme prototypes privés audités en juin 2026, mais leurs sources d'origine ne sont plus présentes sur les volumes montés.",
       "scope": "Projets",
-      "status": "removed-pending-proof",
-      "checkedAt": "2026-08-27",
-      "note": "L'audit local du 27/08/2026 a retrouvé les dépôts privés Edusemantix et Pokémon, mais pas les sources de RAG Starter Kit ni de Board IA PME. Aucun dépôt GitHub n'est inventé."
+      "status": "private-evidence",
+      "checkedAt": "2026-08-28",
+      "note": "Les audits privés du 29/06/2026 documentent l'historique Git et la structure des deux prototypes. Au 28/08/2026, leurs octets sont absents du Mac, des volumes montés et des dépôts GitHub accessibles ; aucune exécution actuelle n'est revendiquée."
     },
     {
       "id": "hoopsphere-metrics",
       "claim": "Les métriques Instagram, emailing, bêta-testeurs et la publication Google Play de HoopSphere ne sont plus citées.",
       "scope": "Projet",
       "status": "removed-pending-proof",
-      "checkedAt": "2026-08-27",
+      "checkedAt": "2026-08-28",
       "note": "Ces chiffres ont été retirés des contenus citables jusqu'à fourniture d'exports et d'un lien public."
     },
     {
@@ -112,7 +112,7 @@
       "claim": "Parcours de formation Anthropic Academy autour de Claude et du développement d'applications.",
       "scope": "Formation",
       "status": "self-declared",
-      "checkedAt": "2026-08-27",
+      "checkedAt": "2026-08-28",
       "sourceLabel": "Anthropic Academy",
       "sourceHref": "https://www.anthropic.com/learn/build-with-claude",
       "note": "Le portfolio parle de formation en cours, pas de certification obtenue."

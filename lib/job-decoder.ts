@@ -47,7 +47,7 @@ const taxonomy = taxonomyJson as Taxonomy;
 const PROFILE_EVIDENCE: Record<string, Omit<EvidenceMatch, "id" | "label">> = {
   "deployed-system": { coverage: "existing", project: { label: "Les Petites Griffes", href: "/projets/les-petites-griffes" }, note: "Site et CMS livrés à une cliente." },
   "evaluation-tests": { coverage: "existing", project: { label: "Preuvia", href: "/projets/preuvia" }, note: "Protocole d'évaluation multi-modèles documenté." },
-  "rag-agents": { coverage: "partial", project: { label: "RAG Starter Kit", href: "/projets/rag-starter-kit" }, note: "Architecture démontrable, sans exploitation à grande échelle revendiquée." },
+  "rag-agents": { coverage: "partial", project: { label: "RAG Starter Kit", href: "/projets/rag-starter-kit" }, note: "Prototype historique audité, source à restaurer et aucune exécution actuelle revendiquée." },
   "security-governance": { coverage: "partial", project: { label: "Cool Bank / La Herse", href: "/projets/educool-la-herse" }, note: "Garde-fous sur données sensibles, sans fonction de conformité formelle." },
   "infrastructure-cloud": { coverage: "partial", project: { label: "Battle Engine", href: "/projets/battle-engine" }, note: "Pipeline automatisé ; expérience MLOps de production non revendiquée." },
   "domain-knowledge": { coverage: "existing", project: { label: "ISCOM", href: "/projets/iscom" }, note: "Workflow métier et validation humaine en environnement professionnel." },

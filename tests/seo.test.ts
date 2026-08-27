@@ -114,7 +114,7 @@ test("le sitemap reflète la date de la dernière revue générale", () => {
   for (const url of modifiedToday) {
     const entry = entries.find((item) => item.url === url);
     assert.ok(entry, `URL absente du sitemap : ${url}`);
-    assert.equal(new Date(entry.lastModified ?? 0).toISOString(), "2026-08-27T00:00:00.000Z");
+    assert.equal(new Date(entry.lastModified ?? 0).toISOString(), "2026-08-28T00:00:00.000Z");
   }
 
   const untouched = entries.find(
@@ -123,6 +123,6 @@ test("le sitemap reflète la date de la dernière revue générale", () => {
   assert.ok(untouched);
   assert.equal(
     new Date(untouched.lastModified ?? 0).toISOString(),
-    "2026-08-27T00:00:00.000Z"
+    "2026-08-28T00:00:00.000Z"
   );
 });

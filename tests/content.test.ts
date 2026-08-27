@@ -217,9 +217,12 @@ test("aucune capture Educool issue d'une classe réelle n'est publiée", () => {
   assert.doesNotMatch(publishedMedia, /données fictives|sans identité réelle d'enfant/i);
 });
 
-test("les projets non retrouvés restent présentés comme des concepts déclaratifs", () => {
+test("les prototypes historiques RAG et Board restent qualifiés par leurs preuves archivées", () => {
   const rag = projects.find((item) => item.slug === "rag-starter-kit");
   const board = projects.find((item) => item.slug === "board-ia-pme");
+  const archivedProof = verificationItems.find(
+    (item) => item.id === "rag-board-historical-prototypes"
+  );
   const edusemantix = projects.find((item) => item.slug === "edusemantix");
   const pokemon = projects.find((item) => item.slug === "pokemon-gen4-toolkit");
   const battle = projects.find((item) => item.slug === "battle-engine");
@@ -227,10 +230,42 @@ test("les projets non retrouvés restent présentés comme des concepts déclara
 
   for (const project of [rag, board]) {
     assert.ok(project);
-    assert.equal(project.evidenceLevel, "self-declared");
-    assert.match(project.status, /source à retrouver/i);
-    assert.match(project.repoStatus ?? "", /source locale non retrouvée/i);
-    assert.doesNotMatch(project.delivered.join("\n"), /backend|frontend|docker|celery|redis|qdrant/i);
+    assert.equal(project.evidenceLevel, "private");
+    assert.match(project.status, /prototype privé historique.*source à restaurer/i);
+    assert.match(project.repoStatus ?? "", /source d'origine.*absente/i);
+    assert.match(project.evidenceNote ?? "", /audit privé.*29 juin 2026/i);
+  }
+  assert.ok(archivedProof);
+  assert.equal(archivedProof.status, "private-evidence");
+  assert.match(archivedProof.note, /octets.*absents/i);
+
+  assert.ok(rag?.stack.includes("Next.js 15"));
+  assert.doesNotMatch(JSON.stringify(rag), /Next\.js 16|tests? (?:verts?|passés?|sans échec)/i);
+  assert.match(rag?.delivered.join("\n") ?? "", /prototype historique/i);
+
+  assert.match(board?.delivered.join("\n") ?? "", /437 lignes.*10 fichiers/i);
+  assert.doesNotMatch(
+    [...(board?.stack ?? []), ...(board?.delivered ?? [])].join("\n"),
+    /FastAPI|Celery|Redis|Qdrant/i
+  );
+  assert.match(board?.limits.join("\n") ?? "", /FastAPI.*pas dans l'implémentation/i);
+  assert.match(JSON.stringify(board), /Mistral Large.*conclusion/i);
+
+  const updatedSchematics = [
+    "rag-starter-kit/rag-document-pipeline-20260828.webp",
+    "rag-starter-kit/rag-tenant-isolation-20260828.webp",
+    "rag-starter-kit/rag-evaluation-loop-20260828.webp",
+    "board-ia-pme/board-isolated-agents-20260828.webp",
+    "board-ia-pme/board-orchestration-20260828.webp",
+    "board-ia-pme/board-status-20260828.webp"
+  ];
+  for (const asset of updatedSchematics) {
+    assert.equal(
+      existsSync(new URL(`../public/assets/proof/${asset}`, import.meta.url)),
+      true,
+      `${asset} manque`
+    );
+    assert.match(JSON.stringify([rag, board]), new RegExp(asset.replaceAll(".", "\\.")));
   }
   assert.match(edusemantix?.status ?? "", /actif.*refonte V2/i);
   assert.doesNotMatch(JSON.stringify(pokemon), /EmulatorJS/i);
@@ -338,7 +373,9 @@ test("les galeries réservent leurs dimensions intrinsèques", () => {
 });
 
 test("le registre ne revendique pas de dépôt GitHub privé invérifiable", () => {
-  const item = verificationItems.find((claim) => claim.id === "non-public-projects");
+  const item = verificationItems.find(
+    (claim) => claim.id === "rag-board-historical-prototypes"
+  );
   assert.ok(item);
   assert.doesNotMatch(item.claim, /dépôts? GitHub|repositories/i);
 });

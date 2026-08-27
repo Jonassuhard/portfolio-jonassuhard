@@ -33,8 +33,8 @@ Je cherche à évoluer vers un rôle de Forward Deployed Engineer. Je veux compr
 - [Capsélys](https://jonassuhard.com/projects/capselys.md) : refonte de conversion sur staging ; le lien externe pointe vers la production actuelle, pas vers le staging audité.
 - [Battle Engine](https://jonassuhard.com/projects/battle-engine.md) : pipeline vidéo Godot, FFmpeg et publication reprenable ; vidéo publique limitée à l'introduction.
 - [HoopSphere](https://jonassuhard.com/projects/hoopsphere.md) : prototype MBA d'application basket ; contribution de Jonas centrée sur le marketing et le business plan.
-- [RAG Starter Kit](https://jonassuhard.com/projects/rag-starter-kit.md) : concept documenté ; source locale non retrouvée le 27/08/2026.
-- [Board IA PME](https://jonassuhard.com/projects/board-ia-pme.md) : concept documenté ; source locale non retrouvée le 27/08/2026.
+- [RAG Starter Kit](https://jonassuhard.com/projects/rag-starter-kit.md) : prototype privé multi-tenant audité en juin 2026 ; historique Git documenté, source absente après migration et aucune exécution actuelle revendiquée.
+- [Board IA PME](https://jonassuhard.com/projects/board-ia-pme.md) : prototype Python historique de 437 lignes et 10 fichiers ; source absente après migration, aucune validation client revendiquée.
 - [Edusemantix](https://jonassuhard.com/projects/edusemantix.md) : lab privé actif, refonte V2 en cours.
 - [Pokémon Gen-4 Toolkit](https://jonassuhard.com/projects/pokemon-gen4-toolkit.md) : archive privée d'outils Python ; aucune ROM ni donnée de jeu publiée.
 - [claude-code-soul](https://jonassuhard.com/projects/claude-code-soul.md) : pack de configuration Claude Code public sous MIT.
@@ -45,4 +45,4 @@ Je cherche à évoluer vers un rôle de Forward Deployed Engineer. Je veux compr
 - [Cortex Bridge](https://github.com/Jonassuhard/cortex-bridge)
 - [claude-code-soul](https://github.com/Jonassuhard/claude-code-soul)
 
-Revue générale : 2026-08-27. Cortex Bridge v0.5.3 vérifié le 2026-08-26.
+Revue générale : 2026-08-28. Cortex Bridge v0.5.3 vérifié le 2026-08-26.
