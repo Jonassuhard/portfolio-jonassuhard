@@ -1,6 +1,8 @@
 import assert from "node:assert/strict";
 import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
 import test from "node:test";
+import { fileURLToPath } from "node:url";
+import sharp from "sharp";
 import { knowledgePages } from "../lib/knowledge";
 import { featuredProjects, projects, recruiterFeatured, site } from "../lib/projects";
 import { verificationItems } from "../lib/verification";
@@ -66,6 +68,26 @@ test("les cartes de projets exposent leurs destinations publiques vérifiées", 
       ),
       `${slug} n'expose pas ${destination.label} sur sa carte`
     );
+  }
+});
+
+test("les cartes projet utilisent des illustrations bitmap transparentes en couleur", async () => {
+  assert.equal(projects.length, 13);
+  assert.equal(
+    existsSync(new URL("../scripts/generate-card-schematics.mjs", import.meta.url)),
+    false,
+    "l'ancien générateur de schémas ne doit plus pouvoir écraser les illustrations"
+  );
+
+  for (const project of projects) {
+    assert.match(project.image, /-art\.webp$/, `${project.slug} utilise encore une URL d'image mise en cache`);
+    assert.equal(project.fullColorMedia, true, `${project.slug} perd encore sa couleur`);
+    const assetUrl = new URL(`../public${project.image}`, import.meta.url);
+    assert.ok(existsSync(assetUrl), `Illustration absente pour ${project.slug}`);
+    const metadata = await sharp(fileURLToPath(assetUrl)).metadata();
+    assert.equal(metadata.width, 760, `${project.slug} n'est pas large de 760 px`);
+    assert.equal(metadata.height, 460, `${project.slug} n'est pas haut de 460 px`);
+    assert.equal(metadata.hasAlpha, true, `${project.slug} n'a pas de transparence réelle`);
   }
 });
 
@@ -135,10 +157,10 @@ test("Cool Bank raconte deux versions 3D distinctes avant ses statuts techniques
   assert.doesNotMatch(storyComponent, /version\.limits/);
 });
 
-test("la carte Cool Bank utilise le schéma d'archive et non l'écran de rôles", () => {
+test("la carte Cool Bank utilise l'illustration des deux mondes et non l'écran de rôles", () => {
   const project = projects.find((item) => item.slug === "educool-la-herse");
-  const schematic = new URL(
-    "../public/assets/cards/cool-bank-schema.webp",
+  const illustration = new URL(
+    "../public/assets/cards/cool-bank-art.webp",
     import.meta.url
   );
   const formerScreen = new URL(
@@ -147,23 +169,9 @@ test("la carte Cool Bank utilise le schéma d'archive et non l'écran de rôles"
   );
 
   assert.ok(project);
-  assert.equal(project.image, "/assets/cards/cool-bank-schema.webp");
-  assert.equal(existsSync(schematic), true);
+  assert.equal(project.image, "/assets/cards/cool-bank-art.webp");
+  assert.equal(existsSync(illustration), true);
   assert.equal(existsSync(formerScreen), false);
-});
-
-test("le générateur de la carte Cool Bank décrit deux versions 3D", () => {
-  const generator = new URL(
-    "../scripts/generate-card-schematics.mjs",
-    import.meta.url
-  );
-
-  assert.equal(existsSync(generator), true);
-  const source = readFileSync(generator, "utf8");
-  assert.match(source, /V2 · 3D LOCALE/);
-  assert.match(source, /V3 · 3D SÉPARÉE/);
-  assert.match(source, /ÉLÈVE · BANQUIER · ENSEIGNANTE/);
-  assert.doesNotMatch(source, /V2[^\n]*2D/);
 });
 
 test("Cortex Bridge reste une preuve logicielle publique et qualifiée", () => {

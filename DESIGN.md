@@ -203,6 +203,8 @@ Le texte réel est présent dès la première frame. L'aberration cyan et rouge 
 
 Le premier niveau conserve image, résumé et preuves complètes. Les niveaux secondaires affichent une image plus basse et une ligne de preuve courte, sans supprimer les informations des pages détaillées. Toute la carte peut être cliquable, mais les liens secondaires restent utilisables au clavier.
 
+Chaque vignette utilise un bitmap WebP de 760 × 460 avec transparence réelle. Elle mélange la couleur et le symbole propres au projet avec la composition Archive Worldline : titre court à gauche, un seul emblème lisible à droite, repères techniques très rares. Les scènes détaillées, schémas génériques et générateurs SVG de cartes sont exclus ; les couleurs des projets restent affichées sans filtre sépia.
+
 ### Boutons et liens
 
 Le bouton primaire est encre sur papier inversé ; le secondaire reste papier avec bordure d'encre. Le focus clavier utilise un contour rouille de 2 px. Les libellés sont des commandes concrètes : consulter, télécharger, contacter, analyser.
