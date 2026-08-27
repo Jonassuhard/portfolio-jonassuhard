@@ -22,6 +22,7 @@ Je cherche à évoluer vers un rôle de Forward Deployed Engineer. Je veux compr
 
 ## Projets à lire d'abord
 
+- [Job Radar Community](https://jonassuhard.com/projects/job-radar.md) : radar d'offres local et configurable qui normalise les annonces et explique séparément pertinence, confiance et fraîcheur. Preuve v0.1.0-beta.1 publique : 234 tests backend, 30 frontend et 37 E2E sans échec sur un corpus de 42 offres fictives ; 8 E2E ignorés intentionnellement. Aucune auto-candidature ; LinkedIn, Indeed et Welcome to the Jungle restent manual_only.
 - [Cortex Bridge](https://jonassuhard.com/projects/cortex-bridge.md) : agent de code local open source qui utilise ChatGPT comme cerveau ; l'utilisateur valide avant l'exécution. Tag v0.5.3 public et preuve datée ; preview macOS/Chrome opt-in, sans affiliation OpenAI.
 - [Les Petites Griffes](https://jonassuhard.com/projects/les-petites-griffes.md) : site live, CMS et assistant IA cadré ; audit privé daté, projet familial non facturé.
 - [Cool Bank / La Herse](https://jonassuhard.com/projects/educool-la-herse.md) : une banque de classe transformée en monde 3D avec trois rôles. La V2 est déjà jouable localement sur un appareil (`LOCAL_SINGLE_DEVICE_READY`) ; la V3 est une reconstruction séparée en recette humaine (`READY_FOR_HUMAN_RECIPE`). Captures publiques sans donnée de mineur ; aucun pilote revendiqué.
@@ -42,7 +43,8 @@ Je cherche à évoluer vers un rôle de Forward Deployed Engineer. Je veux compr
 ## Code public
 
 - [Portfolio](https://github.com/Jonassuhard/portfolio-jonassuhard)
+- [Job Radar Community](https://github.com/Jonassuhard/job-radar-community)
 - [Cortex Bridge](https://github.com/Jonassuhard/cortex-bridge)
 - [claude-code-soul](https://github.com/Jonassuhard/claude-code-soul)
 
-Revue générale : 2026-08-28. Cortex Bridge v0.5.3 vérifié le 2026-08-26.
+Revue générale : 2026-08-28. Job Radar Community vérifié le 2026-08-27 ; Cortex Bridge v0.5.3 vérifié le 2026-08-26.

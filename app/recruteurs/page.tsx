@@ -75,7 +75,7 @@ export default function RecruitersPage() {
               </tr>
               <tr>
                 <th scope="row">Code</th>
-                <td>Visible sur GitHub : ce portfolio et claude-code-soul. Le code client reste privé.</td>
+                <td>Visible sur GitHub : Job Radar, Cortex Bridge, ce portfolio et claude-code-soul. Le code client reste privé.</td>
               </tr>
             </tbody>
           </table>
@@ -174,8 +174,9 @@ export default function RecruitersPage() {
             <h2>Trois projets qui montrent comment je travaille.</h2>
           </div>
           <p>
-            Un produit IA open source, un site familial en production et un
-            besoin de classe transformé en produit local testable.
+            Un radar d'offres configurable, un agent de code local et un site
+            familial en production. Trois produits différents, avec la même
+            discipline : cadrer, construire, vérifier et documenter.
           </p>
         </div>
         <div className="proof-grid">

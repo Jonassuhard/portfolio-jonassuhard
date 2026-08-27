@@ -107,6 +107,7 @@ test("le sitemap reflète la date de la dernière revue générale", () => {
     "https://jonassuhard.com/",
     "https://jonassuhard.com/recruteurs",
     "https://jonassuhard.com/projets",
+    "https://jonassuhard.com/projets/job-radar",
     "https://jonassuhard.com/projets/educool-la-herse",
     "https://jonassuhard.com/llms.txt"
   ];

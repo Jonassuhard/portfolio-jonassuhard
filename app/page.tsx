@@ -42,16 +42,16 @@ export default function HomePage() {
           <p className="ledger-title">Trois preuves à lire</p>
           <div className="stats-list">
             <div className="stat-item">
+              <strong>Job Radar</strong>
+              <span>Un radar d'offres local, configurable et entièrement explicable.</span>
+            </div>
+            <div className="stat-item">
               <strong>Cortex Bridge</strong>
               <span>Un agent de code local open source qui utilise ChatGPT comme cerveau.</span>
             </div>
             <div className="stat-item">
               <strong>Les Petites Griffes</strong>
               <span>Un site familial en production, avec CMS et assistant IA cadré.</span>
-            </div>
-            <div className="stat-item">
-              <strong>Cool Bank / La Herse</strong>
-              <span>Une banque de classe transformée en monde 3D avec trois rôles.</span>
             </div>
           </div>
         </aside>
@@ -69,9 +69,9 @@ export default function HomePage() {
             <h2>Mes trois projets les plus solides.</h2>
           </div>
           <p>
-            Cortex Bridge, Les Petites Griffes et Cool Bank / La Herse : un
-            agent de code local piloté par ChatGPT, un site familial en
-            production et un jeu scolaire dont les deux versions sont séparées.
+            Job Radar, Cortex Bridge et Les Petites Griffes : un produit de
+            recherche d'emploi configurable, un agent de code local et un site
+            familial en production, avec leurs preuves et leurs limites.
           </p>
         </div>
 

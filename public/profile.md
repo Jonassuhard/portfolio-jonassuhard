@@ -46,6 +46,8 @@ Paris, France. CDI à Paris ou hybride, disponible à partir du 1er septembre 20
 
 - Next.js
 - React
+- FastAPI
+- SQLite
 - Firebase
 - Supabase
 - Python
@@ -53,6 +55,7 @@ Paris, France. CDI à Paris ou hybride, disponible à partir du 1er septembre 20
 
 ## Projets principaux
 
+- Job Radar Community : radar d'offres local, configurable et open source. Il normalise les annonces, retire les doublons et explique séparément pertinence, confiance et fraîcheur, sans publier le CV ni envoyer de candidature. La preuve v0.1.0-beta.1 rapporte 234 tests backend, 30 tests frontend et 37 tests E2E sans échec, plus 20 combinaisons route/viewport sans violation Axe ni débordement ; 8 scénarios E2E sont ignorés intentionnellement. Le corpus public contient 42 offres fictives et LinkedIn, Indeed et Welcome to the Jungle restent manual_only.
 - Cortex Bridge : agent de code local open source qui utilise ChatGPT comme cerveau. ChatGPT analyse et planifie ; l'utilisateur valide ; Cortex exécute dans le dossier choisi et garde une trace. Le tag public v0.5.3 rapporte 629 tests backend, 155 frontend, 126 extension, 12 E2E et 4 accessibilité sans échec ; 1 E2E est ignoré. La preview macOS/Chrome est optionnelle, non affiliée à OpenAI ; le cycle macOS propre n'a pas été rejoué pour ce tag.
 - Les Petites Griffes : L'audit live du 2026-08-01 couvre 18 pages publiques contrôlées à 390 px et 1440 px, 36 captures pleine page, 30 images uniques chargées sur le live et cinq scores de performance Lighthouse mobile : Accueil 91, Galerie 87, Compose 97, Méthode 97, Le studio 66. Projet familial non facturé ; aucune vente à un client externe n'est prouvée ; mesures datées du 2026-08-01, non continues. Audit complet privé, montrable en entretien ; il n'est pas publié comme preuve publique autonome.
 - Cool Bank / La Herse : banque de classe transformée en monde 3D avec trois rôles. La V2 est déjà jouable localement sur un appareil ; la V3 est une reconstruction séparée plus large, encore en recette humaine. Les captures publiées sont des écrans de démonstration sans donnée de mineur.
@@ -70,6 +73,7 @@ Paris, France. CDI à Paris ou hybride, disponible à partir du 1er septembre 20
 
 - Registre des preuves : https://jonassuhard.com/preuves
 - Revue générale des contenus : 2026-08-28
+- Job Radar Community : preuve v0.1.0-beta.1 vérifiée le 2026-08-27
 - Cortex Bridge : tag v0.5.3 vérifié le 2026-08-26
 - Cool Bank V2 : vérifiée le 2026-08-22
 - Cool Bank V3 : parcours visuels vérifiés le 2026-08-26
@@ -78,5 +82,6 @@ Paris, France. CDI à Paris ou hybride, disponible à partir du 1er septembre 20
 
 - Email: contact@jonassuhard.com
 - GitHub: https://github.com/Jonassuhard
+- Job Radar Community : https://github.com/Jonassuhard/job-radar-community
 - Code du portfolio : https://github.com/Jonassuhard/portfolio-jonassuhard
 - LinkedIn: https://www.linkedin.com/in/jonas-suhard-b73923245/
