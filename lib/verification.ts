@@ -1,5 +1,5 @@
-export const contentReviewDate = "2026-08-15";
-export const contentReviewDateLabel = "15 août 2026";
+export const contentReviewDate = "2026-08-27";
+export const contentReviewDateLabel = "27 août 2026";
 
 export type ClaimStatus =
   | "publicly-verified"
@@ -94,20 +94,20 @@ export const verificationItems: VerificationItem[] = [
     claim: "Le code de Cortex Bridge est public sur GitHub sous licence MIT.",
     scope: "Projet",
     status: "publicly-verified",
-    checkedAt: "2026-08-22",
+    checkedAt: "2026-08-27",
     sourceLabel: "Repo GitHub Cortex Bridge",
     sourceHref: "https://github.com/Jonassuhard/cortex-bridge",
-    note: "Le dépôt public, sa branche principale et sa licence ont été contrôlés le 22/08/2026."
+    note: "Le dépôt public, sa branche principale et sa licence ont été contrôlés le 27/08/2026."
   },
   {
-    id: "cortex-bridge-release-0-5-2",
-    claim: "La preuve de release Cortex Bridge v0.5.2 rapporte 434 tests backend, 127 frontend, 56 extension, 12 E2E et 4 accessibilité sans échec ; un test E2E est ignoré.",
+    id: "cortex-bridge-release-0-5-3",
+    claim: "La preuve du tag Cortex Bridge v0.5.3 rapporte 629 tests backend, 155 frontend, 126 extension, 12 E2E et 4 accessibilité sans échec ; un test E2E est ignoré.",
     scope: "Projet",
     status: "publicly-verified",
-    checkedAt: "2026-08-22",
-    sourceLabel: "Preuve de release Cortex Bridge v0.5.2",
-    sourceHref: "https://github.com/Jonassuhard/cortex-bridge/blob/64af9ce1e88dea8404acb11893eb96d75dd1baaa/docs/verification/v0.5.2.json",
-    note: "Résultats automatisés datés et publiés dans le dépôt. Le document signale un environnement de simulation ; il ne prouve pas une compatibilité continue avec ChatGPT."
+    checkedAt: "2026-08-26",
+    sourceLabel: "Preuve du tag Cortex Bridge v0.5.3",
+    sourceHref: "https://github.com/Jonassuhard/cortex-bridge/blob/v0.5.3/docs/verification/v0.5.3.json",
+    note: "Résultats automatisés datés et publiés dans le dépôt. Le document signale un environnement de simulation : il ne prouve pas une compatibilité continue avec ChatGPT. Le cycle macOS propre n'a pas été rejoué pour ce tag ; la dernière preuve complète correspond à la v0.5.2."
   },
   {
     id: "lpg-live-audit-2026-08-01",
@@ -123,15 +123,15 @@ export const verificationItems: VerificationItem[] = [
     scope: "Projet",
     status: "private-evidence",
     checkedAt: "2026-08-26",
-    note: "Sources V2 vérifiées le 22/08/2026 ; parcours visuels V3 élève, banquier et professeure rejoués le 26/08/2026 sur données fictives. Aucun pilote ni résultat pédagogique n'est revendiqué."
+    note: "Sources V2 vérifiées le 22/08/2026 ; parcours visuels V3 élève, banquier et professeure rejoués le 26/08/2026. Les captures publiées ne contiennent aucune donnée de mineur. Aucun pilote ni résultat pédagogique n'est revendiqué."
   },
   {
     id: "non-public-projects",
-    claim: "Le code de RAG Starter Kit, Board IA PME, Edusemantix et Pokémon Gen-4 Toolkit n'est pas public à ce jour.",
+    claim: "RAG Starter Kit et Board IA PME restent des concepts sans source locale retrouvée ; Edusemantix et Pokémon Gen-4 Toolkit restent privés.",
     scope: "Projets",
     status: "removed-pending-proof",
     checkedAt: contentReviewDate,
-    note: "Aucun dépôt GitHub précis n'est revendiqué tant qu'un lien public vérifiable n'est pas disponible."
+    note: "L'audit local du 27/08/2026 a retrouvé les dépôts privés Edusemantix et Pokémon, mais pas les sources de RAG Starter Kit ni de Board IA PME. Aucun dépôt GitHub n'est inventé."
   },
   {
     id: "hoopsphere-metrics",

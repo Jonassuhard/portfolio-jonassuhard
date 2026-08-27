@@ -24,7 +24,7 @@ La banque existait déjà dans la classe. Le projet lui donne des lieux, des per
 
 État public : Jouable localement sur un appareil.
 
-La V2 relie déjà un monde 3D multijoueur, les trois rôles et Educool. Elle permet de parcourir l'expérience localement sur un appareil avec des données fictives.
+La V2 relie déjà un monde 3D à architecture multijoueur, les trois rôles et Educool. La boucle a été validée localement sur un appareil avec des profils de démonstration.
 
 ### V3 — Reconstruction séparée plus large
 
@@ -34,7 +34,7 @@ La V3 est une reconstruction séparée, avec une carte, une architecture et un p
 
 ## Ce que Jonas a fait
 
-- V2 : jeu local multijoueur, trois rôles, quêtes, maisons, mini-jeux et pont Educool/Firebase.
+- V2 : prototype local à architecture multijoueur, validé sur un appareil avec trois rôles, quêtes, maisons, mini-jeux et pont Educool/Firebase.
 - V3 : monde 3D, économie centicool serveur, 22 zones, marchands, PNJ et maisons complètes.
 - Interface Educool : authentification, rôles, règles Firestore, Cloud Functions et suivi scolaire.
 - Harnais de tests, preuves responsive, manifestes de candidate et scripts de démarrage/arrêt locaux.
@@ -47,15 +47,15 @@ La V2 permet déjà de vivre la boucle 3D sur un appareil. La V3 élargit le pro
 - Relier le jeu, les trois rôles, Firebase, la sécurité et les tests.
 - Dire clairement ce qui fonctionne et ce qui reste bloqué avant un pilote.
 
-Preuves privées et datées : état V2 vérifié le 22/08/2026 ; parcours visuels V3 rejoués le 26/08/2026. Les démonstrations utilisent uniquement des données fictives ; aucune donnée de mineur n'est publiée.
+Preuves privées et datées : état V2 vérifié le 22/08/2026 ; parcours visuels V3 rejoués le 26/08/2026. Les captures publiées sont des écrans de démonstration sans donnée de mineur.
 
 ## Visuels
 
 ### V3 — la reconstruction locale
 
-Captures réelles du 26 août 2026 sur données fictives. Elles montrent les trois rôles et des interactions rejouées localement, pas une validation en classe.
+Captures réelles du 26 août 2026 avec des profils de démonstration. Elles montrent les trois rôles et des interactions rejouées localement, pas une validation en classe.
 
-![V3 : l'élève entre dans le bourg, découvre sa première quête et apprend à déplacer la caméra.](/assets/proof/educool/cool-bank-v3-world.webp)
+![V3 : l'élève entre dans le bourg, découvre sa première quête et apprend à déplacer la caméra.](/assets/proof/educool/cool-bank-v3-world-20260826.webp)
 
 ![V3 : élève, banquier et professeure entrent avec des responsabilités différentes.](/assets/proof/educool/cool-bank-v3-roles.webp)
 
@@ -75,15 +75,7 @@ La V2 est déjà un monde 3D multijoueur. Ces écrans prouvent la boucle locale 
 
 ![V2 : le guichet banquier encadre le camarade, le motif, le montant et le registre du jour.](/assets/proof/educool/cool-bank-v2-banker.webp)
 
-### Educool — l'outil de pilotage
-
-Educool reste séparé du jeu. Il sert à suivre la classe et produire les documents utiles sans exposer les données réelles dans le portfolio.
-
-![Tableau de bord Educool sur données fictives, sans identité réelle d'enfant.](/assets/proof/educool/educool-dashboard.webp)
-
-![Saisie des progressions dans l'interface de travail de l'enseignante.](/assets/proof/educool/educool-saisie-ceintures.webp)
-
-![Aperçu et génération des livrets depuis l'outil Educool associé.](/assets/proof/educool/educool-livrets.webp)
+![V2 : la télécommande donne à l'enseignante les commandes de classe sans afficher de donnée d'élève.](/assets/proof/educool/cool-bank-v2-teacher.webp)
 
 
 ## Limites

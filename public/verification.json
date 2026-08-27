@@ -1,5 +1,5 @@
 {
-  "reviewed_at": "2026-08-15",
+  "reviewed_at": "2026-08-27",
   "methodology": {
     "publicly-verified": "Une source publique directe permet de contrôler l'affirmation.",
     "private-evidence": "La preuve est annoncée comme montrable en entretien, mais n'est pas publiée.",
@@ -12,7 +12,7 @@
       "claim": "Recherche d'un CDI junior à Paris ou en hybride à partir du 1er septembre 2026.",
       "scope": "Positionnement",
       "status": "self-declared",
-      "checkedAt": "2026-08-15",
+      "checkedAt": "2026-08-27",
       "note": "Intention professionnelle déclarée par Jonas Suhard."
     },
     {
@@ -20,7 +20,7 @@
       "claim": "Le titre RNCP41809 « Manager de la stratégie marketing digital » est un niveau 7 actif.",
       "scope": "Formation",
       "status": "publicly-verified",
-      "checkedAt": "2026-08-15",
+      "checkedAt": "2026-08-27",
       "sourceLabel": "France Compétences — RNCP41809",
       "sourceHref": "https://www.francecompetences.fr/recherche/rncp/41809/",
       "note": "Le portfolio indique que Jonas prépare le titre ; il ne prétend pas l'avoir déjà obtenu."
@@ -30,7 +30,7 @@
       "claim": "Le titre RNCP34340 « Chef de projet e-business » correspond à un niveau 6 historique.",
       "scope": "Formation",
       "status": "private-evidence",
-      "checkedAt": "2026-08-15",
+      "checkedAt": "2026-08-27",
       "sourceLabel": "France Compétences — RNCP34340",
       "sourceHref": "https://www.francecompetences.fr/recherche/RNCP/34340/",
       "note": "La fiche publique vérifie le titre ; l'obtention personnelle doit être confirmée par le diplôme."
@@ -40,7 +40,7 @@
       "claim": "L'article associé à l'étude de cas ISCOM est accessible publiquement sur iscom.fr.",
       "scope": "Expérience",
       "status": "publicly-verified",
-      "checkedAt": "2026-08-15",
+      "checkedAt": "2026-08-27",
       "sourceLabel": "Article ISCOM",
       "sourceHref": "https://www.iscom.fr/actualites/lia-change-de-role-les-communicants-aussi",
       "note": "Le lien public prouve la publication, pas l'ensemble des tâches internes décrites."
@@ -50,7 +50,7 @@
       "claim": "L'offre Preuvia et sa méthode d'audit GEO sont présentées sur un site public.",
       "scope": "Projet",
       "status": "publicly-verified",
-      "checkedAt": "2026-08-15",
+      "checkedAt": "2026-08-27",
       "sourceLabel": "Preuvia",
       "sourceHref": "https://preuvia.vercel.app/",
       "note": "Aucun volume de clients ni résultat commercial n'est revendiqué dans le portfolio."
@@ -60,27 +60,27 @@
       "claim": "Le code de Cortex Bridge est public sur GitHub sous licence MIT.",
       "scope": "Projet",
       "status": "publicly-verified",
-      "checkedAt": "2026-08-22",
+      "checkedAt": "2026-08-27",
       "sourceLabel": "Repo GitHub Cortex Bridge",
       "sourceHref": "https://github.com/Jonassuhard/cortex-bridge",
-      "note": "Le dépôt public, sa branche principale et sa licence ont été contrôlés le 22/08/2026."
+      "note": "Le dépôt public, sa branche principale et sa licence ont été contrôlés le 27/08/2026."
     },
     {
-      "id": "cortex-bridge-release-0-5-2",
-      "claim": "La preuve de release Cortex Bridge v0.5.2 rapporte 434 tests backend, 127 frontend, 56 extension, 12 E2E et 4 accessibilité sans échec ; un test E2E est ignoré.",
+      "id": "cortex-bridge-release-0-5-3",
+      "claim": "La preuve du tag Cortex Bridge v0.5.3 rapporte 629 tests backend, 155 frontend, 126 extension, 12 E2E et 4 accessibilité sans échec ; un test E2E est ignoré.",
       "scope": "Projet",
       "status": "publicly-verified",
-      "checkedAt": "2026-08-22",
-      "sourceLabel": "Preuve de release Cortex Bridge v0.5.2",
-      "sourceHref": "https://github.com/Jonassuhard/cortex-bridge/blob/64af9ce1e88dea8404acb11893eb96d75dd1baaa/docs/verification/v0.5.2.json",
-      "note": "Résultats automatisés datés et publiés dans le dépôt. Le document signale un environnement de simulation ; il ne prouve pas une compatibilité continue avec ChatGPT."
+      "checkedAt": "2026-08-26",
+      "sourceLabel": "Preuve du tag Cortex Bridge v0.5.3",
+      "sourceHref": "https://github.com/Jonassuhard/cortex-bridge/blob/v0.5.3/docs/verification/v0.5.3.json",
+      "note": "Résultats automatisés datés et publiés dans le dépôt. Le document signale un environnement de simulation : il ne prouve pas une compatibilité continue avec ChatGPT. Le cycle macOS propre n'a pas été rejoué pour ce tag ; la dernière preuve complète correspond à la v0.5.2."
     },
     {
       "id": "lpg-live-audit-2026-08-01",
       "claim": "L'audit live du 2026-08-01 couvre 18 pages publiques contrôlées à 390 px et 1440 px, 36 captures pleine page, 30 images uniques chargées sur le live et cinq scores de performance Lighthouse mobile : Accueil 91, Galerie 87, Compose 97, Méthode 97, Le studio 66.",
       "scope": "Projet",
       "status": "private-evidence",
-      "checkedAt": "2026-08-15",
+      "checkedAt": "2026-08-27",
       "note": "Projet familial non facturé ; aucune vente à un client externe n'est prouvée ; mesures datées du 2026-08-01, non continues."
     },
     {
@@ -89,22 +89,22 @@
       "scope": "Projet",
       "status": "private-evidence",
       "checkedAt": "2026-08-26",
-      "note": "Sources V2 vérifiées le 22/08/2026 ; parcours visuels V3 élève, banquier et professeure rejoués le 26/08/2026 sur données fictives. Aucun pilote ni résultat pédagogique n'est revendiqué."
+      "note": "Sources V2 vérifiées le 22/08/2026 ; parcours visuels V3 élève, banquier et professeure rejoués le 26/08/2026. Les captures publiées ne contiennent aucune donnée de mineur. Aucun pilote ni résultat pédagogique n'est revendiqué."
     },
     {
       "id": "non-public-projects",
-      "claim": "Le code de RAG Starter Kit, Board IA PME, Edusemantix et Pokémon Gen-4 Toolkit n'est pas public à ce jour.",
+      "claim": "RAG Starter Kit et Board IA PME restent des concepts sans source locale retrouvée ; Edusemantix et Pokémon Gen-4 Toolkit restent privés.",
       "scope": "Projets",
       "status": "removed-pending-proof",
-      "checkedAt": "2026-08-15",
-      "note": "Aucun dépôt GitHub précis n'est revendiqué tant qu'un lien public vérifiable n'est pas disponible."
+      "checkedAt": "2026-08-27",
+      "note": "L'audit local du 27/08/2026 a retrouvé les dépôts privés Edusemantix et Pokémon, mais pas les sources de RAG Starter Kit ni de Board IA PME. Aucun dépôt GitHub n'est inventé."
     },
     {
       "id": "hoopsphere-metrics",
       "claim": "Les métriques Instagram, emailing, bêta-testeurs et la publication Google Play de HoopSphere ne sont plus citées.",
       "scope": "Projet",
       "status": "removed-pending-proof",
-      "checkedAt": "2026-08-15",
+      "checkedAt": "2026-08-27",
       "note": "Ces chiffres ont été retirés des contenus citables jusqu'à fourniture d'exports et d'un lien public."
     },
     {
@@ -112,7 +112,7 @@
       "claim": "Parcours de formation Anthropic Academy autour de Claude et du développement d'applications.",
       "scope": "Formation",
       "status": "self-declared",
-      "checkedAt": "2026-08-15",
+      "checkedAt": "2026-08-27",
       "sourceLabel": "Anthropic Academy",
       "sourceHref": "https://www.anthropic.com/learn/build-with-claude",
       "note": "Le portfolio parle de formation en cours, pas de certification obtenue."

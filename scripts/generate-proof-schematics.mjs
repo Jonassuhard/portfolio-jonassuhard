@@ -311,20 +311,6 @@ const diagrams = [
     ],
     edges: [{ from: "action", to: "touch" }, { from: "touch", to: "secrets" }, { from: "secrets", to: "logs" }, { from: "logs", to: "done" }],
     note: "Schéma construit depuis les hooks et règles publiés ; ce n'est pas un audit de sécurité tiers."
-  },
-  {
-    file: "claude-code-soul/soul-install-flow.webp",
-    code: "CLAUDE-CODE-SOUL / INSTALL",
-    title: "Installer, adapter, puis charger à la demande",
-    subtitle: "Le dépôt fournit une base réutilisable ; l'identité et les briques tierces restent à adapter.",
-    nodes: [
-      { id: "clone", x: 90, y: 330, w: 300, h: 190, title: "Cloner", body: "Repo MIT\nDocs\n.env.example", accent: palette.blue },
-      { id: "adapt", x: 465, y: 330, w: 300, h: 190, title: "Adapter", body: "Identité\nTon\nVariables", accent: palette.rust },
-      { id: "dry", x: 840, y: 330, w: 300, h: 190, title: "Vérifier", body: "setup --dry-run\ngitleaks\n0 chemin perso", accent: palette.gold },
-      { id: "load", x: 1215, y: 330, w: 300, h: 190, title: "Charger", body: "Skills à la demande\nMCP lazy-load\nHooks ciblés", accent: palette.green }
-    ],
-    edges: [{ from: "clone", to: "adapt" }, { from: "adapt", to: "dry" }, { from: "dry", to: "load" }],
-    note: "Le dépôt n'est pas plug-and-play : soul.md et l'environnement doivent être personnalisés."
   }
 ];
 

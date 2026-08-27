@@ -195,8 +195,9 @@ export const projects: Project[] = [
     tier: 1,
     image: "/assets/cards/les-petites-griffes-art.webp",
     fullColorMedia: true,
+    video: "/assets/video/les-petites-griffes.mp4",
     repoStatus: "Privé, code et données client",
-    liveLabel: "Live · URL communiquée en entretien",
+    liveLabel: "Site public",
     evidenceNote:
       "Captures anonymisées, démo privée et audit live daté du 2026-08-01. L'audit complet reste une preuve privée montrable en entretien, pas une source publique autonome.",
     metaDescription:
@@ -291,17 +292,17 @@ export const projects: Project[] = [
     tier: 1,
     image: "/assets/cards/cool-bank-art.webp",
     heroImage: {
-      src: "/assets/proof/educool/cool-bank-v3-world.webp",
+      src: "/assets/proof/educool/cool-bank-v3-world-20260826.webp",
       caption: "Capture locale V3 : l'élève entre dans le bourg, découvre sa première quête et prend ses repères dans le monde 3D.",
-      width: 1440,
-      height: 900
+      width: 1280,
+      height: 800
     },
     fullColorMedia: true,
     cardStatus: "Prototype local · trois rôles · données fictives",
     repoStatus: "Dépôts privés, données scolaires exclues des preuves",
     liveLabel: "Démo locale sur données fictives",
     evidenceNote:
-      "Preuves privées et datées : état V2 vérifié le 22/08/2026 ; parcours visuels V3 rejoués le 26/08/2026. Les démonstrations utilisent uniquement des données fictives ; aucune donnée de mineur n'est publiée.",
+      "Preuves privées et datées : état V2 vérifié le 22/08/2026 ; parcours visuels V3 rejoués le 26/08/2026. Les captures publiées sont des écrans de démonstration sans donnée de mineur.",
     metaDescription:
       "Cool Bank transforme une banque de classe en monde 3D partagé : élève, banquier et enseignante y vivent trois responsabilités différentes.",
     cardLine:
@@ -334,10 +335,10 @@ export const projects: Project[] = [
           kicker: "Reconstruction V3",
           title: "V3 — la reconstruction locale",
           description:
-            "Captures réelles du 26 août 2026 sur données fictives. Elles montrent les trois rôles et des interactions rejouées localement, pas une validation en classe.",
+            "Captures réelles du 26 août 2026 avec des profils de démonstration. Elles montrent les trois rôles et des interactions rejouées localement, pas une validation en classe.",
           featuredFirst: true,
           images: [
-            { src: "/assets/proof/educool/cool-bank-v3-world.webp", caption: "V3 : l'élève entre dans le bourg, découvre sa première quête et apprend à déplacer la caméra.", width: 1440, height: 900 },
+            { src: "/assets/proof/educool/cool-bank-v3-world-20260826.webp", caption: "V3 : l'élève entre dans le bourg, découvre sa première quête et apprend à déplacer la caméra.", width: 1280, height: 800 },
             { src: "/assets/proof/educool/cool-bank-v3-roles.webp", caption: "V3 : élève, banquier et professeure entrent avec des responsabilités différentes.", width: 1440, height: 900 },
             { src: "/assets/proof/educool/cool-bank-v3-dialogue.webp", caption: "V3 : l'élève peut choisir une question ou écrire la sienne à un personnage du bourg.", width: 1440, height: 900 },
             { src: "/assets/proof/educool/cool-bank-v3-banker.webp", caption: "V3 : le guichet du banquier guide l'opération et affiche une limite de transaction.", width: 1440, height: 900 },
@@ -352,18 +353,8 @@ export const projects: Project[] = [
           images: [
             { src: "/assets/proof/educool/cool-bank-v2-world.webp", caption: "V2 : monde 3D, personnages, HUD et économie visibles dans la boucle locale jouable.", width: 1440, height: 900 },
             { src: "/assets/proof/educool/cool-bank-v2-dialogue.webp", caption: "V2 : le maire donne une mission qui relie le déplacement dans le bourg à l'économie de classe.", width: 1440, height: 900 },
-            { src: "/assets/proof/educool/cool-bank-v2-banker.webp", caption: "V2 : le guichet banquier encadre le camarade, le motif, le montant et le registre du jour.", width: 1124, height: 899 }
-          ]
-        },
-        {
-          kicker: "Outil enseignant",
-          title: "Educool — l'outil de pilotage",
-          description:
-            "Educool reste séparé du jeu. Il sert à suivre la classe et produire les documents utiles sans exposer les données réelles dans le portfolio.",
-          images: [
-            { src: "/assets/proof/educool/educool-dashboard.webp", caption: "Tableau de bord Educool sur données fictives, sans identité réelle d'enfant.", width: 1600, height: 870 },
-            { src: "/assets/proof/educool/educool-saisie-ceintures.webp", caption: "Saisie des progressions dans l'interface de travail de l'enseignante.", width: 1600, height: 873 },
-            { src: "/assets/proof/educool/educool-livrets.webp", caption: "Aperçu et génération des livrets depuis l'outil Educool associé.", width: 1600, height: 870 }
+            { src: "/assets/proof/educool/cool-bank-v2-banker.webp", caption: "V2 : le guichet banquier encadre le camarade, le motif, le montant et le registre du jour.", width: 1124, height: 899 },
+            { src: "/assets/proof/educool/cool-bank-v2-teacher.webp", caption: "V2 : la télécommande donne à l'enseignante les commandes de classe sans afficher de donnée d'élève.", width: 1280, height: 800 }
           ]
         }
       ]
@@ -382,7 +373,7 @@ export const projects: Project[] = [
         publicStatus: "Jouable localement sur un appareil",
         status: "Jouable localement · LOCAL_SINGLE_DEVICE_READY : GO · V2_PRODUCT_COMPLETE et ONLINE_READY : NO-GO",
         summary:
-          "La V2 relie déjà un monde 3D multijoueur, les trois rôles et Educool. Elle permet de parcourir l'expérience localement sur un appareil avec des données fictives.",
+          "La V2 relie déjà un monde 3D à architecture multijoueur, les trois rôles et Educool. La boucle a été validée localement sur un appareil avec des profils de démonstration.",
         evidence: [
           "État daté du 22/08/2026 avec parcours élève, professeure et banquier rejoués localement.",
           "HUD, clavier, première mission, guichet et pont Educool contrôlés sur des profils fictifs.",
@@ -450,7 +441,7 @@ export const projects: Project[] = [
       }
     ],
     delivered: [
-      "V2 : jeu local multijoueur, trois rôles, quêtes, maisons, mini-jeux et pont Educool/Firebase.",
+      "V2 : prototype local à architecture multijoueur, validé sur un appareil avec trois rôles, quêtes, maisons, mini-jeux et pont Educool/Firebase.",
       "V3 : monde 3D, économie centicool serveur, 22 zones, marchands, PNJ et maisons complètes.",
       "Interface Educool : authentification, rôles, règles Firestore, Cloud Functions et suivi scolaire.",
       "Harnais de tests, preuves responsive, manifestes de candidate et scripts de démarrage/arrêt locaux."
@@ -482,7 +473,7 @@ export const projects: Project[] = [
     image: "/assets/cards/capselys-art.webp",
     fullColorMedia: true,
     repoStatus: "Privé, projet client",
-    liveLabel: "Staging (non public)",
+    liveLabel: "Production actuelle, hors staging",
     evidenceNote:
       "Captures du staging et présentation client de 14 slides, détaillées en entretien.",
     metaDescription:
@@ -573,7 +564,7 @@ export const projects: Project[] = [
     links: [
       { label: "Version Markdown", href: "/projects/capselys.md" },
       {
-        label: "Site public",
+        label: "Production actuelle, hors staging",
         href: "https://www.capselys.fr/",
         external: true
       }
@@ -644,7 +635,7 @@ export const projects: Project[] = [
       "Lessons qualité et garde-fous."
     ],
     results: [
-      "Actu IA agentique publiée live le 16/06.",
+      "Actu IA agentique publiée sur iscom.fr.",
       "Audit cannibalisation livré en PDF.",
       "Process de pré-publication durci après erreurs."
     ],
@@ -687,7 +678,7 @@ export const projects: Project[] = [
       "Audit GEO productisé : savoir si une marque apparaît dans les réponses des IA, qui ressort à sa place, quoi publier, puis quoi re-tester au prochain audit.",
     architecture: [
       "Site et tunnel de prise de contact en Next.js, déployés et suivis en production.",
-      "Protocole d'audit reproductible : un jeu de requêtes testé sur plusieurs assistants (ChatGPT, Claude, Perplexity, Gemini, Mistral).",
+      "Protocole d'audit reproductible : un jeu de requêtes testé sur quatre IA principales (ChatGPT, Claude, Perplexity et Gemini), avec Mistral selon le contexte.",
       "Grille de lecture publique : présence, exactitude, fraîcheur et citabilité, notées de 0 à 3 par assistant.",
       "Comparaison des sources citées (concurrents, comparatifs, forums) pour situer la marque.",
       "Livrable PDF structuré : score de visibilité, écarts, contenus et balisage à publier, puis éléments à re-tester au prochain audit."
@@ -701,7 +692,7 @@ export const projects: Project[] = [
       "Effet réel sur les citations IA des clients : mesuré au cas par cas, pas de moyenne publiable."
     ],
     proofLine:
-      "Un audit qui montre si les assistants IA citent une marque, qui apparaît à sa place et quoi publier avant le prochain contrôle.",
+      "Un audit sur quatre IA principales, avec Mistral selon le contexte, qui montre si elles citent une marque, qui apparaît à sa place et quoi publier avant le prochain contrôle.",
     summary:
       "Aider une marque à savoir si elle apparaît dans les réponses des assistants IA, qui ressort à sa place, quoi publier, puis quoi re-tester au prochain audit.",
     stack: ["Next.js", "GEO / AEO", "LLM multi-modèles", "Schema JSON-LD", "PDF"],
@@ -770,9 +761,9 @@ export const projects: Project[] = [
     title: "Cortex Bridge - ChatGPT comme cerveau d'un agent de code local",
     shortTitle: "Cortex Bridge",
     type: "Agent de code local open source piloté par ChatGPT",
-    period: "Juillet - août 2026 · v0.5.2",
+    period: "Juillet - août 2026 · tag v0.5.3",
     role: "Conception produit, architecture, extension MV3, backend FastAPI, sécurité, QA",
-    status: "Preview technique open source v0.5.2",
+    status: "Preview technique open source · tag public v0.5.3",
     evidenceLevel: "public",
     tier: 1,
     image: "/assets/cards/cortex-bridge-art.webp",
@@ -780,7 +771,7 @@ export const projects: Project[] = [
     repoStatus: "Repo public sous MIT : github.com/Jonassuhard/cortex-bridge",
     liveLabel: "Repo GitHub (lien)",
     evidenceNote:
-      "Code public sous licence MIT. Preuve de release v0.5.2 publiée le 22/08/2026 : 434 tests backend, 127 frontend, 56 extension, 12 E2E et 4 accessibilité sans échec ; 1 test E2E ignoré.",
+      "Code public sous licence MIT. La preuve du tag v0.5.3 datée du 26/08/2026 rapporte 629 tests backend, 155 frontend, 126 extension, 12 E2E et 4 accessibilité sans échec ; 1 test E2E est ignoré.",
     metaDescription:
       "Cortex Bridge utilise ChatGPT comme cerveau d'un agent de code local open source : vous validez, puis il exécute dans le dossier choisi.",
     architecture: [
@@ -845,19 +836,21 @@ export const projects: Project[] = [
       "Installation macOS contrôlée par plan immuable et diagnostic local reproductible."
     ],
     results: [
-      "Preuve de release v0.5.2 du 22/08/2026 : 434 tests backend, 127 frontend, 56 extension, 12 E2E et 4 accessibilité sans échec ; 1 E2E ignoré.",
+      "Preuve du tag v0.5.3 du 26/08/2026 : 629 tests backend, 155 frontend, 126 extension, 12 E2E et 4 accessibilité sans échec ; 1 E2E ignoré.",
       "Dix scénarios à deux conversations exécutés sans croisement ; le brouillon du troisième writer est conservé lors du refus.",
-      "Auto-diagnostic v0.5.2 validé dans un worktree jetable : installation, consentement, démarrage, API loopback et arrêt propre."
+      "Le diagnostic d'arrêt rend visibles les processus actifs et permet de couper immédiatement l'exécution locale."
     ],
     limits: [
       "Les suites automatisées utilisent aussi des fixtures : elles ne prouvent pas une compatibilité continue avec un compte ChatGPT réel.",
+      "Le cycle macOS propre de la v0.5.2 n'a pas été rejoué pour la preuve v0.5.3.",
       "Le transport automatique par l'interface ChatGPT entre en conflit avec les conditions du fournisseur : activation opt-in et risque de restriction du compte.",
       "Preview technique macOS/Chrome : extension installée manuellement et dépendance à un DOM externe susceptible de changer."
     ],
     gallery: [
       { src: "/assets/proof/cortex-bridge/cortex-onboarding.webp", caption: "Onboarding public de Cortex Bridge : choix du dossier local et consentement avant toute exécution.", width: 1440, height: 900 },
       { src: "/assets/proof/cortex-bridge/cortex-preflight.webp", caption: "Contrôle avant exécution : commande proposée, dossier ciblé et niveau de risque restent visibles avant validation.", width: 1440, height: 900 },
-      { src: "/assets/proof/cortex-bridge/cortex-execution.webp", caption: "Trace d'exécution : chaque étape, sa sortie et son état restent consultables dans l'interface locale.", width: 1440, height: 900 }
+      { src: "/assets/proof/cortex-bridge/cortex-execution.webp", caption: "Trace d'exécution : chaque étape, sa sortie et son état restent consultables dans l'interface locale.", width: 1440, height: 900 },
+      { src: "/assets/proof/cortex-bridge/cortex-stop-diagnostic.webp", caption: "Diagnostic d'arrêt : les processus actifs sont listés et le bouton d'arrêt d'urgence reste disponible dans l'interface locale.", width: 1440, height: 900 }
     ],
     links: [
       {
@@ -866,8 +859,8 @@ export const projects: Project[] = [
         external: true
       },
       {
-        label: "Preuve de release v0.5.2",
-        href: "https://github.com/Jonassuhard/cortex-bridge/blob/64af9ce1e88dea8404acb11893eb96d75dd1baaa/docs/verification/v0.5.2.json",
+        label: "Preuve du tag v0.5.3",
+        href: "https://github.com/Jonassuhard/cortex-bridge/blob/v0.5.3/docs/verification/v0.5.3.json",
         external: true
       },
       { label: "Version Markdown", href: "/projects/cortex-bridge.md" }
@@ -880,17 +873,17 @@ export const projects: Project[] = [
     type: "Pipeline vidéo / automation",
     period: "2026",
     role: "Pipeline Python, Godot, rendu, FFmpeg, publication",
-    status: "Actif / lab · pipeline repris le 23 août 2026",
+    status: "Actif / lab · sources vérifiées jusqu'au 25 août 2026",
     evidenceLevel: "private",
     tier: 2,
     image: "/assets/cards/battle-engine-art.webp",
     fullColorMedia: true,
-    video: "/assets/video/battle-engine.mp4",
+    video: "/assets/video/battle-engine-intro-hd.mp4",
     repoStatus: "Dépôt privé",
     liveLabel: "Lab",
     noindex: true,
     evidenceNote:
-      "Preuve locale privée : le commit du 23/08/2026 rend la publication nightly reprenable après une interruption.",
+      "Preuves locales privées vérifiées jusqu'au 25/08/2026 : reprise du pipeline après interruption et ajout d'analyses d'exploitation en lecture seule.",
     architecture: [
       "Pipeline Python orchestrant : rendu Godot → FFmpeg → interpolation RIFE → publication via l'API YouTube."
     ],
@@ -923,7 +916,10 @@ export const projects: Project[] = [
       "Le pipeline nightly peut reprendre après une interruption au lieu de recommencer toute la chaîne.",
       "Aucune métrique d'audience n'est citée."
     ],
-    limits: ["Projet lab : automatisation créative, éloignée du poste visé, gardée comme preuve technique."],
+    limits: [
+      "Projet lab : automatisation créative, éloignée du poste visé, gardée comme preuve technique.",
+      "La vidéo publique montre uniquement l'introduction rendue en haute définition, pas un combat complet."
+    ],
     gallery: [
       { src: "/assets/proof/battle-engine/pipeline-resumable.webp", caption: "Schéma du pipeline reprenable : Godot rend le combat, FFmpeg et RIFE préparent la vidéo, puis l'API YouTube publie.", width: 1600, height: 960 },
       { src: "/assets/proof/battle-engine/intro-platforms.webp", caption: "Séquence d'intro : les plateformes des deux combattants et le champ de particules, rendus par un shader custom sous Godot.", width: 620, height: 1103 },
@@ -994,7 +990,7 @@ export const projects: Project[] = [
     ],
     gallery: [
       { src: "/assets/proof/hoopsphere/hoopsphere-landing-team.webp", caption: "Vue du prototype produit réalisé en équipe. Je la montre pour situer HoopSphere ; le design et le développement ne sont pas les miens.", width: 1600, height: 900 },
-      { src: "/assets/proof/hoopsphere/hoopsphere-product-context.webp", caption: "Section de la landing du prototype d'équipe consacrée à l'expérience communautaire. Ma contribution porte sur le marketing et le lancement.", width: 1600, height: 900 },
+      { src: "/assets/proof/hoopsphere/hoopsphere-import-emarque.webp", caption: "Écran réel du prototype d'équipe : import OCR d'une feuille e-Marque. Le design et le développement sont ceux de l'équipe ; ma contribution porte sur le marketing et le lancement.", width: 1170, height: 2532 },
       { src: "/assets/proof/hoopsphere/hoopsphere-acquisition-plan.webp", caption: "Extrait du plan d'acquisition préparé pour le projet MBA : canaux, cibles et séquence de lancement, sans les présenter comme des résultats obtenus.", width: 1600, height: 555 }
     ],
     links: [{ label: "Version Markdown", href: "/projects/hoopsphere.md" }]
@@ -1006,52 +1002,51 @@ export const projects: Project[] = [
     type: "Projet perso / preuve technique",
     period: "2026",
     role: "Conception et développement (full-stack)",
-    status: "Prototype privé - publication à préparer",
-    evidenceLevel: "private",
+    status: "Concept documenté · source à retrouver",
+    evidenceLevel: "self-declared",
     tier: 2,
     image: "/assets/cards/rag-starter-kit-art.webp",
     fullColorMedia: true,
-    repoStatus: "Publication prévue après anonymisation",
-    liveLabel: "Démo locale",
+    repoStatus: "Source locale non retrouvée lors de l'audit du 27 août 2026",
+    liveLabel: "Concept documenté",
     noindex: true,
     proofLine:
-      "Une API reçoit des documents, retrouve les passages utiles et répond en citant ses sources. Les données de chaque client restent séparées.",
+      "Concept d'un outil qui retrouverait les passages utiles d'un document et répondrait avec leurs sources. Le code correspondant reste à retrouver.",
     summary:
       "Permettre à plusieurs clients d'interroger leurs documents sans mélanger leurs données, puis vérifier la qualité des réponses.",
-    stack: ["FastAPI", "Qdrant", "Mistral AI", "LangChain", "SQLite", "pytest", "Next.js 16 / React 19", "Docker Compose"],
+    stack: ["RAG", "Recherche sémantique", "Citations", "Isolation des données", "Évaluation"],
     recruiterProof: [
-      "Recevoir plusieurs formats de documents, retrouver les bons passages et citer les sources dans la réponse.",
-      "Séparer les données de chaque client sur un même serveur, avec authentification.",
-      "Tester la qualité des réponses avec des cas versionnés et une suite pytest."
+      "Cadrer un parcours de recherche documentaire qui remonte les passages utilisés dans la réponse.",
+      "Prévoir la séparation des données de chaque client dès la conception.",
+      "Documenter une boucle d'évaluation avant de retrouver ou reconstruire une implémentation."
     ],
     constraints: [
       "Données de démonstration, secrets et identités retirés avant toute future publication.",
-      "Backend unique servant plusieurs clients : isolation stricte des données par tenant."
+      "L'isolation des données doit être prouvée par des tests avant toute présentation comme produit utilisable."
     ],
     decisions: [
       {
-        decision: "Qdrant comme base vectorielle, orchestration via LangChain.",
-        why: "Stack RAG éprouvée, intégration directe avec les embeddings Mistral et les text-splitters.",
+        decision: "Séparer l'ingestion, la recherche, les citations et l'évaluation.",
+        why: "Rendre le concept vérifiable étape par étape lorsqu'une implémentation sera retrouvée ou reconstruite.",
         rejected: "Recherche full-text classique sans vecteurs, insuffisante pour gérer la similarité sémantique."
       },
       {
-        decision: "Module d'évaluation type Ragas avec cas de scoring versionnés.",
+        decision: "Prévoir des cas d'évaluation versionnés.",
         why: "Mesurer la qualité du retrieval au lieu de juger les réponses à l'œil.",
         rejected: "Validation manuelle ad hoc, difficile à reproduire et à comparer entre versions."
       }
     ],
     delivered: [
-      "Backend FastAPI pour recevoir les documents, retrouver les passages, répondre avec les sources, authentifier les clients et journaliser l'usage.",
-      "Frontend Next.js 16 / React 19 (App Router, TypeScript, Tailwind 4).",
-      "Stack dockerisée (Qdrant + backend + frontend) lançable via docker compose, + docs d'onboarding."
+      "Schémas conceptuels du parcours documentaire, de l'isolation des clients et de la boucle d'évaluation.",
+      "Cadrage des preuves à produire avant de présenter le concept comme un produit fonctionnel."
     ],
     results: [
-      "Suite de tests pytest et jeux de cas de scoring en place pour évaluer le retrieval.",
-      "Performance et qualité chiffrées du RAG : pas encore mesurées publiquement."
+      "Architecture conceptuelle documentée dans le portfolio.",
+      "Aucune performance ni qualité de réponse n'est revendiquée sans source retrouvée."
     ],
     limits: [
-      "Code et démonstration non publics à ce jour ; l'architecture décrite n'est donc pas auditée publiquement.",
-      "Le module d'évaluation fournit le harnais ; les scores de qualité ne sont pas publiés."
+      "Source locale non retrouvée lors de l'audit du 27 août 2026.",
+      "Les schémas montrent une intention de conception, pas une application prouvée."
     ],
     gallery: [
       { src: "/assets/proof/rag-starter-kit/rag-document-pipeline.webp", caption: "Schéma du parcours d'un document : ingestion, découpage, indexation, recherche puis réponse avec ses sources.", width: 1600, height: 960 },
@@ -1067,23 +1062,23 @@ export const projects: Project[] = [
     type: "POC / preuve technique",
     period: "2026",
     role: "Conception et développement (POC)",
-    status: "POC privé initié",
-    evidenceLevel: "private",
+    status: "Concept documenté · source à retrouver",
+    evidenceLevel: "self-declared",
     tier: 2,
     image: "/assets/cards/board-ia-pme-art.webp",
     fullColorMedia: true,
-    repoStatus: "Publication prévue après anonymisation",
-    liveLabel: "Lab",
+    repoStatus: "Source locale non retrouvée lors de l'audit du 27 août 2026",
+    liveLabel: "Concept documenté",
     noindex: true,
     proofLine:
-      "Cinq agents analysent la même question avec des informations différentes. Des règles explicites regroupent leurs réponses et signalent les désaccords.",
+      "Concept de cinq points de vue séparés sur une même question, puis d'une synthèse fondée sur des règles explicites. Le code correspondant reste à retrouver.",
     summary:
       "Faire ressortir les désaccords utiles entre plusieurs analyses, puis produire une synthèse dont les règles restent lisibles.",
-    stack: ["Python / FastAPI", "Mistral Small + Large", "Qdrant (1 collection/agent)", "Celery + Redis", "Docker Compose"],
+    stack: ["Systèmes multi-agents", "Sources séparées", "Règles de pondération", "Traçabilité"],
     recruiterProof: [
       "Donner une source différente à chaque agent pour éviter cinq réponses identiques.",
       "Regrouper les réponses avec des règles de pondération visibles plutôt qu'avec un sixième modèle opaque.",
-      "Garder les données sur une infrastructure contrôlée avec Mistral et Qdrant auto-hébergé."
+      "Prévoir une infrastructure contrôlée sans en revendiquer l'implémentation tant que la source n'est pas retrouvée."
     ],
     constraints: [
       "Éviter le piège des comités d'agents qui se reformulent entre eux, en forçant la divergence par l'isolation des données.",
@@ -1102,17 +1097,16 @@ export const projects: Project[] = [
       }
     ],
     delivered: [
-      "Backend Python avec cinq agents spécialisés et un module qui regroupe leurs réponses selon des règles fixes.",
-      "Structure d'orchestration async (Celery/Redis) et RAG Qdrant par agent.",
-      "Documentation de l'architecture, du concept et de la roadmap."
+      "Schémas conceptuels des cinq points de vue, de l'orchestration et des règles de synthèse.",
+      "Documentation du concept, de ses limites et des validations encore nécessaires."
     ],
     results: [
-      "POC : pipeline d'agents et CIO posés ; dashboard, export PDF et tests E2E restent à implémenter.",
+      "Concept et règles de synthèse documentés ; aucune exécution fonctionnelle n'est revendiquée.",
       "Validation sur cas client réel : pas encore mesurée."
     ],
     limits: [
-      "POC initié, non terminé : le dashboard React Flow et l'export PDF décrits ne sont pas implémentés.",
-      "Pas de test automatisé côté backend pour l'instant."
+      "Source locale non retrouvée lors de l'audit du 27 août 2026.",
+      "Les schémas montrent une direction de produit, pas un POC techniquement prouvé."
     ],
     gallery: [
       { src: "/assets/proof/board-ia-pme/board-isolated-agents.webp", caption: "Schéma des cinq agents : chacun reçoit une source différente pour produire de vrais points de vue séparés.", width: 1600, height: 960 },
@@ -1128,13 +1122,13 @@ export const projects: Project[] = [
     type: "Lab / projet perso",
     period: "2026",
     role: "Conception et développement",
-    status: "Lab privé",
+    status: "Lab privé actif · refonte V2 en cours",
     evidenceLevel: "private",
     tier: 3,
     image: "/assets/cards/edusemantix-art.webp",
     fullColorMedia: true,
-    repoStatus: "Publication prévue après anonymisation",
-    liveLabel: "Lab",
+    repoStatus: "Dépôt privé actif, vérifié le 27 août 2026",
+    liveLabel: "Démo privée",
     noindex: true,
     proofLine:
       "Jeu multijoueur en temps réel où l'on cherche un mot secret : chaque proposition reçoit un score de proximité sémantique (similarité cosinus sur vecteurs de mots), scores en direct via WebSocket.",
@@ -1162,8 +1156,8 @@ export const projects: Project[] = [
     ],
     results: ["Jeu fonctionnel déployable.", "Audience / engagement : pas encore mesurés."],
     limits: [
-      "Projet lab plus ancien, avec une base de mots à rafraîchir et quelques correctifs à reprendre.",
-      "Lab personnel, pas de démo publique maintenue.",
+      "Projet lab en refonte V2 ; les captures publiées restent celles de la version de démonstration auditée.",
+      "Une prévisualisation existe, mais n'est pas présentée comme une démo publique stable.",
       "Persistance des stats dépend de Firebase (mode mémoire sans credentials)."
     ],
     gallery: [
@@ -1185,14 +1179,14 @@ export const projects: Project[] = [
     tier: 3,
     image: "/assets/cards/pokemon-gen4-toolkit-art.webp",
     fullColorMedia: true,
-    repoStatus: "Publication prévue après anonymisation",
+    repoStatus: "Archive privée · aucune donnée de jeu publiée",
     liveLabel: "Lab",
     noindex: true,
     proofLine:
       "Boîte à outils Python (ndspy) pour explorer des formats de données de jeu (textes, events, scripts, stats) et écrire ses propres outils d'édition. Aucune ROM ni asset distribué.",
     summary:
       "Explorer des formats de données de jeu et écrire mes propres outils d'édition Python, sans publier d'assets ni de ROM.",
-    stack: ["Python 3", "ndspy", "Format NARC", "Moteur de texte Gen 4 maison", "EmulatorJS (viewer web)"],
+    stack: ["Python 3", "ndspy", "Format NARC", "Moteur de texte Gen 4 maison"],
     recruiterProof: [
       "Reverse-engineering d'un format binaire propriétaire, avec décodage et encodage du texte chiffré Gen 4 (charmap + chiffrement seed/XOR) écrits à la main.",
       "Outillage complet : édition des events (PNJ, warps, triggers), du bytecode des scripts, des stats/espèces, et cartographie des zones."
@@ -1210,7 +1204,7 @@ export const projects: Project[] = [
     ],
     delivered: [
       "Scripts d'édition (textes, events, scripts, espèces) et d'analyse de zones.",
-      "Viewer web EmulatorJS avec serveur de dev configuré et notes techniques."
+      "Notes techniques sur les formats explorés et les limites de publication."
     ],
     results: ["Outils fonctionnels sur ROM Gen 4 fournie par l'utilisateur.", "Aucune métrique d'usage (exploration technique)."],
     limits: [
@@ -1276,7 +1270,7 @@ export const projects: Project[] = [
     gallery: [
       { src: "/assets/proof/claude-code-soul/soul-layers.webp", caption: "Architecture du pack : l'identité, les règles, les skills, les agents et les hooks restent dans des couches séparées.", width: 1600, height: 960 },
       { src: "/assets/proof/claude-code-soul/soul-security-gates.webp", caption: "Garde-fous de publication : secrets dans le trousseau, validation locale et contrôle gitleaks avant le dépôt public.", width: 1600, height: 960 },
-      { src: "/assets/proof/claude-code-soul/soul-install-flow.webp", caption: "Installation du pack : audit local, choix des couches, copie contrôlée puis vérification sans donnée personnelle.", width: 1600, height: 960 }
+      { src: "/assets/proof/claude-code-soul/soul-github-repo.webp", caption: "Dépôt GitHub public : fichiers du pack, licence et documentation sont directement consultables.", width: 1440, height: 1000 }
     ],
     links: [
       { label: "Version Markdown", href: "/projects/claude-code-soul.md" },

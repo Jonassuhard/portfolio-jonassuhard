@@ -5,7 +5,7 @@
   "target_contract": "CDI",
   "seniority": "junior",
   "availability": "1er septembre 2026",
-  "verified_at": "2026-08-15",
+  "verified_at": "2026-08-27",
   "current_profile": {
     "title": "Growth Engineer junior",
     "summary": "Je relie acquisition, IA appliquée et exécution produit pour livrer des outils web, automatisations et workflows LLM vérifiables."
@@ -18,13 +18,13 @@
     "current_employment": false
   },
   "citable_facts": {
-    "cortex_bridge_release_0_5_2": {
-      "claim": "La preuve de release Cortex Bridge v0.5.2 rapporte 434 tests backend, 127 frontend, 56 extension, 12 E2E et 4 accessibilité sans échec ; un test E2E est ignoré.",
+    "cortex_bridge_release_0_5_3": {
+      "claim": "La preuve du tag Cortex Bridge v0.5.3 rapporte 629 tests backend, 155 frontend, 126 extension, 12 E2E et 4 accessibilité sans échec ; un test E2E est ignoré.",
       "status": "publicly-verified",
-      "verification_id": "cortex-bridge-release-0-5-2",
-      "checked_at": "2026-08-22",
-      "source": "https://github.com/Jonassuhard/cortex-bridge/blob/64af9ce1e88dea8404acb11893eb96d75dd1baaa/docs/verification/v0.5.2.json",
-      "proof_note": "Résultats automatisés datés ; ils ne prouvent pas une compatibilité continue avec un compte ChatGPT réel."
+      "verification_id": "cortex-bridge-release-0-5-3",
+      "checked_at": "2026-08-26",
+      "source": "https://github.com/Jonassuhard/cortex-bridge/blob/v0.5.3/docs/verification/v0.5.3.json",
+      "proof_note": "Résultats automatisés datés ; ils ne prouvent pas une compatibilité continue avec un compte ChatGPT réel. Le cycle macOS propre n'a pas été rejoué pour ce tag."
     },
     "les_petites_griffes_live_audit_2026_08_01": {
       "claim": "L'audit live du 2026-08-01 couvre 18 pages publiques contrôlées à 390 px et 1440 px, 36 captures pleine page, 30 images uniques chargées sur le live et cinq scores de performance Lighthouse mobile : Accueil 91, Galerie 87, Compose 97, Méthode 97, Le studio 66.",
@@ -38,7 +38,7 @@
       "status": "private-evidence",
       "verification_id": "cool-bank-la-herse-versions",
       "checked_at": "2026-08-26",
-      "proof_note": "Sources locales privées ; parcours visuels V3 élève, banquier et professeure rejoués sur données fictives. Aucune donnée de mineur n'est publiée."
+      "proof_note": "Sources locales privées ; parcours visuels V3 élève, banquier et professeure rejoués avec des profils de démonstration. Les captures publiées ne contiennent aucune donnée de mineur."
     }
   },
   "role_aliases": [
@@ -73,11 +73,11 @@
       "case_study": "/projets/cortex-bridge",
       "markdown": "/projects/cortex-bridge.md",
       "repository": "https://github.com/Jonassuhard/cortex-bridge",
-      "evidence": "Release v0.5.2 : 434 tests backend, 127 frontend, 56 extension, 12 E2E et 4 accessibilité sans échec ; un test E2E est ignoré.",
+      "evidence": "Tag v0.5.3 : 629 tests backend, 155 frontend, 126 extension, 12 E2E et 4 accessibilité sans échec ; un test E2E est ignoré.",
       "evidence_status": "publicly-verified",
-      "verification_ids": ["cortex-bridge-repo", "cortex-bridge-release-0-5-2"],
-      "verified_at": "2026-08-22",
-      "limits": "Preview technique macOS/Chrome ; transport ChatGPT opt-in en conflit avec les conditions du fournisseur ; les fixtures ne prouvent pas une compatibilité continue avec le site réel.",
+      "verification_ids": ["cortex-bridge-repo", "cortex-bridge-release-0-5-3"],
+      "verified_at": "2026-08-26",
+      "limits": "Preview technique macOS/Chrome ; transport ChatGPT opt-in en conflit avec les conditions du fournisseur ; les fixtures ne prouvent pas une compatibilité continue avec le site réel ; cycle macOS propre non rejoué pour le tag v0.5.3.",
       "confidentiality": "preuves publiques synthétiques et expurgées, sans donnée de compte",
       "repo_status": "public sous licence MIT"
     },
@@ -105,7 +105,7 @@
       "stack": ["Three.js", "Next.js", "Firebase", "Firestore", "Cloud Functions", "TypeScript", "Vite", "Node.js", "Playwright"],
       "case_study": "/projets/educool-la-herse",
       "markdown": "/projects/educool-la-herse.md",
-      "evidence": "V2 vérifiée le 22/08/2026 ; parcours visuels V3 élève, banquier et professeure rejoués le 26/08/2026 sur données fictives.",
+      "evidence": "V2 vérifiée le 22/08/2026 ; parcours visuels V3 élève, banquier et professeure rejoués le 26/08/2026 avec des profils de démonstration.",
       "evidence_status": "private-evidence",
       "verification_id": "cool-bank-la-herse-versions",
       "versions": [
@@ -121,7 +121,7 @@
         }
       ],
       "limits": "V2 non prête en ligne ; V3 en attente de validation DA, appareil enfant modeste et compréhension par un enfant ; aucune utilité pédagogique chiffrée.",
-      "confidentiality": "données enfants exclues ; fixtures fictives uniquement dans les preuves",
+      "confidentiality": "données enfants exclues ; captures publiques sans donnée de mineur",
       "repo_status": "privé — RGPD (données mineurs)"
     },
     {
@@ -159,7 +159,7 @@
       "case_study": "/projets/preuvia",
       "markdown": "/projects/preuvia.md",
       "site": "https://preuvia.vercel.app",
-      "evidence": "Offre d'audit GEO en ligne, protocole multi-modèles et structure de livrable documentés ; aucun volume client revendiqué.",
+      "evidence": "Offre d'audit GEO en ligne, protocole sur quatre IA principales avec Mistral selon le contexte et structure de livrable documentés ; aucun volume client revendiqué.",
       "limits": "Ne garantit pas l'apparition dans les IA ; résultats variables selon modèle et prompt ; méthode interne non publiée.",
       "confidentiality": "produit commercial — méthode interne non divulguée",
       "repo_status": "privé — produit commercial"

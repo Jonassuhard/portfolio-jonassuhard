@@ -7,9 +7,9 @@
 | Format | POC / preuve technique |
 | Période | 2026 |
 | Rôle de Jonas | Conception et développement (POC) |
-| Statut | POC privé initié |
-| Niveau de preuve | Démo privée |
-| Stack | Python / FastAPI, Mistral Small + Large, Qdrant (1 collection/agent), Celery + Redis, Docker Compose |
+| Statut | Concept documenté · source à retrouver |
+| Niveau de preuve | À documenter |
+| Stack | Systèmes multi-agents, Sources séparées, Règles de pondération, Traçabilité |
 
 ## À quoi ça sert
 
@@ -17,17 +17,16 @@ Faire ressortir les désaccords utiles entre plusieurs analyses, puis produire u
 
 ## Ce que Jonas a fait
 
-- Backend Python avec cinq agents spécialisés et un module qui regroupe leurs réponses selon des règles fixes.
-- Structure d'orchestration async (Celery/Redis) et RAG Qdrant par agent.
-- Documentation de l'architecture, du concept et de la roadmap.
+- Schémas conceptuels des cinq points de vue, de l'orchestration et des règles de synthèse.
+- Documentation du concept, de ses limites et des validations encore nécessaires.
 
 ## Ce que ça prouve
 
-Cinq agents analysent la même question avec des informations différentes. Des règles explicites regroupent leurs réponses et signalent les désaccords.
+Concept de cinq points de vue séparés sur une même question, puis d'une synthèse fondée sur des règles explicites. Le code correspondant reste à retrouver.
 
 - Donner une source différente à chaque agent pour éviter cinq réponses identiques.
 - Regrouper les réponses avec des règles de pondération visibles plutôt qu'avec un sixième modèle opaque.
-- Garder les données sur une infrastructure contrôlée avec Mistral et Qdrant auto-hébergé.
+- Prévoir une infrastructure contrôlée sans en revendiquer l'implémentation tant que la source n'est pas retrouvée.
 
 ## Visuels
 
@@ -40,8 +39,8 @@ Cinq agents analysent la même question avec des informations différentes. Des 
 
 ## Limites
 
-- POC initié, non terminé : le dashboard React Flow et l'export PDF décrits ne sont pas implémentés.
-- Pas de test automatisé côté backend pour l'instant.
+- Source locale non retrouvée lors de l'audit du 27 août 2026.
+- Les schémas montrent une direction de produit, pas un POC techniquement prouvé.
 
 ## Liens
 

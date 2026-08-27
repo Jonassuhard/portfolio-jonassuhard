@@ -7,7 +7,7 @@
 | Format | Lab / projet perso |
 | Période | 2026 |
 | Rôle de Jonas | Conception et développement |
-| Statut | Lab privé |
+| Statut | Lab privé actif · refonte V2 en cours |
 | Niveau de preuve | Démo privée |
 | Stack | React 19 / Vite 6, Node.js / Express / Socket.io, ConceptNet Numberbatch, Python (pré-calcul), Firebase Firestore |
 
@@ -38,8 +38,8 @@ Jeu multijoueur en temps réel où l'on cherche un mot secret : chaque propositi
 
 ## Limites
 
-- Projet lab plus ancien, avec une base de mots à rafraîchir et quelques correctifs à reprendre.
-- Lab personnel, pas de démo publique maintenue.
+- Projet lab en refonte V2 ; les captures publiées restent celles de la version de démonstration auditée.
+- Une prévisualisation existe, mais n'est pas présentée comme une démo publique stable.
 - Persistance des stats dépend de Firebase (mode mémoire sans credentials).
 
 ## Liens

@@ -22,11 +22,22 @@ Je cherche à évoluer vers un rôle de Forward Deployed Engineer. Je veux compr
 
 ## Projets à lire d'abord
 
-- [Cortex Bridge](https://jonassuhard.com/projects/cortex-bridge.md) : agent de code local open source qui utilise ChatGPT comme cerveau ; l'utilisateur valide avant l'exécution. Le projet vise l'usage d'un agent de code sans second abonnement dédié. Release v0.5.2 publique ; preview macOS/Chrome opt-in, sans affiliation OpenAI.
+- [Cortex Bridge](https://jonassuhard.com/projects/cortex-bridge.md) : agent de code local open source qui utilise ChatGPT comme cerveau ; l'utilisateur valide avant l'exécution. Tag v0.5.3 public et preuve datée ; preview macOS/Chrome opt-in, sans affiliation OpenAI.
 - [Les Petites Griffes](https://jonassuhard.com/projects/les-petites-griffes.md) : site live, CMS et assistant IA cadré ; audit privé daté, projet familial non facturé.
-- [Cool Bank / La Herse](https://jonassuhard.com/projects/educool-la-herse.md) : une banque de classe transformée en monde 3D avec trois rôles. La V2 est déjà jouable localement sur un appareil (`LOCAL_SINGLE_DEVICE_READY`) ; la V3 est une reconstruction séparée en recette humaine (`READY_FOR_HUMAN_RECIPE`). Preuves privées sur données fictives, aucun pilote revendiqué.
+- [Cool Bank / La Herse](https://jonassuhard.com/projects/educool-la-herse.md) : une banque de classe transformée en monde 3D avec trois rôles. La V2 est déjà jouable localement sur un appareil (`LOCAL_SINGLE_DEVICE_READY`) ; la V3 est une reconstruction séparée en recette humaine (`READY_FOR_HUMAN_RECIPE`). Captures publiques sans donnée de mineur ; aucun pilote revendiqué.
 - [ISCOM](https://jonassuhard.com/projects/iscom.md) : SEO publié dans Drupal avec vérification humaine.
-- [Preuvia](https://jonassuhard.com/projects/preuvia.md) : audit de visibilité dans les réponses des assistants IA et plan d'action à vérifier lors du prochain audit.
+- [Preuvia](https://jonassuhard.com/projects/preuvia.md) : audit de visibilité sur quatre IA principales, avec Mistral selon le contexte, et plan d'action à vérifier lors du prochain audit.
+
+## Autres projets
+
+- [Capsélys](https://jonassuhard.com/projects/capselys.md) : refonte de conversion sur staging ; le lien externe pointe vers la production actuelle, pas vers le staging audité.
+- [Battle Engine](https://jonassuhard.com/projects/battle-engine.md) : pipeline vidéo Godot, FFmpeg et publication reprenable ; vidéo publique limitée à l'introduction.
+- [HoopSphere](https://jonassuhard.com/projects/hoopsphere.md) : prototype MBA d'application basket ; contribution de Jonas centrée sur le marketing et le business plan.
+- [RAG Starter Kit](https://jonassuhard.com/projects/rag-starter-kit.md) : concept documenté ; source locale non retrouvée le 27/08/2026.
+- [Board IA PME](https://jonassuhard.com/projects/board-ia-pme.md) : concept documenté ; source locale non retrouvée le 27/08/2026.
+- [Edusemantix](https://jonassuhard.com/projects/edusemantix.md) : lab privé actif, refonte V2 en cours.
+- [Pokémon Gen-4 Toolkit](https://jonassuhard.com/projects/pokemon-gen4-toolkit.md) : archive privée d'outils Python ; aucune ROM ni donnée de jeu publiée.
+- [claude-code-soul](https://jonassuhard.com/projects/claude-code-soul.md) : pack de configuration Claude Code public sous MIT.
 
 ## Code public
 
@@ -34,4 +45,4 @@ Je cherche à évoluer vers un rôle de Forward Deployed Engineer. Je veux compr
 - [Cortex Bridge](https://github.com/Jonassuhard/cortex-bridge)
 - [claude-code-soul](https://github.com/Jonassuhard/claude-code-soul)
 
-Revue générale : 2026-08-15. Cortex Bridge vérifié le 2026-08-22.
+Revue générale : 2026-08-27. Cortex Bridge v0.5.3 vérifié le 2026-08-26.

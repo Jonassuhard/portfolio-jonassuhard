@@ -136,7 +136,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
           <ProjectVideo
             src={project.video}
             poster={project.video.replace(".mp4", "-poster.webp")}
-            label={`Aperçu animé (filtre ASCII) du projet ${project.shortTitle}`}
+            label={`Aperçu vidéo du projet ${project.shortTitle}`}
           />
         ) : (
           <Image

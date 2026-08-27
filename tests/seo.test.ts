@@ -101,7 +101,7 @@ test("Forward Deployed Engineer reste un objectif de progression", () => {
   }
 });
 
-test("le sitemap date seulement les surfaces modifiées par la refonte Cool Bank", () => {
+test("le sitemap reflète la date de la dernière revue générale", () => {
   const entries = sitemap();
   const modifiedToday = [
     "https://jonassuhard.com/",
@@ -114,7 +114,7 @@ test("le sitemap date seulement les surfaces modifiées par la refonte Cool Bank
   for (const url of modifiedToday) {
     const entry = entries.find((item) => item.url === url);
     assert.ok(entry, `URL absente du sitemap : ${url}`);
-    assert.equal(new Date(entry.lastModified ?? 0).toISOString(), "2026-08-26T00:00:00.000Z");
+    assert.equal(new Date(entry.lastModified ?? 0).toISOString(), "2026-08-27T00:00:00.000Z");
   }
 
   const untouched = entries.find(
@@ -123,6 +123,6 @@ test("le sitemap date seulement les surfaces modifiées par la refonte Cool Bank
   assert.ok(untouched);
   assert.equal(
     new Date(untouched.lastModified ?? 0).toISOString(),
-    "2026-08-15T00:00:00.000Z"
+    "2026-08-27T00:00:00.000Z"
   );
 });

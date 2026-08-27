@@ -34,7 +34,7 @@ Projet MBA à quatre : responsabilité marketing, étude de marché et projectio
 
 ![Vue du prototype produit réalisé en équipe. Je la montre pour situer HoopSphere ; le design et le développement ne sont pas les miens.](/assets/proof/hoopsphere/hoopsphere-landing-team.webp)
 
-![Section de la landing du prototype d'équipe consacrée à l'expérience communautaire. Ma contribution porte sur le marketing et le lancement.](/assets/proof/hoopsphere/hoopsphere-product-context.webp)
+![Écran réel du prototype d'équipe : import OCR d'une feuille e-Marque. Le design et le développement sont ceux de l'équipe ; ma contribution porte sur le marketing et le lancement.](/assets/proof/hoopsphere/hoopsphere-import-emarque.webp)
 
 ![Extrait du plan d'acquisition préparé pour le projet MBA : canaux, cibles et séquence de lancement, sans les présenter comme des résultats obtenus.](/assets/proof/hoopsphere/hoopsphere-acquisition-plan.webp)
 

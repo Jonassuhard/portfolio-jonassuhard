@@ -9,7 +9,7 @@
 | Rôle de Jonas | Conception et développement |
 | Statut | Lab privé - aucune ROM distribuée |
 | Niveau de preuve | Démo privée |
-| Stack | Python 3, ndspy, Format NARC, Moteur de texte Gen 4 maison, EmulatorJS (viewer web) |
+| Stack | Python 3, ndspy, Format NARC, Moteur de texte Gen 4 maison |
 
 ## À quoi ça sert
 
@@ -18,7 +18,7 @@ Explorer des formats de données de jeu et écrire mes propres outils d'édition
 ## Ce que Jonas a fait
 
 - Scripts d'édition (textes, events, scripts, espèces) et d'analyse de zones.
-- Viewer web EmulatorJS avec serveur de dev configuré et notes techniques.
+- Notes techniques sur les formats explorés et les limites de publication.
 
 ## Ce que ça prouve
 

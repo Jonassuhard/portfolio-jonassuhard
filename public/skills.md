@@ -54,8 +54,8 @@ Je construis des assistants IA avec des actions limitées, des contrôles avant 
 - Capsélys
 - Les Petites Griffes
 - ISCOM
-- RAG Starter Kit
-- Board IA PME
+- RAG Starter Kit (concept documenté, source à retrouver)
+- Board IA PME (concept documenté, source à retrouver)
 
 **À consolider**
 

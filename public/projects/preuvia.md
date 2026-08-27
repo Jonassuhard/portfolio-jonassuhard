@@ -25,7 +25,7 @@ Aider une marque à savoir si elle apparaît dans les réponses des assistants I
 
 ## Ce que ça prouve
 
-Un audit qui montre si les assistants IA citent une marque, qui apparaît à sa place et quoi publier avant le prochain contrôle.
+Un audit sur quatre IA principales, avec Mistral selon le contexte, qui montre si elles citent une marque, qui apparaît à sa place et quoi publier avant le prochain contrôle.
 
 - Produit pensé de bout en bout : positionnement, offre, site, livraison.
 - Méthode d'audit rejouable de la visibilité d'une marque dans les réponses des assistants IA.

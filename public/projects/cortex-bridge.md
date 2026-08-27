@@ -5,9 +5,9 @@
 | Repère | Détail |
 | --- | --- |
 | Format | Agent de code local open source piloté par ChatGPT |
-| Période | Juillet - août 2026 · v0.5.2 |
+| Période | Juillet - août 2026 · tag v0.5.3 |
 | Rôle de Jonas | Conception produit, architecture, extension MV3, backend FastAPI, sécurité, QA |
-| Statut | Preview technique open source v0.5.2 |
+| Statut | Preview technique open source · tag public v0.5.3 |
 | Niveau de preuve | Preuve publique |
 | Stack | Chrome MV3, FastAPI, Next.js, React, SQLite, Python, Ollama |
 
@@ -31,7 +31,7 @@ ChatGPT réfléchit et prépare le travail. Vous validez. Cortex exécute dans l
 - Limiter les actions au dossier choisi et bloquer l'exécution en cas de doute.
 - Publier le code, les preuves de release et les limites du projet.
 
-Code public sous licence MIT. Preuve de release v0.5.2 publiée le 22/08/2026 : 434 tests backend, 127 frontend, 56 extension, 12 E2E et 4 accessibilité sans échec ; 1 test E2E ignoré.
+Code public sous licence MIT. La preuve du tag v0.5.3 datée du 26/08/2026 rapporte 629 tests backend, 155 frontend, 126 extension, 12 E2E et 4 accessibilité sans échec ; 1 test E2E est ignoré.
 
 ## Visuels
 
@@ -41,10 +41,13 @@ Code public sous licence MIT. Preuve de release v0.5.2 publiée le 22/08/2026 : 
 
 ![Trace d'exécution : chaque étape, sa sortie et son état restent consultables dans l'interface locale.](/assets/proof/cortex-bridge/cortex-execution.webp)
 
+![Diagnostic d'arrêt : les processus actifs sont listés et le bouton d'arrêt d'urgence reste disponible dans l'interface locale.](/assets/proof/cortex-bridge/cortex-stop-diagnostic.webp)
+
 
 ## Limites
 
 - Les suites automatisées utilisent aussi des fixtures : elles ne prouvent pas une compatibilité continue avec un compte ChatGPT réel.
+- Le cycle macOS propre de la v0.5.2 n'a pas été rejoué pour la preuve v0.5.3.
 - Le transport automatique par l'interface ChatGPT entre en conflit avec les conditions du fournisseur : activation opt-in et risque de restriction du compte.
 - Preview technique macOS/Chrome : extension installée manuellement et dépendance à un DOM externe susceptible de changer.
 - Stabilité de la boucle sur plusieurs semaines d'usage réel : pas encore de métrique publiable.
@@ -54,4 +57,4 @@ Code public sous licence MIT. Preuve de release v0.5.2 publiée le 22/08/2026 : 
 
 - [Étude de cas](/projets/cortex-bridge)
 - [GitHub](https://github.com/Jonassuhard/cortex-bridge)
-- [Preuve de release v0.5.2](https://github.com/Jonassuhard/cortex-bridge/blob/64af9ce1e88dea8404acb11893eb96d75dd1baaa/docs/verification/v0.5.2.json)
+- [Preuve du tag v0.5.3](https://github.com/Jonassuhard/cortex-bridge/blob/v0.5.3/docs/verification/v0.5.3.json)

@@ -53,12 +53,12 @@ Paris, France. CDI à Paris ou hybride, disponible à partir du 1er septembre 20
 
 ## Projets principaux
 
-- Cortex Bridge : agent de code local open source qui utilise ChatGPT comme cerveau. ChatGPT analyse et planifie ; l'utilisateur valide ; Cortex exécute dans le dossier choisi et garde une trace. Le projet vise l'usage d'un agent de code sans second abonnement dédié. Le dépôt MIT et la preuve de release v0.5.2 sont publics (434 tests backend, 127 frontend, 56 extension, 12 E2E et 4 accessibilité sans échec ; 1 E2E ignoré). La preview macOS/Chrome est optionnelle, non affiliée et non autorisée par OpenAI.
+- Cortex Bridge : agent de code local open source qui utilise ChatGPT comme cerveau. ChatGPT analyse et planifie ; l'utilisateur valide ; Cortex exécute dans le dossier choisi et garde une trace. Le tag public v0.5.3 rapporte 629 tests backend, 155 frontend, 126 extension, 12 E2E et 4 accessibilité sans échec ; 1 E2E est ignoré. La preview macOS/Chrome est optionnelle, non affiliée à OpenAI ; le cycle macOS propre n'a pas été rejoué pour ce tag.
 - Les Petites Griffes : L'audit live du 2026-08-01 couvre 18 pages publiques contrôlées à 390 px et 1440 px, 36 captures pleine page, 30 images uniques chargées sur le live et cinq scores de performance Lighthouse mobile : Accueil 91, Galerie 87, Compose 97, Méthode 97, Le studio 66. Projet familial non facturé ; aucune vente à un client externe n'est prouvée ; mesures datées du 2026-08-01, non continues. Audit complet privé, montrable en entretien ; il n'est pas publié comme preuve publique autonome.
-- Cool Bank / La Herse : banque de classe transformée en monde 3D avec trois rôles. La V2 est déjà jouable localement sur un appareil ; la V3 est une reconstruction séparée plus large, encore en recette humaine. Interface Educool, économie serveur et preuves privées sur données fictives, sans donnée de mineur publiée.
+- Cool Bank / La Herse : banque de classe transformée en monde 3D avec trois rôles. La V2 est déjà jouable localement sur un appareil ; la V3 est une reconstruction séparée plus large, encore en recette humaine. Les captures publiées sont des écrans de démonstration sans donnée de mineur.
 - Capsélys: refonte conversion, expérimentation IA, workshop client.
 - ISCOM: SEO, Drupal, production éditoriale, audits.
-- Preuvia : audit de visibilité dans les réponses des assistants IA et plan d'action à vérifier lors du prochain audit.
+- Preuvia : audit de visibilité sur quatre IA principales, avec Mistral selon le contexte, et plan d'action à vérifier lors du prochain audit.
 
 ## Formation
 
@@ -69,8 +69,8 @@ Paris, France. CDI à Paris ou hybride, disponible à partir du 1er septembre 20
 ## Vérification
 
 - Registre des preuves : https://jonassuhard.com/preuves
-- Revue générale des contenus : 2026-08-15
-- Cortex Bridge : vérifié le 2026-08-22
+- Revue générale des contenus : 2026-08-27
+- Cortex Bridge : tag v0.5.3 vérifié le 2026-08-26
 - Cool Bank V2 : vérifiée le 2026-08-22
 - Cool Bank V3 : parcours visuels vérifiés le 2026-08-26
 

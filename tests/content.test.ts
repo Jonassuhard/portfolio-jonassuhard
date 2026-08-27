@@ -31,7 +31,7 @@ test("les cartes de projets exposent leurs destinations publiques vérifiées", 
       href: "https://lespetitesgriffes.fr/"
     },
     capselys: {
-      label: "Site public",
+      label: "Production actuelle, hors staging",
       href: "https://www.capselys.fr/"
     },
     iscom: {
@@ -135,8 +135,7 @@ test("Cool Bank raconte deux versions 3D distinctes avant ses statuts techniques
   ]);
   assert.deepEqual(project.story?.galleryGroups.map((group) => group.title), [
     "V3 — la reconstruction locale",
-    "V2 — la boucle 3D déjà jouable",
-    "Educool — l'outil de pilotage"
+    "V2 — la boucle 3D déjà jouable"
   ]);
   assert.ok(project.story?.galleryGroups.every((group) => group.images.length >= 3));
 
@@ -177,7 +176,7 @@ test("la carte Cool Bank utilise l'illustration des deux mondes et non l'écran 
 test("Cortex Bridge reste une preuve logicielle publique et qualifiée", () => {
   const cortex = projects.find((project) => project.slug === "cortex-bridge");
   const release = verificationItems.find(
-    (claim) => claim.id === "cortex-bridge-release-0-5-2"
+    (claim) => claim.id === "cortex-bridge-release-0-5-3"
   );
 
   assert.ok(cortex);
@@ -185,15 +184,88 @@ test("Cortex Bridge reste une preuve logicielle publique et qualifiée", () => {
   assert.ok(cortex.stack.includes("Next.js"));
   assert.match(cortex.summary, /ChatGPT en cerveau d'un agent de code local/i);
   assert.match(cortex.summary, /sans ajouter un second abonnement dédié/i);
-  assert.match(cortex.evidenceNote ?? "", /434 tests backend/);
+  assert.match(cortex.evidenceNote ?? "", /629 tests backend/);
   assert.ok(release);
   assert.equal(release.status, "publicly-verified");
-  assert.equal(release.checkedAt, "2026-08-22");
+  assert.equal(release.checkedAt, "2026-08-26");
   assert.equal(
     release.sourceHref,
-    "https://github.com/Jonassuhard/cortex-bridge/blob/64af9ce1e88dea8404acb11893eb96d75dd1baaa/docs/verification/v0.5.2.json"
+    "https://github.com/Jonassuhard/cortex-bridge/blob/v0.5.3/docs/verification/v0.5.3.json"
   );
   assert.match(release.note, /ne prouve pas une compatibilité continue/i);
+  assert.match(release.note, /cycle macOS propre[^.]*pas été rejoué/i);
+});
+
+test("aucune capture Educool issue d'une classe réelle n'est publiée", () => {
+  const project = projects.find((item) => item.slug === "educool-la-herse");
+  const unsafeAssets = [
+    "educool-dashboard.webp",
+    "educool-saisie-ceintures.webp",
+    "educool-livrets.webp"
+  ];
+
+  assert.ok(project?.story);
+  const publishedMedia = JSON.stringify(project.story.galleryGroups);
+  for (const asset of unsafeAssets) {
+    assert.equal(
+      existsSync(new URL(`../public/assets/proof/educool/${asset}`, import.meta.url)),
+      false,
+      `${asset} expose encore une capture scolaire non synthétique`
+    );
+    assert.doesNotMatch(publishedMedia, new RegExp(asset.replace(".", "\\.")));
+  }
+  assert.doesNotMatch(publishedMedia, /données fictives|sans identité réelle d'enfant/i);
+});
+
+test("les projets non retrouvés restent présentés comme des concepts déclaratifs", () => {
+  const rag = projects.find((item) => item.slug === "rag-starter-kit");
+  const board = projects.find((item) => item.slug === "board-ia-pme");
+  const edusemantix = projects.find((item) => item.slug === "edusemantix");
+  const pokemon = projects.find((item) => item.slug === "pokemon-gen4-toolkit");
+  const battle = projects.find((item) => item.slug === "battle-engine");
+  const preuvia = projects.find((item) => item.slug === "preuvia");
+
+  for (const project of [rag, board]) {
+    assert.ok(project);
+    assert.equal(project.evidenceLevel, "self-declared");
+    assert.match(project.status, /source à retrouver/i);
+    assert.match(project.repoStatus ?? "", /source locale non retrouvée/i);
+    assert.doesNotMatch(project.delivered.join("\n"), /backend|frontend|docker|celery|redis|qdrant/i);
+  }
+  assert.match(edusemantix?.status ?? "", /actif.*refonte V2/i);
+  assert.doesNotMatch(JSON.stringify(pokemon), /EmulatorJS/i);
+  assert.match(battle?.status ?? "", /25 août 2026/i);
+  assert.match(preuvia?.proofLine ?? "", /quatre IA principales.*Mistral/i);
+});
+
+test("les projets utilisent les médias frais retenus lors de l'audit", () => {
+  const expectedAssets = [
+    "/assets/proof/educool/cool-bank-v3-world-20260826.webp",
+    "/assets/proof/educool/cool-bank-v2-teacher.webp",
+    "/assets/proof/hoopsphere/hoopsphere-import-emarque.webp",
+    "/assets/proof/cortex-bridge/cortex-stop-diagnostic.webp",
+    "/assets/proof/claude-code-soul/soul-github-repo.webp",
+    "/assets/video/les-petites-griffes.mp4",
+    "/assets/video/les-petites-griffes-poster.webp",
+    "/assets/video/battle-engine-intro-hd.mp4",
+    "/assets/video/battle-engine-intro-hd-poster.webp"
+  ];
+
+  for (const asset of expectedAssets) {
+    assert.ok(existsSync(new URL(`../public${asset}`, import.meta.url)), `${asset} manque`);
+  }
+
+  const bySlug = (slug: string) => projects.find((item) => item.slug === slug);
+  assert.equal(bySlug("les-petites-griffes")?.video, "/assets/video/les-petites-griffes.mp4");
+  assert.equal(bySlug("battle-engine")?.video, "/assets/video/battle-engine-intro-hd.mp4");
+  assert.equal(
+    bySlug("educool-la-herse")?.heroImage?.src,
+    "/assets/proof/educool/cool-bank-v3-world-20260826.webp"
+  );
+  assert.match(JSON.stringify(bySlug("educool-la-herse")?.story), /cool-bank-v2-teacher\.webp/);
+  assert.match(JSON.stringify(bySlug("hoopsphere")?.gallery), /hoopsphere-import-emarque\.webp/);
+  assert.match(JSON.stringify(bySlug("cortex-bridge")?.gallery), /cortex-stop-diagnostic\.webp/);
+  assert.match(JSON.stringify(bySlug("claude-code-soul")?.gallery), /soul-github-repo\.webp/);
 });
 
 test("Cool Bank / La Herse expose séparément les versions V2 et V3", () => {
@@ -333,15 +405,15 @@ test("la source machine rattache Cortex Bridge à ses preuves publiques", () => 
   const profile = JSON.parse(
     readFileSync(new URL("../public/profile.json", import.meta.url), "utf8")
   );
-  const fact = profile.citable_facts.cortex_bridge_release_0_5_2;
+  const fact = profile.citable_facts.cortex_bridge_release_0_5_3;
   const project = profile.projects.find(
     (item: { project: string }) => item.project === "Cortex Bridge"
   );
 
   assert.equal(fact.status, "publicly-verified");
-  assert.equal(fact.verification_id, "cortex-bridge-release-0-5-2");
+  assert.equal(fact.verification_id, "cortex-bridge-release-0-5-3");
   assert.deepEqual(project.verification_ids, [
     "cortex-bridge-repo",
-    "cortex-bridge-release-0-5-2"
+    "cortex-bridge-release-0-5-3"
   ]);
 });

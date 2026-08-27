@@ -7,7 +7,7 @@
 | Format | Pipeline vidéo / automation |
 | Période | 2026 |
 | Rôle de Jonas | Pipeline Python, Godot, rendu, FFmpeg, publication |
-| Statut | Actif / lab · pipeline repris le 23 août 2026 |
+| Statut | Actif / lab · sources vérifiées jusqu'au 25 août 2026 |
 | Niveau de preuve | Démo privée |
 | Stack | Godot, Python, FFmpeg, RIFE, YouTube API |
 
@@ -29,7 +29,7 @@ Un pipeline Python lance le combat dans Godot, prépare la vidéo avec FFmpeg et
 - Reprendre une publication après une interruption sans recommencer tout le rendu.
 - Documenter les droits audio, les contrôles qualité et les étapes d'exploitation.
 
-Preuve locale privée : le commit du 23/08/2026 rend la publication nightly reprenable après une interruption.
+Preuves locales privées vérifiées jusqu'au 25/08/2026 : reprise du pipeline après interruption et ajout d'analyses d'exploitation en lecture seule.
 
 ## Visuels
 
@@ -43,6 +43,7 @@ Preuve locale privée : le commit du 23/08/2026 rend la publication nightly repr
 ## Limites
 
 - Projet lab : automatisation créative, éloignée du poste visé, gardée comme preuve technique.
+- La vidéo publique montre uniquement l'introduction rendue en haute définition, pas un combat complet.
 - Audience YouTube : à vérifier, non avancée comme preuve recruteur.
 
 ## Liens

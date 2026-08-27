@@ -7,9 +7,9 @@
 | Format | Projet perso / preuve technique |
 | Période | 2026 |
 | Rôle de Jonas | Conception et développement (full-stack) |
-| Statut | Prototype privé - publication à préparer |
-| Niveau de preuve | Démo privée |
-| Stack | FastAPI, Qdrant, Mistral AI, LangChain, SQLite, pytest, Next.js 16 / React 19, Docker Compose |
+| Statut | Concept documenté · source à retrouver |
+| Niveau de preuve | À documenter |
+| Stack | RAG, Recherche sémantique, Citations, Isolation des données, Évaluation |
 
 ## À quoi ça sert
 
@@ -17,17 +17,16 @@ Permettre à plusieurs clients d'interroger leurs documents sans mélanger leurs
 
 ## Ce que Jonas a fait
 
-- Backend FastAPI pour recevoir les documents, retrouver les passages, répondre avec les sources, authentifier les clients et journaliser l'usage.
-- Frontend Next.js 16 / React 19 (App Router, TypeScript, Tailwind 4).
-- Stack dockerisée (Qdrant + backend + frontend) lançable via docker compose, + docs d'onboarding.
+- Schémas conceptuels du parcours documentaire, de l'isolation des clients et de la boucle d'évaluation.
+- Cadrage des preuves à produire avant de présenter le concept comme un produit fonctionnel.
 
 ## Ce que ça prouve
 
-Une API reçoit des documents, retrouve les passages utiles et répond en citant ses sources. Les données de chaque client restent séparées.
+Concept d'un outil qui retrouverait les passages utiles d'un document et répondrait avec leurs sources. Le code correspondant reste à retrouver.
 
-- Recevoir plusieurs formats de documents, retrouver les bons passages et citer les sources dans la réponse.
-- Séparer les données de chaque client sur un même serveur, avec authentification.
-- Tester la qualité des réponses avec des cas versionnés et une suite pytest.
+- Cadrer un parcours de recherche documentaire qui remonte les passages utilisés dans la réponse.
+- Prévoir la séparation des données de chaque client dès la conception.
+- Documenter une boucle d'évaluation avant de retrouver ou reconstruire une implémentation.
 
 ## Visuels
 
@@ -40,8 +39,8 @@ Une API reçoit des documents, retrouve les passages utiles et répond en citant
 
 ## Limites
 
-- Code et démonstration non publics à ce jour ; l'architecture décrite n'est donc pas auditée publiquement.
-- Le module d'évaluation fournit le harnais ; les scores de qualité ne sont pas publiés.
+- Source locale non retrouvée lors de l'audit du 27 août 2026.
+- Les schémas montrent une intention de conception, pas une application prouvée.
 
 ## Liens
 
