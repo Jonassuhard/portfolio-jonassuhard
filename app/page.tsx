@@ -90,7 +90,7 @@ export default function HomePage() {
                     {evidenceLevelMeta[project.evidenceLevel].label}
                   </span>
                   <p className="case-meta">{project.type}</p>
-                  <h3>{project.shortTitle}</h3>
+                  <h3 className="card-title-accessible">{project.shortTitle}</h3>
                   <p>{project.cardLine ?? project.proofLine}</p>
                   <div className="tag-row">
                     {project.stack.slice(0, 4).map((item) => (

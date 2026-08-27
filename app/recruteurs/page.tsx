@@ -191,7 +191,7 @@ export default function RecruitersPage() {
                   {evidenceLevelMeta[project.evidenceLevel].label}
                 </span>
                 <p className="case-meta">{project.cardStatus ?? project.status}</p>
-                <h3>{project.shortTitle}</h3>
+                <h3 className="card-title-accessible">{project.shortTitle}</h3>
                 <p>{project.recruiterProof[0]}</p>
                 <Link className="button" href={`/projets/${project.slug}`}>Voir le projet</Link>
               </div>

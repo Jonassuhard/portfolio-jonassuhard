@@ -23,6 +23,42 @@ test("les cartes utilisent une image responsive sans JavaScript client", () => {
   assert.match(cardPages, /fullColor=\{project\.fullColorMedia\}/);
 });
 
+test("les cartes ne répètent pas visuellement le titre déjà présent dans leur illustration", () => {
+  const cardPages = [
+    "app/page.tsx",
+    "app/recruteurs/page.tsx",
+    "app/projets/page.tsx"
+  ].map(read);
+  const css = read("app/globals.css");
+
+  for (const page of cardPages) {
+    assert.match(page, /<h3 className="card-title-accessible">/);
+  }
+  assert.match(
+    cardPages[2],
+    /<Link[\s\S]*?className="case-card-link"[\s\S]*?aria-label=\{`Voir le projet \$\{project\.shortTitle\}`\}/
+  );
+  assert.doesNotMatch(cardPages[2], /className="case-card-title"/);
+  assert.match(
+    css,
+    /\.card-title-accessible \{[^}]*position:absolute;[^}]*inline-size:1px;[^}]*clip-path:inset\(50%\)/
+  );
+  assert.match(css, /\.case-card-link \{[^}]*position:absolute;[^}]*inset:0;[^}]*z-index:1/);
+});
+
+test("les illustrations de projet conservent leur cadrage source 760 par 460", () => {
+  const css = read("app/globals.css");
+
+  for (const selector of ["proof-card", "case-card"]) {
+    assert.match(
+      css,
+      new RegExp(`\\.${selector} img \\{[^}]*height:auto;[^}]*aspect-ratio:38/23;[^}]*object-fit:contain;`)
+    );
+  }
+  assert.match(css, /\.case-grid-compact \.case-card img \{ height:auto; \}/);
+  assert.doesNotMatch(css, /\.(?:proof-card|case-card) img \{[^}]*object-fit:cover/);
+});
+
 test("le blueprint utilise exactement onze images locales transparentes", () => {
   const blueprint = read("app/blueprint-bg.tsx");
   const css = read("app/globals.css");

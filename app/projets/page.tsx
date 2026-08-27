@@ -54,11 +54,12 @@ export default function ProjectsPage() {
                     <span className={`evidence-badge evidence-${project.evidenceLevel}`}>
                       {evidenceLevelMeta[project.evidenceLevel].label}
                     </span>
-                    <h3>
-                      <Link className="case-card-title" href={`/projets/${project.slug}`}>
-                        {project.shortTitle}
-                      </Link>
-                    </h3>
+                    <h3 className="card-title-accessible">{project.shortTitle}</h3>
+                    <Link
+                      className="case-card-link"
+                      href={`/projets/${project.slug}`}
+                      aria-label={`Voir le projet ${project.shortTitle}`}
+                    />
                     <p>
                       {group.tier === 1
                         ? project.summary
