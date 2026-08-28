@@ -150,7 +150,46 @@ function toMarkdown(project: Project) {
     "",
     "## À quoi ça sert",
     "",
-    project.summary,
+    project.summary
+  ];
+  if (project.need) {
+    lines.push(
+      "",
+      "## Besoin",
+      "",
+      `### ${project.need.title}`,
+      "",
+      project.need.lead,
+      "",
+      bullets(project.need.items)
+    );
+  }
+  if (project.intention) {
+    lines.push(
+      "",
+      "## Intention",
+      "",
+      `### ${project.intention.title}`,
+      "",
+      project.intention.lead,
+      "",
+      bullets(project.intention.items)
+    );
+  }
+  if (
+    project.architecture?.length &&
+    (project.need || project.intention || project.architectureImage)
+  ) {
+    lines.push("", "## Architecture", "");
+    if (project.architectureImage) {
+      lines.push(
+        `![${project.architectureImage.caption}](${project.architectureImage.src})`,
+        ""
+      );
+    }
+    lines.push(bullets(project.architecture));
+  }
+  lines.push(
     "",
     "## Ce que Jonas a fait",
     "",
@@ -161,7 +200,7 @@ function toMarkdown(project: Project) {
     project.proofLine,
     "",
     bullets(project.recruiterProof)
-  ];
+  );
   if (project.evidenceNote) {
     lines.push("", project.evidenceNote);
   }
@@ -186,9 +225,15 @@ function toMarkdown(project: Project) {
   }
   if (project.gallery?.length) {
     lines.push("", "## Visuels", "");
+    if (project.heroImage) {
+      lines.push(`![${project.heroImage.caption}](${project.heroImage.src})`, "");
+    }
     for (const visual of project.gallery) {
       lines.push(`![${visual.caption}](${visual.src})`, "");
     }
+  }
+  if (project.need || project.intention) {
+    lines.push("", "## Résultats vérifiés", "", bullets(project.results));
   }
   lines.push(
     "",

@@ -56,6 +56,26 @@
       "note": "Aucun volume de clients ni résultat commercial n'est revendiqué dans le portfolio."
     },
     {
+      "id": "job-radar-community-repo",
+      "claim": "Le code de Job Radar Community est public sur GitHub sous licence MIT.",
+      "scope": "Projet",
+      "status": "publicly-verified",
+      "checkedAt": "2026-08-28",
+      "sourceLabel": "Repo GitHub Job Radar Community",
+      "sourceHref": "https://github.com/Jonassuhard/job-radar-community",
+      "note": "L'édition publique est reconstruite sans l'historique, le profil, les candidatures ni les données de la version personnelle."
+    },
+    {
+      "id": "job-radar-community-beta-1",
+      "claim": "La preuve Job Radar Community v0.1.0-beta.1 rapporte 336 tests backend, 36 tests frontend et 37 tests E2E sans échec ; 8 scénarios E2E sont ignorés intentionnellement. Elle couvre 20 combinaisons route/viewport sans violation Axe ni débordement.",
+      "scope": "Projet",
+      "status": "publicly-verified",
+      "checkedAt": "2026-08-28",
+      "sourceLabel": "Preuve Job Radar Community v0.1.0-beta.1",
+      "sourceHref": "https://github.com/Jonassuhard/job-radar-community/blob/main/docs/verification/v0.1.0-beta.1.json",
+      "note": "Preuve publique d'une validation locale datée sur un corpus de 42 offres fictives, complétée par CI et Security GitHub vertes sur le commit testé. Elle ne prouve ni adoption externe ni candidature obtenue."
+    },
+    {
       "id": "cortex-bridge-repo",
       "claim": "Le code de Cortex Bridge est public sur GitHub sous licence MIT.",
       "scope": "Projet",

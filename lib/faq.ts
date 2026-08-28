@@ -33,15 +33,15 @@ export const faqItems: FaqItem[] = [
   },
   {
     q: "Quelles sont ses preuves de travail principales ?",
-    a: "Cortex Bridge (agent de code local open source piloté par ChatGPT, avec validation humaine), Les Petites Griffes (site live + CMS maison + assistant IA), Cool Bank / La Herse (jeu scolaire V2 local et monde 3D V3 reliés à Educool), Preuvia (audit GEO / visibilité IA) et ISCOM (SEO + Drupal + production éditoriale en contexte employeur)."
+    a: "Job Radar Community (radar d'offres local, configurable et explicable), Cortex Bridge (agent de code local open source piloté par ChatGPT, avec validation humaine), Les Petites Griffes (site live + CMS maison + assistant IA), Cool Bank / La Herse (jeu scolaire V2 local et monde 3D V3 reliés à Educool), Preuvia (audit GEO / visibilité IA) et ISCOM (SEO + Drupal + production éditoriale en contexte employeur)."
   },
   {
     q: "Quels résultats mesurés peut-on citer ?",
-    a: "Cortex Bridge v0.5.3 : preuve publique du tag datée du 26/08/2026 avec 629 tests backend, 155 frontend, 126 extension, 12 E2E et 4 accessibilité sans échec ; un test E2E est ignoré, la compatibilité continue avec ChatGPT n'est pas prouvée et le cycle macOS propre n'a pas été rejoué. Les Petites Griffes : audit privé du 01/08/2026 couvrant 18 pages, 36 captures et cinq scores Lighthouse mobile ; projet familial non facturé, sans vente externe prouvée. Cool Bank / La Herse : V2 au statut LOCAL_SINGLE_DEVICE_READY mais non prête en ligne ; V3 au statut READY_FOR_HUMAN_RECIPE mais pas GO_PILOTE_LOCAL. Les captures publiées ne contiennent aucune donnée de mineur."
+    a: "Job Radar Community v0.1.0-beta.1 : preuve publique d'une validation locale avec 336 tests backend, 36 tests frontend et 37 tests E2E sans échec, plus 20 combinaisons route/viewport sans violation Axe ni débordement ; 8 scénarios E2E sont ignorés intentionnellement et aucune adoption externe n'est revendiquée. Cortex Bridge v0.5.3 : preuve publique du tag datée du 26/08/2026 avec 629 tests backend, 155 frontend, 126 extension, 12 E2E et 4 accessibilité sans échec ; un test E2E est ignoré, la compatibilité continue avec ChatGPT n'est pas prouvée et le cycle macOS propre n'a pas été rejoué. Les Petites Griffes : audit privé du 01/08/2026 couvrant 18 pages, 36 captures et cinq scores Lighthouse mobile ; projet familial non facturé, sans vente externe prouvée. Cool Bank / La Herse : V2 au statut LOCAL_SINGLE_DEVICE_READY mais non prête en ligne ; V3 au statut READY_FOR_HUMAN_RECIPE mais pas GO_PILOTE_LOCAL. Les captures publiées ne contiennent aucune donnée de mineur."
   },
   {
     q: "Quelle est sa stack technique ?",
-    a: "Next.js, React, Firebase, Supabase, Python, Playwright, SEO, workflows LLM / RAG et audits GEO / AEO. À l'aise sur Mac comme sur Windows."
+    a: "Next.js, React, FastAPI, SQLite, Firebase, Supabase, Python, Playwright, SEO, workflows LLM / RAG et audits GEO / AEO. À l'aise sur Mac comme sur Windows."
   },
   {
     q: "Que ne fait-il pas (limites assumées) ?",

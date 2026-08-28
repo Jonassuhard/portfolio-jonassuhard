@@ -6,6 +6,7 @@ import sharp from "sharp";
 import { knowledgePages } from "../lib/knowledge";
 import { featuredProjects, projects, recruiterFeatured, site } from "../lib/projects";
 import { verificationItems } from "../lib/verification";
+import { projectJsonLd } from "../lib/json-ld";
 
 test("les slugs et liens de projet sont uniques", () => {
   assert.equal(new Set(projects.map((project) => project.slug)).size, projects.length);
@@ -72,7 +73,7 @@ test("les cartes de projets exposent leurs destinations publiques vérifiées", 
 });
 
 test("les cartes projet utilisent des illustrations bitmap transparentes en couleur", async () => {
-  assert.equal(projects.length, 13);
+  assert.equal(projects.length, 14);
   assert.equal(
     existsSync(new URL("../scripts/generate-card-schematics.mjs", import.meta.url)),
     false,
@@ -97,18 +98,148 @@ test("les sélections recruteur ne contiennent que des projets principaux", () =
   }
 });
 
-test("les sélections principales gardent Cortex et placent Cool Bank côté recruteurs", () => {
+test("les sélections principales placent Job Radar devant les preuves complémentaires", () => {
   assert.deepEqual(
     featuredProjects.map((project) => project.slug),
-    ["cortex-bridge", "les-petites-griffes", "educool-la-herse"]
+    ["job-radar", "cortex-bridge", "les-petites-griffes"]
   );
   assert.deepEqual(
     recruiterFeatured.map((project) => project.slug),
-    ["cortex-bridge", "les-petites-griffes", "educool-la-herse"]
+    ["job-radar", "cortex-bridge", "les-petites-griffes"]
   );
   assert.equal(featuredProjects.some((project) => project.slug === "iscom"), false);
   assert.equal(recruiterFeatured.some((project) => project.slug === "iscom"), false);
   assert.ok(projects.some((project) => project.slug === "iscom"));
+});
+
+test("Job Radar publie un contrat produit configurable sans auto-candidature", () => {
+  const project = projects.find((item) => item.slug === "job-radar");
+
+  assert.ok(project);
+  const architecture = project.architecture ?? [];
+  assert.equal(project.tier, 1);
+  assert.equal(project.evidenceLevel, "public");
+  assert.equal(project.fullColorMedia, true);
+  assert.match(project.repoStatus ?? "", /github\.com\/Jonassuhard\/job-radar-community/i);
+  assert.match(project.need?.title ?? "", /offres|recherche/i);
+  assert.ok((project.need?.items.length ?? 0) >= 3);
+  assert.match(project.intention?.title ?? "", /classer|radar|pertinence|explicable/i);
+  assert.ok((project.intention?.items.length ?? 0) >= 4);
+  assert.match(
+    project.architectureImage?.caption ?? "",
+    /architecture livrée[\s\S]*local_demo[\s\S]*import JSON local normalisé[\s\S]*sans accès distant[\s\S]*beta/i
+  );
+  assert.match(project.limits.join("\n"), /pas d.auto-candidature|n.envoie aucune candidature/i);
+  assert.match(project.limits.join("\n"), /LinkedIn[\s\S]*Indeed[\s\S]*Welcome to the Jungle/i);
+  assert.match(
+    architecture.join("\n"),
+    /local_demo[\s\S]*import JSON local normalisé[\s\S]*aucun connecteur distant/i
+  );
+  assert.doesNotMatch(
+    architecture.join("\n"),
+    /France Travail|Adzuna|Jooble|Remotive|ATS publics/i
+  );
+  assert.match(
+    (project.v2 ?? []).join("\n"),
+    /France Travail[\s\S]*Adzuna[\s\S]*Jooble[\s\S]*Remotive[\s\S]*ATS publics[\s\S]*futurs/i
+  );
+  assert.match(
+    project.limits.join("\n"),
+    /France Travail[\s\S]*Adzuna[\s\S]*Jooble[\s\S]*Remotive[\s\S]*ATS publics[\s\S]*aucun de ces connecteurs distants n.est livré/i
+  );
+  assert.ok(
+    project.links.some(
+      (link) =>
+        link.external &&
+        link.href === "https://github.com/Jonassuhard/job-radar-community"
+    )
+  );
+
+  const visuals = [project.heroImage, project.architectureImage, ...(project.gallery ?? [])]
+    .filter(Boolean);
+  assert.equal(visuals.length, 5);
+  assert.equal(new Set(visuals.map((visual) => visual?.src)).size, 5);
+  for (const visual of visuals) {
+    assert.ok(visual);
+    const asset = new URL(`../public${visual.src}`, import.meta.url);
+    assert.ok(existsSync(asset), `${visual.src} est absent du dossier public`);
+    assert.ok(statSync(asset).size < 700_000, `${visual.src} dépasse 700 ko`);
+  }
+
+  const jsonLd = projectJsonLd("job-radar");
+  assert.ok(jsonLd);
+  assert.equal(jsonLd["@type"], "SoftwareSourceCode");
+  assert.equal(
+    jsonLd.codeRepository,
+    "https://github.com/Jonassuhard/job-radar-community"
+  );
+});
+
+test("la page projet rend les blocs besoin, intention et architecture sans dépendre de Cool Bank", () => {
+  const page = readFileSync(
+    new URL("../app/projets/[slug]/page.tsx", import.meta.url),
+    "utf8"
+  );
+
+  assert.match(page, /project\.need/);
+  assert.match(page, /project\.intention/);
+  assert.match(page, /project\.architectureImage/);
+  assert.doesNotMatch(page, /sources autorisées/i);
+  assert.doesNotMatch(page, /Cool Bank|educool-la-herse/);
+});
+
+test("les surfaces publiques et machine citent la même preuve Job Radar", () => {
+  const homepage = readFileSync(new URL("../app/page.tsx", import.meta.url), "utf8");
+  const recruiters = readFileSync(
+    new URL("../app/recruteurs/page.tsx", import.meta.url),
+    "utf8"
+  );
+  const llms = readFileSync(new URL("../public/llms.txt", import.meta.url), "utf8");
+  const profileMarkdown = readFileSync(
+    new URL("../public/profile.md", import.meta.url),
+    "utf8"
+  );
+  const skillsMarkdown = readFileSync(
+    new URL("../public/skills.md", import.meta.url),
+    "utf8"
+  );
+  const profile = JSON.parse(
+    readFileSync(new URL("../public/profile.json", import.meta.url), "utf8")
+  );
+  const machineProject = profile.projects.find(
+    (item: { project: string }) => item.project === "Job Radar Community"
+  );
+  const verification = verificationItems.find(
+    (item) => item.id === "job-radar-community-beta-1"
+  );
+
+  for (const surface of [homepage, recruiters, llms, profileMarkdown, skillsMarkdown]) {
+    assert.match(surface, /Job Radar/);
+  }
+  assert.ok(machineProject);
+  assert.equal(machineProject.repository, "https://github.com/Jonassuhard/job-radar-community");
+  assert.ok(machineProject.verification_ids.includes("job-radar-community-beta-1"));
+  assert.ok(verification);
+  assert.equal(verification.status, "publicly-verified");
+  assert.match(verification.sourceHref ?? "", /job-radar-community[\s\S]*v0\.1\.0-beta\.1\.json/);
+  assert.match(verification.claim, /336 tests backend/);
+  assert.match(verification.claim, /36 tests frontend/);
+  assert.match(verification.claim, /37 tests E2E/);
+});
+
+test("la fiche Markdown Job Radar projette le besoin, l'intention et les limites", () => {
+  const markdown = readFileSync(
+    new URL("../public/projects/job-radar.md", import.meta.url),
+    "utf8"
+  );
+
+  assert.match(markdown, /## Besoin/);
+  assert.match(markdown, /## Intention/);
+  assert.match(markdown, /## Architecture/);
+  assert.match(markdown, /## Résultats vérifiés/);
+  assert.match(markdown, /## Limites/);
+  assert.match(markdown, /github\.com\/Jonassuhard\/job-radar-community/);
+  assert.match(markdown, /LinkedIn[\s\S]*Indeed[\s\S]*Welcome to the Jungle/i);
 });
 
 test("Cool Bank raconte deux versions 3D distinctes avant ses statuts techniques", () => {

@@ -4,6 +4,12 @@ export type ProjectTier = 1 | 2 | 3;
 export type EvidenceLevel = "public" | "private" | "self-declared";
 export type ProofImage = { src: string; caption: string; width: number; height: number };
 
+export type ProjectNarrativeBlock = {
+  title: string;
+  lead: string;
+  items: string[];
+};
+
 export type ProjectStory = {
   purposeTitle: string;
   purposeLead: string;
@@ -30,9 +36,12 @@ export type Project = {
   tier: ProjectTier;
   image: string;
   heroImage?: ProofImage;
+  architectureImage?: ProofImage;
   fullColorMedia?: boolean;
   cardStatus?: string;
   story?: ProjectStory;
+  need?: ProjectNarrativeBlock;
+  intention?: ProjectNarrativeBlock;
   proofLine: string;
   summary: string;
   stack: string[];
@@ -183,6 +192,176 @@ export const pageMeta = (opts: {
 };
 
 export const projects: Project[] = [
+  {
+    slug: "job-radar",
+    title: "Job Radar - transformer des offres dispersées en décisions explicables",
+    shortTitle: "Job Radar Community",
+    type: "Radar d'offres local et open source",
+    period: "Août 2026 · v0.1.0-beta.1",
+    role: "Conception produit, architecture, développement full-stack, sécurité, QA open source",
+    status: "Beta publique open source v0.1.0-beta.1",
+    evidenceLevel: "public",
+    tier: 1,
+    image: "/assets/cards/job-radar-art.webp",
+    heroImage: {
+      src: "/assets/proof/job-radar/radar-overview.webp",
+      caption: "Radar de démonstration : offres fictives classées avec score, confiance, fraîcheur, source et raison principale.",
+      width: 1440,
+      height: 900
+    },
+    architectureImage: {
+      src: "/assets/proof/job-radar/architecture.webp",
+      caption: "Schéma de l'architecture livrée : corpus hors ligne local_demo ou import JSON local normalisé, sans accès distant dans cette beta.",
+      width: 1440,
+      height: 900
+    },
+    fullColorMedia: true,
+    cardStatus: "Beta publique · données locales · corpus fictif",
+    repoStatus: "Repo public MIT : github.com/Jonassuhard/job-radar-community",
+    liveLabel: "Repo GitHub et release v0.1.0-beta.1",
+    evidenceNote:
+      "La preuve v0.1.0-beta.1 rapporte 336 tests backend, 36 tests frontend et 37 tests E2E sans échec ; 8 scénarios E2E sont ignorés intentionnellement. Axe et responsive ont été contrôlés sur 20 combinaisons route/viewport, sans violation ni débordement.",
+    metaDescription:
+      "Job Radar Community classe des offres d'emploi avec un score configurable et explicable, en local, sans CV publié ni auto-candidature.",
+    cardLine:
+      "Radar local qui normalise les offres, sépare pertinence, confiance et fraîcheur, puis explique chaque décision.",
+    need: {
+      title: "Les offres utiles sont dispersées.",
+      lead:
+        "APIs, ATS publics, alertes et imports manuels produisent des formats différents. Relire les mêmes annonces et subir des filtres opaques fait perdre du temps avant même de candidater.",
+      items: [
+        "Comparer des offres hétérogènes sans perdre leur provenance ni les extraits qui justifient les faits.",
+        "Adapter les critères au parcours, aux contraintes et aux priorités de chaque utilisateur sans modifier le code.",
+        "Écarter les doublons et les offres trop anciennes sans confondre fraîcheur et pertinence métier."
+      ]
+    },
+    intention: {
+      title: "Construire un classement utile et explicable.",
+      lead:
+        "Le radar transforme les annonces en faits comparables, applique une grille YAML contrôlable et rend chaque score lisible. Les données restent locales par défaut.",
+      items: [
+        "Séparer la pertinence professionnelle, la confiance d'extraction et l'âge de l'annonce.",
+        "Expliquer les axes, règles, bonus, malus et blocages avec les extraits source associés.",
+        "Permettre de configurer profil, recherche, scoring, sources et taxonomie sans toucher au code.",
+        "Garder les entrées et le classement locaux dans cette beta, puis conserver une validation humaine avant toute candidature."
+      ]
+    },
+    architecture: [
+      "La beta publique reçoit uniquement le corpus hors ligne local_demo, fourni, ou un import JSON local normalisé ; elle ne livre aucun connecteur distant.",
+      "Le noyau Python normalise, canonicalise, déduplique et extrait les faits avant d'appliquer la configuration YAML.",
+      "Le score, la confiance et la fraîcheur sont persistés dans SQLite puis exposés par une API FastAPI locale.",
+      "L'interface React affiche Radar, Insights, Sources et Configuration sans recalculer le score côté navigateur."
+    ],
+    v2: [
+      "Recueillir des retours utilisateurs publics pour calibrer la grille et les presets sans imposer un profil universel.",
+      "Étudier France Travail, Adzuna, Jooble, Remotive et les ATS publics comme connecteurs futurs, uniquement lorsque leur accès, leur API, leurs conditions et leurs limites le permettent."
+    ],
+    notMeasured: [
+      "Adoption externe, candidatures obtenues et gain de temps réel : pas encore mesurés pour cette beta.",
+      "Qualité du classement sur un corpus professionnel réel : la démonstration publique utilise 42 offres fictives."
+    ],
+    proofLine:
+      "La preuve publique v0.1.0-beta.1 rapporte 336 tests backend, 36 tests frontend et 37 tests E2E sans échec, ainsi que 20 combinaisons route/viewport sans violation Axe ni débordement.",
+    summary:
+      "Job Radar Community est un radar d'offres local et configurable. Il normalise les annonces, retire les doublons et explique séparément la pertinence, la confiance et la fraîcheur, sans publier le CV ni envoyer de candidature.",
+    stack: ["Python", "FastAPI", "React", "SQLite", "Pydantic", "Playwright"],
+    recruiterProof: [
+      "Transformer un besoin personnel en produit générique configurable et documenté.",
+      "Concevoir un pipeline déterministe où chaque décision peut être reliée à une règle et à un extrait source.",
+      "Préparer une publication open source sans historique privé, secret, CV ni donnée de candidature."
+    ],
+    constraints: [
+      "Préserver la version personnelle et son historique tout en reconstruisant une édition publique par liste blanche.",
+      "Fonctionner hors ligne avec un corpus fictif et garder les données utilisateur sur la machine par défaut.",
+      "Refuser le crawl automatique des sources qui ne l'autorisent pas et rendre leur politique visible dans l'interface.",
+      "Rester configurable sans masquer les règles derrière un modèle opaque ou un service cloud obligatoire."
+    ],
+    decisions: [
+      {
+        decision: "Noyau déterministe et configuration YAML",
+        why: "Les critères restent auditables, versionnables et modifiables sans toucher au code.",
+        rejected: "Un classement LLM opaque impossible à reproduire précisément."
+      },
+      {
+        decision: "SQLite et API loopback",
+        why: "La démonstration reste locale, légère et utilisable sans compte cloud.",
+        rejected: "Une base distante obligatoire pour un outil personnel."
+      },
+      {
+        decision: "Entrées locales explicites",
+        why: "Le corpus local_demo fourni et l'import JSON local normalisé rendent la provenance contrôlable sans dépendre d'un service distant.",
+        rejected: "Présenter des connecteurs distants comme livrés avant de valider leur accès, leurs conditions et leurs limites."
+      },
+      {
+        decision: "Score, confiance et fraîcheur séparés",
+        why: "Une offre peut être pertinente mais ancienne, ou bien extraite avec peu de certitude ; le produit ne mélange pas ces signaux.",
+        rejected: "Un score unique dont les causes seraient impossibles à lire."
+      }
+    ],
+    delivered: [
+      "CLI Python pour initialiser, valider, diagnostiquer, rafraîchir, importer et recalculer les offres.",
+      "Pipeline de normalisation, déduplication, extraction de faits et scoring configurable avec provenance.",
+      "API FastAPI locale, stockage SQLite et interface React responsive en quatre vues.",
+      "Corpus local_demo hors ligne de 42 offres fictives, import JSON local normalisé et documentation de configuration.",
+      "Contrats de sécurité, audits publics et archive de release reproductible."
+    ],
+    results: [
+      "336 tests backend, 36 tests frontend et 37 tests E2E réussis ; 8 scénarios E2E ignorés intentionnellement.",
+      "20 combinaisons route/viewport contrôlées à 320, 390, 768, 1024 et 1440 px, sans violation Axe ni débordement.",
+      "Audits de l'arbre public, de l'historique propre, de l'archive, des distributions Python, des dépendances et des captures : zéro finding déclaré dans la preuve v0.1.0-beta.1.",
+      "Corpus de démonstration de 42 offres fictives utilisable hors ligne et sans clé API."
+    ],
+    limits: [
+      "Cette beta n'envoie aucune candidature et ne génère ni CV ni lettre ; elle prépare et explique la sélection.",
+      "LinkedIn, Indeed et Welcome to the Jungle restent des sources manual_only : aucun refresh automatique ne les appelle.",
+      "France Travail, Adzuna, Jooble, Remotive et les ATS publics sont des pistes futures sous conditions d'accès, d'API et de limites ; aucun de ces connecteurs distants n'est livré dans cette beta.",
+      "La preuve v0.1.0-beta.1 est une validation locale datée ; elle ne prouve ni adoption externe ni résultat de recherche d'emploi.",
+      "Le corpus public est fictif ; la pertinence sur les recherches d'un tiers dépend de sa propre configuration."
+    ],
+    gallery: [
+      {
+        src: "/assets/proof/job-radar/score-explained.webp",
+        caption: "Détail d'une offre fictive : score par axe, règles appliquées et explications restent visibles.",
+        width: 1024,
+        height: 768
+      },
+      {
+        src: "/assets/proof/job-radar/insights.webp",
+        caption: "Insights calculés depuis la base locale : décisions, compétences demandées et santé du corpus.",
+        width: 1440,
+        height: 900
+      },
+      {
+        src: "/assets/proof/job-radar/mobile.webp",
+        caption: "Le radar conserve filtres, score, confiance, fraîcheur et décision sur un écran mobile de 390 px.",
+        width: 390,
+        height: 844
+      }
+    ],
+    links: [
+      {
+        label: "Repo GitHub",
+        href: "https://github.com/Jonassuhard/job-radar-community",
+        external: true
+      },
+      {
+        label: "Configurer son radar",
+        href: "https://github.com/Jonassuhard/job-radar-community/blob/main/docs/CONFIGURATION.md",
+        external: true
+      },
+      {
+        label: "Architecture publique",
+        href: "https://github.com/Jonassuhard/job-radar-community/blob/main/docs/ARCHITECTURE.md",
+        external: true
+      },
+      {
+        label: "Preuve v0.1.0-beta.1",
+        href: "https://github.com/Jonassuhard/job-radar-community/blob/main/docs/verification/v0.1.0-beta.1.json",
+        external: true
+      },
+      { label: "Version Markdown", href: "/projects/job-radar.md" }
+    ]
+  },
   {
     slug: "les-petites-griffes",
     title: "Les Petites Griffes - site live, CMS et assistant IA",
@@ -1286,13 +1465,13 @@ export const projects: Project[] = [
   }
 ];
 
-export const featuredProjects = ["cortex-bridge", "les-petites-griffes", "educool-la-herse"]
+export const featuredProjects = ["job-radar", "cortex-bridge", "les-petites-griffes"]
   .map((slug) => projects.find((project) => project.slug === slug))
   .filter((project): project is Project => Boolean(project));
 
 // Preuves recruteur : produit IA open source, livraison client en production,
 // puis besoin terrain transformé en produit local testable.
-export const recruiterFeatured = ["cortex-bridge", "les-petites-griffes", "educool-la-herse"]
+export const recruiterFeatured = ["job-radar", "cortex-bridge", "les-petites-griffes"]
   .map((slug) => projects.find((project) => project.slug === slug))
   .filter((project): project is Project => Boolean(project));
 
@@ -1313,9 +1492,9 @@ export const skills = [
   {
     name: "Automatisation / QA / Playwright",
     group: "IA & automatisation" as SkillGroup,
-    proofSlugs: ["cortex-bridge", "battle-engine"],
+    proofSlugs: ["job-radar", "cortex-bridge", "battle-engine"],
     proofExtra: "audits Playwright, scripts Python",
-    proof: "Cortex Bridge, Battle Engine, audits Playwright, scripts Python",
+    proof: "Job Radar, Cortex Bridge, Battle Engine, audits Playwright, scripts Python",
     note: "J'automatise les tâches répétitives et je contrôle le résultat sur plusieurs tailles d'écran.",
     limit: "Automatisation de projets perso ; pas encore de QA en CI/CD dans une équipe multi-dev."
   },
@@ -1331,27 +1510,27 @@ export const skills = [
   {
     name: "Full-stack web",
     group: "Web & produit" as SkillGroup,
-    proofSlugs: ["cortex-bridge", "les-petites-griffes", "educool-la-herse"],
+    proofSlugs: ["job-radar", "cortex-bridge", "les-petites-griffes", "educool-la-herse"],
     proofExtra: "ce portfolio",
-    proof: "Cortex Bridge, Les Petites Griffes, Cool Bank / La Herse, ce portfolio",
+    proof: "Job Radar, Cortex Bridge, Les Petites Griffes, Cool Bank / La Herse, ce portfolio",
     note: "Je construis des sites et des outils web, du premier écran au déploiement.",
     limit: "Surtout front et intégrations ; pas de backend distribué à forte charge."
   },
   {
     name: "Documentation / transmission",
     group: "Web & produit" as SkillGroup,
-    proofSlugs: ["claude-code-soul", "educool-la-herse"],
+    proofSlugs: ["job-radar", "claude-code-soul", "educool-la-herse"],
     proofExtra: "ce portfolio",
-    proof: "claude-code-soul, Cool Bank / La Herse, ce portfolio",
+    proof: "Job Radar, claude-code-soul, Cool Bank / La Herse, ce portfolio",
     note: "Je note les décisions et les étapes pour qu'une autre personne puisse reprendre le projet.",
     limit: "Documentation de projets solo ; pas encore d'onboarding formalisé sur un codebase partagé."
   },
   {
     name: "Sécurité / RGPD / limites",
     group: "IA & automatisation" as SkillGroup,
-    proofSlugs: ["cortex-bridge", "educool-la-herse", "les-petites-griffes"],
+    proofSlugs: ["job-radar", "cortex-bridge", "educool-la-herse", "les-petites-griffes"],
     proofExtra: "",
-    proof: "Cortex Bridge, Cool Bank / La Herse, Les Petites Griffes",
+    proof: "Job Radar, Cortex Bridge, Cool Bank / La Herse, Les Petites Griffes",
     note: "Je limite les droits, bloque en cas de doute, anonymise les données sensibles et garde les secrets hors du code.",
     limit: "Bonnes pratiques appliquées ; pas d'audit sécurité formel ni de conformité validée par un DPO."
   }

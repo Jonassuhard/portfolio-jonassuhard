@@ -157,6 +157,68 @@ export default async function ProjectDetailPage({ params }: PageProps) {
         <section><ProjectSummaryTable project={project} /></section>
       )}
 
+      {project.need || project.intention ? (
+        <section className="section project-narrative-band">
+          {project.need ? (
+            <article className="project-narrative" aria-labelledby={`${project.slug}-need`}>
+              <div>
+                <p className="section-kicker">Besoin</p>
+                <h2 id={`${project.slug}-need`}>{project.need.title}</h2>
+                <p className="lead">{project.need.lead}</p>
+              </div>
+              <ul>
+                {project.need.items.map((item) => <li key={item}>{item}</li>)}
+              </ul>
+            </article>
+          ) : null}
+          {project.intention ? (
+            <article className="project-narrative" aria-labelledby={`${project.slug}-intention`}>
+              <div>
+                <p className="section-kicker">Intention</p>
+                <h2 id={`${project.slug}-intention`}>{project.intention.title}</h2>
+                <p className="lead">{project.intention.lead}</p>
+              </div>
+              <ul>
+                {project.intention.items.map((item) => <li key={item}>{item}</li>)}
+              </ul>
+            </article>
+          ) : null}
+        </section>
+      ) : null}
+
+      {project.architectureImage ? (
+        <section className="section project-architecture">
+          <div className="section-head">
+            <div>
+              <p className="section-kicker">Architecture</p>
+              <h2>Des entrées locales au score expliqué.</h2>
+            </div>
+            <p>
+              Chaque étape conserve sa provenance. Le navigateur présente les
+              résultats ; le noyau local reste la seule source du calcul.
+            </p>
+          </div>
+          <figure>
+            <Image
+              src={project.architectureImage.src}
+              alt={project.architectureImage.caption}
+              width={project.architectureImage.width}
+              height={project.architectureImage.height}
+              sizes="(max-width: 640px) calc(100vw - 28px), 1120px"
+              quality={75}
+              loading="lazy"
+              className={project.fullColorMedia ? "full-color-media" : undefined}
+            />
+            <figcaption>{project.architectureImage.caption}</figcaption>
+          </figure>
+          {project.architecture ? (
+            <ol className="architecture-steps">
+              {project.architecture.map((item) => <li key={item}>{item}</li>)}
+            </ol>
+          ) : null}
+        </section>
+      ) : null}
+
       {!project.story && project.versions?.length ? (
         <section className="section">
           <p className="section-kicker">Versions</p>
@@ -200,6 +262,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                   sizes="(max-width: 640px) calc(100vw - 28px), 520px"
                   quality={75}
                   loading="lazy"
+                  className={project.fullColorMedia ? "full-color-media" : undefined}
                 />
                 <figcaption>{shot.caption}</figcaption>
               </figure>
@@ -220,7 +283,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
             </ul>
           </section>
 
-          {!project.story && project.architecture ? (
+          {!project.story && project.architecture && !project.architectureImage ? (
             <section>
               <p className="section-kicker">Fonctionnement</p>
               <h2>Comment ça fonctionne.</h2>

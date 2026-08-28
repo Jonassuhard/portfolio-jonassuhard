@@ -7,6 +7,7 @@ const routeLastModified = new Map<string, string>([
   ["", contentReviewDate],
   ["/recruteurs", contentReviewDate],
   ["/projets", contentReviewDate],
+  ["/projets/job-radar", contentReviewDate],
   ["/projets/educool-la-herse", contentReviewDate],
   ["/llms.txt", contentReviewDate]
 ]);

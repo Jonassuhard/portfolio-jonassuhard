@@ -115,7 +115,13 @@ export function projectJsonLd(slug: string) {
     ]
   };
   // programmingLanguage n'a de sens que sur du code réellement écrit par Jonas.
-  if (isCode) node.programmingLanguage = project.stack;
+  if (isCode) {
+    node.programmingLanguage = project.stack;
+    const repository = project.links.find(
+      (link) => link.external && /^https:\/\/github\.com\//.test(link.href)
+    );
+    if (repository) node.codeRepository = repository.href;
+  }
 
   return node;
 }
