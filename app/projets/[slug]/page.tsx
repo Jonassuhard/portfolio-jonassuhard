@@ -205,7 +205,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
               width={project.architectureImage.width}
               height={project.architectureImage.height}
               sizes="(max-width: 640px) calc(100vw - 28px), 1120px"
-              quality={80}
+              quality={75}
               loading="lazy"
               className={project.fullColorMedia ? "full-color-media" : undefined}
             />
