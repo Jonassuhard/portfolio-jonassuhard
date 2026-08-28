@@ -34,13 +34,13 @@ Le radar transforme les annonces en faits comparables, applique une grille YAML 
 - Séparer la pertinence professionnelle, la confiance d'extraction et l'âge de l'annonce.
 - Expliquer les axes, règles, bonus, malus et blocages avec les extraits source associés.
 - Permettre de configurer profil, recherche, scoring, sources et taxonomie sans toucher au code.
-- Limiter l'automatisation aux sources autorisées et conserver une validation humaine avant toute candidature.
+- Garder les entrées et le classement locaux dans cette beta, puis conserver une validation humaine avant toute candidature.
 
 ## Architecture
 
-![Pipeline public : sources autorisées et imports manuels, normalisation, faits, scoring configurable, SQLite, API locale et interface React.](/assets/proof/job-radar/architecture.webp)
+![Schéma de la cible d'architecture : dans la beta livrée, les entrées se limitent au corpus hors ligne local_demo ou à un import JSON local normalisé ; les sources distantes représentées restent futures.](/assets/proof/job-radar/architecture.webp)
 
-- France Travail, Adzuna, Jooble, Remotive et ATS publics alimentent le pipeline via des connecteurs autorisés ; les autres offres entrent par import manuel.
+- La beta publique reçoit uniquement le corpus hors ligne local_demo, fourni, ou un import JSON local normalisé ; elle ne livre aucun connecteur distant.
 - Le noyau Python normalise, canonicalise, déduplique et extrait les faits avant d'appliquer la configuration YAML.
 - Le score, la confiance et la fraîcheur sont persistés dans SQLite puis exposés par une API FastAPI locale.
 - L'interface React affiche Radar, Insights, Sources et Configuration sans recalculer le score côté navigateur.
@@ -50,7 +50,7 @@ Le radar transforme les annonces en faits comparables, applique une grille YAML 
 - CLI Python pour initialiser, valider, diagnostiquer, rafraîchir, importer et recalculer les offres.
 - Pipeline de normalisation, déduplication, extraction de faits et scoring configurable avec provenance.
 - API FastAPI locale, stockage SQLite et interface React responsive en quatre vues.
-- Corpus de démonstration hors ligne de 42 offres fictives et documentation de configuration.
+- Corpus local_demo hors ligne de 42 offres fictives, import JSON local normalisé et documentation de configuration.
 - Contrats de sécurité, audits publics et archive de release reproductible.
 
 ## Ce que ça prouve
@@ -85,6 +85,7 @@ La preuve v0.1.0-beta.1 rapporte 234 tests backend, 30 tests frontend et 37 test
 
 - Cette beta n'envoie aucune candidature et ne génère ni CV ni lettre ; elle prépare et explique la sélection.
 - LinkedIn, Indeed et Welcome to the Jungle restent des sources manual_only : aucun refresh automatique ne les appelle.
+- France Travail, Adzuna, Jooble, Remotive et les ATS publics sont des pistes futures sous conditions d'accès, d'API et de limites ; aucun de ces connecteurs distants n'est livré dans cette beta.
 - La preuve v0.1.0-beta.1 est une validation locale datée ; elle ne prouve ni adoption externe ni résultat de recherche d'emploi.
 - Le corpus public est fictif ; la pertinence sur les recherches d'un tiers dépend de sa propre configuration.
 - Adoption externe, candidatures obtenues et gain de temps réel : pas encore mesurés pour cette beta.

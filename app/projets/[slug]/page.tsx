@@ -191,7 +191,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
           <div className="section-head">
             <div>
               <p className="section-kicker">Architecture</p>
-              <h2>Des sources autorisées au score expliqué.</h2>
+              <h2>Des entrées locales au score expliqué.</h2>
             </div>
             <p>
               Chaque étape conserve sa provenance. Le navigateur présente les

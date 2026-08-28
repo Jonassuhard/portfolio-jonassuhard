@@ -116,6 +116,7 @@ test("Job Radar publie un contrat produit configurable sans auto-candidature", (
   const project = projects.find((item) => item.slug === "job-radar");
 
   assert.ok(project);
+  const architecture = project.architecture ?? [];
   assert.equal(project.tier, 1);
   assert.equal(project.evidenceLevel, "public");
   assert.equal(project.fullColorMedia, true);
@@ -124,8 +125,28 @@ test("Job Radar publie un contrat produit configurable sans auto-candidature", (
   assert.ok((project.need?.items.length ?? 0) >= 3);
   assert.match(project.intention?.title ?? "", /classer|radar|pertinence|explicable/i);
   assert.ok((project.intention?.items.length ?? 0) >= 4);
+  assert.match(
+    project.architectureImage?.caption ?? "",
+    /beta livrée[\s\S]*local_demo[\s\S]*import JSON local normalisé[\s\S]*sources distantes[\s\S]*futures/i
+  );
   assert.match(project.limits.join("\n"), /pas d.auto-candidature|n.envoie aucune candidature/i);
   assert.match(project.limits.join("\n"), /LinkedIn[\s\S]*Indeed[\s\S]*Welcome to the Jungle/i);
+  assert.match(
+    architecture.join("\n"),
+    /local_demo[\s\S]*import JSON local normalisé[\s\S]*aucun connecteur distant/i
+  );
+  assert.doesNotMatch(
+    architecture.join("\n"),
+    /France Travail|Adzuna|Jooble|Remotive|ATS publics/i
+  );
+  assert.match(
+    (project.v2 ?? []).join("\n"),
+    /France Travail[\s\S]*Adzuna[\s\S]*Jooble[\s\S]*Remotive[\s\S]*ATS publics[\s\S]*futurs/i
+  );
+  assert.match(
+    project.limits.join("\n"),
+    /France Travail[\s\S]*Adzuna[\s\S]*Jooble[\s\S]*Remotive[\s\S]*ATS publics[\s\S]*aucun de ces connecteurs distants n.est livré/i
+  );
   assert.ok(
     project.links.some(
       (link) =>
@@ -163,6 +184,7 @@ test("la page projet rend les blocs besoin, intention et architecture sans dépe
   assert.match(page, /project\.need/);
   assert.match(page, /project\.intention/);
   assert.match(page, /project\.architectureImage/);
+  assert.doesNotMatch(page, /sources autorisées/i);
   assert.doesNotMatch(page, /Cool Bank|educool-la-herse/);
 });
 
