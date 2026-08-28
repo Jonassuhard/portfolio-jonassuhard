@@ -211,7 +211,7 @@ export const projects: Project[] = [
     },
     architectureImage: {
       src: "/assets/proof/job-radar/architecture.webp",
-      caption: "Schéma de la cible d'architecture : dans la beta livrée, les entrées se limitent au corpus hors ligne local_demo ou à un import JSON local normalisé ; les sources distantes représentées restent futures.",
+      caption: "Schéma de l'architecture livrée : corpus hors ligne local_demo ou import JSON local normalisé, sans accès distant dans cette beta.",
       width: 1440,
       height: 900
     },
@@ -220,7 +220,7 @@ export const projects: Project[] = [
     repoStatus: "Repo public MIT : github.com/Jonassuhard/job-radar-community",
     liveLabel: "Repo GitHub et release v0.1.0-beta.1",
     evidenceNote:
-      "La preuve v0.1.0-beta.1 rapporte 234 tests backend, 30 tests frontend et 37 tests E2E sans échec ; 8 scénarios E2E sont ignorés intentionnellement. Axe et responsive ont été contrôlés sur 20 combinaisons route/viewport, sans violation ni débordement.",
+      "La preuve v0.1.0-beta.1 rapporte 336 tests backend, 36 tests frontend et 37 tests E2E sans échec ; 8 scénarios E2E sont ignorés intentionnellement. Axe et responsive ont été contrôlés sur 20 combinaisons route/viewport, sans violation ni débordement.",
     metaDescription:
       "Job Radar Community classe des offres d'emploi avec un score configurable et explicable, en local, sans CV publié ni auto-candidature.",
     cardLine:
@@ -261,7 +261,7 @@ export const projects: Project[] = [
       "Qualité du classement sur un corpus professionnel réel : la démonstration publique utilise 42 offres fictives."
     ],
     proofLine:
-      "La preuve publique v0.1.0-beta.1 rapporte 234 tests backend, 30 tests frontend et 37 tests E2E sans échec, ainsi que 20 combinaisons route/viewport sans violation Axe ni débordement.",
+      "La preuve publique v0.1.0-beta.1 rapporte 336 tests backend, 36 tests frontend et 37 tests E2E sans échec, ainsi que 20 combinaisons route/viewport sans violation Axe ni débordement.",
     summary:
       "Job Radar Community est un radar d'offres local et configurable. Il normalise les annonces, retire les doublons et explique séparément la pertinence, la confiance et la fraîcheur, sans publier le CV ni envoyer de candidature.",
     stack: ["Python", "FastAPI", "React", "SQLite", "Pydantic", "Playwright"],
@@ -306,7 +306,7 @@ export const projects: Project[] = [
       "Contrats de sécurité, audits publics et archive de release reproductible."
     ],
     results: [
-      "234 tests backend, 30 tests frontend et 37 tests E2E réussis ; 8 scénarios E2E ignorés intentionnellement.",
+      "336 tests backend, 36 tests frontend et 37 tests E2E réussis ; 8 scénarios E2E ignorés intentionnellement.",
       "20 combinaisons route/viewport contrôlées à 320, 390, 768, 1024 et 1440 px, sans violation Axe ni débordement.",
       "Audits de l'arbre public, de l'historique propre, de l'archive, des distributions Python, des dépendances et des captures : zéro finding déclaré dans la preuve v0.1.0-beta.1.",
       "Corpus de démonstration de 42 offres fictives utilisable hors ligne et sans clé API."

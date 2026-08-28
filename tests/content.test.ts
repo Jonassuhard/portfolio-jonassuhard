@@ -127,7 +127,7 @@ test("Job Radar publie un contrat produit configurable sans auto-candidature", (
   assert.ok((project.intention?.items.length ?? 0) >= 4);
   assert.match(
     project.architectureImage?.caption ?? "",
-    /beta livrée[\s\S]*local_demo[\s\S]*import JSON local normalisé[\s\S]*sources distantes[\s\S]*futures/i
+    /architecture livrée[\s\S]*local_demo[\s\S]*import JSON local normalisé[\s\S]*sans accès distant[\s\S]*beta/i
   );
   assert.match(project.limits.join("\n"), /pas d.auto-candidature|n.envoie aucune candidature/i);
   assert.match(project.limits.join("\n"), /LinkedIn[\s\S]*Indeed[\s\S]*Welcome to the Jungle/i);
@@ -222,8 +222,8 @@ test("les surfaces publiques et machine citent la même preuve Job Radar", () =>
   assert.ok(verification);
   assert.equal(verification.status, "publicly-verified");
   assert.match(verification.sourceHref ?? "", /job-radar-community[\s\S]*v0\.1\.0-beta\.1\.json/);
-  assert.match(verification.claim, /234 tests backend/);
-  assert.match(verification.claim, /30 tests frontend/);
+  assert.match(verification.claim, /336 tests backend/);
+  assert.match(verification.claim, /36 tests frontend/);
   assert.match(verification.claim, /37 tests E2E/);
 });
 

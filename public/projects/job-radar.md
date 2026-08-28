@@ -38,7 +38,7 @@ Le radar transforme les annonces en faits comparables, applique une grille YAML 
 
 ## Architecture
 
-![Schéma de la cible d'architecture : dans la beta livrée, les entrées se limitent au corpus hors ligne local_demo ou à un import JSON local normalisé ; les sources distantes représentées restent futures.](/assets/proof/job-radar/architecture.webp)
+![Schéma de l'architecture livrée : corpus hors ligne local_demo ou import JSON local normalisé, sans accès distant dans cette beta.](/assets/proof/job-radar/architecture.webp)
 
 - La beta publique reçoit uniquement le corpus hors ligne local_demo, fourni, ou un import JSON local normalisé ; elle ne livre aucun connecteur distant.
 - Le noyau Python normalise, canonicalise, déduplique et extrait les faits avant d'appliquer la configuration YAML.
@@ -55,13 +55,13 @@ Le radar transforme les annonces en faits comparables, applique une grille YAML 
 
 ## Ce que ça prouve
 
-La preuve publique v0.1.0-beta.1 rapporte 234 tests backend, 30 tests frontend et 37 tests E2E sans échec, ainsi que 20 combinaisons route/viewport sans violation Axe ni débordement.
+La preuve publique v0.1.0-beta.1 rapporte 336 tests backend, 36 tests frontend et 37 tests E2E sans échec, ainsi que 20 combinaisons route/viewport sans violation Axe ni débordement.
 
 - Transformer un besoin personnel en produit générique configurable et documenté.
 - Concevoir un pipeline déterministe où chaque décision peut être reliée à une règle et à un extrait source.
 - Préparer une publication open source sans historique privé, secret, CV ni donnée de candidature.
 
-La preuve v0.1.0-beta.1 rapporte 234 tests backend, 30 tests frontend et 37 tests E2E sans échec ; 8 scénarios E2E sont ignorés intentionnellement. Axe et responsive ont été contrôlés sur 20 combinaisons route/viewport, sans violation ni débordement.
+La preuve v0.1.0-beta.1 rapporte 336 tests backend, 36 tests frontend et 37 tests E2E sans échec ; 8 scénarios E2E sont ignorés intentionnellement. Axe et responsive ont été contrôlés sur 20 combinaisons route/viewport, sans violation ni débordement.
 
 ## Visuels
 
@@ -76,7 +76,7 @@ La preuve v0.1.0-beta.1 rapporte 234 tests backend, 30 tests frontend et 37 test
 
 ## Résultats vérifiés
 
-- 234 tests backend, 30 tests frontend et 37 tests E2E réussis ; 8 scénarios E2E ignorés intentionnellement.
+- 336 tests backend, 36 tests frontend et 37 tests E2E réussis ; 8 scénarios E2E ignorés intentionnellement.
 - 20 combinaisons route/viewport contrôlées à 320, 390, 768, 1024 et 1440 px, sans violation Axe ni débordement.
 - Audits de l'arbre public, de l'historique propre, de l'archive, des distributions Python, des dépendances et des captures : zéro finding déclaré dans la preuve v0.1.0-beta.1.
 - Corpus de démonstration de 42 offres fictives utilisable hors ligne et sans clé API.

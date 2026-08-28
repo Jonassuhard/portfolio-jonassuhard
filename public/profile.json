@@ -19,12 +19,12 @@
   },
   "citable_facts": {
     "job_radar_community_beta_1": {
-      "claim": "La preuve Job Radar Community v0.1.0-beta.1 rapporte 234 tests backend, 30 tests frontend et 37 tests E2E sans échec ; 8 scénarios E2E sont ignorés intentionnellement. Elle couvre 20 combinaisons route/viewport sans violation Axe ni débordement.",
+      "claim": "La preuve Job Radar Community v0.1.0-beta.1 rapporte 336 tests backend, 36 tests frontend et 37 tests E2E sans échec ; 8 scénarios E2E sont ignorés intentionnellement. Elle couvre 20 combinaisons route/viewport sans violation Axe ni débordement.",
       "status": "publicly-verified",
       "verification_id": "job-radar-community-beta-1",
-      "checked_at": "2026-08-27",
+      "checked_at": "2026-08-28",
       "source": "https://github.com/Jonassuhard/job-radar-community/blob/main/docs/verification/v0.1.0-beta.1.json",
-      "proof_note": "Validation locale datée sur 42 offres fictives ; aucune adoption externe ni candidature obtenue n'est revendiquée."
+      "proof_note": "Validation locale datée sur 42 offres fictives, complétée par CI et Security GitHub vertes sur le commit testé ; aucune adoption externe ni candidature obtenue n'est revendiquée."
     },
     "cortex_bridge_release_0_5_3": {
       "claim": "La preuve du tag Cortex Bridge v0.5.3 rapporte 629 tests backend, 155 frontend, 126 extension, 12 E2E et 4 accessibilité sans échec ; un test E2E est ignoré.",
@@ -81,11 +81,11 @@
       "case_study": "/projets/job-radar",
       "markdown": "/projects/job-radar.md",
       "repository": "https://github.com/Jonassuhard/job-radar-community",
-      "evidence": "v0.1.0-beta.1 : 234 tests backend, 30 tests frontend et 37 tests E2E sans échec ; 8 scénarios E2E ignorés intentionnellement ; 20 combinaisons route/viewport sans violation Axe ni débordement.",
+      "evidence": "v0.1.0-beta.1 : 336 tests backend, 36 tests frontend et 37 tests E2E sans échec ; 8 scénarios E2E ignorés intentionnellement ; 20 combinaisons route/viewport sans violation Axe ni débordement.",
       "evidence_status": "publicly-verified",
       "verification_ids": ["job-radar-community-repo", "job-radar-community-beta-1"],
-      "verified_at": "2026-08-27",
-      "limits": "Validation locale datée sur 42 offres fictives ; aucune adoption externe, candidature obtenue ni exécution GitHub Actions revendiquée. LinkedIn, Indeed et Welcome to the Jungle restent manual_only.",
+      "verified_at": "2026-08-28",
+      "limits": "Validation locale datée sur 42 offres fictives, complétée par CI et Security GitHub vertes sur le commit testé ; aucune adoption externe ni candidature obtenue n'est revendiquée. LinkedIn, Indeed et Welcome to the Jungle restent manual_only.",
       "confidentiality": "édition publique sans profil, CV, candidatures, e-mails ni historique privé",
       "repo_status": "public sous licence MIT"
     },
