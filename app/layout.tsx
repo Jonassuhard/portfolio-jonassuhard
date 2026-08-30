@@ -109,6 +109,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <div className="foot-cols">
             <div>
               <p className="foot-col-title">Contact</p>
+              <Link href="/contact">Choisir un sujet</Link>
               <a href={`mailto:${site.email}`}>{site.email}</a>
               <a href={site.github}>GitHub</a>
               <a href={site.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>

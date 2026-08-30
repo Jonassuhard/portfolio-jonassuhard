@@ -108,9 +108,7 @@ export const site = {
   github: "https://github.com/Jonassuhard",
   portfolioRepo: "https://github.com/Jonassuhard/portfolio-jonassuhard",
   linkedin: "https://www.linkedin.com/in/jonas-suhard-b73923245/",
-  // Profil Malt temporairement masqué : son contenu doit être réaligné avec
-  // les affirmations vérifiables du portfolio avant de redevenir public ici.
-  malt: null as string | null,
+  malt: "https://www.malt.fr/profile/jonassuhard?overview",
   location: "Paris, France",
   availability: "1er septembre 2026",
   cvClassic: "/cv.pdf",

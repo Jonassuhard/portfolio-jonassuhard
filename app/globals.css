@@ -296,6 +296,7 @@ h1, h2, h3 { text-wrap:balance; }
   .main-nav.open a:nth-child(4) { transition-delay:.08s; }
   .main-nav.open a:nth-child(5) { transition-delay:.1s; }
   .main-nav.open a:nth-child(6) { transition-delay:.12s; }
+  .main-nav.open a:nth-child(7) { transition-delay:.14s; }
 }
 @media (prefers-reduced-motion:reduce) { .nav-toggle span { transition:none; } }
 p { margin:0 0 10px; }

@@ -475,8 +475,8 @@ test("aucun projet privé ne se présente comme copie publique", () => {
   }
 });
 
-test("les liens externes incohérents restent masqués jusqu'à leur mise à jour", () => {
-  assert.equal(site.malt, null);
+test("le profil Malt réaligné est de nouveau exposé", () => {
+  assert.equal(site.malt, "https://www.malt.fr/profile/jonassuhard?overview");
 });
 
 test("les dates de publication et de modification des articles restent distinctes", () => {

@@ -55,6 +55,7 @@ export default function SiteNav() {
         <Link href="/methode" prefetch={false} onClick={close}>Méthode</Link>
         <Link href="/preuves" prefetch={false} onClick={close}>Preuves</Link>
         <Link href="/a-propos" prefetch={false} onClick={close}>À propos</Link>
+        <Link href="/contact" prefetch={false} onClick={close}>Contact</Link>
       </nav>
     </div>
   );
