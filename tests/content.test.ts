@@ -112,7 +112,7 @@ test("les sélections principales placent Job Radar devant les preuves compléme
   assert.ok(projects.some((project) => project.slug === "iscom"));
 });
 
-test("Job Radar publie un contrat produit configurable sans auto-candidature", () => {
+test("Job Radar distingue la version personnelle déployée de l'édition Community", () => {
   const project = projects.find((item) => item.slug === "job-radar");
 
   assert.ok(project);
@@ -120,6 +120,11 @@ test("Job Radar publie un contrat produit configurable sans auto-candidature", (
   assert.equal(project.tier, 1);
   assert.equal(project.evidenceLevel, "public");
   assert.equal(project.fullColorMedia, true);
+  assert.match(project.status, /version personnelle déployée/i);
+  assert.match(project.status, /Community.*v0\.1\.0-beta\.1/i);
+  assert.match(project.summary, /version personnelle/i);
+  assert.match(project.summary, /édition Community/i);
+  assert.equal(project.versionsTitle, "Deux versions, deux niveaux de preuve.");
   assert.match(project.repoStatus ?? "", /github\.com\/Jonassuhard\/job-radar-community/i);
   assert.match(project.need?.title ?? "", /offres|recherche/i);
   assert.ok((project.need?.items.length ?? 0) >= 3);
@@ -127,25 +132,14 @@ test("Job Radar publie un contrat produit configurable sans auto-candidature", (
   assert.ok((project.intention?.items.length ?? 0) >= 4);
   assert.match(
     project.architectureImage?.caption ?? "",
-    /architecture livrée[\s\S]*local_demo[\s\S]*import JSON local normalisé[\s\S]*sans accès distant[\s\S]*beta/i
+    /version personnelle[\s\S]*Vercel[\s\S]*Cloud Run[\s\S]*Turso/i
   );
-  assert.match(project.limits.join("\n"), /pas d.auto-candidature|n.envoie aucune candidature/i);
+  assert.match(project.limits.join("\n"), /aucun envoi autonome|validation humaine/i);
+  assert.match(project.limits.join("\n"), /Application Assist[\s\S]*pas activé en production/i);
   assert.match(project.limits.join("\n"), /LinkedIn[\s\S]*Indeed[\s\S]*Welcome to the Jungle/i);
   assert.match(
     architecture.join("\n"),
-    /local_demo[\s\S]*import JSON local normalisé[\s\S]*aucun connecteur distant/i
-  );
-  assert.doesNotMatch(
-    architecture.join("\n"),
-    /France Travail|Adzuna|Jooble|Remotive|ATS publics/i
-  );
-  assert.match(
-    (project.v2 ?? []).join("\n"),
-    /France Travail[\s\S]*Adzuna[\s\S]*Jooble[\s\S]*Remotive[\s\S]*ATS publics[\s\S]*futurs/i
-  );
-  assert.match(
-    project.limits.join("\n"),
-    /France Travail[\s\S]*Adzuna[\s\S]*Jooble[\s\S]*Remotive[\s\S]*ATS publics[\s\S]*aucun de ces connecteurs distants n.est livré/i
+    /Vercel[\s\S]*Cloud Run[\s\S]*Turso[\s\S]*Google Drive/i
   );
   assert.ok(
     project.links.some(
@@ -155,10 +149,23 @@ test("Job Radar publie un contrat produit configurable sans auto-candidature", (
     )
   );
 
+  const expectedScreens = [
+    "/assets/proof/job-radar/radar-v2-desktop-20260831.webp",
+    "/assets/proof/job-radar/today-v2-20260831.webp",
+    "/assets/proof/job-radar/insights-v2-20260831.webp",
+    "/assets/proof/job-radar/system-v2-20260831.webp",
+    "/assets/proof/job-radar/radar-v2-mobile-board-20260831.webp"
+  ];
+  assert.equal(project.heroImage?.src, expectedScreens[0]);
+  assert.deepEqual((project.gallery ?? []).map((visual) => visual.src), expectedScreens.slice(1));
+  for (const caption of [project.heroImage?.caption, ...(project.gallery ?? []).map((visual) => visual.caption)]) {
+    assert.match(caption ?? "", /données fictives/i);
+  }
+
   const visuals = [project.heroImage, project.architectureImage, ...(project.gallery ?? [])]
     .filter(Boolean);
-  assert.equal(visuals.length, 5);
-  assert.equal(new Set(visuals.map((visual) => visual?.src)).size, 5);
+  assert.equal(visuals.length, 6);
+  assert.equal(new Set(visuals.map((visual) => visual?.src)).size, 6);
   for (const visual of visuals) {
     assert.ok(visual);
     const asset = new URL(`../public${visual.src}`, import.meta.url);
@@ -184,6 +191,7 @@ test("la page projet rend les blocs besoin, intention et architecture sans dépe
   assert.match(page, /project\.need/);
   assert.match(page, /project\.intention/);
   assert.match(page, /project\.architectureImage/);
+  assert.match(page, /project\.versionsTitle/);
   assert.doesNotMatch(page, /sources autorisées/i);
   assert.doesNotMatch(page, /Cool Bank|educool-la-herse/);
 });
@@ -207,10 +215,13 @@ test("les surfaces publiques et machine citent la même preuve Job Radar", () =>
     readFileSync(new URL("../public/profile.json", import.meta.url), "utf8")
   );
   const machineProject = profile.projects.find(
-    (item: { project: string }) => item.project === "Job Radar Community"
+    (item: { project: string }) => item.project === "Job Radar"
   );
   const verification = verificationItems.find(
     (item) => item.id === "job-radar-community-beta-1"
+  );
+  const privateVerification = verificationItems.find(
+    (item) => item.id === "job-radar-personal-deployed-2026-08-25"
   );
 
   for (const surface of [homepage, recruiters, llms, profileMarkdown, skillsMarkdown]) {
@@ -219,12 +230,17 @@ test("les surfaces publiques et machine citent la même preuve Job Radar", () =>
   assert.ok(machineProject);
   assert.equal(machineProject.repository, "https://github.com/Jonassuhard/job-radar-community");
   assert.ok(machineProject.verification_ids.includes("job-radar-community-beta-1"));
+  assert.ok(machineProject.verification_ids.includes("job-radar-personal-deployed-2026-08-25"));
   assert.ok(verification);
   assert.equal(verification.status, "publicly-verified");
   assert.match(verification.sourceHref ?? "", /job-radar-community[\s\S]*v0\.1\.0-beta\.1\.json/);
   assert.match(verification.claim, /336 tests backend/);
   assert.match(verification.claim, /36 tests frontend/);
   assert.match(verification.claim, /37 tests E2E/);
+  assert.ok(privateVerification);
+  assert.equal(privateVerification.status, "private-evidence");
+  assert.match(privateVerification.claim, /Vercel[\s\S]*Cloud Run[\s\S]*Turso[\s\S]*Google Drive/);
+  assert.equal(profile.citable_facts.job_radar_personal_deployed_2026_08_25.status, "private-evidence");
 });
 
 test("la fiche Markdown Job Radar projette le besoin, l'intention et les limites", () => {
@@ -239,6 +255,9 @@ test("la fiche Markdown Job Radar projette le besoin, l'intention et les limites
   assert.match(markdown, /## Résultats vérifiés/);
   assert.match(markdown, /## Limites/);
   assert.match(markdown, /github\.com\/Jonassuhard\/job-radar-community/);
+  assert.match(markdown, /version personnelle déployée/i);
+  assert.match(markdown, /édition Community/i);
+  assert.match(markdown, /Application Assist[\s\S]*pas activé en production/i);
   assert.match(markdown, /LinkedIn[\s\S]*Indeed[\s\S]*Welcome to the Jungle/i);
 });
 

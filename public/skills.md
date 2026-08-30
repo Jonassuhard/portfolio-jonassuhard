@@ -6,7 +6,7 @@ Je pars d'un besoin concret, construis une première solution, la teste avec les
 
 **Projets liés**
 
-- Job Radar Community
+- Job Radar
 - Les Petites Griffes
 - Cool Bank / La Herse
 - ISCOM
@@ -36,7 +36,7 @@ Boucles IA contrôlées, pipelines Python, audits Playwright multi-viewports, g�
 
 **Projets liés**
 
-- Job Radar Community
+- Job Radar
 - Cortex Bridge
 - Battle Engine
 - Audits Playwright
@@ -69,7 +69,7 @@ Next.js, React, pages publiques, CMS léger, rendu statique, déploiement et pro
 
 **Projets liés**
 
-- Job Radar Community
+- Job Radar
 - Cortex Bridge
 - Les Petites Griffes
 - Cool Bank / La Herse
@@ -85,7 +85,7 @@ J'écris les décisions, les procédures et les limites pour qu'une autre person
 
 **Projets liés**
 
-- Job Radar Community
+- Job Radar
 - claude-code-soul
 - Cool Bank / La Herse
 - Ce portfolio
@@ -100,7 +100,7 @@ Je limite les actions au dossier prévu, bloque le système en cas de doute, ano
 
 **Projets liés**
 
-- Job Radar Community
+- Job Radar
 - Cortex Bridge
 - Cool Bank / La Herse
 - Les Petites Griffes

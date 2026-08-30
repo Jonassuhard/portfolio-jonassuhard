@@ -43,7 +43,7 @@ export default function HomePage() {
           <div className="stats-list">
             <div className="stat-item">
               <strong>Job Radar</strong>
-              <span>Un radar d'offres local, configurable et entièrement explicable.</span>
+              <span>Un poste de contrôle déployé qui classe les offres et explique chaque décision.</span>
             </div>
             <div className="stat-item">
               <strong>Cortex Bridge</strong>
@@ -70,7 +70,7 @@ export default function HomePage() {
           </div>
           <p>
             Job Radar, Cortex Bridge et Les Petites Griffes : un produit de
-            recherche d'emploi configurable, un agent de code local et un site
+            recherche d'emploi déployé, un agent de code local et un site
             familial en production, avec leurs preuves et leurs limites.
           </p>
         </div>

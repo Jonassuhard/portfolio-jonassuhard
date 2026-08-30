@@ -4,13 +4,13 @@ import { projects, siteUrl } from "@/lib/projects";
 import { contentReviewDate } from "@/lib/verification";
 
 const routeLastModified = new Map<string, string>([
-  ["", contentReviewDate],
+  ["", "2026-08-31"],
   ["/contact", "2026-08-31"],
-  ["/recruteurs", contentReviewDate],
-  ["/projets", contentReviewDate],
-  ["/projets/job-radar", contentReviewDate],
+  ["/recruteurs", "2026-08-31"],
+  ["/projets", "2026-08-31"],
+  ["/projets/job-radar", "2026-08-31"],
   ["/projets/educool-la-herse", contentReviewDate],
-  ["/llms.txt", contentReviewDate]
+  ["/llms.txt", "2026-08-31"]
 ]);
 
 export default function sitemap(): MetadataRoute.Sitemap {

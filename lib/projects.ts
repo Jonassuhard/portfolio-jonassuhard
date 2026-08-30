@@ -37,6 +37,8 @@ export type Project = {
   image: string;
   heroImage?: ProofImage;
   architectureImage?: ProofImage;
+  architectureTitle?: string;
+  architectureLead?: string;
   fullColorMedia?: boolean;
   cardStatus?: string;
   story?: ProjectStory;
@@ -65,6 +67,7 @@ export type Project = {
     evidence: string[];
     limits: string[];
   }>;
+  versionsTitle?: string;
   v2?: string[];
   notMeasured?: string[];
   repoStatus?: string;
@@ -192,148 +195,190 @@ export const pageMeta = (opts: {
 export const projects: Project[] = [
   {
     slug: "job-radar",
-    title: "Job Radar - transformer des offres dispersées en décisions explicables",
-    shortTitle: "Job Radar Community",
-    type: "Radar d'offres local et open source",
-    period: "Août 2026 · v0.1.0-beta.1",
-    role: "Conception produit, architecture, développement full-stack, sécurité, QA open source",
-    status: "Beta publique open source v0.1.0-beta.1",
+    title: "Job Radar - savoir quelles offres méritent mon temps",
+    shortTitle: "Job Radar",
+    type: "Radar d'offres déployé + édition open source",
+    period: "Juillet - août 2026",
+    role: "Conception produit, architecture, développement full-stack, déploiement cloud, sécurité et QA",
+    status: "Version personnelle déployée · Community v0.1.0-beta.1 publique",
     evidenceLevel: "public",
     tier: 1,
     image: "/assets/cards/job-radar-art.webp",
     heroImage: {
-      src: "/assets/proof/job-radar/radar-overview.webp",
-      caption: "Radar de démonstration : offres fictives classées avec score, confiance, fraîcheur, source et raison principale.",
+      src: "/assets/proof/job-radar/radar-v2-desktop-20260831.webp",
+      caption: "Interface actuelle du Radar : liste, détail, score, confiance et raisons de la note, sur des données fictives.",
       width: 1440,
-      height: 900
+      height: 1000
     },
     architectureImage: {
-      src: "/assets/proof/job-radar/architecture.webp",
-      caption: "Schéma de l'architecture livrée : corpus hors ligne local_demo ou import JSON local normalisé, sans accès distant dans cette beta.",
+      src: "/assets/proof/job-radar/architecture-v2-20260831.webp",
+      caption: "Architecture actuelle : la version personnelle relie Vercel, les jobs et l'API Cloud Run, Turso et Google Drive ; l'édition Community reste locale.",
       width: 1440,
       height: 900
     },
+    architectureTitle: "Deux versions, un même principe : expliquer chaque décision.",
+    architectureLead:
+      "La version personnelle tourne dans le cloud. L'édition Community reste locale et utilise un corpus fictif. Les deux gardent la décision finale côté humain.",
     fullColorMedia: true,
-    cardStatus: "Beta publique · données locales · corpus fictif",
-    repoStatus: "Repo public MIT : github.com/Jonassuhard/job-radar-community",
-    liveLabel: "Repo GitHub et release v0.1.0-beta.1",
+    cardStatus: "Version personnelle déployée · Community publique",
+    repoStatus: "Version personnelle privée · édition Community publique MIT : github.com/Jonassuhard/job-radar-community",
+    liveLabel: "Repo Community et preuve v0.1.0-beta.1",
     evidenceNote:
-      "La preuve v0.1.0-beta.1 rapporte 336 tests backend, 36 tests frontend et 37 tests E2E sans échec ; 8 scénarios E2E sont ignorés intentionnellement. Axe et responsive ont été contrôlés sur 20 combinaisons route/viewport, sans violation ni débordement.",
+      "La version personnelle déployée a été contrôlée en privé le 25 août 2026. L'édition Community v0.1.0-beta.1 apporte une preuve publique séparée : 336 tests backend, 36 frontend et 37 E2E sans échec ; 8 E2E sont ignorés intentionnellement.",
     metaDescription:
-      "Job Radar Community classe des offres d'emploi avec un score configurable et explicable, en local, sans CV publié ni auto-candidature.",
+      "Job Radar rassemble les offres, retire les doublons et explique lesquelles méritent une action. Version personnelle déployée et édition Community publique.",
     cardLine:
-      "Radar local qui normalise les offres, sépare pertinence, confiance et fraîcheur, puis explique chaque décision.",
+      "Un poste de contrôle qui rassemble les offres, explique leur pertinence et indique la prochaine action.",
     need: {
-      title: "Les offres utiles sont dispersées.",
+      title: "Chercher des offres prenait trop de temps.",
       lead:
-        "APIs, ATS publics, alertes et imports manuels produisent des formats différents. Relire les mêmes annonces et subir des filtres opaques fait perdre du temps avant même de candidater.",
+        "Les annonces arrivent par plusieurs sources, avec des doublons, des dates différentes et des intitulés parfois trompeurs. Il fallait les comparer sans relire chaque page depuis le début.",
       items: [
-        "Comparer des offres hétérogènes sans perdre leur provenance ni les extraits qui justifient les faits.",
-        "Adapter les critères au parcours, aux contraintes et aux priorités de chaque utilisateur sans modifier le code.",
-        "Écarter les doublons et les offres trop anciennes sans confondre fraîcheur et pertinence métier."
+        "Réunir les offres autorisées dans un même endroit sans perdre leur source.",
+        "Voir rapidement le métier réel, le niveau attendu et les compétences demandées.",
+        "Savoir pourquoi une offre remonte, ce qui manque et quelle action faire ensuite."
       ]
     },
     intention: {
-      title: "Construire un classement utile et explicable.",
+      title: "Classer les offres et expliquer chaque décision.",
       lead:
-        "Le radar transforme les annonces en faits comparables, applique une grille YAML contrôlable et rend chaque score lisible. Les données restent locales par défaut.",
+        "Job Radar transforme le texte des annonces en faits comparables. La note reste déterministe et chaque résultat montre ses preuves, ses limites et sa fraîcheur.",
       items: [
-        "Séparer la pertinence professionnelle, la confiance d'extraction et l'âge de l'annonce.",
-        "Expliquer les axes, règles, bonus, malus et blocages avec les extraits source associés.",
-        "Permettre de configurer profil, recherche, scoring, sources et taxonomie sans toucher au code.",
-        "Garder les entrées et le classement locaux dans cette beta, puis conserver une validation humaine avant toute candidature."
+        "Séparer pertinence, confiance dans les données et fraîcheur de l'offre.",
+        "Montrer les extraits qui justifient la note et le niveau réel du poste.",
+        "Faire remonter une courte file d'actions plutôt qu'un tableau infini.",
+        "Garder une validation humaine avant la préparation et l'envoi d'une candidature."
       ]
     },
     architecture: [
-      "La beta publique reçoit uniquement le corpus hors ligne local_demo, fourni, ou un import JSON local normalisé ; elle ne livre aucun connecteur distant.",
-      "Le noyau Python normalise, canonicalise, déduplique et extrait les faits avant d'appliquer la configuration YAML.",
-      "Le score, la confiance et la fraîcheur sont persistés dans SQLite puis exposés par une API FastAPI locale.",
-      "L'interface React affiche Radar, Insights, Sources et Configuration sans recalculer le score côté navigateur."
+      "L'interface React personnelle est servie par Vercel et appelle une API FastAPI sur Cloud Run.",
+      "Des jobs Cloud Run collectent uniquement les sources autorisées, normalisent les annonces et retirent les doublons.",
+      "Turso conserve les offres et leurs états ; Google Drive conserve les documents et sauvegardes prévus par le parcours privé.",
+      "Le scoring reste déterministe : métier, compétences, preuves, séniorité et contraintes sont expliqués séparément.",
+      "L'édition Community utilise le même principe avec un corpus fictif, FastAPI, React et SQLite sur la machine."
     ],
-    v2: [
-      "Recueillir des retours utilisateurs publics pour calibrer la grille et les presets sans imposer un profil universel.",
-      "Étudier France Travail, Adzuna, Jooble, Remotive et les ATS publics comme connecteurs futurs, uniquement lorsque leur accès, leur API, leurs conditions et leurs limites le permettent."
+    versions: [
+      {
+        label: "Version personnelle",
+        name: "Signal Desk déployé",
+        status: "Déployée en privé",
+        summary:
+          "Elle collecte les sources autorisées, classe les offres, explique le métier réel et organise les prochaines actions. Le frontend, l'API et les tâches planifiées sont déployés.",
+        evidence: [
+          "Frontend Vercel et huit routes contrôlés en HTTP 200 le 25 août 2026.",
+          "Dernière exécution de production vérifiée avec huit sources en état OK et intégrité de la base confirmée.",
+          "QA privée sur cinq largeurs, navigation clavier et contrôles Axe."
+        ],
+        limits: [
+          "L'application et ses données restent privées ; aucune démo publique connectée à la base réelle n'est proposée.",
+          "Application Assist est validé localement mais pas activé en production."
+        ]
+      },
+      {
+        label: "Édition Community",
+        name: "v0.1.0-beta.1",
+        publicStatus: "Beta publique open source",
+        status: "Publique sur GitHub sous licence MIT",
+        summary:
+          "Cette édition partage le noyau du Radar sans profil, CV, candidatures ni données privées. Elle fonctionne localement avec 42 offres fictives et un import JSON contrôlé.",
+        evidence: [
+          "336 tests backend, 36 tests frontend et 37 tests E2E sans échec.",
+          "20 combinaisons route et viewport sans violation Axe ni débordement.",
+          "Dépôt, historique nettoyé, archive et distributions audités dans la preuve publique."
+        ],
+        limits: [
+          "La beta Community est plus petite que la version personnelle et ne contient pas son infrastructure cloud.",
+          "Elle ne prouve ni adoption externe ni résultat de recherche d'emploi."
+        ]
+      }
     ],
+    versionsTitle: "Deux versions, deux niveaux de preuve.",
     notMeasured: [
-      "Adoption externe, candidatures obtenues et gain de temps réel : pas encore mesurés pour cette beta.",
-      "Qualité du classement sur un corpus professionnel réel : la démonstration publique utilise 42 offres fictives."
+      "Gain de temps moyen et effet sur les réponses obtenues : pas encore mesurés sur un échantillon suffisant.",
+      "Adoption externe de l'édition Community : pas encore mesurée."
     ],
     proofLine:
-      "La preuve publique v0.1.0-beta.1 rapporte 336 tests backend, 36 tests frontend et 37 tests E2E sans échec, ainsi que 20 combinaisons route/viewport sans violation Axe ni débordement.",
+      "La version personnelle est déployée et vérifiée en privé ; l'édition Community apporte une preuve publique avec 409 tests réussis et 20 contrôles route/viewport.",
     summary:
-      "Job Radar Community est un radar d'offres local et configurable. Il normalise les annonces, retire les doublons et explique séparément la pertinence, la confiance et la fraîcheur, sans publier le CV ni envoyer de candidature.",
-    stack: ["Python", "FastAPI", "React", "SQLite", "Pydantic", "Playwright"],
+      "La version personnelle de Job Radar rassemble les offres, retire les doublons et explique lesquelles méritent une action. Une édition Community plus petite publie le noyau avec des données fictives.",
+    stack: ["Python", "FastAPI", "React", "Turso", "Cloud Run", "Vercel", "Playwright"],
     recruiterProof: [
-      "Transformer un besoin personnel en produit générique configurable et documenté.",
-      "Concevoir un pipeline déterministe où chaque décision peut être reliée à une règle et à un extrait source.",
-      "Préparer une publication open source sans historique privé, secret, CV ni donnée de candidature."
+      "Transformer un besoin personnel en produit complet, déployé et utilisé dans un vrai workflow.",
+      "Relier collecte, données, scoring explicable, interface et opérations cloud.",
+      "Extraire une édition open source sans publier le profil, les candidatures ni l'historique privé."
     ],
     constraints: [
-      "Préserver la version personnelle et son historique tout en reconstruisant une édition publique par liste blanche.",
-      "Fonctionner hors ligne avec un corpus fictif et garder les données utilisateur sur la machine par défaut.",
-      "Refuser le crawl automatique des sources qui ne l'autorisent pas et rendre leur politique visible dans l'interface.",
-      "Rester configurable sans masquer les règles derrière un modèle opaque ou un service cloud obligatoire."
+      "Ne collecter automatiquement que les sources et APIs qui l'autorisent.",
+      "Garder le profil, les documents et les candidatures hors du dépôt public.",
+      "Ne jamais laisser un score ou un agent envoyer une candidature à la place de l'utilisateur.",
+      "Conserver un chemin local et reproductible pour l'édition Community."
     ],
     decisions: [
       {
-        decision: "Noyau déterministe et configuration YAML",
-        why: "Les critères restent auditables, versionnables et modifiables sans toucher au code.",
-        rejected: "Un classement LLM opaque impossible à reproduire précisément."
+        decision: "Score déterministe et preuves visibles",
+        why: "Chaque note peut être reliée à une règle et à un extrait de l'annonce.",
+        rejected: "Un classement LLM opaque impossible à reproduire."
       },
       {
-        decision: "SQLite et API loopback",
-        why: "La démonstration reste locale, légère et utilisable sans compte cloud.",
-        rejected: "Une base distante obligatoire pour un outil personnel."
+        decision: "Pertinence, confiance et fraîcheur séparées",
+        why: "Une bonne offre peut être ancienne ou mal documentée ; un seul score cacherait cette différence.",
+        rejected: "Une note globale sans explication."
       },
       {
-        decision: "Entrées locales explicites",
-        why: "Le corpus local_demo fourni et l'import JSON local normalisé rendent la provenance contrôlable sans dépendre d'un service distant.",
-        rejected: "Présenter des connecteurs distants comme livrés avant de valider leur accès, leurs conditions et leurs limites."
+        decision: "Version privée et édition Community séparées",
+        why: "Le produit personnel garde ses données et son infrastructure ; le public reçoit uniquement le noyau partageable.",
+        rejected: "Nettoyer à la main une copie du dépôt privé avec un risque de fuite."
       },
       {
-        decision: "Score, confiance et fraîcheur séparés",
-        why: "Une offre peut être pertinente mais ancienne, ou bien extraite avec peu de certitude ; le produit ne mélange pas ces signaux.",
-        rejected: "Un score unique dont les causes seraient impossibles à lire."
+        decision: "Validation humaine avant toute action externe",
+        why: "Le produit prépare et explique ; l'utilisateur garde le contrôle du dossier et du dernier geste.",
+        rejected: "Une auto-candidature autonome."
       }
     ],
     delivered: [
-      "CLI Python pour initialiser, valider, diagnostiquer, rafraîchir, importer et recalculer les offres.",
-      "Pipeline de normalisation, déduplication, extraction de faits et scoring configurable avec provenance.",
-      "API FastAPI locale, stockage SQLite et interface React responsive en quatre vues.",
-      "Corpus local_demo hors ligne de 42 offres fictives, import JSON local normalisé et documentation de configuration.",
-      "Contrats de sécurité, audits publics et archive de release reproductible."
+      "Une interface de travail avec Aujourd'hui, Radar, Candidatures, Entreprises, Insights et Système.",
+      "Un pipeline multi-source autorisé, avec normalisation, déduplication, fraîcheur et provenance.",
+      "Un scoring V3 qui explique le métier réel, le niveau attendu, les compétences et les preuves manquantes.",
+      "Une infrastructure privée Vercel, Cloud Run, Turso et Google Drive avec tâches planifiées.",
+      "Une édition Community MIT, installable localement avec corpus fictif et preuve de release."
     ],
     results: [
-      "336 tests backend, 36 tests frontend et 37 tests E2E réussis ; 8 scénarios E2E ignorés intentionnellement.",
-      "20 combinaisons route/viewport contrôlées à 320, 390, 768, 1024 et 1440 px, sans violation Axe ni débordement.",
-      "Audits de l'arbre public, de l'historique propre, de l'archive, des distributions Python, des dépendances et des captures : zéro finding déclaré dans la preuve v0.1.0-beta.1.",
-      "Corpus de démonstration de 42 offres fictives utilisable hors ligne et sans clé API."
+      "Version personnelle contrôlée en production le 25 août 2026 : huit sources en état OK, base intègre et huit routes frontend en HTTP 200.",
+      "Interface personnelle vérifiée en privé sur cinq largeurs, au clavier et avec Axe.",
+      "Édition Community v0.1.0-beta.1 : 336 tests backend, 36 frontend et 37 E2E sans échec ; 8 E2E ignorés intentionnellement.",
+      "Édition Community : 20 combinaisons route/viewport sans violation Axe ni débordement."
     ],
     limits: [
-      "Cette beta n'envoie aucune candidature et ne génère ni CV ni lettre ; elle prépare et explique la sélection.",
-      "LinkedIn, Indeed et Welcome to the Jungle restent des sources manual_only : aucun refresh automatique ne les appelle.",
-      "France Travail, Adzuna, Jooble, Remotive et les ATS publics sont des pistes futures sous conditions d'accès, d'API et de limites ; aucun de ces connecteurs distants n'est livré dans cette beta.",
-      "La preuve v0.1.0-beta.1 est une validation locale datée ; elle ne prouve ni adoption externe ni résultat de recherche d'emploi.",
-      "Le corpus public est fictif ; la pertinence sur les recherches d'un tiers dépend de sa propre configuration."
+      "Aucun envoi autonome : la préparation et l'envoi final restent sous validation humaine.",
+      "Application Assist est testé localement mais n'est pas activé en production.",
+      "LinkedIn, Indeed et Welcome to the Jungle restent des imports manuels ; Job Radar ne les scrape pas automatiquement.",
+      "La version personnelle et sa base ne sont pas publiques ; les captures du portfolio utilisent uniquement des données fictives.",
+      "La preuve Community est datée et ne prouve ni adoption externe ni résultat de recherche d'emploi."
     ],
     gallery: [
       {
-        src: "/assets/proof/job-radar/score-explained.webp",
-        caption: "Détail d'une offre fictive : score par axe, règles appliquées et explications restent visibles.",
-        width: 1024,
-        height: 768
-      },
-      {
-        src: "/assets/proof/job-radar/insights.webp",
-        caption: "Insights calculés depuis la base locale : décisions, compétences demandées et santé du corpus.",
+        src: "/assets/proof/job-radar/today-v2-20260831.webp",
+        caption: "Vue Aujourd'hui : trois opportunités fortes et une file d'action courte, sur des données fictives.",
         width: 1440,
-        height: 900
+        height: 1000
       },
       {
-        src: "/assets/proof/job-radar/mobile.webp",
-        caption: "Le radar conserve filtres, score, confiance, fraîcheur et décision sur un écran mobile de 390 px.",
-        width: 390,
-        height: 844
+        src: "/assets/proof/job-radar/insights-v2-20260831.webp",
+        caption: "Insights : volumes bruts, décisions du Radar et compétences demandées, sur des données fictives.",
+        width: 1440,
+        height: 1000
+      },
+      {
+        src: "/assets/proof/job-radar/system-v2-20260831.webp",
+        caption: "Système : état des sources, prochaine actualisation et garde-fous d'envoi, sur des données fictives.",
+        width: 1440,
+        height: 1000
+      },
+      {
+        src: "/assets/proof/job-radar/radar-v2-mobile-board-20260831.webp",
+        caption: "Radar mobile : détail d'une offre et raisons de la note sur 390 px, avec des données fictives.",
+        width: 1440,
+        height: 1000
       }
     ],
     links: [

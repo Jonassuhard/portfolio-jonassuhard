@@ -191,12 +191,14 @@ export default async function ProjectDetailPage({ params }: PageProps) {
           <div className="section-head">
             <div>
               <p className="section-kicker">Architecture</p>
-              <h2>Des entrées locales au score expliqué.</h2>
+              <h2>{project.architectureTitle ?? "Des entrées locales au score expliqué."}</h2>
             </div>
-            <p>
-              Chaque étape conserve sa provenance. Le navigateur présente les
-              résultats ; le noyau local reste la seule source du calcul.
-            </p>
+            <p>{project.architectureLead ?? (
+              <>
+                Chaque étape conserve sa provenance. Le navigateur présente les
+                résultats ; le noyau local reste la seule source du calcul.
+              </>
+            )}</p>
           </div>
           <figure>
             <Image
@@ -222,7 +224,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
       {!project.story && project.versions?.length ? (
         <section className="section">
           <p className="section-kicker">Versions</p>
-          <h2>V2 et V3 n'ont pas le même statut.</h2>
+          <h2>{project.versionsTitle ?? "V2 et V3 n'ont pas le même statut."}</h2>
           <div className="matrix matrix-2">
             {project.versions.map((version) => (
               <article className="matrix-item" key={version.label}>

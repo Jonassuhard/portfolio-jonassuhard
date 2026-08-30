@@ -22,9 +22,16 @@
       "claim": "La preuve Job Radar Community v0.1.0-beta.1 rapporte 336 tests backend, 36 tests frontend et 37 tests E2E sans échec ; 8 scénarios E2E sont ignorés intentionnellement. Elle couvre 20 combinaisons route/viewport sans violation Axe ni débordement.",
       "status": "publicly-verified",
       "verification_id": "job-radar-community-beta-1",
-      "checked_at": "2026-08-28",
+      "checked_at": "2026-08-31",
       "source": "https://github.com/Jonassuhard/job-radar-community/blob/main/docs/verification/v0.1.0-beta.1.json",
-      "proof_note": "Validation locale datée sur 42 offres fictives, complétée par CI et Security GitHub vertes sur le commit testé ; aucune adoption externe ni candidature obtenue n'est revendiquée."
+      "proof_note": "Validation locale datée sur 42 offres fictives, complétée par la release GitHub et ses contrôles publics ; aucune adoption externe ni candidature obtenue n'est revendiquée."
+    },
+    "job_radar_personal_deployed_2026_08_25": {
+      "claim": "La version personnelle de Job Radar est déployée avec un frontend Vercel, une API et des tâches Cloud Run, une base Turso et des sauvegardes Google Drive.",
+      "status": "private-evidence",
+      "verification_id": "job-radar-personal-deployed-2026-08-25",
+      "checked_at": "2026-08-31",
+      "proof_note": "Contrôle privé daté du 25/08/2026 : huit routes frontend en HTTP 200, huit sources en état OK sur le run vérifié et intégrité de la base confirmée."
     },
     "cortex_bridge_release_0_5_3": {
       "claim": "La preuve du tag Cortex Bridge v0.5.3 rapporte 629 tests backend, 155 frontend, 126 extension, 12 E2E et 4 accessibilité sans échec ; un test E2E est ignoré.",
@@ -72,22 +79,26 @@
   ],
   "projects": [
     {
-      "project": "Job Radar Community",
-      "type": "radar d'offres local, configurable et open source",
-      "purpose": "Normaliser des offres dispersées, retirer les doublons et expliquer séparément la pertinence, la confiance et la fraîcheur sans publier le CV ni envoyer de candidature.",
-      "period": "Août 2026",
-      "role": "conception produit, architecture, développement full-stack, sécurité et QA open source",
-      "stack": ["Python", "FastAPI", "React", "SQLite", "Pydantic", "Playwright"],
+      "project": "Job Radar",
+      "type": "radar d'offres déployé avec édition Community open source",
+      "purpose": "Rassembler les offres, retirer les doublons, expliquer le métier réel et indiquer la prochaine action sans laisser le système décider ou envoyer à la place de l'utilisateur.",
+      "period": "Juillet - août 2026",
+      "role": "conception produit, architecture, développement full-stack, déploiement cloud, sécurité et QA",
+      "stack": ["Python", "FastAPI", "React", "Turso", "Cloud Run", "Vercel", "Playwright"],
       "case_study": "/projets/job-radar",
       "markdown": "/projects/job-radar.md",
       "repository": "https://github.com/Jonassuhard/job-radar-community",
-      "evidence": "v0.1.0-beta.1 : 336 tests backend, 36 tests frontend et 37 tests E2E sans échec ; 8 scénarios E2E ignorés intentionnellement ; 20 combinaisons route/viewport sans violation Axe ni débordement.",
-      "evidence_status": "publicly-verified",
-      "verification_ids": ["job-radar-community-repo", "job-radar-community-beta-1"],
-      "verified_at": "2026-08-28",
-      "limits": "Validation locale datée sur 42 offres fictives, complétée par CI et Security GitHub vertes sur le commit testé ; aucune adoption externe ni candidature obtenue n'est revendiquée. LinkedIn, Indeed et Welcome to the Jungle restent manual_only.",
-      "confidentiality": "édition publique sans profil, CV, candidatures, e-mails ni historique privé",
-      "repo_status": "public sous licence MIT"
+      "evidence": "Version personnelle : déploiement et fonctionnement vérifiés en privé. Édition Community v0.1.0-beta.1 : 336 tests backend, 36 frontend et 37 E2E sans échec ; 8 E2E ignorés intentionnellement ; 20 combinaisons route/viewport sans violation Axe ni débordement.",
+      "evidence_status": "mixed-public-private",
+      "evidence_by_version": {
+        "personal": "private-evidence",
+        "community": "publicly-verified"
+      },
+      "verification_ids": ["job-radar-personal-deployed-2026-08-25", "job-radar-community-repo", "job-radar-community-beta-1"],
+      "verified_at": "2026-08-31",
+      "limits": "Aucun envoi autonome. Application Assist n'est pas activé en production. La version personnelle et sa base restent privées ; l'édition Community ne prouve ni adoption externe ni résultat de recherche d'emploi. LinkedIn, Indeed et Welcome to the Jungle restent des imports manuels.",
+      "confidentiality": "version personnelle privée ; captures publiques sur données fictives ; édition Community sans profil, CV, candidatures, e-mails ni historique privé",
+      "repo_status": "édition Community publique sous licence MIT ; version personnelle privée"
     },
     {
       "project": "Cortex Bridge",

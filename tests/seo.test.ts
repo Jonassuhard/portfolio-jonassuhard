@@ -103,19 +103,27 @@ test("Forward Deployed Engineer reste un objectif de progression", () => {
 
 test("le sitemap reflète la date de la dernière revue générale", () => {
   const entries = sitemap();
-  const modifiedToday = [
+  const modifiedOnGeneralReview = [
+    "https://jonassuhard.com/projets/educool-la-herse"
+  ];
+  const modifiedForJobRadar = [
     "https://jonassuhard.com/",
     "https://jonassuhard.com/recruteurs",
     "https://jonassuhard.com/projets",
     "https://jonassuhard.com/projets/job-radar",
-    "https://jonassuhard.com/projets/educool-la-herse",
     "https://jonassuhard.com/llms.txt"
   ];
 
-  for (const url of modifiedToday) {
+  for (const url of modifiedOnGeneralReview) {
     const entry = entries.find((item) => item.url === url);
     assert.ok(entry, `URL absente du sitemap : ${url}`);
     assert.equal(new Date(entry.lastModified ?? 0).toISOString(), "2026-08-28T00:00:00.000Z");
+  }
+
+  for (const url of modifiedForJobRadar) {
+    const entry = entries.find((item) => item.url === url);
+    assert.ok(entry, `URL absente du sitemap : ${url}`);
+    assert.equal(new Date(entry.lastModified ?? 0).toISOString(), "2026-08-31T00:00:00.000Z");
   }
 
   const untouched = entries.find(

@@ -67,7 +67,7 @@ export default function RecruitersPage() {
               </tr>
               <tr>
                 <th scope="row">Stack</th>
-                <td>Next.js, React, Firebase, Supabase, Python, Playwright, SEO, workflows LLM</td>
+                <td>Next.js, React, FastAPI, Turso, Cloud Run, Firebase, Supabase, Python, Playwright, SEO</td>
               </tr>
               <tr>
                 <th scope="row">Environnements</th>
@@ -75,7 +75,7 @@ export default function RecruitersPage() {
               </tr>
               <tr>
                 <th scope="row">Code</th>
-                <td>Visible sur GitHub : Job Radar, Cortex Bridge, ce portfolio et claude-code-soul. Le code client reste privé.</td>
+                <td>Visible sur GitHub : Job Radar Community, Cortex Bridge, ce portfolio et claude-code-soul. Le code client et la version personnelle de Job Radar restent privés.</td>
               </tr>
             </tbody>
           </table>
