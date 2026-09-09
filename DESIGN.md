@@ -229,7 +229,7 @@ est une démo privée. Les descriptions détaillées restent dans les fiches.
 Job Radar, Cortex Bridge et Les Petites Griffes ouvrent les trois index.
 Toutes les cartes gardent leur ratio, y compris dans les labs et archives.
 
-Cortex Bridge : illustration orbitale avec tête de femme chauve, quatre astres et pont sans croisillons. Le titre et les noms Luna/Terra/Sol/Astra sont rendus en HTML, pas générés dans le bitmap. Exception au fond transparent : le fichier utilise un fond crème pour éviter le damier incrusté par le générateur. L'ancienne illustration reste conservée.
+Cortex Bridge : illustration orbitale carrée (760 × 760), avec tête de femme chauve aux yeux verts, quatre astres et pont sans croisillons. Elle est affichée sans recadrage dans la carte 38/23. Le titre et les noms Luna/Terra/Sol/Astra sont rendus en HTML, pas générés dans le bitmap. Exception au fond transparent : le fichier utilise un fond crème pour éviter le damier incrusté par le générateur. Les anciennes illustrations restent conservées.
 
 Interaction des cartes : contour encre renforcé en 200 ms et flèche décalée de 3 px, sans déplacement de carte ni barre lumineuse. Le focus clavier offre le même retour. Un voile holographique transparent, large de 200 % de la carte, passe au-dessus de l'image et du texte en 4,8 secondes, une seule fois par entrée de souris ; il disparaît à la fin. Aucun cycle permanent. Sur écran tactile, la flèche reste visible sans dépendre du survol. Le mouvement réduit supprime le voile et les transitions.
 Toute la carte de l'index peut être cliquable ; les liens secondaires restent

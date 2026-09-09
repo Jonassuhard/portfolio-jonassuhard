@@ -16,14 +16,14 @@ export default function ProjectCardImage({
   preload = false,
   fullColor = false
 }: ProjectCardImageProps) {
-  if (src === "/assets/cards/cortex-orbital-green-20260910-art.webp") {
+  if (src === "/assets/cards/cortex-orbital-square-20260910-art.webp") {
     return (
       <div className="cortex-card-art">
         <div className="cortex-card-caption" aria-hidden="true">
           <strong>Cortex<br />Bridge</strong>
           <span>Luna · Terra<br />Sol · Astra</span>
         </div>
-        <Image src={src} alt={alt} width={760} height={460}
+        <Image src={src} alt={alt} width={760} height={760}
           sizes="(max-width: 604px) 65vw, 240px" quality={85}
           preload={preload} loading={preload ? undefined : "lazy"}
           className="full-color-media" />
