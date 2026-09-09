@@ -73,7 +73,7 @@ test("les cartes de projets exposent leurs destinations publiques vérifiées", 
 });
 
 test("les cartes projet utilisent des illustrations bitmap transparentes en couleur", async () => {
-  assert.equal(projects.length, 14);
+  assert.equal(projects.length, 15);
   assert.equal(
     existsSync(new URL("../scripts/generate-card-schematics.mjs", import.meta.url)),
     false,

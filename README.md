@@ -49,4 +49,4 @@ npx next start -p 3027   # http://localhost:3027
 - La typographie de corps est Courier Prime, chargée via `next/font` ; Courier New reste seulement le fallback CSS.
 
 ---
-Contact : [contact@jonassuhard.com](mailto:contact@jonassuhard.com) · [LinkedIn](https://www.linkedin.com/in/jonas-suhard-b73923245/)
+Contact : [jonas.suhard@gmail.com](mailto:jonas.suhard@gmail.com) · [LinkedIn](https://www.linkedin.com/in/jonas-suhard-b73923245/)

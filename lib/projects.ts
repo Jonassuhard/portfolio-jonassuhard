@@ -110,7 +110,7 @@ export const site = {
     "Je cherche à évoluer vers un rôle de Forward Deployed Engineer. Je veux comprendre un besoin concret, construire une première solution avec l'équipe ou le client, la tester, puis la rendre facile à reprendre.",
   description:
     "Growth Engineer junior à Paris : IA appliquée, automatisations, sites Next.js, workflows LLM et dashboards. Projets documentés, preuves, CV et contact.",
-  email: "contact@jonassuhard.com",
+  email: "jonas.suhard@gmail.com",
   github: "https://github.com/Jonassuhard",
   portfolioRepo: "https://github.com/Jonassuhard/portfolio-jonassuhard",
   linkedin: "https://www.linkedin.com/in/jonas-suhard-b73923245/",
@@ -501,6 +501,64 @@ export const projects: Project[] = [
         href: "https://lespetitesgriffes.fr/",
         external: true
       }
+    ]
+  },
+  {
+    slug: "educool-v2",
+    title: "Educool V2 - suivre les acquis de la classe",
+    shortTitle: "Educool V2",
+    type: "Application pour l'enseignante",
+    period: "2026 - en cours",
+    role: "Conception produit, interface, développement full-stack et vérification avec des données fictives",
+    roleSummary: "Je transforme les besoins de l'enseignante en écrans pour suivre les élèves, saisir les acquis et préparer les livrets.",
+    status: "Application à accès réservé · améliorations locales en cours",
+    cardStatus: "Outil enseignant",
+    evidenceLevel: "private",
+    tier: 1,
+    image: "/assets/cards/educool-v2-illustration-20260909-art.webp",
+    fullColorMedia: true,
+    heroImage: {
+      src: "/assets/proof/educool-v2/classe-20260909.webp",
+      caption: "Retrouver un élève et filtrer la classe. Capture locale du 9 septembre 2026, données fictives ; cadrage sur le haut de la liste.",
+      width: 1440, height: 1000
+    },
+    cardLine: "Suivre les acquis des élèves et préparer leurs livrets dans un même outil.",
+    summary: "Un outil pour l'enseignante : retrouver un élève, saisir ses ceintures de compétences et préparer ses livrets, sans multiplier les tableaux.",
+    proofLine: "Interface réelle, captures de démonstration et code privé. Les écrans montrés viennent de la version locale.",
+    need: {
+      title: "Saisir une fois, retrouver l'information",
+      lead: "L'enseignante suit les acquis de chaque élève avec des ceintures de compétences. Le besoin : relier cette saisie aux livrets, sans recopier les mêmes informations partout.",
+      items: ["Retrouver rapidement un élève et sa progression.", "Regrouper les matières, les validations et les appréciations.", "Préparer les livrets de progression et d'évaluation."]
+    },
+    intention: {
+      title: "Un outil de travail, pas un jeu",
+      lead: "Educool V2 est réservé à l'enseignante. Cool Bank est un projet distinct, centré sur la banque de classe et les parcours des élèves.",
+      items: ["Garder les tâches courantes accessibles sur tablette.", "Montrer si les données sont locales ou synchronisées.", "Prévisualiser les imports avant de confirmer les changements."]
+    },
+    stack: ["Next.js", "React", "TypeScript", "Zustand", "Firebase", "Firestore", "Cloud Functions", "IndexedDB"],
+    recruiterProof: ["Partir d'une façon de travailler réelle pour construire les écrans.", "Relier les données de classe aux documents de suivi.", "Prévoir les erreurs de saisie, la sauvegarde et les retours en arrière."],
+    constraints: ["Les données scolaires ne doivent pas apparaître dans le portfolio.", "Les livrets existants imposent de conserver leur mise en page.", "Les dernières améliorations locales ne sont pas toutes déployées."],
+    decisions: [
+      { decision: "Replier les formulaires secondaires", why: "Laisser la liste des élèves visible avant d'ajouter une fiche.", rejected: "Un formulaire ouvert en permanence au-dessus de la classe." },
+      { decision: "Distinguer sauvegarde locale et synchronisation", why: "Un message doit décrire ce que l'application a réellement enregistré.", rejected: "Afficher un succès avant confirmation de la sauvegarde." },
+      { decision: "Demander une confirmation avant un import", why: "L'enseignante doit pouvoir vérifier ce qui va changer.", rejected: "Appliquer silencieusement les données d'un fichier." }
+    ],
+    delivered: ["Gestion des élèves et des matières, saisie des ceintures, appréciations et livrets.", "Filtres de classe et formulaire d'ajout repliable.", "Outils locaux de sauvegarde et assistant d'import avec prévisualisation et confirmation."],
+    results: ["Une interface de travail qui réunit le suivi des élèves et la préparation des livrets.", "Des captures locales de démonstration disponibles sans publier de données scolaires."],
+    limits: ["Les captures des 8 et 9 septembre 2026 montrent une version locale, pas une recette de production.", "L'accès, la protection des données cloud et les parcours sur appareils réels restent à valider avant de qualifier la version de finalisée.", "Aucun gain de temps ni bénéfice pédagogique chiffré n'est revendiqué.", "La liaison avec Cool Bank V3 est un chantier séparé, pas une fonction livrée ici."],
+    repoStatus: "Dépôt privé : application et données scolaires.",
+    liveLabel: "Application · accès réservé",
+    evidenceNote: "Sources locales relues le 9 septembre 2026. Captures issues des contrôles locaux des 8 et 9 septembre ; élèves fictifs. Ce contrôle du portfolio ne remplace pas la validation d'Educool.",
+    metaDescription: "Educool V2 : un outil pour suivre les élèves, saisir les compétences et préparer les livrets. Projet de Jonas Suhard, écrans réels avec données fictives.",
+    gallery: [
+      { src: "/assets/proof/educool-v2/classe-20260909.webp", caption: "La classe et ses filtres. Version locale du 9 septembre 2026, élèves fictifs, liste cadrée.", width: 1440, height: 1000 },
+      { src: "/assets/proof/educool-v2/formulaire-20260909.webp", caption: "Ajouter un élève sans quitter la liste. Capture locale du 8 septembre 2026, formulaire vide et données de démonstration.", width: 1440, height: 1000 },
+      { src: "/assets/proof/educool-v2/mobile-20260909.webp", caption: "Retrouver la classe sur mobile. Capture locale du 9 septembre 2026, élèves fictifs ; cadrage sur le haut de l'écran.", width: 390, height: 844 }
+    ],
+    links: [
+      { label: "Version Markdown", href: "/projects/educool-v2.md" },
+      { label: "Application · accès réservé", href: "https://educool-v2.vercel.app", external: true },
+      { label: "Projet distinct : Cool Bank", href: "/projets/educool-la-herse" }
     ]
   },
   {

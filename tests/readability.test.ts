@@ -5,6 +5,16 @@ import * as data from "../lib/projects";
 
 const source = (path: string) => readFileSync(path, "utf8");
 
+test("about portrait keeps its original animated dark card", () => {
+  const css = source("app/globals.css");
+  assert.ok(source("app/a-propos/page.tsx").includes('className="about-identity panel-sys"'));
+  assert.ok(/\.panel-sys\s*\{[^}]*background:var\(--color-zero-bg\)/.test(css));
+  assert.ok(/\.panel-sys::after\s*\{[^}]*animation:holo-diag 16s linear infinite/.test(css));
+  assert.ok(css.includes(".panel-sys p { color:var(--color-zero-text); }"));
+  assert.ok(css.includes(".panel-sys::after { animation:none; }"));
+  assert.ok(css.includes(".about-identity.panel-sys::after { background-size:100% 100%; }"));
+});
+
 test("the project index starts with the featured trio without losing or duplicating projects", () => {
   const ordered = (data as typeof data & { orderedProjects?: typeof data.projects }).orderedProjects;
   assert.ok(ordered, "export a deterministic orderedProjects collection");

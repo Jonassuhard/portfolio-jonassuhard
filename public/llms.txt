@@ -1,6 +1,6 @@
 # Jonas Suhard
 
-> Growth Engineer junior, basé à Paris. IA appliquée, automatisation et produit web. Disponible pour un CDI depuis le 1er septembre 2026. Contact : contact@jonassuhard.com.
+> Growth Engineer junior, basé à Paris. IA appliquée, automatisation et produit web. Disponible pour un CDI depuis le 1er septembre 2026. Contact : jonas.suhard@gmail.com.
 
 ## Profil actuel
 
@@ -31,6 +31,7 @@ Je cherche à évoluer vers un rôle de Forward Deployed Engineer. Je veux compr
 
 ## Autres projets
 
+- [Educool V2](https://jonassuhard.com/projects/educool-v2.md) : outil réservé à l'enseignante pour suivre les élèves, saisir les ceintures de compétences et préparer les livrets. Distinct du jeu Cool Bank. Captures locales des 8 et 9 septembre 2026 avec données fictives ; améliorations en cours, code privé, aucun gain pédagogique chiffré revendiqué. [Application à accès réservé](https://educool-v2.vercel.app).
 - [Capsélys](https://jonassuhard.com/projects/capselys.md) : refonte de conversion sur staging ; le lien externe pointe vers la production actuelle, pas vers le staging audité.
 - [Battle Engine](https://jonassuhard.com/projects/battle-engine.md) : pipeline vidéo Godot, FFmpeg, RIFE et publication reprenable. La page montre trois extraits de combats, dont un publié le 31 août 2026, ainsi qu'un roster et un teaser d'archive. Aucun résultat d'audience revendiqué.
 - [HoopSphere](https://jonassuhard.com/projects/hoopsphere.md) : prototype MBA d'application basket ; contribution de Jonas centrée sur le marketing et le business plan.

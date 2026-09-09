@@ -38,7 +38,7 @@ export default function AboutPage() {
             <a className="lk" href={site.cvStyled} download>CV illustré (PDF)</a>
           </div>
         </div>
-        <div className="about-identity">
+        <div className="about-identity panel-sys">
           <div className="avatar-frame">
             <Image
               src="/brand/jonas-avatar.jpg"

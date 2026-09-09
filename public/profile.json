@@ -79,6 +79,22 @@
   ],
   "projects": [
     {
+      "project": "Educool V2",
+      "type": "application réservée à l'enseignante",
+      "purpose": "Suivre les acquis des élèves et préparer leurs livrets dans un même outil, distinct du jeu Cool Bank.",
+      "period": "2026 - en cours",
+      "role": "conception produit, interface, développement full-stack et vérification",
+      "stack": ["Next.js", "React", "TypeScript", "Zustand", "Firebase", "Firestore", "Cloud Functions", "IndexedDB"],
+      "case_study": "/projets/educool-v2",
+      "markdown": "/projects/educool-v2.md",
+      "live": "https://educool-v2.vercel.app",
+      "evidence": "Sources locales relues le 9 septembre 2026 ; captures de démonstration des 8 et 9 septembre, sans données réelles d'élèves.",
+      "evidence_status": "private-evidence",
+      "limits": "Dernières améliorations locales non toutes déployées ; validation de production et sur appareils réels à poursuivre ; aucun gain pédagogique chiffré.",
+      "confidentiality": "application à accès réservé ; captures avec élèves fictifs",
+      "repo_status": "privé"
+    },
+    {
       "project": "Job Radar",
       "type": "radar d'offres déployé avec édition Community open source",
       "purpose": "Rassembler les offres, retirer les doublons, expliquer le métier réel et indiquer la prochaine action sans laisser le système décider ou envoyer à la place de l'utilisateur.",
@@ -203,7 +219,7 @@
     }
   ],
   "contact": {
-    "email": "contact@jonassuhard.com",
+    "email": "jonas.suhard@gmail.com",
     "github": "https://github.com/Jonassuhard",
     "linkedin": "https://www.linkedin.com/in/jonas-suhard-b73923245/",
     "site": "https://jonassuhard.com",

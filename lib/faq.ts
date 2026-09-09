@@ -49,6 +49,6 @@ export const faqItems: FaqItem[] = [
   },
   {
     q: "Comment le contacter ?",
-    a: "Par e-mail à contact@jonassuhard.com, sur GitHub (github.com/Jonassuhard) ou sur LinkedIn (linkedin.com/in/jonas-suhard-b73923245/)."
+    a: "Par e-mail à jonas.suhard@gmail.com, sur GitHub (github.com/Jonassuhard) ou sur LinkedIn (linkedin.com/in/jonas-suhard-b73923245/)."
   }
 ];

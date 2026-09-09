@@ -63,7 +63,7 @@ def rich(text: str) -> str:
 def contact_rich(text: str) -> str:
     escaped = html.escape(clean(text))
     links = {
-        "contact@jonassuhard.com": "mailto:contact@jonassuhard.com",
+        "jonas.suhard@gmail.com": "mailto:jonas.suhard@gmail.com",
         "jonassuhard.com": "https://jonassuhard.com",
         "github.com/Jonassuhard": "https://github.com/Jonassuhard",
         "LinkedIn (Jonas Suhard)": "https://www.linkedin.com/in/jonas-suhard-b73923245/",

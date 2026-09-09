@@ -874,7 +874,8 @@ html { scrollbar-gutter:stable; }
 .contact-facts > div { display:grid; grid-template-columns:140px minmax(0,1fr); gap:8px 18px; padding:12px 0; border-top:1px solid var(--color-line); }
 .contact-facts dt { color:var(--color-muted); font-size:14px; }
 .contact-facts dd { margin:0; font-size:14px; overflow-wrap:break-word; }
-.about-identity { padding:20px 0 20px 32px; border-left:1px solid var(--color-line); }
+.about-identity { padding:20px 32px; border:1px solid var(--color-ink); }
+.about-identity.panel-sys::after { background-size:100% 100%; }
 .about-identity h2 { font-size:30px; letter-spacing:0; }
 .about-identity .avatar-frame { margin-bottom:12px; }
 .project-hero { grid-template-columns:minmax(0,1fr) minmax(0,1fr); align-items:start; }
@@ -924,7 +925,7 @@ html { scrollbar-gutter:stable; }
   .project-hero-media { max-width:720px; }
   .closing-section .button-row { justify-content:flex-start; }
   .matrix-3 { grid-template-columns:1fr; }
-  .about-identity { padding:20px 0; border-left:0; border-top:1px solid var(--color-line); }
+  .about-identity { padding:20px; }
 }
 @media (max-width:640px) {
   .main-nav { visibility:hidden; }
