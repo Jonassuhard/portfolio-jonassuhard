@@ -1128,7 +1128,7 @@ export const projects: Project[] = [
       "Utiliser ChatGPT comme cerveau d'un agent de code. Vous validez les actions, Cortex les exécute sur votre ordinateur.",
     evidenceLevel: "public",
     tier: 1,
-    image: "/assets/cards/cortex-bridge-art.webp",
+    image: "/assets/cards/cortex-orbital-green-20260910-art.webp",
     fullColorMedia: true,
     repoStatus: "Repo public sous MIT : github.com/Jonassuhard/cortex-bridge",
     liveLabel: "Repo GitHub (lien)",

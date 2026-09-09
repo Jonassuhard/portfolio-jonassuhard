@@ -88,7 +88,11 @@ test("les cartes projet utilisent des illustrations bitmap transparentes en coul
     const metadata = await sharp(fileURLToPath(assetUrl)).metadata();
     assert.equal(metadata.width, 760, `${project.slug} n'est pas large de 760 px`);
     assert.equal(metadata.height, 460, `${project.slug} n'est pas haut de 460 px`);
-    assert.equal(metadata.hasAlpha, true, `${project.slug} n'a pas de transparence réelle`);
+    if (project.slug === "cortex-bridge") {
+      assert.equal(metadata.hasAlpha, false, "Cortex utilise le fond creme approuve, pas un faux alpha");
+    } else {
+      assert.equal(metadata.hasAlpha, true, `${project.slug} n'a pas de transparence réelle`);
+    }
   }
 });
 
