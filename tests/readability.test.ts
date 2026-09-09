@@ -5,6 +5,17 @@ import * as data from "../lib/projects";
 
 const source = (path: string) => readFileSync(path, "utf8");
 
+test("project cards use a stable outline with keyboard parity", () => {
+  const css = source("app/globals.css");
+  assert.ok(css.includes(".proof-card:focus-within::after, .case-card:focus-within::after { opacity:1; }"));
+  assert.ok(css.includes("@media (hover:hover) and (pointer:fine)"));
+  assert.ok(css.includes('.proof-card .button::after { display:none; }'));
+  assert.doesNotMatch(css, /holo-sweep/);
+  assert.match(css, /animation:card-reflection-pass 4\.8s linear 1 forwards/);
+  assert.match(css, /width:200%; z-index:4; pointer-events:none/);
+  assert.doesNotMatch(css, /\.(?:proof|case)-card:hover\s*\{[^}]*translateY/);
+});
+
 test("about portrait keeps its original animated dark card", () => {
   const css = source("app/globals.css");
   assert.ok(source("app/a-propos/page.tsx").includes('className="about-identity panel-sys"'));

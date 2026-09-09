@@ -363,27 +363,42 @@ p { margin:0 0 10px; }
 .proof-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(258px,1fr)); gap:16px; }
 .proof-card {
   position:relative; border:1px solid var(--color-ink); background:var(--color-surface-strong);
-  display:flex; flex-direction:column; overflow:hidden; transition:transform .15s,box-shadow .15s;
+  display:flex; flex-direction:column; overflow:hidden;
 }
-.proof-card::before { content:""; position:absolute; left:0; top:0; bottom:0; width:3px; background:var(--color-line); transition:background .2s; z-index:2; }
-.proof-card:hover { transform:translateY(-2px); box-shadow:6px 6px 0 rgba(21,18,14,.08); }
-.proof-card:hover::before { background:var(--color-nixie); box-shadow:0 0 10px 1px rgba(255,122,24,.75),0 0 3px rgba(255,150,60,.95); }
-/* survol : large balayage holographique iridescent (~10%), lent, façon métal brillant au soleil */
+/* Contour actif : cartes stables, retour identique au clavier. */
+.proof-card, .case-card { isolation:isolate; }
+.proof-card::before, .case-card::before {
+  content:""; position:absolute; top:0; bottom:0; left:0; width:200%; z-index:4; pointer-events:none;
+  background:linear-gradient(110deg,transparent 18%,rgba(127,216,212,.12) 36%,rgba(167,216,120,.1) 43%,rgba(216,179,90,.1) 50%,rgba(215,138,168,.12) 57%,rgba(110,143,216,.12) 64%,transparent 82%);
+  transform:translateX(-100%); opacity:0;
+}
+@keyframes card-reflection-pass {
+  0% { transform:translateX(-100%); opacity:1; }
+  99% { opacity:1; }
+  100% { transform:translateX(50%); opacity:0; }
+}
 .proof-card::after, .case-card::after {
-  content:""; position:absolute; inset:0; z-index:3; pointer-events:none; mix-blend-mode:screen;
-  background:linear-gradient(110deg,
-    transparent 18%,
-    rgba(127,216,212,.06) 36%,
-    rgba(167,216,120,.05) 43%,
-    rgba(255,255,255,.12) 50%,
-    rgba(215,138,168,.06) 57%,
-    rgba(110,143,216,.06) 64%,
-    transparent 82%);
-  background-size:300% 300%; background-position:170% 170%;
-  opacity:0; transition:opacity .5s ease;
+  content:""; position:absolute; inset:0; z-index:3; pointer-events:none;
+  border:1px solid var(--color-ink); opacity:0; transition:opacity .2s ease;
 }
-.proof-card:hover::after, .case-card:hover::after { opacity:1; animation:holo-sweep 2.4s cubic-bezier(.33,.1,.25,1) forwards; }
-@keyframes holo-sweep { from { background-position:170% 170%; } to { background-position:-70% -70%; } }
+.proof-card:focus-within::after, .case-card:focus-within::after { opacity:1; }
+.proof-card .button { padding-inline:32px; }
+.proof-card .button::before, .case-card-link::before {
+  content:"→" / ""; position:absolute; right:16px; top:50%; line-height:1; font-size:18px;
+  pointer-events:none; opacity:.55; transform:translate(-3px,-50%);
+  transition:transform .2s ease,opacity .2s ease;
+}
+.case-card-link::before { top:auto; bottom:18px; transform:translateX(-3px); }
+.case-card .access-links { padding-right:28px; }
+.proof-card:focus-within .button::before { opacity:1; transform:translate(0,-50%); }
+.case-card:focus-within .case-card-link::before { opacity:1; transform:translateX(0); }
+.proof-card .button::after { display:none; }
+@media (hover:hover) and (pointer:fine) {
+  .proof-card:hover::before, .case-card:hover::before { animation:card-reflection-pass 4.8s linear 1 forwards; }
+  .proof-card:hover::after, .case-card:hover::after { opacity:1; }
+  .proof-card:hover .button::before { opacity:1; transform:translate(0,-50%); }
+  .case-card:hover .case-card-link::before { opacity:1; transform:translateX(0); }
+}
 
 /* carte système sombre (réf. styleguide .panel.sys) : fond noir + grille + holo iridescent lent */
 .panel-sys { background:var(--color-zero-bg); border-color:var(--color-ink); position:relative; overflow:hidden; }
@@ -513,8 +528,7 @@ td { color:var(--color-ink-soft); }
 
 /* ===== CASE GRID (cartes index /projets) ===== */
 .case-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:16px; }
-.case-card { position:relative; border:1px solid var(--color-ink); background:var(--color-surface-strong); display:flex; flex-direction:column; overflow:hidden; transition:transform .15s,box-shadow .15s; }
-.case-card:hover { transform:translateY(-2px); box-shadow:6px 6px 0 rgba(21,18,14,.08); }
+.case-card { position:relative; border:1px solid var(--color-ink); background:var(--color-surface-strong); display:flex; flex-direction:column; overflow:hidden; }
 /* Carte entière cliquable -> page détail ; le titre reste accessible mais non répété visuellement. */
 .case-card-link { position:absolute; inset:0; z-index:1; }
 .case-card-link:focus-visible { outline-offset:-3px; }
@@ -707,12 +721,14 @@ td { color:var(--color-ink-soft); }
   .avatar-frame { width:142px; height:170px; }
 }
 @media (prefers-reduced-motion:reduce) {
+  .proof-card::before, .case-card::before { display:none; animation:none; }
   html { scroll-behavior:auto; }
   .chroma-title::before,
   .chroma-title::after { display:none; animation:none; }
   h1.glitch-active, h2.glitch-active { animation:none; }
   .proof-card { transition:none; }
-  .proof-card::after, .case-card::after { display:none; }
+  .proof-card::after, .case-card::after,
+  .proof-card .button::before, .case-card-link::before { transition:none; }
   .nixie-clock::after { animation:none; }
   .panel-sys::after { animation:none; }
   .footer-signature::after { animation:none; }

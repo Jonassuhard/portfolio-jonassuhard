@@ -2,6 +2,8 @@
 
 > Growth Engineer junior, basé à Paris. IA appliquée, automatisation et produit web. Disponible pour un CDI à partir du 1er octobre 2026. Contact : jonas.suhard@gmail.com.
 
+Dernière mise à jour éditoriale : 2026-09-10 (10 septembre 2026). Les dates de vérification propres à chaque projet restent indiquées dans les sources ; cette mise à jour ne les renouvelle pas.
+
 ## Profil actuel
 
 Jonas construit des sites, des automatisations et des outils IA. Il part d'un besoin concret, réalise une première version et vérifie son fonctionnement. Rôles voisins selon le périmètre du poste : Product Builder IA et Chef de projet IA junior.
@@ -15,6 +17,8 @@ Je cherche à évoluer vers un rôle de Forward Deployed Engineer. Je veux compr
 - [Profil Markdown](https://jonassuhard.com/profile.md)
 - [Profil JSON](https://jonassuhard.com/profile.json)
 - [Compétences](https://jonassuhard.com/skills.md)
+- [Page recruteurs](https://jonassuhard.com/recruteurs) : projets principaux, contributions et objectif de progression.
+- [Méthode de travail](https://jonassuhard.com/methode) : partir du besoin, construire, vérifier et transmettre.
 - [Faits citables](https://jonassuhard.com/claims.json)
 - [Registre des preuves](https://jonassuhard.com/preuves)
 - [Registre structuré](https://jonassuhard.com/verification.json)

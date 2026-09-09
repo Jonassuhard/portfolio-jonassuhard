@@ -226,6 +226,8 @@ des preuves est expliquée dans la fiche, sans laisser entendre qu'un site publi
 est une démo privée. Les descriptions détaillées restent dans les fiches.
 Job Radar, Cortex Bridge et Les Petites Griffes ouvrent les trois index.
 Toutes les cartes gardent leur ratio, y compris dans les labs et archives.
+
+Interaction des cartes : contour encre renforcé en 200 ms et flèche décalée de 3 px, sans déplacement de carte ni barre lumineuse. Le focus clavier offre le même retour. Un voile holographique transparent, large de 200 % de la carte, passe au-dessus de l'image et du texte en 4,8 secondes, une seule fois par entrée de souris ; il disparaît à la fin. Aucun cycle permanent. Sur écran tactile, la flèche reste visible sans dépendre du survol. Le mouvement réduit supprime le voile et les transitions.
 Toute la carte de l'index peut être cliquable ; les liens secondaires restent
 utilisables au clavier.
 
