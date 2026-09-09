@@ -227,21 +227,21 @@ h1.glitch-active, h2.glitch-active { animation:heading-glitch 1.2s linear both; 
 }
 @keyframes glitch-cyan-cycle {
   0%,100% { opacity:0; transform:none; clip-path:inset(0); }
-  12%,35% { opacity:.95; transform:translateX(2px); clip-path:inset(15% 0 45%); }
-  40%,70% { opacity:.95; transform:translateX(-2px); clip-path:inset(48% 0 12%); }
-  85% { opacity:.65; transform:translateX(2px); clip-path:inset(0); }
+  12%,35% { opacity:.5; transform:translateX(1px); clip-path:inset(15% 0 45%); }
+  40%,70% { opacity:.5; transform:translateX(-1px); clip-path:inset(48% 0 12%); }
+  85% { opacity:.3; transform:translateX(1px); clip-path:inset(0); }
 }
 @keyframes glitch-red-cycle {
   0%,100% { opacity:0; transform:none; clip-path:inset(0); }
-  12%,35% { opacity:.9; transform:translateX(-2px); clip-path:inset(48% 0 12%); }
-  40%,70% { opacity:.9; transform:translateX(2px); clip-path:inset(15% 0 45%); }
-  85% { opacity:.6; transform:translateX(-2px); clip-path:inset(0); }
+  12%,35% { opacity:.45; transform:translateX(-1px); clip-path:inset(48% 0 12%); }
+  40%,70% { opacity:.45; transform:translateX(1px); clip-path:inset(15% 0 45%); }
+  85% { opacity:.28; transform:translateX(-1px); clip-path:inset(0); }
 }
 @keyframes heading-glitch {
   0%,100% { transform:none; text-shadow:1px 0 rgba(127,216,212,.18),-1px 0 rgba(142,31,47,.12); }
-  12%,35% { transform:translateX(1px); text-shadow:4px 0 rgba(67,174,169,.95),-4px 0 rgba(142,31,47,.9); }
-  40%,70% { transform:translateX(-1px); text-shadow:-4px 0 rgba(67,174,169,.95),4px 0 rgba(142,31,47,.9); }
-  85% { transform:none; text-shadow:3px 0 rgba(67,174,169,.7),-3px 0 rgba(142,31,47,.65); }
+  12%,35% { transform:translateX(.35px); text-shadow:2px 0 rgba(67,174,169,.45),-2px 0 rgba(142,31,47,.4); }
+  40%,70% { transform:translateX(-.35px); text-shadow:-2px 0 rgba(67,174,169,.45),2px 0 rgba(142,31,47,.4); }
+  85% { transform:none; text-shadow:1px 0 rgba(67,174,169,.25),-1px 0 rgba(142,31,47,.22); }
 }
 /* Le template Next est recréé à chaque navigation ; son repère rejoue alors
    l'entrée sans placer tout le contenu derrière une frontière client. */

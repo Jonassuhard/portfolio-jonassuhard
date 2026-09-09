@@ -215,7 +215,7 @@ La proposition 1 choisie le 9 septembre 2026 utilise une bande noire quadrillée
 
 ### Titres animés
 
-Le texte réel est présent dès la première frame. L'aberration cyan et rouge est produite en CSS par pseudo-éléments non exposés à l'arbre d'accessibilité. Un ordonnanceur client choisit un seul `h1` ou `h2` visible à la fois, attend aléatoirement entre 5 et 10 secondes, joue une rafale de 1,2 seconde, puis laisse le suivant apparaître. L’aberration chromatique atteint 4 px ; le texte reste lisible. Le même titre n’est pas choisi deux fois de suite quand un autre est visible. `prefers-reduced-motion` désactive l'ordonnanceur et les copies.
+Le texte réel est présent dès la première frame. L'aberration cyan et rouge est produite en CSS par pseudo-éléments non exposés à l'arbre d'accessibilité. Un ordonnanceur client choisit un seul `h1` ou `h2` visible à la fois, attend aléatoirement entre 5 et 10 secondes, joue une rafale de 1,2 seconde, puis laisse le suivant apparaître. L’aberration chromatique est limitee a 2 px et 45 % d’opacite, avec un deplacement du texte de 0,35 px ; le rythme reste inchange. Le même titre n’est pas choisi deux fois de suite quand un autre est visible. `prefers-reduced-motion` désactive l'ordonnanceur et les copies.
 
 ### Cartes de projet
 
