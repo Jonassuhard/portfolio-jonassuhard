@@ -29,7 +29,9 @@ const fontBody = Courier_Prime({
   weight: "400",
   variable: "--font-body",
   display: "optional",
-  preload: true
+  preload: true,
+  fallback: ["Courier New", "monospace"],
+  adjustFontFallback: false
 });
 const fontClock = localFont({
   src: [{ path: "./fonts/oslo-ii.bold.woff2", weight: "700", style: "normal" }],
@@ -109,7 +111,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <div className="foot-cols">
             <div>
               <p className="foot-col-title">Contact</p>
-              <Link href="/contact">Choisir un sujet</Link>
+              <Link href="/contact">Contact</Link>
               <a href={`mailto:${site.email}`}>{site.email}</a>
               <a href={site.github}>GitHub</a>
               <a href={site.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
@@ -121,7 +123,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               <p className="foot-col-title">Ressources</p>
               <a href={site.cvClassic} download>CV — classique (PDF)</a>
               <a href={site.cvStyled} download>CV — version site (PDF)</a>
-              <Link href="/knowledge">Knowledge</Link>
+              <Link href="/knowledge">Guides et définitions</Link>
+              <Link href="/competences">Compétences</Link>
+              <Link href="/methode">Méthode</Link>
               <Link href="/preuves">Preuves</Link>
             </div>
             <div>

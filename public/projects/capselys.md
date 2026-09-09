@@ -8,7 +8,7 @@
 | Période | Juin 2026 - Juillet 2026 |
 | Rôle de Jonas | Stratégie, audit, UX, contenus, expérimentation IA, présentation client |
 | Statut | Staging / workshop MBA |
-| Niveau de preuve | Démo privée |
+| Niveau de preuve | Preuves privées |
 | Stack | WordPress, Divi, Playwright, PHP, PDF, LLM workflows |
 
 ## À quoi ça sert

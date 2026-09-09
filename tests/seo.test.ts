@@ -69,11 +69,10 @@ test("le positionnement Growth Engineer reste cohérent sur les surfaces humaine
   assert.match(cv, /^\*\*Growth Engineer junior · IA appliquée & automatisation\*\*$/m);
   assert.match(growthKnowledge, /^Dernière vérification : 2026-08-23\.$/m);
 
-  // La home porte une seule promesse (headline) ; les rôles voisins vivent
-  // sur /recruteurs, dans le tableau « Rôles » et le JSON-LD.
-  assert.match(home, /\{site\.headline\}/);
+  // Un role principal visible ; les alias restent au second niveau et dans les donnees.
+  assert.match(home, /<AnimatedTitle glitch>\{site\.title\}<\/AnimatedTitle>/);
   assert.doesNotMatch(home, /roleAliases/);
-  assert.match(recruiters, /\{site\.headline\}/);
+  assert.match(recruiters, /<AnimatedTitle>\{site\.title\}<\/AnimatedTitle>/);
   assert.match(recruiters, /site\.roleAliases\.join\(", "\)/);
   assert.match(layout, /default: site\.seoTitle/);
   assert.match(layout, /title: site\.seoTitle/);

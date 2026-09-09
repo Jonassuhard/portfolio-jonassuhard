@@ -31,6 +31,7 @@ export type Project = {
   type: string;
   period: string;
   role: string;
+  roleSummary?: string;
   status: string;
   evidenceLevel: EvidenceLevel;
   tier: ProjectTier;
@@ -129,7 +130,7 @@ export const evidenceLevelMeta: Record<
     description: "Un lien public permet de contrôler au moins l'élément principal."
   },
   private: {
-    label: "Démo privée",
+    label: "Preuves privées",
     description: "La preuve existe hors ligne ou contient des données qui ne peuvent pas être publiées."
   },
   "self-declared": {
@@ -197,6 +198,7 @@ export const pageMeta = (opts: {
 export const projects: Project[] = [
   {
     slug: "job-radar",
+    roleSummary: "J'ai conçu et développé l'application, préparé sa mise en ligne et vérifié ses principaux parcours.",
     title: "Job Radar - savoir quelles offres méritent mon temps",
     shortTitle: "Job Radar",
     type: "Radar d'offres déployé + édition open source",
@@ -230,7 +232,7 @@ export const projects: Project[] = [
     metaDescription:
       "Job Radar rassemble les offres, retire les doublons et explique lesquelles méritent une action. Version personnelle déployée et édition Community publique.",
     cardLine:
-      "Un poste de contrôle qui rassemble les offres, explique leur pertinence et indique la prochaine action.",
+      "Rassembler les offres d'emploi, retirer les doublons et comprendre lesquelles méritent une candidature.",
     need: {
       title: "Chercher des offres prenait trop de temps.",
       lead:
@@ -404,12 +406,14 @@ export const projects: Project[] = [
   },
   {
     slug: "les-petites-griffes",
+    roleSummary: "J'ai conçu le site, développé l'espace de gestion et mis en place le référencement et l'assistant IA.",
     title: "Les Petites Griffes - site live, CMS et assistant IA",
     shortTitle: "Les Petites Griffes",
     type: "Site live + CMS + assistant IA",
     period: "Avril 2026 - Juin 2026",
     role: "Stratégie, design, développement, SEO, déploiement, QA",
     status: "Prod live",
+    cardStatus: "Site en ligne · gestion autonome",
     evidenceLevel: "private",
     tier: 1,
     image: "/assets/cards/les-petites-griffes-art.webp",
@@ -422,7 +426,7 @@ export const projects: Project[] = [
     metaDescription:
       "Site vitrine live d'un studio de nail art : Next.js, CMS maison, assistant IA cadré et audit live du 2026-08-01 sur 18 pages publiques.",
     cardLine:
-      "Site live, CMS maison, SEO local et assistant IA cadré. Audit du 2026-08-01 : 18 pages publiques, 36 captures et cinq scores Lighthouse mobile.",
+      "Un site de nail art que ma sœur met à jour seule, avec un assistant IA pour répondre aux questions courantes.",
     architecture: [
       "Front Next.js (React) rendu et déployé sur Vercel.",
       "Contenus dynamiques (galerie, prestations, tarifs, FAQ) servis depuis Supabase, éditables via un CMS maison protégé.",
@@ -501,6 +505,7 @@ export const projects: Project[] = [
   },
   {
     slug: "educool-la-herse",
+    roleSummary: "J'ai conçu l'expérience, développé les rôles et relié le jeu à l'outil de gestion de classe.",
     title: "Cool Bank - donner vie à une banque de classe",
     shortTitle: "Cool Bank / La Herse",
     type: "Jeu scolaire 3D + outil enseignant",
@@ -705,6 +710,7 @@ export const projects: Project[] = [
   },
   {
     slug: "capselys",
+    roleSummary: "J'ai revu le parcours d'adhésion, les contenus et le prototype d'assistant, puis présenté les choix à la cliente.",
     title: "Capsélys - refonte conversion et expérimentation IA",
     shortTitle: "Capsélys",
     type: "Conversion + expérimentation IA",
@@ -722,7 +728,8 @@ export const projects: Project[] = [
     metaDescription:
       "Refonte de conversion (WordPress / Divi) sur staging sécurisé : nouveau parcours d'adhésion, audits Playwright multi-viewports, prototype d'assistant IA.",
     cardLine:
-      "Refonte de conversion en staging : audit UX, parcours d'adhésion et prototype d'assistant IA.",
+      "Simplifier le parcours d'adhésion d'un site WordPress et tester un assistant qui oriente vers le bon service.",
+    cardStatus: "Version de test · atelier MBA",
     architecture: [
       "WordPress + Divi imposés ; refonte sur un environnement de staging sécurisé.",
       "Audits de rendu multi-viewports via Playwright (le DOM Divi ne suffit pas à prouver le visuel).",
@@ -830,6 +837,8 @@ export const projects: Project[] = [
   },
   {
     slug: "iscom",
+    roleSummary: "J'ai préparé les contenus SEO, leur publication dans Drupal et l'automatisation d'une partie des vérifications.",
+    cardLine: "Préparer et publier des contenus SEO dans Drupal, avec des vérifications automatisées et la validation de l'équipe.",
     title: "ISCOM - SEO, Drupal et production éditoriale",
     shortTitle: "ISCOM",
     type: "SEO + Drupal + production éditoriale",
@@ -933,6 +942,7 @@ export const projects: Project[] = [
   },
   {
     slug: "preuvia",
+    roleSummary: "J'ai conçu l'offre, la méthode d'audit, le site et un exemple de livrable.",
     title: "Preuvia - audit de visibilité dans les réponses des IA",
     shortTitle: "Preuvia",
     type: "Produit - audit GEO (visibilité IA)",
@@ -1046,12 +1056,16 @@ export const projects: Project[] = [
   },
   {
     slug: "cortex-bridge",
+    roleSummary: "J'ai conçu le fonctionnement et développé l'extension Chrome, la console et l'exécuteur local.",
     title: "Cortex Bridge - ChatGPT comme cerveau d'un agent de code local",
     shortTitle: "Cortex Bridge",
     type: "Agent de code local open source piloté par ChatGPT",
     period: "Juillet - août 2026 · tag v0.5.3",
     role: "Conception produit, architecture, extension MV3, backend FastAPI, sécurité, QA",
     status: "Preview technique open source · tag public v0.5.3",
+    cardStatus: "Prototype open source · à installer en local",
+    cardLine:
+      "Utiliser ChatGPT comme cerveau d'un agent de code. Vous validez les actions, Cortex les exécute sur votre ordinateur.",
     evidenceLevel: "public",
     tier: 1,
     image: "/assets/cards/cortex-bridge-art.webp",
@@ -1172,6 +1186,8 @@ export const projects: Project[] = [
     videoWidth: 360,
     videoHeight: 640,
     slug: "battle-engine",
+    roleSummary: "J'ai automatisé le rendu, le montage et la publication des vidéos.",
+    cardLine: "Produire des vidéos de combats de bout en bout, du rendu du jeu à la publication sur YouTube.",
     title: "Battle Engine - pipeline vidéo automatisé",
     shortTitle: "Battle Engine",
     type: "Pipeline vidéo / automation",
@@ -1282,6 +1298,8 @@ export const projects: Project[] = [
   {
     evidenceNote: "Nouvelles captures locales de la landing d'équipe archivée. Elles situent le concept ; elles ne prouvent ni une application distribuée ni des résultats d'acquisition. Le design et le développement sont ceux de l'équipe.",
     slug: "hoopsphere",
+    roleSummary: "J'étais chargé du marketing, de l'étude de marché et des projections financières.",
+    cardLine: "Un projet d'équipe autour des statistiques de basket. Ma part : le marketing et les projections financières, pas le code.",
     title: "HoopSphere - prototype produit MBA",
     shortTitle: "HoopSphere",
     type: "Prototype produit",
@@ -1358,6 +1376,8 @@ export const projects: Project[] = [
   },
   {
     slug: "rag-starter-kit",
+    roleSummary: "J'ai construit un prototype de recherche dans les documents, avec une séparation par client.",
+    cardLine: "Interroger des documents sans mélanger ceux de plusieurs clients. Prototype historique, non exécutable aujourd'hui.",
     title: "RAG Starter Kit - rechercher dans des documents avec leurs sources",
     shortTitle: "RAG Starter Kit",
     type: "Projet perso / preuve technique",
@@ -1422,6 +1442,8 @@ export const projects: Project[] = [
   },
   {
     slug: "board-ia-pme",
+    roleSummary: "J'ai conçu le principe de comparaison et un premier socle Python.",
+    cardLine: "Comparer cinq analyses IA pour repérer leurs désaccords. Prototype historique dont la source reste à restaurer.",
     title: "Board IA PME - comité consultatif multi-agents",
     shortTitle: "Board IA PME",
     type: "POC / preuve technique",
@@ -1486,6 +1508,7 @@ export const projects: Project[] = [
   {
     evidenceNote: "Trois captures de la démo publique du 8 septembre 2026, dans une session anonyme Joueur Preview. Les scores proviennent des propositions réellement jouées pour la capture.",
     slug: "edusemantix",
+    roleSummary: "J'ai conçu et développé le jeu et sa progression en temps réel.",
     title: "Edusemantix - jeu de devinette sémantique multijoueur",
     shortTitle: "Edusemantix",
     type: "Lab / projet perso",
@@ -1566,6 +1589,7 @@ export const projects: Project[] = [
   },
   {
     slug: "pokemon-gen4-toolkit",
+    roleSummary: "J'ai développé des outils Python pour lire et modifier des données de jeu.",
     title: "Pokémon Gen-4 Toolkit - outils d'exploration de données de jeu",
     shortTitle: "Pokémon Gen-4 Toolkit",
     type: "Lab / projet perso",
@@ -1617,6 +1641,8 @@ export const projects: Project[] = [
   },
   {
     slug: "claude-code-soul",
+    roleSummary: "J'ai écrit les règles de comportement, organisé la configuration et préparé le dépôt public.",
+    cardLine: "Un pack public pour définir le ton, les règles et les outils de Claude Code, sans y inclure de données privées.",
     title: "claude-code-soul - pack de configuration Claude Code",
     shortTitle: "claude-code-soul",
     type: "Projet open source (config / outillage)",
@@ -1695,8 +1721,12 @@ export const featuredProjects = ["job-radar", "cortex-bridge", "les-petites-grif
   .map((slug) => projects.find((project) => project.slug === slug))
   .filter((project): project is Project => Boolean(project));
 
-// Preuves recruteur : produit IA open source, livraison client en production,
-// puis besoin terrain transformé en produit local testable.
+export const orderedProjects = [
+  ...featuredProjects,
+  ...projects.filter((project) => !featuredProjects.some((featured) => featured.slug === project.slug))
+];
+
+// Meme selection et meme ordre sur les trois points d'entree.
 export const recruiterFeatured = ["job-radar", "cortex-bridge", "les-petites-griffes"]
   .map((slug) => projects.find((project) => project.slug === slug))
   .filter((project): project is Project => Boolean(project));

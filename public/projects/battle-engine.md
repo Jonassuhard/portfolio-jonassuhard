@@ -8,7 +8,7 @@
 | Période | 2026 |
 | Rôle de Jonas | Pipeline Python, Godot, rendu, FFmpeg, publication |
 | Statut | Lab actif · combats publiés sur YouTube |
-| Niveau de preuve | Démo privée |
+| Niveau de preuve | Preuves privées |
 | Stack | Godot, Python, FFmpeg, RIFE, YouTube API |
 
 ## À quoi ça sert

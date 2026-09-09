@@ -8,7 +8,7 @@
 | Période | Avril 2026 - Juin 2026 |
 | Rôle de Jonas | Stratégie, design, développement, SEO, déploiement, QA |
 | Statut | Prod live |
-| Niveau de preuve | Démo privée |
+| Niveau de preuve | Preuves privées |
 | Stack | Next.js, React, Supabase, Clerk, Vercel, LLM |
 
 ## À quoi ça sert

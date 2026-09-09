@@ -18,33 +18,27 @@ export default function AboutPage() {
         <div>
           <p className="eyebrow">À propos</p>
           <AnimatedTitle>
-            Je viens du marketing, j'ai appris à construire ce que je recommande.
+            Du marketing au développement.
           </AnimatedTitle>
           <p className="lead">
-            J'ai commencé par le marketing digital : acquisition, SEO, contenu.
-            J'ai ensuite appris à construire les outils que je recommandais.
-            Aujourd'hui, je relie les deux : comprendre un besoin et livrer une
-            première réponse.
+            J'ai commencé par le marketing digital, le SEO et le contenu.
+            J'ai appris à coder pour réaliser moi-même les sites et les outils
+            dont j'avais besoin.
           </p>
           <p>
-            Je cadre un besoin, je construis une première version, je définis ce
-            qui doit être mesuré et je documente les décisions. Je cherche un
-            CDI dans une équipe qui produit, teste et utilise l'IA pour un
-            travail concret.
+            Je cherche aujourd'hui un CDI junior pour construire avec une
+            équipe, recevoir des retours et progresser sur des produits utilisés.
           </p>
           <div className="button-row">
             <a className="button primary" href={`mailto:${site.email}`}>Me contacter</a>
             <a className="button" href="/projets">Voir les projets</a>
           </div>
-          <div className="cv-block">
-            <span className="cv-label">CV — téléchargement direct</span>
-            <div className="button-row">
-              <a className="button primary" href={site.cvClassic} download>CV classique (PDF)</a>
-              <a className="button" href={site.cvStyled} download>CV version site (PDF)</a>
-            </div>
+          <div className="button-row">
+            <a className="button primary" href={site.cvClassic} download>CV classique (PDF)</a>
+            <a className="lk" href={site.cvStyled} download>CV illustré (PDF)</a>
           </div>
         </div>
-        <div className="panel panel-sys">
+        <div className="about-identity">
           <div className="avatar-frame">
             <Image
               src="/brand/jonas-avatar.jpg"
@@ -55,19 +49,9 @@ export default function AboutPage() {
               quality={70}
             />
           </div>
-          <h2>Rôle actuel</h2>
-          <p>
-            {site.headline}, avec les rôles voisins {site.roleAliases.join(" et ")},
-            dans une équipe qui relie besoins métier, acquisition et exécution produit.
-          </p>
-          <h3>Objectif d'évolution</h3>
-          <p>
-            {site.careerGoal}
-          </p>
-          <p>
-            Il s'agit de partir d'un besoin terrain, de construire avec l'équipe
-            ou le client, puis de livrer et vérifier l'usage.
-          </p>
+          <h2>{site.name}</h2>
+          <p>{site.title}</p>
+          <p>Paris · web, automatisation et IA appliquée</p>
         </div>
       </section>
 
@@ -79,26 +63,11 @@ export default function AboutPage() {
           </div>
         </div>
         <div className="prose">
-          <p>
-            C'est un rôle qui relie l'acquisition et le développement.
-          </p>
-          <p>
-            Je conçois une réponse, je la livre et je prépare sa mesure. Je peux
-            donc passer du besoin marketing au produit sans séparer chaque étape.
-          </p>
-          <p>
-            Je viens du marketing. J'ai appris à coder pour tester plus vite. En
-            IA appliquée, je construis des assistants avec des règles et une
-            vérification humaine.
-          </p>
-          <p>
-            La sécurité et la dette technique comptent autant que le résultat.
-            C'est un rôle à la croisée du marketing, du développement et de
-            l'IA. Je travaille sur Mac comme sur Windows.
-          </p>
+          <p>C'est un rôle qui relie l'acquisition et le développement : comprendre un besoin marketing, construire une réponse et vérifier son effet.</p>
+          <p>Mon point fort est de réaliser cette première réponse. Je cherche à progresser en équipe sur la mesure produit et l'expérimentation.</p>
           <p>
             <Link className="lk" href="/knowledge/growth-engineer-ia">
-              La version longue, avec les preuves.
+              Le rôle de Growth Engineer, en détail
             </Link>
           </p>
         </div>

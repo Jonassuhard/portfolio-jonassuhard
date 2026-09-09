@@ -243,7 +243,11 @@ test("les surfaces publiques et machine citent la même preuve Job Radar", () =>
     (item) => item.id === "job-radar-personal-deployed-2026-08-25"
   );
 
-  for (const surface of [homepage, recruiters, llms, profileMarkdown, skillsMarkdown]) {
+  assert.match(homepage, /featuredProjects\.map/);
+  assert.match(recruiters, /recruiterFeatured\.map/);
+  assert.ok(featuredProjects.some((project) => project.slug === "job-radar"));
+  assert.ok(recruiterFeatured.some((project) => project.slug === "job-radar"));
+  for (const surface of [llms, profileMarkdown, skillsMarkdown]) {
     assert.match(surface, /Job Radar/);
   }
   assert.ok(machineProject);
@@ -558,12 +562,12 @@ test("le registre ne revendique pas de dépôt GitHub privé invérifiable", () 
   assert.doesNotMatch(item.claim, /dépôts? GitHub|repositories/i);
 });
 
-test("les projets secondaires utilisent une preuve courte sans perdre leur détail", () => {
+test("les cartes racontent l'utilité sans perdre l'accès au détail", () => {
   const page = readFileSync(new URL("../app/projets/page.tsx", import.meta.url), "utf8");
 
   assert.match(
     page,
-    /group\.tier === 1\s*\? project\.summary\s*:\s*project\.cardLine \?\? project\.proofLine \?\? project\.summary/
+    /project\.cardLine \?\? project\.summary/
   );
   assert.match(page, /group\.tier === 1 \? "case-grid" : "case-grid case-grid-compact"/);
 });

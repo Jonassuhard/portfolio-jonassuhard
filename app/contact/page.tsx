@@ -18,8 +18,8 @@ export default function ContactPage() {
           <p className="eyebrow">Contact</p>
           <AnimatedTitle>Parlons d'un poste ou d'un projet.</AnimatedTitle>
           <p className="lead">
-            Choisissez le bon point d'entrée. Je réponds directement par email
-            ou sur LinkedIn, sans formulaire ni compte à créer.
+            Je cherche un CDI junior à Paris ou en hybride. Je prends aussi des
+            projets web et d'automatisation quand le périmètre est clair.
           </p>
           <div className="button-row">
             <a className="button primary" href={`mailto:${site.email}`}>M'écrire</a>
@@ -27,35 +27,20 @@ export default function ContactPage() {
           </div>
         </div>
 
-        <div className="panel">
-          <h2>Repères</h2>
-          <table className="summary-table">
-            <tbody>
-              <tr>
-                <th scope="row">CDI</th>
-                <td>Junior · Paris ou hybride</td>
-              </tr>
-              <tr>
-                <th scope="row">Disponible</th>
-                <td>À partir du {site.availability}</td>
-              </tr>
-              <tr>
-                <th scope="row">Missions</th>
-                <td>Web, automatisation, IA appliquée, SEO et QA</td>
-              </tr>
-              <tr>
-                <th scope="row">Email</th>
-                <td><a href={`mailto:${site.email}`}>{site.email}</a></td>
-              </tr>
-            </tbody>
-          </table>
+        <div className="contact-details">
+          <h2>Pour me joindre</h2>
+          <dl className="contact-facts">
+            <div><dt>Email</dt><dd><a href={`mailto:${site.email}`}>{site.email}</a></dd></div>
+            <div><dt>Disponibilité</dt><dd>Disponible maintenant</dd></div>
+            <div><dt>Localisation</dt><dd>Paris ou hybride</dd></div>
+            <div><dt>CV</dt><dd><a href={site.cvClassic}>Voir mon CV (PDF)</a></dd></div>
+          </dl>
         </div>
       </section>
 
       <section className="section">
         <div className="section-head">
           <div>
-            <p className="section-kicker">Deux points d'entrée</p>
             <h2>Quel est votre besoin ?</h2>
           </div>
           <p>Un message court avec le contexte et l'objectif suffit pour commencer.</p>
@@ -65,8 +50,8 @@ export default function ContactPage() {
           <article className="matrix-item">
             <strong>Recrutement CDI</strong>
             <p>
-              Vous recrutez un Growth Engineer junior, un Product Builder IA
-              ou un chef de projet IA junior à Paris ou en hybride.
+              Vous cherchez un profil junior qui relie marketing, développement
+              web et IA appliquée.
             </p>
             <div className="button-row">
               <a className="button primary" href={`mailto:${site.email}`}>Parler d'un poste</a>

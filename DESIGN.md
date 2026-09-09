@@ -163,6 +163,11 @@ Deux voix suffisent : **Cormorant Garamond** pour les titres éditoriaux et **Co
 
 Cormorant Garamond 700 est servi depuis un WOFF2 local sous-ensemblé au corpus français et anglais du site. Courier Prime 400 reste fourni par `next/font`. Ces deux fontes critiques sont préchargées ; aucune graisse synthétique n'est autorisée.
 
+Le fallback de Courier Prime est explicitement Courier New, puis monospace,
+sans fallback Arial automatique. Le chargement reste `optional` pour éviter
+une permutation tardive. Les nouvelles introductions utilisent des tailles
+fixes par breakpoint, pas de taille de police proportionnelle au viewport.
+
 - Les titres restent courts, fermes, avec une taille responsive bornée et sans espacement négatif.
 - Le corps conserve une hauteur de ligne généreuse pour compenser la texture monospace.
 - Les labels utilisent la casse naturelle ou des capitales courtes ; l'espacement des lettres reste à zéro.
@@ -195,19 +200,50 @@ Les cadres, graduations, traits pointillés et repères techniques utilisent un 
 
 Le header sticky regroupe une titlebar compacte et la navigation. Sur mobile, le rôle long et les secondes de l'horloge disparaissent ; le nom, la localisation, l'heure et l'accès au menu restent visibles. L'ouverture du menu dure au plus 550 ms, avec un décalage total inférieur à 180 ms.
 
+La preview lisibilité du 9 septembre conserve quatre entrées : Recruteurs,
+Projets, À propos et Contact. Compétences, Méthode et Preuves restent accessibles
+dans le footer et depuis les pages pertinentes. La page active est soulignée ;
+le menu fermé n'expose pas ses liens au clavier, Échap rend le focus au bouton.
+
 ### Titres animés
 
 Le texte réel est présent dès la première frame. L'aberration cyan et rouge est produite en CSS par pseudo-éléments non exposés à l'arbre d'accessibilité. Le cycle dure 40 secondes : l'entrée chromatique reste visible 1,2 seconde, la déchirure périodique environ 1,4 seconde, et le décalage ne dépasse pas 2 px. Le glitch ne doit pas nécessiter de contrôleur JavaScript. `prefers-reduced-motion` désactive les copies et transitions.
 
 ### Cartes de projet
 
-Le premier niveau conserve image, résumé et preuves complètes. Les niveaux secondaires affichent une image plus basse et une ligne de preuve courte, sans supprimer les informations des pages détaillées. Toute la carte peut être cliquable, mais les liens secondaires restent utilisables au clavier.
+Chaque carte indique l'utilité du projet et son état actuel. La confidentialité
+des preuves est expliquée dans la fiche, sans laisser entendre qu'un site public
+est une démo privée. Les descriptions détaillées restent dans les fiches.
+Job Radar, Cortex Bridge et Les Petites Griffes ouvrent les trois index.
+Toutes les cartes gardent leur ratio, y compris dans les labs et archives.
+Toute la carte de l'index peut être cliquable ; les liens secondaires restent
+utilisables au clavier.
 
 Chaque vignette utilise un bitmap WebP de 760 × 460 avec transparence réelle. Elle est rendue sans recadrage dans son ratio source 38/23. Elle mélange la couleur et le symbole propres au projet avec la composition Archive Worldline : titre court à gauche, un seul emblème lisible à droite, repères techniques très rares. Le contenu placé sous l'image ne répète pas visuellement ce titre ; il reste présent hors écran pour conserver la structure accessible. Les scènes détaillées, schémas génériques et générateurs SVG de cartes sont exclus ; les couleurs des projets restent affichées sans filtre sépia.
 
 ### Boutons et liens
 
 Le bouton primaire est encre sur papier inversé ; le secondaire reste papier avec bordure d'encre. Le focus clavier utilise un contour rouille de 2 px. Les libellés sont des commandes concrètes : consulter, télécharger, contacter, analyser.
+
+Le CV classique est une action principale sur Accueil et Recruteurs.
+Le CV illustré reste disponible au second niveau. Le rôle principal est
+Growth Engineer junior ; Forward Deployed Engineer est un objectif, pas un
+poste déjà occupé.
+
+### Fiches et galeries
+
+L'introduction donne le nom du projet, son utilité, son état et le rôle de Jonas.
+Elle montre une vraie interface ou vidéo lorsqu'elle existe ; l'illustration
+reste réservée à la carte. Les galeries ne recadrent pas les captures.
+Un clic ouvre l'image originale dans un dialogue natif accessible ; Échap,
+la fermeture et le clic sur le fond rendent le focus au déclencheur.
+Sans JavaScript, le lien ouvre directement le fichier. Aucun média tiers ajouté.
+
+Les contraintes importantes restent visibles avant le dossier technique.
+Les décisions, tableaux, comptes de tests, versions et architecture sont
+disponibles dans des volets natifs, sans retirer les faits des Markdown.
+Les vidéos gardent leur lecture muette à l'apparition, la pause hors écran
+et le respect du mouvement réduit. Les médias des Petites Griffes sont conservés.
 
 ### Consentement
 

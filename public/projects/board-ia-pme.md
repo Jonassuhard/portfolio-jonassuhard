@@ -8,7 +8,7 @@
 | Période | 2026 |
 | Rôle de Jonas | Conception et développement (POC) |
 | Statut | Prototype privé historique · source à restaurer |
-| Niveau de preuve | Démo privée |
+| Niveau de preuve | Preuves privées |
 | Stack | Python, Mistral Large, Pondération déterministe, JSON |
 
 ## À quoi ça sert

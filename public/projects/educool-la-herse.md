@@ -92,7 +92,7 @@ Vues différentes issues des preuves locales d'août 2026 : bourg 3D, organisati
 | Période | Juillet - août 2026 |
 | Rôle de Jonas | Conception produit, UX, développement full-stack, systèmes de jeu, sécurité, QA |
 | Statut | V2 jouable localement sur un appareil · V3 en recette humaine |
-| Niveau de preuve | Démo privée |
+| Niveau de preuve | Preuves privées |
 | Stack | Three.js, Next.js, Firebase, Firestore, Cloud Functions, TypeScript, Vite, Node.js, Playwright |
 
 ## Preuves techniques

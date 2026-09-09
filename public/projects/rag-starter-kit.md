@@ -8,7 +8,7 @@
 | Période | 2026 |
 | Rôle de Jonas | Conception et développement (full-stack) |
 | Statut | Prototype privé historique · source à restaurer |
-| Niveau de preuve | Démo privée |
+| Niveau de preuve | Preuves privées |
 | Stack | FastAPI, Qdrant, Mistral AI, LangChain, SQLite, Next.js 15, React 19, Docker Compose |
 
 ## À quoi ça sert

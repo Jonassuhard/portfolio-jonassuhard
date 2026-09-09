@@ -1,4 +1,4 @@
-import Image from "next/image";
+import ProjectImage from "../../project-image";
 import type { Project } from "@/lib/projects";
 
 type ProjectStoryProps = {
@@ -80,7 +80,7 @@ export default function ProjectStory({ project }: ProjectStoryProps) {
           <div className={`proof-gallery${group.featuredFirst ? " proof-gallery-featured" : ""}`}>
             {group.images.map((shot) => (
               <figure key={shot.src}>
-                <Image
+                <ProjectImage
                   src={shot.src}
                   alt={shot.caption}
                   width={shot.width}
@@ -88,6 +88,7 @@ export default function ProjectStory({ project }: ProjectStoryProps) {
                   sizes="(max-width: 640px) calc(100vw - 28px), 520px"
                   quality={78}
                   loading="lazy"
+                  className="full-color-media"
                 />
                 <figcaption>{shot.caption}</figcaption>
               </figure>

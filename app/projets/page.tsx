@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { evidenceLevelMeta, projects, site, pageMeta } from "@/lib/projects";
+import { orderedProjects, site, pageMeta } from "@/lib/projects";
 import AnimatedTitle from "../animated-title";
 import ProjectCardImage from "../project-card-image";
 
@@ -24,14 +24,13 @@ export default function ProjectsPage() {
         <p className="eyebrow">Projets</p>
         <AnimatedTitle>Des projets livrés, d'autres en cours.</AnimatedTitle>
         <p className="lead">
-          Les projets principaux, les projets techniques et les essais
-          personnels. Chaque carte indique ce qui est public, privé ou encore
-          en préparation.
+          Des sites, des outils IA et des jeux. Ce que j'ai construit,
+          ce qui fonctionne et ce qui reste à faire.
         </p>
       </section>
 
       {GROUPS.map((group, groupIndex) => {
-        const list = projects.filter((project) => project.tier === group.tier);
+        const list = orderedProjects.filter((project) => project.tier === group.tier);
         if (!list.length) return null;
         return (
           <section className="section" key={group.title}>
@@ -51,9 +50,7 @@ export default function ProjectsPage() {
                     fullColor={project.fullColorMedia}
                   />
                   <div className="case-body">
-                    <span className={`evidence-badge evidence-${project.evidenceLevel}`}>
-                      {evidenceLevelMeta[project.evidenceLevel].label}
-                    </span>
+                    <p className="case-meta product-status">{project.cardStatus ?? project.status}</p>
                     <h3 className="card-title-accessible">{project.shortTitle}</h3>
                     <Link
                       className="case-card-link"
@@ -61,9 +58,7 @@ export default function ProjectsPage() {
                       aria-label={`Voir le projet ${project.shortTitle}`}
                     />
                     <p>
-                      {group.tier === 1
-                        ? project.summary
-                        : project.cardLine ?? project.proofLine ?? project.summary}
+                      {project.cardLine ?? project.summary}
                     </p>
                     <div className="access-links">
                       <a className="lk" href={`/projects/${project.slug}.md`}>Markdown</a>
