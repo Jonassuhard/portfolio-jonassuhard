@@ -180,7 +180,7 @@ Le contenu est centré dans une largeur maximale de **1120 px**. Les pages utili
 
 La grille de fond possède des lignes mineures tous les **32 px** et majeures tous les **160 px**. Onze motifs techniques noirs sur fond transparent forment un calque bitmap fixe, sans interaction, plus pâle que la grille et allégé sur mobile. Les fichiers restent locaux, en WebP avec alpha, et les formes décoratives mobiles sont masquées avant chargement. La hiérarchie est construite par l'ordre titre, promesse, preuve, détail, action.
 
-Les seuils de référence sont 430, 640, 760, 960 et 1080 px. Tout composant fixe possède des dimensions stables. Sur mobile, le header tient autour de 96 à 104 px, le menu est immédiatement compréhensible et les cibles tactiles mesurent au moins 44 px.
+Les seuils de référence sont 430, 640, 760, 960 et 1080 px ; le header Signature passe au menu compact à 800 px. Tout composant fixe possède des dimensions stables. Sur mobile, le header tient autour de 80 px, le menu est immédiatement compréhensible et les cibles tactiles mesurent au moins 44 px.
 
 ## Elevation & Depth
 
@@ -198,7 +198,7 @@ Les cadres, graduations, traits pointillés et repères techniques utilisent un 
 
 ### Header et navigation
 
-Le header sticky regroupe une titlebar compacte et la navigation. Sur mobile, le rôle long et les secondes de l'horloge disparaissent ; le nom, la localisation, l'heure et l'accès au menu restent visibles. L'ouverture du menu dure au plus 550 ms, avec un décalage total inférieur à 180 ms.
+Le header Signature éditoriale (proposition 1 choisie le 9 septembre 2026, intégration locale) tient sur une seule bande crème. Nom en Cormorant Garamond 29 px, rôle en Courier Prime 11 px ; navigation à droite, sans capitales forcées. Sur mobile jusqu'à 800 px : nom 26 px, rôle 10 px, menu sans cadre avec cible de 44 px. Le bandeau supérieur, le médaillon et l'horloge ne sont plus rendus dans ce header. La flèche de retour reste présente dans les fiches projet. L'ouverture du menu dure au plus 550 ms, avec un décalage total inférieur à 180 ms ; Escape ferme le menu et rend le focus au bouton.
 
 La preview lisibilité du 9 septembre conserve quatre entrées : Recruteurs,
 Projets, À propos et Contact. Compétences, Méthode et Preuves restent accessibles

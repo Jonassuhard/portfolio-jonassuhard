@@ -5,7 +5,6 @@ import { Courier_Prime } from "next/font/google";
 import localFont from "next/font/local";
 import { rootJsonLd } from "@/lib/json-ld";
 import { site, siteUrl } from "@/lib/projects";
-import NixieClock from "./nixie-clock";
 import SiteNav from "./site-nav";
 import ConsentBanner from "./consent-banner";
 import BlueprintBg from "./blueprint-bg";
@@ -78,13 +77,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           dangerouslySetInnerHTML={{ __html: JSON.stringify(rootJsonLd()) }}
         />
         <header className="site-header">
-          <div className="titlebar">
-            <span className="titlebar-name">
-              JONAS SUHARD <span className="titlebar-role">— {site.title}</span>
-            </span>
-            <span className="ver">{site.location} · <NixieClock /></span>
-          </div>
-          <SiteNav />
+          <SiteNav name={site.name} role={site.title} />
         </header>
         <main>{children}</main>
         <footer className="site-footer">

@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useRef, useState } from "react";
 
@@ -14,7 +13,7 @@ function backTarget(pathname: string | null): string | null {
 }
 
 // Barre de navigation avec menu burger sur mobile (dans la DA : cadre ink, dépliant cream).
-export default function SiteNav() {
+export default function SiteNav({ name, role }: { name: string; role: string }) {
   const [open, setOpen] = useState(false);
   const toggle = useRef<HTMLButtonElement>(null);
   const close = () => setOpen(false);
@@ -29,15 +28,8 @@ export default function SiteNav() {
       }
     }}>
       <Link className="brand" href="/" aria-label="Accueil Jonas Suhard" prefetch={false} onClick={close}>
-        <Image
-          className="brand-mark"
-          src="/brand/js-medallion-sm.webp"
-          alt="Jonas Suhard"
-          width={36}
-          height={36}
-          sizes="36px"
-          quality={85}
-        />
+        <span className="brand-name">{name}</span>
+        <span className="brand-role">{role}</span>
       </Link>
       {parent ? (
         <Link className="nav-back" href={parent} aria-label="Retour" prefetch={false} onClick={close}>

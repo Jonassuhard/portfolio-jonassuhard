@@ -176,7 +176,7 @@ test("les ajustements responsive préservent les dimensions et comportements cri
   const css = read("app/globals.css");
   const clock = read("app/nixie-clock.tsx");
 
-  assert.match(css, /@media \(min-width:641px\) and \(max-width:840px\)[\s\S]*?\.menubar \{ justify-content:flex-end; padding-left:80px; \}/);
+  assert.match(css, /@media \(min-width:801px\) and \(max-width:960px\)[\s\S]*?\.menubar \{ gap:16px; padding-inline:24px; \}/);
   assert.match(css, /@media \(min-width:641px\) and \(max-width:960px\)[\s\S]*?\.nixie-clock \{ min-inline-size:5ch;/);
   assert.match(css, /@media \(max-width:640px\)[\s\S]*?\.consent-actions \.button \{ flex:1; justify-content:center; min-height:44px; \}/);
   assert.match(css, /\.decoder-hero h1 \{ max-width:18ch; hyphens:none; overflow-wrap:normal; word-break:normal; \}/);
@@ -201,8 +201,8 @@ test("le header mobile reste compact et le menu répond en moins de 550 ms", () 
   const clock = read("app/nixie-clock.tsx");
   const css = read("app/globals.css");
 
-  assert.match(layout, /className="titlebar-name"/);
-  assert.match(layout, /className="titlebar-role"/);
+  assert.match(layout, /<SiteNav name=\{site.name\} role=\{site.title\} \/>/);
+  assert.doesNotMatch(layout, /className="titlebar"/);
   assert.match(clock, /className="nixie-seconds"/);
   assert.match(clock, /className="nixie-date"/);
   assert.match(css, /\.titlebar-role[^{]*\{[^}]*display:none/);
