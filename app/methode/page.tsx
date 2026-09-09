@@ -12,66 +12,49 @@ export const metadata: Metadata = pageMeta({
 
 const SECTIONS = [
   {
-    kicker: "Avant de construire",
-    title: "Cadrer avant de coder.",
+    kicker: "01 · Comprendre",
+    title: "Partir du besoin.",
     items: [
-      "Je clarifie le besoin, les contraintes et le résultat attendu.",
-      "Je commence par une réponse simple et j'ajoute du détail seulement si nécessaire.",
-      "Je cherche la cause du problème avant de modifier le produit."
-    ]
-  },
-  {
-    kicker: "Pendant la construction",
-    title: "Utiliser l'IA avec contrôle.",
-    items: [
-      "Je donne à l'IA le contexte et des règles claires pour les tâches répétitives.",
-      "Je choisis l'outil selon la tâche ; l'IA ne prend pas les décisions à ma place.",
-      "Je relis le code et la structure avant de les garder."
+      "Je clarifie qui utilisera l'outil, ce qui bloque et le résultat attendu.",
+      "Je propose une première version simple, avec un périmètre et des limites."
     ],
-    example:
-      "Sur Capsélys, j'ai utilisé Playwright pour repérer les régressions sur plusieurs écrans, puis j'ai vérifié le rendu à l'œil. Les choix de refonte ont été faits avec l'équipe. L'automatisation contrôle le répétitif ; le cadrage reste humain."
+    example: "Les Petites Griffes : présenter les créations du studio et permettre à ma sœur de gérer ses contenus.",
+    href: "/projets/les-petites-griffes",
+    link: "Voir Les Petites Griffes"
   },
   {
-    kicker: "Avant d'affirmer",
-    title: "Vérifier avant d'affirmer.",
+    kicker: "02 · Construire",
+    title: "Avancer par petites étapes.",
     items: [
-      "Je ne dis pas « c'est fait » sans preuve : test, capture ou résultat de commande.",
-      "Je n'invente pas de chiffre. Une donnée sans source reste « non mesuré ».",
-      "Sur un sujet à enjeu, je confronte plusieurs sources avant de trancher."
+      "Je choisis les outils selon le besoin et le système déjà en place.",
+      "L'IA m'aide à préparer et à coder. Je relis ses propositions avant de les garder."
     ],
-    example:
-      "Sur ISCOM, l'IA accélère la recherche et le premier brouillon d'articles et de FAQ dans Drupal. Chaque information est vérifiée et un humain valide avant publication."
+    example: "Cortex Bridge : séparer ce que ChatGPT propose de ce que l'utilisateur autorise sur son ordinateur.",
+    href: "/projets/cortex-bridge",
+    link: "Voir Cortex Bridge"
   },
   {
-    kicker: "À la livraison",
-    title: "Documenter pour qu'un autre reprenne.",
+    kicker: "03 · Vérifier",
+    title: "Tester ce qui compte.",
     items: [
-      "Chaque changement est isolé, relu et ajouté à Git avant d'arriver au produit.",
-      "Je teste les parties sensibles et je passe par le staging avant la production.",
-      "Je documente les décisions et leurs compromis pour qu'une équipe puisse reprendre le projet."
+      "Je teste les parcours, les erreurs et le rendu sur plusieurs tailles d'écran.",
+      "Je garde les clés d'accès hors du code et utilise des données fictives pour les démonstrations.",
+      "Je distingue un test réussi d'un résultat réellement observé chez l'utilisateur."
     ],
-    example:
-      "claude-code-soul rassemble des règles, des outils et des contrôles pour faire travailler des agents IA de façon répétable. Je les ai écrits pour qu'ils puissent être relus et adaptés d'un projet à l'autre."
+    example: "Job Radar Community : les tests publics portent sur un jeu d'offres fictives, pas sur les résultats d'une recherche d'emploi.",
+    href: "/projets/job-radar",
+    link: "Voir Job Radar"
   },
   {
-    kicker: "Sécurité",
-    title: "Sécuriser les données et les accès.",
+    kicker: "04 · Transmettre",
+    title: "Livrer un projet reprenable.",
     items: [
-      "Les secrets (mots de passe, clés d'accès) restent hors du code, dans le trousseau système ; un contrôle automatique le vérifie avant chaque envoi.",
-      "Données clients et mineurs anonymisées, rien de réel n'est publié (RGPD).",
-      "Les actions sensibles comme un push ou une suppression sont verrouillées par une confirmation forte."
-    ]
-  },
-  {
-    kicker: "Avec l'IA",
-    title: "Garder la responsabilité humaine.",
-    items: [
-      "L'IA accélère une partie du travail, mais elle peut se tromper.",
-      "Il faut savoir expliquer le besoin à un modèle comme à une équipe.",
-      "Je choisis le modèle selon la tâche : préparation, exécution ou contrôle.",
-      "Je regarde aussi le coût : un outil utile doit rester soutenable.",
-      "Un humain reste responsable de ce qui part en production."
-    ]
+      "Je versionne le code et j'explique comment lancer, vérifier et maintenir le projet.",
+      "Je note ce qui reste à tester et je fais valider les actions sensibles avant publication."
+    ],
+    example: "Les sources, les dates et les limites des projets restent consultables dans le portfolio.",
+    href: "/preuves",
+    link: "Consulter les preuves"
   }
 ];
 
@@ -82,9 +65,8 @@ export default function MethodePage() {
         <p className="eyebrow">Méthode</p>
         <AnimatedTitle>Comment je travaille.</AnimatedTitle>
         <p className="lead">
-          Je clarifie le besoin, je construis, je sécurise et je vérifie. L'IA
-          accélère le travail ; les décisions et la responsabilité restent
-          humaines.
+          Comprendre le problème, construire une première version,
+          la tester et laisser un projet qu'une équipe peut reprendre.
         </p>
       </section>
 
@@ -103,6 +85,7 @@ export default function MethodePage() {
               ))}
             </ul>
             {s.example ? <p className="method-example">{s.example}</p> : null}
+            <Link className="lk" href={s.href}>{s.link}</Link>
           </div>
         </section>
       ))}
@@ -111,8 +94,7 @@ export default function MethodePage() {
         <div className="notice">
           <strong>En pratique.</strong>
           <p>
-            Cette méthode sert sur Les Petites Griffes, Cool Bank / La Herse,
-            Capsélys et ISCOM. Elle aide à livrer sans casser ce qui existe.
+            Vous avez un outil à construire ou à améliorer ? Parlons du besoin.
           </p>
           <div className="button-row">
             <Link className="button primary" href="/recruteurs">Page recruteurs</Link>

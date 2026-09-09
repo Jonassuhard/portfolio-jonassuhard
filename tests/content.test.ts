@@ -507,7 +507,9 @@ test("Cool Bank / La Herse expose séparément les versions V2 et V3", () => {
   assert.match(llms, /Cortex Bridge/);
   assert.match(llms, /Cool Bank \/ La Herse/);
   assert.match(llms, /V2[^\n]*LOCAL_SINGLE_DEVICE_READY/);
-  assert.match(llms, /V3[^\n]*READY_FOR_HUMAN_RECIPE/);
+  assert.match(llms, /V3[^\n]*en cours de validation technique/);
+  assert.match(project.versions?.[1].status ?? "", /objectif, pas un statut actuel/);
+  assert.doesNotMatch(project.versions?.[1].publicStatus ?? "", /prêt pour des tests humains/);
   assert.match(markdown, /## Versions[\s\S]*### V2[\s\S]*### V3/);
   assert.equal(machineProject.versions.length, 2);
 });

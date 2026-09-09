@@ -3,11 +3,28 @@ import Link from "next/link";
 import { pageMeta } from "@/lib/projects";
 import {
   claimStatusMeta,
-  contentReviewDate,
   contentReviewDateLabel,
   verificationItems
 } from "@/lib/verification";
 import AnimatedTitle from "../animated-title";
+
+const titles: Record<string, string> = {
+  "target-role": "Poste recherché et disponibilité",
+  "rncp-41809": "Référence du titre de niveau 7",
+  "rncp-34340": "Bachelor et titre de niveau 6",
+  "iscom-article": "ISCOM : un article publié",
+  "preuvia-live": "Preuvia : le site de l'offre",
+  "job-radar-community-repo": "Job Radar : le code public",
+  "job-radar-community-beta-1": "Job Radar : les tests de la bêta",
+  "job-radar-personal-deployed-2026-08-25": "Job Radar : ma version personnelle",
+  "cortex-bridge-repo": "Cortex Bridge : le code public",
+  "cortex-bridge-release-0-5-3": "Cortex Bridge : les tests de la version 0.5.3",
+  "lpg-live-audit-2026-08-01": "Les Petites Griffes : l'audit du site",
+  "cool-bank-la-herse-versions": "Cool Bank : ce qui est validé en V2 et V3",
+  "rag-board-historical-prototypes": "RAG et Board IA : les prototypes archivés",
+  "hoopsphere-metrics": "HoopSphere : les chiffres retirés",
+  "anthropic-training": "Anthropic Academy : la formation suivie"
+};
 
 export const metadata: Metadata = pageMeta({
   path: "/preuves",
@@ -21,15 +38,16 @@ export default function EvidencePage() {
     <div className="page">
       <section>
         <p className="eyebrow">Transparence · revue du {contentReviewDateLabel}</p>
-        <AnimatedTitle>Ce qui est vérifié, privé ou encore à documenter.</AnimatedTitle>
+        <AnimatedTitle>Les sources de mon travail.</AnimatedTitle>
         <p className="lead">
-          Une affirmation publique n'a pas le même poids qu'une démonstration
-          confidentielle. Ce registre distingue les deux et retire les métriques
-          qui ne disposent pas encore d'une source contrôlable.
+          Code, sites, tests et documents : voici ce qui permet de vérifier
+          mes projets, avec la date et les limites de chaque preuve.
         </p>
       </section>
 
       <section className="section">
+        <details className="faq-item">
+        <summary>Comprendre les quatre niveaux de preuve</summary>
         <div className="verification-legend" aria-label="Légende des niveaux de preuve">
           {Object.entries(claimStatusMeta).map(([status, meta]) => (
             <div className="verification-legend-item" key={status}>
@@ -38,18 +56,20 @@ export default function EvidencePage() {
             </div>
           ))}
         </div>
+        </details>
       </section>
 
       <section className="section verification-list">
+        <h2>Sources par affirmation.</h2>
         {verificationItems.map((item) => {
           const meta = claimStatusMeta[item.status];
           return (
-            <article className="verification-item" key={item.id}>
-              <div className="verification-item-head">
-                <p className="case-meta">{item.scope}</p>
+            <details className="verification-item" key={item.id} id={item.id}>
+              <summary>
+                <span>{titles[item.id] ?? item.scope}</span>
                 <span className={`evidence-badge evidence-${item.status}`}>{meta.label}</span>
-              </div>
-              <h2>{item.claim}</h2>
+              </summary>
+              <p><strong>{item.claim}</strong></p>
               <p>{item.note}</p>
               <p className="verification-source">
                 Contrôle : <time dateTime={item.checkedAt}>{item.checkedAt}</time>
@@ -62,7 +82,7 @@ export default function EvidencePage() {
                   </>
                 ) : null}
               </p>
-            </article>
+            </details>
           );
         })}
       </section>
@@ -71,8 +91,8 @@ export default function EvidencePage() {
         <div className="notice">
           <strong>Une preuve manque ?</strong>
           <p>
-            Les chiffres supprimés ne reviendront qu'avec un export, un rapport
-            daté ou un lien public. Les études de cas détaillent aussi leurs limites.
+            Un résultat sans source reste non mesuré. Les fiches projet précisent
+            ce qui fonctionne et ce qui reste à valider.
           </p>
           <div className="button-row">
             <Link className="button primary" href="/projets">Voir les projets</Link>

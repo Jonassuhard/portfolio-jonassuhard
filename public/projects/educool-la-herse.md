@@ -28,14 +28,14 @@ La V2 relie déjà un monde 3D à architecture multijoueur, les trois rôles et 
 
 ### V3 — Reconstruction séparée plus large
 
-État public : Prototype local prêt pour des tests humains.
+État public : Reconstruction en cours de validation technique.
 
-La V3 est une reconstruction séparée, avec une carte, une architecture et un périmètre plus larges. Ses parcours locaux fonctionnent, mais elle doit encore être comprise, éprouvée et jugée par des humains.
+La V3 est une reconstruction séparée, avec une carte et un périmètre plus larges. Le travail actuel porte sur le monde, les déplacements et les interfaces. La validation technique complète, puis les essais avec les utilisateurs, restent à faire.
 
 ## Ce que Jonas a fait
 
 - V2 : prototype local à architecture multijoueur, validé sur un appareil avec trois rôles, quêtes, maisons, mini-jeux et pont Educool/Firebase.
-- V3 : monde 3D, économie centicool serveur, 22 zones, marchands, PNJ et maisons complètes.
+- V3 : monde 3D, économie fictive, marchands et maisons présents dans les versions précédentes ; intégration actuelle encore en validation.
 - Interface Educool : authentification, rôles, règles Firestore, Cloud Functions et suivi scolaire.
 - Harnais de tests, preuves responsive, manifestes de candidate et scripts de démarrage/arrêt locaux.
 
@@ -47,7 +47,7 @@ La V2 permet déjà de vivre la boucle 3D sur un appareil. La V3 élargit le pro
 - Relier le jeu, les trois rôles, Firebase, la sécurité et les tests.
 - Dire clairement ce qui fonctionne et ce qui reste bloqué avant un pilote.
 
-Preuves privées et datées : état V2 vérifié le 22/08/2026 ; parcours visuels V3 rejoués le 26/08/2026. Les captures publiées sont des écrans de démonstration sans donnée de mineur.
+V2 : essais locaux du 22 août 2026. V3 : essais d'août et captures de carte des 7 et 8 septembre ; le chantier actuel n'est pas encore entièrement validé. État des sources relu le 9 septembre, sans nouvelle recette du jeu.
 
 ## Visuels
 
@@ -89,9 +89,9 @@ Vues différentes issues des preuves locales d'août 2026 : bourg 3D, organisati
 | Repère | Détail |
 | --- | --- |
 | Format | Jeu scolaire 3D + outil enseignant |
-| Période | Juillet - août 2026 |
+| Période | Juillet 2026 - en cours |
 | Rôle de Jonas | Conception produit, UX, développement full-stack, systèmes de jeu, sécurité, QA |
-| Statut | V2 jouable localement sur un appareil · V3 en recette humaine |
+| Statut | V2 jouable localement sur un appareil · V3 en reconstruction |
 | Niveau de preuve | Preuves privées |
 | Stack | Three.js, Next.js, Firebase, Firestore, Cloud Functions, TypeScript, Vite, Node.js, Playwright |
 
@@ -107,8 +107,9 @@ Statut interne : Jouable localement · LOCAL_SINGLE_DEVICE_READY : GO · V2_PROD
 
 ### V3
 
-Statut interne : READY_FOR_HUMAN_RECIPE (dernier verdict documenté) · gate complète actuelle à rejouer · aucun pilote revendiqué.
+Statut interne : Chantier de septembre non validé intégralement ; READY_FOR_HUMAN_RECIPE reste un objectif, pas un statut actuel.
 
+- État du 9 septembre 2026 : le plan actif distingue les essais ciblés du chantier actuel et les anciennes candidates d'août. Aucun verdict global actuel n'est acquis.
 - Recette visuelle du 26/08/2026 : trois rôles entrés dans le monde, mouvements réels et 396 placements chargés.
 - Dialogues, guichet banquier et télécommande professeure rejoués localement sans requête externe.
 - Les compteurs de tests exacts et les anciennes candidates restent hors de l'accroche tant que la gate complète actuelle n'est pas rejouée.

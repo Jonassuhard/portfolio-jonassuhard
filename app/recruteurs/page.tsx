@@ -22,10 +22,9 @@ export default function RecruitersPage() {
         <p className="eyebrow">CDI junior · Paris ou hybride · disponible le {site.availability}</p>
         <AnimatedTitle>{site.title}</AnimatedTitle>
         <p className="lead">
-          Je viens du marketing. Je développe des sites et des outils IA pour
-          répondre à un besoin concret, puis je les teste et je documente leur fonctionnement.
+          Je viens du marketing et je développe des sites, des automatisations
+          et des outils IA. Je cherche une équipe où construire et progresser.
         </p>
-        <p>Je peux prendre en charge une première version, du cadrage à la mise en ligne, avec les revues de l'équipe.</p>
         <div className="button-row">
           <a className="button primary" href={site.cvClassic}>Voir mon CV (PDF)</a>
           <a className="button" href={`mailto:${site.email}`}>Parlons du poste</a>
@@ -37,7 +36,7 @@ export default function RecruitersPage() {
         <div className="section-head">
           <div>
             <p className="section-kicker">Travail concret</p>
-            <h2>Trois projets pour me situer.</h2>
+            <h2>Trois exemples de mon travail.</h2>
           </div>
           <Link className="lk" href="/projets">Tous les projets</Link>
         </div>
@@ -62,22 +61,21 @@ export default function RecruitersPage() {
         <div className="section-head">
           <div>
             <p className="section-kicker">Mon apport</p>
-            <h2>Ce que je peux prendre en charge.</h2>
+            <h2>Ce que je peux apporter.</h2>
           </div>
-          <p>Je pose mes questions tôt, je livre par petits lots et je documente ce qui doit être repris.</p>
         </div>
         <div className="matrix matrix-3">
           <div className="matrix-item">
             <h3>Un site ou un outil web</h3>
-            <p>Interface, gestion des contenus, déploiement et contrôles. Principalement avec Next.js, React et Python.</p>
+            <p>Construire une première version, de l'interface à la mise en ligne, avec les revues de l'équipe.</p>
           </div>
           <div className="matrix-item">
             <h3>Une automatisation avec de l'IA</h3>
-            <p>Collecter, classer ou préparer des informations, avec des règles claires et une vérification humaine.</p>
+            <p>Collecter et classer des informations, puis faire vérifier le résultat avant de l'utiliser.</p>
           </div>
           <div className="matrix-item">
             <h3>Un chantier SEO</h3>
-            <p>Audit, organisation des pages, contenus et correction des problèmes avant publication.</p>
+            <p>Auditer un site, organiser ses pages et corriger ses contenus.</p>
           </div>
         </div>
         <p className="section-links">
@@ -90,17 +88,18 @@ export default function RecruitersPage() {
       <section className="section progression-section">
         <div>
           <p className="section-kicker">Progression</p>
-          <h2>Ce que je veux approfondir en équipe.</h2>
+          <h2>Ce que je veux apprendre.</h2>
         </div>
         <div className="prose">
-          <p>Je suis à l'aise sur le web, le SEO et les automatisations. Je veux consolider le SQL avancé, la mesure produit, les A/B tests à volume significatif et le travail dans une équipe de développeurs.</p>
-          <p>{site.careerGoalShort} Pour moi, cela veut dire construire au contact des personnes qui utiliseront l'outil.</p>
-          <p>La recherche en IA et le backend à grande échelle ne font pas partie de mon périmètre actuel.</p>
+          <p>Je veux progresser en SQL, en mesure produit et dans le travail avec une équipe de développeurs.</p>
+          <p>{site.careerGoalShort} Construire avec les utilisateurs, à partir de leurs problèmes concrets.</p>
         </div>
       </section>
 
       <section className="section">
-        <h2>Quelques repères supplémentaires.</h2>
+        <h2>Pour aller plus loin.</h2>
+        <details className="faq-item">
+          <summary>Postes visés, outils et limites</summary>
         <div className="faq">
           <details className="faq-item">
             <summary>Autres intitulés et accès au code</summary>
@@ -119,12 +118,13 @@ export default function RecruitersPage() {
             </details>
           ))}
         </div>
+        </details>
       </section>
 
       <section className="section closing-section">
         <div>
-          <h2>Parlons de votre besoin.</h2>
-          <p>Un poste junior où je peux construire, recevoir des retours et progresser en équipe.</p>
+          <h2>Un poste à me proposer ?</h2>
+          <p>Envoyez-moi le contexte et ce que vous souhaitez construire.</p>
         </div>
         <div className="button-row">
           <a className="button primary" href={`mailto:${site.email}`}>Me contacter</a>

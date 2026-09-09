@@ -49,11 +49,11 @@
     },
     "les_petites_griffes_limit": "Projet familial non facturé ; aucune vente à un client externe n'est prouvée ; mesures datées du 2026-08-01, non continues.",
     "cool_bank_la_herse_versions": {
-      "claim": "Cool Bank / La Herse distingue une V2 3D déjà jouable localement sur un appareil et une V3 reconstruite séparément, encore en recette humaine.",
+      "claim": "Cool Bank / La Herse distingue une V2 3D déjà jouable localement sur un appareil et une V3 en reconstruction, sans validation technique globale actuelle.",
       "status": "private-evidence",
       "verification_id": "cool-bank-la-herse-versions",
-      "checked_at": "2026-08-26",
-      "proof_note": "Sources locales privées ; parcours visuels V3 élève, banquier et professeure rejoués avec des profils de démonstration. Les captures publiées ne contiennent aucune donnée de mineur."
+      "checked_at": "2026-09-09",
+      "proof_note": "Sources privées relues le 9 septembre : validation technique globale encore ouverte. Les essais visuels d'août restent historiques ; aucune nouvelle recette du jeu ni donnée de mineur publiée."
     }
   },
   "role_aliases": [
@@ -153,7 +153,7 @@
       "project": "Cool Bank / La Herse",
       "type": "jeu scolaire 3D + outil enseignant Educool",
       "purpose": "Rendre l'argent, l'épargne et la responsabilité plus concrets dans une banque de classe, sans retirer le contrôle à l'enseignante.",
-      "period": "Juillet - août 2026",
+      "period": "Juillet 2026 - en cours",
       "role": "conception produit, UX, développement full-stack, systèmes de jeu, sécurité et QA",
       "stack": ["Three.js", "Next.js", "Firebase", "Firestore", "Cloud Functions", "TypeScript", "Vite", "Node.js", "Playwright"],
       "case_study": "/projets/educool-la-herse",
@@ -169,11 +169,11 @@
         },
         {
           "version": "V3",
-          "status": "READY_FOR_HUMAN_RECIPE ; GO_PILOTE_LOCAL : en attente",
-          "evidence": "Recette visuelle du 26/08/2026 : trois rôles, mouvements réels, dialogues, guichet et télécommande rejoués localement ; aucun pilote revendiqué."
+          "status": "Validation technique en cours au 2026-09-09 ; READY_FOR_HUMAN_RECIPE est un objectif, aucun pilote validé",
+          "evidence": "Essais historiques du 26/08/2026 sur trois rôles. Sources relues le 09/09/2026 : le chantier actuel reste en validation technique, aucune nouvelle recette complète revendiquée."
         }
       ],
-      "limits": "V2 non prête en ligne ; V3 en attente de validation DA, appareil enfant modeste et compréhension par un enfant ; aucune utilité pédagogique chiffrée.",
+      "limits": "V2 non prête en ligne ; V3 en attente de validation technique globale, de direction artistique, d'essais sur appareil enfant modeste et de compréhension par un enfant ; aucune utilité pédagogique chiffrée.",
       "confidentiality": "données enfants exclues ; captures publiques sans donnée de mineur",
       "repo_status": "privé — RGPD (données mineurs)"
     },

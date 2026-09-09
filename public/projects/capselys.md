@@ -32,7 +32,7 @@ Refonte orientée conversion, staging WordPress sécurisé, présentation orale 
 - Sait arbitrer entre un builder et du code selon qui maintiendra le site, pas par dogme.
 - Présentation honnête du staging, des mesures lab, des limites et du plan d'action.
 
-Trois vues différentes de l'archive de staging retrouvée localement : navigation, formulaire et en-tête. La date de capture d'origine n'est pas certifiée ; ce n'est pas l'état du site public actuel.
+Trois vues d'archive du staging : navigation, formulaire et en-tête. La date de capture d'origine n'est pas certifiée. Au 9 septembre 2026, les sources locales consultées n'apportent pas de nouvelle validation du staging ou de livraison ; ces images ne montrent pas l'état public actuel.
 
 ## Visuels
 

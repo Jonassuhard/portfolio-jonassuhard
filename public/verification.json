@@ -23,7 +23,7 @@
       "checkedAt": "2026-08-28",
       "sourceLabel": "France Compétences — RNCP41809",
       "sourceHref": "https://www.francecompetences.fr/recherche/rncp/41809/",
-      "note": "Le portfolio indique que Jonas prépare le titre ; il ne prétend pas l'avoir déjà obtenu."
+      "note": "La fiche décrit le titre national, pas son attribution à Jonas. Le MBA est indiqué obtenu sur la base de sa déclaration ; aucune attribution distincte du RNCP n'est déduite."
     },
     {
       "id": "rncp-34340",
@@ -113,11 +113,11 @@
     },
     {
       "id": "cool-bank-la-herse-versions",
-      "claim": "Cool Bank / La Herse distingue une V2 3D déjà jouable localement sur un appareil et une V3 reconstruite séparément, encore en recette humaine.",
+      "claim": "Cool Bank / La Herse distingue une V2 3D jouable localement sur un appareil et une V3 en reconstruction, sans validation technique globale actuelle.",
       "scope": "Projet",
       "status": "private-evidence",
-      "checkedAt": "2026-08-26",
-      "note": "Sources V2 vérifiées le 22/08/2026 ; parcours visuels V3 élève, banquier et professeure rejoués le 26/08/2026. Les captures publiées ne contiennent aucune donnée de mineur. Aucun pilote ni résultat pédagogique n'est revendiqué."
+      "checkedAt": "2026-09-09",
+      "note": "Lecture des sources privées du 9 septembre : les essais V2 du 22 août et V3 du 26 août restent historiques. Le chantier V3 de septembre vise une nouvelle candidate technique avant recette humaine. Aucune nouvelle exécution du jeu, aucun pilote ni résultat pédagogique ne sont revendiqués."
     },
     {
       "id": "rag-board-historical-prototypes",

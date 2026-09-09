@@ -568,9 +568,9 @@ export const projects: Project[] = [
     title: "Cool Bank - donner vie à une banque de classe",
     shortTitle: "Cool Bank / La Herse",
     type: "Jeu scolaire 3D + outil enseignant",
-    period: "Juillet - août 2026",
+    period: "Juillet 2026 - en cours",
     role: "Conception produit, UX, développement full-stack, systèmes de jeu, sécurité, QA",
-    status: "V2 jouable localement sur un appareil · V3 en recette humaine",
+    status: "V2 jouable localement sur un appareil · V3 en reconstruction",
     evidenceLevel: "private",
     tier: 1,
     image: "/assets/cards/cool-bank-art.webp",
@@ -585,7 +585,7 @@ export const projects: Project[] = [
     repoStatus: "Dépôts privés, données scolaires exclues des preuves",
     liveLabel: "Démo locale sur données fictives",
     evidenceNote:
-      "Preuves privées et datées : état V2 vérifié le 22/08/2026 ; parcours visuels V3 rejoués le 26/08/2026. Les captures publiées sont des écrans de démonstration sans donnée de mineur.",
+      "V2 : essais locaux du 22 août 2026. V3 : essais d'août et captures de carte des 7 et 8 septembre ; le chantier actuel n'est pas encore entièrement validé. État des sources relu le 9 septembre, sans nouvelle recette du jeu.",
     metaDescription:
       "Cool Bank transforme une banque de classe en monde 3D partagé : élève, banquier et enseignante y vivent trois responsabilités différentes.",
     cardLine:
@@ -694,12 +694,13 @@ export const projects: Project[] = [
       {
         label: "V3",
         name: "Reconstruction séparée plus large",
-        publicStatus: "Prototype local prêt pour des tests humains",
+        publicStatus: "Reconstruction en cours de validation technique",
         status:
-          "READY_FOR_HUMAN_RECIPE (dernier verdict documenté) · gate complète actuelle à rejouer · aucun pilote revendiqué",
+          "Chantier de septembre non validé intégralement ; READY_FOR_HUMAN_RECIPE reste un objectif, pas un statut actuel",
         summary:
-          "La V3 est une reconstruction séparée, avec une carte, une architecture et un périmètre plus larges. Ses parcours locaux fonctionnent, mais elle doit encore être comprise, éprouvée et jugée par des humains.",
+          "La V3 est une reconstruction séparée, avec une carte et un périmètre plus larges. Le travail actuel porte sur le monde, les déplacements et les interfaces. La validation technique complète, puis les essais avec les utilisateurs, restent à faire.",
         evidence: [
+          "État du 9 septembre 2026 : le plan actif distingue les essais ciblés du chantier actuel et les anciennes candidates d'août. Aucun verdict global actuel n'est acquis.",
           "Recette visuelle du 26/08/2026 : trois rôles entrés dans le monde, mouvements réels et 396 placements chargés.",
           "Dialogues, guichet banquier et télécommande professeure rejoués localement sans requête externe.",
           "Les compteurs de tests exacts et les anciennes candidates restent hors de l'accroche tant que la gate complète actuelle n'est pas rejouée."
@@ -749,7 +750,7 @@ export const projects: Project[] = [
     ],
     delivered: [
       "V2 : prototype local à architecture multijoueur, validé sur un appareil avec trois rôles, quêtes, maisons, mini-jeux et pont Educool/Firebase.",
-      "V3 : monde 3D, économie centicool serveur, 22 zones, marchands, PNJ et maisons complètes.",
+      "V3 : monde 3D, économie fictive, marchands et maisons présents dans les versions précédentes ; intégration actuelle encore en validation.",
       "Interface Educool : authentification, rôles, règles Firestore, Cloud Functions et suivi scolaire.",
       "Harnais de tests, preuves responsive, manifestes de candidate et scripts de démarrage/arrêt locaux."
     ],
@@ -783,7 +784,7 @@ export const projects: Project[] = [
     repoStatus: "Privé, projet client",
     liveLabel: "Production actuelle, hors staging",
     evidenceNote:
-      "Trois vues différentes de l'archive de staging retrouvée localement : navigation, formulaire et en-tête. La date de capture d'origine n'est pas certifiée ; ce n'est pas l'état du site public actuel.",
+      "Trois vues d'archive du staging : navigation, formulaire et en-tête. La date de capture d'origine n'est pas certifiée. Au 9 septembre 2026, les sources locales consultées n'apportent pas de nouvelle validation du staging ou de livraison ; ces images ne montrent pas l'état public actuel.",
     metaDescription:
       "Refonte de conversion (WordPress / Divi) sur staging sécurisé : nouveau parcours d'adhésion, audits Playwright multi-viewports, prototype d'assistant IA.",
     cardLine:

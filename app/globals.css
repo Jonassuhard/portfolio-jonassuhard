@@ -468,6 +468,10 @@ p { margin:0 0 10px; }
 .verification-item p { color:var(--color-ink-soft); }
 .verification-source { margin:10px 0 0; font-family:var(--ft-data); font-size:13px; }
 .verification-source a { color:var(--color-rust); }
+.verification-item > summary { cursor:pointer; min-height:44px; font-family:var(--ft-data); font-size:15px; line-height:1.5; }
+.verification-item > summary .evidence-badge { margin-left:12px; vertical-align:middle; }
+.verification-item[open] > summary { margin-bottom:16px; }
+.verification-item > summary:focus-visible { outline:2px solid var(--color-rust); outline-offset:4px; }
 
 /* ===== NOTICE (ce que je cherche) ===== */
 .notice { border-left:3px solid var(--color-rust); }
@@ -868,7 +872,7 @@ td { color:var(--color-ink-soft); }
 .faq-item summary { cursor:pointer; padding:14px 18px; font-family:var(--ft-title); font-weight:700; font-size:16px; color:var(--color-ink); list-style:none; display:flex; justify-content:space-between; align-items:center; gap:14px; }
 .faq-item summary::-webkit-details-marker { display:none; }
 .faq-item summary::after { content:"+"; font-family:var(--ft-data); color:var(--color-rust); font-size:18px; line-height:1; flex:0 0 auto; }
-.faq-item[open] summary::after { content:"\2013"; }
+.faq-item[open] > summary::after { content:"\2013"; }
 .faq-item summary:hover { color:var(--color-rust); }
 .faq-item > p { margin:0; padding:0 18px 16px; font-size:14px; line-height:1.62; color:var(--color-ink-soft); max-width:72ch; }
 

@@ -23,6 +23,8 @@ const nextConfig = {
   // et des scripts (JSON-LD + hydratation Next), une CSP trop dure casserait le rendu.
   // On garde les directives sûres qui n'affectent pas le chargement des ressources.
   async headers() {
+    // WebKit upgrades loopback assets too; the HTTP dev server has no TLS.
+    const production = process.env.NODE_ENV === "production";
     const securityHeaders = [
       {
         key: "Strict-Transport-Security",
@@ -38,7 +40,8 @@ const nextConfig = {
       {
         key: "Content-Security-Policy",
         value:
-          "frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-src 'none'; upgrade-insecure-requests"
+          "frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-src 'none'" +
+          (production ? "; upgrade-insecure-requests" : "")
       }
     ];
     const agentReadableNoIndex = {
