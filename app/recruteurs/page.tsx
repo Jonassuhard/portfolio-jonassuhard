@@ -15,7 +15,7 @@ export const metadata: Metadata = pageMeta({
 
 export default function RecruitersPage() {
   return (
-    <div className="page">
+    <div className="page recruiter-page">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageJsonLd()) }}

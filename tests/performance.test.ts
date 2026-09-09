@@ -5,6 +5,11 @@ import test from "node:test";
 const read = (relativePath: string) =>
   readFileSync(new URL(`../${relativePath}`, import.meta.url), "utf8");
 
+test("les cibles tactiles recruteurs utilisent la geometrie reelle des sections", () => {
+  assert.match(read("app/recruteurs/page.tsx"), /className="page recruiter-page"/);
+  assert.match(read("app/globals.css"), /\.recruiter-page > \.section \{\s*content-visibility:visible;\s*contain-intrinsic-size:none;/);
+});
+
 test("les cartes utilisent une image responsive sans JavaScript client", () => {
   const component = read("app/project-card-image.tsx");
   const cardPages = [

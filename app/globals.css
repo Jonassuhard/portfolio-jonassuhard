@@ -176,6 +176,11 @@ main {
     content-visibility:auto;
     contain-intrinsic-size:auto 620px;
   }
+  /* La FAQ et les cartes conservent leurs positions tactiles des le chargement. */
+  .recruiter-page > .section {
+    content-visibility:visible;
+    contain-intrinsic-size:none;
+  }
 }
 /* Pages courtes qui doivent tenir dans l'écran (À propos) : tout centré sur une vue */
 .about-fit { min-height:calc(100svh - 124px); justify-content:center; gap:clamp(16px,2.6vh,28px); }
