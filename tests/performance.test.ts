@@ -112,10 +112,9 @@ test("tous les grands titres rejouent un glitch chromatique lent et lisible", ()
   assert.match(scheduler, /const MAX_DELAY = 10000/);
   assert.match(scheduler, /querySelectorAll<HTMLElement>\("h1, h2"\)/);
   assert.match(scheduler, /active\.classList\.add\("glitch-active"\)/);
-  assert.match(css, /\.chroma-title\.glitch-active::before \{ animation:glitch-cyan-cycle \.7s steps\(2,end\) both; \}/);
-  assert.match(css, /\.chroma-title\.glitch-active::after \{ animation:glitch-red-cycle \.7s steps\(2,end\) both; \}/);
-  assert.match(css, /h1\.glitch-active, h2\.glitch-active \{ animation:heading-glitch \.7s steps\(2,end\) both; \}/);
-  assert.match(css, /53\.5%,100% \{ clip-path:inset\(0 0 100% 0\); transform:none; opacity:0; \}/);
+  assert.match(css, /\.chroma-title\.glitch-active::before \{ animation:glitch-cyan-cycle 1\.2s linear both; \}/);
+  assert.match(css, /\.chroma-title\.glitch-active::after \{ animation:glitch-red-cycle 1\.2s linear both; \}/);
+  assert.match(css, /h1\.glitch-active, h2\.glitch-active \{ animation:heading-glitch 1\.2s linear both; \}/);
   assert.match(css, /color:rgba\(67,174,169,\.82\)/);
   assert.match(css, /color:rgba\(142,31,47,\.78\)/);
   assert.doesNotMatch(css, /@keyframes glitch-(?:cyan|red)-cycle[\s\S]*?translate3d\([^)]*[3-9]px/);

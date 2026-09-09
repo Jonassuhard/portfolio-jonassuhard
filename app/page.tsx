@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <div className="page home-page">
-      <section className="hero hero-readable hero-sys">
+      <section className="hero hero-readable">
         <div className="hero-copy">
           <div>
             <p className="eyebrow">CDI · Paris ou hybride · disponible le {site.availability}</p>

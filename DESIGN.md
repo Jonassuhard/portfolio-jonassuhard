@@ -205,15 +205,15 @@ Projets, À propos et Contact. Compétences, Méthode et Preuves restent accessi
 dans le footer et depuis les pages pertinentes. La page active est soulignée ;
 le menu fermé n'expose pas ses liens au clavier, Échap rend le focus au bouton.
 
-Le hero d'accueil reprend la carte système noire : grille fine, voile holographique diagonal animé en 16 secondes et texte clair. Le footer Signature compacte utilise la même surface et la même animation pour fermer la page sans changer de langage visuel. `prefers-reduced-motion` désactive le voile dans les deux zones.
+L’accueil conserve son fond papier clair et sa grille. Seules la carte portrait À propos et le footer ont un fond noir : un reflet traverse ces surfaces en 0,88 seconde, puis marque une pause avant le cycle suivant de 4 secondes. Cet effet est indépendant du glitch des titres. Le mouvement réduit le désactive.
 
 ### Footer Signature compacte
 
-La proposition 1 choisie le 9 septembre 2026 utilise une bande crème sans carte : nom en Cormorant Garamond 32 px et rôle à gauche, email et réseaux à droite. Le CV principal, Preuves et Méthode restent visibles ; Compétences, Knowledge, le CV illustré et Malt sont regroupés dans « Autres ressources ». Les mentions légales, la confidentialité et la gestion réelle des cookies restent toujours accessibles. Sous 700 px, les blocs s'empilent ; les cibles interactives conservent au moins 44 px de hauteur.
+La proposition 1 choisie le 9 septembre 2026 utilise une bande noire quadrillée sans carte : nom en Cormorant Garamond 32 px et rôle à gauche, email et réseaux à droite. Le CV principal, Preuves et Méthode restent visibles ; Compétences, Knowledge, le CV illustré et Malt sont regroupés dans « Autres ressources ». Les mentions légales, la confidentialité et la gestion réelle des cookies restent toujours accessibles. Sous 700 px, les blocs s'empilent ; les cibles interactives conservent au moins 44 px de hauteur.
 
 ### Titres animés
 
-Le texte réel est présent dès la première frame. L'aberration cyan et rouge est produite en CSS par pseudo-éléments non exposés à l'arbre d'accessibilité. Un ordonnanceur client choisit un seul `h1` ou `h2` à la fois, attend aléatoirement entre 5 et 10 secondes, joue une rafale de 0,7 seconde, puis laisse le suivant apparaître. Le décalage reste inférieur à 4 px. `prefers-reduced-motion` désactive l'ordonnanceur et les copies.
+Le texte réel est présent dès la première frame. L'aberration cyan et rouge est produite en CSS par pseudo-éléments non exposés à l'arbre d'accessibilité. Un ordonnanceur client choisit un seul `h1` ou `h2` visible à la fois, attend aléatoirement entre 5 et 10 secondes, joue une rafale de 1,2 seconde, puis laisse le suivant apparaître. L’aberration chromatique atteint 4 px ; le texte reste lisible. Le même titre n’est pas choisi deux fois de suite quand un autre est visible. `prefers-reduced-motion` désactive l'ordonnanceur et les copies.
 
 ### Cartes de projet
 

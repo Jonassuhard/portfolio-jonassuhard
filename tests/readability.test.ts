@@ -9,7 +9,7 @@ test("about portrait keeps its original animated dark card", () => {
   const css = source("app/globals.css");
   assert.ok(source("app/a-propos/page.tsx").includes('className="about-identity panel-sys"'));
   assert.ok(/\.panel-sys\s*\{[^}]*background:var\(--color-zero-bg\)/.test(css));
-  assert.ok(/\.panel-sys::after\s*\{[^}]*animation:holo-diag 16s linear infinite/.test(css));
+  assert.ok(/\.panel-sys::after, \.footer-signature::after\s*\{[^}]*animation:holo-diag 4s linear infinite/.test(css));
   assert.ok(css.includes(".panel-sys p { color:var(--color-zero-text); }"));
   assert.ok(css.includes(".panel-sys::after { animation:none; }"));
   assert.ok(css.includes(".about-identity.panel-sys::after { background-size:100% 100%; }"));
