@@ -7,13 +7,13 @@
 | Format | Lab / projet perso |
 | Période | 2026 |
 | Rôle de Jonas | Conception et développement |
-| Statut | Lab privé actif · refonte V2 en cours |
-| Niveau de preuve | Démo privée |
+| Statut | Démo publique en ligne · projet personnel |
+| Niveau de preuve | Preuve publique |
 | Stack | React 19 / Vite 6, Node.js / Express / Socket.io, ConceptNet Numberbatch, Python (pré-calcul), Firebase Firestore |
 
 ## À quoi ça sert
 
-Faire jouer plusieurs personnes en simultané sur une mécanique de proximité sémantique, avec scoring temps réel.
+Deviner un mot à partir de sa proximité avec d'autres mots. Chaque proposition reçoit un score, et les joueurs voient la progression de la partie en direct.
 
 ## Ce que Jonas a fait
 
@@ -27,21 +27,24 @@ Jeu multijoueur en temps réel où l'on cherche un mot secret : chaque propositi
 - Scoring sémantique sur vecteurs de mots (similarité cosinus) avec pré-calcul Python et stockage binaire pour la performance.
 - Temps réel multijoueur via Socket.io (parties simultanées, scores en direct).
 
+Trois captures de la démo publique du 8 septembre 2026, dans une session anonyme Joueur Preview. Les scores proviennent des propositions réellement jouées pour la capture.
+
 ## Visuels
 
-![Écran de connexion de la démo locale, lancé avec un profil fictif créé uniquement pour cette capture.](/assets/proof/edusemantix/edusemantix-login.webp)
+![Démo publique : trois propositions jouées dans une session anonyme, avec leur score sémantique.](/assets/proof/edusemantix/game-20260908.webp)
 
-![Partie locale : une proposition reçoit immédiatement un score de proximité avec le mot secret.](/assets/proof/edusemantix/edusemantix-game.webp)
+![Règles accessibles depuis la partie : proximité, température et progression.](/assets/proof/edusemantix/rules-20260908.webp)
 
-![Retour après une proposition fictive : score sémantique, progression et historique affichés par l'interface réelle.](/assets/proof/edusemantix/edusemantix-score.webp)
+![La même partie sur un écran de 390 px : proposition, score et historique.](/assets/proof/edusemantix/mobile-20260908.webp)
 
 
 ## Limites
 
-- Projet lab en refonte V2 ; les captures publiées restent celles de la version de démonstration auditée.
-- Une prévisualisation existe, mais n'est pas présentée comme une démo publique stable.
-- Persistance des stats dépend de Firebase (mode mémoire sans credentials).
+- L'hébergement peut demander un temps de réveil à la première visite.
+- Cette démonstration ne prouve pas un bénéfice pédagogique ni une utilisation en classe.
+- La persistance des statistiques dépend de la configuration du serveur.
 
 ## Liens
 
 - [Étude de cas](/projets/edusemantix)
+- [Jouer à la démo](https://edusemantix.onrender.com)

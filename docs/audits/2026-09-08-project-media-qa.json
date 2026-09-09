@@ -1,0 +1,724 @@
+{
+  "reviewedAt": "2026-09-08T22:27:17.890Z",
+  "target": "local-production-build",
+  "baseline": "9985ad0",
+  "viewportWidths": [
+    375,
+    1440
+  ],
+  "routeCount": 31,
+  "renders": 62,
+  "verdict": "PASS",
+  "failed": [],
+  "axeTags": [
+    "wcag2a",
+    "wcag2aa",
+    "wcag21aa"
+  ],
+  "measurements": [
+    {
+      "path": "/",
+      "width": 375,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "errors": [],
+      "a11y": []
+    },
+    {
+      "path": "/projets",
+      "width": 375,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "errors": [],
+      "a11y": []
+    },
+    {
+      "path": "/recruteurs",
+      "width": 375,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "errors": [],
+      "a11y": []
+    },
+    {
+      "path": "/competences",
+      "width": 375,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "errors": [],
+      "a11y": []
+    },
+    {
+      "path": "/preuves",
+      "width": 375,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "errors": [],
+      "a11y": []
+    },
+    {
+      "path": "/methode",
+      "width": 375,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "errors": [],
+      "a11y": []
+    },
+    {
+      "path": "/knowledge",
+      "width": 375,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "errors": [],
+      "a11y": []
+    },
+    {
+      "path": "/mentions-legales",
+      "width": 375,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "errors": [],
+      "a11y": []
+    },
+    {
+      "path": "/contact",
+      "width": 375,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "errors": [],
+      "a11y": []
+    },
+    {
+      "path": "/a-propos",
+      "width": 375,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "errors": [],
+      "a11y": []
+    },
+    {
+      "path": "/confidentialite",
+      "width": 375,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "errors": [],
+      "a11y": []
+    },
+    {
+      "path": "/outils/decodeur-offre-ia",
+      "width": 375,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "errors": [],
+      "a11y": []
+    },
+    {
+      "path": "/projets/job-radar",
+      "width": 375,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "errors": [],
+      "a11y": []
+    },
+    {
+      "path": "/projets/les-petites-griffes",
+      "width": 375,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "errors": [],
+      "a11y": []
+    },
+    {
+      "path": "/projets/educool-la-herse",
+      "width": 375,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "errors": [],
+      "a11y": []
+    },
+    {
+      "path": "/projets/capselys",
+      "width": 375,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "errors": [],
+      "a11y": []
+    },
+    {
+      "path": "/projets/iscom",
+      "width": 375,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "errors": [],
+      "a11y": []
+    },
+    {
+      "path": "/projets/preuvia",
+      "width": 375,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "errors": [],
+      "a11y": []
+    },
+    {
+      "path": "/projets/cortex-bridge",
+      "width": 375,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "errors": [],
+      "a11y": []
+    },
+    {
+      "path": "/projets/battle-engine",
+      "width": 375,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "errors": [],
+      "a11y": []
+    },
+    {
+      "path": "/projets/hoopsphere",
+      "width": 375,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "errors": [],
+      "a11y": []
+    },
+    {
+      "path": "/projets/rag-starter-kit",
+      "width": 375,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "errors": [],
+      "a11y": []
+    },
+    {
+      "path": "/projets/board-ia-pme",
+      "width": 375,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "errors": [],
+      "a11y": []
+    },
+    {
+      "path": "/projets/edusemantix",
+      "width": 375,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "errors": [],
+      "a11y": []
+    },
+    {
+      "path": "/projets/pokemon-gen4-toolkit",
+      "width": 375,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "errors": [],
+      "a11y": []
+    },
+    {
+      "path": "/projets/claude-code-soul",
+      "width": 375,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "errors": [],
+      "a11y": []
+    },
+    {
+      "path": "/knowledge/llms-txt-portfolio",
+      "width": 375,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "errors": [],
+      "a11y": []
+    },
+    {
+      "path": "/knowledge/playwright-audit-visuel",
+      "width": 375,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "errors": [],
+      "a11y": []
+    },
+    {
+      "path": "/knowledge/growth-engineer-ia",
+      "width": 375,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "errors": [],
+      "a11y": []
+    },
+    {
+      "path": "/knowledge/claude-code-mcp-workflow",
+      "width": 375,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "errors": [],
+      "a11y": []
+    },
+    {
+      "path": "/knowledge/memoire-agent-markdown",
+      "width": 375,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "errors": [],
+      "a11y": []
+    },
+    {
+      "path": "/",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "errors": [],
+      "a11y": []
+    },
+    {
+      "path": "/projets",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "errors": [],
+      "a11y": []
+    },
+    {
+      "path": "/recruteurs",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "errors": [],
+      "a11y": []
+    },
+    {
+      "path": "/competences",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "errors": [],
+      "a11y": []
+    },
+    {
+      "path": "/preuves",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "errors": [],
+      "a11y": []
+    },
+    {
+      "path": "/methode",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "errors": [],
+      "a11y": []
+    },
+    {
+      "path": "/knowledge",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "errors": [],
+      "a11y": []
+    },
+    {
+      "path": "/mentions-legales",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "errors": [],
+      "a11y": []
+    },
+    {
+      "path": "/contact",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "errors": [],
+      "a11y": []
+    },
+    {
+      "path": "/a-propos",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "errors": [],
+      "a11y": []
+    },
+    {
+      "path": "/confidentialite",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "errors": [],
+      "a11y": []
+    },
+    {
+      "path": "/outils/decodeur-offre-ia",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "errors": [],
+      "a11y": []
+    },
+    {
+      "path": "/projets/job-radar",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "errors": [],
+      "a11y": []
+    },
+    {
+      "path": "/projets/les-petites-griffes",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "errors": [],
+      "a11y": []
+    },
+    {
+      "path": "/projets/educool-la-herse",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "errors": [],
+      "a11y": []
+    },
+    {
+      "path": "/projets/capselys",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "errors": [],
+      "a11y": []
+    },
+    {
+      "path": "/projets/iscom",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "errors": [],
+      "a11y": []
+    },
+    {
+      "path": "/projets/preuvia",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "errors": [],
+      "a11y": []
+    },
+    {
+      "path": "/projets/cortex-bridge",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "errors": [],
+      "a11y": []
+    },
+    {
+      "path": "/projets/battle-engine",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "errors": [],
+      "a11y": []
+    },
+    {
+      "path": "/projets/hoopsphere",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "errors": [],
+      "a11y": []
+    },
+    {
+      "path": "/projets/rag-starter-kit",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "errors": [],
+      "a11y": []
+    },
+    {
+      "path": "/projets/board-ia-pme",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "errors": [],
+      "a11y": []
+    },
+    {
+      "path": "/projets/edusemantix",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "errors": [],
+      "a11y": []
+    },
+    {
+      "path": "/projets/pokemon-gen4-toolkit",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "errors": [],
+      "a11y": []
+    },
+    {
+      "path": "/projets/claude-code-soul",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "errors": [],
+      "a11y": []
+    },
+    {
+      "path": "/knowledge/llms-txt-portfolio",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "errors": [],
+      "a11y": []
+    },
+    {
+      "path": "/knowledge/playwright-audit-visuel",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "errors": [],
+      "a11y": []
+    },
+    {
+      "path": "/knowledge/growth-engineer-ia",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "errors": [],
+      "a11y": []
+    },
+    {
+      "path": "/knowledge/claude-code-mcp-workflow",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "errors": [],
+      "a11y": []
+    },
+    {
+      "path": "/knowledge/memoire-agent-markdown",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "errors": [],
+      "a11y": []
+    }
+  ],
+  "videoChecks": [
+    {
+      "viewportWidth": 375,
+      "index": 0,
+      "src": "http://127.0.0.1:3199/assets/video/battle-league-20260908.mp4",
+      "width": 360,
+      "height": 640,
+      "time": 0.692958,
+      "controls": false,
+      "muted": true,
+      "playsInline": true,
+      "declaredRatio": 0.5625,
+      "verdict": "PASS"
+    },
+    {
+      "viewportWidth": 375,
+      "index": 1,
+      "src": "http://127.0.0.1:3199/assets/video/battle-saitama-20260908.mp4",
+      "width": 540,
+      "height": 960,
+      "time": 0.013472,
+      "controls": false,
+      "muted": true,
+      "playsInline": true,
+      "declaredRatio": 0.5625,
+      "verdict": "PASS"
+    },
+    {
+      "viewportWidth": 375,
+      "index": 2,
+      "src": "http://127.0.0.1:3199/assets/video/battle-goku-20260908.mp4",
+      "width": 720,
+      "height": 1280,
+      "time": 0.024483,
+      "controls": false,
+      "muted": true,
+      "playsInline": true,
+      "declaredRatio": 0.5625,
+      "verdict": "PASS"
+    },
+    {
+      "viewportWidth": 375,
+      "index": 3,
+      "src": "http://127.0.0.1:3199/assets/video/battle-roster-20260908.mp4",
+      "width": 1280,
+      "height": 720,
+      "time": 0.026245,
+      "controls": false,
+      "muted": true,
+      "playsInline": true,
+      "declaredRatio": 1.7777777777777777,
+      "verdict": "PASS"
+    },
+    {
+      "viewportWidth": 375,
+      "index": 4,
+      "src": "http://127.0.0.1:3199/assets/video/battle-teaser-20260908.mp4",
+      "width": 1280,
+      "height": 720,
+      "time": 0.432943,
+      "controls": false,
+      "muted": true,
+      "playsInline": true,
+      "declaredRatio": 1.7777777777777777,
+      "verdict": "PASS"
+    },
+    {
+      "width": 375,
+      "keyboardPause": true,
+      "offscreenPause": true,
+      "reducedMotion": true,
+      "verdict": "PASS"
+    },
+    {
+      "viewportWidth": 1440,
+      "index": 0,
+      "src": "http://127.0.0.1:3199/assets/video/battle-league-20260908.mp4",
+      "width": 360,
+      "height": 640,
+      "time": 0.522494,
+      "controls": false,
+      "muted": true,
+      "playsInline": true,
+      "declaredRatio": 0.5625,
+      "verdict": "PASS"
+    },
+    {
+      "viewportWidth": 1440,
+      "index": 1,
+      "src": "http://127.0.0.1:3199/assets/video/battle-saitama-20260908.mp4",
+      "width": 540,
+      "height": 960,
+      "time": 0.011758,
+      "controls": false,
+      "muted": true,
+      "playsInline": true,
+      "declaredRatio": 0.5625,
+      "verdict": "PASS"
+    },
+    {
+      "viewportWidth": 1440,
+      "index": 2,
+      "src": "http://127.0.0.1:3199/assets/video/battle-goku-20260908.mp4",
+      "width": 720,
+      "height": 1280,
+      "time": 0.419118,
+      "controls": false,
+      "muted": true,
+      "playsInline": true,
+      "declaredRatio": 0.5625,
+      "verdict": "PASS"
+    },
+    {
+      "viewportWidth": 1440,
+      "index": 3,
+      "src": "http://127.0.0.1:3199/assets/video/battle-roster-20260908.mp4",
+      "width": 1280,
+      "height": 720,
+      "time": 0.026318,
+      "controls": false,
+      "muted": true,
+      "playsInline": true,
+      "declaredRatio": 1.7777777777777777,
+      "verdict": "PASS"
+    },
+    {
+      "viewportWidth": 1440,
+      "index": 4,
+      "src": "http://127.0.0.1:3199/assets/video/battle-teaser-20260908.mp4",
+      "width": 1280,
+      "height": 720,
+      "time": 0.434547,
+      "controls": false,
+      "muted": true,
+      "playsInline": true,
+      "declaredRatio": 1.7777777777777777,
+      "verdict": "PASS"
+    },
+    {
+      "width": 1440,
+      "keyboardPause": true,
+      "offscreenPause": true,
+      "reducedMotion": true,
+      "verdict": "PASS"
+    }
+  ]
+}

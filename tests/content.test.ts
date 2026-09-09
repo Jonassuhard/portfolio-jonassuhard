@@ -150,11 +150,10 @@ test("Job Radar distingue la version personnelle déployée de l'édition Commun
   );
 
   const expectedScreens = [
-    "/assets/proof/job-radar/radar-v2-desktop-20260831.webp",
-    "/assets/proof/job-radar/today-v2-20260831.webp",
-    "/assets/proof/job-radar/insights-v2-20260831.webp",
-    "/assets/proof/job-radar/system-v2-20260831.webp",
-    "/assets/proof/job-radar/radar-v2-mobile-board-20260831.webp"
+    "/assets/proof/job-radar/offer-detail-20260908.webp",
+    "/assets/proof/job-radar/radar-20260908.webp",
+    "/assets/proof/job-radar/insights-20260908.webp",
+    "/assets/proof/job-radar/radar-mobile-20260908.webp"
   ];
   assert.equal(project.heroImage?.src, expectedScreens[0]);
   assert.deepEqual((project.gallery ?? []).map((visual) => visual.src), expectedScreens.slice(1));
@@ -164,8 +163,8 @@ test("Job Radar distingue la version personnelle déployée de l'édition Commun
 
   const visuals = [project.heroImage, project.architectureImage, ...(project.gallery ?? [])]
     .filter(Boolean);
-  assert.equal(visuals.length, 6);
-  assert.equal(new Set(visuals.map((visual) => visual?.src)).size, 6);
+  assert.equal(visuals.length, 5);
+  assert.equal(new Set(visuals.map((visual) => visual?.src)).size, 5);
   for (const visual of visuals) {
     assert.ok(visual);
     const asset = new URL(`../public${visual.src}`, import.meta.url);
@@ -277,7 +276,7 @@ test("Cool Bank raconte deux versions 3D distinctes avant ses statuts techniques
   assert.ok(project);
   assert.equal(project.title, "Cool Bank - donner vie à une banque de classe");
   assert.equal(project.fullColorMedia, true);
-  assert.match(project.heroImage?.src ?? "", /cool-bank-v3-world/);
+  assert.match(project.heroImage?.src ?? "", /v2-village-20260817/);
   assert.deepEqual(project.story?.roles.map((role) => role.title), [
     "L'élève",
     "Le banquier",
@@ -417,23 +416,24 @@ test("les prototypes historiques RAG et Board restent qualifiés par leurs preuv
     );
     assert.match(JSON.stringify([rag, board]), new RegExp(asset.replaceAll(".", "\\.")));
   }
-  assert.match(edusemantix?.status ?? "", /actif.*refonte V2/i);
+  assert.match(edusemantix?.status ?? "", /démo publique en ligne/i);
+  assert.ok(edusemantix?.links.some(link => link.href === "https://edusemantix.onrender.com"));
   assert.doesNotMatch(JSON.stringify(pokemon), /EmulatorJS/i);
-  assert.match(battle?.status ?? "", /25 août 2026/i);
+  assert.match(battle?.status ?? "", /combats publiés/i);
   assert.match(preuvia?.proofLine ?? "", /quatre IA principales.*Mistral/i);
 });
 
 test("les projets utilisent les médias frais retenus lors de l'audit", () => {
   const expectedAssets = [
-    "/assets/proof/educool/cool-bank-v3-world-20260826.webp",
-    "/assets/proof/educool/cool-bank-v2-teacher.webp",
-    "/assets/proof/hoopsphere/hoopsphere-import-emarque.webp",
-    "/assets/proof/cortex-bridge/cortex-stop-diagnostic.webp",
-    "/assets/proof/claude-code-soul/soul-github-repo.webp",
+    "/assets/proof/educool/v3-map-city-20260908.webp",
+    "/assets/proof/educool/v2-house-20260822.webp",
+    "/assets/proof/hoopsphere/landing-20260908.webp",
+    "/assets/proof/cortex-bridge/approval-20260908.webp",
+    "/assets/proof/claude-code-soul/public-0-20260908.webp",
     "/assets/video/les-petites-griffes.mp4",
     "/assets/video/les-petites-griffes-poster.webp",
-    "/assets/video/battle-engine-intro-hd.mp4",
-    "/assets/video/battle-engine-intro-hd-poster.webp"
+    "/assets/video/battle-league-20260908.mp4",
+    "/assets/video/battle-league-20260908-poster.webp"
   ];
 
   for (const asset of expectedAssets) {
@@ -442,15 +442,15 @@ test("les projets utilisent les médias frais retenus lors de l'audit", () => {
 
   const bySlug = (slug: string) => projects.find((item) => item.slug === slug);
   assert.equal(bySlug("les-petites-griffes")?.video, "/assets/video/les-petites-griffes.mp4");
-  assert.equal(bySlug("battle-engine")?.video, "/assets/video/battle-engine-intro-hd.mp4");
+  assert.equal(bySlug("battle-engine")?.video, "/assets/video/battle-league-20260908.mp4");
   assert.equal(
     bySlug("educool-la-herse")?.heroImage?.src,
-    "/assets/proof/educool/cool-bank-v3-world-20260826.webp"
+    "/assets/proof/educool/v2-village-20260817.webp"
   );
-  assert.match(JSON.stringify(bySlug("educool-la-herse")?.story), /cool-bank-v2-teacher\.webp/);
-  assert.match(JSON.stringify(bySlug("hoopsphere")?.gallery), /hoopsphere-import-emarque\.webp/);
-  assert.match(JSON.stringify(bySlug("cortex-bridge")?.gallery), /cortex-stop-diagnostic\.webp/);
-  assert.match(JSON.stringify(bySlug("claude-code-soul")?.gallery), /soul-github-repo\.webp/);
+  assert.match(JSON.stringify(bySlug("educool-la-herse")?.story), /v2-house-20260822\.webp/);
+  assert.match(JSON.stringify(bySlug("hoopsphere")?.gallery), /landing-20260908\.webp/);
+  assert.match(JSON.stringify(bySlug("cortex-bridge")?.gallery), /approval-20260908\.webp/);
+  assert.match(JSON.stringify(bySlug("claude-code-soul")?.gallery), /public-0-20260908\.webp/);
 });
 
 test("Cool Bank / La Herse expose séparément les versions V2 et V3", () => {
@@ -517,7 +517,15 @@ test("les galeries réservent leurs dimensions intrinsèques", () => {
       const asset = new URL(`../public${image.src}`, import.meta.url);
       assert.ok(image.width > 0 && image.height > 0, `${image.src} n'a pas de dimensions`);
       assert.ok(existsSync(asset), `${image.src} est absent du dossier public`);
-      assert.ok(statSync(asset).size < 700_000, `${image.src} dépasse 700 ko`);
+      if (image.poster) {
+        assert.match(image.src, /\.mp4$/);
+        assert.ok(statSync(asset).size < 4_000_000, `${image.src} dépasse le budget vidéo de 4 Mo`);
+        const poster = new URL(`../public${image.poster}`, import.meta.url);
+        assert.ok(existsSync(poster), `${image.src} n'a pas de poster`);
+        assert.ok(statSync(poster).size < 700_000, `${image.poster} dépasse 700 ko`);
+      } else {
+        assert.ok(statSync(asset).size < 700_000, `${image.src} dépasse 700 ko`);
+      }
     }
   }
 });

@@ -35,11 +35,11 @@ Site et détail public de l'offre accessibles en ligne. Les éventuelles mission
 
 ## Visuels
 
-![Page d'accueil publique de Preuvia : la promesse explique directement ce que l'audit vérifie.](/assets/proof/preuvia/preuvia-hero-live.webp)
+![Accueil public : la promesse et un exemple de comparaison entre réponses d'IA.](/assets/proof/preuvia/public-0-20260908.webp)
 
-![Process public de l'audit : tester les réponses, repérer les écarts, puis prioriser ce qu'il faut publier.](/assets/proof/preuvia/preuvia-process-live.webp)
+![Le site explique ce que l'audit observe et les étapes de la prestation.](/assets/proof/preuvia/public-750-20260908.webp)
 
-![Exemple fictif du livrable public : sources citées, manque observé et actions proposées, sans résultat client inventé.](/assets/proof/preuvia/preuvia-output-live.webp)
+![Exemple de matrice de citations sur la page publique. C'est une démonstration du livrable, pas un résultat client.](/assets/proof/preuvia/public-1500-20260908.webp)
 
 
 ## Limites

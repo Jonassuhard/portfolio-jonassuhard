@@ -225,11 +225,16 @@ function toMarkdown(project: Project) {
   }
   if (project.gallery?.length) {
     lines.push("", "## Visuels", "");
+    if (project.video) {
+      lines.push(`[Voir la vidéo de présentation](${project.video})`, "");
+    }
     if (project.heroImage) {
       lines.push(`![${project.heroImage.caption}](${project.heroImage.src})`, "");
     }
     for (const visual of project.gallery) {
-      lines.push(`![${visual.caption}](${visual.src})`, "");
+      lines.push(visual.poster
+        ? `[![${visual.caption}](${visual.poster})](${visual.src})`
+        : `![${visual.caption}](${visual.src})`, "");
     }
   }
   if (project.need || project.intention) {

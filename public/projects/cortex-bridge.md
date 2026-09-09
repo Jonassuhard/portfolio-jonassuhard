@@ -35,13 +35,11 @@ Code public sous licence MIT. La preuve du tag v0.5.3 datée du 26/08/2026 rappo
 
 ## Visuels
 
-![Onboarding public de Cortex Bridge : choix du dossier local et consentement avant toute exécution.](/assets/proof/cortex-bridge/cortex-onboarding.webp)
+![Console locale : conversations et dossier de travail, avec les données fictives des tests du dépôt. Ce n'est pas une exécution réelle.](/assets/proof/cortex-bridge/workspace-20260908.webp)
 
-![Contrôle avant exécution : commande proposée, dossier ciblé et niveau de risque restent visibles avant validation.](/assets/proof/cortex-bridge/cortex-preflight.webp)
+![Avant exécution : dossier, durée et permissions à vérifier. Scénario fictif rejoué dans l'interface locale.](/assets/proof/cortex-bridge/approval-20260908.webp)
 
-![Trace d'exécution : chaque étape, sa sortie et son état restent consultables dans l'interface locale.](/assets/proof/cortex-bridge/cortex-execution.webp)
-
-![Diagnostic d'arrêt : les processus actifs sont listés et le bouton d'arrêt d'urgence reste disponible dans l'interface locale.](/assets/proof/cortex-bridge/cortex-stop-diagnostic.webp)
+![Dépôt GitHub public : code et documentation consultables. La version publiée reste v0.5.3, distincte du travail local.](/assets/proof/cortex-bridge/public-0-20260908.webp)
 
 
 ## Limites

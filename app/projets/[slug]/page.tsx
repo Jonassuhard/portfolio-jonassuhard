@@ -115,9 +115,6 @@ export default async function ProjectDetailPage({ params }: PageProps) {
           </span>
           <AnimatedTitle>{project.title}</AnimatedTitle>
           <p className="lead">{project.summary}</p>
-          {project.noindex ? (
-            <p className="case-meta">Lab / archive — non mis en avant pour la candidature.</p>
-          ) : null}
           <div className="button-row">
             {project.links.map((link) => (
               <a
@@ -137,6 +134,8 @@ export default async function ProjectDetailPage({ params }: PageProps) {
             src={project.video}
             poster={project.video.replace(".mp4", "-poster.webp")}
             label={`Aperçu vidéo du projet ${project.shortTitle}`}
+            width={project.videoWidth}
+            height={project.videoHeight}
           />
         ) : (
           <Image
@@ -153,9 +152,31 @@ export default async function ProjectDetailPage({ params }: PageProps) {
         )}
       </section>
 
-      {project.story ? <ProjectStory project={project} /> : (
-        <section><ProjectSummaryTable project={project} /></section>
-      )}
+      {project.story ? <ProjectStory project={project} /> : null}
+
+      {!project.story && project.gallery?.length ? (
+        <section className="section">
+          <h2>Le projet en images.</h2>
+          <div className="proof-gallery">
+            {project.gallery.map((shot) => (
+              <figure key={shot.src}>
+                {shot.poster ? (
+                  <ProjectVideo src={shot.src} poster={shot.poster} label={shot.caption}
+                    width={shot.width} height={shot.height} eager={false} />
+                ) : (
+                  <Image src={shot.src} alt={shot.caption} width={shot.width} height={shot.height}
+                    sizes="(max-width: 640px) calc(100vw - 28px), 520px"
+                    quality={78} loading="lazy"
+                    className={`full-color-media${shot.height / shot.width > 1.6 ? " proof-portrait" : ""}`} />
+                )}
+                <figcaption>{shot.caption}</figcaption>
+              </figure>
+            ))}
+          </div>
+        </section>
+      ) : null}
+
+      {!project.story ? <section><ProjectSummaryTable project={project} /></section> : null}
 
       {project.need || project.intention ? (
         <section className="section project-narrative-band">
@@ -249,30 +270,6 @@ export default async function ProjectDetailPage({ params }: PageProps) {
         </section>
       ) : null}
 
-      {!project.story && project.gallery ? (
-        <section className="section">
-          <p className="section-kicker">Aperçu</p>
-          <h2>Ce qui est visible.</h2>
-          <div className="proof-gallery">
-            {project.gallery.map((shot) => (
-              <figure key={shot.src}>
-                <Image
-                  src={shot.src}
-                  alt={shot.caption}
-                  width={shot.width}
-                  height={shot.height}
-                  sizes="(max-width: 640px) calc(100vw - 28px), 520px"
-                  quality={75}
-                  loading="lazy"
-                  className={project.fullColorMedia ? "full-color-media" : undefined}
-                />
-                <figcaption>{shot.caption}</figcaption>
-              </figure>
-            ))}
-          </div>
-        </section>
-      ) : null}
-
       <section className="section content-grid">
         <div className="prose">
           <section>
@@ -300,7 +297,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
           <section>
             <p className="section-kicker">Décisions</p>
             <h2>Pourquoi ces choix.</h2>
-            <div className="table-scroll">
+            <div className="table-scroll" tabIndex={0} role="region" aria-label="Décisions du projet">
               <table className="decision-table">
                 <thead>
                   <tr>

@@ -42,7 +42,7 @@ Sur Capsélys et Les Petites Griffes, les captures servent à vérifier les text
 ## Preuves
 
 - Fiche Capsélys : /projects/capselys.md
-- Capture assistant Capsélys : /assets/proof/capselys/capselys-assistant.webp
-- Capture site Capsélys : /assets/proof/capselys/capselys-site.webp
+- Formulaire Capsélys (archive de staging) : /assets/proof/capselys/adhesion-archive-20260908.webp
+- Navigation Capsélys (archive de staging) : /assets/proof/capselys/navigation-archive-20260908.webp
 - Fiche Les Petites Griffes : /projects/les-petites-griffes.md
 - Capture home Les Petites Griffes : /assets/proof/les-petites-griffes/lpg-home.webp

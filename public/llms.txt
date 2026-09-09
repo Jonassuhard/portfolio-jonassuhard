@@ -32,11 +32,11 @@ Je cherche à évoluer vers un rôle de Forward Deployed Engineer. Je veux compr
 ## Autres projets
 
 - [Capsélys](https://jonassuhard.com/projects/capselys.md) : refonte de conversion sur staging ; le lien externe pointe vers la production actuelle, pas vers le staging audité.
-- [Battle Engine](https://jonassuhard.com/projects/battle-engine.md) : pipeline vidéo Godot, FFmpeg et publication reprenable ; vidéo publique limitée à l'introduction.
+- [Battle Engine](https://jonassuhard.com/projects/battle-engine.md) : pipeline vidéo Godot, FFmpeg, RIFE et publication reprenable. La page montre trois extraits de combats, dont un publié le 31 août 2026, ainsi qu'un roster et un teaser d'archive. Aucun résultat d'audience revendiqué.
 - [HoopSphere](https://jonassuhard.com/projects/hoopsphere.md) : prototype MBA d'application basket ; contribution de Jonas centrée sur le marketing et le business plan.
 - [RAG Starter Kit](https://jonassuhard.com/projects/rag-starter-kit.md) : prototype privé multi-tenant audité en juin 2026 ; historique Git documenté, source absente après migration et aucune exécution actuelle revendiquée.
 - [Board IA PME](https://jonassuhard.com/projects/board-ia-pme.md) : prototype Python historique de 437 lignes et 10 fichiers ; source absente après migration, aucune validation client revendiquée.
-- [Edusemantix](https://jonassuhard.com/projects/edusemantix.md) : lab privé actif, refonte V2 en cours.
+- [Edusemantix](https://jonassuhard.com/projects/edusemantix.md) : jeu de proximité sémantique avec une [démo publique](https://edusemantix.onrender.com), vérifiée le 8 septembre 2026. Code privé ; aucun bénéfice pédagogique revendiqué.
 - [Pokémon Gen-4 Toolkit](https://jonassuhard.com/projects/pokemon-gen4-toolkit.md) : archive privée d'outils Python ; aucune ROM ni donnée de jeu publiée.
 - [claude-code-soul](https://jonassuhard.com/projects/claude-code-soul.md) : pack de configuration Claude Code public sous MIT.
 
@@ -48,3 +48,5 @@ Je cherche à évoluer vers un rôle de Forward Deployed Engineer. Je veux compr
 - [claude-code-soul](https://github.com/Jonassuhard/claude-code-soul)
 
 Revue générale : 2026-08-28. Job Radar personnel et Community revérifiés le 2026-08-31 ; Cortex Bridge v0.5.3 vérifié le 2026-08-26.
+
+Revue des médias : 2026-09-08. Nouvelles captures locales ou publiques, sauf Les Petites Griffes conservé à la demande de Jonas. Les captures de démonstration, prévisualisations de carte et archives sont identifiées dans chaque page. Cette revue ne renouvelle pas les dates des tests techniques historiques.

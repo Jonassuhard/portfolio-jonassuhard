@@ -214,6 +214,9 @@ test("les médias projet réservent leur espace et respectent le mouvement rédu
   assert.match(detailPage, /width=\{shot\.width\}/);
   assert.match(detailPage, /height=\{shot\.height\}/);
   assert.match(video, /prefers-reduced-motion: reduce/);
-  assert.match(video, /controls/);
+  assert.match(video, /controls=\{false\}/);
+  assert.match(video, /IntersectionObserver/);
+  assert.match(video, /document\.hidden/);
+  assert.match(video, /event\.key !== " "/);
   assert.doesNotMatch(detailPage, /<img src=\{shot\.src\}/);
 });

@@ -22,7 +22,7 @@ export default function ProjectsPage() {
     <div className="page page-dense">
       <section>
         <p className="eyebrow">Projets</p>
-        <AnimatedTitle>Des projets livrés aux essais.</AnimatedTitle>
+        <AnimatedTitle>Des projets livrés, d'autres en cours.</AnimatedTitle>
         <p className="lead">
           Les projets principaux, les projets techniques et les essais
           personnels. Chaque carte indique ce qui est public, privé ou encore

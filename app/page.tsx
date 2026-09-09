@@ -14,7 +14,7 @@ export default function HomePage() {
       <section className="hero">
         <div className="hero-copy">
           <div>
-            <p className="eyebrow">CDI · Paris ou hybride · disponible le 1er septembre 2026</p>
+            <p className="eyebrow">CDI · Paris ou hybride · disponible depuis le 1er septembre 2026</p>
             <AnimatedTitle glitch>
               {site.headline}
             </AnimatedTitle>

@@ -94,8 +94,8 @@ export const knowledgePages: KnowledgePage[] = [
       "Sur Capsélys et Les Petites Griffes, les captures servent à vérifier les textes, les blocs, l'assistant IA et les contraintes client avant de parler de conversion.",
     proofs: [
       { label: "Fiche Capsélys", href: "/projects/capselys.md" },
-      { label: "Capture assistant Capsélys", href: "/assets/proof/capselys/capselys-assistant.webp" },
-      { label: "Capture site Capsélys", href: "/assets/proof/capselys/capselys-site.webp" },
+      { label: "Formulaire Capsélys (archive de staging)", href: "/assets/proof/capselys/adhesion-archive-20260908.webp" },
+      { label: "Navigation Capsélys (archive de staging)", href: "/assets/proof/capselys/navigation-archive-20260908.webp" },
       { label: "Fiche Les Petites Griffes", href: "/projects/les-petites-griffes.md" },
       { label: "Capture home Les Petites Griffes", href: "/assets/proof/les-petites-griffes/lpg-home.webp" }
     ],

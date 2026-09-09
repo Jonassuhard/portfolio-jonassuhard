@@ -32,15 +32,15 @@ Refonte orientée conversion, staging WordPress sécurisé, présentation orale 
 - Sait arbitrer entre un builder et du code selon qui maintiendra le site, pas par dogme.
 - Présentation honnête du staging, des mesures lab, des limites et du plan d'action.
 
-Captures du staging et présentation client de 14 slides, détaillées en entretien.
+Trois vues différentes de l'archive de staging retrouvée localement : navigation, formulaire et en-tête. La date de capture d'origine n'est pas certifiée ; ce n'est pas l'état du site public actuel.
 
 ## Visuels
 
-![Home Capsélys (staging) avec l'assistant IA ouvert en contexte.](/assets/proof/capselys/capselys-site.webp)
+![Archive du staging : accès aux services depuis la navigation. Ce visuel ne représente pas le site public actuel.](/assets/proof/capselys/navigation-archive-20260908.webp)
 
-![L'assistant répond à une vraie question (DUERP) : réponse cadrée, CTA et disclaimer « réponses générées automatiquement ».](/assets/proof/capselys/capselys-assistant.webp)
+![Archive du staging : formulaire d'adhésion ouvert, sans donnée renseignée.](/assets/proof/capselys/adhesion-archive-20260908.webp)
 
-![Extrait du rapport d'audit : problèmes observés, priorité et correction proposée pour la suite de la refonte.](/assets/proof/capselys/capselys-audit-roadmap.webp)
+![Archive du staging : l'en-tête reste accessible pendant le défilement.](/assets/proof/capselys/header-archive-20260908.webp)
 
 
 ## Limites

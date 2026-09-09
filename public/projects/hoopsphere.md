@@ -30,13 +30,15 @@ Projet MBA à quatre : responsabilité marketing, étude de marché et projectio
 - Étude de marché, personas, plan d'acquisition et campagnes organiques.
 - Business plan et projections financières à présenter avec leurs sources en entretien.
 
+Nouvelles captures locales de la landing d'équipe archivée. Elles situent le concept ; elles ne prouvent ni une application distribuée ni des résultats d'acquisition. Le design et le développement sont ceux de l'équipe.
+
 ## Visuels
 
-![Vue du prototype produit réalisé en équipe. Je la montre pour situer HoopSphere ; le design et le développement ne sont pas les miens.](/assets/proof/hoopsphere/hoopsphere-landing-team.webp)
+![Landing d'équipe archivée : proposition de valeur pour les joueurs de basket. Ma contribution porte sur le marketing, pas sur le design de cet écran.](/assets/proof/hoopsphere/landing-20260908.webp)
 
-![Écran réel du prototype d'équipe : import OCR d'une feuille e-Marque. Le design et le développement sont ceux de l'équipe ; ma contribution porte sur le marketing et le lancement.](/assets/proof/hoopsphere/hoopsphere-import-emarque.webp)
+![Landing d'équipe : les publics joueur, club et entraîneur. Capture locale de l'archive, pas une application mobile en production.](/assets/proof/hoopsphere/product-20260908.webp)
 
-![Extrait du plan d'acquisition préparé pour le projet MBA : canaux, cibles et séquence de lancement, sans les présenter comme des résultats obtenus.](/assets/proof/hoopsphere/hoopsphere-acquisition-plan.webp)
+![La landing d'équipe sur mobile, capturée depuis l'archive locale. Elle présente le concept, pas une application distribuée.](/assets/proof/hoopsphere/landing-mobile-20260908.webp)
 
 
 ## Limites

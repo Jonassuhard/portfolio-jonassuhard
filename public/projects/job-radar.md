@@ -5,7 +5,7 @@
 | Repère | Détail |
 | --- | --- |
 | Format | Radar d'offres déployé + édition open source |
-| Période | Juillet - août 2026 |
+| Période | Juillet - septembre 2026 |
 | Rôle de Jonas | Conception produit, architecture, développement full-stack, déploiement cloud, sécurité et QA |
 | Statut | Version personnelle déployée · Community v0.1.0-beta.1 publique |
 | Niveau de preuve | Preuve publique |
@@ -51,6 +51,7 @@ Job Radar transforme le texte des annonces en faits comparables. La note reste d
 - Une interface de travail avec Aujourd'hui, Radar, Candidatures, Entreprises, Insights et Système.
 - Un pipeline multi-source autorisé, avec normalisation, déduplication, fraîcheur et provenance.
 - Un scoring V3 qui explique le métier réel, le niveau attendu, les compétences et les preuves manquantes.
+- Depuis septembre 2026, des contrôles locaux du CV et des preuves manquantes dans la fiche offre et les documents, sans modifier le score ni déclencher un envoi.
 - Une infrastructure privée Vercel, Cloud Run, Turso et Google Drive avec tâches planifiées.
 - Une édition Community MIT, installable localement avec corpus fictif et preuve de release.
 
@@ -97,15 +98,13 @@ Cette édition partage le noyau du Radar sans profil, CV, candidatures ni donné
 
 ## Visuels
 
-![Interface actuelle du Radar : liste, détail, score, confiance et raisons de la note, sur des données fictives.](/assets/proof/job-radar/radar-v2-desktop-20260831.webp)
+![Radar local : liste et détail d'une offre, raisons de la note et préparation du dossier. Données fictives.](/assets/proof/job-radar/offer-detail-20260908.webp)
 
-![Vue Aujourd'hui : trois opportunités fortes et une file d'action courte, sur des données fictives.](/assets/proof/job-radar/today-v2-20260831.webp)
+![Radar : quatre offres retenues à partir d'une base de démonstration. Entreprises et données fictives.](/assets/proof/job-radar/radar-20260908.webp)
 
-![Insights : volumes bruts, décisions du Radar et compétences demandées, sur des données fictives.](/assets/proof/job-radar/insights-v2-20260831.webp)
+![Insights : volumes, décisions et compétences. L'interface signale que l'échantillon est insuffisant pour une tendance. Données fictives.](/assets/proof/job-radar/insights-20260908.webp)
 
-![Système : état des sources, prochaine actualisation et garde-fous d'envoi, sur des données fictives.](/assets/proof/job-radar/system-v2-20260831.webp)
-
-![Radar mobile : détail d'une offre et raisons de la note sur 390 px, avec des données fictives.](/assets/proof/job-radar/radar-v2-mobile-board-20260831.webp)
+![Détail d'une offre sur mobile, avec les mêmes raisons de classement. Données fictives.](/assets/proof/job-radar/radar-mobile-20260908.webp)
 
 
 ## Résultats vérifiés

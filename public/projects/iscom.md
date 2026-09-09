@@ -13,7 +13,7 @@
 
 ## À quoi ça sert
 
-Je prépare et saisis des contenus SEO dans Drupal. Je vérifie chaque information, j'utilise Semrush pour éviter les pages qui se concurrencent et je laisse la validation finale à l'équipe éditoriale.
+Je prépare des contenus SEO, les saisis dans Drupal et utilise Semrush pour repérer les pages qui se concurrencent. Je confronte les informations aux sources ; l'équipe éditoriale garde la validation finale.
 
 ## Ce que Jonas a fait
 
@@ -25,21 +25,21 @@ Je prépare et saisis des contenus SEO dans Drupal. Je vérifie chaque informati
 
 ## Ce que ça prouve
 
-Des articles SEO publiés en ligne dans le CMS d'un employeur, vérifiés avant mise en ligne.
+Des contenus publiés dans Drupal et un travail d'audit SEO mené dans le processus éditorial de l'employeur.
 
 - Livrer dans le process de publication d'un employeur sans court-circuiter la validation éditoriale.
 - Capacité à transformer un audit SEO en décisions nommées.
 - Discipline sur les actions sensibles, avec validation avant publication.
 
-Article publié en ligne, plus une checklist QA de pré-publication et un extrait d'audit de cannibalisation anonymisés.
+Captures fraîches d'un article public. Elles prouvent sa publication et sa mise en page, pas l'exactitude de chacune de ses affirmations ni un gain de trafic.
 
 ## Visuels
 
-![Article publié sur iscom.fr : titre, date et introduction visibles sur la page publique.](/assets/proof/iscom/iscom-article-hero.webp)
+![Article public : titre et mise en page vérifiés le 8 septembre 2026.](/assets/proof/iscom/public-0-20260908.webp)
 
-![Passage de l'article qui explique simplement le rôle des agents IA dans les métiers de la communication.](/assets/proof/iscom/iscom-article-agent.webp)
+![Corps de l'article dans Drupal : introduction et hiérarchie des sections.](/assets/proof/iscom/public-750-20260908.webp)
 
-![Suite de l'article public : méthode, limites et mise en contexte éditoriale vérifiables sur le site ISCOM.](/assets/proof/iscom/iscom-article-method.webp)
+![Suite de l'article public : développement et sous-titre. Le trafic et la performance SEO ne sont pas déduits de cette capture.](/assets/proof/iscom/public-1500-20260908.webp)
 
 
 ## Limites

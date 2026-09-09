@@ -53,29 +53,23 @@ Preuves privées et datées : état V2 vérifié le 22/08/2026 ; parcours visuel
 
 ### V3 — la reconstruction locale
 
-Captures réelles du 26 août 2026 avec des profils de démonstration. Elles montrent les trois rôles et des interactions rejouées localement, pas une validation en classe.
+Nouvelles vues du build local du 7 septembre 2026, capturées le 8 septembre en mode de prévisualisation de carte. Le code source a encore évolué depuis ce build. Aucun usage en classe ni test humain n'est déduit de ces images.
 
-![V3 : l'élève entre dans le bourg, découvre sa première quête et apprend à déplacer la caméra.](/assets/proof/educool/cool-bank-v3-world-20260826.webp)
+![V3 : vue du bourg dans le mode de prévisualisation de la carte. Build local du 7 septembre, capture du 8 septembre ; ce n'est pas une session élève.](/assets/proof/educool/v3-map-city-20260908.webp)
 
-![V3 : élève, banquier et professeure entrent avec des responsabilités différentes.](/assets/proof/educool/cool-bank-v3-roles.webp)
+![V3 : vue du château dans le même build local, avec la caméra de contrôle de la carte.](/assets/proof/educool/v3-map-castle-20260908.webp)
 
-![V3 : l'élève peut choisir une question ou écrire la sienne à un personnage du bourg.](/assets/proof/educool/cool-bank-v3-dialogue.webp)
-
-![V3 : le guichet du banquier guide l'opération et affiche une limite de transaction.](/assets/proof/educool/cool-bank-v3-banker.webp)
-
-![V3 : la professeure peut bloquer le monde, couper les échanges et rouvrir l'expérience.](/assets/proof/educool/cool-bank-v3-teacher.webp)
+![V3 : vue d'ensemble du terrain pour situer les zones. Prévisualisation technique, pas validation humaine du jeu.](/assets/proof/educool/v3-map-island-20260908.webp)
 
 ### V2 — la boucle 3D déjà jouable
 
-La V2 est déjà un monde 3D multijoueur. Ces écrans prouvent la boucle locale sur un appareil ; ils ne doivent jamais être présentés comme une ancienne version 2D.
+Vues différentes issues des preuves locales d'août 2026 : bourg 3D, organisation du monde et intérieur de maison. Ce sont des archives de la V2, pas une nouvelle recette complète.
 
-![V2 : monde 3D, personnages, HUD et économie visibles dans la boucle locale jouable.](/assets/proof/educool/cool-bank-v2-world.webp)
+![V2 : la place du village et les chemins, capture de contrôle locale du 17 août 2026.](/assets/proof/educool/v2-village-20260817.webp)
 
-![V2 : le maire donne une mission qui relie le déplacement dans le bourg à l'économie de classe.](/assets/proof/educool/cool-bank-v2-dialogue.webp)
+![V2 : vue d'ensemble du monde 3D et du HUD, archive locale du 17 août 2026.](/assets/proof/educool/v2-world-20260817.webp)
 
-![V2 : le guichet banquier encadre le camarade, le motif, le montant et le registre du jour.](/assets/proof/educool/cool-bank-v2-banker.webp)
-
-![V2 : la télécommande donne à l'enseignante les commandes de classe sans afficher de donnée d'élève.](/assets/proof/educool/cool-bank-v2-teacher.webp)
+![V2 : intérieur de maison en 3D dans le scénario de test du 22 août 2026. Aucune donnée d'élève réelle.](/assets/proof/educool/v2-house-20260822.webp)
 
 
 ## Limites

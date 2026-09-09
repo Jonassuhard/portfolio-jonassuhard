@@ -35,6 +35,8 @@ Captures anonymisées, démo privée et audit live daté du 2026-08-01. L'audit 
 
 ## Visuels
 
+[Voir la vidéo de présentation](/assets/video/les-petites-griffes.mp4)
+
 ![Home du studio de nail art, front Next.js déployé sur Vercel.](/assets/proof/les-petites-griffes/lpg-home.webp)
 
 ![« Compose ta pose » : devis guidé qui cadre la demande de la cliente.](/assets/proof/les-petites-griffes/lpg-compose.webp)

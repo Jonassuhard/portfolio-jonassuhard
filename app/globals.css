@@ -439,6 +439,9 @@ p { margin:0 0 10px; }
 .proof-gallery figure:first-child:nth-last-child(3) { grid-column:1 / -1; }
 .proof-gallery-featured figure:first-child { grid-column:1 / -1; }
 .proof-gallery img { display:block; width:100%; height:auto; border-bottom:1px solid var(--color-line); }
+.proof-gallery img.proof-portrait { width:auto; max-width:100%; max-height:680px; margin-inline:auto; }
+.proof-gallery .case-video { display:block; width:100%; height:auto; max-height:680px; object-fit:contain; border:0; box-shadow:none; }
+.case-video:focus-visible { outline:2px solid var(--color-rust); outline-offset:4px; }
 .proof-gallery figcaption { padding:10px 12px; font-family:var(--ft-type); font-size:12.5px; line-height:1.5; color:var(--color-ink-soft); letter-spacing:.01em; }
 @media (max-width:640px){
   .proof-gallery { grid-template-columns:1fr; }

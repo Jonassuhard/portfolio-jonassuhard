@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export type ProjectTier = 1 | 2 | 3;
 export type EvidenceLevel = "public" | "private" | "self-declared";
-export type ProofImage = { src: string; caption: string; width: number; height: number };
+export type ProofImage = { src: string; caption: string; width: number; height: number; poster?: string };
 
 export type ProjectNarrativeBlock = {
   title: string;
@@ -76,6 +76,8 @@ export type Project = {
   metaDescription?: string;
   cardLine?: string;
   video?: string;
+  videoWidth?: number;
+  videoHeight?: number;
   noindex?: boolean;
   // Le code vient de l'équipe, pas de Jonas (ex. HoopSphere : sa part est le marketing).
   // Pilote le JSON-LD : contributor au lieu d'author, pas de programmingLanguage.
@@ -198,17 +200,17 @@ export const projects: Project[] = [
     title: "Job Radar - savoir quelles offres méritent mon temps",
     shortTitle: "Job Radar",
     type: "Radar d'offres déployé + édition open source",
-    period: "Juillet - août 2026",
+    period: "Juillet - septembre 2026",
     role: "Conception produit, architecture, développement full-stack, déploiement cloud, sécurité et QA",
     status: "Version personnelle déployée · Community v0.1.0-beta.1 publique",
     evidenceLevel: "public",
     tier: 1,
-    image: "/assets/cards/job-radar-art.webp",
+    image: "/assets/cards/job-radar-20260909-art.webp",
     heroImage: {
-      src: "/assets/proof/job-radar/radar-v2-desktop-20260831.webp",
-      caption: "Interface actuelle du Radar : liste, détail, score, confiance et raisons de la note, sur des données fictives.",
-      width: 1440,
-      height: 1000
+      "src": "/assets/proof/job-radar/offer-detail-20260908.webp",
+      "caption": "Radar local : liste et détail d'une offre, raisons de la note et préparation du dossier. Données fictives.",
+      "width": 1440,
+      "height": 960
     },
     architectureImage: {
       src: "/assets/proof/job-radar/architecture-v2-20260831.webp",
@@ -339,6 +341,7 @@ export const projects: Project[] = [
       "Une interface de travail avec Aujourd'hui, Radar, Candidatures, Entreprises, Insights et Système.",
       "Un pipeline multi-source autorisé, avec normalisation, déduplication, fraîcheur et provenance.",
       "Un scoring V3 qui explique le métier réel, le niveau attendu, les compétences et les preuves manquantes.",
+      "Depuis septembre 2026, des contrôles locaux du CV et des preuves manquantes dans la fiche offre et les documents, sans modifier le score ni déclencher un envoi.",
       "Une infrastructure privée Vercel, Cloud Run, Turso et Google Drive avec tâches planifiées.",
       "Une édition Community MIT, installable localement avec corpus fictif et preuve de release."
     ],
@@ -357,28 +360,22 @@ export const projects: Project[] = [
     ],
     gallery: [
       {
-        src: "/assets/proof/job-radar/today-v2-20260831.webp",
-        caption: "Vue Aujourd'hui : trois opportunités fortes et une file d'action courte, sur des données fictives.",
-        width: 1440,
-        height: 1000
+        "src": "/assets/proof/job-radar/radar-20260908.webp",
+        "caption": "Radar : quatre offres retenues à partir d'une base de démonstration. Entreprises et données fictives.",
+        "width": 1440,
+        "height": 960
       },
       {
-        src: "/assets/proof/job-radar/insights-v2-20260831.webp",
-        caption: "Insights : volumes bruts, décisions du Radar et compétences demandées, sur des données fictives.",
-        width: 1440,
-        height: 1000
+        "src": "/assets/proof/job-radar/insights-20260908.webp",
+        "caption": "Insights : volumes, décisions et compétences. L'interface signale que l'échantillon est insuffisant pour une tendance. Données fictives.",
+        "width": 1440,
+        "height": 960
       },
       {
-        src: "/assets/proof/job-radar/system-v2-20260831.webp",
-        caption: "Système : état des sources, prochaine actualisation et garde-fous d'envoi, sur des données fictives.",
-        width: 1440,
-        height: 1000
-      },
-      {
-        src: "/assets/proof/job-radar/radar-v2-mobile-board-20260831.webp",
-        caption: "Radar mobile : détail d'une offre et raisons de la note sur 390 px, avec des données fictives.",
-        width: 1440,
-        height: 1000
+        "src": "/assets/proof/job-radar/radar-mobile-20260908.webp",
+        "caption": "Détail d'une offre sur mobile, avec les mêmes raisons de classement. Données fictives.",
+        "width": 390,
+        "height": 844
       }
     ],
     links: [
@@ -514,10 +511,10 @@ export const projects: Project[] = [
     tier: 1,
     image: "/assets/cards/cool-bank-art.webp",
     heroImage: {
-      src: "/assets/proof/educool/cool-bank-v3-world-20260826.webp",
-      caption: "Capture locale V3 : l'élève entre dans le bourg, découvre sa première quête et prend ses repères dans le monde 3D.",
-      width: 1280,
-      height: 800
+      "src": "/assets/proof/educool/v2-village-20260817.webp",
+      "caption": "Cool Bank V2 : le bourg 3D dans la boucle locale. Capture de contrôle du 17 août 2026, conservée comme archive de cette version.",
+      "width": 1440,
+      "height": 900
     },
     fullColorMedia: true,
     cardStatus: "Prototype local · trois rôles · données fictives",
@@ -530,53 +527,77 @@ export const projects: Project[] = [
     cardLine:
       "Un jeu scolaire local où les responsabilités de classe deviennent des rôles, des choix et des aventures dans un monde 3D partagé.",
     story: {
-      purposeTitle: "Rendre l'argent et la responsabilité plus concrets.",
-      purposeLead:
-        "La banque existait déjà dans la classe. Le projet lui donne des lieux, des personnages et des conséquences visibles, sans transformer l'outil de l'enseignante en jeu.",
-      purpose: [
+      "purposeTitle": "Rendre l'argent et la responsabilité plus concrets.",
+      "purposeLead": "La banque existait déjà dans la classe. Le projet lui donne des lieux, des personnages et des conséquences visibles, sans transformer l'outil de l'enseignante en jeu.",
+      "purpose": [
         "Les élèves explorent le bourg, accomplissent des missions, économisent et font évoluer progressivement leur maison.",
         "Un élève peut tenir le guichet pendant une période donnée, avec des plafonds clairs et un registre vérifiable.",
         "L'enseignante conserve les commandes essentielles et peut interrompre le monde ou les échanges sans perdre son espace de travail calme."
       ],
-      roles: [
+      "roles": [
         {
-          title: "L'élève",
-          text: "Il explore le bourg, parle aux habitants, accomplit des missions, économise et choisit comment utiliser ses centicools."
+          "title": "L'élève",
+          "text": "Il explore le bourg, parle aux habitants, accomplit des missions, économise et choisit comment utiliser ses centicools."
         },
         {
-          title: "Le banquier",
-          text: "C'est un élève responsabilisé. Il tient un guichet guidé, applique des plafonds et laisse une trace de chaque opération."
+          "title": "Le banquier",
+          "text": "C'est un élève responsabilisé. Il tient un guichet guidé, applique des plafonds et laisse une trace de chaque opération."
         },
         {
-          title: "L'enseignante",
-          text: "Elle suit la classe, garde le contrôle du monde et valide les progressions depuis une interface séparée du jeu."
+          "title": "L'enseignante",
+          "text": "Elle suit la classe, garde le contrôle du monde et valide les progressions depuis une interface séparée du jeu."
         }
       ],
-      galleryGroups: [
+      "galleryGroups": [
         {
-          kicker: "Reconstruction V3",
-          title: "V3 — la reconstruction locale",
-          description:
-            "Captures réelles du 26 août 2026 avec des profils de démonstration. Elles montrent les trois rôles et des interactions rejouées localement, pas une validation en classe.",
-          featuredFirst: true,
-          images: [
-            { src: "/assets/proof/educool/cool-bank-v3-world-20260826.webp", caption: "V3 : l'élève entre dans le bourg, découvre sa première quête et apprend à déplacer la caméra.", width: 1280, height: 800 },
-            { src: "/assets/proof/educool/cool-bank-v3-roles.webp", caption: "V3 : élève, banquier et professeure entrent avec des responsabilités différentes.", width: 1440, height: 900 },
-            { src: "/assets/proof/educool/cool-bank-v3-dialogue.webp", caption: "V3 : l'élève peut choisir une question ou écrire la sienne à un personnage du bourg.", width: 1440, height: 900 },
-            { src: "/assets/proof/educool/cool-bank-v3-banker.webp", caption: "V3 : le guichet du banquier guide l'opération et affiche une limite de transaction.", width: 1440, height: 900 },
-            { src: "/assets/proof/educool/cool-bank-v3-teacher.webp", caption: "V3 : la professeure peut bloquer le monde, couper les échanges et rouvrir l'expérience.", width: 1440, height: 900 }
+          "kicker": "Reconstruction V3",
+          "title": "V3 — la reconstruction locale",
+          "description": "Nouvelles vues du build local du 7 septembre 2026, capturées le 8 septembre en mode de prévisualisation de carte. Le code source a encore évolué depuis ce build. Aucun usage en classe ni test humain n'est déduit de ces images.",
+          "featuredFirst": true,
+          "images": [
+            {
+              "src": "/assets/proof/educool/v3-map-city-20260908.webp",
+              "caption": "V3 : vue du bourg dans le mode de prévisualisation de la carte. Build local du 7 septembre, capture du 8 septembre ; ce n'est pas une session élève.",
+              "width": 1440,
+              "height": 900
+            },
+            {
+              "src": "/assets/proof/educool/v3-map-castle-20260908.webp",
+              "caption": "V3 : vue du château dans le même build local, avec la caméra de contrôle de la carte.",
+              "width": 1440,
+              "height": 900
+            },
+            {
+              "src": "/assets/proof/educool/v3-map-island-20260908.webp",
+              "caption": "V3 : vue d'ensemble du terrain pour situer les zones. Prévisualisation technique, pas validation humaine du jeu.",
+              "width": 1440,
+              "height": 900
+            }
           ]
         },
         {
-          kicker: "Version jouable",
-          title: "V2 — la boucle 3D déjà jouable",
-          description:
-            "La V2 est déjà un monde 3D multijoueur. Ces écrans prouvent la boucle locale sur un appareil ; ils ne doivent jamais être présentés comme une ancienne version 2D.",
-          images: [
-            { src: "/assets/proof/educool/cool-bank-v2-world.webp", caption: "V2 : monde 3D, personnages, HUD et économie visibles dans la boucle locale jouable.", width: 1440, height: 900 },
-            { src: "/assets/proof/educool/cool-bank-v2-dialogue.webp", caption: "V2 : le maire donne une mission qui relie le déplacement dans le bourg à l'économie de classe.", width: 1440, height: 900 },
-            { src: "/assets/proof/educool/cool-bank-v2-banker.webp", caption: "V2 : le guichet banquier encadre le camarade, le motif, le montant et le registre du jour.", width: 1124, height: 899 },
-            { src: "/assets/proof/educool/cool-bank-v2-teacher.webp", caption: "V2 : la télécommande donne à l'enseignante les commandes de classe sans afficher de donnée d'élève.", width: 1280, height: 800 }
+          "kicker": "Version jouable",
+          "title": "V2 — la boucle 3D déjà jouable",
+          "description": "Vues différentes issues des preuves locales d'août 2026 : bourg 3D, organisation du monde et intérieur de maison. Ce sont des archives de la V2, pas une nouvelle recette complète.",
+          "images": [
+            {
+              "src": "/assets/proof/educool/v2-village-20260817.webp",
+              "caption": "V2 : la place du village et les chemins, capture de contrôle locale du 17 août 2026.",
+              "width": 1440,
+              "height": 900
+            },
+            {
+              "src": "/assets/proof/educool/v2-world-20260817.webp",
+              "caption": "V2 : vue d'ensemble du monde 3D et du HUD, archive locale du 17 août 2026.",
+              "width": 1440,
+              "height": 900
+            },
+            {
+              "src": "/assets/proof/educool/v2-house-20260822.webp",
+              "caption": "V2 : intérieur de maison en 3D dans le scénario de test du 22 août 2026. Aucune donnée d'élève réelle.",
+              "width": 910,
+              "height": 522
+            }
           ]
         }
       ]
@@ -697,7 +718,7 @@ export const projects: Project[] = [
     repoStatus: "Privé, projet client",
     liveLabel: "Production actuelle, hors staging",
     evidenceNote:
-      "Captures du staging et présentation client de 14 slides, détaillées en entretien.",
+      "Trois vues différentes de l'archive de staging retrouvée localement : navigation, formulaire et en-tête. La date de capture d'origine n'est pas certifiée ; ce n'est pas l'état du site public actuel.",
     metaDescription:
       "Refonte de conversion (WordPress / Divi) sur staging sécurisé : nouveau parcours d'adhésion, audits Playwright multi-viewports, prototype d'assistant IA.",
     cardLine:
@@ -779,9 +800,24 @@ export const projects: Project[] = [
       "Certaines décisions dépendent de la validation du client."
     ],
     gallery: [
-      { src: "/assets/proof/capselys/capselys-site.webp", caption: "Home Capsélys (staging) avec l'assistant IA ouvert en contexte.", width: 1400, height: 800 },
-      { src: "/assets/proof/capselys/capselys-assistant.webp", caption: "L'assistant répond à une vraie question (DUERP) : réponse cadrée, CTA et disclaimer « réponses générées automatiquement ».", width: 900, height: 1063 },
-      { src: "/assets/proof/capselys/capselys-audit-roadmap.webp", caption: "Extrait du rapport d'audit : problèmes observés, priorité et correction proposée pour la suite de la refonte.", width: 1600, height: 456 }
+      {
+        "src": "/assets/proof/capselys/navigation-archive-20260908.webp",
+        "caption": "Archive du staging : accès aux services depuis la navigation. Ce visuel ne représente pas le site public actuel.",
+        "width": 1440,
+        "height": 900
+      },
+      {
+        "src": "/assets/proof/capselys/adhesion-archive-20260908.webp",
+        "caption": "Archive du staging : formulaire d'adhésion ouvert, sans donnée renseignée.",
+        "width": 1440,
+        "height": 900
+      },
+      {
+        "src": "/assets/proof/capselys/header-archive-20260908.webp",
+        "caption": "Archive du staging : l'en-tête reste accessible pendant le défilement.",
+        "width": 1440,
+        "height": 900
+      }
     ],
     links: [
       { label: "Version Markdown", href: "/projects/capselys.md" },
@@ -807,9 +843,9 @@ export const projects: Project[] = [
     repoStatus: "CMS employeur, non publiable",
     liveLabel: "Actu publiée (lien)",
     evidenceNote:
-      "Article publié en ligne, plus une checklist QA de pré-publication et un extrait d'audit de cannibalisation anonymisés.",
+      "Captures fraîches d'un article public. Elles prouvent sa publication et sa mise en page, pas l'exactitude de chacune de ses affirmations ni un gain de trafic.",
     metaDescription:
-      "Production SEO dans Drupal : rédaction, vérification de chaque information, audits Semrush et validation humaine avant publication.",
+      "Production SEO dans Drupal : rédaction, recherche de sources, audits Semrush et validation éditoriale avant publication.",
     architecture: [
       "Production éditoriale SEO saisie dans Drupal (CMS sensible).",
       "Audits de cannibalisation et inter-marques via Semrush.",
@@ -823,9 +859,9 @@ export const projects: Project[] = [
       "Impact trafic SEO des contenus : suivi côté employeur, non publiable ici."
     ],
     proofLine:
-      "Des articles SEO publiés en ligne dans le CMS d'un employeur, vérifiés avant mise en ligne.",
+      "Des contenus publiés dans Drupal et un travail d'audit SEO mené dans le processus éditorial de l'employeur.",
     summary:
-      "Je prépare et saisis des contenus SEO dans Drupal. Je vérifie chaque information, j'utilise Semrush pour éviter les pages qui se concurrencent et je laisse la validation finale à l'équipe éditoriale.",
+      "Je prépare des contenus SEO, les saisis dans Drupal et utilise Semrush pour repérer les pages qui se concurrencent. Je confronte les informations aux sources ; l'équipe éditoriale garde la validation finale.",
     stack: ["Drupal", "Playwright", "Semrush", "SEO", "LLM-assisted QA"],
     recruiterProof: [
       "Livrer dans le process de publication d'un employeur sans court-circuiter la validation éditoriale.",
@@ -867,9 +903,24 @@ export const projects: Project[] = [
       "Certaines preuves sont montrables en entretien, pas en ligne."
     ],
     gallery: [
-      { src: "/assets/proof/iscom/iscom-article-hero.webp", caption: "Article publié sur iscom.fr : titre, date et introduction visibles sur la page publique.", width: 1440, height: 1000 },
-      { src: "/assets/proof/iscom/iscom-article-agent.webp", caption: "Passage de l'article qui explique simplement le rôle des agents IA dans les métiers de la communication.", width: 1440, height: 1000 },
-      { src: "/assets/proof/iscom/iscom-article-method.webp", caption: "Suite de l'article public : méthode, limites et mise en contexte éditoriale vérifiables sur le site ISCOM.", width: 1440, height: 1000 }
+      {
+        "src": "/assets/proof/iscom/public-0-20260908.webp",
+        "caption": "Article public : titre et mise en page vérifiés le 8 septembre 2026.",
+        "width": 1440,
+        "height": 960
+      },
+      {
+        "src": "/assets/proof/iscom/public-750-20260908.webp",
+        "caption": "Corps de l'article dans Drupal : introduction et hiérarchie des sections.",
+        "width": 1440,
+        "height": 960
+      },
+      {
+        "src": "/assets/proof/iscom/public-1500-20260908.webp",
+        "caption": "Suite de l'article public : développement et sous-titre. Le trafic et la performance SEO ne sont pas déduits de cette capture.",
+        "width": 1440,
+        "height": 960
+      }
     ],
     links: [
       {
@@ -969,9 +1020,24 @@ export const projects: Project[] = [
       "Ne remplace pas le SEO classique ; il ajoute une couche de visibilité dans les moteurs de réponse."
     ],
     gallery: [
-      { src: "/assets/proof/preuvia/preuvia-hero-live.webp", caption: "Page d'accueil publique de Preuvia : la promesse explique directement ce que l'audit vérifie.", width: 1440, height: 1000 },
-      { src: "/assets/proof/preuvia/preuvia-process-live.webp", caption: "Process public de l'audit : tester les réponses, repérer les écarts, puis prioriser ce qu'il faut publier.", width: 1440, height: 1000 },
-      { src: "/assets/proof/preuvia/preuvia-output-live.webp", caption: "Exemple fictif du livrable public : sources citées, manque observé et actions proposées, sans résultat client inventé.", width: 1440, height: 1000 }
+      {
+        "src": "/assets/proof/preuvia/public-0-20260908.webp",
+        "caption": "Accueil public : la promesse et un exemple de comparaison entre réponses d'IA.",
+        "width": 1440,
+        "height": 960
+      },
+      {
+        "src": "/assets/proof/preuvia/public-750-20260908.webp",
+        "caption": "Le site explique ce que l'audit observe et les étapes de la prestation.",
+        "width": 1440,
+        "height": 960
+      },
+      {
+        "src": "/assets/proof/preuvia/public-1500-20260908.webp",
+        "caption": "Exemple de matrice de citations sur la page publique. C'est une démonstration du livrable, pas un résultat client.",
+        "width": 1440,
+        "height": 960
+      }
     ],
     links: [
       { label: "Site live", href: "https://preuvia.vercel.app", external: true },
@@ -1069,10 +1135,24 @@ export const projects: Project[] = [
       "Preview technique macOS/Chrome : extension installée manuellement et dépendance à un DOM externe susceptible de changer."
     ],
     gallery: [
-      { src: "/assets/proof/cortex-bridge/cortex-onboarding.webp", caption: "Onboarding public de Cortex Bridge : choix du dossier local et consentement avant toute exécution.", width: 1440, height: 900 },
-      { src: "/assets/proof/cortex-bridge/cortex-preflight.webp", caption: "Contrôle avant exécution : commande proposée, dossier ciblé et niveau de risque restent visibles avant validation.", width: 1440, height: 900 },
-      { src: "/assets/proof/cortex-bridge/cortex-execution.webp", caption: "Trace d'exécution : chaque étape, sa sortie et son état restent consultables dans l'interface locale.", width: 1440, height: 900 },
-      { src: "/assets/proof/cortex-bridge/cortex-stop-diagnostic.webp", caption: "Diagnostic d'arrêt : les processus actifs sont listés et le bouton d'arrêt d'urgence reste disponible dans l'interface locale.", width: 1440, height: 900 }
+      {
+        "src": "/assets/proof/cortex-bridge/workspace-20260908.webp",
+        "caption": "Console locale : conversations et dossier de travail, avec les données fictives des tests du dépôt. Ce n'est pas une exécution réelle.",
+        "width": 1440,
+        "height": 960
+      },
+      {
+        "src": "/assets/proof/cortex-bridge/approval-20260908.webp",
+        "caption": "Avant exécution : dossier, durée et permissions à vérifier. Scénario fictif rejoué dans l'interface locale.",
+        "width": 1440,
+        "height": 960
+      },
+      {
+        "src": "/assets/proof/cortex-bridge/public-0-20260908.webp",
+        "caption": "Dépôt GitHub public : code et documentation consultables. La version publiée reste v0.5.3, distincte du travail local.",
+        "width": 1440,
+        "height": 960
+      }
     ],
     links: [
       {
@@ -1089,23 +1169,25 @@ export const projects: Project[] = [
     ]
   },
   {
+    videoWidth: 360,
+    videoHeight: 640,
     slug: "battle-engine",
     title: "Battle Engine - pipeline vidéo automatisé",
     shortTitle: "Battle Engine",
     type: "Pipeline vidéo / automation",
     period: "2026",
     role: "Pipeline Python, Godot, rendu, FFmpeg, publication",
-    status: "Actif / lab · sources vérifiées jusqu'au 25 août 2026",
+    status: "Lab actif · combats publiés sur YouTube",
     evidenceLevel: "private",
     tier: 2,
     image: "/assets/cards/battle-engine-art.webp",
     fullColorMedia: true,
-    video: "/assets/video/battle-engine-intro-hd.mp4",
+    video: "/assets/video/battle-league-20260908.mp4",
     repoStatus: "Dépôt privé",
     liveLabel: "Lab",
     noindex: true,
     evidenceNote:
-      "Preuves locales privées vérifiées jusqu'au 25/08/2026 : reprise du pipeline après interruption et ajout d'analyses d'exploitation en lecture seule.",
+      "Combat publié le 31 août 2026, deux autres extraits de combat et deux montages d'archive. Les vidéos sont muettes et démarrent à l'écran, sauf préférence de réduction des animations.",
     architecture: [
       "Pipeline Python orchestrant : rendu Godot → FFmpeg → interpolation RIFE → publication via l'API YouTube."
     ],
@@ -1118,45 +1200,87 @@ export const projects: Project[] = [
     proofLine:
       "Un pipeline Python lance le combat dans Godot, prépare la vidéo avec FFmpeg et reprend la publication si une étape est interrompue.",
     summary:
-      "Battle Engine automatise la fabrication de vidéos de combats 1 contre 1. Python pilote le rendu Godot, le montage FFmpeg, l'interpolation d'images et la publication YouTube.",
+      "Battle Engine fabrique des vidéos de combats 1 contre 1. Python lance le rendu Godot, FFmpeg prépare le montage, RIFE lisse les mouvements et le pipeline gère la publication YouTube. Les extraits ci-dessous montrent ce qu'il produit.",
     stack: ["Godot", "Python", "FFmpeg", "RIFE", "YouTube API"],
     recruiterProof: [
       "Automatiser un travail qui traverse plusieurs outils.",
       "Reprendre une publication après une interruption sans recommencer tout le rendu.",
       "Documenter les droits audio, les contrôles qualité et les étapes d'exploitation."
     ],
-    constraints: ["Contenu lab à cadrer pour ne pas brouiller le positionnement CDI."],
+    constraints: [
+      "Enchaîner rendu, montage et publication sans perdre l'état du travail après une interruption.",
+      "Vérifier le résultat vidéo et les droits des contenus avant publication."
+    ],
     decisions: [
       {
-        decision: "Le garder en Tier 2",
-        why: "Bonne preuve technique, mais moins directement recruteur marketing IA.",
-        rejected: "Le mettre en première ligne."
+        "decision": "Sauvegarder l'état entre les étapes",
+        "why": "Reprendre au dernier travail terminé après une interruption, sans recalculer toute la vidéo.",
+        "rejected": "Relancer systématiquement le pipeline depuis le début."
       }
     ],
-    delivered: ["Pipeline de rendu", "Vidéos de test générées", "Scripts d'automatisation"],
+    delivered: [
+      "Pipeline Python de rendu et de publication reprenable.",
+      "Combats rendus dans Godot et montés avec FFmpeg.",
+      "Montages courts, roster animé et teaser."
+    ],
     results: [
       "Le pipeline nightly peut reprendre après une interruption au lieu de recommencer toute la chaîne.",
       "Aucune métrique d'audience n'est citée."
     ],
     limits: [
-      "Projet lab : automatisation créative, éloignée du poste visé, gardée comme preuve technique.",
-      "La vidéo publique montre uniquement l'introduction rendue en haute définition, pas un combat complet."
+      "Laboratoire personnel, pas un service vidéo exploité pour des clients.",
+      "Les extraits montrent le rendu obtenu, pas une preuve de succès d'audience.",
+      "Le roster et le teaser sont des archives : leurs personnages et leurs chiffres décrivent la version de l'époque."
     ],
     gallery: [
-      { src: "/assets/proof/battle-engine/pipeline-resumable.webp", caption: "Schéma du pipeline reprenable : Godot rend le combat, FFmpeg et RIFE préparent la vidéo, puis l'API YouTube publie.", width: 1600, height: 960 },
-      { src: "/assets/proof/battle-engine/intro-platforms.webp", caption: "Séquence d'intro : les plateformes des deux combattants et le champ de particules, rendus par un shader custom sous Godot.", width: 620, height: 1103 },
-      { src: "/assets/proof/battle-engine/intro-buildup.webp", caption: "Montée du champ de particules avant le face-à-face, générée en temps réel côté moteur.", width: 620, height: 1103 }
+      {
+        "src": "/assets/video/battle-saitama-20260908.mp4",
+        "poster": "/assets/video/battle-saitama-20260908-poster.webp",
+        "caption": "Extrait de combat issu du corpus local : arène sombre, effets et fin de combat. Archive de juillet 2026, 20 secondes.",
+        "width": 540,
+        "height": 960
+      },
+      {
+        "src": "/assets/video/battle-goku-20260908.mp4",
+        "poster": "/assets/video/battle-goku-20260908-poster.webp",
+        "caption": "Goku contre MrBeast : extrait du rendu local d'août 2026. Combat, effets et barre de vie, 20 secondes.",
+        "width": 720,
+        "height": 1280
+      },
+      {
+        "src": "/assets/video/battle-roster-20260908.mp4",
+        "poster": "/assets/video/battle-roster-20260908-poster.webp",
+        "caption": "Montage du roster de juin 2026 : 44 personnages présentés dans cette archive. Ce nombre ne décrit pas le roster actuel.",
+        "width": 1280,
+        "height": 720
+      },
+      {
+        "src": "/assets/video/battle-teaser-20260908.mp4",
+        "poster": "/assets/video/battle-teaser-20260908-poster.webp",
+        "caption": "Teaser d'avril 2026 : montage de présentation du projet. Archive de lancement, distincte du rendu actuel des combats.",
+        "width": 1280,
+        "height": 720
+      }
     ],
     links: [
-      { label: "Version Markdown", href: "/projects/battle-engine.md" },
       {
-        label: "Chaîne YouTube",
-        href: "https://www.youtube.com/channel/UCBdIZLI1Z_EmaZgalR8GsHw",
-        external: true
+        "label": "Version Markdown",
+        "href": "/projects/battle-engine.md"
+      },
+      {
+        "label": "Chaîne YouTube",
+        "href": "https://www.youtube.com/channel/UCBdIZLI1Z_EmaZgalR8GsHw",
+        "external": true
+      },
+      {
+        "label": "Combat publié le 31 août",
+        "href": "https://www.youtube.com/watch?v=0wiPb9gWH7g",
+        "external": true
       }
     ]
   },
   {
+    evidenceNote: "Nouvelles captures locales de la landing d'équipe archivée. Elles situent le concept ; elles ne prouvent ni une application distribuée ni des résultats d'acquisition. Le design et le développement sont ceux de l'équipe.",
     slug: "hoopsphere",
     title: "HoopSphere - prototype produit MBA",
     shortTitle: "HoopSphere",
@@ -1211,9 +1335,24 @@ export const projects: Project[] = [
       "Projet MBA : audience construite, mais pas encore de traction payante."
     ],
     gallery: [
-      { src: "/assets/proof/hoopsphere/hoopsphere-landing-team.webp", caption: "Vue du prototype produit réalisé en équipe. Je la montre pour situer HoopSphere ; le design et le développement ne sont pas les miens.", width: 1600, height: 900 },
-      { src: "/assets/proof/hoopsphere/hoopsphere-import-emarque.webp", caption: "Écran réel du prototype d'équipe : import OCR d'une feuille e-Marque. Le design et le développement sont ceux de l'équipe ; ma contribution porte sur le marketing et le lancement.", width: 1170, height: 2532 },
-      { src: "/assets/proof/hoopsphere/hoopsphere-acquisition-plan.webp", caption: "Extrait du plan d'acquisition préparé pour le projet MBA : canaux, cibles et séquence de lancement, sans les présenter comme des résultats obtenus.", width: 1600, height: 555 }
+      {
+        "src": "/assets/proof/hoopsphere/landing-20260908.webp",
+        "caption": "Landing d'équipe archivée : proposition de valeur pour les joueurs de basket. Ma contribution porte sur le marketing, pas sur le design de cet écran.",
+        "width": 1440,
+        "height": 960
+      },
+      {
+        "src": "/assets/proof/hoopsphere/product-20260908.webp",
+        "caption": "Landing d'équipe : les publics joueur, club et entraîneur. Capture locale de l'archive, pas une application mobile en production.",
+        "width": 1440,
+        "height": 960
+      },
+      {
+        "src": "/assets/proof/hoopsphere/landing-mobile-20260908.webp",
+        "caption": "La landing d'équipe sur mobile, capturée depuis l'archive locale. Elle présente le concept, pas une application distribuée.",
+        "width": 390,
+        "height": 844
+      }
     ],
     links: [{ label: "Version Markdown", href: "/projects/hoopsphere.md" }]
   },
@@ -1345,24 +1484,25 @@ export const projects: Project[] = [
     links: [{ label: "Version Markdown", href: "/projects/board-ia-pme.md" }]
   },
   {
+    evidenceNote: "Trois captures de la démo publique du 8 septembre 2026, dans une session anonyme Joueur Preview. Les scores proviennent des propositions réellement jouées pour la capture.",
     slug: "edusemantix",
     title: "Edusemantix - jeu de devinette sémantique multijoueur",
     shortTitle: "Edusemantix",
     type: "Lab / projet perso",
     period: "2026",
     role: "Conception et développement",
-    status: "Lab privé actif · refonte V2 en cours",
-    evidenceLevel: "private",
+    status: "Démo publique en ligne · projet personnel",
+    evidenceLevel: "public",
     tier: 3,
     image: "/assets/cards/edusemantix-art.webp",
     fullColorMedia: true,
-    repoStatus: "Dépôt privé actif, vérifié le 27 août 2026",
-    liveLabel: "Démo privée",
+    repoStatus: "Code privé · démo publique sur Render",
+    liveLabel: "Jouer à la démo",
     noindex: true,
     proofLine:
       "Jeu multijoueur en temps réel où l'on cherche un mot secret : chaque proposition reçoit un score de proximité sémantique (similarité cosinus sur vecteurs de mots), scores en direct via WebSocket.",
     summary:
-      "Faire jouer plusieurs personnes en simultané sur une mécanique de proximité sémantique, avec scoring temps réel.",
+      "Deviner un mot à partir de sa proximité avec d'autres mots. Chaque proposition reçoit un score, et les joueurs voient la progression de la partie en direct.",
     stack: ["React 19 / Vite 6", "Node.js / Express / Socket.io", "ConceptNet Numberbatch", "Python (pré-calcul)", "Firebase Firestore"],
     recruiterProof: [
       "Scoring sémantique sur vecteurs de mots (similarité cosinus) avec pré-calcul Python et stockage binaire pour la performance.",
@@ -1383,18 +1523,46 @@ export const projects: Project[] = [
       "Application React + serveur Node/Socket.io avec moteur de jeu et scoring sémantique.",
       "Scripts Python de génération/pré-calcul des vecteurs."
     ],
-    results: ["Jeu fonctionnel déployable.", "Audience / engagement : pas encore mesurés."],
+    results: [
+      "Démo publique accessible sur Render, avec propositions et scores en direct.",
+      "Audience et engagement non mesurés ici."
+    ],
     limits: [
-      "Projet lab en refonte V2 ; les captures publiées restent celles de la version de démonstration auditée.",
-      "Une prévisualisation existe, mais n'est pas présentée comme une démo publique stable.",
-      "Persistance des stats dépend de Firebase (mode mémoire sans credentials)."
+      "L'hébergement peut demander un temps de réveil à la première visite.",
+      "Cette démonstration ne prouve pas un bénéfice pédagogique ni une utilisation en classe.",
+      "La persistance des statistiques dépend de la configuration du serveur."
     ],
     gallery: [
-      { src: "/assets/proof/edusemantix/edusemantix-login.webp", caption: "Écran de connexion de la démo locale, lancé avec un profil fictif créé uniquement pour cette capture.", width: 1440, height: 1000 },
-      { src: "/assets/proof/edusemantix/edusemantix-game.webp", caption: "Partie locale : une proposition reçoit immédiatement un score de proximité avec le mot secret.", width: 1440, height: 1000 },
-      { src: "/assets/proof/edusemantix/edusemantix-score.webp", caption: "Retour après une proposition fictive : score sémantique, progression et historique affichés par l'interface réelle.", width: 1440, height: 1000 }
+      {
+        "src": "/assets/proof/edusemantix/game-20260908.webp",
+        "caption": "Démo publique : trois propositions jouées dans une session anonyme, avec leur score sémantique.",
+        "width": 1440,
+        "height": 960
+      },
+      {
+        "src": "/assets/proof/edusemantix/rules-20260908.webp",
+        "caption": "Règles accessibles depuis la partie : proximité, température et progression.",
+        "width": 1440,
+        "height": 960
+      },
+      {
+        "src": "/assets/proof/edusemantix/mobile-20260908.webp",
+        "caption": "La même partie sur un écran de 390 px : proposition, score et historique.",
+        "width": 390,
+        "height": 844
+      }
     ],
-    links: [{ label: "Version Markdown", href: "/projects/edusemantix.md" }]
+    links: [
+      {
+        "label": "Jouer à la démo",
+        "href": "https://edusemantix.onrender.com",
+        "external": true
+      },
+      {
+        "label": "Version Markdown",
+        "href": "/projects/edusemantix.md"
+      }
+    ]
   },
   {
     slug: "pokemon-gen4-toolkit",
@@ -1497,9 +1665,24 @@ export const projects: Project[] = [
       "Certaines briques tierces sont exclues du repo et doivent être réinstallées séparément."
     ],
     gallery: [
-      { src: "/assets/proof/claude-code-soul/soul-layers.webp", caption: "Architecture du pack : l'identité, les règles, les skills, les agents et les hooks restent dans des couches séparées.", width: 1600, height: 960 },
-      { src: "/assets/proof/claude-code-soul/soul-security-gates.webp", caption: "Garde-fous de publication : secrets dans le trousseau, validation locale et contrôle gitleaks avant le dépôt public.", width: 1600, height: 960 },
-      { src: "/assets/proof/claude-code-soul/soul-github-repo.webp", caption: "Dépôt GitHub public : fichiers du pack, licence et documentation sont directement consultables.", width: 1440, height: 1000 }
+      {
+        "src": "/assets/proof/claude-code-soul/soul-layers.webp",
+        "caption": "Architecture du pack : l'identité, les règles, les skills, les agents et les hooks restent dans des couches séparées.",
+        "width": 1600,
+        "height": 960
+      },
+      {
+        "src": "/assets/proof/claude-code-soul/soul-security-gates.webp",
+        "caption": "Garde-fous de publication : secrets dans le trousseau, validation locale et contrôle gitleaks avant le dépôt public.",
+        "width": 1600,
+        "height": 960
+      },
+      {
+        "src": "/assets/proof/claude-code-soul/public-0-20260908.webp",
+        "caption": "Dépôt GitHub public consulté le 8 septembre 2026 : fichiers, licence et documentation du pack.",
+        "width": 1440,
+        "height": 960
+      }
     ],
     links: [
       { label: "Version Markdown", href: "/projects/claude-code-soul.md" },

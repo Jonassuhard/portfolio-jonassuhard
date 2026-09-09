@@ -34,7 +34,7 @@ Pack de configuration open source pour Claude Code CLI : un soul.md (identité/t
 
 ![Garde-fous de publication : secrets dans le trousseau, validation locale et contrôle gitleaks avant le dépôt public.](/assets/proof/claude-code-soul/soul-security-gates.webp)
 
-![Dépôt GitHub public : fichiers du pack, licence et documentation sont directement consultables.](/assets/proof/claude-code-soul/soul-github-repo.webp)
+![Dépôt GitHub public consulté le 8 septembre 2026 : fichiers, licence et documentation du pack.](/assets/proof/claude-code-soul/public-0-20260908.webp)
 
 
 ## Limites
