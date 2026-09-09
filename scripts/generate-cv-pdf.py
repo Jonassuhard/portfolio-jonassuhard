@@ -16,6 +16,7 @@ from reportlab.lib.enums import TA_LEFT
 from reportlab.lib.pagesizes import A4
 from reportlab.lib.styles import ParagraphStyle
 from reportlab.lib.units import mm
+from reportlab.lib.utils import ImageReader
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.pdfbase import pdfmetrics
 from reportlab.platypus import (
@@ -32,7 +33,7 @@ from reportlab.platypus import (
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "public" / "cv.md"
-LOGO = ROOT / "public" / "brand" / "js-medallion.png"
+PORTRAIT = ROOT / "public" / "brand" / "jonas-avatar.jpg"
 
 
 @dataclass
@@ -84,7 +85,7 @@ def parse_cv() -> CvData:
     availability = clean(next(line for line in lines if line.startswith("Disponible en CDI")))
 
     profile_start = lines.index("## Profil") + 1
-    experience_start = lines.index("## Expériences")
+    experience_start = next(index for index in range(profile_start, len(lines)) if lines[index].startswith("## "))
     profile = clean(" ".join(line for line in lines[profile_start:experience_start] if line.strip()))
 
     sections: dict[str, list[tuple[str, list[str]]]] = {}
@@ -138,7 +139,7 @@ def make_styles(styled: bool) -> dict[str, ParagraphStyle]:
     return {
         "name": ParagraphStyle(
             "name", fontName="Times-Bold" if styled else sans_bold, fontSize=27 if styled else 25,
-            leading=28, textColor=ink, spaceAfter=5
+            leading=30, textColor=ink, spaceAfter=5
         ),
         "title": ParagraphStyle(
             "title", fontName=body_bold, fontSize=9.8, leading=12, textColor=rust,
@@ -149,31 +150,31 @@ def make_styles(styled: bool) -> dict[str, ParagraphStyle]:
             textColor=colors.HexColor("#3a332b"), spaceAfter=6
         ),
         "contact": ParagraphStyle(
-            "contact", fontName=body_font, fontSize=7.25 if styled else 7.7, leading=9.4,
+            "contact", fontName=body_font, fontSize=7.7, leading=10,
             textColor=muted, spaceAfter=7
         ),
         "profile": ParagraphStyle(
-            "profile", fontName=body_font, fontSize=7.5 if styled else 8, leading=10.3,
+            "profile", fontName=body_font, fontSize=8.3, leading=11,
             textColor=colors.HexColor("#3a332b"), borderColor=rust if styled else colors.transparent,
             borderWidth=0, borderPadding=(6, 7, 6, 9), leftIndent=0, spaceAfter=8,
             backColor=colors.Color(1, 1, 1, alpha=0.20) if styled else None
         ),
         "section": ParagraphStyle(
-            "section", fontName=body_bold if styled else "Times-Bold", fontSize=9.3 if styled else 10.2,
-            leading=11.5, textColor=rust, spaceBefore=5, spaceAfter=4, uppercase=True,
+            "section", fontName="Times-Bold" if styled else sans_bold, fontSize=12,
+            leading=14, textColor=rust, spaceBefore=9, spaceAfter=5, uppercase=True,
             borderColor=colors.HexColor("#b9b0a0"), borderWidth=0, borderPadding=(0, 0, 2, 0)
         ),
         "heading": ParagraphStyle(
-            "heading", fontName="Times-Bold" if styled else sans_bold, fontSize=8.35 if styled else 8.7,
-            leading=10.2, textColor=ink, spaceBefore=3.4, spaceAfter=1.4
+            "heading", fontName=body_bold, fontSize=9,
+            leading=12, textColor=ink, spaceBefore=6, spaceAfter=3
         ),
         "bullet": ParagraphStyle(
-            "bullet", fontName=body_font, fontSize=7.15 if styled else 7.35, leading=9.2,
+            "bullet", fontName=body_font, fontSize=9, leading=12.5,
             textColor=colors.HexColor("#3a332b"), leftIndent=7, firstLineIndent=-5,
             bulletIndent=0, spaceAfter=.9
         ),
         "row": ParagraphStyle(
-            "row", fontName=body_font, fontSize=7.2 if styled else 7.45, leading=9.3,
+            "row", fontName=body_font, fontSize=8.8, leading=12,
             textColor=colors.HexColor("#3a332b"), spaceAfter=0
         ),
     }
@@ -192,24 +193,22 @@ def page_background(canvas, doc, styled: bool) -> None:
             canvas.line(x, 0, x, height)
         for y in range(0, int(height) + step, step):
             canvas.line(0, y, width, y)
-        canvas.setFillColor(colors.HexColor("#ded6c3"))
-        canvas.rect(0, height - 22, width, 22, fill=1, stroke=0)
-        canvas.setFont("Courier", 5.8)
-        canvas.setFillColor(colors.HexColor("#5f5746"))
-        canvas.drawString(18 * mm, height - 14, "JONAS SUHARD - CURRICULUM VITAE")
-        canvas.drawRightString(width - 18 * mm, height - 14, "REF. 2026 - PARIS / HYBRIDE")
-        canvas.setStrokeColor(colors.HexColor("#17130f"))
-        canvas.line(18 * mm, 18 * mm, width - 18 * mm, 18 * mm)
-        canvas.setFont("Courier", 5.5)
-        canvas.drawString(18 * mm, 13 * mm, "EL PSY KONGROO")
-        canvas.drawRightString(width - 18 * mm, 13 * mm, "JONASSUHARD.COM")
+        canvas.setFillAlpha(.05)
+        for name, x, y, size in (
+            ("01-gears.webp", -28 * mm, 18 * mm, 135 * mm),
+            ("01-gears.webp", width - 62 * mm, height - 64 * mm, 90 * mm),
+            ("02-gauge.webp", width - 66 * mm, 120 * mm, 95 * mm),
+        ):
+            canvas.drawImage(ImageReader(str(ROOT / "public/assets/blueprint" / name)),
+                             x, y, width=size, height=size, mask="auto",
+                             preserveAspectRatio=True)
     canvas.restoreState()
 
 
 def build_pdf(data: CvData, destination: Path, styled: bool) -> None:
-    top = 18 * mm if styled else 14 * mm
-    bottom = 21 * mm if styled else 13 * mm
-    side = 15 * mm
+    top = 11 * mm
+    bottom = 12 * mm
+    side = 11 * mm
     doc = BaseDocTemplate(
         str(destination), pagesize=A4, leftMargin=side, rightMargin=side,
         topMargin=top, bottomMargin=bottom, title=f"CV - Jonas Suhard - {data.title}",
@@ -223,22 +222,23 @@ def build_pdf(data: CvData, destination: Path, styled: bool) -> None:
         Paragraph("JONAS SUHARD", styles["name"]),
         Paragraph(html.escape(data.title.upper()), styles["title"]),
         Paragraph(html.escape(data.subtitle), styles["intro"]),
-        Paragraph(f"{contact_rich(data.contact)} | {html.escape(data.availability)}", styles["contact"]),
+        Paragraph(contact_rich(data.contact), styles["contact"]),
+        Paragraph(html.escape(data.availability), styles["contact"]),
     ]
-    if LOGO.exists():
-        logo = Image(str(LOGO), width=16 * mm, height=16 * mm)
-        logo_box = Table([[logo]], colWidths=[19 * mm], rowHeights=[19 * mm])
+    if styled and PORTRAIT.exists():
+        portrait = ImageReader(str(PORTRAIT))
+        pw, ph = portrait.getSize()
+        logo = Image(str(PORTRAIT), width=28 * mm, height=28 * mm * ph / pw)
+        logo_box = Table([[logo]], colWidths=[30 * mm])
         logo_box.setStyle(TableStyle([
             ("VALIGN", (0, 0), (-1, -1), "MIDDLE"),
             ("ALIGN", (0, 0), (-1, -1), "CENTER"),
-            ("BOX", (0, 0), (-1, -1), .6 if styled else 0, colors.HexColor("#17130f")),
-            ("BACKGROUND", (0, 0), (-1, -1), colors.HexColor("#f6f1e2") if styled else colors.white),
             ("LEFTPADDING", (0, 0), (-1, -1), 0),
             ("RIGHTPADDING", (0, 0), (-1, -1), 0),
             ("TOPPADDING", (0, 0), (-1, -1), 0),
             ("BOTTOMPADDING", (0, 0), (-1, -1), 0),
         ]))
-        header = Table([[header_text, logo_box]], colWidths=[A4[0] - 2 * side - 24 * mm, 24 * mm])
+        header = Table([[header_text, logo_box]], colWidths=[A4[0] - 2 * side - 32 * mm, 32 * mm])
         header.setStyle(TableStyle([
             ("VALIGN", (0, 0), (-1, -1), "TOP"),
             ("ALIGN", (1, 0), (1, 0), "RIGHT"),
@@ -253,15 +253,22 @@ def build_pdf(data: CvData, destination: Path, styled: bool) -> None:
 
     story.extend([
         Paragraph(html.escape(data.profile), styles["profile"]),
-        Paragraph("EXPÉRIENCES", styles["section"]),
     ])
 
-    for heading, bullets in data.sections.get("Expériences", []):
-        story.append(Paragraph(html.escape(heading), styles["heading"]))
-        for bullet in bullets:
-            story.append(Paragraph(f"- {html.escape(bullet)}", styles["bullet"]))
+    for section in ("Projets", "Expériences"):
+        story.append(Paragraph(section.upper(), styles["section"]))
+        for heading, bullets in data.sections.get(section, []):
+            label = html.escape(heading)
+            project_paths = {"Job Radar": "job-radar", "Cortex Bridge": "cortex-bridge",
+                             "Les Petites Griffes": "les-petites-griffes"}
+            for name, slug in project_paths.items():
+                if section == "Projets" and heading.startswith(name):
+                    label = f'<a href="https://jonassuhard.com/projets/{slug}">{label}</a>'
+            story.append(Paragraph(label, styles["heading"]))
+            for bullet in bullets:
+                story.append(Paragraph(f"- {html.escape(bullet)}", styles["bullet"]))
 
-    for section in ("Formations", "Compétences"):
+    for section in ("Compétences", "Formations"):
         story.append(Paragraph(html.escape(section.upper()), styles["section"]))
         rows = []
         for heading, _ in data.sections.get(section, []):
@@ -277,6 +284,8 @@ def build_pdf(data: CvData, destination: Path, styled: bool) -> None:
         story.append(table)
 
     doc.build(story)
+    if doc.page != 1:
+        raise ValueError(f"{destination.name}: expected one page, got {doc.page}")
 
 
 def main() -> None:

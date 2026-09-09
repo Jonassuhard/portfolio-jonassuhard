@@ -66,7 +66,7 @@ Paris, France. CDI à Paris ou hybride, disponible à partir du 1er octobre 2026
 
 ## Formation
 
-- 2024-2026, MyDigitalSchool Paris : MBA Expert Marketing Digital (en cours), préparation du titre RNCP41809 Manager de la stratégie marketing digital, niveau 7.
+- 2024-2026, MyDigitalSchool Paris : MBA Expert Marketing Digital obtenu.
 - 2023-2024, La Digital School Angers : Bachelor Chef de projet digital, titre RNCP34340 niveau 6 Chef de projet e-business (preuve privée).
 - 2019-2021, Human Academy Angoulême : Animation 2D/3D, certificat d'école non inscrit au RNCP.
 

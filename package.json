@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "generate:cv": "python scripts/generate-cv-pdf.py",
+    "generate:cv": "python3 scripts/generate-cv-pdf.py",
     "generate:md": "tsx scripts/generate-project-md.ts",
     "generate:proof-schematics": "node scripts/generate-proof-schematics.mjs",
     "typecheck": "tsc --noEmit",

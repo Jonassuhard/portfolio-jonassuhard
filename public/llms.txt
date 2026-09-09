@@ -18,7 +18,7 @@ Je cherche à évoluer vers un rôle de Forward Deployed Engineer. Je veux compr
 - [Faits citables](https://jonassuhard.com/claims.json)
 - [Registre des preuves](https://jonassuhard.com/preuves)
 - [Registre structuré](https://jonassuhard.com/verification.json)
-- [CV Markdown](https://jonassuhard.com/cv.md) · [PDF](https://jonassuhard.com/cv.pdf)
+- [CV Markdown](https://jonassuhard.com/cv.md) · [CV classique (PDF)](https://jonassuhard.com/cv.pdf) · [CV illustré (PDF)](https://jonassuhard.com/cv-portfolio.pdf) : CV publics actualisés le 9 septembre 2026, MBA obtenu, disponibilité au 1er octobre 2026.
 
 ## Projets à lire d'abord
 

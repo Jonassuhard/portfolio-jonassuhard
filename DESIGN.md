@@ -234,6 +234,7 @@ Chaque vignette utilise un bitmap WebP de 760 × 460 avec transparence réelle. 
 Le bouton primaire est encre sur papier inversé ; le secondaire reste papier avec bordure d'encre. Le focus clavier utilise un contour rouille de 2 px. Les libellés sont des commandes concrètes : consulter, télécharger, contacter, analyser.
 
 Le CV classique est une action principale sur Accueil et Recruteurs.
+Les deux PDF publics sont generes depuis `public/cv.md` : une page A4, projets avant experiences, liens de contact et de projets cliquables. La version illustree reprend la composition des CV de candidature de septembre 2026 : portrait original, papier creme, grille et mecanismes tres pales. La version classique conserve le meme contenu sur fond blanc, sans decor ni portrait. Les documents publics ne contiennent ni telephone prive ni entreprise cible.
 Le CV illustré reste disponible au second niveau. Le rôle principal est
 Growth Engineer junior ; Forward Deployed Engineer est un objectif, pas un
 poste déjà occupé.
