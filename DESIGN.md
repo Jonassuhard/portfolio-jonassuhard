@@ -205,11 +205,11 @@ Projets, À propos et Contact. Compétences, Méthode et Preuves restent accessi
 dans le footer et depuis les pages pertinentes. La page active est soulignée ;
 le menu fermé n'expose pas ses liens au clavier, Échap rend le focus au bouton.
 
-L’accueil conserve son fond papier clair et sa grille. Seules la carte portrait À propos et le footer ont un fond noir : un reflet traverse ces surfaces en 0,88 seconde, puis marque une pause avant le cycle suivant de 4 secondes. Cet effet est indépendant du glitch des titres. Le mouvement réduit le désactive.
+L’accueil conserve son fond papier clair et sa grille. Seules la carte portrait À propos et le footer ont un fond noir : un reflet traverse ces surfaces en 2,2 secondes, puis marque une pause avant le cycle suivant de 10 secondes. Cet effet est indépendant du glitch des titres. Le mouvement réduit le désactive.
 
 ### Footer Signature compacte
 
-Le reflet du footer utilise uniquement les cinq couleurs de la palette holographique, sans blanc, avec une opacité de 10 %. Son cycle de 5 secondes produit une traversée de 1,1 seconde puis une pause. La carte portrait conserve son réglage indépendant.
+Le reflet commun au footer et à la carte portrait utilise uniquement les cinq couleurs de la palette holographique, sans blanc, avec une opacité de 5 %. Son cycle de 10 secondes produit une traversée de 2,2 secondes puis une pause.
 
 La proposition 1 choisie le 9 septembre 2026 utilise une bande noire quadrillée sans carte : nom en Cormorant Garamond 32 px et rôle à gauche, email et réseaux à droite. Le CV principal, Preuves et Méthode restent visibles ; Compétences, Knowledge, le CV illustré et Malt sont regroupés dans « Autres ressources ». Les mentions légales, la confidentialité et la gestion réelle des cookies restent toujours accessibles. Sous 700 px, les blocs s'empilent ; les cibles interactives conservent au moins 44 px de hauteur.
 

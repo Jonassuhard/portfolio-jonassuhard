@@ -394,12 +394,8 @@ p { margin:0 0 10px; }
 }
 .panel-sys::after, .footer-signature::after {
   content:""; position:absolute; inset:0; pointer-events:none; z-index:0;
-  background:linear-gradient(110deg,transparent 30%,rgba(127,216,212,.18) 42%,rgba(255,255,255,.28) 50%,rgba(215,138,168,.16) 58%,transparent 70%);
-  mix-blend-mode:screen; animation:holo-diag 4s linear infinite; will-change:transform;
-}
-.footer-signature::after {
   background:linear-gradient(110deg,transparent 25%,#6e8fd8 35%,#7fd8d4 42%,#a7d878 49%,#d8b35a 56%,#d78aa8 63%,transparent 75%);
-  opacity:.1; animation-duration:5s;
+  opacity:.05; mix-blend-mode:screen; animation:holo-diag 10s linear infinite; will-change:transform;
 }
 .panel-sys > * { position:relative; z-index:1; }
 .panel-sys h2, .panel-sys h3 { color:var(--color-zero-text); }
