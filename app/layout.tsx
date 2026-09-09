@@ -82,6 +82,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         </header>
         <main>{children}</main>
         <footer className="site-footer footer-signature">
+          <span className="footer-gears" aria-hidden="true" />
           <div className="footer-inner">
             <div className="footer-top">
               <div>

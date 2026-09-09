@@ -20,3 +20,12 @@ test("compact footer keeps resources and the existing consent entry point", () =
   for (const path of ["/preuves", "/methode", "/knowledge", "/competences", "/mentions-legales", "/confidentialite"]) assert.ok(layout.includes(path));
   assert.doesNotMatch(layout, /className="foot-cols"/);
 });
+test("footer gears are decorative, white and behind the links", () => {
+  assert.match(read("app/layout.tsx"), /className="footer-gears" aria-hidden="true"/);
+  const css = read("app/globals.css");
+  const gears = css.match(/\.footer-signature > \.footer-gears\s*\{([^}]*)\}/)?.[1] ?? "";
+  assert.match(gears, /pointer-events:none/);
+  assert.match(gears, /background:#fff; opacity:\.1/);
+  assert.match(gears, /01-gears\.webp/);
+  assert.match(gears, /z-index:0/);
+});

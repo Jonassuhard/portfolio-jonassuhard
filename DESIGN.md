@@ -209,6 +209,8 @@ L’accueil conserve son fond papier clair et sa grille. Seules la carte portrai
 
 ### Footer Signature compacte
 
+Les engrenages blueprint existants apparaissent en blanc à 10 % en bas à droite du footer, derrière les liens. Leur masque réutilise le bitmap transparent local, sans interaction ni animation supplémentaire.
+
 Le reflet commun au footer et à la carte portrait utilise uniquement les cinq couleurs de la palette holographique, sans blanc, avec une opacité de 5 %. Son cycle de 10 secondes produit une traversée de 2,2 secondes puis une pause.
 
 La proposition 1 choisie le 9 septembre 2026 utilise une bande noire quadrillée sans carte : nom en Cormorant Garamond 32 px et rôle à gauche, email et réseaux à droite. Le CV principal, Preuves et Méthode restent visibles ; Compétences, Knowledge, le CV illustré et Malt sont regroupés dans « Autres ressources ». Les mentions légales, la confidentialité et la gestion réelle des cookies restent toujours accessibles. Sous 700 px, les blocs s'empilent ; les cibles interactives conservent au moins 44 px de hauteur.
