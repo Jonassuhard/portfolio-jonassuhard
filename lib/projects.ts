@@ -116,7 +116,8 @@ export const site = {
   linkedin: "https://www.linkedin.com/in/jonas-suhard-b73923245/",
   malt: "https://www.malt.fr/profile/jonassuhard?overview",
   location: "Paris, France",
-  availability: "1er septembre 2026",
+  availability: "1er octobre 2026",
+  availabilityDate: "2026-10-01",
   cvClassic: "/cv.pdf",
   cvStyled: "/cv-portfolio.pdf"
 };

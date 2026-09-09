@@ -28,7 +28,7 @@ test("la route contact est découvrable depuis le site et le sitemap", () => {
   );
 
   assert.match(nav, /href="\/contact"/);
-  assert.match(layout, /<Link href="\/contact">/);
+  assert.match(layout, /className="footer-email" href=\{`mailto:\$\{site.email\}`\}/);
   assert.match(linkChecker, /"\/contact"/);
   assert.ok(contactEntry, "La route /contact est absente du sitemap");
   assert.equal(

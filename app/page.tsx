@@ -14,7 +14,7 @@ export default function HomePage() {
       <section className="hero hero-readable">
         <div className="hero-copy">
           <div>
-            <p className="eyebrow">CDI · Paris ou hybride · disponible maintenant</p>
+            <p className="eyebrow">CDI · Paris ou hybride · disponible le {site.availability}</p>
             <p className="hero-name">{site.name}</p>
             <AnimatedTitle glitch>{site.title}</AnimatedTitle>
             <p className="lead">

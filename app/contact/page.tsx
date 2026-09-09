@@ -31,7 +31,7 @@ export default function ContactPage() {
           <h2>Pour me joindre</h2>
           <dl className="contact-facts">
             <div><dt>Email</dt><dd><a href={`mailto:${site.email}`}>{site.email}</a></dd></div>
-            <div><dt>Disponibilité</dt><dd>Disponible maintenant</dd></div>
+            <div><dt>Disponibilité</dt><dd>À partir du {site.availability}</dd></div>
             <div><dt>Localisation</dt><dd>Paris ou hybride</dd></div>
             <div><dt>CV</dt><dd><a href={site.cvClassic}>Voir mon CV (PDF)</a></dd></div>
           </dl>

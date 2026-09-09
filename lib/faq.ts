@@ -29,7 +29,7 @@ export const faqItems: FaqItem[] = [
   },
   {
     q: "Quand est-il disponible et où ?",
-    a: "Disponible à partir du 1er septembre 2026, à Paris ou en hybride."
+    a: "Disponible à partir du 1er octobre 2026, à Paris ou en hybride."
   },
   {
     q: "Quelles sont ses preuves de travail principales ?",

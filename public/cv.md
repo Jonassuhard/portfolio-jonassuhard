@@ -5,7 +5,7 @@
 Product Builder IA · Chef de projet IA junior : je transforme des besoins métier en outils, automatisations et workflows IA mesurables.
 
 Contact : jonas.suhard@gmail.com · jonassuhard.com · github.com/Jonassuhard · LinkedIn (Jonas Suhard) · Paris / hybride
-Disponible en CDI à partir du 1er septembre 2026.
+Disponible en CDI à partir du 1er octobre 2026.
 
 ## Profil
 

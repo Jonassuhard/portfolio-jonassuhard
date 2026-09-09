@@ -22,7 +22,7 @@ Un Forward Deployed Engineer part d'un besoin terrain, construit avec les person
 
 ## Localisation
 
-Paris, France. CDI à Paris ou hybride, disponible à partir du 1er septembre 2026.
+Paris, France. CDI à Paris ou hybride, disponible à partir du 1er octobre 2026.
 
 ## Compétences
 

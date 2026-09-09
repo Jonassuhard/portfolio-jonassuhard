@@ -43,10 +43,10 @@ export const claimStatusMeta: Record<
 export const verificationItems: VerificationItem[] = [
   {
     id: "target-role",
-    claim: "Recherche d'un CDI junior à Paris ou en hybride à partir du 1er septembre 2026.",
+    claim: "Recherche d'un CDI junior à Paris ou en hybride à partir du 1er octobre 2026.",
     scope: "Positionnement",
     status: "self-declared",
-    checkedAt: contentReviewDate,
+    checkedAt: "2026-09-09",
     note: "Intention professionnelle déclarée par Jonas Suhard."
   },
   {

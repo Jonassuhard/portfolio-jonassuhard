@@ -19,7 +19,7 @@ export default function RecruitersPage() {
       <script type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageJsonLd()) }} />
       <section className="recruiter-intro">
-        <p className="eyebrow">CDI junior · Paris ou hybride · disponible maintenant</p>
+        <p className="eyebrow">CDI junior · Paris ou hybride · disponible le {site.availability}</p>
         <AnimatedTitle>{site.title}</AnimatedTitle>
         <p className="lead">
           Je viens du marketing. Je développe des sites et des outils IA pour
