@@ -103,12 +103,18 @@ test("le blueprint utilise exactement onze images locales transparentes", () => 
 
 test("tous les grands titres rejouent un glitch chromatique lent et lisible", () => {
   const title = read("app/animated-title.tsx");
+  const scheduler = read("app/glitch-scheduler.tsx");
   const css = read("app/globals.css");
 
   assert.match(title, /glitch = true/);
   assert.match(title, /data-glitch=\{glitch \? "true" : undefined\}/);
-  assert.match(css, /\.chroma-title\[data-glitch="true"\]::before \{ animation:glitch-cyan-cycle 40s linear infinite; \}/);
-  assert.match(css, /\.chroma-title\[data-glitch="true"\]::after \{ animation:glitch-red-cycle 40s linear infinite; \}/);
+  assert.match(scheduler, /const MIN_DELAY = 5000/);
+  assert.match(scheduler, /const MAX_DELAY = 10000/);
+  assert.match(scheduler, /querySelectorAll<HTMLElement>\("h1, h2"\)/);
+  assert.match(scheduler, /active\.classList\.add\("glitch-active"\)/);
+  assert.match(css, /\.chroma-title\.glitch-active::before \{ animation:glitch-cyan-cycle \.7s steps\(2,end\) both; \}/);
+  assert.match(css, /\.chroma-title\.glitch-active::after \{ animation:glitch-red-cycle \.7s steps\(2,end\) both; \}/);
+  assert.match(css, /h1\.glitch-active, h2\.glitch-active \{ animation:heading-glitch \.7s steps\(2,end\) both; \}/);
   assert.match(css, /53\.5%,100% \{ clip-path:inset\(0 0 100% 0\); transform:none; opacity:0; \}/);
   assert.match(css, /color:rgba\(67,174,169,\.82\)/);
   assert.match(css, /color:rgba\(142,31,47,\.78\)/);
@@ -131,7 +137,7 @@ test("les optimisations de performance ne retirent aucune animation", () => {
   assert.match(css, /@keyframes glitch-cyan-cycle/);
   assert.match(css, /@keyframes glitch-red-cycle/);
   assert.match(css, /@keyframes chroma-cyan/);
-  assert.match(css, /prefers-reduced-motion:reduce[\s\S]*\.chroma-title\[data-glitch="true"\]::before,[^}]*animation:none/);
+  assert.match(css, /prefers-reduced-motion:reduce[\s\S]*\.chroma-title::before,[^}]*animation:none/);
   assert.match(css, /@keyframes holo-diag/);
   assert.match(css, /@keyframes hero-bounce/);
   assert.match(css, /@keyframes page-marker-enter/);

@@ -205,13 +205,15 @@ Projets, À propos et Contact. Compétences, Méthode et Preuves restent accessi
 dans le footer et depuis les pages pertinentes. La page active est soulignée ;
 le menu fermé n'expose pas ses liens au clavier, Échap rend le focus au bouton.
 
+Le hero d'accueil reprend la carte système noire : grille fine, voile holographique diagonal animé en 16 secondes et texte clair. Le footer Signature compacte utilise la même surface et la même animation pour fermer la page sans changer de langage visuel. `prefers-reduced-motion` désactive le voile dans les deux zones.
+
 ### Footer Signature compacte
 
 La proposition 1 choisie le 9 septembre 2026 utilise une bande crème sans carte : nom en Cormorant Garamond 32 px et rôle à gauche, email et réseaux à droite. Le CV principal, Preuves et Méthode restent visibles ; Compétences, Knowledge, le CV illustré et Malt sont regroupés dans « Autres ressources ». Les mentions légales, la confidentialité et la gestion réelle des cookies restent toujours accessibles. Sous 700 px, les blocs s'empilent ; les cibles interactives conservent au moins 44 px de hauteur.
 
 ### Titres animés
 
-Le texte réel est présent dès la première frame. L'aberration cyan et rouge est produite en CSS par pseudo-éléments non exposés à l'arbre d'accessibilité. Le cycle dure 40 secondes : l'entrée chromatique reste visible 1,2 seconde, la déchirure périodique environ 1,4 seconde, et le décalage ne dépasse pas 2 px. Le glitch ne doit pas nécessiter de contrôleur JavaScript. `prefers-reduced-motion` désactive les copies et transitions.
+Le texte réel est présent dès la première frame. L'aberration cyan et rouge est produite en CSS par pseudo-éléments non exposés à l'arbre d'accessibilité. Un ordonnanceur client choisit un seul `h1` ou `h2` à la fois, attend aléatoirement entre 5 et 10 secondes, joue une rafale de 0,7 seconde, puis laisse le suivant apparaître. Le décalage reste inférieur à 4 px. `prefers-reduced-motion` désactive l'ordonnanceur et les copies.
 
 ### Cartes de projet
 

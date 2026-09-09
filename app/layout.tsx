@@ -6,6 +6,7 @@ import { rootJsonLd } from "@/lib/json-ld";
 import { site, siteUrl } from "@/lib/projects";
 import SiteNav from "./site-nav";
 import ConsentBanner from "./consent-banner";
+import GlitchScheduler from "./glitch-scheduler";
 import BlueprintBg from "./blueprint-bg";
 import Observability from "./observability";
 import "./globals.css";
@@ -71,6 +72,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       </head>
       <body>
         <BlueprintBg />
+        <GlitchScheduler />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(rootJsonLd()) }}
