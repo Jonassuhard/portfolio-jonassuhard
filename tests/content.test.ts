@@ -92,6 +92,26 @@ test("les cartes projet utilisent des illustrations bitmap transparentes en coul
   }
 });
 
+test("Job Radar garde une couverture illustree distincte de ses captures produit", async () => {
+  const project = projects.find((item) => item.slug === "job-radar");
+  assert.ok(project);
+  assert.match(project.image, /\/cards\/job-radar-illustration-[\d]+-art\.webp$/);
+  assert.notEqual(project.image, project.heroImage?.src);
+
+  const assetUrl = new URL(`../public${project.image}`, import.meta.url);
+  const { data, info } = await sharp(fileURLToPath(assetUrl))
+    .ensureAlpha()
+    .raw()
+    .toBuffer({ resolveWithObject: true });
+  let transparentPixels = 0;
+  for (let i = 3; i < data.length; i += 4) {
+    if (data[i] === 0) transparentPixels++;
+  }
+  const transparentRatio = transparentPixels / (info.width * info.height);
+  assert.ok(transparentRatio > 0.55 && transparentRatio < 0.9,
+    "la couverture doit avoir de vrais espaces transparents, pas un damier imprime");
+});
+
 test("les sélections recruteur ne contiennent que des projets principaux", () => {
   for (const project of [...featuredProjects, ...recruiterFeatured]) {
     assert.equal(project.tier, 1, `${project.slug} n'est pas un projet principal`);

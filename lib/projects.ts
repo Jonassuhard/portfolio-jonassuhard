@@ -205,7 +205,7 @@ export const projects: Project[] = [
     status: "Version personnelle déployée · Community v0.1.0-beta.1 publique",
     evidenceLevel: "public",
     tier: 1,
-    image: "/assets/cards/job-radar-20260909-art.webp",
+    image: "/assets/cards/job-radar-illustration-20260909-art.webp",
     heroImage: {
       "src": "/assets/proof/job-radar/offer-detail-20260908.webp",
       "caption": "Radar local : liste et détail d'une offre, raisons de la note et préparation du dossier. Données fictives.",
