@@ -6,6 +6,7 @@ const root = dirname(fileURLToPath(import.meta.url));
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   poweredByHeader: false,
+  allowedDevOrigins: ["127.0.0.1"],
   images: {
     // Les cartes et portraits sont servis via /_next/image avec un srcset
     // responsive. Ce TTL évite de retraiter les mêmes variantes à chaque visite.

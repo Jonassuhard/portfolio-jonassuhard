@@ -80,7 +80,7 @@ export default function AboutPage() {
             <h2>Expérience.</h2>
           </div>
         </div>
-        <div className="matrix matrix-2">
+        <div className="matrix matrix-2 experience-matrix">
           <div className="matrix-item">
             <strong>Alternant communication digitale, SEO & IA appliquée</strong>
             <p>Octobre 2025 – août 2026 · Eduservices (marque ISCOM)</p>
@@ -95,6 +95,7 @@ export default function AboutPage() {
             <strong>Projets web, SEO et IA appliquée</strong>
             <p>Projets depuis 2021 · entreprise individuelle enregistrée en 2026 · Paris / hybride</p>
             <p className="cert">Sites web (Next.js, WordPress), SEO local, assistants IA cadrés. Exemple livré en production : Les Petites Griffes.</p>
+            <Link className="lk experience-proof" href="/projets/les-petites-griffes">Voir le projet Les Petites Griffes</Link>
           </div>
         </div>
       </section>

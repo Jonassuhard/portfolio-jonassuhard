@@ -5,6 +5,13 @@ import * as data from "../lib/projects";
 
 const source = (path: string) => readFileSync(path, "utf8");
 
+test("experience grid closes its final row without inventing a fourth role", () => {
+  const about = source("app/a-propos/page.tsx");
+  assert.ok(about.includes('className="matrix matrix-2 experience-matrix"'));
+  assert.ok(about.includes('href="/projets/les-petites-griffes"'));
+  assert.ok(source("app/globals.css").includes(".experience-matrix > .matrix-item:last-child { grid-column:1 / -1; }"));
+});
+
 test("project cards use a stable outline with keyboard parity", () => {
   const css = source("app/globals.css");
   assert.ok(css.includes(".proof-card:focus-within::after, .case-card:focus-within::after { opacity:1; }"));

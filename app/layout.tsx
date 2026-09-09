@@ -9,6 +9,7 @@ import ConsentBanner from "./consent-banner";
 import GlitchScheduler from "./glitch-scheduler";
 import BlueprintBg from "./blueprint-bg";
 import Observability from "./observability";
+import CvPreview from "./cv-preview";
 import "./globals.css";
 
 const hasVercelObservability = process.env.VERCEL === "1";
@@ -73,6 +74,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body>
         <BlueprintBg />
         <GlitchScheduler />
+        <CvPreview />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(rootJsonLd()) }}

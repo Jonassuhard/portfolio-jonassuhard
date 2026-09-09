@@ -209,6 +209,8 @@ L’accueil conserve son fond papier clair et sa grille. Seules la carte portrai
 
 ### Footer Signature compacte
 
+Les liens vers les deux CV ouvrent un dialogue natif avec un aperçu fidèle du PDF, puis les actions Télécharger, Ouvrir le PDF et Version texte. Le PDF reste accessible sans JavaScript. Les aperçus JPEG sont générés par `npm run generate:cv-previews` et leur correspondance avec les PDF est vérifiée par SHA-256. Aucune iframe ni ressource chargée avant ouverture ; fermeture par Échap et restauration du focus.
+
 Les engrenages blueprint existants apparaissent en blanc à 10 % en bas à droite du footer, derrière les liens. Leur masque réutilise le bitmap transparent local, sans interaction ni animation supplémentaire.
 
 Le reflet commun au footer et à la carte portrait utilise uniquement les cinq couleurs de la palette holographique, sans blanc, avec une opacité de 5 %. Son cycle de 10 secondes produit une traversée de 2,2 secondes puis une pause.
