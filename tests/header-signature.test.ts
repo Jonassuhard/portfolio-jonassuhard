@@ -12,5 +12,6 @@ test("signature header presents the identity once and preserves accessible navig
   assert.doesNotMatch(nav, /brand-mark|<Image/);
   assert.match(nav, /aria-expanded=\{open\}/);
   assert.match(nav, /event.key === "Escape"/);
+  assert.ok(nav.includes("event.currentTarget.focus()"), "Safari pointer activation must enter the keyboard navigation scope");
   assert.match(nav, /className="nav-back"/);
 });

@@ -43,7 +43,11 @@ export default function SiteNav({ name, role }: { name: string; role: string }) 
         aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
         aria-expanded={open}
         aria-controls="main-navigation"
-        onClick={() => setOpen((v) => !v)}
+        onClick={(event) => {
+          // Safari does not focus buttons on pointer activation.
+          event.currentTarget.focus();
+          setOpen((v) => !v);
+        }}
       >
         <span />
         <span />
