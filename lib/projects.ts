@@ -1120,10 +1120,10 @@ export const projects: Project[] = [
     title: "Cortex Bridge - ChatGPT comme cerveau d'un agent de code local",
     shortTitle: "Cortex Bridge",
     type: "Agent de code local open source piloté par ChatGPT",
-    period: "Juillet - août 2026 · tag v0.5.3",
+    period: "Juillet - septembre 2026 · candidat local v0.6.1",
     role: "Conception produit, architecture, extension MV3, backend FastAPI, sécurité, QA",
-    status: "Preview technique open source · tag public v0.5.3",
-    cardStatus: "Prototype open source · à installer en local",
+    status: "Candidat local v0.6.1 · version publique v0.5.3",
+    cardStatus: "Candidat local v0.6.1 · public v0.5.3",
     cardLine:
       "Utiliser ChatGPT comme cerveau d'un agent de code. Vous validez les actions, Cortex les exécute sur votre ordinateur.",
     evidenceLevel: "public",
@@ -1133,7 +1133,7 @@ export const projects: Project[] = [
     repoStatus: "Repo public sous MIT : github.com/Jonassuhard/cortex-bridge",
     liveLabel: "Repo GitHub (lien)",
     evidenceNote:
-      "Code public sous licence MIT. La preuve du tag v0.5.3 datée du 26/08/2026 rapporte 629 tests backend, 155 frontend, 126 extension, 12 E2E et 4 accessibilité sans échec ; 1 test E2E est ignoré.",
+      "Code public sous licence MIT. La preuve du tag v0.5.3 datée du 26/08/2026 rapporte 629 tests backend, 155 frontend, 126 extension, 12 E2E et 4 accessibilité sans échec ; 1 test E2E est ignoré. Le candidat local v0.6.1 est en validation et ne constitue pas encore une release publiée.",
     metaDescription:
       "Cortex Bridge utilise ChatGPT comme cerveau d'un agent de code local open source : vous validez, puis il exécute dans le dossier choisi.",
     architecture: [
@@ -1155,7 +1155,7 @@ export const projects: Project[] = [
     proofLine:
       "ChatGPT réfléchit et prépare le travail. Vous validez. Cortex exécute dans le dossier choisi et garde une trace de chaque étape.",
     summary:
-      "Cortex Bridge transforme ChatGPT en cerveau d'un agent de code local open source. ChatGPT analyse et planifie ; vous validez ; Cortex exécute uniquement dans le dossier choisi et garde une trace. Le projet vise l'usage d'un agent de code sans ajouter un second abonnement dédié. Le code et la preuve de release sont publics.",
+      "Cortex Bridge transforme ChatGPT en cerveau d'un agent de code local open source. ChatGPT analyse et planifie ; vous validez ; Cortex exécute uniquement dans le dossier choisi et garde une trace. Le projet vise l'usage d'un agent de code sans ajouter un second abonnement dédié. Le code et la preuve de release v0.5.3 sont publics ; le candidat v0.6.1 reste local.",
     stack: ["Chrome MV3", "FastAPI", "Next.js", "React", "SQLite", "Python", "Ollama"],
     recruiterProof: [
       "Construire un produit complet avec une extension, un backend local, une interface et des tests.",
@@ -1223,7 +1223,7 @@ export const projects: Project[] = [
       },
       {
         "src": "/assets/proof/cortex-bridge/public-0-20260908.webp",
-        "caption": "Dépôt GitHub public : code et documentation consultables. La version publiée reste v0.5.3, distincte du travail local.",
+        "caption": "Dépôt GitHub public : code et documentation consultables. Le tag public reste v0.5.3 ; le candidat local v0.6.1 est distinct.",
         "width": 1440,
         "height": 960
       }
