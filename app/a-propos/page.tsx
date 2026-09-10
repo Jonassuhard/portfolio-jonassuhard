@@ -114,9 +114,9 @@ export default function AboutPage() {
             <p className="cert">Ressources de formation sur Claude, les API, les outils et les évaluations. Aucune certification obtenue n'est revendiquée.</p>
           </div>
           <div className="matrix-item">
-            <strong>MBA Expert Marketing Digital (obtenu)</strong>
+            <strong>MBA Expert Marketing Digital · bac+5</strong>
             <p>2024–2026 · MyDigitalSchool, Paris</p>
-            <p className="cert">Marketing digital, acquisition et gestion de projet.</p>
+            <p className="cert">Titre RNCP de niveau 7 : Manager de la stratégie marketing digital.</p>
           </div>
           <div className="matrix-item">
             <strong>Bachelor Chef de projet digital</strong>

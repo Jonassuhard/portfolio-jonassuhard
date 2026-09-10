@@ -46,7 +46,7 @@ export function personJsonLd() {
       {
         "@type": "EducationalOrganization",
         name: "MyDigitalSchool Paris",
-        description: "MBA Expert Marketing Digital obtenu (2024-2026)"
+        description: "MBA Expert Marketing Digital, bac+5 (2024-2026). Titre RNCP de niveau 7 : Manager de la stratégie marketing digital."
       },
       {
         "@type": "EducationalOrganization",

@@ -23,7 +23,9 @@ test("CV previews match the current PDFs and preserve security headers", () => {
 
 test("les CV publics gardent leurs URLs et un contenu general actualise", () => {
   const cv = read("public/cv.md");
-  assert.match(cv, /MBA Expert Marketing Digital \(obtenu\)/);
+  assert.match(cv, /MBA Expert Marketing Digital, bac\+5/);
+  assert.match(cv, /Titre RNCP de niveau 7 : Manager de la stratégie marketing digital/);
+  assert.doesNotMatch(cv, /obtenu|RNCP37280|RNCP41809/);
   assert.match(cv, /1er octobre 2026/);
   assert.ok(cv.indexOf("## Projets") < cv.indexOf("## Expériences"));
   for (const project of ["Job Radar", "Cortex Bridge", "Les Petites Griffes"]) {
@@ -42,7 +44,13 @@ test("la formation MBA est coherente entre profil public et page", () => {
   const profile = JSON.parse(read("public/profile.json"));
   const values = Object.values(profile).filter(Array.isArray).flat();
   const mba = values.find((value) => value?.degree === "MBA Expert Marketing Digital");
-  assert.equal(mba?.status, "obtenu");
-  assert.match(read("app/a-propos/page.tsx"), /MBA Expert Marketing Digital \(obtenu\)/);
-  assert.match(read("lib/json-ld.ts"), /MBA Expert Marketing Digital obtenu/);
+  assert.equal(mba?.level, "bac+5");
+  assert.equal(mba?.status, undefined);
+  assert.match(mba?.certification, /Manager de la stratégie marketing digital, titre RNCP de niveau 7/);
+  for (const path of ["app/a-propos/page.tsx", "lib/json-ld.ts", "public/profile.md", "public/llms.txt"]) {
+    assert.match(read(path), /MBA Expert Marketing Digital/);
+    assert.match(read(path), /bac\+5/);
+    assert.match(read(path), /Manager de la stratégie marketing digital/);
+    assert.doesNotMatch(read(path), /MBA Expert Marketing Digital obtenu|MBA obtenu|RNCP37280|RNCP41809/);
+  }
 });

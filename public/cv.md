@@ -39,7 +39,8 @@ Du besoin métier au déploiement, je développe et je teste les outils que je p
 - Réseaux sociaux, Google Ads, e-mailing et suivi des indicateurs.
 
 ## Formations
-- **MBA Expert Marketing Digital (obtenu)** · MyDigitalSchool Paris · 2024-2026
+- **MBA Expert Marketing Digital, bac+5** · MyDigitalSchool Paris · 2024-2026
+- Titre RNCP de niveau 7 : Manager de la stratégie marketing digital.
 - **Bachelor Chef de projet digital**, RNCP34340 niveau 6 · La Digital School, Angers · 2023-2024
 - **Animation 2D/3D & Design**, certificat d'école · Human Academy · 2019-2021
 

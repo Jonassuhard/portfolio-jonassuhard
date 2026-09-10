@@ -73,7 +73,7 @@
     "development": ["Next.js", "React", "FastAPI", "SQLite", "Firebase", "Supabase", "Python", "Playwright"]
   },
   "education": [
-    { "degree": "MBA Expert Marketing Digital", "status": "obtenu", "period": "2024–2026", "school": "MyDigitalSchool, Paris" },
+    { "degree": "MBA Expert Marketing Digital", "level": "bac+5", "certification": "Manager de la stratégie marketing digital, titre RNCP de niveau 7", "period": "2024–2026", "school": "MyDigitalSchool, Paris" },
     { "degree": "Bachelor Chef de projet digital", "period": "2023–2024", "school": "La Digital School, Angers", "certification": "RNCP34340 niveau 6 — Chef de projet e-business ; preuve privée" },
     { "degree": "Animation 2D / 3D", "period": "2019–2021", "school": "Human Academy, Angoulême", "certification": "certificat d'école, non inscrit au RNCP" }
   ],
