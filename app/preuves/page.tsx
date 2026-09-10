@@ -18,7 +18,7 @@ const titles: Record<string, string> = {
   "job-radar-community-beta-1": "Job Radar : les tests de la bêta",
   "job-radar-personal-deployed-2026-08-25": "Job Radar : ma version personnelle",
   "cortex-bridge-repo": "Cortex Bridge : le code public",
-  "cortex-bridge-release-0-5-3": "Cortex Bridge : les tests de la version 0.5.3",
+  "cortex-bridge-release-0-6-1": "Cortex Bridge : les tests de la version 0.6.1",
   "lpg-live-audit-2026-08-01": "Les Petites Griffes : l'audit du site",
   "cool-bank-la-herse-versions": "Cool Bank : ce qui est validé en V2 et V3",
   "rag-board-historical-prototypes": "RAG et Board IA : les prototypes archivés",

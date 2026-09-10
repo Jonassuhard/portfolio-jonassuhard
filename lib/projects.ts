@@ -1120,10 +1120,10 @@ export const projects: Project[] = [
     title: "Cortex Bridge - ChatGPT comme cerveau d'un agent de code local",
     shortTitle: "Cortex Bridge",
     type: "Agent de code local open source piloté par ChatGPT",
-    period: "Juillet - août 2026 · tag v0.5.3",
+    period: "Juillet - septembre 2026 · tag v0.6.1",
     role: "Conception produit, architecture, extension MV3, backend FastAPI, sécurité, QA",
-    status: "Preview technique open source · tag public v0.5.3",
-    cardStatus: "Prototype open source · à installer en local",
+    status: "Preview technique open source · tag public v0.6.1, provider-gated",
+    cardStatus: "Preview v0.6.1 · provider-gated",
     cardLine:
       "Utiliser ChatGPT comme cerveau d'un agent de code. Vous validez les actions, Cortex les exécute sur votre ordinateur.",
     evidenceLevel: "public",
@@ -1133,7 +1133,7 @@ export const projects: Project[] = [
     repoStatus: "Repo public sous MIT : github.com/Jonassuhard/cortex-bridge",
     liveLabel: "Repo GitHub (lien)",
     evidenceNote:
-      "Code public sous licence MIT. La preuve du tag v0.5.3 datée du 26/08/2026 rapporte 629 tests backend, 155 frontend, 126 extension, 12 E2E et 4 accessibilité sans échec ; 1 test E2E est ignoré.",
+      "Code public sous licence MIT. La preuve du tag v0.6.1 datée du 10/09/2026 rapporte 724 tests backend, 207 frontend, 138 extension, 26 E2E et 4 accessibilité sans échec ; 1 test E2E optionnel est ignoré. Le manifeste reste explicitement bloqué par les conditions du fournisseur et le cycle macOS propre n'est pas exécuté.",
     metaDescription:
       "Cortex Bridge utilise ChatGPT comme cerveau d'un agent de code local open source : vous validez, puis il exécute dans le dossier choisi.",
     architecture: [
@@ -1155,7 +1155,7 @@ export const projects: Project[] = [
     proofLine:
       "ChatGPT réfléchit et prépare le travail. Vous validez. Cortex exécute dans le dossier choisi et garde une trace de chaque étape.",
     summary:
-      "Cortex Bridge transforme ChatGPT en cerveau d'un agent de code local open source. ChatGPT analyse et planifie ; vous validez ; Cortex exécute uniquement dans le dossier choisi et garde une trace. Le projet vise l'usage d'un agent de code sans ajouter un second abonnement dédié. Le code et la preuve de release sont publics.",
+      "Cortex Bridge transforme ChatGPT en cerveau d'un agent de code local open source. ChatGPT analyse et planifie ; vous validez ; Cortex exécute uniquement dans le dossier choisi et garde une trace. Le projet vise l'usage d'un agent de code sans ajouter un second abonnement dédié. Le code et la preuve technique du tag v0.6.1 sont publics ; l'acceptation fournisseur et le cycle macOS propre restent hors périmètre.",
     stack: ["Chrome MV3", "FastAPI", "Next.js", "React", "SQLite", "Python", "Ollama"],
     recruiterProof: [
       "Construire un produit complet avec une extension, un backend local, une interface et des tests.",
@@ -1198,13 +1198,13 @@ export const projects: Project[] = [
       "Installation macOS contrôlée par plan immuable et diagnostic local reproductible."
     ],
     results: [
-      "Preuve du tag v0.5.3 du 26/08/2026 : 629 tests backend, 155 frontend, 126 extension, 12 E2E et 4 accessibilité sans échec ; 1 E2E ignoré.",
+      "Preuve du tag v0.6.1 du 10/09/2026 : 724 tests backend, 207 frontend, 138 extension, 26 E2E et 4 accessibilité sans échec ; 1 E2E optionnel ignoré. Les gates offline passent ; le verdict reste RELEASE_BLOCKED_BY_PROVIDER_TERMS.",
       "Dix scénarios à deux conversations exécutés sans croisement ; le brouillon du troisième writer est conservé lors du refus.",
       "Le diagnostic d'arrêt rend visibles les processus actifs et permet de couper immédiatement l'exécution locale."
     ],
     limits: [
       "Les suites automatisées utilisent aussi des fixtures : elles ne prouvent pas une compatibilité continue avec un compte ChatGPT réel.",
-      "Le cycle macOS propre de la v0.5.2 n'a pas été rejoué pour la preuve v0.5.3.",
+      "Le cycle macOS propre n'a pas été exécuté pour la preuve v0.6.1.",
       "Le transport automatique par l'interface ChatGPT entre en conflit avec les conditions du fournisseur : activation opt-in et risque de restriction du compte.",
       "Preview technique macOS/Chrome : extension installée manuellement et dépendance à un DOM externe susceptible de changer."
     ],
@@ -1223,7 +1223,7 @@ export const projects: Project[] = [
       },
       {
         "src": "/assets/proof/cortex-bridge/public-0-20260908.webp",
-        "caption": "Dépôt GitHub public : code et documentation consultables. La version publiée reste v0.5.3, distincte du travail local.",
+        "caption": "Dépôt GitHub public : code, tag v0.6.1 et manifeste technique consultables. Le tag reste un technical preview provider-gated.",
         "width": 1440,
         "height": 960
       }
@@ -1235,8 +1235,8 @@ export const projects: Project[] = [
         external: true
       },
       {
-        label: "Preuve du tag v0.5.3",
-        href: "https://github.com/Jonassuhard/cortex-bridge/blob/v0.5.3/docs/verification/v0.5.3.json",
+        label: "Preuve du tag v0.6.1",
+        href: "https://github.com/Jonassuhard/cortex-bridge/blob/v0.6.1/docs/verification/v0.6.1.json",
         external: true
       },
       { label: "Version Markdown", href: "/projects/cortex-bridge.md" }

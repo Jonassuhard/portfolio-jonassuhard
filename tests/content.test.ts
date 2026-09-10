@@ -353,7 +353,7 @@ test("la carte Cool Bank utilise l'illustration des deux mondes et non l'écran 
 test("Cortex Bridge reste une preuve logicielle publique et qualifiée", () => {
   const cortex = projects.find((project) => project.slug === "cortex-bridge");
   const release = verificationItems.find(
-    (claim) => claim.id === "cortex-bridge-release-0-5-3"
+    (claim) => claim.id === "cortex-bridge-release-0-6-1"
   );
 
   assert.ok(cortex);
@@ -361,16 +361,16 @@ test("Cortex Bridge reste une preuve logicielle publique et qualifiée", () => {
   assert.ok(cortex.stack.includes("Next.js"));
   assert.match(cortex.summary, /ChatGPT en cerveau d'un agent de code local/i);
   assert.match(cortex.summary, /sans ajouter un second abonnement dédié/i);
-  assert.match(cortex.evidenceNote ?? "", /629 tests backend/);
+  assert.match(cortex.evidenceNote ?? "", /724 tests backend/);
   assert.ok(release);
   assert.equal(release.status, "publicly-verified");
-  assert.equal(release.checkedAt, "2026-08-26");
+  assert.equal(release.checkedAt, "2026-09-10");
   assert.equal(
     release.sourceHref,
-    "https://github.com/Jonassuhard/cortex-bridge/blob/v0.5.3/docs/verification/v0.5.3.json"
+    "https://github.com/Jonassuhard/cortex-bridge/blob/v0.6.1/docs/verification/v0.6.1.json"
   );
   assert.match(release.note, /ne prouve pas une compatibilité continue/i);
-  assert.match(release.note, /cycle macOS propre[^.]*pas été rejoué/i);
+  assert.match(release.note, /cycle macOS propre[^.]*pas été exécuté/i);
 });
 
 test("aucune capture Educool issue d'une classe réelle n'est publiée", () => {
@@ -630,15 +630,15 @@ test("la source machine rattache Cortex Bridge à ses preuves publiques", () => 
   const profile = JSON.parse(
     readFileSync(new URL("../public/profile.json", import.meta.url), "utf8")
   );
-  const fact = profile.citable_facts.cortex_bridge_release_0_5_3;
+  const fact = profile.citable_facts.cortex_bridge_release_0_6_1;
   const project = profile.projects.find(
     (item: { project: string }) => item.project === "Cortex Bridge"
   );
 
   assert.equal(fact.status, "publicly-verified");
-  assert.equal(fact.verification_id, "cortex-bridge-release-0-5-3");
+  assert.equal(fact.verification_id, "cortex-bridge-release-0-6-1");
   assert.deepEqual(project.verification_ids, [
     "cortex-bridge-repo",
-    "cortex-bridge-release-0-5-3"
+    "cortex-bridge-release-0-6-1"
   ]);
 });

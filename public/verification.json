@@ -94,14 +94,14 @@
       "note": "Le dépôt public, sa branche principale et sa licence ont été contrôlés le 27/08/2026."
     },
     {
-      "id": "cortex-bridge-release-0-5-3",
-      "claim": "La preuve du tag Cortex Bridge v0.5.3 rapporte 629 tests backend, 155 frontend, 126 extension, 12 E2E et 4 accessibilité sans échec ; un test E2E est ignoré.",
+      "id": "cortex-bridge-release-0-6-1",
+      "claim": "La preuve publique du tag Cortex Bridge v0.6.1 rapporte 724 tests backend, 207 frontend, 138 extension, 26 E2E et 4 accessibilité sans échec ; un test E2E optionnel est ignoré.",
       "scope": "Projet",
       "status": "publicly-verified",
-      "checkedAt": "2026-08-26",
-      "sourceLabel": "Preuve du tag Cortex Bridge v0.5.3",
-      "sourceHref": "https://github.com/Jonassuhard/cortex-bridge/blob/v0.5.3/docs/verification/v0.5.3.json",
-      "note": "Résultats automatisés datés et publiés dans le dépôt. Le document signale un environnement de simulation : il ne prouve pas une compatibilité continue avec ChatGPT. Le cycle macOS propre n'a pas été rejoué pour ce tag ; la dernière preuve complète correspond à la v0.5.2."
+      "checkedAt": "2026-09-10",
+      "sourceLabel": "Preuve publique du tag Cortex Bridge v0.6.1",
+      "sourceHref": "https://github.com/Jonassuhard/cortex-bridge/blob/v0.6.1/docs/verification/v0.6.1.json",
+      "note": "Résultats automatisés datés et publiés dans le dépôt. Le manifeste marque RELEASE_BLOCKED_BY_PROVIDER_TERMS : il ne prouve pas une compatibilité continue avec ChatGPT ; le cycle macOS propre n'a pas été exécuté."
     },
     {
       "id": "lpg-live-audit-2026-08-01",

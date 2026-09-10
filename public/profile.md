@@ -57,7 +57,7 @@ Paris, France. CDI à Paris ou hybride, disponible à partir du 1er octobre 2026
 
 - [Educool V2](/projects/educool-v2.md) : outil réservé à l'enseignante pour suivre les acquis et préparer les livrets. Distinct de Cool Bank ; code privé, captures locales de démonstration des 8 et 9 septembre 2026. Améliorations encore en cours, sans gain pédagogique chiffré revendiqué.
 - Job Radar : la version personnelle déployée rassemble les offres, retire les doublons, explique le métier réel et organise les prochaines actions. Sa preuve reste privée. L'édition Community v0.1.0-beta.1 publie le noyau sans profil, CV ni candidature : 336 tests backend, 36 frontend et 37 E2E sans échec, plus 20 combinaisons route/viewport sans violation Axe ni débordement. Aucun envoi autonome ; Application Assist n'est pas activé en production et LinkedIn, Indeed et Welcome to the Jungle restent des imports manuels.
-- Cortex Bridge : agent de code local open source qui utilise ChatGPT comme cerveau. ChatGPT analyse et planifie ; l'utilisateur valide ; Cortex exécute dans le dossier choisi et garde une trace. Le tag public v0.5.3 rapporte 629 tests backend, 155 frontend, 126 extension, 12 E2E et 4 accessibilité sans échec ; 1 E2E est ignoré. La preview macOS/Chrome est optionnelle, non affiliée à OpenAI ; le cycle macOS propre n'a pas été rejoué pour ce tag.
+- Cortex Bridge : agent de code local open source qui utilise ChatGPT comme cerveau. ChatGPT analyse et planifie ; l'utilisateur valide ; Cortex exécute dans le dossier choisi et garde une trace. Le tag public v0.6.1 rapporte 724 tests backend, 207 frontend, 138 extension, 26 E2E et 4 accessibilité sans échec ; 1 E2E optionnel est ignoré. Le manifeste est public mais marqué provider-gated ; la preview macOS/Chrome est optionnelle, non affiliée à OpenAI, et le cycle macOS propre n'a pas été exécuté.
 - Les Petites Griffes : L'audit live du 2026-08-01 couvre 18 pages publiques contrôlées à 390 px et 1440 px, 36 captures pleine page, 30 images uniques chargées sur le live et cinq scores de performance Lighthouse mobile : Accueil 91, Galerie 87, Compose 97, Méthode 97, Le studio 66. Projet familial non facturé ; aucune vente à un client externe n'est prouvée ; mesures datées du 2026-08-01, non continues. Audit complet privé, montrable en entretien ; il n'est pas publié comme preuve publique autonome.
 - Cool Bank / La Herse : banque de classe transformée en monde 3D avec trois rôles. La V2 est déjà jouable localement sur un appareil ; la V3 est une reconstruction séparée plus large, encore en validation technique. Les essais d'août ne valident pas les modifications actuelles (sources relues le 9 septembre 2026). Les captures publiées sont des écrans de démonstration sans donnée de mineur.
 - Capsélys: refonte conversion, expérimentation IA, workshop client.
@@ -75,7 +75,7 @@ Paris, France. CDI à Paris ou hybride, disponible à partir du 1er octobre 2026
 - Registre des preuves : https://jonassuhard.com/preuves
 - Revue générale des contenus : 2026-08-28
 - Job Radar : version personnelle et édition Community revérifiées le 2026-08-31
-- Cortex Bridge : tag v0.5.3 vérifié le 2026-08-26
+- Cortex Bridge : tag v0.6.1 et manifeste technique vérifiés le 2026-09-10
 - Cool Bank V2 : vérifiée le 2026-08-22
 - Cool Bank V3 : parcours visuels historiques du 2026-08-26 ; état du chantier relu le 2026-09-09, sans nouvelle recette complète
 
