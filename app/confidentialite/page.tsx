@@ -15,7 +15,7 @@ export default function ConfidentialitePage() {
       <section>
         <p className="eyebrow">Protection des données</p>
         <AnimatedTitle>Confidentialité.</AnimatedTitle>
-        <p className="updated">Dernière mise à jour : 26 août 2026</p>
+        <p className="updated">Dernière mise à jour : 19 septembre 2026</p>
       </section>
 
       <div className="legal">
@@ -73,6 +73,13 @@ export default function ConfidentialitePage() {
 
         <section>
           <h2>Microsoft Clarity, après accord</h2>
+          <p>
+            Après votre accord, des événements distinguent l'ouverture de l'aperçu des CV,
+            les clics de téléchargement ou d'ouverture du PDF et les clics email.
+            Ces événements ne contiennent que le type d'action et la version du CV, sans
+            adresse email ni contenu de message. Un clic ne prouve ni un téléchargement
+            terminé ni l'envoi d'un message. Les actions antérieures à l'accord ne sont pas reprises.
+          </p>
           <p>
             Si vous acceptez, Microsoft Clarity reçoit les pages consultées et des données
             d'interaction comme les clics, défilements et mouvements de pointeur. Il produit des

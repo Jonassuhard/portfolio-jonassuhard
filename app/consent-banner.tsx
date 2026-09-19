@@ -1,13 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { CONSENT_VERSION, CONSENT_MAX_AGE_MS, trackConversion } from "../lib/conversion-events";
 
 // Microsoft Clarity : chargé UNIQUEMENT après consentement explicite (RGPD/CNIL).
 // Aucun cookie ni enregistrement de session avant le clic « Accepter ».
 const KEY = "js-consent";
 const CLARITY_ID = "xfjx6pbupc";
-const CONSENT_VERSION = "2026-08-26";
-const CONSENT_MAX_AGE_MS = 180 * 24 * 60 * 60 * 1000;
 
 type ConsentChoice = "granted" | "denied";
 
@@ -43,6 +42,7 @@ function loadClarity() {
 function revokeClarity() {
   const w = window as unknown as Record<string, any>;
   if (typeof w.clarity !== "function" || !w.__clarityLoaded) return false;
+  w.__clarityLoaded = false;
 
   // Consent V2 coupe le stockage analytique et publicitaire. L'appel V1 avec
   // false reste la commande documentée par Microsoft pour effacer les cookies
@@ -96,6 +96,10 @@ export default function ConsentBanner() {
 
     // Le lien « Gérer les cookies » du footer rouvre la bannière (droit de retrait).
     const onClick = (e: MouseEvent) => {
+      if (!e.defaultPrevented && e.button === 0 && e.target instanceof Element &&
+        e.target.closest('a[href^="mailto:"]')) {
+        trackConversion("contact_email_click");
+      }
       const target = e.target as HTMLElement | null;
       if (target && target.closest("[data-open-consent]")) {
         e.preventDefault();

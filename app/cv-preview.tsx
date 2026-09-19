@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
+import { trackConversion } from "../lib/conversion-events";
 
 type Cv = "cv" | "cv-portfolio";
 
@@ -23,6 +24,7 @@ export default function CvPreview() {
       trigger.current = link;
       setCv(url.pathname === "/cv.pdf" ? "cv" : "cv-portfolio");
       dialog.current.showModal();
+      trackConversion(url.pathname === "/cv.pdf" ? "cv_classic_preview" : "cv_illustrated_preview");
       close.current?.focus();
     };
     document.addEventListener("click", onClick);
@@ -51,8 +53,10 @@ export default function CvPreview() {
         <button ref={close} type="button" aria-label="Fermer l’aperçu du CV" title="Fermer"
           onClick={() => dialog.current?.close()}>×</button>
         {cv && <div className="cv-preview-actions">
-          <a className="button primary" href={`/${cv}.pdf`} download>Télécharger</a>
-          <a className="lk" href={`/${cv}.pdf`} target="_blank" rel="noreferrer">Ouvrir le PDF</a>
+          <a className="button primary" href={`/${cv}.pdf`}
+            onClick={() => trackConversion(cv === "cv" ? "cv_classic_download_click" : "cv_illustrated_download_click")} download>Télécharger</a>
+          <a className="lk" href={`/${cv}.pdf`} target="_blank" rel="noreferrer"
+            onClick={() => trackConversion(cv === "cv" ? "cv_classic_pdf_open" : "cv_illustrated_pdf_open")}>Ouvrir le PDF</a>
           <a className="lk" href="/cv.md" target="_blank" rel="noreferrer">Version texte</a>
         </div>}
       </div>
