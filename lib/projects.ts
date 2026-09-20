@@ -199,8 +199,8 @@ export const pageMeta = (opts: {
 export const projects: Project[] = [
   {
     slug: "job-radar",
-    roleSummary: "J'ai conçu et développé l'application, préparé sa mise en ligne et vérifié ses principaux parcours.",
-    title: "Job Radar - savoir quelles offres méritent mon temps",
+    roleSummary: "J'ai conçu le parcours, développé l'application avec l'aide de l'IA et vérifié ses principaux usages. Le classement repose sur des règles explicites, pas sur l'avis d'un modèle.",
+    title: "Job Radar - trier les offres et suivre mes candidatures",
     shortTitle: "Job Radar",
     type: "Radar d'offres déployé + édition open source",
     period: "Juillet - septembre 2026",
@@ -231,13 +231,13 @@ export const projects: Project[] = [
     evidenceNote:
       "La version personnelle déployée a été contrôlée en privé le 25 août 2026. L'édition Community v0.1.0-beta.1 apporte une preuve publique séparée : 336 tests backend, 36 frontend et 37 E2E sans échec ; 8 E2E sont ignorés intentionnellement.",
     metaDescription:
-      "Job Radar rassemble les offres, retire les doublons et explique lesquelles méritent une action. Version personnelle déployée et édition Community publique.",
+      "Job Radar réunit les offres d'emploi, explique leur classement et suit les candidatures. Un projet personnel avec une édition open source sur données fictives.",
     cardLine:
-      "Rassembler les offres d'emploi, retirer les doublons et comprendre lesquelles méritent une candidature.",
+      "Réunir les offres d'emploi, comprendre lesquelles examiner et garder une trace de mes candidatures.",
     need: {
-      title: "Chercher des offres prenait trop de temps.",
+      title: "Des offres dispersées, difficiles à comparer.",
       lead:
-        "Les annonces arrivent par plusieurs sources, avec des doublons, des dates différentes et des intitulés parfois trompeurs. Il fallait les comparer sans relire chaque page depuis le début.",
+        "Les mêmes annonces reviennent sur plusieurs plateformes. Un titre intéressant peut cacher un poste trop senior ou des compétences manquantes. J'avais besoin de comparer les offres et de retrouver mes démarches au même endroit.",
       items: [
         "Réunir les offres autorisées dans un même endroit sans perdre leur source.",
         "Voir rapidement le métier réel, le niveau attendu et les compétences demandées.",
@@ -245,9 +245,9 @@ export const projects: Project[] = [
       ]
     },
     intention: {
-      title: "Classer les offres et expliquer chaque décision.",
+      title: "Classer les offres sans décider à ma place.",
       lead:
-        "Job Radar transforme le texte des annonces en faits comparables. La note reste déterministe et chaque résultat montre ses preuves, ses limites et sa fraîcheur.",
+        "Je consulte une offre, les raisons de son classement et les informations qui manquent. Je décide ensuite de préparer un dossier. La collecte ne déclenche aucun envoi de candidature.",
       items: [
         "Séparer pertinence, confiance dans les données et fraîcheur de l'offre.",
         "Montrer les extraits qui justifient la note et le niveau réel du poste.",
@@ -303,14 +303,14 @@ export const projects: Project[] = [
       "Adoption externe de l'édition Community : pas encore mesurée."
     ],
     proofLine:
-      "La version personnelle est déployée et vérifiée en privé ; l'édition Community apporte une preuve publique avec 409 tests réussis et 20 contrôles route/viewport.",
+      "Un besoin personnel transformé en outil de travail, avec un classement explicable, un suivi des démarches et une édition publique sur données fictives.",
     summary:
-      "La version personnelle de Job Radar rassemble les offres, retire les doublons et explique lesquelles méritent une action. Une édition Community plus petite publie le noyau avec des données fictives.",
+      "J'ai construit la version personnelle de Job Radar pour réunir les offres, comprendre lesquelles examiner et suivre mes candidatures. Je garde le choix du dossier et le geste final d'envoi. Une édition Community partage le noyau avec des données fictives.",
     stack: ["Python", "FastAPI", "React", "Turso", "Cloud Run", "Vercel", "Playwright"],
     recruiterProof: [
-      "Transformer un besoin personnel en produit complet, déployé et utilisé dans un vrai workflow.",
-      "Relier collecte, données, scoring explicable, interface et opérations cloud.",
-      "Extraire une édition open source sans publier le profil, les candidatures ni l'historique privé."
+      "Partir d'un besoin concret et relier collecte, classement et suivi dans une même application.",
+      "Choisir ce qui peut être automatisé et ce qui doit rester une décision humaine.",
+      "Partager une édition open source sans exposer les CV ni les candidatures."
     ],
     constraints: [
       "Ne collecter automatiquement que les sources et APIs qui l'autorisent.",
@@ -341,14 +341,15 @@ export const projects: Project[] = [
       }
     ],
     delivered: [
-      "Une interface de travail avec Aujourd'hui, Radar, Candidatures, Entreprises, Insights et Système.",
-      "Un pipeline multi-source autorisé, avec normalisation, déduplication, fraîcheur et provenance.",
-      "Un scoring V3 qui explique le métier réel, le niveau attendu, les compétences et les preuves manquantes.",
+      "J'ai relié la collecte des offres, leur classement et le suivi des candidatures dans une interface développée avec l'aide de l'IA.",
+      "J'ai séparé la pertinence d'une offre de la fiabilité des informations. Chaque classement doit pouvoir être expliqué et vérifié.",
+      "Une erreur concrète : des candidatures envoyées hors de l'application manquaient au suivi. Le rapprochement du 12 septembre a réintégré six candidatures à partir des justificatifs, en conservant leur origine externe sans inventer une validation dans l'outil.",
       "Depuis septembre 2026, des contrôles locaux du CV et des preuves manquantes dans la fiche offre et les documents, sans modifier le score ni déclencher un envoi.",
       "Une infrastructure privée Vercel, Cloud Run, Turso et Google Drive avec tâches planifiées.",
       "Une édition Community MIT, installable localement avec corpus fictif et preuve de release."
     ],
     results: [
+      "Rapprochement local du 12 septembre 2026 : six candidatures réintégrées dans le rapport de suivi. Ce contrôle documenté ne constitue pas un audit de la base actuelle.",
       "Version personnelle contrôlée en production le 25 août 2026 : huit sources en état OK, base intègre et huit routes frontend en HTTP 200.",
       "Interface personnelle vérifiée en privé sur cinq largeurs, au clavier et avec Axe.",
       "Édition Community v0.1.0-beta.1 : 336 tests backend, 36 frontend et 37 E2E sans échec ; 8 E2E ignorés intentionnellement.",
