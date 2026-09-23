@@ -32,6 +32,12 @@ La V2 relie déjà un monde 3D à architecture multijoueur, les trois rôles et 
 
 La V3 est une reconstruction séparée, avec une carte et un périmètre plus larges. Le travail actuel porte sur le monde, les déplacements et les interfaces. La validation technique complète, puis les essais avec les utilisateurs, restent à faire.
 
+### V4 — Migration native vers Godot
+
+État public : Migration partiellement jouable, non finalisée.
+
+La V4 reprend le monde dans Godot. L'exploration, les missions, les boutiques et les premières étapes de maison sont partiellement jouables. Le but est de travailler sur un client natif ; les performances sur les PC scolaires restent à mesurer.
+
 ## Ce que Jonas a fait
 
 - V2 : prototype local à architecture multijoueur, validé sur un appareil avec trois rôles, quêtes, maisons, mini-jeux et pont Educool/Firebase.
@@ -41,15 +47,25 @@ La V3 est une reconstruction séparée, avec une carte et un périmètre plus la
 
 ## Ce que ça prouve
 
-La V2 permet déjà de vivre la boucle 3D sur un appareil. La V3 élargit le projet, mais aucune efficacité pédagogique ni utilisation en classe n'est encore revendiquée.
+La V2 permet déjà de vivre la boucle 3D sur un appareil. La V3 reconstruit le jeu web ; la V4 est une migration native distincte vers Godot. Aucune efficacité pédagogique ni utilisation en classe n'est revendiquée.
 
 - Partir d'un besoin réel de classe, construire une expérience testable, puis séparer clairement ce qui fonctionne de ce qui reste à valider.
 - Relier le jeu, les trois rôles, Firebase, la sécurité et les tests.
 - Dire clairement ce qui fonctionne et ce qui reste bloqué avant un pilote.
 
-V2 : essais locaux du 22 août 2026. V3 : essais d'août et captures de carte des 7 et 8 septembre ; le chantier actuel n'est pas encore entièrement validé. État des sources relu le 9 septembre, sans nouvelle recette du jeu.
+Sources relues le 23 septembre 2026. V2 : essais locaux historiques d'août. V3 : reconstruction web, carte et interfaces encore en travail. V4 : migration distincte vers Godot, partiellement jouable ; captures natives du 21 septembre. Aucun pilote en classe ni validation complète du jeu ne sont revendiqués.
 
 ## Visuels
+
+### V4 — le chantier natif
+
+La V4 reprend le monde dans Godot. Ces captures des 21 et 23 septembre montrent l'exploration, les commandes et l'éditeur de jardin, pas un jeu terminé. La progression complète et les essais sur un PC scolaire restent à valider.
+
+![V4 : entrée dans le bourg et commandes du joueur. Capture native de contrôle du 21 septembre 2026, sans données scolaires.](/assets/proof/educool/v4-world-20260921.webp)
+
+![V4 : déplacer et tourner les objets du jardin. Test natif du 23 septembre avec maison et inventaire de démonstration injectés ; ce n'est pas une progression joueur complète.](/assets/proof/educool/v4-garden-20260923.webp)
+
+![V4 : contrôle de l'interface à 390 pixels dans Godot. Ce cadrage ne prouve pas une version mobile distribuée ni un test sur téléphone physique.](/assets/proof/educool/v4-mobile-20260921.webp)
 
 ### V3 — la reconstruction locale
 
@@ -75,12 +91,14 @@ Vues différentes issues des preuves locales d'août 2026 : bourg 3D, organisati
 ## Limites
 
 - Preuve privée : code, captures complètes et données de contexte se montrent uniquement sur fixtures anonymisées.
-- V2 n'est pas prête pour Internet ; V3 n'est pas validée comme pilote local auprès d'enfants.
+- V2 n'est pas prête pour Internet ; V3 et V4 ne sont pas validées comme pilotes auprès d'enfants.
 - Les volumes de tests prouvent le comportement technique, pas l'utilité pédagogique ni l'adoption.
 - V2 : Deux PC et une tablette physique, coupure Wi-Fi et audio multi-appareils restent à rejouer ensemble.
 - V2 : Le pré-RC reste bloqué par 3 échecs i18n, 20 assets provisoires et une gate online à 87/89.
 - V3 : Validation de la direction artistique, test sur appareil enfant modeste et observation de la compréhension par un enfant encore requis.
 - V3 : Aucun déploiement, aucune donnée réelle d'enfant et aucun verdict d'usage terrain ne sont revendiqués.
+- V4 : La progression complète, les accès aux maisons et plusieurs parcours de sauvegarde restent en chantier.
+- V4 : Aucune validation Windows, PC i5/4 Go, enfant ou utilisation en classe n'est déduite de ces captures.
 - Compréhension, plaisir et autonomie des enfants : recette terrain non publiée.
 - Gain de temps pour l'enseignante : non chiffré publiquement.
 
@@ -91,9 +109,9 @@ Vues différentes issues des preuves locales d'août 2026 : bourg 3D, organisati
 | Format | Jeu scolaire 3D + outil enseignant |
 | Période | Juillet 2026 - en cours |
 | Rôle de Jonas | Conception produit, UX, développement full-stack, systèmes de jeu, sécurité, QA |
-| Statut | V2 jouable localement sur un appareil · V3 en reconstruction |
+| Statut | V2 locale · V3 web · V4 en migration vers Godot |
 | Niveau de preuve | Preuves privées |
-| Stack | Three.js, Next.js, Firebase, Firestore, Cloud Functions, TypeScript, Vite, Node.js, Playwright |
+| Stack | Godot, Blender, Three.js, Next.js, Firebase, Firestore, Cloud Functions, TypeScript, Vite, Node.js, Playwright |
 
 ## Preuves techniques
 
@@ -109,10 +127,18 @@ Statut interne : Jouable localement · LOCAL_SINGLE_DEVICE_READY : GO · V2_PROD
 
 Statut interne : Chantier de septembre non validé intégralement ; READY_FOR_HUMAN_RECIPE reste un objectif, pas un statut actuel.
 
-- État du 9 septembre 2026 : le plan actif distingue les essais ciblés du chantier actuel et les anciennes candidates d'août. Aucun verdict global actuel n'est acquis.
+- Sources relues le 23 septembre : le travail de septembre porte notamment sur la carte Blender, le terrain et les commandes à l'écran. La fluidité reste insuffisante dans le contrôle documenté ; aucun verdict global actuel n'est acquis.
 - Recette visuelle du 26/08/2026 : trois rôles entrés dans le monde, mouvements réels et 396 placements chargés.
 - Dialogues, guichet banquier et télécommande professeure rejoués localement sans requête externe.
 - Les compteurs de tests exacts et les anciennes candidates restent hors de l'accroche tant que la gate complète actuelle n'est pas rejouée.
+
+### V4
+
+Statut interne : Chantier Godot séparé ; aucun verdict global de jeu terminé.
+
+- Sources et journaux privés relus le 23 septembre 2026.
+- Une candidate Mac restaurée et son entrée dans le monde ont été contrôlées le 21 septembre.
+- Captures natives d'interface avec des données de jeu fictives.
 
 ## Liens
 

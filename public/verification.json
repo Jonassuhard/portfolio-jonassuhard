@@ -104,6 +104,16 @@
       "note": "Résultats automatisés datés et publiés dans le dépôt. Le manifeste marque RELEASE_BLOCKED_BY_PROVIDER_TERMS : il ne prouve pas une compatibilité continue avec ChatGPT ; le cycle macOS propre n'a pas été exécuté."
     },
     {
+      "id": "cortex-bridge-preview-0-6-5",
+      "claim": "Cortex Bridge publie le tag v0.6.5-preview.1 comme preview non finalisée, et non comme release stable.",
+      "scope": "Projet",
+      "status": "publicly-verified",
+      "checkedAt": "2026-09-23",
+      "sourceLabel": "État public de la preview v0.6.5",
+      "sourceHref": "https://github.com/Jonassuhard/cortex-bridge/blob/v0.6.5-preview.1/PREVIEW_V065.md",
+      "note": "Lecture du tag et de la note publique, sans nouvelle exécution des tests Cortex. Installation complète, isolation entre projets, Windows et contrôle de confidentialité restent ouverts. Les scores historiques v0.6.1 ne qualifient pas cette preview."
+    },
+    {
       "id": "lpg-live-audit-2026-08-01",
       "claim": "L'audit live du 2026-08-01 couvre 18 pages publiques contrôlées à 390 px et 1440 px, 36 captures pleine page, 30 images uniques chargées sur le live et cinq scores de performance Lighthouse mobile : Accueil 91, Galerie 87, Compose 97, Méthode 97, Le studio 66.",
       "scope": "Projet",
@@ -113,11 +123,11 @@
     },
     {
       "id": "cool-bank-la-herse-versions",
-      "claim": "Cool Bank / La Herse distingue une V2 3D jouable localement sur un appareil et une V3 en reconstruction, sans validation technique globale actuelle.",
+      "claim": "Cool Bank / La Herse distingue une V2 3D locale, une reconstruction web V3 et une migration Godot V4 partiellement jouable. Aucun pilote en classe n'est validé.",
       "scope": "Projet",
       "status": "private-evidence",
-      "checkedAt": "2026-09-09",
-      "note": "Lecture des sources privées du 9 septembre : les essais V2 du 22 août et V3 du 26 août restent historiques. Le chantier V3 de septembre vise une nouvelle candidate technique avant recette humaine. Aucune nouvelle exécution du jeu, aucun pilote ni résultat pédagogique ne sont revendiqués."
+      "checkedAt": "2026-09-23",
+      "note": "Sources et journaux privés relus le 23 septembre. Les essais V2/V3 d'août restent historiques. V4 : restauration d'une candidate Mac et captures natives du 21 septembre, sans recette complète ni validation sur appareils scolaires. Aucun test humain ou résultat pédagogique déduit des images."
     },
     {
       "id": "rag-board-historical-prototypes",

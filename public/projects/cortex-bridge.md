@@ -5,15 +5,15 @@
 | Repère | Détail |
 | --- | --- |
 | Format | Agent de code local open source piloté par ChatGPT |
-| Période | Juillet - septembre 2026 · tag v0.6.1 |
+| Période | Juillet - septembre 2026 · v0.6.5-preview.1 |
 | Rôle de Jonas | Conception produit, architecture, extension MV3, backend FastAPI, sécurité, QA |
-| Statut | Preview technique open source · tag public v0.6.1, provider-gated |
+| Statut | Preview technique open source · v0.6.5-preview.1 non finalisée |
 | Niveau de preuve | Preuve publique |
 | Stack | Chrome MV3, FastAPI, Next.js, React, SQLite, Python, Ollama |
 
 ## À quoi ça sert
 
-Cortex Bridge transforme ChatGPT en cerveau d'un agent de code local open source. ChatGPT analyse et planifie ; vous validez ; Cortex exécute uniquement dans le dossier choisi et garde une trace. Le projet vise l'usage d'un agent de code sans ajouter un second abonnement dédié. Le code et la preuve technique du tag v0.6.1 sont publics ; l'acceptation fournisseur et le cycle macOS propre restent hors périmètre.
+Cortex Bridge transforme ChatGPT en cerveau d'un agent de code local open source. ChatGPT analyse et planifie ; vous validez ; Cortex exécute dans le dossier choisi et garde une trace. Le projet vise l'usage d'un agent de code sans ajouter un second abonnement dédié. La preview v0.6.5 ajoute le suivi des fichiers transmis et la supervision des actions. Elle reste non finalisée : l'installation complète, l'isolation entre projets et l'acceptation fournisseur ne sont pas acquises.
 
 ## Ce que Jonas a fait
 
@@ -31,21 +31,23 @@ ChatGPT réfléchit et prépare le travail. Vous validez. Cortex exécute dans l
 - Limiter les actions au dossier choisi et bloquer l'exécution en cas de doute.
 - Publier le code, les preuves de release et les limites du projet.
 
-Code public sous licence MIT. La preuve du tag v0.6.1 datée du 10/09/2026 rapporte 724 tests backend, 207 frontend, 138 extension, 26 E2E et 4 accessibilité sans échec ; 1 test E2E optionnel est ignoré. Le manifeste reste explicitement bloqué par les conditions du fournisseur et le cycle macOS propre n'est pas exécuté.
+Revue du dépôt public le 23 septembre 2026 : v0.6.5-preview.1 est une preview non finalisée, pas une release stable. Le document de publication laisse plusieurs validations ouvertes. La preuve historique v0.6.1 rapporte 724 tests backend, 207 frontend, 138 extension, 26 E2E et 4 accessibilité sans échec ; ces résultats ne valident pas la nouvelle version.
 
 ## Visuels
+
+![Autoriser un fichier, une capture ou un lien séparément. Écran de test v0.6.2 conservé dans le package v0.6.5 : données synthétiques, aucune exécution réelle revendiquée.](/assets/proof/cortex-bridge/context-request-v062.webp)
 
 ![Console locale : conversations et dossier de travail, avec les données fictives des tests du dépôt. Ce n'est pas une exécution réelle.](/assets/proof/cortex-bridge/workspace-20260908.webp)
 
 ![Avant exécution : dossier, durée et permissions à vérifier. Scénario fictif rejoué dans l'interface locale.](/assets/proof/cortex-bridge/approval-20260908.webp)
 
-![Dépôt GitHub public : code, tag v0.6.1 et manifeste technique consultables. Le tag reste un technical preview provider-gated.](/assets/proof/cortex-bridge/public-0-20260908.webp)
+![Archive du dépôt GitHub capturée le 8 septembre 2026. Pour la preview actuelle, consulter le lien v0.6.5 ci-dessous.](/assets/proof/cortex-bridge/public-0-20260908.webp)
 
 
 ## Limites
 
 - Les suites automatisées utilisent aussi des fixtures : elles ne prouvent pas une compatibilité continue avec un compte ChatGPT réel.
-- Le cycle macOS propre n'a pas été exécuté pour la preuve v0.6.1.
+- Installation sur un nouveau compte macOS, validation Windows et isolation complète de plusieurs projets restent à vérifier. Le contrôle de confidentialité signale encore une fixture de test ; la preview n'est pas déclarée entièrement validée.
 - Le transport automatique par l'interface ChatGPT entre en conflit avec les conditions du fournisseur : activation opt-in et risque de restriction du compte.
 - Preview technique macOS/Chrome : extension installée manuellement et dépendance à un DOM externe susceptible de changer.
 - Stabilité de la boucle sur plusieurs semaines d'usage réel : pas encore de métrique publiable.
@@ -55,4 +57,5 @@ Code public sous licence MIT. La preuve du tag v0.6.1 datée du 10/09/2026 rappo
 
 - [Étude de cas](/projets/cortex-bridge)
 - [GitHub](https://github.com/Jonassuhard/cortex-bridge)
+- [État de la preview v0.6.5](https://github.com/Jonassuhard/cortex-bridge/blob/v0.6.5-preview.1/PREVIEW_V065.md)
 - [Preuve du tag v0.6.1](https://github.com/Jonassuhard/cortex-bridge/blob/v0.6.1/docs/verification/v0.6.1.json)

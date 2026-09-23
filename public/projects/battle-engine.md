@@ -29,11 +29,11 @@ Un pipeline Python lance le combat dans Godot, prépare la vidéo avec FFmpeg et
 - Reprendre une publication après une interruption sans recommencer tout le rendu.
 - Documenter les droits audio, les contrôles qualité et les étapes d'exploitation.
 
-Combat publié le 31 août 2026, deux autres extraits de combat et deux montages d'archive. Les vidéos sont muettes et démarrent à l'écran, sauf préférence de réduction des animations.
+Nouveau rendu BL05 du 23 septembre 2026 : Gojo contre Sukuna, extrait local de 18 secondes. La publication YouTube du même épisode est liée plus bas. Les autres extraits sont des archives datées. Vidéos muettes à démarrage automatique, sauf préférence de réduction des animations.
 
 ## Visuels
 
-[Voir la vidéo de présentation](/assets/video/battle-league-20260908.mp4)
+[Voir la vidéo de présentation](/assets/video/battle-bl05-20260923.mp4)
 
 [![Extrait de combat issu du corpus local : arène sombre, effets et fin de combat. Archive de juillet 2026, 20 secondes.](/assets/video/battle-saitama-20260908-poster.webp)](/assets/video/battle-saitama-20260908.mp4)
 
@@ -55,4 +55,4 @@ Combat publié le 31 août 2026, deux autres extraits de combat et deux montages
 
 - [Étude de cas](/projets/battle-engine)
 - [Chaîne YouTube](https://www.youtube.com/channel/UCBdIZLI1Z_EmaZgalR8GsHw)
-- [Combat publié le 31 août](https://www.youtube.com/watch?v=0wiPb9gWH7g)
+- [BL05 publié le 23 septembre](https://www.youtube.com/watch?v=kDvb_gy8W18)

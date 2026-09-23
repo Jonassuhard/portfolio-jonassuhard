@@ -2,7 +2,7 @@
 
 > Growth Engineer junior, basé à Paris. IA appliquée, automatisation et produit web. Disponible pour un CDI à partir du 1er octobre 2026. Contact : jonas.suhard@gmail.com.
 
-Dernière mise à jour éditoriale : 2026-09-10 (10 septembre 2026). Les dates de vérification propres à chaque projet restent indiquées dans les sources ; cette mise à jour ne les renouvelle pas.
+Dernière mise à jour éditoriale : 2026-09-23 (23 septembre 2026). Les dates de vérification propres à chaque projet restent indiquées dans les sources ; cette mise à jour ne les renouvelle pas.
 
 ## Profil actuel
 
@@ -27,9 +27,9 @@ Je cherche à évoluer vers un rôle de Forward Deployed Engineer. Je veux compr
 ## Projets à lire d'abord
 
 - [Job Radar](https://jonassuhard.com/projects/job-radar.md) : poste de contrôle pour rassembler les offres, retirer les doublons, expliquer le métier réel et décider quoi faire ensuite. La version personnelle est déployée avec une preuve privée ; l'édition Community v0.1.0-beta.1 est publique avec 336 tests backend, 36 frontend et 37 E2E sans échec. Aucun envoi autonome ; Application Assist n'est pas activé en production et LinkedIn, Indeed et Welcome to the Jungle restent des imports manuels.
-- [Cortex Bridge](https://jonassuhard.com/projects/cortex-bridge.md) : agent de code local open source qui utilise ChatGPT comme cerveau ; l'utilisateur valide avant l'exécution. Tag v0.6.1 public en technical preview, avec preuve offline publiée ; l'acceptation fournisseur et le cycle macOS propre restent non validés, sans affiliation OpenAI.
+- [Cortex Bridge](https://jonassuhard.com/projects/cortex-bridge.md) : agent de code local open source qui utilise ChatGPT comme cerveau ; l'utilisateur valide avant l'exécution. Tag public v0.6.5-preview.1 non finalisé, vérifié le 23 septembre. La supervision des actions et des fichiers évolue ; installation complète, isolation entre projets et acceptation fournisseur restent non validées, sans affiliation OpenAI. Les tests v0.6.1 sont historiques.
 - [Les Petites Griffes](https://jonassuhard.com/projects/les-petites-griffes.md) : site live, CMS et assistant IA cadré ; audit privé daté, projet familial non facturé.
-- [Cool Bank / La Herse](https://jonassuhard.com/projects/educool-la-herse.md) : une banque de classe transformée en monde 3D avec trois rôles. La V2 est déjà jouable localement sur un appareil (`LOCAL_SINGLE_DEVICE_READY`) ; la V3 est une reconstruction séparée en cours de validation technique (état relu le 9 septembre 2026). Les essais d'août ne valident pas le chantier actuel. Captures publiques sans donnée de mineur ; aucun pilote revendiqué.
+- [Cool Bank / La Herse](https://jonassuhard.com/projects/educool-la-herse.md) : une banque de classe transformée en monde 3D avec trois rôles. La V2 est déjà jouable localement sur un appareil (`LOCAL_SINGLE_DEVICE_READY`) ; la V3 est une reconstruction web séparée en cours de validation technique ; la V4 est une migration native distincte vers Godot, partiellement jouable. Sources relues le 23 septembre, captures natives V4 du 21 septembre. Aucun jeu complet, pilote en classe ou bénéfice pédagogique validé ; aucune donnée de mineur publiée.
 - [ISCOM](https://jonassuhard.com/projects/iscom.md) : SEO publié dans Drupal avec vérification humaine.
 - [Preuvia](https://jonassuhard.com/projects/preuvia.md) : audit de visibilité sur quatre IA principales, avec Mistral selon le contexte, et plan d'action à vérifier lors du prochain audit.
 
@@ -37,7 +37,7 @@ Je cherche à évoluer vers un rôle de Forward Deployed Engineer. Je veux compr
 
 - [Educool V2](https://jonassuhard.com/projects/educool-v2.md) : outil réservé à l'enseignante pour suivre les élèves, saisir les ceintures de compétences et préparer les livrets. Distinct du jeu Cool Bank. Captures locales des 8 et 9 septembre 2026 avec données fictives ; améliorations en cours, code privé, aucun gain pédagogique chiffré revendiqué. [Application à accès réservé](https://educool-v2.vercel.app).
 - [Capsélys](https://jonassuhard.com/projects/capselys.md) : refonte de conversion sur staging ; le lien externe pointe vers la production actuelle, pas vers le staging audité.
-- [Battle Engine](https://jonassuhard.com/projects/battle-engine.md) : pipeline vidéo Godot, FFmpeg, RIFE et publication reprenable. La page montre trois extraits de combats, dont un publié le 31 août 2026, ainsi qu'un roster et un teaser d'archive. Aucun résultat d'audience revendiqué.
+- [Battle Engine](https://jonassuhard.com/projects/battle-engine.md) : pipeline vidéo Godot, FFmpeg, RIFE et publication reprenable. Nouvel extrait BL05 du 23 septembre 2026 et lien vers l'épisode publié sur YouTube ; les autres montages restent des archives datées. Aucun résultat d'audience revendiqué.
 - [HoopSphere](https://jonassuhard.com/projects/hoopsphere.md) : prototype MBA d'application basket ; contribution de Jonas centrée sur le marketing et le business plan.
 - [RAG Starter Kit](https://jonassuhard.com/projects/rag-starter-kit.md) : prototype privé multi-tenant audité en juin 2026 ; historique Git documenté, source absente après migration et aucune exécution actuelle revendiquée.
 - [Board IA PME](https://jonassuhard.com/projects/board-ia-pme.md) : prototype Python historique de 437 lignes et 10 fichiers ; source absente après migration, aucune validation client revendiquée.
@@ -52,6 +52,6 @@ Je cherche à évoluer vers un rôle de Forward Deployed Engineer. Je veux compr
 - [Cortex Bridge](https://github.com/Jonassuhard/cortex-bridge)
 - [claude-code-soul](https://github.com/Jonassuhard/claude-code-soul)
 
-Revue générale : 2026-09-10. Job Radar personnel et Community revérifiés le 2026-08-31 ; Cortex Bridge v0.6.1 et son manifeste technique vérifiés le 2026-09-10.
+Revue éditoriale des 15 fiches : 2026-09-23. Les sources accessibles, liens publics et nouveaux médias ont été contrôlés. Les archives privées non montées n'ont pas été réexécutées ; leurs preuves restent historiques. Cortex Bridge v0.6.5-preview.1, les évolutions Cool Bank et la nouvelle sortie Battle Engine sont distingués des validations anciennes.
 
 Revue des médias : 2026-09-08. Nouvelles captures locales ou publiques, sauf Les Petites Griffes conservé à la demande de Jonas. Les captures de démonstration, prévisualisations de carte et archives sont identifiées dans chaque page. Cette revue ne renouvelle pas les dates des tests techniques historiques.

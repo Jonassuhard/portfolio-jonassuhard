@@ -48,12 +48,12 @@ export default function ProjectStory({ project }: ProjectStoryProps) {
         <section className="section">
           <div className="section-head">
             <div>
-              <p className="section-kicker">Deux versions</p>
-              <h2>Deux niveaux de validation.</h2>
+              <p className="section-kicker">Versions du projet</p>
+              <h2>Ce qui fonctionne, ce qui reste à tester.</h2>
             </div>
             <p>
-              La V2 et la V3 sont toutes les deux en 3D. Elles restent séparées
-              parce qu'elles n'ont ni le même périmètre ni le même niveau de preuve.
+              V2 et V3 sont déjà en 3D. V4 change de moteur avec Godot.
+              Chaque version garde son périmètre et ses propres preuves.
             </p>
           </div>
           <div className="version-story-grid">

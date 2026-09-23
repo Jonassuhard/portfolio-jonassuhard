@@ -229,7 +229,7 @@ export const projects: Project[] = [
     repoStatus: "Version personnelle privée · édition Community publique MIT : github.com/Jonassuhard/job-radar-community",
     liveLabel: "Repo Community et preuve v0.1.0-beta.1",
     evidenceNote:
-      "La version personnelle déployée a été contrôlée en privé le 25 août 2026. L'édition Community v0.1.0-beta.1 apporte une preuve publique séparée : 336 tests backend, 36 frontend et 37 E2E sans échec ; 8 E2E sont ignorés intentionnellement.",
+      "Sources personnelles relues le 23 septembre 2026 : classement et contrôle de fraîcheur des offres renforcés localement, sans assimiler ces travaux au code cloud déployé. La preuve de déploiement du 25 août et les captures fictives du 8 septembre restent datées. Community v0.1.0-beta.1 reste la version publique : 336 tests backend, 36 frontend et 37 E2E sans échec ; 8 E2E ignorés intentionnellement dans cette preuve historique.",
     metaDescription:
       "Job Radar réunit les offres d'emploi, explique leur classement et suit les candidatures. Un projet personnel avec une édition open source sur données fictives.",
     cardLine:
@@ -571,7 +571,7 @@ export const projects: Project[] = [
     type: "Jeu scolaire 3D + outil enseignant",
     period: "Juillet 2026 - en cours",
     role: "Conception produit, UX, développement full-stack, systèmes de jeu, sécurité, QA",
-    status: "V2 jouable localement sur un appareil · V3 en reconstruction",
+    status: "V2 locale · V3 web · V4 en migration vers Godot",
     evidenceLevel: "private",
     tier: 1,
     image: "/assets/cards/cool-bank-art.webp",
@@ -586,7 +586,7 @@ export const projects: Project[] = [
     repoStatus: "Dépôts privés, données scolaires exclues des preuves",
     liveLabel: "Démo locale sur données fictives",
     evidenceNote:
-      "V2 : essais locaux du 22 août 2026. V3 : essais d'août et captures de carte des 7 et 8 septembre ; le chantier actuel n'est pas encore entièrement validé. État des sources relu le 9 septembre, sans nouvelle recette du jeu.",
+      "Sources relues le 23 septembre 2026. V2 : essais locaux historiques d'août. V3 : reconstruction web, carte et interfaces encore en travail. V4 : migration distincte vers Godot, partiellement jouable ; captures natives du 21 septembre. Aucun pilote en classe ni validation complète du jeu ne sont revendiqués.",
     metaDescription:
       "Cool Bank transforme une banque de classe en monde 3D partagé : élève, banquier et enseignante y vivent trois responsabilités différentes.",
     cardLine:
@@ -614,6 +614,17 @@ export const projects: Project[] = [
         }
       ],
       "galleryGroups": [
+        {
+          kicker: "Migration Godot",
+          title: "V4 — le chantier natif",
+          description: "La V4 reprend le monde dans Godot. Ces captures des 21 et 23 septembre montrent l'exploration, les commandes et l'éditeur de jardin, pas un jeu terminé. La progression complète et les essais sur un PC scolaire restent à valider.",
+          featuredFirst: true,
+          images: [
+            { src: "/assets/proof/educool/v4-world-20260921.webp", caption: "V4 : entrée dans le bourg et commandes du joueur. Capture native de contrôle du 21 septembre 2026, sans données scolaires.", width: 1440, height: 900 },
+            { src: "/assets/proof/educool/v4-garden-20260923.webp", caption: "V4 : déplacer et tourner les objets du jardin. Test natif du 23 septembre avec maison et inventaire de démonstration injectés ; ce n'est pas une progression joueur complète.", width: 1440, height: 1024 },
+            { src: "/assets/proof/educool/v4-mobile-20260921.webp", caption: "V4 : contrôle de l'interface à 390 pixels dans Godot. Ce cadrage ne prouve pas une version mobile distribuée ni un test sur téléphone physique.", width: 390, height: 844 }
+          ]
+        },
         {
           "kicker": "Reconstruction V3",
           "title": "V3 — la reconstruction locale",
@@ -672,7 +683,8 @@ export const projects: Project[] = [
       "V3 sépare quatre autorités : Game, Control, Product/UI Kit et Educool, réunies par une pile locale reproductible.",
       "Économie centicool, mouvements, collisions, rôles, soldes et récompenses restent autoritaires côté serveur.",
       "Authentification et données scolaires utilisent Firebase / Firestore / Cloud Functions sur un projet fictif local.",
-      "Les preuves de test, manifestes de release et limites sont conservés séparément pour empêcher toute confusion entre V2 et V3."
+      "V4 migre le monde dans Godot : chantier natif séparé, sans remplacer les sources V2 ou V3.",
+      "Les preuves et limites restent attribuées à leur version, sans transférer une validation de V2 à V3 ou V4."
     ],
     versions: [
       {
@@ -701,7 +713,7 @@ export const projects: Project[] = [
         summary:
           "La V3 est une reconstruction séparée, avec une carte et un périmètre plus larges. Le travail actuel porte sur le monde, les déplacements et les interfaces. La validation technique complète, puis les essais avec les utilisateurs, restent à faire.",
         evidence: [
-          "État du 9 septembre 2026 : le plan actif distingue les essais ciblés du chantier actuel et les anciennes candidates d'août. Aucun verdict global actuel n'est acquis.",
+          "Sources relues le 23 septembre : le travail de septembre porte notamment sur la carte Blender, le terrain et les commandes à l'écran. La fluidité reste insuffisante dans le contrôle documenté ; aucun verdict global actuel n'est acquis.",
           "Recette visuelle du 26/08/2026 : trois rôles entrés dans le monde, mouvements réels et 396 placements chargés.",
           "Dialogues, guichet banquier et télécommande professeure rejoués localement sans requête externe.",
           "Les compteurs de tests exacts et les anciennes candidates restent hors de l'accroche tant que la gate complète actuelle n'est pas rejouée."
@@ -710,6 +722,15 @@ export const projects: Project[] = [
           "Validation de la direction artistique, test sur appareil enfant modeste et observation de la compréhension par un enfant encore requis.",
           "Aucun déploiement, aucune donnée réelle d'enfant et aucun verdict d'usage terrain ne sont revendiqués."
         ]
+      },
+      {
+        label: "V4",
+        name: "Migration native vers Godot",
+        publicStatus: "Migration partiellement jouable, non finalisée",
+        status: "Chantier Godot séparé ; aucun verdict global de jeu terminé",
+        summary: "La V4 reprend le monde dans Godot. L'exploration, les missions, les boutiques et les premières étapes de maison sont partiellement jouables. Le but est de travailler sur un client natif ; les performances sur les PC scolaires restent à mesurer.",
+        evidence: ["Sources et journaux privés relus le 23 septembre 2026.", "Une candidate Mac restaurée et son entrée dans le monde ont été contrôlées le 21 septembre.", "Captures natives d'interface avec des données de jeu fictives."],
+        limits: ["La progression complète, les accès aux maisons et plusieurs parcours de sauvegarde restent en chantier.", "Aucune validation Windows, PC i5/4 Go, enfant ou utilisation en classe n'est déduite de ces captures."]
       }
     ],
     notMeasured: [
@@ -717,10 +738,10 @@ export const projects: Project[] = [
       "Gain de temps pour l'enseignante : non chiffré publiquement."
     ],
     proofLine:
-      "La V2 permet déjà de vivre la boucle 3D sur un appareil. La V3 élargit le projet, mais aucune efficacité pédagogique ni utilisation en classe n'est encore revendiquée.",
+      "La V2 permet déjà de vivre la boucle 3D sur un appareil. La V3 reconstruit le jeu web ; la V4 est une migration native distincte vers Godot. Aucune efficacité pédagogique ni utilisation en classe n'est revendiquée.",
     summary:
       "Une banque de classe transformée en petit monde vivant : les élèves explorent, économisent et tiennent des rôles, pendant que l'enseignante garde un outil de pilotage séparé.",
-    stack: ["Three.js", "Next.js", "Firebase", "Firestore", "Cloud Functions", "TypeScript", "Vite", "Node.js", "Playwright"],
+    stack: ["Godot", "Blender", "Three.js", "Next.js", "Firebase", "Firestore", "Cloud Functions", "TypeScript", "Vite", "Node.js", "Playwright"],
     recruiterProof: [
       "Partir d'un besoin réel de classe, construire une expérience testable, puis séparer clairement ce qui fonctionne de ce qui reste à valider.",
       "Relier le jeu, les trois rôles, Firebase, la sécurité et les tests.",
@@ -730,12 +751,12 @@ export const projects: Project[] = [
       "Aucune donnée réelle de mineur dans les preuves, captures ou environnements de démonstration.",
       "Trois rôles distincts : élève, professeure et banquier, sans classement financier humiliant.",
       "Usage clavier, tactile et tablette, y compris sur matériel modeste.",
-      "V2 et V3 physiquement et techniquement séparées : aucune preuve recyclée d'une version à l'autre."
+      "V2, V3 et V4 physiquement et techniquement séparées : aucune preuve recyclée d'une version à l'autre."
     ],
     decisions: [
       {
-        decision: "Deux versions conservées comme autorités séparées",
-        why: "V2 est une base locale jouable ; V3 change l'architecture, la carte et le niveau de validation.",
+        decision: "Conserver les preuves de chaque version séparément",
+        why: "V2 est une base locale jouable ; V3 reconstruit le jeu web et V4 le migre dans Godot. Chaque chantier a ses propres limites.",
         rejected: "Présenter V3 comme une simple mise à jour visuelle de V2."
       },
       {
@@ -758,11 +779,12 @@ export const projects: Project[] = [
     results: [
       "La boucle V2 se joue localement sur un appareil avec les trois rôles et des données fictives.",
       "Les parcours visuels V3 élève, banquier et professeure ont été rejoués localement le 26/08/2026.",
-      "Les deux versions gardent des preuves séparées ; aucune utilisation réelle en classe n'est inventée."
+      "V4 : une candidate Mac restaurée entre dans le monde ; cela ne valide pas la progression complète ni les appareils scolaires.",
+      "Chaque version garde ses preuves séparées ; aucune utilisation réelle en classe n'est inventée."
     ],
     limits: [
       "Preuve privée : code, captures complètes et données de contexte se montrent uniquement sur fixtures anonymisées.",
-      "V2 n'est pas prête pour Internet ; V3 n'est pas validée comme pilote local auprès d'enfants.",
+      "V2 n'est pas prête pour Internet ; V3 et V4 ne sont pas validées comme pilotes auprès d'enfants.",
       "Les volumes de tests prouvent le comportement technique, pas l'utilité pédagogique ni l'adoption."
     ],
     links: [
@@ -1003,6 +1025,7 @@ export const projects: Project[] = [
   },
   {
     slug: "preuvia",
+    heroImage: { src: "/assets/proof/preuvia/live-20260923.webp", caption: "Accueil public contrôlé le 23 septembre 2026. L'exemple de benchmark est fictif, pas un résultat client.", width: 1397, height: 848 },
     roleSummary: "J'ai conçu l'offre, la méthode d'audit, le site et un exemple de livrable.",
     title: "Preuvia - audit de visibilité dans les réponses des IA",
     shortTitle: "Preuvia",
@@ -1121,10 +1144,10 @@ export const projects: Project[] = [
     title: "Cortex Bridge - ChatGPT comme cerveau d'un agent de code local",
     shortTitle: "Cortex Bridge",
     type: "Agent de code local open source piloté par ChatGPT",
-    period: "Juillet - septembre 2026 · tag v0.6.1",
+    period: "Juillet - septembre 2026 · v0.6.5-preview.1",
     role: "Conception produit, architecture, extension MV3, backend FastAPI, sécurité, QA",
-    status: "Preview technique open source · tag public v0.6.1, provider-gated",
-    cardStatus: "Preview v0.6.1 · provider-gated",
+    status: "Preview technique open source · v0.6.5-preview.1 non finalisée",
+    cardStatus: "Preview v0.6.5 · non finalisée",
     cardLine:
       "Utiliser ChatGPT comme cerveau d'un agent de code. Vous validez les actions, Cortex les exécute sur votre ordinateur.",
     evidenceLevel: "public",
@@ -1134,7 +1157,7 @@ export const projects: Project[] = [
     repoStatus: "Repo public sous MIT : github.com/Jonassuhard/cortex-bridge",
     liveLabel: "Repo GitHub (lien)",
     evidenceNote:
-      "Code public sous licence MIT. La preuve du tag v0.6.1 datée du 10/09/2026 rapporte 724 tests backend, 207 frontend, 138 extension, 26 E2E et 4 accessibilité sans échec ; 1 test E2E optionnel est ignoré. Le manifeste reste explicitement bloqué par les conditions du fournisseur et le cycle macOS propre n'est pas exécuté.",
+      "Revue du dépôt public le 23 septembre 2026 : v0.6.5-preview.1 est une preview non finalisée, pas une release stable. Le document de publication laisse plusieurs validations ouvertes. La preuve historique v0.6.1 rapporte 724 tests backend, 207 frontend, 138 extension, 26 E2E et 4 accessibilité sans échec ; ces résultats ne valident pas la nouvelle version.",
     metaDescription:
       "Cortex Bridge utilise ChatGPT comme cerveau d'un agent de code local open source : vous validez, puis il exécute dans le dossier choisi.",
     architecture: [
@@ -1156,7 +1179,7 @@ export const projects: Project[] = [
     proofLine:
       "ChatGPT réfléchit et prépare le travail. Vous validez. Cortex exécute dans le dossier choisi et garde une trace de chaque étape.",
     summary:
-      "Cortex Bridge transforme ChatGPT en cerveau d'un agent de code local open source. ChatGPT analyse et planifie ; vous validez ; Cortex exécute uniquement dans le dossier choisi et garde une trace. Le projet vise l'usage d'un agent de code sans ajouter un second abonnement dédié. Le code et la preuve technique du tag v0.6.1 sont publics ; l'acceptation fournisseur et le cycle macOS propre restent hors périmètre.",
+      "Cortex Bridge transforme ChatGPT en cerveau d'un agent de code local open source. ChatGPT analyse et planifie ; vous validez ; Cortex exécute dans le dossier choisi et garde une trace. Le projet vise l'usage d'un agent de code sans ajouter un second abonnement dédié. La preview v0.6.5 ajoute le suivi des fichiers transmis et la supervision des actions. Elle reste non finalisée : l'installation complète, l'isolation entre projets et l'acceptation fournisseur ne sont pas acquises.",
     stack: ["Chrome MV3", "FastAPI", "Next.js", "React", "SQLite", "Python", "Ollama"],
     recruiterProof: [
       "Construire un produit complet avec une extension, un backend local, une interface et des tests.",
@@ -1199,17 +1222,24 @@ export const projects: Project[] = [
       "Installation macOS contrôlée par plan immuable et diagnostic local reproductible."
     ],
     results: [
-      "Preuve du tag v0.6.1 du 10/09/2026 : 724 tests backend, 207 frontend, 138 extension, 26 E2E et 4 accessibilité sans échec ; 1 E2E optionnel ignoré. Les gates offline passent ; le verdict reste RELEASE_BLOCKED_BY_PROVIDER_TERMS.",
+      "Le tag v0.6.5-preview.1 et son état d'avancement sont publics. Les fichiers demandés, les autorisations et les étapes d'envoi sont suivis explicitement.",
+      "La note de publication rapporte un build et 45 contrôles ciblés réussis, mais pas une validation complète : un échec de la suite backend a été corrigé puis retesté seulement sur un sous-ensemble.",
       "Dix scénarios à deux conversations exécutés sans croisement ; le brouillon du troisième writer est conservé lors du refus.",
       "Le diagnostic d'arrêt rend visibles les processus actifs et permet de couper immédiatement l'exécution locale."
     ],
     limits: [
       "Les suites automatisées utilisent aussi des fixtures : elles ne prouvent pas une compatibilité continue avec un compte ChatGPT réel.",
-      "Le cycle macOS propre n'a pas été exécuté pour la preuve v0.6.1.",
+      "Installation sur un nouveau compte macOS, validation Windows et isolation complète de plusieurs projets restent à vérifier. Le contrôle de confidentialité signale encore une fixture de test ; la preview n'est pas déclarée entièrement validée.",
       "Le transport automatique par l'interface ChatGPT entre en conflit avec les conditions du fournisseur : activation opt-in et risque de restriction du compte.",
       "Preview technique macOS/Chrome : extension installée manuellement et dépendance à un DOM externe susceptible de changer."
     ],
     gallery: [
+      {
+        src: "/assets/proof/cortex-bridge/context-request-v062.webp",
+        caption: "Autoriser un fichier, une capture ou un lien séparément. Écran de test v0.6.2 conservé dans le package v0.6.5 : données synthétiques, aucune exécution réelle revendiquée.",
+        width: 1440,
+        height: 1000
+      },
       {
         "src": "/assets/proof/cortex-bridge/workspace-20260908.webp",
         "caption": "Console locale : conversations et dossier de travail, avec les données fictives des tests du dépôt. Ce n'est pas une exécution réelle.",
@@ -1224,7 +1254,7 @@ export const projects: Project[] = [
       },
       {
         "src": "/assets/proof/cortex-bridge/public-0-20260908.webp",
-        "caption": "Dépôt GitHub public : code, tag v0.6.1 et manifeste technique consultables. Le tag reste un technical preview provider-gated.",
+        "caption": "Archive du dépôt GitHub capturée le 8 septembre 2026. Pour la preview actuelle, consulter le lien v0.6.5 ci-dessous.",
         "width": 1440,
         "height": 960
       }
@@ -1233,6 +1263,11 @@ export const projects: Project[] = [
       {
         label: "GitHub",
         href: "https://github.com/Jonassuhard/cortex-bridge",
+        external: true
+      },
+      {
+        label: "État de la preview v0.6.5",
+        href: "https://github.com/Jonassuhard/cortex-bridge/blob/v0.6.5-preview.1/PREVIEW_V065.md",
         external: true
       },
       {
@@ -1259,12 +1294,12 @@ export const projects: Project[] = [
     tier: 2,
     image: "/assets/cards/battle-engine-art.webp",
     fullColorMedia: true,
-    video: "/assets/video/battle-league-20260908.mp4",
+    video: "/assets/video/battle-bl05-20260923.mp4",
     repoStatus: "Dépôt privé",
     liveLabel: "Lab",
     noindex: true,
     evidenceNote:
-      "Combat publié le 31 août 2026, deux autres extraits de combat et deux montages d'archive. Les vidéos sont muettes et démarrent à l'écran, sauf préférence de réduction des animations.",
+      "Nouveau rendu BL05 du 23 septembre 2026 : Gojo contre Sukuna, extrait local de 18 secondes. La publication YouTube du même épisode est liée plus bas. Les autres extraits sont des archives datées. Vidéos muettes à démarrage automatique, sauf préférence de réduction des animations.",
     architecture: [
       "Pipeline Python orchestrant : rendu Godot → FFmpeg → interpolation RIFE → publication via l'API YouTube."
     ],
@@ -1302,6 +1337,8 @@ export const projects: Project[] = [
     ],
     results: [
       "Le pipeline nightly peut reprendre après une interruption au lieu de recommencer toute la chaîne.",
+      "Le 23 septembre, le contrôle de lisibilité a été corrigé pour analyser le bandeau de l'épisode plutôt que l'image entière. Un témoin avec bandeau masqué reste refusé ; le seuil n'a pas été abaissé.",
+      "L'épisode BL05 a ensuite été publié sur YouTube. Cette publication prouve une sortie du pipeline, pas un résultat d'audience.",
       "Aucune métrique d'audience n'est citée."
     ],
     limits: [
@@ -1350,8 +1387,8 @@ export const projects: Project[] = [
         "external": true
       },
       {
-        "label": "Combat publié le 31 août",
-        "href": "https://www.youtube.com/watch?v=0wiPb9gWH7g",
+        "label": "BL05 publié le 23 septembre",
+        "href": "https://www.youtube.com/watch?v=kDvb_gy8W18",
         "external": true
       }
     ]
@@ -1569,6 +1606,7 @@ export const projects: Project[] = [
   {
     evidenceNote: "Trois captures de la démo publique du 8 septembre 2026, dans une session anonyme Joueur Preview. Les scores proviennent des propositions réellement jouées pour la capture.",
     slug: "edusemantix",
+    heroImage: { src: "/assets/proof/edusemantix/live-20260923.webp", caption: "Partie publique du 23 septembre 2026 : le mot « livre » reçoit un score de proximité. Session de contrôle, pas une mesure d'audience.", width: 1422, height: 863 },
     roleSummary: "J'ai conçu et développé le jeu et sa progression en temps réel.",
     title: "Edusemantix - jeu de devinette sémantique multijoueur",
     shortTitle: "Edusemantix",

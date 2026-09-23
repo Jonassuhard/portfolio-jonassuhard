@@ -20,7 +20,8 @@ const titles: Record<string, string> = {
   "cortex-bridge-repo": "Cortex Bridge : le code public",
   "cortex-bridge-release-0-6-1": "Cortex Bridge : les tests de la version 0.6.1",
   "lpg-live-audit-2026-08-01": "Les Petites Griffes : l'audit du site",
-  "cool-bank-la-herse-versions": "Cool Bank : ce qui est validé en V2 et V3",
+  "cool-bank-la-herse-versions": "Cool Bank : distinguer V2, V3 et V4",
+  "cortex-bridge-preview-0-6-5": "Cortex Bridge : preview v0.6.5 non finalisée",
   "rag-board-historical-prototypes": "RAG et Board IA : les prototypes archivés",
   "hoopsphere-metrics": "HoopSphere : les chiffres retirés",
   "anthropic-training": "Anthropic Academy : la formation suivie"

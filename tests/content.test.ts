@@ -288,7 +288,7 @@ test("la fiche Markdown Job Radar projette le besoin, l'intention et les limites
   assert.match(markdown, /LinkedIn[\s\S]*Indeed[\s\S]*Welcome to the Jungle/i);
 });
 
-test("Cool Bank raconte deux versions 3D distinctes avant ses statuts techniques", () => {
+test("Cool Bank distingue ses chantiers 3D avant ses statuts techniques", () => {
   const project = projects.find((item) => item.slug === "educool-la-herse") as
     | ((typeof projects)[number] & {
         fullColorMedia?: boolean;
@@ -311,6 +311,7 @@ test("Cool Bank raconte deux versions 3D distinctes avant ses statuts techniques
     "L'enseignante"
   ]);
   assert.deepEqual(project.story?.galleryGroups.map((group) => group.title), [
+    "V4 — le chantier natif",
     "V3 — la reconstruction locale",
     "V2 — la boucle 3D déjà jouable"
   ]);
@@ -371,6 +372,16 @@ test("Cortex Bridge reste une preuve logicielle publique et qualifiée", () => {
   );
   assert.match(release.note, /ne prouve pas une compatibilité continue/i);
   assert.match(release.note, /cycle macOS propre[^.]*pas été exécuté/i);
+});
+
+test("la preview Cortex actuelle ne recycle pas la validation historique", () => {
+  const cortex = projects.find((project) => project.slug === "cortex-bridge")!;
+  assert.match(cortex.status, /v0\.6\.5-preview\.1 non finalisée/);
+  assert.match(cortex.evidenceNote ?? "", /ne valident pas la nouvelle version/);
+  assert.ok(cortex.links.some((link) => link.href.endsWith("/v0.6.5-preview.1/PREVIEW_V065.md")));
+  const profile = JSON.parse(readFileSync(new URL("../public/profile.json", import.meta.url), "utf8"));
+  assert.equal(profile.citable_facts.cortex_bridge_preview_0_6_5.checked_at, "2026-09-23");
+  assert.match(profile.projects.find((project: {project: string}) => project.project === "Cortex Bridge").evidence, /non finalisée/);
 });
 
 test("aucune capture Educool issue d'une classe réelle n'est publiée", () => {
@@ -470,7 +481,7 @@ test("les projets utilisent les médias frais retenus lors de l'audit", () => {
 
   const bySlug = (slug: string) => projects.find((item) => item.slug === slug);
   assert.equal(bySlug("les-petites-griffes")?.video, "/assets/video/les-petites-griffes.mp4");
-  assert.equal(bySlug("battle-engine")?.video, "/assets/video/battle-league-20260908.mp4");
+  assert.equal(bySlug("battle-engine")?.video, "/assets/video/battle-bl05-20260923.mp4");
   assert.equal(
     bySlug("educool-la-herse")?.heroImage?.src,
     "/assets/proof/educool/v2-village-20260817.webp"
@@ -481,7 +492,7 @@ test("les projets utilisent les médias frais retenus lors de l'audit", () => {
   assert.match(JSON.stringify(bySlug("claude-code-soul")?.gallery), /public-0-20260908\.webp/);
 });
 
-test("Cool Bank / La Herse expose séparément les versions V2 et V3", () => {
+test("Cool Bank / La Herse expose séparément les versions V2, V3 et V4", () => {
   const project = projects.find((item) => item.slug === "educool-la-herse") as
     | ((typeof projects)[number] & {
         versions?: Array<{ label: string; status: string; publicStatus?: string }>;
@@ -501,7 +512,8 @@ test("Cool Bank / La Herse expose séparément les versions V2 et V3", () => {
 
   assert.ok(project);
   assert.equal(project.shortTitle, "Cool Bank / La Herse");
-  assert.deepEqual(project.versions?.map((version) => version.label), ["V2", "V3"]);
+  assert.deepEqual(project.versions?.map((version) => version.label), ["V2", "V3", "V4"]);
+  assert.match(project.versions?.[2].publicStatus ?? "", /partiellement jouable, non finalisée/);
   assert.match(project.versions?.[0].status ?? "", /LOCAL_SINGLE_DEVICE_READY/);
   assert.match(project.versions?.[1].status ?? "", /READY_FOR_HUMAN_RECIPE/);
   assert.doesNotMatch(
@@ -515,7 +527,7 @@ test("Cool Bank / La Herse expose séparément les versions V2 et V3", () => {
   assert.match(project.versions?.[1].status ?? "", /objectif, pas un statut actuel/);
   assert.doesNotMatch(project.versions?.[1].publicStatus ?? "", /prêt pour des tests humains/);
   assert.match(markdown, /## Versions[\s\S]*### V2[\s\S]*### V3/);
-  assert.equal(machineProject.versions.length, 2);
+  assert.equal(machineProject.versions.length, 3);
 });
 
 test("aucun projet privé ne se présente comme copie publique", () => {

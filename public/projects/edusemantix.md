@@ -31,6 +31,8 @@ Trois captures de la démo publique du 8 septembre 2026, dans une session anonym
 
 ## Visuels
 
+![Partie publique du 23 septembre 2026 : le mot « livre » reçoit un score de proximité. Session de contrôle, pas une mesure d'audience.](/assets/proof/edusemantix/live-20260923.webp)
+
 ![Démo publique : trois propositions jouées dans une session anonyme, avec leur score sémantique.](/assets/proof/edusemantix/game-20260908.webp)
 
 ![Règles accessibles depuis la partie : proximité, température et progression.](/assets/proof/edusemantix/rules-20260908.webp)

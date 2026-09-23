@@ -35,6 +35,8 @@ Site et détail public de l'offre accessibles en ligne. Les éventuelles mission
 
 ## Visuels
 
+![Accueil public contrôlé le 23 septembre 2026. L'exemple de benchmark est fictif, pas un résultat client.](/assets/proof/preuvia/live-20260923.webp)
+
 ![Accueil public : la promesse et un exemple de comparaison entre réponses d'IA.](/assets/proof/preuvia/public-0-20260908.webp)
 
 ![Le site explique ce que l'audit observe et les étapes de la prestation.](/assets/proof/preuvia/public-750-20260908.webp)

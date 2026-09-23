@@ -63,7 +63,7 @@ Un besoin personnel transformé en outil de travail, avec un classement explicab
 - Choisir ce qui peut être automatisé et ce qui doit rester une décision humaine.
 - Partager une édition open source sans exposer les CV ni les candidatures.
 
-La version personnelle déployée a été contrôlée en privé le 25 août 2026. L'édition Community v0.1.0-beta.1 apporte une preuve publique séparée : 336 tests backend, 36 frontend et 37 E2E sans échec ; 8 E2E sont ignorés intentionnellement.
+Sources personnelles relues le 23 septembre 2026 : classement et contrôle de fraîcheur des offres renforcés localement, sans assimiler ces travaux au code cloud déployé. La preuve de déploiement du 25 août et les captures fictives du 8 septembre restent datées. Community v0.1.0-beta.1 reste la version publique : 336 tests backend, 36 frontend et 37 E2E sans échec ; 8 E2E ignorés intentionnellement dans cette preuve historique.
 
 ### Versions
 
