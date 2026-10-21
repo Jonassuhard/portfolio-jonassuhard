@@ -45,7 +45,7 @@ test("le choix Clarity expire après six mois et change avec la politique", () =
 });
 
 test("la politique décrit les traitements, durées, transferts et droits", () => {
-  assert.match(privacy, /Dernière mise à jour : 19 septembre 2026/);
+  assert.match(privacy, /Dernière mise à jour : 21 octobre 2026/);
   for (const expected of [
     /Responsable du traitement/,
     /intérêt légitime/,

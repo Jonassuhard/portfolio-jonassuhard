@@ -15,7 +15,7 @@ export default function ConfidentialitePage() {
       <section>
         <p className="eyebrow">Protection des données</p>
         <AnimatedTitle>Confidentialité.</AnimatedTitle>
-        <p className="updated">Dernière mise à jour : 19 septembre 2026</p>
+        <p className="updated">Dernière mise à jour : 21 octobre 2026</p>
       </section>
 
       <div className="legal">
@@ -132,6 +132,24 @@ export default function ConfidentialitePage() {
               politique de confidentialité
             </a>
             .
+          </p>
+        </section>
+
+        <section>
+          <h2>Application gws et accès à la messagerie</h2>
+          <p>
+            gws est un outil personnel en ligne de commande, utilisé uniquement par Jonas Suhard sur
+            sa propre boîte Gmail, jonas.suhard@gmail.com. L'outil s'authentifie par OAuth 2.0 auprès
+            de Google et ne dispose que du droit de lecture des messages. Les jetons d'accès sont
+            chiffrés et conservés sur la machine locale de Jonas ; aucune donnée n'est transmise à un
+            serveur qu'il exploiterait. Google reste destinataire des requêtes, en qualité de
+            fournisseur de la messagerie. L'accès peut être révoqué à tout moment depuis les
+            paramètres de sécurité du compte Google.
+          </p>
+          <p>
+            Aucun message n'est utilisé à des fins de prospection, de profilage ou de publication.
+            L'outil sert uniquement à consulter, rechercher et classer les messages du titulaire du
+            compte. Il ne lit aucune autre boîte et ne concerne aucun tiers.
           </p>
         </section>
 
