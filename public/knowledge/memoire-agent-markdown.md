@@ -5,37 +5,37 @@ Dernière vérification : 2026-07-20.
 
 ## Réponse courte
 
-- Un agent sans mémoire repart de zéro à chaque session. La solution la plus simple qui tient dans le temps, c'est du Markdown en clair.
-- Je sépare trois couches. L'identité de l'agent, sa méthode de travail, et son contexte projet du moment.
-- Chaque projet garde son propre contexte, chargé quand on l'ouvre, pas empilé dans un fichier géant.
-- Les corrections deviennent des règles écrites, pour ne pas refaire deux fois la même erreur.
-- J'ai testé d'autres pistes. Le Markdown en masse reste le plus lisible quand plusieurs agents travaillent sur le même projet.
+- Sans mémoire, un agent repart de zéro à chaque session. Des fichiers Markdown simples peuvent garder le contexte.
+- Je sépare l'identité de l'agent, sa méthode de travail et le contexte du projet.
+- Chaque projet garde son contexte, chargé quand on l'ouvre, au lieu d'un fichier unique très long.
+- Les corrections deviennent des règles écrites pour éviter la même erreur.
+- Le Markdown reste simple à lire quand plusieurs agents travaillent sur un même projet.
 
 ## Problème
 
-Sorti de la boîte, un assistant oublie tout entre deux sessions. On lui réexplique le contexte, les préférences, les erreurs déjà commises. Sans structure, la mémoire devient soit un dump illisible, soit une base de données que l'agent ne relit jamais au bon moment.
+Entre deux sessions, un assistant peut perdre le contexte, les préférences et les erreurs déjà connues. Sans structure, les notes deviennent trop longues ou ne sont pas relues au bon moment.
 
 ## Méthode
 
-- Poser un fichier d'identité stable, avec le ton, les valeurs et ce que l'agent refuse de faire.
-- Séparer les règles de méthode dans leurs propres fichiers, courts et actionnables.
-- Donner à chaque projet son fichier de contexte, lu à l'ouverture et mis à jour à la fin de chaque tâche.
-- Transformer chaque correction en une ligne de règle, datée, avec la cause et le correctif.
-- Garder chaque fichier court. Quand il dépasse sa limite, on externalise et on pointe, on n'empile pas.
+- Créer un fichier d'identité stable avec le ton, les valeurs et les refus de l'agent.
+- Garder les règles de méthode dans des fichiers courts et utilisables.
+- Donner à chaque projet un fichier de contexte, lu au début et mis à jour à la fin de la tâche.
+- Transformer une correction en règle datée, avec sa cause et son correctif.
+- Garder les fichiers courts. Quand ils deviennent trop longs, créer un fichier séparé et faire un lien.
 
 ## Exemple
 
-Sur claude-code-soul, la mémoire tient dans des fichiers Markdown versionnés. Un fichier d'âme pour l'identité, des règles séparées, un contexte par projet et un journal de leçons. Plusieurs modèles lisent les mêmes fichiers, Claude, Gemini et Codex, sans se marcher dessus. L'agent relit le fichier à jour au lieu de se fier à un résumé qui se dégrade.
+Sur claude-code-soul, la mémoire tient dans des fichiers Markdown versionnés : identité, règles, contexte par projet et leçons. Claude, Gemini et Codex lisent les mêmes fichiers. L'agent relit le fichier à jour au lieu de se fier à un ancien résumé.
 
 ## Limites
 
-- C'est du Markdown, pas une base vectorielle. Pour retrouver un fait précis dans des milliers de notes, une recherche sémantique reste plus adaptée.
-- La méthode demande de la discipline. Un fichier qu'on ne met pas à jour ment vite.
-- Cette organisation reflète une façon de travailler. Elle s'adapte, elle ne se copie pas telle quelle.
+- C'est du Markdown, pas une base de recherche sémantique. Pour retrouver un fait parmi des milliers de notes, une recherche dédiée est plus adaptée.
+- La méthode demande de la discipline. Un fichier non mis à jour devient vite faux.
+- Cette organisation reflète une façon de travailler. Il faut l'adapter, pas la copier telle quelle.
 
 ## À retenir
 
-- La mémoire utile d'un agent, c'est celle qu'il relit au bon moment, pas la plus grosse.
+- La mémoire utile est celle que l'agent relit au bon moment, pas la plus longue.
 - Trois couches suffisent : identité, méthode, contexte projet.
 - Le Markdown en clair gagne quand plusieurs agents doivent lire la même mémoire.
 
@@ -49,8 +49,8 @@ Sur claude-code-soul, la mémoire tient dans des fichiers Markdown versionnés. 
 
 ### Pourquoi pas Obsidian ou une base de notes ?
 
-Obsidian est très bien pour un cerveau humain. Pour un agent, le plus fiable reste des fichiers texte simples qu'il lit et réécrit directement, sans passer par une couche d'application. Le Markdown en clair se versionne, se compare et se partage entre plusieurs modèles.
+Obsidian convient bien à des notes humaines. Pour un agent, des fichiers texte simples sont plus faciles à lire et modifier directement. Le Markdown se versionne, se compare et se partage entre plusieurs modèles.
 
 ### Ça marche avec d'autres modèles que Claude ?
 
-Oui. Les mêmes fichiers Markdown sont lus par Claude, Gemini et Codex. Le format neutre, c'est justement ce qui permet de changer de modèle sans réécrire la mémoire.
+Oui. Claude, Gemini et Codex peuvent lire les mêmes fichiers Markdown. Ce format permet de changer de modèle sans réécrire la mémoire.

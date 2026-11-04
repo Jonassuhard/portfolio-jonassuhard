@@ -14,6 +14,7 @@ const routes = new Set([
   "/",
   "/a-propos",
   "/competences",
+  "/contact",
   "/confidentialite",
   "/knowledge",
   "/mentions-legales",

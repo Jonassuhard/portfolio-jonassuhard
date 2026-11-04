@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { evidenceLevelMeta, recruiterFeatured, site, pageMeta } from "@/lib/projects";
+import { recruiterFeatured, site, pageMeta } from "@/lib/projects";
 import { faqItems } from "@/lib/faq";
 import { faqPageJsonLd } from "@/lib/json-ld";
 import AnimatedTitle from "../animated-title";
@@ -15,271 +15,102 @@ export const metadata: Metadata = pageMeta({
 
 export default function RecruitersPage() {
   return (
-    <div className="page">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageJsonLd()) }}
-      />
-      <section className="case-hero">
-        <div>
-          <p className="eyebrow">Candidature</p>
-          <AnimatedTitle>
-            Chef de projet IA appliquée &amp; automatisation junior.
-          </AnimatedTitle>
-          <p className="role-aliases">Growth Engineer junior · Product Builder IA</p>
-          <p className="title-definition">
-            <Link href="/a-propos#growth-engineer">Correspondance avec le rôle Growth Engineer →</Link>
-          </p>
-          <p className="lead">
-            Je prends le dernier kilomètre : les données, les validations, la
-            mesure. Je ne livre pas une démo de plus ; je livre un outil qui
-            tourne, avec ce qu'il faut pour le reprendre. Et je dis aussi ce
-            qu'il ne règle pas.
-          </p>
-          <div className="button-row">
-            <a className="button primary" href={`mailto:${site.email}`}>Me contacter</a>
-            <a className="button" href={site.github}>GitHub</a>
-            <Link className="button" href="/outils/decodeur-offre-ia">Décoder une offre IA</Link>
-          </div>
-          <p className="cta-sub">
-            CV : <a href={site.cvStyled}>version site</a> · <a href={site.cvClassic}>classique</a>
-          </p>
-        </div>
-        <div className="panel">
-          <h2>L'essentiel</h2>
-          <table className="summary-table">
-            <tbody>
-              <tr>
-                <th scope="row">Contrat</th>
-                <td>CDI junior</td>
-              </tr>
-              <tr>
-                <th scope="row">Disponibilité</th>
-                <td><strong>Immédiate</strong></td>
-              </tr>
-              <tr>
-                <th scope="row">Zone</th>
-                <td>Paris ou hybride</td>
-              </tr>
-              <tr>
-                <th scope="row">Rôles</th>
-                <td>Chef de projet digital &amp; marketing IA, Chef de projet IA appliquée &amp; automatisation junior, Growth Engineer junior, Product Builder IA</td>
-              </tr>
-              <tr>
-                <th scope="row">Stack</th>
-                <td>Next.js, React, Firebase, Supabase, Python, Playwright, SEO, workflows LLM</td>
-              </tr>
-              <tr>
-                <th scope="row">Environnements</th>
-                <td>Mac et Windows (deux postes de travail)</td>
-              </tr>
-              <tr>
-                <th scope="row">Code</th>
-                <td>Visible sur GitHub : ce portfolio et claude-code-soul. Le code client reste privé.</td>
-              </tr>
-            </tbody>
-          </table>
+    <div className="page recruiter-page">
+      <script type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageJsonLd()) }} />
+      <section className="recruiter-intro">
+        <p className="eyebrow">CDI junior · Paris ou hybride · disponible {site.availability}</p>
+        <AnimatedTitle>{site.title}</AnimatedTitle>
+        <p className="lead">
+          Je viens du marketing et je développe des sites, des automatisations
+          et des outils IA. Je cherche une équipe où construire et progresser.
+        </p>
+        <div className="button-row">
+          <a className="button primary" href={site.cvClassic}>Voir mon CV (PDF)</a>
+          <a className="button" href={`mailto:${site.email}`}>Parlons du poste</a>
+          <a className="lk" href={site.linkedin}>LinkedIn</a>
         </div>
       </section>
 
-      <section className="section">
+      <section className="section" id="projets-principaux">
         <div className="section-head">
           <div>
-            <p className="section-kicker">Ce que je peux prendre en charge</p>
-            <h2>Ce que je livre, et sous quelle condition.</h2>
+            <p className="section-kicker">Travail concret</p>
+            <h2>Trois exemples de mon travail.</h2>
           </div>
-          <p>
-            Un besoin marketing devient un livrable concret : page de conversion,
-            workflow IA, automatisation, audit SEO ou prototype web. Le livrable
-            n'est fini que si quelqu'un peut le reprendre sans moi.
-          </p>
-        </div>
-        <div className="matrix matrix-2">
-          <div className="matrix-item">
-            <strong>Acquisition</strong>
-            <p>SEO, pages de conversion, contenus, audits, tracking et priorisation.</p>
-          </div>
-          <div className="matrix-item">
-            <strong>IA générative</strong>
-            <p>Workflows LLM, RAG simple, assistants cadrés, fact-check et QA.</p>
-          </div>
-          <div className="matrix-item">
-            <strong>Produit web</strong>
-            <p>Next.js, React, Firebase, Supabase, CMS léger, déploiement et maintenance.</p>
-          </div>
-          <div className="matrix-item">
-            <strong>Opérations</strong>
-            <p>Scripts Python, Playwright, rapports, automatisation de tâches répétitives.</p>
-          </div>
-        </div>
-      </section>
-
-      <section className="section">
-        <div className="section-head">
-          <div>
-            <p className="section-kicker">Avant de construire</p>
-            <h2>Six questions que je pose avant de livrer.</h2>
-          </div>
-          <p>
-            Elles ne sont pas décoratives. Chacune change le périmètre, le budget
-            ou la date. Si la réponse manque, on construit un prototype, pas une
-            plateforme.
-          </p>
-        </div>
-        <div className="matrix matrix-2">
-          <div className="matrix-item">
-            <strong>Qui utilise l'outil, et à quelle fréquence ?</strong>
-            <p>Si la réponse est « personne encore », on teste une hypothèse avant d'industrialiser.</p>
-          </div>
-          <div className="matrix-item">
-            <strong>Qu'est-ce qui est vérifié aujourd'hui, et par qui ?</strong>
-            <p>Le contrôle est le vrai coût. On le nomme avant d'écrire la première ligne.</p>
-          </div>
-          <div className="matrix-item">
-            <strong>Quelle décision l'outil doit-il rendre possible ?</strong>
-            <p>Un tableau de bord qui ne change aucune décision est de la décoration.</p>
-          </div>
-          <div className="matrix-item">
-            <strong>Qu'est-ce qu'on ne veut surtout pas automatiser ?</strong>
-            <p>Les actions irréversibles restent humaines. On le dit dès le cadrage.</p>
-          </div>
-          <div className="matrix-item">
-            <strong>Comment saura-t-on, dans 90 jours, que ça a marché ?</strong>
-            <p>Une mesure datée, pas une impression de fin de réunion.</p>
-          </div>
-          <div className="matrix-item">
-            <strong>Qu'est-ce qu'on arrête de faire ?</strong>
-            <p>Un nouvel outil qui s'ajoute aux anciens ne remplace rien. Il ajoute de la maintenance.</p>
-          </div>
-        </div>
-      </section>
-
-      <section className="section">
-        <div className="section-head">
-          <div>
-            <p className="section-kicker">En équipe</p>
-            <h2>Où je suis utile dans une équipe.</h2>
-          </div>
-          <p>
-            Je ne travaille pas en vase clos. Je pose mes questions tôt, je livre
-            par petits lots relisables, et je documente pour que le travail se
-            reprenne sans moi.
-          </p>
-        </div>
-        <div className="matrix matrix-2">
-          <div className="matrix-item">
-            <strong>Cadrage partagé</strong>
-            <p>Les hypothèses posées avant de coder, les décisions écrites, pas gardées dans ma tête.</p>
-          </div>
-          <div className="matrix-item">
-            <strong>Revue et intégration</strong>
-            <p>Des changements courts, relisables et documentés plutôt qu'un gros lot en fin de sprint.</p>
-          </div>
-          <div className="matrix-item">
-            <strong>Transmission</strong>
-            <p>Un livrable qu'un autre fait tourner sans moi : sur Les Petites Griffes, la gérante édite son site seule.</p>
-          </div>
-          <div className="matrix-item">
-            <strong>Synthèse visuelle</strong>
-            <p>Une formation en animation et design qui aide à rendre une interface, un rapport ou une décision compréhensible.</p>
-          </div>
-        </div>
-      </section>
-
-      <section className="section">
-        <div className="section-head">
-          <div>
-            <p className="section-kicker">Marché français</p>
-            <h2>Le bon niveau, sans survendre.</h2>
-          </div>
-          <p>
-            Je suis opérationnel sur le build web, le SEO et les workflows IA.
-            Je viens consolider en équipe la data produit, l'expérimentation et
-            les pratiques d'une équipe logiciel. Je ne prétends pas les avoir
-            déjà faites à cette échelle.
-          </p>
-        </div>
-        <div className="matrix matrix-2">
-          <div className="matrix-item">
-            <strong>Apport immédiat</strong>
-            <p>Pages et outils Next.js, SEO, CMS, automatisations, assistants cadrés, documentation et QA.</p>
-          </div>
-          <div className="matrix-item">
-            <strong>À consolider</strong>
-            <p>SQL avancé, plan de tracking produit, A/B tests à volume significatif et pratiques d'une équipe logiciel multi-développeurs.</p>
-          </div>
-        </div>
-      </section>
-
-      <section className="section">
-        <div className="section-head">
-          <div>
-            <p className="section-kicker">Preuves principales</p>
-            <h2>Trois projets qui montrent comment je travaille.</h2>
-          </div>
-          <p>
-            Un pipeline complet construit de bout en bout, une refonte SEO en
-            contexte employeur avec preuve en ligne, et un site client en
-            production. Trois niveaux de preuve, pas trois copies du même projet.
-          </p>
+          <Link className="lk" href="/projets">Tous les projets</Link>
         </div>
         <div className="proof-grid">
-          {recruiterFeatured.map((project) => (
+          {recruiterFeatured.map((project, index) => (
             <article className="proof-card" key={project.slug}>
-              <ProjectCardImage
-                src={project.image}
-                alt={`Aperçu ${project.shortTitle}`}
-              />
+              <ProjectCardImage src={project.image} alt={`Aperçu ${project.shortTitle}`}
+                preload={index === 0}
+                fullColor={project.fullColorMedia} />
               <div className="proof-body">
-                <span className={`evidence-badge evidence-${project.evidenceLevel}`}>
-                  {evidenceLevelMeta[project.evidenceLevel].label}
-                </span>
-                <p className="case-meta">{project.status}</p>
-                <h3>{project.shortTitle}</h3>
-                <p>{project.recruiterProof[0]}</p>
-                <Link className="button" href={`/projets/${project.slug}`}>Ouvrir</Link>
+                <p className="case-meta product-status">{project.cardStatus ?? project.status}</p>
+                <h3 className="card-title-accessible">{project.shortTitle}</h3>
+                <p className="card-description">{project.cardLine ?? project.summary}</p>
+                <Link className="button" href={`/projets/${project.slug}`}>Voir le projet</Link>
               </div>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="section">
+      <section className="section" id="contribution">
         <div className="section-head">
           <div>
-            <p className="section-kicker">Prise en charge</p>
-            <h2>Mes 30 premiers jours : un livrable, une mesure.</h2>
+            <p className="section-kicker">Mon apport</p>
+            <h2>Ce que je peux apporter.</h2>
           </div>
         </div>
-        <div className="matrix matrix-2">
+        <div className="matrix matrix-3">
           <div className="matrix-item">
-            <strong>Acquisition</strong>
-            <p>Audit et correctifs d'un tunnel, plus une landing ou une section de conversion livrée.</p>
+            <h3>Un site ou un outil web</h3>
+            <p>Construire une première version, de l'interface à la mise en ligne, avec les revues de l'équipe.</p>
           </div>
           <div className="matrix-item">
-            <strong>IA appliquée</strong>
-            <p>Une automatisation ou un assistant LLM cadré, avec garde-fous et QA.</p>
+            <h3>Une automatisation avec de l'IA</h3>
+            <p>Collecter et classer des informations, puis faire vérifier le résultat avant de l'utiliser.</p>
           </div>
           <div className="matrix-item">
-            <strong>SEO / contenu</strong>
-            <p>Un lot de contenus SEO structurés et un audit (cannibalisation, maillage).</p>
+            <h3>Un chantier SEO</h3>
+            <p>Auditer un site, organiser ses pages et corriger ses contenus.</p>
           </div>
-          <div className="matrix-item">
-            <strong>Produit web</strong>
-            <p>Un prototype ou une page Next.js déployée, propre et documentée.</p>
-          </div>
+        </div>
+        <p className="section-links">
+          <Link className="lk" href="/competences">Compétences et outils</Link>
+          <Link className="lk" href="/a-propos">Expérience et formation</Link>
+          <Link className="lk" href="/methode">Méthode de travail</Link>
+        </p>
+      </section>
+
+      <section className="section progression-section">
+        <div>
+          <p className="section-kicker">Progression</p>
+          <h2>Ce que je veux apprendre.</h2>
+        </div>
+        <div className="prose">
+          <p>Je veux progresser en SQL, en mesure produit et dans le travail avec une équipe de développeurs.</p>
+          <p>{site.careerGoalShort} Construire avec les utilisateurs, à partir de leurs problèmes concrets.</p>
         </div>
       </section>
 
       <section className="section">
-        <div className="section-head">
-          <div>
-            <p className="section-kicker">FAQ</p>
-            <h2>Questions fréquentes.</h2>
-          </div>
-          <p>Les réponses factuelles, pour un recruteur comme pour un agent qui lit cette page.</p>
-        </div>
+        <h2>Pour aller plus loin.</h2>
+        <details className="faq-item">
+          <summary>Postes visés, outils et limites</summary>
         <div className="faq">
+          <details className="faq-item">
+            <summary>Autres intitulés et accès au code</summary>
+            <p>Selon le périmètre du poste : {site.roleAliases.join(", ")}. Mon point de départ reste le rôle de {site.title}.</p>
+            <p>Je travaille sur Mac et Windows. Le code de Job Radar Community, Cortex Bridge, ce portfolio et claude-code-soul est public. Le code client et ma version personnelle de Job Radar restent privés.</p>
+            <p className="section-links">
+              <a className="lk" href={site.github}>GitHub</a>
+              <a className="lk" href={site.cvStyled}>CV illustré (PDF)</a>
+              <Link className="lk" href="/outils/decodeur-offre-ia">Décoder une offre IA</Link>
+            </p>
+          </details>
           {faqItems.map((item) => (
             <details className="faq-item" key={item.q}>
               <summary>{item.q}</summary>
@@ -287,22 +118,17 @@ export default function RecruitersPage() {
             </details>
           ))}
         </div>
+        </details>
       </section>
 
-      <section className="section">
-        <div className="notice">
-          <strong>Mon périmètre, et ce que je ne promets pas.</strong>
-          <p>
-            Mon cœur, c'est de relier acquisition, IA appliquée et exécution
-            produit. Pour du ML research pur ou du backend lourd, je m'appuie sur
-            l'équipe. Je ne promets ni un modèle infaillible, ni une adoption
-            sans formation, ni une transformation en trente jours.
-          </p>
-          <div className="button-row">
-            <a className="button primary" href={`mailto:${site.email}`}>Me contacter</a>
-            <Link className="button" href="/methode">Ma méthode de travail</Link>
-            <Link className="button" href="/preuves">Vérifier les affirmations</Link>
-          </div>
+      <section className="section closing-section">
+        <div>
+          <h2>Un poste à me proposer ?</h2>
+          <p>Envoyez-moi le contexte et ce que vous souhaitez construire.</p>
+        </div>
+        <div className="button-row">
+          <a className="button primary" href={`mailto:${site.email}`}>Me contacter</a>
+          <Link className="button" href="/preuves">Vérifier les affirmations</Link>
         </div>
       </section>
     </div>

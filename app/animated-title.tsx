@@ -5,7 +5,7 @@ type AnimatedTitleProps = {
 
 // Le texte réel reste unique et visible dès la première frame. Les copies
 // colorées viennent de pseudo-éléments CSS alimentés côté serveur.
-export default function AnimatedTitle({ children, glitch = false }: AnimatedTitleProps) {
+export default function AnimatedTitle({ children, glitch = true }: AnimatedTitleProps) {
   return (
     <h1
       className="chroma-title"

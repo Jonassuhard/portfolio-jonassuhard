@@ -2,6 +2,27 @@ import type { Metadata } from "next";
 
 export type ProjectTier = 1 | 2 | 3;
 export type EvidenceLevel = "public" | "private" | "self-declared";
+export type ProofImage = { src: string; caption: string; width: number; height: number; poster?: string };
+
+export type ProjectNarrativeBlock = {
+  title: string;
+  lead: string;
+  items: string[];
+};
+
+export type ProjectStory = {
+  purposeTitle: string;
+  purposeLead: string;
+  purpose: string[];
+  roles: Array<{ title: string; text: string }>;
+  galleryGroups: Array<{
+    kicker: string;
+    title: string;
+    description: string;
+    featuredFirst?: boolean;
+    images: ProofImage[];
+  }>;
+};
 
 export type Project = {
   slug: string;
@@ -10,10 +31,20 @@ export type Project = {
   type: string;
   period: string;
   role: string;
+  roleSummary?: string;
   status: string;
   evidenceLevel: EvidenceLevel;
   tier: ProjectTier;
   image: string;
+  heroImage?: ProofImage;
+  architectureImage?: ProofImage;
+  architectureTitle?: string;
+  architectureLead?: string;
+  fullColorMedia?: boolean;
+  cardStatus?: string;
+  story?: ProjectStory;
+  need?: ProjectNarrativeBlock;
+  intention?: ProjectNarrativeBlock;
   proofLine: string;
   summary: string;
   stack: string[];
@@ -28,6 +59,16 @@ export type Project = {
   results: string[];
   limits: string[];
   architecture?: string[];
+  versions?: Array<{
+    label: string;
+    name: string;
+    publicStatus?: string;
+    status: string;
+    summary: string;
+    evidence: string[];
+    limits: string[];
+  }>;
+  versionsTitle?: string;
   v2?: string[];
   notMeasured?: string[];
   repoStatus?: string;
@@ -36,11 +77,13 @@ export type Project = {
   metaDescription?: string;
   cardLine?: string;
   video?: string;
+  videoWidth?: number;
+  videoHeight?: number;
   noindex?: boolean;
   // Le code vient de l'équipe, pas de Jonas (ex. HoopSphere : sa part est le marketing).
   // Pilote le JSON-LD : contributor au lieu d'author, pas de programmingLanguage.
   codeByOthers?: boolean;
-  gallery?: Array<{ src: string; caption: string; width: number; height: number }>;
+  gallery?: ProofImage[];
   links: Array<{
     label: string;
     href: string;
@@ -56,17 +99,25 @@ export const siteUrl = (
 
 export const site = {
   name: "Jonas Suhard",
-  title: "Chef de projet IA appliquée & automatisation junior",
+  title: "Growth Engineer junior",
+  seoTitle: "Growth Engineer IA & automatisation à Paris | Jonas Suhard",
+  headline: "Growth Engineer junior · IA appliquée & automatisation",
+  roleAliases: ["Product Builder IA", "Chef de projet IA junior"] as const,
+  careerGoalTitle: "Forward Deployed Engineer",
+  careerGoalShort:
+    "Je cherche à évoluer vers un rôle de Forward Deployed Engineer.",
+  careerGoal:
+    "Je cherche à évoluer vers un rôle de Forward Deployed Engineer. Je veux comprendre un besoin concret, construire une première solution avec l'équipe ou le client, la tester, puis la rendre facile à reprendre.",
   description:
-    "Portfolio de Jonas Suhard, chef de projet IA appliquée & automatisation junior : projets livrés, décisions, limites et niveau de preuve. Le dernier kilomètre des projets IA et web.",
-  email: "contact@jonassuhard.com",
+    "Growth Engineer junior à Paris : IA appliquée, automatisations, sites Next.js, workflows LLM et dashboards. Projets documentés, preuves, CV et contact.",
+  email: "jonas.suhard@gmail.com",
   github: "https://github.com/Jonassuhard",
+  portfolioRepo: "https://github.com/Jonassuhard/portfolio-jonassuhard",
   linkedin: "https://www.linkedin.com/in/jonas-suhard-b73923245/",
-  // Profil Malt temporairement masqué : son contenu doit être réaligné avec
-  // les affirmations vérifiables du portfolio avant de redevenir public ici.
-  malt: null as string | null,
+  malt: "https://www.malt.fr/profile/jonassuhard?overview",
   location: "Paris, France",
-  availability: "immédiate",
+  availability: "immédiatement",
+  availabilityDate: "2026-10-01",
   cvClassic: "/cv.pdf",
   cvStyled: "/cv-portfolio.pdf"
 };
@@ -80,7 +131,7 @@ export const evidenceLevelMeta: Record<
     description: "Un lien public permet de contrôler au moins l'élément principal."
   },
   private: {
-    label: "Démo privée",
+    label: "Preuves privées",
     description: "La preuve existe hors ligne ou contient des données qui ne peuvent pas être publiées."
   },
   "self-declared": {
@@ -148,107 +199,236 @@ export const pageMeta = (opts: {
 export const projects: Project[] = [
   {
     slug: "job-radar",
-    title: "Job Radar - radar d'offres, scoring et dashboard",
+    roleSummary: "J'ai conçu le parcours, développé l'application avec l'aide de l'IA et vérifié ses principaux usages. Le classement repose sur des règles explicites, pas sur l'avis d'un modèle.",
+    title: "Job Radar - trier les offres et suivre mes candidatures",
     shortTitle: "Job Radar",
-    type: "Outil local - ingestion, scoring, dashboard",
-    period: "2026 - en cours",
-    role: "Conception, développement, data, UX, QA",
-    status: "Outil personnel, en usage",
-    evidenceLevel: "private",
+    type: "Radar d'offres déployé + édition open source",
+    period: "Juillet - septembre 2026",
+    role: "Conception produit, architecture, développement full-stack, déploiement cloud, sécurité et QA",
+    status: "Version personnelle déployée · Community v0.1.0-beta.1 publique",
+    evidenceLevel: "public",
     tier: 1,
-    image: "/assets/cards/job-radar.webp",
-    repoStatus: "Privé, usage personnel",
-    liveLabel: "Démo locale / captures en entretien",
+    image: "/assets/cards/job-radar-illustration-20260909-art.webp",
+    heroImage: {
+      "src": "/assets/proof/job-radar/offer-detail-20260908.webp",
+      "caption": "Radar local : liste et détail d'une offre, raisons de la note et préparation du dossier. Données fictives.",
+      "width": 1440,
+      "height": 960
+    },
+    architectureImage: {
+      src: "/assets/proof/job-radar/architecture-v2-20260831.webp",
+      caption: "Architecture actuelle : la version personnelle relie Vercel, les jobs et l'API Cloud Run, Turso et Google Drive ; l'édition Community reste locale.",
+      width: 1440,
+      height: 900
+    },
+    architectureTitle: "Deux versions, un même principe : expliquer chaque décision.",
+    architectureLead:
+      "La version personnelle tourne dans le cloud. L'édition Community reste locale et utilise un corpus fictif. Les deux gardent la décision finale côté humain.",
+    fullColorMedia: true,
+    cardStatus: "Version personnelle déployée · Community publique",
+    repoStatus: "Version personnelle privée · édition Community publique MIT : github.com/Jonassuhard/job-radar-community",
+    liveLabel: "Repo Community et preuve v0.1.0-beta.1",
     evidenceNote:
-      "Captures du dashboard et rapports de refresh datés, montrables en entretien. Outil personnel, pas un produit commercialisé ; les données de candidature restent privées.",
+      "Sources personnelles relues le 23 septembre 2026 : classement et contrôle de fraîcheur des offres renforcés localement, sans assimiler ces travaux au code cloud déployé. La preuve de déploiement du 25 août et les captures fictives du 8 septembre restent datées. Community v0.1.0-beta.1 reste la version publique : 336 tests backend, 36 frontend et 37 E2E sans échec ; 8 E2E ignorés intentionnellement dans cette preuve historique.",
     metaDescription:
-      "Radar local d'offres : connecteurs ATS, fusion canonique, scoring de pertinence et de confiance séparés, dashboard FastAPI / React. Le refresh ne prépare ni n'envoie de candidature.",
+      "Job Radar réunit les offres d'emploi, explique leur classement et suit les candidatures. Un projet personnel avec une édition open source sur données fictives.",
     cardLine:
-      "Connecteurs ATS, fusion des doublons, scoring de pertinence et de confiance séparés, dashboard local. Aucune candidature préparée ni envoyée par le refresh.",
+      "Réunir les offres d'emploi, comprendre lesquelles examiner et garder une trace de mes candidatures.",
+    need: {
+      title: "Des offres dispersées, difficiles à comparer.",
+      lead:
+        "Les mêmes annonces reviennent sur plusieurs plateformes. Un titre intéressant peut cacher un poste trop senior ou des compétences manquantes. J'avais besoin de comparer les offres et de retrouver mes démarches au même endroit.",
+      items: [
+        "Réunir les offres autorisées dans un même endroit sans perdre leur source.",
+        "Voir rapidement le métier réel, le niveau attendu et les compétences demandées.",
+        "Savoir pourquoi une offre remonte, ce qui manque et quelle action faire ensuite."
+      ]
+    },
+    intention: {
+      title: "Classer les offres sans décider à ma place.",
+      lead:
+        "Je consulte une offre, les raisons de son classement et les informations qui manquent. Je décide ensuite de préparer un dossier. La collecte ne déclenche aucun envoi de candidature.",
+      items: [
+        "Séparer pertinence, confiance dans les données et fraîcheur de l'offre.",
+        "Montrer les extraits qui justifient la note et le niveau réel du poste.",
+        "Faire remonter une courte file d'actions plutôt qu'un tableau infini.",
+        "Garder une validation humaine avant la préparation et l'envoi d'une candidature."
+      ]
+    },
     architecture: [
-      "Sources autorisées (France Travail, Adzuna, Greenhouse, Lever, Ashby, etc.) et alertes locales importées ; les plateformes restreintes ne sont pas scrapées.",
-      "Pipeline : ingestion → fusion canonique des offres → extraction de faits → scoring pertinence / confiance → rapports JSON et Markdown.",
-      "SQLite local, profil candidat hors du dépôt, API FastAPI et interface React.",
-      "Refresh planifié avec verrou inter-processus et contrôle d'intégrité ; aucune candidature préparée ni envoyée."
+      "L'interface React personnelle est servie par Vercel et appelle une API FastAPI sur Cloud Run.",
+      "Des jobs Cloud Run collectent uniquement les sources autorisées, normalisent les annonces et retirent les doublons.",
+      "Turso conserve les offres et leurs états ; Google Drive conserve les documents et sauvegardes prévus par le parcours privé.",
+      "Le scoring reste déterministe : métier, compétences, preuves, séniorité et contraintes sont expliqués séparément.",
+      "L'édition Community utilise le même principe avec un corpus fictif, FastAPI, React et SQLite sur la machine."
     ],
-    v2: [
-      "Mesurer la précision du scoring sur des décisions réelles, pas seulement sur des cas construits.",
-      "Durcir les connecteurs et les tests de non-régression à mesure que les sources changent."
+    versions: [
+      {
+        label: "Version personnelle",
+        name: "Signal Desk déployé",
+        status: "Déployée en privé",
+        summary:
+          "Elle collecte les sources autorisées, classe les offres, explique le métier réel et organise les prochaines actions. Le frontend, l'API et les tâches planifiées sont déployés.",
+        evidence: [
+          "Frontend Vercel et huit routes contrôlés en HTTP 200 le 25 août 2026.",
+          "Dernière exécution de production vérifiée avec huit sources en état OK et intégrité de la base confirmée.",
+          "QA privée sur cinq largeurs, navigation clavier et contrôles Axe."
+        ],
+        limits: [
+          "L'application et ses données restent privées ; aucune démo publique connectée à la base réelle n'est proposée.",
+          "Application Assist est validé localement mais pas activé en production."
+        ]
+      },
+      {
+        label: "Édition Community",
+        name: "v0.1.0-beta.1",
+        publicStatus: "Beta publique open source",
+        status: "Publique sur GitHub sous licence MIT",
+        summary:
+          "Cette édition partage le noyau du Radar sans profil, CV, candidatures ni données privées. Elle fonctionne localement avec 42 offres fictives et un import JSON contrôlé.",
+        evidence: [
+          "336 tests backend, 36 tests frontend et 37 tests E2E sans échec.",
+          "20 combinaisons route et viewport sans violation Axe ni débordement.",
+          "Dépôt, historique nettoyé, archive et distributions audités dans la preuve publique."
+        ],
+        limits: [
+          "La beta Community est plus petite que la version personnelle et ne contient pas son infrastructure cloud.",
+          "Elle ne prouve ni adoption externe ni résultat de recherche d'emploi."
+        ]
+      }
     ],
+    versionsTitle: "Deux versions, deux niveaux de preuve.",
     notMeasured: [
-      "Précision du scoring comparée à une décision humaine : pas encore mesurée sur un échantillon publiable.",
-      "Temps gagné par refresh : non instrumenté."
+      "Gain de temps moyen et effet sur les réponses obtenues : pas encore mesurés sur un échantillon suffisant.",
+      "Adoption externe de l'édition Community : pas encore mesurée."
     ],
     proofLine:
-      "Un pipeline complet : connecteurs ATS, fusion des offres, scoring de pertinence et de confiance séparés, dashboard local. Le refresh ne prépare ni n'envoie aucune candidature.",
+      "Un besoin personnel transformé en outil de travail, avec un classement explicable, un suivi des démarches et une édition publique sur données fictives.",
     summary:
-      "Radar local d'offres d'emploi : collecter des sources autorisées, fusionner les doublons, extraire les faits, séparer le score de pertinence du score de confiance, puis rendre le tout lisible dans un dashboard. Le refresh ne prépare ni n'envoie de candidature.",
-    stack: ["Python", "FastAPI", "SQLite", "React", "TypeScript", "Playwright", "Connecteurs ATS"],
+      "J'ai construit la version personnelle de Job Radar pour réunir les offres, comprendre lesquelles examiner et suivre mes candidatures. Je garde le choix du dossier et le geste final d'envoi. Une édition Community partage le noyau avec des données fictives.",
+    stack: ["Python", "FastAPI", "React", "Turso", "Cloud Run", "Vercel", "Playwright"],
     recruiterProof: [
-      "Automatisation de bout en bout : ingestion, normalisation, scoring, API et interface.",
-      "Séparation explicite entre pertinence et confiance : un score élevé ne masque pas une source douteuse.",
-      "Garde-fous produit : sources autorisées, secrets hors dépôt, aucune soumission automatique."
+      "Partir d'un besoin concret et relier collecte, classement et suivi dans une même application.",
+      "Choisir ce qui peut être automatisé et ce qui doit rester une décision humaine.",
+      "Partager une édition open source sans exposer les CV ni les candidatures."
     ],
     constraints: [
-      "Sources hétérogènes et doublons entre plateformes.",
-      "Données personnelles et offres à ne pas exposer.",
-      "Plateformes restreintes non scrapées : seules les sources autorisées ou importées sont utilisées."
+      "Ne collecter automatiquement que les sources et APIs qui l'autorisent.",
+      "Garder le profil, les documents et les candidatures hors du dépôt public.",
+      "Ne jamais laisser un score ou un agent envoyer une candidature à la place de l'utilisateur.",
+      "Conserver un chemin local et reproductible pour l'édition Community."
     ],
     decisions: [
       {
-        decision: "Séparer le score de pertinence du score de confiance",
-        why: "Un bon poste mal sourcé n'est pas une bonne offre.",
-        rejected: "Un score unique qui mélange le poste et la fiabilité de la source."
+        decision: "Score déterministe et preuves visibles",
+        why: "Chaque note peut être reliée à une règle et à un extrait de l'annonce.",
+        rejected: "Un classement LLM opaque impossible à reproduire."
       },
       {
-        decision: "SQLite local",
-        why: "Un seul utilisateur, zéro serveur à maintenir, des requêtes assez rapides.",
-        rejected: "Postgres ou une base hébergée pour un outil personnel."
+        decision: "Pertinence, confiance et fraîcheur séparées",
+        why: "Une bonne offre peut être ancienne ou mal documentée ; un seul score cacherait cette différence.",
+        rejected: "Une note globale sans explication."
       },
       {
-        decision: "Aucune soumission automatique",
-        why: "Le geste final reste humain, avec revue du CV et de la lettre.",
-        rejected: "Un robot qui postule à ma place."
+        decision: "Version privée et édition Community séparées",
+        why: "Le produit personnel garde ses données et son infrastructure ; le public reçoit uniquement le noyau partageable.",
+        rejected: "Nettoyer à la main une copie du dépôt privé avec un risque de fuite."
+      },
+      {
+        decision: "Validation humaine avant toute action externe",
+        why: "Le produit prépare et explique ; l'utilisateur garde le contrôle du dossier et du dernier geste.",
+        rejected: "Une auto-candidature autonome."
       }
     ],
     delivered: [
-      "Connecteurs ATS et import d'alertes locales.",
-      "Schéma canonique des offres, fusion des doublons et extraction de faits.",
-      "Scores de pertinence et de confiance séparés.",
-      "Dashboard React et API FastAPI, rapports de refresh.",
-      "Refresh planifié avec verrou et contrôle d'intégrité."
+      "J'ai relié la collecte des offres, leur classement et le suivi des candidatures dans une interface développée avec l'aide de l'IA.",
+      "J'ai séparé la pertinence d'une offre de la fiabilité des informations. Chaque classement doit pouvoir être expliqué et vérifié.",
+      "Une erreur concrète : des candidatures envoyées hors de l'application manquaient au suivi. Le rapprochement du 12 septembre a réintégré six candidatures à partir des justificatifs, en conservant leur origine externe sans inventer une validation dans l'outil.",
+      "Depuis septembre 2026, des contrôles locaux du CV et des preuves manquantes dans la fiche offre et les documents, sans modifier le score ni déclencher un envoi.",
+      "Une infrastructure privée Vercel, Cloud Run, Turso et Google Drive avec tâches planifiées.",
+      "Une édition Community MIT, installable localement avec corpus fictif et preuve de release."
     ],
     results: [
-      "Outil utilisé pour la recherche d'emploi : collecte, tri et priorisation des offres.",
-      "Le pipeline tourne localement ; les rapports de refresh sont datés.",
-      "Aucune candidature n'est préparée ni envoyée par le refresh."
+      "Rapprochement local du 12 septembre 2026 : six candidatures réintégrées dans le rapport de suivi. Ce contrôle documenté ne constitue pas un audit de la base actuelle.",
+      "Version personnelle contrôlée en production le 25 août 2026 : huit sources en état OK, base intègre et huit routes frontend en HTTP 200.",
+      "Interface personnelle vérifiée en privé sur cinq largeurs, au clavier et avec Axe.",
+      "Édition Community v0.1.0-beta.1 : 336 tests backend, 36 frontend et 37 E2E sans échec ; 8 E2E ignorés intentionnellement.",
+      "Édition Community : 20 combinaisons route/viewport sans violation Axe ni débordement."
     ],
     limits: [
-      "Outil personnel, pas un produit commercialisé : pas de client ni de revenu.",
-      "Précision du scoring non mesurée publiquement.",
-      "Les connecteurs dépendent des APIs et de leurs quotas ; certaines plateformes restent manuelles."
+      "Aucun envoi autonome : la préparation et l'envoi final restent sous validation humaine.",
+      "Application Assist est testé localement mais n'est pas activé en production.",
+      "LinkedIn, Indeed et Welcome to the Jungle restent des imports manuels ; Job Radar ne les scrape pas automatiquement.",
+      "La version personnelle et sa base ne sont pas publiques ; les captures du portfolio utilisent uniquement des données fictives.",
+      "La preuve Community est datée et ne prouve ni adoption externe ni résultat de recherche d'emploi."
     ],
-    links: [{ label: "Version Markdown", href: "/projects/job-radar.md" }]
+    gallery: [
+      {
+        "src": "/assets/proof/job-radar/radar-20260908.webp",
+        "caption": "Radar : quatre offres retenues à partir d'une base de démonstration. Entreprises et données fictives.",
+        "width": 1440,
+        "height": 960
+      },
+      {
+        "src": "/assets/proof/job-radar/insights-20260908.webp",
+        "caption": "Insights : volumes, décisions et compétences. L'interface signale que l'échantillon est insuffisant pour une tendance. Données fictives.",
+        "width": 1440,
+        "height": 960
+      },
+      {
+        "src": "/assets/proof/job-radar/radar-mobile-20260908.webp",
+        "caption": "Détail d'une offre sur mobile, avec les mêmes raisons de classement. Données fictives.",
+        "width": 390,
+        "height": 844
+      }
+    ],
+    links: [
+      {
+        label: "Repo GitHub",
+        href: "https://github.com/Jonassuhard/job-radar-community",
+        external: true
+      },
+      {
+        label: "Configurer son radar",
+        href: "https://github.com/Jonassuhard/job-radar-community/blob/main/docs/CONFIGURATION.md",
+        external: true
+      },
+      {
+        label: "Architecture publique",
+        href: "https://github.com/Jonassuhard/job-radar-community/blob/main/docs/ARCHITECTURE.md",
+        external: true
+      },
+      {
+        label: "Preuve v0.1.0-beta.1",
+        href: "https://github.com/Jonassuhard/job-radar-community/blob/main/docs/verification/v0.1.0-beta.1.json",
+        external: true
+      },
+      { label: "Version Markdown", href: "/projects/job-radar.md" }
+    ]
   },
   {
     slug: "les-petites-griffes",
+    roleSummary: "J'ai conçu le site, développé l'espace de gestion et mis en place le référencement et l'assistant IA.",
     title: "Les Petites Griffes - site live, CMS et assistant IA",
     shortTitle: "Les Petites Griffes",
     type: "Site live + CMS + assistant IA",
     period: "Avril 2026 - Juin 2026",
     role: "Stratégie, design, développement, SEO, déploiement, QA",
     status: "Prod live",
+    cardStatus: "Site en ligne · gestion autonome",
     evidenceLevel: "private",
     tier: 1,
-    image: "/assets/cards/les-petites-griffes.webp",
+    image: "/assets/cards/les-petites-griffes-art.webp",
+    fullColorMedia: true,
+    video: "/assets/video/les-petites-griffes.mp4",
     repoStatus: "Privé, code et données client",
-    liveLabel: "Live · URL communiquée en entretien",
+    liveLabel: "Site public",
     evidenceNote:
       "Captures anonymisées, démo privée et audit live daté du 2026-08-01. L'audit complet reste une preuve privée montrable en entretien, pas une source publique autonome.",
     metaDescription:
       "Site vitrine live d'un studio de nail art : Next.js, CMS maison, assistant IA cadré et audit live du 2026-08-01 sur 18 pages publiques.",
     cardLine:
-      "Site live, CMS maison, SEO local et assistant IA cadré. Audit du 2026-08-01 : 18 pages publiques, 36 captures et cinq scores Lighthouse mobile.",
+      "Un site de nail art que ma sœur met à jour seule, avec un assistant IA pour répondre aux questions courantes.",
     architecture: [
       "Front Next.js (React) rendu et déployé sur Vercel.",
       "Contenus dynamiques (galerie, prestations, tarifs, FAQ) servis depuis Supabase, éditables via un CMS maison protégé.",
@@ -317,95 +497,295 @@ export const projects: Project[] = [
       { src: "/assets/proof/les-petites-griffes/lpg-assistant-vision.webp", caption: "L'assistant analyse une photo d'ongles envoyée par la cliente.", width: 810, height: 1114 }
     ],
     links: [
-      { label: "Version Markdown", href: "/projects/les-petites-griffes.md" }
+      { label: "Version Markdown", href: "/projects/les-petites-griffes.md" },
+      {
+        label: "Site live",
+        href: "https://lespetitesgriffes.fr/",
+        external: true
+      }
+    ]
+  },
+  {
+    slug: "educool-v2",
+    title: "Educool V2 - suivre les acquis de la classe",
+    shortTitle: "Educool V2",
+    type: "Application pour l'enseignante",
+    period: "2026 - en cours",
+    role: "Conception produit, interface, développement full-stack et vérification avec des données fictives",
+    roleSummary: "Je transforme les besoins de l'enseignante en écrans pour suivre les élèves, saisir les acquis et préparer les livrets.",
+    status: "Application à accès réservé · améliorations locales en cours",
+    cardStatus: "Outil enseignant",
+    evidenceLevel: "private",
+    tier: 1,
+    image: "/assets/cards/educool-v2-illustration-20260909-art.webp",
+    fullColorMedia: true,
+    heroImage: {
+      src: "/assets/proof/educool-v2/classe-20260909.webp",
+      caption: "Retrouver un élève et filtrer la classe. Capture locale du 9 septembre 2026, données fictives ; cadrage sur le haut de la liste.",
+      width: 1440, height: 1000
+    },
+    cardLine: "Suivre les acquis des élèves et préparer leurs livrets dans un même outil.",
+    summary: "Un outil pour l'enseignante : retrouver un élève, saisir ses ceintures de compétences et préparer ses livrets, sans multiplier les tableaux.",
+    proofLine: "Interface réelle, captures de démonstration et code privé. Les écrans montrés viennent de la version locale.",
+    need: {
+      title: "Saisir une fois, retrouver l'information",
+      lead: "L'enseignante suit les acquis de chaque élève avec des ceintures de compétences. Le besoin : relier cette saisie aux livrets, sans recopier les mêmes informations partout.",
+      items: ["Retrouver rapidement un élève et sa progression.", "Regrouper les matières, les validations et les appréciations.", "Préparer les livrets de progression et d'évaluation."]
+    },
+    intention: {
+      title: "Un outil de travail, pas un jeu",
+      lead: "Educool V2 est réservé à l'enseignante. Cool Bank est un projet distinct, centré sur la banque de classe et les parcours des élèves.",
+      items: ["Garder les tâches courantes accessibles sur tablette.", "Montrer si les données sont locales ou synchronisées.", "Prévisualiser les imports avant de confirmer les changements."]
+    },
+    stack: ["Next.js", "React", "TypeScript", "Zustand", "Firebase", "Firestore", "Cloud Functions", "IndexedDB"],
+    recruiterProof: ["Partir d'une façon de travailler réelle pour construire les écrans.", "Relier les données de classe aux documents de suivi.", "Prévoir les erreurs de saisie, la sauvegarde et les retours en arrière."],
+    constraints: ["Les données scolaires ne doivent pas apparaître dans le portfolio.", "Les livrets existants imposent de conserver leur mise en page.", "Les dernières améliorations locales ne sont pas toutes déployées."],
+    decisions: [
+      { decision: "Replier les formulaires secondaires", why: "Laisser la liste des élèves visible avant d'ajouter une fiche.", rejected: "Un formulaire ouvert en permanence au-dessus de la classe." },
+      { decision: "Distinguer sauvegarde locale et synchronisation", why: "Un message doit décrire ce que l'application a réellement enregistré.", rejected: "Afficher un succès avant confirmation de la sauvegarde." },
+      { decision: "Demander une confirmation avant un import", why: "L'enseignante doit pouvoir vérifier ce qui va changer.", rejected: "Appliquer silencieusement les données d'un fichier." }
+    ],
+    delivered: ["Gestion des élèves et des matières, saisie des ceintures, appréciations et livrets.", "Filtres de classe et formulaire d'ajout repliable.", "Outils locaux de sauvegarde et assistant d'import avec prévisualisation et confirmation."],
+    results: ["Une interface de travail qui réunit le suivi des élèves et la préparation des livrets.", "Des captures locales de démonstration disponibles sans publier de données scolaires."],
+    limits: ["Les captures des 8 et 9 septembre 2026 montrent une version locale, pas une recette de production.", "L'accès, la protection des données cloud et les parcours sur appareils réels restent à valider avant de qualifier la version de finalisée.", "Aucun gain de temps ni bénéfice pédagogique chiffré n'est revendiqué.", "La liaison avec Cool Bank V3 est un chantier séparé, pas une fonction livrée ici."],
+    repoStatus: "Dépôt privé : application et données scolaires.",
+    liveLabel: "Application · accès réservé",
+    evidenceNote: "Sources locales relues le 9 septembre 2026. Captures issues des contrôles locaux des 8 et 9 septembre ; élèves fictifs. Ce contrôle du portfolio ne remplace pas la validation d'Educool.",
+    metaDescription: "Educool V2 : un outil pour suivre les élèves, saisir les compétences et préparer les livrets. Projet de Jonas Suhard, écrans réels avec données fictives.",
+    gallery: [
+      { src: "/assets/proof/educool-v2/classe-20260909.webp", caption: "La classe et ses filtres. Version locale du 9 septembre 2026, élèves fictifs, liste cadrée.", width: 1440, height: 1000 },
+      { src: "/assets/proof/educool-v2/formulaire-20260909.webp", caption: "Ajouter un élève sans quitter la liste. Capture locale du 8 septembre 2026, formulaire vide et données de démonstration.", width: 1440, height: 1000 },
+      { src: "/assets/proof/educool-v2/mobile-20260909.webp", caption: "Retrouver la classe sur mobile. Capture locale du 9 septembre 2026, élèves fictifs ; cadrage sur le haut de l'écran.", width: 390, height: 844 }
+    ],
+    links: [
+      { label: "Version Markdown", href: "/projects/educool-v2.md" },
+      { label: "Application · accès réservé", href: "https://educool-v2.vercel.app", external: true },
+      { label: "Projet distinct : Cool Bank", href: "/projets/educool-la-herse" }
     ]
   },
   {
     slug: "educool-la-herse",
-    title: "Educool / La Herse - app web pour une classe",
-    shortTitle: "Educool / La Herse",
-    type: "Application web éducation",
-    period: "2026",
-    role: "Développement, UX, sécurité, PDF, Firebase, maintenance",
-    status: "Prod / maintenance",
+    roleSummary: "J'ai conçu l'expérience, développé les rôles et relié le jeu à l'outil de gestion de classe.",
+    title: "Cool Bank - donner vie à une banque de classe",
+    shortTitle: "Cool Bank / La Herse",
+    type: "Jeu scolaire 3D + outil enseignant",
+    period: "Juillet 2026 - en cours",
+    role: "Conception produit, UX, développement full-stack, systèmes de jeu, sécurité, QA",
+    status: "V2 locale · V3 web · V4 en migration vers Godot",
     evidenceLevel: "private",
     tier: 1,
-    image: "/assets/cards/educool.webp",
-    repoStatus: "Privé, RGPD (données mineurs)",
-    liveLabel: "Classe, non public",
+    image: "/assets/cards/cool-bank-art.webp",
+    heroImage: {
+      "src": "/assets/proof/educool/v2-village-20260817.webp",
+      "caption": "Cool Bank V2 : le bourg 3D dans la boucle locale. Capture de contrôle du 17 août 2026, conservée comme archive de cette version.",
+      "width": 1440,
+      "height": 900
+    },
+    fullColorMedia: true,
+    cardStatus: "Prototype local · trois rôles · données fictives",
+    repoStatus: "Dépôts privés, données scolaires exclues des preuves",
+    liveLabel: "Démo locale sur données fictives",
     evidenceNote:
-      "Captures sur données fictives et démonstration privée. L'usage en classe ne peut pas être vérifié publiquement en raison des données de mineurs.",
+      "Sources relues le 23 septembre 2026. V2 : essais locaux historiques d'août. V3 : reconstruction web, carte et interfaces encore en travail. V4 : migration distincte vers Godot, partiellement jouable ; captures natives du 21 septembre. Aucun pilote en classe ni validation complète du jeu ne sont revendiqués.",
     metaDescription:
-      "Application web utilisée en classe : suivi des compétences, livrets PDF, Firebase, données de mineurs anonymisées, opérations sensibles en Cloud Functions.",
+      "Cool Bank transforme une banque de classe en monde 3D partagé : élève, banquier et enseignante y vivent trois responsabilités différentes.",
     cardLine:
-      "Application utilisée en classe : suivi de compétences, génération PDF, Firebase, données élèves anonymisées.",
+      "Un jeu scolaire local où les responsabilités de classe deviennent des rôles, des choix et des aventures dans un monde 3D partagé.",
+    story: {
+      "purposeTitle": "Rendre l'argent et la responsabilité plus concrets.",
+      "purposeLead": "La banque existait déjà dans la classe. Le projet lui donne des lieux, des personnages et des conséquences visibles, sans transformer l'outil de l'enseignante en jeu.",
+      "purpose": [
+        "Les élèves explorent le bourg, accomplissent des missions, économisent et font évoluer progressivement leur maison.",
+        "Un élève peut tenir le guichet pendant une période donnée, avec des plafonds clairs et un registre vérifiable.",
+        "L'enseignante conserve les commandes essentielles et peut interrompre le monde ou les échanges sans perdre son espace de travail calme."
+      ],
+      "roles": [
+        {
+          "title": "L'élève",
+          "text": "Il explore le bourg, parle aux habitants, accomplit des missions, économise et choisit comment utiliser ses centicools."
+        },
+        {
+          "title": "Le banquier",
+          "text": "C'est un élève responsabilisé. Il tient un guichet guidé, applique des plafonds et laisse une trace de chaque opération."
+        },
+        {
+          "title": "L'enseignante",
+          "text": "Elle suit la classe, garde le contrôle du monde et valide les progressions depuis une interface séparée du jeu."
+        }
+      ],
+      "galleryGroups": [
+        {
+          kicker: "Migration Godot",
+          title: "V4 — le chantier natif",
+          description: "La V4 reprend le monde dans Godot. Ces captures des 21 et 23 septembre montrent l'exploration, les commandes et l'éditeur de jardin, pas un jeu terminé. La progression complète et les essais sur un PC scolaire restent à valider.",
+          featuredFirst: true,
+          images: [
+            { src: "/assets/proof/educool/v4-world-20260921.webp", caption: "V4 : entrée dans le bourg et commandes du joueur. Capture native de contrôle du 21 septembre 2026, sans données scolaires.", width: 1440, height: 900 },
+            { src: "/assets/proof/educool/v4-garden-20260923.webp", caption: "V4 : déplacer et tourner les objets du jardin. Test natif du 23 septembre avec maison et inventaire de démonstration injectés ; ce n'est pas une progression joueur complète.", width: 1440, height: 1024 },
+            { src: "/assets/proof/educool/v4-mobile-20260921.webp", caption: "V4 : contrôle de l'interface à 390 pixels dans Godot. Ce cadrage ne prouve pas une version mobile distribuée ni un test sur téléphone physique.", width: 390, height: 844 }
+          ]
+        },
+        {
+          "kicker": "Reconstruction V3",
+          "title": "V3 — la reconstruction locale",
+          "description": "Nouvelles vues du build local du 7 septembre 2026, capturées le 8 septembre en mode de prévisualisation de carte. Le code source a encore évolué depuis ce build. Aucun usage en classe ni test humain n'est déduit de ces images.",
+          "featuredFirst": true,
+          "images": [
+            {
+              "src": "/assets/proof/educool/v3-map-city-20260908.webp",
+              "caption": "V3 : vue du bourg dans le mode de prévisualisation de la carte. Build local du 7 septembre, capture du 8 septembre ; ce n'est pas une session élève.",
+              "width": 1440,
+              "height": 900
+            },
+            {
+              "src": "/assets/proof/educool/v3-map-castle-20260908.webp",
+              "caption": "V3 : vue du château dans le même build local, avec la caméra de contrôle de la carte.",
+              "width": 1440,
+              "height": 900
+            },
+            {
+              "src": "/assets/proof/educool/v3-map-island-20260908.webp",
+              "caption": "V3 : vue d'ensemble du terrain pour situer les zones. Prévisualisation technique, pas validation humaine du jeu.",
+              "width": 1440,
+              "height": 900
+            }
+          ]
+        },
+        {
+          "kicker": "Version jouable",
+          "title": "V2 — la boucle 3D déjà jouable",
+          "description": "Vues différentes issues des preuves locales d'août 2026 : bourg 3D, organisation du monde et intérieur de maison. Ce sont des archives de la V2, pas une nouvelle recette complète.",
+          "images": [
+            {
+              "src": "/assets/proof/educool/v2-village-20260817.webp",
+              "caption": "V2 : la place du village et les chemins, capture de contrôle locale du 17 août 2026.",
+              "width": 1440,
+              "height": 900
+            },
+            {
+              "src": "/assets/proof/educool/v2-world-20260817.webp",
+              "caption": "V2 : vue d'ensemble du monde 3D et du HUD, archive locale du 17 août 2026.",
+              "width": 1440,
+              "height": 900
+            },
+            {
+              "src": "/assets/proof/educool/v2-house-20260822.webp",
+              "caption": "V2 : intérieur de maison en 3D dans le scénario de test du 22 août 2026. Aucune donnée d'élève réelle.",
+              "width": 910,
+              "height": 522
+            }
+          ]
+        }
+      ]
+    },
     architecture: [
-      "Application web / PWA Next.js utilisable sur tablette par une non-dev.",
-      "Données et authentification sur Firebase / Firestore.",
-      "Opérations sensibles déportées en Cloud Functions (l'autorité métier n'est pas seulement côté client).",
-      "Génération de livrets PDF et export ZIP.",
-      "Rules Firebase et tests (Vitest) sur les lots livrés."
+      "V2 sépare le jeu web multijoueur, le runtime 3D et l'interface scolaire Educool, tout en partageant les contrats Firebase.",
+      "V3 sépare quatre autorités : Game, Control, Product/UI Kit et Educool, réunies par une pile locale reproductible.",
+      "Économie centicool, mouvements, collisions, rôles, soldes et récompenses restent autoritaires côté serveur.",
+      "Authentification et données scolaires utilisent Firebase / Firestore / Cloud Functions sur un projet fictif local.",
+      "V4 migre le monde dans Godot : chantier natif séparé, sans remplacer les sources V2 ou V3.",
+      "Les preuves et limites restent attribuées à leur version, sans transférer une validation de V2 à V3 ou V4."
     ],
-    v2: [
-      "Durcissement continu des rules et des audits de sécurité.",
-      "Industrialisation des exports PDF."
+    versions: [
+      {
+        label: "V2",
+        name: "Boucle 3D locale déjà jouable",
+        publicStatus: "Jouable localement sur un appareil",
+        status: "Jouable localement · LOCAL_SINGLE_DEVICE_READY : GO · V2_PRODUCT_COMPLETE et ONLINE_READY : NO-GO",
+        summary:
+          "La V2 relie déjà un monde 3D à architecture multijoueur, les trois rôles et Educool. La boucle a été validée localement sur un appareil avec des profils de démonstration.",
+        evidence: [
+          "État daté du 22/08/2026 avec parcours élève, professeure et banquier rejoués localement.",
+          "HUD, clavier, première mission, guichet et pont Educool contrôlés sur des profils fictifs.",
+          "Le monde 3D vient déjà du fork World of ClaudeCraft ; la V3 n'est pas le passage de la 2D à la 3D."
+        ],
+        limits: [
+          "Deux PC et une tablette physique, coupure Wi-Fi et audio multi-appareils restent à rejouer ensemble.",
+          "Le pré-RC reste bloqué par 3 échecs i18n, 20 assets provisoires et une gate online à 87/89."
+        ]
+      },
+      {
+        label: "V3",
+        name: "Reconstruction séparée plus large",
+        publicStatus: "Reconstruction en cours de validation technique",
+        status:
+          "Chantier de septembre non validé intégralement ; READY_FOR_HUMAN_RECIPE reste un objectif, pas un statut actuel",
+        summary:
+          "La V3 est une reconstruction séparée, avec une carte et un périmètre plus larges. Le travail actuel porte sur le monde, les déplacements et les interfaces. La validation technique complète, puis les essais avec les utilisateurs, restent à faire.",
+        evidence: [
+          "Sources relues le 23 septembre : le travail de septembre porte notamment sur la carte Blender, le terrain et les commandes à l'écran. La fluidité reste insuffisante dans le contrôle documenté ; aucun verdict global actuel n'est acquis.",
+          "Recette visuelle du 26/08/2026 : trois rôles entrés dans le monde, mouvements réels et 396 placements chargés.",
+          "Dialogues, guichet banquier et télécommande professeure rejoués localement sans requête externe.",
+          "Les compteurs de tests exacts et les anciennes candidates restent hors de l'accroche tant que la gate complète actuelle n'est pas rejouée."
+        ],
+        limits: [
+          "Validation de la direction artistique, test sur appareil enfant modeste et observation de la compréhension par un enfant encore requis.",
+          "Aucun déploiement, aucune donnée réelle d'enfant et aucun verdict d'usage terrain ne sont revendiqués."
+        ]
+      },
+      {
+        label: "V4",
+        name: "Migration native vers Godot",
+        publicStatus: "Migration partiellement jouable, non finalisée",
+        status: "Chantier Godot séparé ; aucun verdict global de jeu terminé",
+        summary: "La V4 reprend le monde dans Godot. L'exploration, les missions, les boutiques et les premières étapes de maison sont partiellement jouables. Le but est de travailler sur un client natif ; les performances sur les PC scolaires restent à mesurer.",
+        evidence: ["Sources et journaux privés relus le 23 septembre 2026.", "Une candidate Mac restaurée et son entrée dans le monde ont été contrôlées le 21 septembre.", "Captures natives d'interface avec des données de jeu fictives."],
+        limits: ["La progression complète, les accès aux maisons et plusieurs parcours de sauvegarde restent en chantier.", "Aucune validation Windows, PC i5/4 Go, enfant ou utilisation en classe n'est déduite de ces captures."]
+      }
     ],
     notMeasured: [
-      "Aucune métrique élève n'est publiable (données de mineurs).",
-      "Gain de temps enseignant : observé en retours terrain, non chiffré publiquement."
+      "Compréhension, plaisir et autonomie des enfants : recette terrain non publiée.",
+      "Gain de temps pour l'enseignante : non chiffré publiquement."
     ],
     proofLine:
-      "Application utilisée par une classe, Firebase, données sensibles, PDF et audits de sécurité.",
+      "La V2 permet déjà de vivre la boucle 3D sur un appareil. La V3 reconstruit le jeu web ; la V4 est une migration native distincte vers Godot. Aucune efficacité pédagogique ni utilisation en classe n'est revendiquée.",
     summary:
-      "Application web utilisée par une enseignante en classe : suivi des compétences des élèves et génération de livrets PDF, sur Firebase, avec les opérations sensibles déportées en Cloud Functions.",
-    stack: ["Next.js", "Firebase", "Firestore", "Cloud Functions", "Vitest", "PDF"],
+      "Une banque de classe transformée en petit monde vivant : les élèves explorent, économisent et tiennent des rôles, pendant que l'enseignante garde un outil de pilotage séparé.",
+    stack: ["Godot", "Blender", "Three.js", "Next.js", "Firebase", "Firestore", "Cloud Functions", "TypeScript", "Vite", "Node.js", "Playwright"],
     recruiterProof: [
-      "Produit utilisé par une vraie utilisatrice avec retours terrain.",
-      "Conscience sécurité sur données enfants et rules Firebase.",
-      "Capacité à investiguer des bugs PDF, déploiement, auth et données."
+      "Partir d'un besoin réel de classe, construire une expérience testable, puis séparer clairement ce qui fonctionne de ce qui reste à valider.",
+      "Relier le jeu, les trois rôles, Firebase, la sécurité et les tests.",
+      "Dire clairement ce qui fonctionne et ce qui reste bloqué avant un pilote."
     ],
     constraints: [
-      "Données enfants strictement anonymisées.",
-      "Usage tablette/PWA par une non-dev.",
-      "PDF imprimables et logique métier dense."
+      "Aucune donnée réelle de mineur dans les preuves, captures ou environnements de démonstration.",
+      "Trois rôles distincts : élève, professeure et banquier, sans classement financier humiliant.",
+      "Usage clavier, tactile et tablette, y compris sur matériel modeste.",
+      "V2, V3 et V4 physiquement et techniquement séparées : aucune preuve recyclée d'une version à l'autre."
     ],
     decisions: [
       {
-        decision: "Firebase / Firestore",
-        why: "Rapide pour auth, données, functions et déploiement.",
-        rejected: "Backend custom trop coûteux pour le contexte."
+        decision: "Conserver les preuves de chaque version séparément",
+        why: "V2 est une base locale jouable ; V3 reconstruit le jeu web et V4 le migre dans Godot. Chaque chantier a ses propres limites.",
+        rejected: "Présenter V3 comme une simple mise à jour visuelle de V2."
       },
       {
-        decision: "Cloud Functions pour opérations sensibles",
-        why: "Éviter de mettre l'autorité métier uniquement côté client.",
-        rejected: "Tout faire dans le front."
+        decision: "Autorité serveur pour l'économie et les actions sensibles",
+        why: "Les soldes, récompenses, mouvements et rôles ne doivent pas dépendre d'un client modifiable.",
+        rejected: "Faire confiance au navigateur pour valider les transactions."
       },
       {
-        decision: "Audits sécurité documentés",
-        why: "Données mineurs = pas de validation au doigt mouillé.",
-        rejected: "Se contenter d'un 'ça marche'."
+        decision: "Fixtures exclusivement fictives dans les preuves",
+        why: "Le contexte scolaire implique des mineurs et interdit toute démonstration publique sur données réelles.",
+        rejected: "Publier des captures de classe pour rendre la preuve plus spectaculaire."
       }
     ],
     delivered: [
-      "Application web/PWA.",
-      "Suivi élèves et compétences.",
-      "Génération PDF et ZIP.",
-      "Rules Firebase, Cloud Functions et tests.",
-      "Refontes UX successives après retours."
+      "V2 : prototype local à architecture multijoueur, validé sur un appareil avec trois rôles, quêtes, maisons, mini-jeux et pont Educool/Firebase.",
+      "V3 : monde 3D, économie fictive, marchands et maisons présents dans les versions précédentes ; intégration actuelle encore en validation.",
+      "Interface Educool : authentification, rôles, règles Firestore, Cloud Functions et suivi scolaire.",
+      "Harnais de tests, preuves responsive, manifestes de candidate et scripts de démarrage/arrêt locaux."
     ],
     results: [
-      "Usage en contexte de classe, données élèves strictement anonymisées.",
-      "Tests documentés sur les lots livrés (génération PDF, rules, parcours).",
-      "Incidents identifiés, documentés et corrigés progressivement."
+      "La boucle V2 se joue localement sur un appareil avec les trois rôles et des données fictives.",
+      "Les parcours visuels V3 élève, banquier et professeure ont été rejoués localement le 26/08/2026.",
+      "V4 : une candidate Mac restaurée entre dans le monde ; cela ne valide pas la progression complète ni les appareils scolaires.",
+      "Chaque version garde ses preuves séparées ; aucune utilisation réelle en classe n'est inventée."
     ],
     limits: [
-      "Données de mineurs : rien n'est publiable, la preuve se montre sur données fictives ou en entretien.",
-      "Le durcissement des règles d'accès Firebase est un chantier continu, pas un état figé."
-    ],
-    gallery: [
-      { src: "/assets/proof/educool/educool-dashboard.webp", caption: "Tableau de bord enseignante : progression de la classe, réussite par domaine et saisie rapide. Noms masqués sur toutes les captures : données de mineurs.", width: 1600, height: 870 },
-      { src: "/assets/proof/educool/educool-saisie-ceintures.webp", caption: "Saisie des ceintures : la matrice classe entière par matière, pensée pour valider un palier en quelques secondes pendant le cours.", width: 1600, height: 873 },
-      { src: "/assets/proof/educool/educool-livrets.webp", caption: "Livrets élèves : aperçu, personnalisation puis export PDF, individuel ou en lot (ZIP pour toute la classe).", width: 1600, height: 870 }
+      "Preuve privée : code, captures complètes et données de contexte se montrent uniquement sur fixtures anonymisées.",
+      "V2 n'est pas prête pour Internet ; V3 et V4 ne sont pas validées comme pilotes auprès d'enfants.",
+      "Les volumes de tests prouvent le comportement technique, pas l'utilité pédagogique ni l'adoption."
     ],
     links: [
       { label: "Version Markdown", href: "/projects/educool-la-herse.md" }
@@ -413,6 +793,7 @@ export const projects: Project[] = [
   },
   {
     slug: "capselys",
+    roleSummary: "J'ai revu le parcours d'adhésion, les contenus et le prototype d'assistant, puis présenté les choix à la cliente.",
     title: "Capsélys - refonte conversion et expérimentation IA",
     shortTitle: "Capsélys",
     type: "Conversion + expérimentation IA",
@@ -421,15 +802,17 @@ export const projects: Project[] = [
     status: "Staging / workshop MBA",
     evidenceLevel: "private",
     tier: 1,
-    image: "/assets/cards/capselys.webp",
+    image: "/assets/cards/capselys-art.webp",
+    fullColorMedia: true,
     repoStatus: "Privé, projet client",
-    liveLabel: "Staging (non public)",
+    liveLabel: "Production actuelle, hors staging",
     evidenceNote:
-      "Captures du staging et présentation client de 14 slides, détaillées en entretien.",
+      "Trois vues d'archive du staging : navigation, formulaire et en-tête. La date de capture d'origine n'est pas certifiée. Au 9 septembre 2026, les sources locales consultées n'apportent pas de nouvelle validation du staging ou de livraison ; ces images ne montrent pas l'état public actuel.",
     metaDescription:
       "Refonte de conversion (WordPress / Divi) sur staging sécurisé : nouveau parcours d'adhésion, audits Playwright multi-viewports, prototype d'assistant IA.",
     cardLine:
-      "Refonte de conversion en staging : audit UX, parcours d'adhésion et prototype d'assistant IA.",
+      "Simplifier le parcours d'adhésion d'un site WordPress et tester un assistant qui oriente vers le bon service.",
+    cardStatus: "Version de test · atelier MBA",
     architecture: [
       "WordPress + Divi imposés ; refonte sur un environnement de staging sécurisé.",
       "Audits de rendu multi-viewports via Playwright (le DOM Divi ne suffit pas à prouver le visuel).",
@@ -448,7 +831,7 @@ export const projects: Project[] = [
     proofLine:
       "Refonte orientée conversion, staging WordPress sécurisé, présentation orale client et audits multi-viewports.",
     summary:
-      "Refonte du site d'un client (WordPress / Divi) sur un staging sécurisé : nouveau parcours d'adhésion, audits de rendu multi-viewports avec Playwright, et prototype d'assistant IA qui oriente vers le bon service.",
+      "J'ai revu sur un staging le parcours d'adhésion d'un site WordPress. J'ai aussi testé le rendu sur plusieurs écrans et construit un assistant qui oriente vers le bon service.",
     stack: ["WordPress", "Divi", "Playwright", "PHP", "PDF", "LLM workflows"],
     recruiterProof: [
       "Cadrage client et conversion, pas seulement exécution front.",
@@ -507,15 +890,38 @@ export const projects: Project[] = [
       "Certaines décisions dépendent de la validation du client."
     ],
     gallery: [
-      { src: "/assets/proof/capselys/capselys-site.webp", caption: "Home Capsélys (staging) avec l'assistant IA ouvert en contexte.", width: 1400, height: 800 },
-      { src: "/assets/proof/capselys/capselys-assistant.webp", caption: "L'assistant répond à une vraie question (DUERP) : réponse cadrée, CTA et disclaimer « réponses générées automatiquement ».", width: 900, height: 1063 }
+      {
+        "src": "/assets/proof/capselys/navigation-archive-20260908.webp",
+        "caption": "Archive du staging : accès aux services depuis la navigation. Ce visuel ne représente pas le site public actuel.",
+        "width": 1440,
+        "height": 900
+      },
+      {
+        "src": "/assets/proof/capselys/adhesion-archive-20260908.webp",
+        "caption": "Archive du staging : formulaire d'adhésion ouvert, sans donnée renseignée.",
+        "width": 1440,
+        "height": 900
+      },
+      {
+        "src": "/assets/proof/capselys/header-archive-20260908.webp",
+        "caption": "Archive du staging : l'en-tête reste accessible pendant le défilement.",
+        "width": 1440,
+        "height": 900
+      }
     ],
     links: [
-      { label: "Version Markdown", href: "/projects/capselys.md" }
+      { label: "Version Markdown", href: "/projects/capselys.md" },
+      {
+        label: "Production actuelle, hors staging",
+        href: "https://www.capselys.fr/",
+        external: true
+      }
     ]
   },
   {
     slug: "iscom",
+    roleSummary: "J'ai préparé les contenus SEO, leur publication dans Drupal et l'automatisation d'une partie des vérifications.",
+    cardLine: "Préparer et publier des contenus SEO dans Drupal, avec des vérifications automatisées et la validation de l'équipe.",
     title: "ISCOM - SEO, Drupal et production éditoriale",
     shortTitle: "ISCOM",
     type: "SEO + Drupal + production éditoriale",
@@ -524,20 +930,19 @@ export const projects: Project[] = [
     status: "Alternance / client interne",
     evidenceLevel: "public",
     tier: 1,
-    image: "/assets/cards/iscom.webp",
+    image: "/assets/cards/iscom-art.webp",
+    fullColorMedia: true,
     repoStatus: "CMS employeur, non publiable",
     liveLabel: "Actu publiée (lien)",
     evidenceNote:
-      "Article publié en ligne, checklist QA de pré-publication et extrait d'audit de cannibalisation anonymisé. Le périmètre de 359 pages est une preuve privée, montrable en entretien.",
+      "Captures fraîches d'un article public. Elles prouvent sa publication et sa mise en page, pas l'exactitude de chacune de ses affirmations ni un gain de trafic.",
     metaDescription:
-      "Refonte SEO d'un site Drupal de 359 pages : arborescence de formations, FAQ, audit de cannibalisation Semrush, QA éditoriale et validation humaine.",
-    cardLine:
-      "Production SEO dans le Drupal d'ISCOM : arborescence de formations, FAQ, audit de cannibalisation et validation humaine avant publication.",
+      "Production SEO dans Drupal : rédaction, recherche de sources, audits Semrush et validation éditoriale avant publication.",
     architecture: [
       "Production éditoriale SEO saisie dans Drupal (CMS sensible).",
       "Audits de cannibalisation et inter-marques via Semrush.",
       "Automatisations Playwright pour la saisie et les contrôles.",
-      "Checklist de pré-publication et fact-check claim par claim avant mise en ligne."
+      "Checklist de pré-publication et vérification de chaque information avant mise en ligne."
     ],
     v2: [
       "Étendre les garde-fous qualité à d'autres types de contenus."
@@ -546,13 +951,12 @@ export const projects: Project[] = [
       "Impact trafic SEO des contenus : suivi côté employeur, non publiable ici."
     ],
     proofLine:
-      "Refonte SEO du site Drupal d'ISCOM (359 pages) : arborescence de formations, FAQ, audit de cannibalisation et validation humaine avant publication.",
+      "Des contenus publiés dans Drupal et un travail d'audit SEO mené dans le processus éditorial de l'employeur.",
     summary:
-      "Refonte SEO du site Drupal d'ISCOM (359 pages) : arborescence de formations, FAQ, audit de cannibalisation Semrush et automatisations Playwright, avec validation humaine avant chaque publication.",
+      "Je prépare des contenus SEO, les saisis dans Drupal et utilise Semrush pour repérer les pages qui se concurrencent. Je confronte les informations aux sources ; l'équipe éditoriale garde la validation finale.",
     stack: ["Drupal", "Playwright", "Semrush", "SEO", "LLM-assisted QA"],
     recruiterProof: [
-      "Publication en ligne dans le Drupal de l'employeur, avec validation humaine avant chaque mise en ligne.",
-      "Travail à l'échelle d'un site de 359 pages, pas sur une page isolée (preuve privée).",
+      "Livrer dans le process de publication d'un employeur sans court-circuiter la validation éditoriale.",
       "Capacité à transformer un audit SEO en décisions nommées.",
       "Discipline sur les actions sensibles, avec validation avant publication."
     ],
@@ -568,7 +972,7 @@ export const projects: Project[] = [
         rejected: "Automatiser le bouton enregistrer."
       },
       {
-        decision: "Fact-check claim par claim",
+        decision: "Vérifier chaque information",
         why: "Les contenus IA inventent vite des chiffres plausibles.",
         rejected: "Rédaction IA brute."
       }
@@ -581,8 +985,8 @@ export const projects: Project[] = [
       "Lessons qualité et garde-fous."
     ],
     results: [
-      "Périmètre de la refonte : 359 pages du site Drupal iscom.fr.",
-      "Actu IA agentique publiée live le 16/06.",
+      "Périmètre de la refonte : 359 pages du site Drupal iscom.fr (preuve privée, montrable en entretien).",
+      "Actu IA agentique publiée sur iscom.fr.",
       "Audit cannibalisation livré en PDF.",
       "Process de pré-publication durci après erreurs."
     ],
@@ -591,9 +995,29 @@ export const projects: Project[] = [
       "Chaque publication passe par une validation humaine ; l'automatisation couvre la saisie et les contrôles.",
       "Certaines preuves sont montrables en entretien, pas en ligne."
     ],
+    gallery: [
+      {
+        "src": "/assets/proof/iscom/public-0-20260908.webp",
+        "caption": "Article public : titre et mise en page vérifiés le 8 septembre 2026.",
+        "width": 1440,
+        "height": 960
+      },
+      {
+        "src": "/assets/proof/iscom/public-750-20260908.webp",
+        "caption": "Corps de l'article dans Drupal : introduction et hiérarchie des sections.",
+        "width": 1440,
+        "height": 960
+      },
+      {
+        "src": "/assets/proof/iscom/public-1500-20260908.webp",
+        "caption": "Suite de l'article public : développement et sous-titre. Le trafic et la performance SEO ne sont pas déduits de cette capture.",
+        "width": 1440,
+        "height": 960
+      }
+    ],
     links: [
       {
-        label: "Actu live",
+        label: "Article public",
         href: "https://www.iscom.fr/actualites/lia-change-de-role-les-communicants-aussi",
         external: true
       },
@@ -602,6 +1026,8 @@ export const projects: Project[] = [
   },
   {
     slug: "preuvia",
+    heroImage: { src: "/assets/proof/preuvia/live-20260923.webp", caption: "Accueil public contrôlé le 23 septembre 2026. L'exemple de benchmark est fictif, pas un résultat client.", width: 1397, height: 848 },
+    roleSummary: "J'ai conçu l'offre, la méthode d'audit, le site et un exemple de livrable.",
     title: "Preuvia - audit de visibilité dans les réponses des IA",
     shortTitle: "Preuvia",
     type: "Produit - audit GEO (visibilité IA)",
@@ -610,7 +1036,8 @@ export const projects: Project[] = [
     status: "Offre en ligne - phase de lancement",
     evidenceLevel: "public",
     tier: 1,
-    image: "/assets/cards/preuvia.webp",
+    image: "/assets/cards/preuvia-art.webp",
+    fullColorMedia: true,
     repoStatus: "Privé, produit commercial",
     liveLabel: "Site en ligne (preuvia.vercel.app)",
     evidenceNote:
@@ -619,7 +1046,7 @@ export const projects: Project[] = [
       "Audit GEO productisé : savoir si une marque apparaît dans les réponses des IA, qui ressort à sa place, quoi publier, puis quoi re-tester au prochain audit.",
     architecture: [
       "Site et tunnel de prise de contact en Next.js, déployés et suivis en production.",
-      "Protocole d'audit reproductible : un jeu de requêtes testé sur plusieurs assistants (ChatGPT, Claude, Perplexity, Gemini, Mistral).",
+      "Protocole d'audit reproductible : un jeu de requêtes testé sur quatre IA principales (ChatGPT, Claude, Perplexity et Gemini), avec Mistral selon le contexte.",
       "Grille de lecture publique : présence, exactitude, fraîcheur et citabilité, notées de 0 à 3 par assistant.",
       "Comparaison des sources citées (concurrents, comparatifs, forums) pour situer la marque.",
       "Livrable PDF structuré : score de visibilité, écarts, contenus et balisage à publier, puis éléments à re-tester au prochain audit."
@@ -633,7 +1060,7 @@ export const projects: Project[] = [
       "Effet réel sur les citations IA des clients : mesuré au cas par cas, pas de moyenne publiable."
     ],
     proofLine:
-      "Audit GEO productisé : mesurer qui les IA citent à la place d'une marque, comparer les écarts, puis livrer un plan de publication re-testable.",
+      "Un audit sur quatre IA principales, avec Mistral selon le contexte, qui montre si elles citent une marque, qui apparaît à sa place et quoi publier avant le prochain contrôle.",
     summary:
       "Aider une marque à savoir si elle apparaît dans les réponses des assistants IA, qui ressort à sa place, quoi publier, puis quoi re-tester au prochain audit.",
     stack: ["Next.js", "GEO / AEO", "LLM multi-modèles", "Schema JSON-LD", "PDF"],
@@ -673,7 +1100,7 @@ export const projects: Project[] = [
       "Site en ligne avec tunnel de prise de contact.",
       "Protocole d'audit multi-modèles reproductible.",
       "Questions test séparant requêtes génériques et requêtes marque.",
-      "Livrable PDF : score, sources citées, écarts et plan d'action re-testable.",
+      "Livrable PDF avec le score, les sources citées, les écarts et un plan d'action à vérifier lors du prochain audit.",
       "Prototype de mini-audit et modèle de livrable."
     ],
     results: [
@@ -688,28 +1115,192 @@ export const projects: Project[] = [
       "Ne remplace pas le SEO classique ; il ajoute une couche de visibilité dans les moteurs de réponse."
     ],
     gallery: [
-      { src: "/assets/proof/preuvia/preuvia-landing.webp", caption: "Landing Preuvia en ligne : la promesse (« qui les IA recommandent avant vous ») et le démonstrateur d'écart de visibilité — question posée, sources qui ressortent, marque non citée.", width: 1600, height: 921 }
+      {
+        "src": "/assets/proof/preuvia/public-0-20260908.webp",
+        "caption": "Accueil public : la promesse et un exemple de comparaison entre réponses d'IA.",
+        "width": 1440,
+        "height": 960
+      },
+      {
+        "src": "/assets/proof/preuvia/public-750-20260908.webp",
+        "caption": "Le site explique ce que l'audit observe et les étapes de la prestation.",
+        "width": 1440,
+        "height": 960
+      },
+      {
+        "src": "/assets/proof/preuvia/public-1500-20260908.webp",
+        "caption": "Exemple de matrice de citations sur la page publique. C'est une démonstration du livrable, pas un résultat client.",
+        "width": 1440,
+        "height": 960
+      }
     ],
     links: [
-      { label: "Voir le site", href: "https://preuvia.vercel.app", external: true },
+      { label: "Site live", href: "https://preuvia.vercel.app", external: true },
       { label: "Version Markdown", href: "/projects/preuvia.md" }
     ]
   },
   {
+    slug: "cortex-bridge",
+    roleSummary: "J'ai conçu le fonctionnement et développé l'extension Chrome, la console et l'exécuteur local.",
+    title: "Cortex Bridge - ChatGPT comme cerveau d'un agent de code local",
+    shortTitle: "Cortex Bridge",
+    type: "Agent de code local open source piloté par ChatGPT",
+    period: "Juillet - septembre 2026 · v0.6.5-preview.1",
+    role: "Conception produit, architecture, extension MV3, backend FastAPI, sécurité, QA",
+    status: "Preview technique open source · v0.6.5-preview.1 non finalisée",
+    cardStatus: "Preview v0.6.5 · non finalisée",
+    cardLine:
+      "Utiliser ChatGPT comme cerveau d'un agent de code. Vous validez les actions, Cortex les exécute sur votre ordinateur.",
+    evidenceLevel: "public",
+    tier: 1,
+    image: "/assets/cards/cortex-orbital-square-20260910-art.webp",
+    fullColorMedia: true,
+    repoStatus: "Repo public sous MIT : github.com/Jonassuhard/cortex-bridge",
+    liveLabel: "Repo GitHub (lien)",
+    evidenceNote:
+      "Revue du dépôt public le 23 septembre 2026 : v0.6.5-preview.1 est une preview non finalisée, pas une release stable. Le document de publication laisse plusieurs validations ouvertes. La preuve historique v0.6.1 rapporte 724 tests backend, 207 frontend, 138 extension, 26 E2E et 4 accessibilité sans échec ; ces résultats ne valident pas la nouvelle version.",
+    metaDescription:
+      "Cortex Bridge utilise ChatGPT comme cerveau d'un agent de code local open source : vous validez, puis il exécute dans le dossier choisi.",
+    architecture: [
+      "Extension Chrome MV3 : service worker, scripts de contenu, commandes DOM structurées en liste blanche.",
+      "Console FastAPI en loopback (port 8420) : appairage WebSocket à token unique, chat, pièces jointes, captures d'onglet, missions.",
+      "Interface React et Next.js statique en français : appairage, états d'envoi explicites, navigation sur 50 conversations.",
+      "Orchestration SQLite + exécuteur déterministe confiné au workspace ; Ollama optionnel pour les modèles locaux.",
+      "Boucle contrôlée : ChatGPT planifie, Cortex extrait la décision, l'exécuteur local agit après validation, puis le rapport revient dans la conversation."
+    ],
+    v2: [
+      "Sonde DOM quotidienne pour détecter une mise à jour de ChatGPT cassant le bridge avant usage.",
+      "Transport officiellement supporté par le fournisseur si une option locale compatible devient disponible.",
+      "Distribution de l'extension au-delà de l'installation locale manuelle."
+    ],
+    notMeasured: [
+      "Stabilité de la boucle sur plusieurs semaines d'usage réel : pas encore de métrique publiable.",
+      "Compatibilité continue avec l'interface ChatGPT : les preuves restent datées et une modification du DOM peut casser le transport."
+    ],
+    proofLine:
+      "ChatGPT réfléchit et prépare le travail. Vous validez. Cortex exécute dans le dossier choisi et garde une trace de chaque étape.",
+    summary:
+      "Cortex Bridge transforme ChatGPT en cerveau d'un agent de code local open source. ChatGPT analyse et planifie ; vous validez ; Cortex exécute dans le dossier choisi et garde une trace. Le projet vise l'usage d'un agent de code sans ajouter un second abonnement dédié. La preview v0.6.5 ajoute le suivi des fichiers transmis et la supervision des actions. Elle reste non finalisée : l'installation complète, l'isolation entre projets et l'acceptation fournisseur ne sont pas acquises.",
+    stack: ["Chrome MV3", "FastAPI", "Next.js", "React", "SQLite", "Python", "Ollama"],
+    recruiterProof: [
+      "Construire un produit complet avec une extension, un backend local, une interface et des tests.",
+      "Limiter les actions au dossier choisi et bloquer l'exécution en cas de doute.",
+      "Publier le code, les preuves de release et les limites du projet."
+    ],
+    constraints: [
+      "Éviter le copier-coller entre la conversation et l'exécution locale sans laisser le modèle agir librement.",
+      "Fonctionner dans le vrai profil Chrome de l'utilisateur, avec un exécuteur déterministe disponible sans Ollama.",
+      "Lignes rouges assumées : pas d'endpoints privés, pas de cookies de session, pas de contournement de protections ou de limites.",
+      "Transport ChatGPT grand public en opt-in explicite, jamais présenté comme affilié, autorisé ou supporté par OpenAI."
+    ],
+    decisions: [
+      {
+        decision: "Exécuteur déterministe confiné au workspace",
+        why: "L'IA propose, mais seule une action bornée et validée s'exécute ; le système reste utile même sans modèle local disponible.",
+        rejected: "Laisser le LLM lancer librement des commandes shell."
+      },
+      {
+        decision: "Bridge DOM en module opt-in explicite",
+        why: "Le conflit avec les conditions du fournisseur est réel : l'utilisateur doit comprendre le risque avant d'activer ce transport.",
+        rejected: "Activer le bridge par défaut ou le présenter comme officiellement supporté."
+      },
+      {
+        decision: "Transport extension MV3 par défaut",
+        why: "Travailler dans le vrai Chrome avec la vraie session, sans environnement parallèle fragile.",
+        rejected: "Piloter un navigateur Playwright séparé comme produit principal."
+      },
+      {
+        decision: "Bloquer en cas de doute",
+        why: "Une validation mal formée arrête la mission au lieu de l'autoriser : ce comportement est testé.",
+        rejected: "Mode permissif avec simples alertes."
+      }
+    ],
+    delivered: [
+      "Extension Chrome MV3 (service worker, scripts de contenu, commandes DOM en liste blanche).",
+      "Console FastAPI loopback : appairage à token unique, chat, pièces jointes, captures d'onglet, missions.",
+      "Interface React et Next.js statique en français avec états d'envoi explicites.",
+      "Orchestration SQLite et exécuteur déterministe confiné au workspace, fonctionnel sans Ollama.",
+      "Installation macOS contrôlée par plan immuable et diagnostic local reproductible."
+    ],
+    results: [
+      "Le tag v0.6.5-preview.1 et son état d'avancement sont publics. Les fichiers demandés, les autorisations et les étapes d'envoi sont suivis explicitement.",
+      "La note de publication rapporte un build et 45 contrôles ciblés réussis, mais pas une validation complète : un échec de la suite backend a été corrigé puis retesté seulement sur un sous-ensemble.",
+      "Dix scénarios à deux conversations exécutés sans croisement ; le brouillon du troisième writer est conservé lors du refus.",
+      "Le diagnostic d'arrêt rend visibles les processus actifs et permet de couper immédiatement l'exécution locale."
+    ],
+    limits: [
+      "Les suites automatisées utilisent aussi des fixtures : elles ne prouvent pas une compatibilité continue avec un compte ChatGPT réel.",
+      "Installation sur un nouveau compte macOS, validation Windows et isolation complète de plusieurs projets restent à vérifier. Le contrôle de confidentialité signale encore une fixture de test ; la preview n'est pas déclarée entièrement validée.",
+      "Le transport automatique par l'interface ChatGPT entre en conflit avec les conditions du fournisseur : activation opt-in et risque de restriction du compte.",
+      "Preview technique macOS/Chrome : extension installée manuellement et dépendance à un DOM externe susceptible de changer."
+    ],
+    gallery: [
+      {
+        src: "/assets/proof/cortex-bridge/context-request-v062.webp",
+        caption: "Autoriser un fichier, une capture ou un lien séparément. Écran de test v0.6.2 conservé dans le package v0.6.5 : données synthétiques, aucune exécution réelle revendiquée.",
+        width: 1440,
+        height: 1000
+      },
+      {
+        "src": "/assets/proof/cortex-bridge/workspace-20260908.webp",
+        "caption": "Console locale : conversations et dossier de travail, avec les données fictives des tests du dépôt. Ce n'est pas une exécution réelle.",
+        "width": 1440,
+        "height": 960
+      },
+      {
+        "src": "/assets/proof/cortex-bridge/approval-20260908.webp",
+        "caption": "Avant exécution : dossier, durée et permissions à vérifier. Scénario fictif rejoué dans l'interface locale.",
+        "width": 1440,
+        "height": 960
+      },
+      {
+        "src": "/assets/proof/cortex-bridge/public-0-20260908.webp",
+        "caption": "Archive du dépôt GitHub capturée le 8 septembre 2026. Pour la preview actuelle, consulter le lien v0.6.5 ci-dessous.",
+        "width": 1440,
+        "height": 960
+      }
+    ],
+    links: [
+      {
+        label: "GitHub",
+        href: "https://github.com/Jonassuhard/cortex-bridge",
+        external: true
+      },
+      {
+        label: "État de la preview v0.6.5",
+        href: "https://github.com/Jonassuhard/cortex-bridge/blob/v0.6.5-preview.1/PREVIEW_V065.md",
+        external: true
+      },
+      {
+        label: "Preuve du tag v0.6.1",
+        href: "https://github.com/Jonassuhard/cortex-bridge/blob/v0.6.1/docs/verification/v0.6.1.json",
+        external: true
+      },
+      { label: "Version Markdown", href: "/projects/cortex-bridge.md" }
+    ]
+  },
+  {
+    videoWidth: 360,
+    videoHeight: 640,
     slug: "battle-engine",
+    roleSummary: "J'ai automatisé le rendu, le montage et la publication des vidéos.",
+    cardLine: "Produire des vidéos de combats de bout en bout, du rendu du jeu à la publication sur YouTube.",
     title: "Battle Engine - pipeline vidéo automatisé",
     shortTitle: "Battle Engine",
     type: "Pipeline vidéo / automation",
     period: "2026",
     role: "Pipeline Python, Godot, rendu, FFmpeg, publication",
-    status: "Actif / lab",
+    status: "Lab actif · combats publiés sur YouTube",
     evidenceLevel: "private",
     tier: 2,
-    image: "/assets/cards/battle-engine.webp",
-    video: "/assets/video/battle-engine.mp4",
-    repoStatus: "Publication prévue après anonymisation",
+    image: "/assets/cards/battle-engine-art.webp",
+    fullColorMedia: true,
+    video: "/assets/video/battle-bl05-20260923.mp4",
+    repoStatus: "Dépôt privé",
     liveLabel: "Lab",
     noindex: true,
+    evidenceNote:
+      "Nouveau rendu BL05 du 23 septembre 2026 : Gojo contre Sukuna, extrait local de 18 secondes. La publication YouTube du même épisode est liée plus bas. Les autres extraits sont des archives datées. Vidéos muettes à démarrage automatique, sauf préférence de réduction des animations.",
     architecture: [
       "Pipeline Python orchestrant : rendu Godot → FFmpeg → interpolation RIFE → publication via l'API YouTube."
     ],
@@ -720,34 +1311,94 @@ export const projects: Project[] = [
       "Audience YouTube : à vérifier, non avancée comme preuve recruteur."
     ],
     proofLine:
-      "Pipeline Godot -> FFmpeg -> interpolation -> YouTube API pour vidéos 1VS1.",
+      "Un pipeline Python lance le combat dans Godot, prépare la vidéo avec FFmpeg et reprend la publication si une étape est interrompue.",
     summary:
-      "Pipeline vidéo automatisé pour une chaîne YouTube de simulations 1v1 : rendu sous Godot, montage et encodage FFmpeg, interpolation d'images avec RIFE, le tout scripté en Python.",
+      "Battle Engine fabrique des vidéos de combats 1 contre 1. Python lance le rendu Godot, FFmpeg prépare le montage, RIFE lisse les mouvements et le pipeline gère la publication YouTube. Les extraits ci-dessous montrent ce qu'il produit.",
     stack: ["Godot", "Python", "FFmpeg", "RIFE", "YouTube API"],
     recruiterProof: [
-      "Automatisation de pipeline créatif.",
-      "Orchestration fichiers, rendu et publication.",
-      "Passage d'une idée personnelle à un pipeline structuré."
+      "Automatiser un travail qui traverse plusieurs outils.",
+      "Reprendre une publication après une interruption sans recommencer tout le rendu.",
+      "Documenter les droits audio, les contrôles qualité et les étapes d'exploitation."
     ],
-    constraints: ["Contenu lab à cadrer pour ne pas brouiller le positionnement CDI."],
+    constraints: [
+      "Enchaîner rendu, montage et publication sans perdre l'état du travail après une interruption.",
+      "Vérifier le résultat vidéo et les droits des contenus avant publication."
+    ],
     decisions: [
       {
-        decision: "Le garder en Tier 2",
-        why: "Bonne preuve technique, mais moins directement recruteur marketing IA.",
-        rejected: "Le mettre en première ligne."
+        "decision": "Sauvegarder l'état entre les étapes",
+        "why": "Reprendre au dernier travail terminé après une interruption, sans recalculer toute la vidéo.",
+        "rejected": "Relancer systématiquement le pipeline depuis le début."
       }
     ],
-    delivered: ["Pipeline de rendu", "Vidéos de test générées", "Scripts d'automatisation"],
-    results: ["Aucune métrique d'audience citée."],
-    limits: ["Projet lab : automatisation créative, éloignée du poste visé, gardée comme preuve technique."],
-    gallery: [
-      { src: "/assets/proof/battle-engine/intro-platforms.webp", caption: "Séquence d'intro : les plateformes des deux combattants et le champ de particules, rendus par un shader custom sous Godot.", width: 620, height: 1103 },
-      { src: "/assets/proof/battle-engine/intro-buildup.webp", caption: "Montée du champ de particules avant le face-à-face, générée en temps réel côté moteur.", width: 620, height: 1103 }
+    delivered: [
+      "Pipeline Python de rendu et de publication reprenable.",
+      "Combats rendus dans Godot et montés avec FFmpeg.",
+      "Montages courts, roster animé et teaser."
     ],
-    links: [{ label: "Version Markdown", href: "/projects/battle-engine.md" }]
+    results: [
+      "Le pipeline nightly peut reprendre après une interruption au lieu de recommencer toute la chaîne.",
+      "Le 23 septembre, le contrôle de lisibilité a été corrigé pour analyser le bandeau de l'épisode plutôt que l'image entière. Un témoin avec bandeau masqué reste refusé ; le seuil n'a pas été abaissé.",
+      "L'épisode BL05 a ensuite été publié sur YouTube. Cette publication prouve une sortie du pipeline, pas un résultat d'audience.",
+      "Aucune métrique d'audience n'est citée."
+    ],
+    limits: [
+      "Laboratoire personnel, pas un service vidéo exploité pour des clients.",
+      "Les extraits montrent le rendu obtenu, pas une preuve de succès d'audience.",
+      "Le roster et le teaser sont des archives : leurs personnages et leurs chiffres décrivent la version de l'époque."
+    ],
+    gallery: [
+      {
+        "src": "/assets/video/battle-saitama-20260908.mp4",
+        "poster": "/assets/video/battle-saitama-20260908-poster.webp",
+        "caption": "Extrait de combat issu du corpus local : arène sombre, effets et fin de combat. Archive de juillet 2026, 20 secondes.",
+        "width": 540,
+        "height": 960
+      },
+      {
+        "src": "/assets/video/battle-goku-20260908.mp4",
+        "poster": "/assets/video/battle-goku-20260908-poster.webp",
+        "caption": "Goku contre MrBeast : extrait du rendu local d'août 2026. Combat, effets et barre de vie, 20 secondes.",
+        "width": 720,
+        "height": 1280
+      },
+      {
+        "src": "/assets/video/battle-roster-20260908.mp4",
+        "poster": "/assets/video/battle-roster-20260908-poster.webp",
+        "caption": "Montage du roster de juin 2026 : 44 personnages présentés dans cette archive. Ce nombre ne décrit pas le roster actuel.",
+        "width": 1280,
+        "height": 720
+      },
+      {
+        "src": "/assets/video/battle-teaser-20260908.mp4",
+        "poster": "/assets/video/battle-teaser-20260908-poster.webp",
+        "caption": "Teaser d'avril 2026 : montage de présentation du projet. Archive de lancement, distincte du rendu actuel des combats.",
+        "width": 1280,
+        "height": 720
+      }
+    ],
+    links: [
+      {
+        "label": "Version Markdown",
+        "href": "/projects/battle-engine.md"
+      },
+      {
+        "label": "Chaîne YouTube",
+        "href": "https://www.youtube.com/channel/UCBdIZLI1Z_EmaZgalR8GsHw",
+        "external": true
+      },
+      {
+        "label": "BL05 publié le 23 septembre",
+        "href": "https://www.youtube.com/watch?v=kDvb_gy8W18",
+        "external": true
+      }
+    ]
   },
   {
+    evidenceNote: "Nouvelles captures locales de la landing d'équipe archivée. Elles situent le concept ; elles ne prouvent ni une application distribuée ni des résultats d'acquisition. Le design et le développement sont ceux de l'équipe.",
     slug: "hoopsphere",
+    roleSummary: "J'étais chargé du marketing, de l'étude de marché et des projections financières.",
+    cardLine: "Un projet d'équipe autour des statistiques de basket. Ma part : le marketing et les projections financières, pas le code.",
     title: "HoopSphere - prototype produit MBA",
     shortTitle: "HoopSphere",
     type: "Prototype produit",
@@ -756,7 +1407,8 @@ export const projects: Project[] = [
     status: "Archive / MBA",
     evidenceLevel: "self-declared",
     tier: 3,
-    image: "/assets/cards/hoopsphere.webp",
+    image: "/assets/cards/hoopsphere-art.webp",
+    fullColorMedia: true,
     repoStatus: "Projet d'équipe (MBA)",
     liveLabel: "Lab / archive",
     noindex: true,
@@ -799,86 +1451,122 @@ export const projects: Project[] = [
       "Le développement et le design ne sont pas de moi : ma part est le marketing, l'acquisition et le business plan.",
       "Projet MBA : audience construite, mais pas encore de traction payante."
     ],
+    gallery: [
+      {
+        "src": "/assets/proof/hoopsphere/landing-20260908.webp",
+        "caption": "Landing d'équipe archivée : proposition de valeur pour les joueurs de basket. Ma contribution porte sur le marketing, pas sur le design de cet écran.",
+        "width": 1440,
+        "height": 960
+      },
+      {
+        "src": "/assets/proof/hoopsphere/product-20260908.webp",
+        "caption": "Landing d'équipe : les publics joueur, club et entraîneur. Capture locale de l'archive, pas une application mobile en production.",
+        "width": 1440,
+        "height": 960
+      },
+      {
+        "src": "/assets/proof/hoopsphere/landing-mobile-20260908.webp",
+        "caption": "La landing d'équipe sur mobile, capturée depuis l'archive locale. Elle présente le concept, pas une application distribuée.",
+        "width": 390,
+        "height": 844
+      }
+    ],
     links: [{ label: "Version Markdown", href: "/projects/hoopsphere.md" }]
   },
   {
     slug: "rag-starter-kit",
-    title: "RAG Starter Kit - API de retrieval augmenté multi-tenant",
+    roleSummary: "J'ai construit un prototype de recherche dans les documents, avec une séparation par client.",
+    cardLine: "Interroger des documents sans mélanger ceux de plusieurs clients. Prototype historique, non exécutable aujourd'hui.",
+    title: "RAG Starter Kit - rechercher dans des documents avec leurs sources",
     shortTitle: "RAG Starter Kit",
     type: "Projet perso / preuve technique",
     period: "2026",
     role: "Conception et développement (full-stack)",
-    status: "Prototype privé - publication à préparer",
+    status: "Prototype privé historique · source à restaurer",
     evidenceLevel: "private",
     tier: 2,
-    image: "/assets/cards/rag-starter-kit.webp",
-    repoStatus: "Publication prévue après anonymisation",
-    liveLabel: "Démo locale",
+    image: "/assets/cards/rag-starter-kit-art.webp",
+    fullColorMedia: true,
+    repoStatus: "Source d'origine absente après migration · historique Git privé conservé",
+    liveLabel: "Archive privée non exécutable",
     noindex: true,
+    evidenceNote:
+      "Audit privé du 29 juin 2026 : dépôt master au commit 1fc9629, quatre commits et structure complète documentés. Le manifeste du 29 avril recensait 3,4 Go. Les octets de la source et de sa copie de publication sont absents des volumes montés au 28 août 2026.",
     proofLine:
-      "API FastAPI qui ingère des documents (PDF, DOCX, Markdown, texte), les indexe dans Qdrant et répond en citant ses sources, avec auth multi-tenant et un module d'évaluation type Ragas.",
+      "Un prototype privé multi-tenant a été audité en juin 2026 : ingestion de documents, recherche Qdrant, réponses Mistral avec citations et cas d'évaluation. Sa source doit maintenant être restaurée.",
     summary:
-      "Servir plusieurs clients sur un même backend RAG, en gardant les données isolées par client_id et en mesurant la qualité des réponses.",
-    stack: ["FastAPI", "Qdrant", "Mistral AI", "LangChain", "SQLite", "pytest", "Next.js 16 / React 19", "Docker Compose"],
+      "Prototype privé historique pour interroger des documents sans mélanger les données de plusieurs clients. Son architecture et son historique Git sont documentés, mais le code n'est plus présent localement et aucune exécution actuelle n'est revendiquée.",
+    stack: ["FastAPI", "Qdrant", "Mistral AI", "LangChain", "SQLite", "Next.js 15", "React 19", "Docker Compose"],
     recruiterProof: [
-      "Architecture RAG complète de bout en bout, avec ingestion multi-format, indexation vectorielle et génération avec citation des sources.",
-      "Isolation multi-tenant (un backend, plusieurs clients séparés par client_id) avec couche d'auth.",
-      "Module d'évaluation de la qualité des réponses inspiré de Ragas, avec cas de scoring versionnés et suite pytest."
+      "Construire historiquement un parcours complet : ingestion, recherche, réponse et citations.",
+      "Séparer les données par client_id avec authentification, journaux d'usage et filtres de recherche.",
+      "Prévoir des cas versionnés pour mesurer le retrieval sans inventer de score actuel."
     ],
     constraints: [
       "Données de démonstration, secrets et identités retirés avant toute future publication.",
-      "Backend unique servant plusieurs clients : isolation stricte des données par tenant."
+      "L'isolation des données doit être prouvée par des tests avant toute présentation comme produit utilisable."
     ],
     decisions: [
       {
-        decision: "Qdrant comme base vectorielle, orchestration via LangChain.",
-        why: "Stack RAG éprouvée, intégration directe avec les embeddings Mistral et les text-splitters.",
+        decision: "Séparer l'ingestion, la recherche, les citations et l'évaluation.",
+        why: "Le dépôt historique séparait déjà ces étapes pour permettre leur vérification et leur maintenance.",
         rejected: "Recherche full-text classique sans vecteurs, insuffisante pour gérer la similarité sémantique."
       },
       {
-        decision: "Module d'évaluation type Ragas avec cas de scoring versionnés.",
+        decision: "Prévoir des cas d'évaluation versionnés.",
         why: "Mesurer la qualité du retrieval au lieu de juger les réponses à l'œil.",
         rejected: "Validation manuelle ad hoc, difficile à reproduire et à comparer entre versions."
       }
     ],
     delivered: [
-      "Backend FastAPI : ingestion, retriever, chat avec sources, auth multi-tenant, logs d'usage et d'audit.",
-      "Frontend Next.js 16 / React 19 (App Router, TypeScript, Tailwind 4).",
-      "Stack dockerisée (Qdrant + backend + frontend) lançable via docker compose, + docs d'onboarding."
+      "Le prototype historique audité réunissait ingestion, retriever, chat avec citations, authentification multi-tenant et journaux d'usage.",
+      "Interface historique Next.js 15 / React 19 avec espaces cabinet, administration et portail.",
+      "Docker Compose, documentation d'onboarding et cas d'évaluation inspirés de Ragas."
     ],
     results: [
-      "Suite de tests pytest et jeux de cas de scoring en place pour évaluer le retrieval.",
-      "Performance et qualité chiffrées du RAG : pas encore mesurées publiquement."
+      "L'audit privé du 29/06/2026 a documenté quatre commits, les modules du prototype et les cas d'évaluation présents dans le dépôt.",
+      "Aucune performance, qualité de réponse ou exécution actuelle n'est revendiquée sans les octets de la source."
     ],
     limits: [
-      "Code et démonstration non publics à ce jour ; l'architecture décrite n'est donc pas auditée publiquement.",
-      "Le module d'évaluation fournit le harnais ; les scores de qualité ne sont pas publiés."
+      "Source d'origine et copie de publication absentes après migration ; le prototype n'est pas exécutable aujourd'hui.",
+      "La présence historique de fichiers de test ne prouve pas leur réussite actuelle.",
+      "L'ancienne copie anonymisée conservait encore des coordonnées professionnelles et son historique Git ; elle n'était pas publiable telle quelle."
+    ],
+    gallery: [
+      { src: "/assets/proof/rag-starter-kit/rag-document-pipeline-20260828.webp", caption: "Reconstitution éditoriale du parcours historique : ingestion, indexation, recherche puis réponse avec ses sources.", width: 1600, height: 960 },
+      { src: "/assets/proof/rag-starter-kit/rag-tenant-isolation-20260828.webp", caption: "Reconstitution de l'isolation historique par client_id ; ce schéma n'est pas une certification de sécurité actuelle.", width: 1600, height: 960 },
+      { src: "/assets/proof/rag-starter-kit/rag-evaluation-loop-20260828.webp", caption: "Cas d'évaluation présents dans le dépôt historique ; aucun résultat actuel n'est publié sans restauration de la source.", width: 1600, height: 960 }
     ],
     links: [{ label: "Version Markdown", href: "/projects/rag-starter-kit.md" }]
   },
   {
     slug: "board-ia-pme",
+    roleSummary: "J'ai conçu le principe de comparaison et un premier socle Python.",
+    cardLine: "Comparer cinq analyses IA pour repérer leurs désaccords. Prototype historique dont la source reste à restaurer.",
     title: "Board IA PME - comité consultatif multi-agents",
     shortTitle: "Board IA PME",
     type: "POC / preuve technique",
     period: "2026",
     role: "Conception et développement (POC)",
-    status: "POC privé initié",
+    status: "Prototype privé historique · source à restaurer",
     evidenceLevel: "private",
     tier: 2,
-    image: "/assets/cards/board-ia-pme.webp",
-    repoStatus: "Publication prévue après anonymisation",
-    liveLabel: "Lab",
+    image: "/assets/cards/board-ia-pme-art.webp",
+    fullColorMedia: true,
+    repoStatus: "Source d'origine absente après migration · historique Git privé conservé",
+    liveLabel: "Archive privée non exécutable",
     noindex: true,
+    evidenceNote:
+      "Audit privé du 29 juin 2026 : commit unique 0b9a4cb, 437 lignes dans 10 fichiers, cinq agents, cio.py et run_board.py. Les octets de la source et de sa copie de publication sont absents des volumes montés au 28 août 2026.",
     proofLine:
-      "POC d'audit stratégique pour TPE/PME : 5 agents Mistral analysent une question, chacun avec sa donnée exclusive (asymétrie d'information), puis un CIO déterministe agrège les verdicts par niveau de confiance.",
+      "Un prototype Python historique de 437 lignes faisait travailler cinq agents, puis appliquait un classement, une pondération et une gate déterministes avant une conclusion rédigée par Mistral Large.",
     summary:
-      "Faire émerger de vraies divergences d'analyse plutôt qu'une synthèse lissée, en privant chaque agent de la vue des autres et en agrégeant via des règles explicites.",
-    stack: ["Python / FastAPI", "Mistral Small + Large", "Qdrant (1 collection/agent)", "Celery + Redis", "Docker Compose"],
+      "Prototype privé historique conçu pour faire ressortir les désaccords entre cinq analyses. Le petit socle Python a existé, mais sa source n'est plus présente et les infrastructures décrites dans le README n'étaient pas implémentées.",
+    stack: ["Python", "Mistral Large", "Pondération déterministe", "JSON"],
     recruiterProof: [
-      "Conception d'un système multi-agents avec asymétrie d'information : chaque agent (financier, marché, client, ops, macro) a sa donnée exclusive.",
-      "Agrégation par un CIO déterministe à pondération explicite plutôt qu'un 6e LLM, avec quality gate sur le niveau de confiance.",
-      "Architecture orientée souveraineté des données (Mistral, Qdrant self-hosted)."
+      "Prototyper cinq rôles d'analyse et une orchestration minimale dans un socle Python court.",
+      "Garder le classement, la pondération et la gate de confiance lisibles dans cio.py.",
+      "Distinguer le code réellement audité de l'infrastructure seulement décrite dans les dépendances et le README."
     ],
     constraints: [
       "Éviter le piège des comités d'agents qui se reformulent entre eux, en forçant la divergence par l'isolation des données.",
@@ -886,49 +1574,58 @@ export const projects: Project[] = [
     ],
     decisions: [
       {
-        decision: "CIO d'agrégation déterministe (règles de pondération), pas un LLM supplémentaire.",
-        why: "Rendre la synthèse traçable et reproductible plutôt que de déléguer l'arbitrage à un modèle opaque.",
-        rejected: "Un 6e agent LLM de synthèse, moins traçable et susceptible de lisser les divergences."
+        decision: "Classement, pondération et gate de confiance déterministes.",
+        why: "Garder une partie de l'arbitrage lisible et reproductible avant la rédaction finale.",
+        rejected: "Déléguer aussi le classement et la gate au modèle."
       },
       {
-        decision: "Asymétrie d'information stricte entre les 5 agents.",
-        why: "Obtenir de vraies divergences exploitables au lieu d'un consensus artificiel.",
-        rejected: "Agents partageant le même contexte, ce qui donne des conclusions redondantes."
+        decision: "Mistral Large pour la conclusion narrative.",
+        why: "Transformer les sorties classées en une réponse lisible, sans prétendre que toute la synthèse est déterministe.",
+        rejected: "Présenter la conclusion comme entièrement produite par des règles fixes."
       }
     ],
     delivered: [
-      "Backend Python : 5 agents spécialisés, CIO déterministe, orchestrateur run_board.",
-      "Structure d'orchestration async (Celery/Redis) et RAG Qdrant par agent.",
-      "Documentation de l'architecture, du concept et de la roadmap."
+      "Prototype historique de 437 lignes réparties dans 10 fichiers : cinq agents, cio.py et run_board.py.",
+      "Classement, pondération et gate déterministes, puis conclusion narrative par Mistral Large."
     ],
     results: [
-      "POC : pipeline d'agents et CIO posés ; dashboard, export PDF et tests E2E restent à implémenter.",
+      "L'audit privé du 29/06/2026 confirme le commit 0b9a4cb et la structure du prototype.",
       "Validation sur cas client réel : pas encore mesurée."
     ],
     limits: [
-      "POC initié, non terminé : le dashboard React Flow et l'export PDF décrits ne sont pas implémentés.",
-      "Pas de test automatisé côté backend pour l'instant."
+      "Source d'origine et copie de publication absentes après migration ; aucune exécution actuelle n'est possible.",
+      "FastAPI, Celery, Redis et Qdrant apparaissaient dans le README ou les dépendances, pas dans l'implémentation auditée.",
+      "Frontend, tests et documentation applicative étaient vides ; aucun résultat client n'est revendiqué."
+    ],
+    gallery: [
+      { src: "/assets/proof/board-ia-pme/board-isolated-agents-20260828.webp", caption: "Reconstitution éditoriale des cinq rôles du prototype historique ; ce n'est pas une capture d'exécution.", width: 1600, height: 960 },
+      { src: "/assets/proof/board-ia-pme/board-orchestration-20260828.webp", caption: "Structure auditée : cinq agents, règles de classement et conclusion Mistral Large, sans infrastructure distribuée implémentée.", width: 1600, height: 960 },
+      { src: "/assets/proof/board-ia-pme/board-status-20260828.webp", caption: "État vérifié : 437 lignes et 10 fichiers historiques ; source absente, frontend et tests non implémentés.", width: 1600, height: 960 }
     ],
     links: [{ label: "Version Markdown", href: "/projects/board-ia-pme.md" }]
   },
   {
+    evidenceNote: "Trois captures de la démo publique du 8 septembre 2026, dans une session anonyme Joueur Preview. Les scores proviennent des propositions réellement jouées pour la capture.",
     slug: "edusemantix",
+    heroImage: { src: "/assets/proof/edusemantix/live-20260923.webp", caption: "Partie publique du 23 septembre 2026 : le mot « livre » reçoit un score de proximité. Session de contrôle, pas une mesure d'audience.", width: 1422, height: 863 },
+    roleSummary: "J'ai conçu et développé le jeu et sa progression en temps réel.",
     title: "Edusemantix - jeu de devinette sémantique multijoueur",
     shortTitle: "Edusemantix",
     type: "Lab / projet perso",
     period: "2026",
     role: "Conception et développement",
-    status: "Lab privé",
-    evidenceLevel: "private",
+    status: "Démo publique en ligne · projet personnel",
+    evidenceLevel: "public",
     tier: 3,
-    image: "/assets/cards/edusemantix.webp",
-    repoStatus: "Publication prévue après anonymisation",
-    liveLabel: "Lab",
+    image: "/assets/cards/edusemantix-art.webp",
+    fullColorMedia: true,
+    repoStatus: "Code privé · démo publique sur Render",
+    liveLabel: "Jouer à la démo",
     noindex: true,
     proofLine:
       "Jeu multijoueur en temps réel où l'on cherche un mot secret : chaque proposition reçoit un score de proximité sémantique (similarité cosinus sur vecteurs de mots), scores en direct via WebSocket.",
     summary:
-      "Faire jouer plusieurs personnes en simultané sur une mécanique de proximité sémantique, avec scoring temps réel.",
+      "Deviner un mot à partir de sa proximité avec d'autres mots. Chaque proposition reçoit un score, et les joueurs voient la progression de la partie en direct.",
     stack: ["React 19 / Vite 6", "Node.js / Express / Socket.io", "ConceptNet Numberbatch", "Python (pré-calcul)", "Firebase Firestore"],
     recruiterProof: [
       "Scoring sémantique sur vecteurs de mots (similarité cosinus) avec pré-calcul Python et stockage binaire pour la performance.",
@@ -949,16 +1646,50 @@ export const projects: Project[] = [
       "Application React + serveur Node/Socket.io avec moteur de jeu et scoring sémantique.",
       "Scripts Python de génération/pré-calcul des vecteurs."
     ],
-    results: ["Jeu fonctionnel déployable.", "Audience / engagement : pas encore mesurés."],
-    limits: [
-      "Projet lab plus ancien, avec une base de mots à rafraîchir et quelques correctifs à reprendre.",
-      "Lab personnel, pas de démo publique maintenue.",
-      "Persistance des stats dépend de Firebase (mode mémoire sans credentials)."
+    results: [
+      "Démo publique accessible sur Render, avec propositions et scores en direct.",
+      "Audience et engagement non mesurés ici."
     ],
-    links: [{ label: "Version Markdown", href: "/projects/edusemantix.md" }]
+    limits: [
+      "L'hébergement peut demander un temps de réveil à la première visite.",
+      "Cette démonstration ne prouve pas un bénéfice pédagogique ni une utilisation en classe.",
+      "La persistance des statistiques dépend de la configuration du serveur."
+    ],
+    gallery: [
+      {
+        "src": "/assets/proof/edusemantix/game-20260908.webp",
+        "caption": "Démo publique : trois propositions jouées dans une session anonyme, avec leur score sémantique.",
+        "width": 1440,
+        "height": 960
+      },
+      {
+        "src": "/assets/proof/edusemantix/rules-20260908.webp",
+        "caption": "Règles accessibles depuis la partie : proximité, température et progression.",
+        "width": 1440,
+        "height": 960
+      },
+      {
+        "src": "/assets/proof/edusemantix/mobile-20260908.webp",
+        "caption": "La même partie sur un écran de 390 px : proposition, score et historique.",
+        "width": 390,
+        "height": 844
+      }
+    ],
+    links: [
+      {
+        "label": "Jouer à la démo",
+        "href": "https://edusemantix.onrender.com",
+        "external": true
+      },
+      {
+        "label": "Version Markdown",
+        "href": "/projects/edusemantix.md"
+      }
+    ]
   },
   {
     slug: "pokemon-gen4-toolkit",
+    roleSummary: "J'ai développé des outils Python pour lire et modifier des données de jeu.",
     title: "Pokémon Gen-4 Toolkit - outils d'exploration de données de jeu",
     shortTitle: "Pokémon Gen-4 Toolkit",
     type: "Lab / projet perso",
@@ -967,15 +1698,16 @@ export const projects: Project[] = [
     status: "Lab privé - aucune ROM distribuée",
     evidenceLevel: "private",
     tier: 3,
-    image: "/assets/cards/pokemon-gen4-toolkit.webp",
-    repoStatus: "Publication prévue après anonymisation",
+    image: "/assets/cards/pokemon-gen4-toolkit-art.webp",
+    fullColorMedia: true,
+    repoStatus: "Archive privée · aucune donnée de jeu publiée",
     liveLabel: "Lab",
     noindex: true,
     proofLine:
       "Boîte à outils Python (ndspy) pour explorer des formats de données de jeu (textes, events, scripts, stats) et écrire ses propres outils d'édition. Aucune ROM ni asset distribué.",
     summary:
       "Explorer des formats de données de jeu et écrire mes propres outils d'édition Python, sans publier d'assets ni de ROM.",
-    stack: ["Python 3", "ndspy", "Format NARC", "Moteur de texte Gen 4 maison", "EmulatorJS (viewer web)"],
+    stack: ["Python 3", "ndspy", "Format NARC", "Moteur de texte Gen 4 maison"],
     recruiterProof: [
       "Reverse-engineering d'un format binaire propriétaire, avec décodage et encodage du texte chiffré Gen 4 (charmap + chiffrement seed/XOR) écrits à la main.",
       "Outillage complet : édition des events (PNJ, warps, triggers), du bytecode des scripts, des stats/espèces, et cartographie des zones."
@@ -993,17 +1725,24 @@ export const projects: Project[] = [
     ],
     delivered: [
       "Scripts d'édition (textes, events, scripts, espèces) et d'analyse de zones.",
-      "Viewer web EmulatorJS avec serveur de dev configuré et notes techniques."
+      "Notes techniques sur les formats explorés et les limites de publication."
     ],
     results: ["Outils fonctionnels sur ROM Gen 4 fournie par l'utilisateur.", "Aucune métrique d'usage (exploration technique)."],
     limits: [
       "Sans ROM légale fournie, le toolkit ne fait rien : aucun contenu jouable distribué.",
       "Lab ciblé sur la 4e génération NDS, non généralisé."
     ],
+    gallery: [
+      { src: "/assets/proof/pokemon-gen4-toolkit/narc-anatomy.webp", caption: "Schéma d'une archive NARC : en-tête, table de fichiers, noms et données sont séparés avant toute édition.", width: 1600, height: 960 },
+      { src: "/assets/proof/pokemon-gen4-toolkit/text-codec.webp", caption: "Chaîne du codec de texte réimplémenté en Python : caractères, codes Gen 4, seed puis chiffrement XOR.", width: 1600, height: 960 },
+      { src: "/assets/proof/pokemon-gen4-toolkit/editor-surface.webp", caption: "Périmètre des outils : textes, événements, scripts et statistiques, sans ROM ni asset distribué.", width: 1600, height: 960 }
+    ],
     links: [{ label: "Version Markdown", href: "/projects/pokemon-gen4-toolkit.md" }]
   },
   {
     slug: "claude-code-soul",
+    roleSummary: "J'ai écrit les règles de comportement, organisé la configuration et préparé le dépôt public.",
+    cardLine: "Un pack public pour définir le ton, les règles et les outils de Claude Code, sans y inclure de données privées.",
     title: "claude-code-soul - pack de configuration Claude Code",
     shortTitle: "claude-code-soul",
     type: "Projet open source (config / outillage)",
@@ -1012,7 +1751,8 @@ export const projects: Project[] = [
     status: "Public",
     evidenceLevel: "public",
     tier: 3,
-    image: "/assets/cards/claude-code-soul.webp",
+    image: "/assets/cards/claude-code-soul-art.webp",
+    fullColorMedia: true,
     repoStatus: "Public",
     noindex: true,
     proofLine:
@@ -1050,70 +1790,104 @@ export const projects: Project[] = [
       "Config opinionnée (ton majordome, workflow personnel) : à adapter avant réutilisation.",
       "Certaines briques tierces sont exclues du repo et doivent être réinstallées séparément."
     ],
+    gallery: [
+      {
+        "src": "/assets/proof/claude-code-soul/soul-layers.webp",
+        "caption": "Architecture du pack : l'identité, les règles, les skills, les agents et les hooks restent dans des couches séparées.",
+        "width": 1600,
+        "height": 960
+      },
+      {
+        "src": "/assets/proof/claude-code-soul/soul-security-gates.webp",
+        "caption": "Garde-fous de publication : secrets dans le trousseau, validation locale et contrôle gitleaks avant le dépôt public.",
+        "width": 1600,
+        "height": 960
+      },
+      {
+        "src": "/assets/proof/claude-code-soul/public-0-20260908.webp",
+        "caption": "Dépôt GitHub public consulté le 8 septembre 2026 : fichiers, licence et documentation du pack.",
+        "width": 1440,
+        "height": 960
+      }
+    ],
     links: [
       { label: "Version Markdown", href: "/projects/claude-code-soul.md" },
-      { label: "Repo GitHub", href: "https://github.com/Jonassuhard/claude-code-soul", external: true }
+      { label: "GitHub", href: "https://github.com/Jonassuhard/claude-code-soul", external: true }
     ]
   }
 ];
 
-export const featuredProjects = ["job-radar", "les-petites-griffes", "iscom"]
+export const featuredProjects = ["job-radar", "cortex-bridge", "les-petites-griffes"]
   .map((slug) => projects.find((project) => project.slug === slug))
   .filter((project): project is Project => Boolean(project));
 
-// Preuves recruteur découplées de la home : contexte employeur (ISCOM), livraison
-// client bout-en-bout (LPG), couche IA sur le sujet exact du poste (Preuvia).
-export const recruiterFeatured = ["job-radar", "iscom", "les-petites-griffes"]
+export const orderedProjects = [
+  ...featuredProjects,
+  ...projects.filter((project) => !featuredProjects.some((featured) => featured.slug === project.slug))
+];
+
+// Meme selection et meme ordre sur les trois points d'entree.
+export const recruiterFeatured = ["job-radar", "cortex-bridge", "les-petites-griffes"]
   .map((slug) => projects.find((project) => project.slug === slug))
   .filter((project): project is Project => Boolean(project));
+
+export type SkillGroup = "IA & automatisation" | "Web & produit" | "Growth & SEO";
+
+export const skillGroups: SkillGroup[] = ["IA & automatisation", "Web & produit", "Growth & SEO"];
 
 export const skills = [
   {
     name: "SEO / contenu / CMS",
+    group: "Growth & SEO" as SkillGroup,
     proofSlugs: ["iscom", "capselys", "les-petites-griffes"],
     proofExtra: "",
     proof: "ISCOM, Capsélys, Les Petites Griffes",
-    note: "Recherche, structure, maillage, production éditoriale dans Drupal, vérification et publication encadrée.",
+    note: "Je recherche les sujets, j'organise les pages, je prépare les contenus et je vérifie chaque information avant publication.",
     limit: "Pas encore de programmatic SEO à grande échelle ni de domaine à fort trafic historisé."
   },
   {
-    name: "Automatisation / data / QA",
-    proofSlugs: ["job-radar", "battle-engine"],
+    name: "Automatisation / QA / Playwright",
+    group: "IA & automatisation" as SkillGroup,
+    proofSlugs: ["job-radar", "cortex-bridge", "battle-engine"],
     proofExtra: "audits Playwright, scripts Python",
-    proof: "Job Radar, Battle Engine, audits Playwright",
-    note: "Pipelines Python, connecteurs et normalisation de données, scoring, dashboard, audits Playwright multi-viewports.",
-    limit: "Automatisation d'outils personnels et de projets cadrés ; pas encore de QA en CI/CD dans une équipe multi-dev."
+    proof: "Job Radar, Cortex Bridge, Battle Engine, audits Playwright, scripts Python",
+    note: "J'automatise les tâches répétitives et je contrôle le résultat sur plusieurs tailles d'écran.",
+    limit: "Automatisation de projets perso ; pas encore de QA en CI/CD dans une équipe multi-dev."
   },
   {
     name: "IA appliquée / workflows LLM",
-    proofSlugs: ["capselys", "les-petites-griffes", "iscom"],
+    group: "IA & automatisation" as SkillGroup,
+    proofSlugs: ["cortex-bridge", "capselys", "les-petites-griffes", "iscom"],
     proofExtra: "RAG Starter Kit, Board IA PME",
-    proof: "Capsélys, Les Petites Griffes, ISCOM",
-    note: "Assistants cadrés, workflows LLM, fact-check, détection d'hallucinations et garde-fous avant publication.",
+    proof: "Cortex Bridge, Capsélys, Les Petites Griffes, ISCOM",
+    note: "Je construis des assistants avec des sources, des limites claires et une vérification humaine avant publication.",
     limit: "POC et projets cadrés ; pas encore de LLM en production sous charge avec SLA."
   },
   {
     name: "Full-stack web",
-    proofSlugs: ["les-petites-griffes", "educool-la-herse", "job-radar"],
+    group: "Web & produit" as SkillGroup,
+    proofSlugs: ["job-radar", "cortex-bridge", "les-petites-griffes", "educool-la-herse"],
     proofExtra: "ce portfolio",
-    proof: "Les Petites Griffes, Educool, Job Radar, ce portfolio",
-    note: "Next.js, React, FastAPI, pages publiques, CMS léger, rendu statique, déploiement et production.",
+    proof: "Job Radar, Cortex Bridge, Les Petites Griffes, Cool Bank / La Herse, ce portfolio",
+    note: "Je construis des sites et des outils web, du premier écran au déploiement.",
     limit: "Surtout front et intégrations ; pas de backend distribué à forte charge."
   },
   {
     name: "Documentation / transmission",
-    proofSlugs: ["claude-code-soul", "educool-la-herse"],
+    group: "Web & produit" as SkillGroup,
+    proofSlugs: ["job-radar", "claude-code-soul", "educool-la-herse"],
     proofExtra: "ce portfolio",
-    proof: "claude-code-soul, Educool, ce portfolio",
-    note: "Décisions écrites, cadres réutilisables, fichiers lisibles par un agent ; un travail qu'un autre reprend.",
+    proof: "Job Radar, claude-code-soul, Cool Bank / La Herse, ce portfolio",
+    note: "Je note les décisions et les étapes pour qu'une autre personne puisse reprendre le projet.",
     limit: "Documentation de projets solo ; pas encore d'onboarding formalisé sur un codebase partagé."
   },
   {
     name: "Sécurité / RGPD / limites",
-    proofSlugs: ["educool-la-herse", "les-petites-griffes"],
+    group: "IA & automatisation" as SkillGroup,
+    proofSlugs: ["job-radar", "cortex-bridge", "educool-la-herse", "les-petites-griffes"],
     proofExtra: "",
-    proof: "Educool, Les Petites Griffes",
-    note: "Données sensibles et mineurs anonymisées, secrets hors du code, règles d'accès, prudence de publication.",
+    proof: "Job Radar, Cortex Bridge, Cool Bank / La Herse, Les Petites Griffes",
+    note: "Je limite les droits, bloque en cas de doute, anonymise les données sensibles et garde les secrets hors du code.",
     limit: "Bonnes pratiques appliquées ; pas d'audit sécurité formel ni de conformité validée par un DPO."
   }
 ];

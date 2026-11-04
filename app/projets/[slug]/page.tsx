@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import ProjectImage from "../../project-image";
 import { notFound } from "next/navigation";
 import { projectJsonLd, breadcrumbJsonLd } from "@/lib/json-ld";
-import { evidenceLevelMeta, getProject, projects, ogImage } from "@/lib/projects";
+import { evidenceLevelMeta, getProject, projects, ogImage, type Project } from "@/lib/projects";
 import AnimatedTitle from "../../animated-title";
 import ProjectVideo from "../../project-video";
+import ProjectStory from "./project-story";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -61,10 +62,29 @@ function clampDescription(text: string) {
   return `${cut.slice(0, cut.lastIndexOf(" "))}…`;
 }
 
+function ProjectSummaryTable({ project }: { project: Project }) {
+  return (
+    <table className="summary-table">
+      <tbody>
+        <tr><th scope="row">Résumé</th><td>{project.summary}</td></tr>
+        <tr><th scope="row">Type</th><td>{project.type}</td></tr>
+        <tr><th scope="row">Période</th><td>{project.period}</td></tr>
+        <tr><th scope="row">Rôle</th><td>{project.role}</td></tr>
+        <tr><th scope="row">Statut</th><td>{project.status}</td></tr>
+        <tr><th scope="row">Niveau de preuve</th><td>{evidenceLevelMeta[project.evidenceLevel].description}</td></tr>
+        <tr><th scope="row">Stack</th><td>{project.stack.join(", ")}</td></tr>
+        <tr><th scope="row">Ce que ça prouve</th><td>{project.proofLine}</td></tr>
+        {project.evidenceNote ? (
+          <tr><th scope="row">Preuves</th><td>{project.evidenceNote}</td></tr>
+        ) : null}
+      </tbody>
+    </table>
+  );
+}
+
 export default async function ProjectDetailPage({ params }: PageProps) {
   const { slug } = await params;
   const project = getProject(slug);
-
   if (!project) notFound();
 
   const jsonLd = projectJsonLd(project.slug);
@@ -73,122 +93,92 @@ export default async function ProjectDetailPage({ params }: PageProps) {
     { name: "Projets", path: "/projets" },
     { name: project.shortTitle, path: `/projets/${project.slug}` }
   ]);
+  const primaryLink = project.links.find((link) => link.external);
+  const cover = project.heroImage ?? project.gallery?.find((shot) => !shot.poster);
+  const gallery = project.gallery?.filter((shot) => project.video || shot.src !== cover?.src);
 
   return (
-    <div className="page">
+    <div className="page project-page">
       {jsonLd ? (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        <script type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       ) : null}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
-      />
+      <script type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
 
-      <section className="case-hero">
+      <section className="case-hero project-hero">
         <div>
-          <p className="eyebrow">Case study</p>
-          <span className={`evidence-badge evidence-${project.evidenceLevel}`}>
-            {evidenceLevelMeta[project.evidenceLevel].label}
-          </span>
-          <AnimatedTitle>{project.title}</AnimatedTitle>
-          <p className="lead">{project.summary}</p>
-          {project.noindex ? (
-            <p className="case-meta">Lab / archive — non mis en avant pour la candidature.</p>
+          <p className="eyebrow">Projet · {project.period}</p>
+          <AnimatedTitle>{project.shortTitle}</AnimatedTitle>
+          <p className="lead">{project.cardLine ?? project.summary}</p>
+          <p className="project-state">{project.cardStatus ?? project.status}</p>
+          <p className="project-role"><strong>Mon rôle</strong> {project.roleSummary ?? project.role}</p>
+          {project.codeByOthers ? (
+            <p>Le développement et le design sont ceux de l'équipe.</p>
           ) : null}
           <div className="button-row">
-            {project.links.map((link) => (
-              <a
-                className="button"
-                href={link.href}
-                key={link.href}
-                target={link.external ? "_blank" : undefined}
-                rel={link.external ? "noreferrer" : undefined}
-              >
-                {link.label}
+            {primaryLink ? (
+              <a className="button primary" href={primaryLink.href} target="_blank" rel="noreferrer">
+                {primaryLink.label}
               </a>
-            ))}
+            ) : null}
+            <a className="lk" href={`/projects/${project.slug}.md`}>Version Markdown</a>
           </div>
         </div>
-        {project.video ? (
-          <ProjectVideo
-            src={project.video}
-            poster={project.video.replace(".mp4", "-poster.webp")}
-            label={`Aperçu animé (filtre ASCII) du projet ${project.shortTitle}`}
-          />
-        ) : (
-          <Image
-            src={project.image}
-            alt={`Aperçu du projet ${project.shortTitle}`}
-            width={760}
-            height={460}
-            sizes="(max-width: 960px) calc(100vw - 28px), 520px"
-            quality={75}
-            loading="eager"
-            fetchPriority="high"
-          />
-        )}
+        <div className="project-hero-media">
+          {project.video ? (
+            <ProjectVideo src={project.video} poster={project.video.replace(".mp4", "-poster.webp")}
+              label={`Aperçu vidéo du projet ${project.shortTitle}`}
+              width={project.videoWidth} height={project.videoHeight} />
+          ) : (
+            <figure>
+              <ProjectImage src={cover?.src ?? project.image}
+                alt={cover?.caption ?? `Aperçu du projet ${project.shortTitle}`}
+                width={cover?.width ?? 760} height={cover?.height ?? 460}
+                sizes="(max-width: 960px) calc(100vw - 28px), 560px"
+                quality={75} loading="eager" fetchPriority="high"
+                className={project.fullColorMedia ? "full-color-media" : undefined} />
+              {cover ? <figcaption>{cover.caption}</figcaption> : null}
+            </figure>
+          )}
+        </div>
       </section>
 
-      <section>
-        <table className="summary-table">
-          <tbody>
-            <tr>
-              <th scope="row">Type</th>
-              <td>{project.type}</td>
-            </tr>
-            <tr>
-              <th scope="row">Période</th>
-              <td>{project.period}</td>
-            </tr>
-            <tr>
-              <th scope="row">Rôle</th>
-              <td>{project.role}</td>
-            </tr>
-            <tr>
-              <th scope="row">Statut</th>
-              <td>{project.status}</td>
-            </tr>
-            <tr>
-              <th scope="row">Niveau de preuve</th>
-              <td>{evidenceLevelMeta[project.evidenceLevel].description}</td>
-            </tr>
-            <tr>
-              <th scope="row">Stack</th>
-              <td>{project.stack.join(", ")}</td>
-            </tr>
-            <tr>
-              <th scope="row">En bref</th>
-              <td>{project.proofLine}</td>
-            </tr>
-            {project.evidenceNote ? (
-              <tr>
-                <th scope="row">Preuves</th>
-                <td>{project.evidenceNote}</td>
-              </tr>
-            ) : null}
-          </tbody>
-        </table>
-      </section>
+      {project.need || project.intention ? (
+        <section className="section project-need" id="besoin">
+          {project.need ? (
+            <div>
+              <p className="section-kicker">Le besoin</p>
+              <h2>{project.need.title}</h2>
+              <p>{project.need.lead}</p>
+            </div>
+          ) : null}
+          {project.intention ? (
+            <div>
+              <h3>{project.intention.title}</h3>
+              <p>{project.intention.lead}</p>
+            </div>
+          ) : null}
+        </section>
+      ) : null}
 
-      {project.gallery ? (
-        <section className="section">
-          <p className="section-kicker">Aperçu</p>
-          <h2>Preuves visuelles.</h2>
-          <div className="proof-gallery">
-            {project.gallery.map((shot) => (
+      {project.story ? <ProjectStory project={project} /> : null}
+
+      {!project.story && gallery?.length ? (
+        <section className="section" id="galerie">
+          <h2>Le projet en images.</h2>
+          <div className="proof-gallery proof-gallery-readable">
+            {gallery.map((shot) => (
               <figure key={shot.src}>
-                <Image
-                  src={shot.src}
-                  alt={shot.caption}
-                  width={shot.width}
-                  height={shot.height}
-                  sizes="(max-width: 640px) calc(100vw - 28px), 520px"
-                  quality={75}
-                  loading="lazy"
-                />
+                {shot.poster ? (
+                  <ProjectVideo src={shot.src} poster={shot.poster} label={shot.caption}
+                    width={shot.width} height={shot.height} eager={false} />
+                ) : (
+                  <ProjectImage src={shot.src} alt={shot.caption} width={shot.width} height={shot.height}
+                    sizes="(max-width: 640px) calc(100vw - 28px), 552px"
+                    quality={78} loading="lazy"
+                    className={`full-color-media${shot.height / shot.width > 1.6 ? " proof-portrait" : ""}`} />
+                )}
                 <figcaption>{shot.caption}</figcaption>
               </figure>
             ))}
@@ -196,131 +186,161 @@ export default async function ProjectDetailPage({ params }: PageProps) {
         </section>
       ) : null}
 
-      <section className="section content-grid">
-        <div className="prose">
-          <section>
-            <p className="section-kicker">Contraintes</p>
-            <h2>Contexte et contraintes.</h2>
-            <ul>
-              {project.constraints.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </section>
-
-          {project.architecture ? (
-            <section>
-              <p className="section-kicker">Architecture / workflow</p>
-              <h2>Architecture.</h2>
-              <ul>
-                {project.architecture.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </section>
-          ) : null}
-
-          <section>
-            <p className="section-kicker">Décisions</p>
-            <h2>Les choix et leurs compromis.</h2>
-            <div className="table-scroll">
-              <table className="decision-table">
-                <thead>
-                  <tr>
-                    <th scope="col">Décision</th>
-                    <th scope="col">Pourquoi</th>
-                    <th scope="col">Écarté</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {project.decisions.map((item) => (
-                    <tr key={item.decision}>
-                      <td>{item.decision}</td>
-                      <td>{item.why}</td>
-                      <td>{item.rejected}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </section>
-
-          <section>
-            <p className="section-kicker">Livraison</p>
-            <h2>Livrables.</h2>
-            <ul>
-              {project.delivered.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </section>
-
-          <section>
-            <p className="section-kicker">Résultats</p>
-            <h2>Résultats.</h2>
-            <ul>
-              {project.results.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </section>
-
-          {project.notMeasured ? (
-            <section>
-              <p className="section-kicker">Pas encore mesuré</p>
-              <h2>Ce qui reste à creuser.</h2>
-              <ul>
-                {project.notMeasured.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </section>
-          ) : null}
-
-          {project.v2 ? (
-            <section>
-              <p className="section-kicker">V2 / suite</p>
-              <h2>Prochaine itération.</h2>
-              <ul>
-                {project.v2.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </section>
-          ) : null}
+      <section className="section project-outcomes">
+        <div>
+          <p className="section-kicker">Mon travail</p>
+          <h2>Ce que j'ai réalisé.</h2>
+          <ul>{project.delivered.slice(0, 3).map((item) => <li key={item}>{item}</li>)}</ul>
         </div>
+        <div>
+          <h3>Ce que ce projet montre</h3>
+          <ul>{project.recruiterProof.map((item) => <li key={item}>{item}</li>)}</ul>
+        </div>
+      </section>
 
-        <aside className="panel">
-          <h2>Signal pour une équipe</h2>
-          <ul>
-            {project.recruiterProof.map((item) => (
-              <li key={item}>{item}</li>
+      {!project.story && project.versions?.length ? (
+        <section className="section">
+          <h2>{project.versionsTitle ?? "Deux versions, deux périmètres."}</h2>
+          <div className="version-story-grid">
+            {project.versions.map((version) => (
+              <article className="version-story" key={version.label}>
+                <p className="case-meta">{version.publicStatus ?? version.status}</p>
+                <h3>{version.label} · {version.name}</h3>
+                <p>{version.summary}</p>
+              </article>
             ))}
-          </ul>
-          <h3>Limites</h3>
-          <ul>
-            {project.limits.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-          <h3>Liens</h3>
-          <ul>
-            {project.links.map((link) => (
-              <li key={link.href}>
-                <a
-                  className="lk"
-                  href={link.href}
-                  target={link.external ? "_blank" : undefined}
-                  rel={link.external ? "noreferrer" : undefined}
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </aside>
+          </div>
+        </section>
+      ) : null}
+
+      <section className="section project-limits">
+        <h2>Où en est le projet ?</h2>
+        <p>{project.status}</p>
+        <ul>{project.limits.map((item) => <li key={item}>{item}</li>)}</ul>
+        {project.notMeasured?.length ? (
+          <details className="reading-details">
+            <summary>Ce qui n'est pas encore mesuré</summary>
+            <ul>{project.notMeasured.map((item) => <li key={item}>{item}</li>)}</ul>
+          </details>
+        ) : null}
+      </section>
+
+      <section className="section project-technical">
+        <h2>Choix, résultats et preuves.</h2>
+        <details className="technical-details">
+          <summary>Ouvrir le dossier technique</summary>
+          <div className="technical-content">
+            <div>
+              <span className={`evidence-badge evidence-${project.evidenceLevel}`}>
+                {evidenceLevelMeta[project.evidenceLevel].label}
+              </span>
+              <ProjectSummaryTable project={project} />
+            </div>
+
+            {project.need || project.intention ? (
+              <div className="project-need">
+                {project.need ? (
+                  <div>
+                    <h3>Les besoins détaillés</h3>
+                    <ul>{project.need.items.map((item) => <li key={item}>{item}</li>)}</ul>
+                  </div>
+                ) : null}
+                {project.intention ? (
+                  <div>
+                    <h3>Les règles du produit</h3>
+                    <ul>{project.intention.items.map((item) => <li key={item}>{item}</li>)}</ul>
+                  </div>
+                ) : null}
+              </div>
+            ) : null}
+
+            <section>
+              <h3>Les contraintes de départ</h3>
+              <ul>{project.constraints.map((item) => <li key={item}>{item}</li>)}</ul>
+            </section>
+
+            <section>
+              <h3>Les décisions</h3>
+              <div className="table-scroll" tabIndex={0} role="region" aria-label="Décisions du projet">
+                <table className="decision-table">
+                  <thead>
+                    <tr><th scope="col">Décision</th><th scope="col">Pourquoi</th><th scope="col">Écarté</th></tr>
+                  </thead>
+                  <tbody>
+                    {project.decisions.map((item) => (
+                      <tr key={item.decision}><td>{item.decision}</td><td>{item.why}</td><td>{item.rejected}</td></tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {project.delivered.length > 3 ? (
+              <section>
+                <h3>Autres éléments livrés</h3>
+                <ul>{project.delivered.slice(3).map((item) => <li key={item}>{item}</li>)}</ul>
+              </section>
+            ) : null}
+            <section>
+              <h3>Les résultats documentés</h3>
+              <ul>{project.results.map((item) => <li key={item}>{item}</li>)}</ul>
+            </section>
+
+            {project.versions?.length ? (
+              <section className="technical-versions">
+                <h3>La validation de chaque version</h3>
+                {project.story ? <p>Ces contrôles techniques ne remplacent pas une validation humaine en classe.</p> : null}
+                {project.versions.map((version) => (
+                  <details className="reading-details" key={version.label}>
+                    <summary>{version.label} · preuves et limites techniques</summary>
+                    <p className="case-meta">{version.status}</p>
+                    <h4>Preuves</h4>
+                    <ul>{version.evidence.map((item) => <li key={item}>{item}</li>)}</ul>
+                    <h4>Limites</h4>
+                    <ul>{version.limits.map((item) => <li key={item}>{item}</li>)}</ul>
+                  </details>
+                ))}
+              </section>
+            ) : null}
+
+            {project.v2 ? (
+              <section>
+                <h3>La suite envisagée</h3>
+                <ul>{project.v2.map((item) => <li key={item}>{item}</li>)}</ul>
+              </section>
+            ) : null}
+
+            {project.architecture || project.architectureImage ? (
+              <section className="project-architecture">
+                <h3>{project.architectureTitle ?? "Architecture et outils"}</h3>
+                {project.architectureLead ? <p>{project.architectureLead}</p> : null}
+                {project.architectureImage ? (
+                  <figure>
+                    <ProjectImage src={project.architectureImage.src} alt={project.architectureImage.caption}
+                      width={project.architectureImage.width} height={project.architectureImage.height}
+                      sizes="(max-width: 640px) calc(100vw - 28px), 1120px"
+                      quality={75} className="full-color-media" />
+                    <figcaption>{project.architectureImage.caption}</figcaption>
+                  </figure>
+                ) : null}
+                <ul>{project.architecture?.map((item) => <li key={item}>{item}</li>)}</ul>
+              </section>
+            ) : null}
+
+            <div>
+              <h3>Tous les liens</h3>
+              <ul className="project-source-links">
+                {project.links.map((link) => (
+                  <li key={link.href}>
+                    <a className="lk" href={link.href} target={link.external ? "_blank" : undefined}
+                      rel={link.external ? "noreferrer" : undefined}>{link.label}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </details>
       </section>
     </div>
   );
 }
-

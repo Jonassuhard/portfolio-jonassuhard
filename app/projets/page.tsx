@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { evidenceLevelMeta, projects, site, pageMeta } from "@/lib/projects";
+import { orderedProjects, site, pageMeta } from "@/lib/projects";
 import AnimatedTitle from "../animated-title";
 import ProjectCardImage from "../project-card-image";
 
@@ -22,17 +22,15 @@ export default function ProjectsPage() {
     <div className="page page-dense">
       <section>
         <p className="eyebrow">Projets</p>
-        <AnimatedTitle>Du projet principal au lab.</AnimatedTitle>
+        <AnimatedTitle>Des projets livrés, d'autres en cours.</AnimatedTitle>
         <p className="lead">
-          Trois niveaux. Les projets que je mets en avant, les preuves
-          techniques, puis les labs. Chaque carte dit ce qui est public, privé
-          ou en cours. Une preuve privée se montre en entretien ; elle ne se cite
-          pas comme un lien public.
+          Des sites, des outils IA et des jeux. Ce que j'ai construit,
+          ce qui fonctionne et ce qui reste à faire.
         </p>
       </section>
 
       {GROUPS.map((group, groupIndex) => {
-        const list = projects.filter((project) => project.tier === group.tier);
+        const list = orderedProjects.filter((project) => project.tier === group.tier);
         if (!list.length) return null;
         return (
           <section className="section" key={group.title}>
@@ -49,20 +47,18 @@ export default function ProjectsPage() {
                     src={project.image}
                     alt={`Aperçu du projet ${project.shortTitle}`}
                     preload={groupIndex === 0 && projectIndex === 0}
+                    fullColor={project.fullColorMedia}
                   />
                   <div className="case-body">
-                    <span className={`evidence-badge evidence-${project.evidenceLevel}`}>
-                      {evidenceLevelMeta[project.evidenceLevel].label}
-                    </span>
-                    <h3>
-                      <Link className="case-card-title" href={`/projets/${project.slug}`}>
-                        {project.shortTitle}
-                      </Link>
-                    </h3>
+                    <p className="case-meta product-status">{project.cardStatus ?? project.status}</p>
+                    <h3 className="card-title-accessible">{project.shortTitle}</h3>
+                    <Link
+                      className="case-card-link"
+                      href={`/projets/${project.slug}`}
+                      aria-label={`Voir le projet ${project.shortTitle}`}
+                    />
                     <p>
-                      {group.tier === 1
-                        ? project.summary
-                        : project.cardLine ?? project.proofLine ?? project.summary}
+                      {project.cardLine ?? project.summary}
                     </p>
                     <div className="access-links">
                       <a className="lk" href={`/projects/${project.slug}.md`}>Markdown</a>
@@ -84,11 +80,10 @@ export default function ProjectsPage() {
 
       <section className="section">
         <div className="notice">
-          <strong>Un projet ne vaut pas par sa stack.</strong>
+          <strong>Parlons des projets.</strong>
           <p>
-            Il vaut par ce qu'il prouve, ce qu'il coûte et ce qu'il ne règle
-            pas. Je reprends n'importe lequel de ces projets en entretien :
-            architecture, décisions et limites, sans filtre.
+            En entretien, je peux expliquer le besoin, les choix, les preuves
+            et les limites de chaque projet.
           </p>
           <div className="button-row">
             <Link className="button primary" href="/recruteurs">

@@ -36,15 +36,17 @@ export function personJsonLd() {
     sameAs: [site.github, site.linkedin, ...(site.malt ? [site.malt] : [])],
     seeks: {
       "@type": "Demand",
-      name: "CDI junior Chef de projet digital & marketing IA / IA appliquée et automatisation / Growth Engineer",
-      availabilityStarts: "2026-11-02",
+      name: "Objectif de progression : Forward Deployed Engineer",
+      description:
+        "Évoluer vers un rôle de Forward Deployed Engineer : comprendre un besoin concret, construire une première solution avec l'équipe ou le client, puis la tester et la rendre transmissible.",
+      availabilityStarts: site.availabilityDate,
       areaServed: "Paris / hybride"
     },
     alumniOf: [
       {
         "@type": "EducationalOrganization",
         name: "MyDigitalSchool Paris",
-        description: "MBA Expert Marketing Digital - titre RNCP41809 niveau 7 validé, diplôme prévu début décembre 2026 (2024-2026)"
+        description: "MBA Expert Marketing Digital, bac+5 (2024-2026). Titre RNCP de niveau 7 : Manager de la stratégie marketing digital."
       },
       {
         "@type": "EducationalOrganization",
@@ -104,11 +106,22 @@ export function projectJsonLd(slug: string) {
         name: "evidenceLevel",
         value: evidenceLevelMeta[project.evidenceLevel].label
       },
+      ...(project.versions ?? []).map((version) => ({
+        "@type": "PropertyValue",
+        name: `${version.label} — ${version.name}`,
+        value: `${version.status}. ${version.summary}`
+      })),
       ...project.limits.map((limit) => ({ "@type": "PropertyValue", name: "limits", value: limit }))
     ]
   };
   // programmingLanguage n'a de sens que sur du code réellement écrit par Jonas.
-  if (isCode) node.programmingLanguage = project.stack;
+  if (isCode) {
+    node.programmingLanguage = project.stack;
+    const repository = project.links.find(
+      (link) => link.external && /^https:\/\/github\.com\//.test(link.href)
+    );
+    if (repository) node.codeRepository = repository.href;
+  }
 
   return node;
 }

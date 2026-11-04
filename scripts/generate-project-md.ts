@@ -23,39 +23,241 @@ function bullets(items: string[]) {
   return items.map((item) => `- ${item}`).join("\n");
 }
 
-function toMarkdown(project: Project) {
-  const externalLink = project.links.find((link) => link.external);
+function storyToMarkdown(project: Project) {
+  const story = project.story;
+  if (!story) return "";
+
   const lines = [
     `# ${project.title}`,
     "",
-    `Type : ${project.type}.`,
-    `Période : ${project.period}.`,
-    `Rôle : ${project.role}.`,
-    `Stack : ${project.stack.join(", ")}.`,
-    `Statut : ${project.status}.`,
-    `Niveau de preuve : ${evidenceLevelMeta[project.evidenceLevel].label}.`,
-    "",
-    `En bref : ${project.proofLine}`
-  ];
-  if (project.evidenceNote) {
-    lines.push("", `Preuves : ${project.evidenceNote}`);
-  }
-  if (externalLink) {
-    lines.push("", `Lien : ${externalLink.href}`);
-  }
-  lines.push(
-    "",
-    "## Problème",
+    "## À quoi ça sert",
     "",
     project.summary,
     "",
-    "## Ce que ça montre",
+    `## ${story.purposeTitle}`,
     "",
-    bullets(project.recruiterProof),
+    story.purposeLead,
+    "",
+    bullets(story.purpose),
+    "",
+    "## Trois rôles",
+    "",
+    bullets(story.roles.map((role) => `${role.title} — ${role.text}`)),
+    "",
+    "## Versions",
+    ""
+  ];
+
+  for (const version of project.versions ?? []) {
+    lines.push(
+      `### ${version.label} — ${version.name}`,
+      "",
+      `État public : ${version.publicStatus ?? version.status}.`,
+      "",
+      version.summary,
+      ""
+    );
+  }
+
+  lines.push(
+    "## Ce que Jonas a fait",
+    "",
+    bullets(project.delivered),
+    "",
+    "## Ce que ça prouve",
+    "",
+    project.proofLine,
+    "",
+    bullets(project.recruiterProof)
+  );
+
+  if (project.evidenceNote) lines.push("", project.evidenceNote);
+
+  lines.push("", "## Visuels", "");
+  for (const group of story.galleryGroups) {
+    lines.push(`### ${group.title}`, "", group.description, "");
+    for (const visual of group.images) {
+      lines.push(`![${visual.caption}](${visual.src})`, "");
+    }
+  }
+
+  lines.push(
     "",
     "## Limites",
     "",
-    bullets(project.limits)
+    bullets([
+      ...project.limits,
+      ...(project.versions ?? []).flatMap((version) =>
+        version.limits.map((limit) => `${version.label} : ${limit}`)
+      ),
+      ...(project.notMeasured ?? [])
+    ]),
+    "",
+    "## Repères techniques",
+    "",
+    "| Repère | Détail |",
+    "| --- | --- |",
+    `| Format | ${project.type} |`,
+    `| Période | ${project.period} |`,
+    `| Rôle de Jonas | ${project.role} |`,
+    `| Statut | ${project.status} |`,
+    `| Niveau de preuve | ${evidenceLevelMeta[project.evidenceLevel].label} |`,
+    `| Stack | ${project.stack.join(", ")} |`,
+    "",
+    "## Preuves techniques",
+    ""
+  );
+
+  for (const version of project.versions ?? []) {
+    lines.push(
+      `### ${version.label}`,
+      "",
+      `Statut interne : ${version.status}.`,
+      "",
+      bullets(version.evidence),
+      ""
+    );
+  }
+
+  lines.push(
+    "## Liens",
+    "",
+    `- [Étude de cas](/projets/${project.slug})`,
+    ...project.links
+      .filter((link) => link.href !== `/projects/${project.slug}.md`)
+      .map((link) => `- [${link.label}](${link.href})`)
+  );
+
+  return `${lines.join("\n").trimEnd()}\n`;
+}
+
+function toMarkdown(project: Project) {
+  if (project.story) return storyToMarkdown(project);
+
+  const lines = [
+    `# ${project.title}`,
+    "",
+    "## Repères",
+    "",
+    "| Repère | Détail |",
+    "| --- | --- |",
+    `| Format | ${project.type} |`,
+    `| Période | ${project.period} |`,
+    `| Rôle de Jonas | ${project.role} |`,
+    `| Statut | ${project.status} |`,
+    `| Niveau de preuve | ${evidenceLevelMeta[project.evidenceLevel].label} |`,
+    `| Stack | ${project.stack.join(", ")} |`,
+    "",
+    "## À quoi ça sert",
+    "",
+    project.summary
+  ];
+  if (project.need) {
+    lines.push(
+      "",
+      "## Besoin",
+      "",
+      `### ${project.need.title}`,
+      "",
+      project.need.lead,
+      "",
+      bullets(project.need.items)
+    );
+  }
+  if (project.intention) {
+    lines.push(
+      "",
+      "## Intention",
+      "",
+      `### ${project.intention.title}`,
+      "",
+      project.intention.lead,
+      "",
+      bullets(project.intention.items)
+    );
+  }
+  if (
+    project.architecture?.length &&
+    (project.need || project.intention || project.architectureImage)
+  ) {
+    lines.push("", "## Architecture", "");
+    if (project.architectureImage) {
+      lines.push(
+        `![${project.architectureImage.caption}](${project.architectureImage.src})`,
+        ""
+      );
+    }
+    lines.push(bullets(project.architecture));
+  }
+  lines.push(
+    "",
+    "## Ce que Jonas a fait",
+    "",
+    bullets(project.delivered),
+    "",
+    "## Ce que ça prouve",
+    "",
+    project.proofLine,
+    "",
+    bullets(project.recruiterProof)
+  );
+  if (project.evidenceNote) {
+    lines.push("", project.evidenceNote);
+  }
+  if (project.versions?.length) {
+    lines.push("", "### Versions", "");
+    for (const version of project.versions) {
+      lines.push(
+        `#### ${version.label} — ${version.name}`,
+        "",
+        "| Repère | Détail |",
+        "| --- | --- |",
+        `| État actuel | ${version.status} |`,
+        "",
+        version.summary,
+        "",
+        "##### Éléments vérifiés",
+        "",
+        bullets(version.evidence),
+        ""
+      );
+    }
+  }
+  if (project.gallery?.length) {
+    lines.push("", "## Visuels", "");
+    if (project.video) {
+      lines.push(`[Voir la vidéo de présentation](${project.video})`, "");
+    }
+    if (project.heroImage) {
+      lines.push(`![${project.heroImage.caption}](${project.heroImage.src})`, "");
+    }
+    for (const visual of project.gallery) {
+      lines.push(visual.poster
+        ? `[![${visual.caption}](${visual.poster})](${visual.src})`
+        : `![${visual.caption}](${visual.src})`, "");
+    }
+  }
+  if (project.need || project.intention) {
+    lines.push("", "## Résultats vérifiés", "", bullets(project.results));
+  }
+  lines.push(
+    "",
+    "## Limites",
+    "",
+    bullets([
+      ...project.limits,
+      ...(project.versions ?? []).flatMap((version) =>
+        version.limits.map((limit) => `${version.label} : ${limit}`)
+      ),
+      ...(project.notMeasured ?? [])
+    ]),
+    "",
+    "## Liens",
+    "",
+    `- [Étude de cas](/projets/${project.slug})`,
+    ...project.links
+      .filter((link) => link.href !== `/projects/${project.slug}.md`)
+      .map((link) => `- [${link.label}](${link.href})`)
   );
   return `${lines.join("\n")}\n`;
 }

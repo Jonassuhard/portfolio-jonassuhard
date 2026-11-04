@@ -1,9 +1,14 @@
 import assert from "node:assert/strict";
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import test from "node:test";
 
 const read = (relativePath: string) =>
   readFileSync(new URL(`../${relativePath}`, import.meta.url), "utf8");
+
+test("les cibles tactiles recruteurs utilisent la geometrie reelle des sections", () => {
+  assert.match(read("app/recruteurs/page.tsx"), /className="page recruiter-page"/);
+  assert.match(read("app/globals.css"), /\.recruiter-page > \.section \{\s*content-visibility:visible;\s*contain-intrinsic-size:none;/);
+});
 
 test("les cartes utilisent une image responsive sans JavaScript client", () => {
   const component = read("app/project-card-image.tsx");
@@ -18,11 +23,107 @@ test("les cartes utilisent une image responsive sans JavaScript client", () => {
   assert.match(component, /preload=\{preload\}/);
   assert.match(read("app/projets/page.tsx"), /preload=\{groupIndex === 0 && projectIndex === 0\}/);
   assert.doesNotMatch(cardPages, /<img[^>]+src=\{project\.image\}/);
+  assert.match(component, /fullColor/);
+  assert.match(component, /className=\{fullColor \? "full-color-media" : undefined\}/);
+  assert.match(cardPages, /fullColor=\{project\.fullColorMedia\}/);
+});
+
+test("les cartes ne répètent pas visuellement le titre déjà présent dans leur illustration", () => {
+  const cardPages = [
+    "app/page.tsx",
+    "app/recruteurs/page.tsx",
+    "app/projets/page.tsx"
+  ].map(read);
+  const css = read("app/globals.css");
+
+  for (const page of cardPages) {
+    assert.match(page, /<h3 className="card-title-accessible">/);
+  }
+  assert.match(
+    cardPages[2],
+    /<Link[\s\S]*?className="case-card-link"[\s\S]*?aria-label=\{`Voir le projet \$\{project\.shortTitle\}`\}/
+  );
+  assert.doesNotMatch(cardPages[2], /className="case-card-title"/);
+  assert.match(
+    css,
+    /\.card-title-accessible \{[^}]*position:absolute;[^}]*inline-size:1px;[^}]*clip-path:inset\(50%\)/
+  );
+  assert.match(css, /\.case-card-link \{[^}]*position:absolute;[^}]*inset:0;[^}]*z-index:1/);
+});
+
+test("les illustrations de projet conservent leur cadrage source 760 par 460", () => {
+  const css = read("app/globals.css");
+
+  for (const selector of ["proof-card", "case-card"]) {
+    assert.match(
+      css,
+      new RegExp(`\\.${selector} img \\{[^}]*height:auto;[^}]*aspect-ratio:38/23;[^}]*object-fit:contain;`)
+    );
+  }
+  assert.match(css, /\.case-grid-compact \.case-card img \{ height:auto; \}/);
+  assert.doesNotMatch(css, /\.(?:proof-card|case-card) img \{[^}]*object-fit:cover/);
+});
+
+test("le blueprint utilise exactement onze images locales transparentes", () => {
+  const blueprint = read("app/blueprint-bg.tsx");
+  const css = read("app/globals.css");
+  const assets = [
+    "01-gears.webp",
+    "02-gauge.webp",
+    "03-signal-diagram.webp",
+    "04-axis-horizontal.webp",
+    "05-axis-vertical.webp",
+    "06-registration-target.webp",
+    "07-construction-ruler.webp",
+    "08-dimension-line.webp",
+    "09-callout-line.webp",
+    "10-frame-corners.webp",
+    "11-title-block.webp"
+  ];
+
+  assert.equal((blueprint.match(/name: "/g) ?? []).length, 11);
+  assert.equal((blueprint.match(/src: "\/assets\/blueprint\//g) ?? []).length, 11);
+  assert.doesNotMatch(css, /background-image:url\("\/assets\/blueprint\//);
+  assert.match(blueprint, /loading="lazy"/);
+  assert.match(blueprint, /fetchPriority="low"/);
+  assert.doesNotMatch(blueprint, /<svg|dangerouslySetInnerHTML|blueprintMarkup/);
+  assert.doesNotMatch(blueprint + "\n" + css, /https?:\/\/[^"')]*blueprint/i);
+  assert.match(css, /\.blueprint-bg__mobile-muted \{ display:none; \}/);
+  assert.match(
+    css,
+    /@media \(max-width:640px\)[\s\S]*\.blueprint-bg__ruler \{ left:14%; top:10%; width:72%; height:10%; \}/
+  );
+  for (const asset of assets) {
+    assert.ok(
+      existsSync(new URL("../public/assets/blueprint/" + asset, import.meta.url)),
+      asset + " manque"
+    );
+  }
+});
+
+test("tous les grands titres rejouent un glitch chromatique lent et lisible", () => {
+  const title = read("app/animated-title.tsx");
+  const scheduler = read("app/glitch-scheduler.tsx");
+  const css = read("app/globals.css");
+
+  assert.match(title, /glitch = true/);
+  assert.match(title, /data-glitch=\{glitch \? "true" : undefined\}/);
+  assert.match(scheduler, /const MIN_DELAY = 5000/);
+  assert.match(scheduler, /const MAX_DELAY = 10000/);
+  assert.match(scheduler, /querySelectorAll<HTMLElement>\("h1, h2"\)/);
+  assert.match(scheduler, /active\.classList\.add\("glitch-active"\)/);
+  assert.match(css, /\.chroma-title\.glitch-active::before \{ animation:glitch-cyan-cycle 1\.2s linear both; \}/);
+  assert.match(css, /\.chroma-title\.glitch-active::after \{ animation:glitch-red-cycle 1\.2s linear both; \}/);
+  assert.match(css, /h1\.glitch-active, h2\.glitch-active \{ animation:heading-glitch 1\.2s linear both; \}/);
+  assert.match(css, /color:rgba\(67,174,169,\.82\)/);
+  assert.match(css, /color:rgba\(142,31,47,\.78\)/);
+  assert.doesNotMatch(css, /@keyframes glitch-(?:cyan|red)-cycle[\s\S]*?translate3d\([^)]*[3-9]px/);
 });
 
 test("les optimisations de performance ne retirent aucune animation", () => {
   const layout = read("app/layout.tsx");
   const title = read("app/animated-title.tsx");
+  const template = read("app/template.tsx");
   const css = read("app/globals.css");
 
   assert.doesNotMatch(layout, /Newsreader|IBM_Plex_Mono|Special_Elite|GlitchController/);
@@ -35,7 +136,7 @@ test("les optimisations de performance ne retirent aucune animation", () => {
   assert.match(css, /@keyframes glitch-cyan-cycle/);
   assert.match(css, /@keyframes glitch-red-cycle/);
   assert.match(css, /@keyframes chroma-cyan/);
-  assert.match(css, /prefers-reduced-motion:reduce[\s\S]*\.chroma-title::before/);
+  assert.match(css, /prefers-reduced-motion:reduce[\s\S]*\.chroma-title::before,[^}]*animation:none/);
   assert.match(css, /@keyframes holo-diag/);
   assert.match(css, /@keyframes hero-bounce/);
   assert.match(css, /@keyframes page-marker-enter/);
@@ -43,21 +144,31 @@ test("les optimisations de performance ne retirent aucune animation", () => {
     css,
     /\.page-transition::before \{[^}]*animation:page-marker-enter \.28s ease-out both;/
   );
-  assert.doesNotMatch(css, /\.page-transition \{[^}]*animation:/);
+  assert.match(template, /className="page-transition"/);
+  assert.doesNotMatch(layout, /PageTransition/);
+  assert.match(css, /prefers-reduced-motion:reduce[\s\S]*\.nixie-clock::after[^}]*animation:none/);
 });
 
-test("le premier écran ne précharge ni graisses ni routes secondaires", () => {
+test("le premier écran précharge les deux fontes critiques", () => {
   const layout = read("app/layout.tsx");
   const nav = read("app/site-nav.tsx");
   const home = read("app/page.tsx");
 
-  assert.match(layout, /const fontTitle = Cormorant_Garamond\(\{[\s\S]*?weight: "700"/);
-  assert.match(layout, /const fontBody = Courier_Prime\(\{[\s\S]*?weight: "400"/);
-  assert.doesNotMatch(layout, /weight: \["600", "700"\]|weight: \["400", "700"\]/);
+  assert.match(layout, /const fontTitle = localFont\(\{[\s\S]*?cormorant-garamond-700\.woff2[\s\S]*?weight: "700"[\s\S]*?preload: true/);
+  assert.match(layout, /const fontBody = Courier_Prime\(\{[\s\S]*?weight: "400"[\s\S]*?display: "optional"[\s\S]*?preload: true/);
+  assert.doesNotMatch(layout, /fontTitleSemibold|fontBodyBold|weight: \[/);
+  assert.equal((layout.match(/preload: true/g) ?? []).length, 2);
+  assert.match(layout, /oslo-ii\.bold\.woff2/);
+  assert.match(read("app/globals.css"), /@media \(max-width:640px\)[\s\S]*?\.nixie-clock \{[^}]*font-family:var\(--ft-body\); font-weight:400/);
   assert.equal((nav.match(/<Link\b/g) ?? []).length, (nav.match(/prefetch=\{false\}/g) ?? []).length);
-  assert.match(home, /href="\/a-propos#growth-engineer" prefetch=\{false\}/);
+  assert.match(home, /<p className="eyebrow">CDI · Paris ou hybride/);
   assert.match(home, /className="button" href="\/projets" prefetch=\{false\}/);
-  assert.match(read("app/globals.css"), /\.hero \.lead \{ font-family:"Courier New",monospace; \}/);
+  const css = read("app/globals.css");
+  assert.match(css, /h1 \{[\s\S]*?font-family:var\(--ft-title\)/);
+  assert.doesNotMatch(css, /\.hero \.lead \{ font-family:"Courier New",monospace; \}/);
+  assert.match(css, /\.hero \.lead \{ line-height:1\.6; \}/);
+  assert.match(home, /<p className="lead">[\s\S]*?je construis[\s\S]*?recommande\./i);
+  assert.match(css, /h1 \{ font-size:clamp\(34px,9vw,42px\); \}/);
 });
 
 test("les assets publics ont un cache long sans être figés", () => {
@@ -66,19 +177,43 @@ test("les assets publics ont un cache long sans être figés", () => {
   assert.doesNotMatch(config, /assetCache[\s\S]*immutable/);
 });
 
+test("les ajustements responsive préservent les dimensions et comportements critiques", () => {
+  const css = read("app/globals.css");
+  const clock = read("app/nixie-clock.tsx");
+
+  assert.match(css, /@media \(min-width:801px\) and \(max-width:960px\)[\s\S]*?\.menubar \{ gap:16px; padding-inline:24px; \}/);
+  assert.match(css, /@media \(min-width:641px\) and \(max-width:960px\)[\s\S]*?\.nixie-clock \{ min-inline-size:5ch;/);
+  assert.match(css, /@media \(max-width:640px\)[\s\S]*?\.consent-actions \.button \{ flex:1; justify-content:center; min-height:44px; \}/);
+  assert.match(css, /\.decoder-hero h1 \{ max-width:18ch; hyphens:none; overflow-wrap:normal; word-break:normal; \}/);
+  assert.match(clock, /<span className="nixie-date">—<\/span>/);
+  assert.doesNotMatch(clock, /<span className="nixie-date">lun\. 00 sept\. 0000<\/span>/);
+});
+
+test("l'observabilité Vercel reste hors du bundle critique", () => {
+  const layout = read("app/layout.tsx");
+  const observability = read("app/observability.tsx");
+
+  assert.doesNotMatch(layout, /@vercel\/analytics|@vercel\/speed-insights/);
+  assert.match(layout, /<Observability \/>/);
+  assert.match(observability, /dynamic\(/);
+  assert.equal((observability.match(/ssr: false/g) ?? []).length, 2);
+  assert.match(observability, /@vercel\/analytics\/next/);
+  assert.match(observability, /@vercel\/speed-insights\/next/);
+});
+
 test("le header mobile reste compact et le menu répond en moins de 550 ms", () => {
   const layout = read("app/layout.tsx");
   const clock = read("app/nixie-clock.tsx");
   const css = read("app/globals.css");
 
-  assert.match(layout, /className="titlebar-name"/);
-  assert.match(layout, /className="titlebar-role"/);
+  assert.match(layout, /<SiteNav name=\{site.name\} role=\{site.title\} \/>/);
+  assert.doesNotMatch(layout, /className="titlebar"/);
   assert.match(clock, /className="nixie-seconds"/);
   assert.match(clock, /className="nixie-date"/);
   assert.match(css, /\.titlebar-role[^{]*\{[^}]*display:none/);
   assert.match(css, /\.nixie-seconds[^{]*\{[^}]*display:none/);
   assert.match(css, /\.main-nav\.open[^}]*transition:clip-path \.5s/);
-  assert.match(css, /\.main-nav\.open a:nth-child\(6\)[^{]*\{[^}]*transition-delay:\.18s/);
+  assert.match(css, /\.main-nav\.open a:nth-child\(6\)[^{]*\{[^}]*transition-delay:\.12s/);
   assert.doesNotMatch(css, /\.main-nav\.open[^}]*transition:clip-path 1\.4s/);
 });
 
@@ -89,6 +224,9 @@ test("les médias projet réservent leur espace et respectent le mouvement rédu
   assert.match(detailPage, /width=\{shot\.width\}/);
   assert.match(detailPage, /height=\{shot\.height\}/);
   assert.match(video, /prefers-reduced-motion: reduce/);
-  assert.match(video, /controls/);
+  assert.match(video, /controls=\{false\}/);
+  assert.match(video, /IntersectionObserver/);
+  assert.match(video, /document\.hidden/);
+  assert.match(video, /event\.key !== " "/);
   assert.doesNotMatch(detailPage, /<img src=\{shot\.src\}/);
 });

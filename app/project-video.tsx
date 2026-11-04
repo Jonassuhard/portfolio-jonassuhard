@@ -6,9 +6,12 @@ type ProjectVideoProps = {
   src: string;
   poster: string;
   label: string;
+  width?: number;
+  height?: number;
+  eager?: boolean;
 };
 
-export default function ProjectVideo({ src, poster, label }: ProjectVideoProps) {
+export default function ProjectVideo({ src, poster, label, width = 1080, height = 1920, eager = true }: ProjectVideoProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
@@ -16,32 +19,59 @@ export default function ProjectVideo({ src, poster, label }: ProjectVideoProps) 
     if (!video) return;
 
     const motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let visible = eager;
+    let userPaused = false;
     const syncPlayback = () => {
-      if (motionPreference.matches) {
+      if (motionPreference.matches || !visible || document.hidden || userPaused) {
         video.pause();
       } else {
+        if (!video.getAttribute("src")) video.src = src;
         void video.play().catch(() => {
-          // L'utilisateur peut toujours lancer la vidéo avec les contrôles natifs.
+          // Le poster reste visible lorsque le navigateur refuse la lecture.
         });
       }
     };
-
+    const observer = new IntersectionObserver(([entry]) => {
+      visible = entry.isIntersecting;
+      syncPlayback();
+    }, { threshold: 0.15 });
+    const togglePlayback = (event: KeyboardEvent) => {
+      if (event.key !== " " && event.key !== "Enter") return;
+      event.preventDefault();
+      userPaused = !video.paused;
+      syncPlayback();
+    };
+    video.muted = true;
+    observer.observe(video);
     syncPlayback();
     motionPreference.addEventListener("change", syncPlayback);
-    return () => motionPreference.removeEventListener("change", syncPlayback);
-  }, []);
+    document.addEventListener("visibilitychange", syncPlayback);
+    video.addEventListener("keydown", togglePlayback);
+    return () => {
+      observer.disconnect();
+      video.pause();
+      motionPreference.removeEventListener("change", syncPlayback);
+      document.removeEventListener("visibilitychange", syncPlayback);
+      video.removeEventListener("keydown", togglePlayback);
+    };
+  }, [src, eager]);
 
   return (
     <video
       ref={videoRef}
       className="case-video"
-      src={src}
+      src={eager ? src : undefined}
       poster={poster}
-      controls
+      width={width}
+      height={height}
+      autoPlay={eager}
+      controls={false}
+      disablePictureInPicture
       loop
       muted
       playsInline
-      preload="metadata"
+      preload={eager ? "auto" : "none"}
+      tabIndex={0}
       aria-label={label}
     />
   );

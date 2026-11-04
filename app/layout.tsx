@@ -1,59 +1,47 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
-import {
-  Cormorant_Garamond,
-  Courier_Prime
-} from "next/font/google";
+import { Courier_Prime } from "next/font/google";
 import localFont from "next/font/local";
-import { Analytics } from "@vercel/analytics/next";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import { rootJsonLd } from "@/lib/json-ld";
 import { site, siteUrl } from "@/lib/projects";
-import NixieClock from "./nixie-clock";
 import SiteNav from "./site-nav";
 import ConsentBanner from "./consent-banner";
+import GlitchScheduler from "./glitch-scheduler";
 import BlueprintBg from "./blueprint-bg";
-import PageTransition from "./page-transition";
+import Observability from "./observability";
+import CvPreview from "./cv-preview";
 import "./globals.css";
 
 const hasVercelObservability = process.env.VERCEL === "1";
 
-// Seuls le titre (h1) et le corps sont préchargés : ce sont les fontes du hero.
-// Les labels réutilisent Courier Prime et l'horloge reste chargée sans preload.
-// display:optional sur les fonts du hero -> pas de swap tardif qui décale le LCP.
-// Le fallback métrique-ajusté (Georgia / Courier New) rend le premier paint, la
-// font custom prend la main dès qu'elle est en cache. Zéro CLS, LCP ≈ FCP.
-const fontTitle = Cormorant_Garamond({
-  subsets: ["latin"],
-  weight: "700",
+// La DA utilise une graisse réelle par famille : 700 pour les titres, 400 pour
+// le texte. Cela évite les synthèses et limite le chemin critique à deux fontes.
+const fontTitle = localFont({
+  src: [{ path: "./fonts/cormorant-garamond-700.woff2", weight: "700", style: "normal" }],
   variable: "--font-title",
   display: "optional",
-  preload: true
+  preload: true,
+  fallback: ["Georgia"],
+  adjustFontFallback: "Times New Roman"
 });
 const fontBody = Courier_Prime({
   subsets: ["latin"],
   weight: "400",
   variable: "--font-body",
   display: "optional",
-  preload: true
+  preload: true,
+  fallback: ["Courier New", "monospace"],
+  adjustFontFallback: false
 });
 const fontClock = localFont({
-  src: [
-    { path: "./fonts/oslo-ii.regular.ttf", weight: "400", style: "normal" },
-    { path: "./fonts/oslo-ii.bold.ttf", weight: "700", style: "normal" }
-  ],
+  src: [{ path: "./fonts/oslo-ii.bold.woff2", weight: "700", style: "normal" }],
   variable: "--font-clock",
-  display: "swap",
+  display: "optional",
   preload: false
 });
-// Title de la home = nom + rôle (le nom manquait du <title>, mauvais CTR SERP).
-// `site.title` reste le rôle pur, réutilisé tel quel comme jobTitle dans le JSON-LD.
-const homeTitle = `${site.name} — ${site.title}`;
-
 export const metadata: Metadata = {
   title: {
-    default: homeTitle,
+    default: site.seoTitle,
     template: "%s | Jonas Suhard"
   },
   description: site.description,
@@ -65,7 +53,7 @@ export const metadata: Metadata = {
     }
   },
   openGraph: {
-    title: homeTitle,
+    title: site.seoTitle,
     description: site.description,
     type: "website",
     locale: "fr_FR"
@@ -85,82 +73,58 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       </head>
       <body>
         <BlueprintBg />
+        <GlitchScheduler />
+        <CvPreview />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(rootJsonLd()) }}
         />
         <header className="site-header">
-          <div className="titlebar">
-            <span className="titlebar-name">
-              JONAS SUHARD <span className="titlebar-role">— Chef de projet IA junior</span>
-            </span>
-            <span className="ver">{site.location} · <NixieClock /></span>
-          </div>
-          <SiteNav />
+          <SiteNav name={site.name} role={site.title} />
         </header>
-        <main>
-          <PageTransition>{children}</PageTransition>
-        </main>
-        <footer className="site-footer">
-          <div className="foot-top">
-            <div className="foot-id">
-              <Image
-                className="brand-mark sm"
-                src="/brand/js-medallion-sm.webp"
-                alt=""
-                width={38}
-                height={38}
-                sizes="38px"
-                quality={85}
-              />
+        <main>{children}</main>
+        <footer className="site-footer footer-signature">
+          <span className="footer-gears" aria-hidden="true" />
+          <div className="footer-inner">
+            <div className="footer-top">
               <div>
-                <strong>Jonas Suhard</strong>
-                <span className="foot-id-sub">Chef de projet IA appliquée &amp; automatisation junior</span>
+                <Link className="footer-name" href="/">{site.name}</Link>
+                <p className="footer-role">{site.title} · Paris</p>
+              </div>
+              <div className="footer-contact">
+                <a className="footer-email" href={`mailto:${site.email}`}>{site.email}</a>
+                <div className="footer-social">
+                  <a href={site.linkedin} target="_blank" rel="noreferrer">LinkedIn ↗</a>
+                  <a href={site.github}>GitHub ↗</a>
+                </div>
               </div>
             </div>
-            <p className="foot-pitch">
-              Le dernier kilomètre des projets IA et web : données, validations,
-              mesure.
-            </p>
-          </div>
-          <div className="foot-cols">
-            <div>
-              <p className="foot-col-title">Contact</p>
-              <a href={`mailto:${site.email}`}>{site.email}</a>
-              <a href={site.github}>GitHub</a>
-              <a href={site.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
-              {site.malt ? (
-                <a href={site.malt} target="_blank" rel="noreferrer">Malt</a>
-              ) : null}
-            </div>
-            <div>
-              <p className="foot-col-title">Ressources</p>
-              <a href={site.cvClassic} download>CV — classique (PDF)</a>
-              <a href={site.cvStyled} download>CV — version site (PDF)</a>
-              <Link href="/knowledge">Knowledge</Link>
+            <nav className="footer-links footer-quick" aria-label="Liens utiles">
+              <a href={site.cvClassic} download>CV (PDF) ↗</a>
               <Link href="/preuves">Preuves</Link>
+              <Link href="/methode">Méthode</Link>
+            </nav>
+            <details className="footer-resources">
+              <summary>Autres ressources</summary>
+              <nav className="footer-links" aria-label="Ressources complémentaires">
+                <Link href="/competences">Compétences</Link>
+                <Link href="/knowledge">Guides et définitions</Link>
+                <a href={site.cvStyled} download>CV illustré (PDF)</a>
+                {site.malt ? <a href={site.malt} target="_blank" rel="noreferrer">Malt ↗</a> : null}
+              </nav>
+            </details>
+            <div className="footer-bottom">
+              <span>© 2026 Jonas Suhard</span>
+              <nav className="footer-legal" aria-label="Informations légales">
+                <Link href="/mentions-legales">Mentions légales</Link>
+                <Link href="/confidentialite">Confidentialité</Link>
+                <button type="button" data-open-consent>Gérer les cookies</button>
+              </nav>
             </div>
-            <div>
-              <p className="foot-col-title">Légal</p>
-              <Link href="/mentions-legales">Mentions légales</Link>
-              <Link href="/confidentialite">Confidentialité</Link>
-              <button type="button" className="foot-link-btn" data-open-consent>
-                Gérer les cookies
-              </button>
-            </div>
-          </div>
-          <div className="foot-bar">
-            <span>© 2026 Jonas Suhard</span>
-            <span>jonassuhard.com</span>
           </div>
         </footer>
         <ConsentBanner />
-        {hasVercelObservability ? (
-          <>
-            <Analytics />
-            <SpeedInsights />
-          </>
-        ) : null}
+        {hasVercelObservability ? <Observability /> : null}
       </body>
     </html>
   );

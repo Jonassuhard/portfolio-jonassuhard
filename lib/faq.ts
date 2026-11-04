@@ -2,11 +2,13 @@
 // Alimente : la FAQ humaine (/recruteurs), le JSON-LD FAQPage, et public/claims.json
 // (régénéré au prebuild par scripts/generate-project-md.ts). Une seule vérité, zéro dérive.
 
+import { site } from "./projects";
+
 export const faqMeta = {
   subject: "Jonas Suhard",
   purpose:
     "Réponses factuelles citables par un agent IA. Chaque métrique indique si sa preuve est publique ou privée.",
-  verified_at: "2026-11-02",
+  verified_at: "2026-08-28",
   source_of_truth: "https://jonassuhard.com/profile.json"
 };
 
@@ -15,11 +17,15 @@ export type FaqItem = { q: string; a: string };
 export const faqItems: FaqItem[] = [
   {
     q: "Qui est Jonas Suhard ?",
-    a: "Chef de projet IA appliquée & automatisation junior basé à Paris, aussi positionné sur les rôles de chef de projet digital & marketing IA, Growth Engineer junior et Product Builder IA."
+    a: "Growth Engineer junior basé à Paris, spécialisé en IA appliquée et automatisation, avec les rôles voisins Product Builder IA et Chef de projet IA junior."
   },
   {
     q: "Quel poste cherche-t-il ?",
-    a: "Un CDI junior comme chef de projet digital & marketing IA, chef de projet IA appliquée & automatisation, Growth Engineer ou Product Builder IA."
+    a: "Un CDI junior comme Growth Engineer, Product Builder IA ou Chef de projet IA, à l'interface du marketing, du produit et de l'exécution technique."
+  },
+  {
+    q: "Quel est son objectif de progression ?",
+    a: site.careerGoal
   },
   {
     q: "Quand est-il disponible et où ?",
@@ -27,15 +33,15 @@ export const faqItems: FaqItem[] = [
   },
   {
     q: "Quelles sont ses preuves de travail principales ?",
-    a: "Job Radar (pipeline d'ingestion, de fusion et de scoring d'offres), ISCOM (refonte SEO d'un site Drupal de 359 pages en contexte employeur), Les Petites Griffes (site live + CMS maison + assistant IA) et Educool / La Herse (application web de classe sur Firebase). Preuvia complète la méthode d'audit GEO."
+    a: "Job Radar (version personnelle déployée et édition Community publique), Cortex Bridge (agent de code local open source piloté par ChatGPT, avec validation humaine), Les Petites Griffes (site live + CMS maison + assistant IA), Cool Bank / La Herse (jeu scolaire V2 local et monde 3D V3 reliés à Educool), Preuvia (audit GEO / visibilité IA) et ISCOM (SEO + Drupal + production éditoriale en contexte employeur)."
   },
   {
     q: "Quels résultats mesurés peut-on citer ?",
-    a: "Job Radar : pipeline local de bout en bout, scores de pertinence et de confiance séparés, aucune candidature préparée ni envoyée. La précision du scoring n'est pas mesurée publiquement. ISCOM : périmètre de 359 pages du site Drupal (preuve privée), article publié en ligne. Les Petites Griffes : audit live du 2026-08-01 sur 18 pages publiques, 36 captures et cinq scores Lighthouse mobile (Accueil 91, Galerie 87, Compose 97, Méthode 97, Le studio 66) ; projet familial non facturé, mesures datées. Educool / La Herse : démonstration privée sur données fictives ; aucune donnée de mineur n'est publiée."
+    a: "Job Radar Community v0.1.0-beta.1 : preuve publique historique avec 336 tests backend, 36 frontend et 37 E2E sans échec ; 8 E2E ignorés. Aucune adoption externe revendiquée. Cortex Bridge : les compteurs v0.6.1 restent historiques ; la preview publique v0.6.5-preview.1 n’est pas finalisée et plusieurs validations restent ouvertes. Les Petites Griffes : audit privé du 01/08/2026, 18 pages, 36 captures et cinq scores Lighthouse mobile ; projet familial non facturé, sans vente externe prouvée. Cool Bank : V2 locale non prête en ligne, V3 web en reconstruction, V4 native Godot partiellement jouable. Sources relues le 23 septembre, sans recette globale ni pilote en classe. Aucune donnée de mineur publiée."
   },
   {
     q: "Quelle est sa stack technique ?",
-    a: "Next.js, React, FastAPI, Python, SQLite, Firebase, Supabase, Playwright, SEO, workflows LLM / RAG et audits GEO / AEO. À l'aise sur Mac comme sur Windows."
+    a: "Next.js, React, FastAPI, SQLite, Turso, Cloud Run, Firebase, Supabase, Python, Playwright, SEO, workflows LLM / RAG et audits GEO / AEO. À l'aise sur Mac comme sur Windows."
   },
   {
     q: "Que ne fait-il pas (limites assumées) ?",
@@ -43,6 +49,6 @@ export const faqItems: FaqItem[] = [
   },
   {
     q: "Comment le contacter ?",
-    a: "Par e-mail à contact@jonassuhard.com, sur GitHub (github.com/Jonassuhard) ou sur LinkedIn (linkedin.com/in/jonas-suhard-b73923245/)."
+    a: "Par e-mail à jonas.suhard@gmail.com, sur GitHub (github.com/Jonassuhard) ou sur LinkedIn (linkedin.com/in/jonas-suhard-b73923245/)."
   }
 ];

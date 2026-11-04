@@ -1,0 +1,534 @@
+{
+  "reviewDate": "2026-09-09",
+  "baseline": "9985ad0",
+  "replacedProjectMediaReferences": 36,
+  "replacedMediaStillUsed": [],
+  "lesPetitesGriffesProjectUnchanged": true,
+  "files": [
+    {
+      "file": "public/assets/cards/job-radar-20260909-art.webp",
+      "project": "job-radar",
+      "bytes": 27852,
+      "sha256": "7816f2cfdf8025e3d0abdd03e69a0db90c5ce65a7e30ebeaaf5d42accbbc2533",
+      "media": {
+        "width": 760,
+        "height": 460,
+        "alpha": true
+      }
+    },
+    {
+      "file": "public/assets/proof/capselys/adhesion-archive-20260908.webp",
+      "project": "capselys",
+      "bytes": 26792,
+      "sha256": "fa5a8b54863a2784190a74bd081b1146621420674e2c5941399ee5a7ca27b1aa",
+      "caption": "Archive du staging : formulaire d'adhésion ouvert, sans donnée renseignée.",
+      "media": {
+        "width": 1440,
+        "height": 900,
+        "alpha": false
+      }
+    },
+    {
+      "file": "public/assets/proof/capselys/header-archive-20260908.webp",
+      "project": "capselys",
+      "bytes": 90950,
+      "sha256": "51c015f7ce547bb0b0f06428813e7a0c411b1cb1f41753f596e441f66d71d612",
+      "caption": "Archive du staging : l'en-tête reste accessible pendant le défilement.",
+      "media": {
+        "width": 1440,
+        "height": 900,
+        "alpha": false
+      }
+    },
+    {
+      "file": "public/assets/proof/capselys/navigation-archive-20260908.webp",
+      "project": "capselys",
+      "bytes": 94236,
+      "sha256": "e49f46efa04c6b830c1c43d3b7b759cb371caae42241858b7b65d6858530d06f",
+      "caption": "Archive du staging : accès aux services depuis la navigation. Ce visuel ne représente pas le site public actuel.",
+      "media": {
+        "width": 1440,
+        "height": 900,
+        "alpha": false
+      }
+    },
+    {
+      "file": "public/assets/proof/claude-code-soul/public-0-20260908.webp",
+      "project": "claude-code-soul",
+      "bytes": 88194,
+      "sha256": "f684556f83f33c8058cbbf36d70800e368a9b743c79e78d4f70458f353e3212a",
+      "caption": "Dépôt GitHub public consulté le 8 septembre 2026 : fichiers, licence et documentation du pack.",
+      "media": {
+        "width": 1440,
+        "height": 960,
+        "alpha": false
+      }
+    },
+    {
+      "file": "public/assets/proof/cortex-bridge/approval-20260908.webp",
+      "project": "cortex-bridge",
+      "bytes": 21456,
+      "sha256": "db7b3fa7808e63a9e7df1ccd338556de4fb20a291e0147a137df2e8d4ba051a0",
+      "caption": "Avant exécution : dossier, durée et permissions à vérifier. Scénario fictif rejoué dans l'interface locale.",
+      "media": {
+        "width": 1440,
+        "height": 960,
+        "alpha": false
+      }
+    },
+    {
+      "file": "public/assets/proof/cortex-bridge/public-0-20260908.webp",
+      "project": "cortex-bridge",
+      "bytes": 99954,
+      "sha256": "ffe758fd5b5958d921d6165f227569cad5cd2095fc79dae80ea79511b7f66107",
+      "caption": "Dépôt GitHub public : code et documentation consultables. La version publiée reste v0.5.3, distincte du travail local.",
+      "media": {
+        "width": 1440,
+        "height": 960,
+        "alpha": false
+      }
+    },
+    {
+      "file": "public/assets/proof/cortex-bridge/workspace-20260908.webp",
+      "project": "cortex-bridge",
+      "bytes": 35292,
+      "sha256": "0e909423c9d8422d5ad3db340dc5c7e190c06bed023055b03780ab93a90f4dc5",
+      "caption": "Console locale : conversations et dossier de travail, avec les données fictives des tests du dépôt. Ce n'est pas une exécution réelle.",
+      "media": {
+        "width": 1440,
+        "height": 960,
+        "alpha": false
+      }
+    },
+    {
+      "file": "public/assets/proof/educool/v2-house-20260822.webp",
+      "project": "educool-la-herse",
+      "bytes": 12012,
+      "sha256": "1a9d97d8945bbb57c916947336846f828d43507edcdd4a447ef889bef73ccc07",
+      "caption": "V2 : intérieur de maison en 3D dans le scénario de test du 22 août 2026. Aucune donnée d'élève réelle.",
+      "media": {
+        "width": 910,
+        "height": 522,
+        "alpha": false
+      }
+    },
+    {
+      "file": "public/assets/proof/educool/v2-village-20260817.webp",
+      "project": "educool-la-herse",
+      "bytes": 231584,
+      "sha256": "966f70fad233d1135869ba22ef4f69b791c1b29d09596bdd19ebf941ae858d71",
+      "caption": "Cool Bank V2 : le bourg 3D dans la boucle locale. Capture de contrôle du 17 août 2026, conservée comme archive de cette version.",
+      "media": {
+        "width": 1440,
+        "height": 900,
+        "alpha": false
+      }
+    },
+    {
+      "file": "public/assets/proof/educool/v2-world-20260817.webp",
+      "project": "educool-la-herse",
+      "bytes": 134522,
+      "sha256": "f4bcc531a701b4594dd09ef8eb214b1a0e10cb65b461669b5e3861d6281a56fa",
+      "caption": "V2 : vue d'ensemble du monde 3D et du HUD, archive locale du 17 août 2026.",
+      "media": {
+        "width": 1440,
+        "height": 900,
+        "alpha": false
+      }
+    },
+    {
+      "file": "public/assets/proof/educool/v3-map-castle-20260908.webp",
+      "project": "educool-la-herse",
+      "bytes": 106326,
+      "sha256": "e7c05075721705ba784a5f540bc271fd073a48238fa2fdfb110fe47969d4bfea",
+      "caption": "V3 : vue du château dans le même build local, avec la caméra de contrôle de la carte.",
+      "media": {
+        "width": 1440,
+        "height": 900,
+        "alpha": false
+      }
+    },
+    {
+      "file": "public/assets/proof/educool/v3-map-city-20260908.webp",
+      "project": "educool-la-herse",
+      "bytes": 114128,
+      "sha256": "84f7cc2412cfd8d3bb113de1425412a47ac0124c1d90755c53a92076c58a9414",
+      "caption": "V3 : vue du bourg dans le mode de prévisualisation de la carte. Build local du 7 septembre, capture du 8 septembre ; ce n'est pas une session élève.",
+      "media": {
+        "width": 1440,
+        "height": 900,
+        "alpha": false
+      }
+    },
+    {
+      "file": "public/assets/proof/educool/v3-map-island-20260908.webp",
+      "project": "educool-la-herse",
+      "bytes": 73168,
+      "sha256": "d64910eb2a0f2f3e7509cd69fe53a82af9c9635b9bbc1e1d14e441b7e1e3dc31",
+      "caption": "V3 : vue d'ensemble du terrain pour situer les zones. Prévisualisation technique, pas validation humaine du jeu.",
+      "media": {
+        "width": 1440,
+        "height": 900,
+        "alpha": false
+      }
+    },
+    {
+      "file": "public/assets/proof/edusemantix/game-20260908.webp",
+      "project": "edusemantix",
+      "bytes": 36290,
+      "sha256": "d215c58e69cdb341319d3bc81cf4eacde578bc339456958921dcd486bd633588",
+      "caption": "Démo publique : trois propositions jouées dans une session anonyme, avec leur score sémantique.",
+      "media": {
+        "width": 1440,
+        "height": 960,
+        "alpha": false
+      }
+    },
+    {
+      "file": "public/assets/proof/edusemantix/mobile-20260908.webp",
+      "project": "edusemantix",
+      "bytes": 17098,
+      "sha256": "8fdae1d9c1b65a21c87cbe0b607d9b0f21277eecfe05fe56eab80f30e0f34ea9",
+      "caption": "La même partie sur un écran de 390 px : proposition, score et historique.",
+      "media": {
+        "width": 390,
+        "height": 844,
+        "alpha": false
+      }
+    },
+    {
+      "file": "public/assets/proof/edusemantix/rules-20260908.webp",
+      "project": "edusemantix",
+      "bytes": 48098,
+      "sha256": "3206f9f9cc9fe47ad363809649218f5f350807c83639496237997cd4a5e8c6eb",
+      "caption": "Règles accessibles depuis la partie : proximité, température et progression.",
+      "media": {
+        "width": 1440,
+        "height": 960,
+        "alpha": false
+      }
+    },
+    {
+      "file": "public/assets/proof/hoopsphere/landing-20260908.webp",
+      "project": "hoopsphere",
+      "bytes": 90710,
+      "sha256": "edd62cc20e28878e38d75003d93dfb7e94db21feaec6cdbf15118e409da8064d",
+      "caption": "Landing d'équipe archivée : proposition de valeur pour les joueurs de basket. Ma contribution porte sur le marketing, pas sur le design de cet écran.",
+      "media": {
+        "width": 1440,
+        "height": 960,
+        "alpha": false
+      }
+    },
+    {
+      "file": "public/assets/proof/hoopsphere/landing-mobile-20260908.webp",
+      "project": "hoopsphere",
+      "bytes": 40356,
+      "sha256": "b57d49e36f469dc10374db6c6ec08d3efa01a80fa2afb0a93a0ca8ae6f03efa3",
+      "caption": "La landing d'équipe sur mobile, capturée depuis l'archive locale. Elle présente le concept, pas une application distribuée.",
+      "media": {
+        "width": 390,
+        "height": 844,
+        "alpha": false
+      }
+    },
+    {
+      "file": "public/assets/proof/hoopsphere/product-20260908.webp",
+      "project": "hoopsphere",
+      "bytes": 61002,
+      "sha256": "0f95f27a885bbce49301e5b9dedf3b38e6cc9186afe5152aff9dfb5c7497fe54",
+      "caption": "Landing d'équipe : les publics joueur, club et entraîneur. Capture locale de l'archive, pas une application mobile en production.",
+      "media": {
+        "width": 1440,
+        "height": 960,
+        "alpha": false
+      }
+    },
+    {
+      "file": "public/assets/proof/iscom/public-0-20260908.webp",
+      "project": "iscom",
+      "bytes": 90198,
+      "sha256": "dbffe39d2684f497098fa7886f3ea32ab59b982bfd50c372c29686f269240797",
+      "caption": "Article public : titre et mise en page vérifiés le 8 septembre 2026.",
+      "media": {
+        "width": 1440,
+        "height": 960,
+        "alpha": false
+      }
+    },
+    {
+      "file": "public/assets/proof/iscom/public-1500-20260908.webp",
+      "project": "iscom",
+      "bytes": 107766,
+      "sha256": "432e9b05996ea7877ca07415b0b5d999de20cb1b9da45b35518acf39cf4ea39e",
+      "caption": "Suite de l'article public : développement et sous-titre. Le trafic et la performance SEO ne sont pas déduits de cette capture.",
+      "media": {
+        "width": 1440,
+        "height": 960,
+        "alpha": false
+      }
+    },
+    {
+      "file": "public/assets/proof/iscom/public-750-20260908.webp",
+      "project": "iscom",
+      "bytes": 86582,
+      "sha256": "849e90a16c24fe49056904faabb9f81a906bb4599a024ff1e9f1fc472e8f5698",
+      "caption": "Corps de l'article dans Drupal : introduction et hiérarchie des sections.",
+      "media": {
+        "width": 1440,
+        "height": 960,
+        "alpha": false
+      }
+    },
+    {
+      "file": "public/assets/proof/job-radar/insights-20260908.webp",
+      "project": "job-radar",
+      "bytes": 39364,
+      "sha256": "937c452518248eb6eae4bdf7d41d0dfbb58797a52beab34ad40665d8d063a4ce",
+      "caption": "Insights : volumes, décisions et compétences. L'interface signale que l'échantillon est insuffisant pour une tendance. Données fictives.",
+      "media": {
+        "width": 1440,
+        "height": 960,
+        "alpha": false
+      }
+    },
+    {
+      "file": "public/assets/proof/job-radar/offer-detail-20260908.webp",
+      "project": "job-radar",
+      "bytes": 66378,
+      "sha256": "1288674208bbeeea16fd4969a9acee32b4bcd4fa6189da66f147763e85bc68f2",
+      "caption": "Radar local : liste et détail d'une offre, raisons de la note et préparation du dossier. Données fictives.",
+      "media": {
+        "width": 1440,
+        "height": 960,
+        "alpha": false
+      }
+    },
+    {
+      "file": "public/assets/proof/job-radar/radar-20260908.webp",
+      "project": "job-radar",
+      "bytes": 42676,
+      "sha256": "f00b343436eb30f455818c90070636ac0af99058c66e346fc7935e620171a8a6",
+      "caption": "Radar : quatre offres retenues à partir d'une base de démonstration. Entreprises et données fictives.",
+      "media": {
+        "width": 1440,
+        "height": 960,
+        "alpha": false
+      }
+    },
+    {
+      "file": "public/assets/proof/job-radar/radar-mobile-20260908.webp",
+      "project": "job-radar",
+      "bytes": 19996,
+      "sha256": "de325c049d828920db2fb2a80a682f1143227092a86d105e7f0bc5de8e922465",
+      "caption": "Détail d'une offre sur mobile, avec les mêmes raisons de classement. Données fictives.",
+      "media": {
+        "width": 390,
+        "height": 844,
+        "alpha": false
+      }
+    },
+    {
+      "file": "public/assets/proof/preuvia/public-0-20260908.webp",
+      "project": "preuvia",
+      "bytes": 54182,
+      "sha256": "bb74070c834d2038c80bbd704896b306495c82a1d79f94d2801b2a4f3a375878",
+      "caption": "Accueil public : la promesse et un exemple de comparaison entre réponses d'IA.",
+      "media": {
+        "width": 1440,
+        "height": 960,
+        "alpha": false
+      }
+    },
+    {
+      "file": "public/assets/proof/preuvia/public-1500-20260908.webp",
+      "project": "preuvia",
+      "bytes": 46124,
+      "sha256": "ec095944c023d32423e082fd73ea7499da009117c302618bb8db82717679f09b",
+      "caption": "Exemple de matrice de citations sur la page publique. C'est une démonstration du livrable, pas un résultat client.",
+      "media": {
+        "width": 1440,
+        "height": 960,
+        "alpha": false
+      }
+    },
+    {
+      "file": "public/assets/proof/preuvia/public-750-20260908.webp",
+      "project": "preuvia",
+      "bytes": 46814,
+      "sha256": "a288dc88a9e855bd87d272ee2f4fd5afedad22221fcc3b7c504bab077264c1cc",
+      "caption": "Le site explique ce que l'audit observe et les étapes de la prestation.",
+      "media": {
+        "width": 1440,
+        "height": 960,
+        "alpha": false
+      }
+    },
+    {
+      "file": "public/assets/video/battle-goku-20260908-poster.webp",
+      "project": "battle-engine",
+      "bytes": 14470,
+      "sha256": "142861a9528d65a89cae3c5cf04de639c9b2c77ddc95a91c61932fb34cc2a7b6",
+      "caption": "Goku contre MrBeast : extrait du rendu local d'août 2026. Combat, effets et barre de vie, 20 secondes.",
+      "media": {
+        "width": 720,
+        "height": 1280,
+        "alpha": false
+      }
+    },
+    {
+      "file": "public/assets/video/battle-goku-20260908.mp4",
+      "project": "battle-engine",
+      "bytes": 2460969,
+      "sha256": "221b113b25d274be6eeee5791f4a270e9ca013fa80cabe19fc3b26bea67e6063",
+      "caption": "Goku contre MrBeast : extrait du rendu local d'août 2026. Combat, effets et barre de vie, 20 secondes.",
+      "media": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_type": "video",
+            "width": 720,
+            "height": 1280
+          }
+        ],
+        "format": {
+          "duration": "20.000000"
+        }
+      }
+    },
+    {
+      "file": "public/assets/video/battle-league-20260908-poster.webp",
+      "project": "battle-engine",
+      "bytes": 7848,
+      "sha256": "33be5b4175a28cf8a94179b2bd0f5384e3ad8992f9824347b1168469f1f55457",
+      "media": {
+        "width": 360,
+        "height": 640,
+        "alpha": false
+      }
+    },
+    {
+      "file": "public/assets/video/battle-league-20260908.mp4",
+      "project": "battle-engine",
+      "bytes": 1073666,
+      "sha256": "9b428fde67ccc8d98f00ac568e3650956ca81f62997fb73ece8a0542f57ef792",
+      "media": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_type": "video",
+            "width": 360,
+            "height": 640
+          }
+        ],
+        "format": {
+          "duration": "34.000000"
+        }
+      }
+    },
+    {
+      "file": "public/assets/video/battle-roster-20260908-poster.webp",
+      "project": "battle-engine",
+      "bytes": 59098,
+      "sha256": "e0e89597f8bc427e319b9b3476b5fb11e64bc2c9c6a784722668ac288e63c807",
+      "caption": "Montage du roster de juin 2026 : 44 personnages présentés dans cette archive. Ce nombre ne décrit pas le roster actuel.",
+      "media": {
+        "width": 1280,
+        "height": 720,
+        "alpha": false
+      }
+    },
+    {
+      "file": "public/assets/video/battle-roster-20260908.mp4",
+      "project": "battle-engine",
+      "bytes": 2661464,
+      "sha256": "bea38abbb438f33b796973368620b82ede8d64a1e5b28285d017d72be11e719f",
+      "caption": "Montage du roster de juin 2026 : 44 personnages présentés dans cette archive. Ce nombre ne décrit pas le roster actuel.",
+      "media": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_type": "video",
+            "width": 1280,
+            "height": 720,
+            "side_data_list": [
+              {}
+            ]
+          }
+        ],
+        "format": {
+          "duration": "30.000000"
+        }
+      }
+    },
+    {
+      "file": "public/assets/video/battle-saitama-20260908-poster.webp",
+      "project": "battle-engine",
+      "bytes": 130522,
+      "sha256": "227d56238e33c8c9780d46380b51718967f45b775043e21a4ed393dc741a541d",
+      "caption": "Extrait de combat issu du corpus local : arène sombre, effets et fin de combat. Archive de juillet 2026, 20 secondes.",
+      "media": {
+        "width": 720,
+        "height": 1280,
+        "alpha": false
+      }
+    },
+    {
+      "file": "public/assets/video/battle-saitama-20260908.mp4",
+      "project": "battle-engine",
+      "bytes": 2733902,
+      "sha256": "6788ffa9cf5c4a300420cf9930e05d17a9f280e3eb7221af9e3278de17d12f97",
+      "caption": "Extrait de combat issu du corpus local : arène sombre, effets et fin de combat. Archive de juillet 2026, 20 secondes.",
+      "media": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_type": "video",
+            "width": 540,
+            "height": 960
+          }
+        ],
+        "format": {
+          "duration": "20.000000"
+        }
+      }
+    },
+    {
+      "file": "public/assets/video/battle-teaser-20260908-poster.webp",
+      "project": "battle-engine",
+      "bytes": 24294,
+      "sha256": "2c7cbfa199faf4bbfe95b1a5db54226c86fce28e69d2278cdde0e453a4f322ac",
+      "caption": "Teaser d'avril 2026 : montage de présentation du projet. Archive de lancement, distincte du rendu actuel des combats.",
+      "media": {
+        "width": 1280,
+        "height": 720,
+        "alpha": false
+      }
+    },
+    {
+      "file": "public/assets/video/battle-teaser-20260908.mp4",
+      "project": "battle-engine",
+      "bytes": 589267,
+      "sha256": "105922bd13dcf847487b6eb0492d31897bc06405e56ac001f07f3dbd892df587",
+      "caption": "Teaser d'avril 2026 : montage de présentation du projet. Archive de lancement, distincte du rendu actuel des combats.",
+      "media": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_type": "video",
+            "width": 1280,
+            "height": 720
+          }
+        ],
+        "format": {
+          "duration": "30.000000"
+        }
+      }
+    }
+  ]
+}

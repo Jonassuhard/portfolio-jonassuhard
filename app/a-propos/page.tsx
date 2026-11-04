@@ -18,34 +18,27 @@ export default function AboutPage() {
         <div>
           <p className="eyebrow">À propos</p>
           <AnimatedTitle>
-            Je viens du marketing, j'ai appris à construire ce que je recommande.
+            Du marketing au développement.
           </AnimatedTitle>
           <p className="lead">
-            J'ai commencé par le marketing digital : acquisition, SEO, contenu.
-            Vite, j'ai voulu construire les outils que je recommandais plutôt
-            que les décrire. Aujourd'hui je fais les deux dans le même geste,
-            cadrer un besoin d'équipe et livrer ce qui y répond.
+            J'ai commencé par le marketing digital, le SEO et le contenu.
+            J'ai appris à coder pour réaliser moi-même les sites et les outils
+            dont j'avais besoin.
           </p>
           <p>
-            Concrètement, je prends le dernier kilomètre : je cadre le besoin, je
-            construis une première version, je définis ce qui doit être mesuré et
-            je documente les décisions et ce qu'il reste à construire. Je cherche
-            un CDI où ce profil hybride sert, dans une équipe qui produit vite,
-            teste proprement et met l'IA au service d'un travail utile.
+            Je cherche aujourd'hui un CDI junior pour construire avec une
+            équipe, recevoir des retours et progresser sur des produits utilisés.
           </p>
           <div className="button-row">
             <a className="button primary" href={`mailto:${site.email}`}>Me contacter</a>
             <a className="button" href="/projets">Voir les projets</a>
           </div>
-          <div className="cv-block">
-            <span className="cv-label">CV — téléchargement direct</span>
-            <div className="button-row">
-              <a className="button primary" href={site.cvClassic} download>CV classique (PDF)</a>
-              <a className="button" href={site.cvStyled} download>CV version site (PDF)</a>
-            </div>
+          <div className="button-row">
+            <a className="button primary" href={site.cvClassic} download>CV classique (PDF)</a>
+            <a className="lk" href={site.cvStyled} download>CV illustré (PDF)</a>
           </div>
         </div>
-        <div className="panel panel-sys">
+        <div className="about-identity panel-sys">
           <div className="avatar-frame">
             <Image
               src="/brand/jonas-avatar.jpg"
@@ -56,18 +49,9 @@ export default function AboutPage() {
               quality={70}
             />
           </div>
-          <h2>Position cible</h2>
-          <p>
-            Chef de projet IA appliquée &amp; automatisation junior, avec une
-            spécialisation Growth Engineer et Product Builder IA, dans une équipe
-            qui relie besoins métier et exécution produit.
-          </p>
-          <h3>Ce que je cherche à construire</h3>
-          <p>
-            Des outils marketing et IA simples à vérifier, utiles à une équipe,
-            et documentés pour être repris. Une version qui tourne, une mesure,
-            une trace écrite. Le reste est de la littérature.
-          </p>
+          <h2>{site.name}</h2>
+          <p>{site.title}</p>
+          <p>Paris · web, automatisation et IA appliquée</p>
         </div>
       </section>
 
@@ -79,28 +63,11 @@ export default function AboutPage() {
           </div>
         </div>
         <div className="prose">
-          <p>
-            Le terme vient de l'anglais et sonne creux quand on ne le rattache à rien.
-            Voilà ce que je mets derrière.
-          </p>
-          <p>
-            Un Growth Engineer relie deux métiers qu'on sépare d'habitude, l'acquisition
-            et le code. Je conçois, je livre, je mesure. Sans sous-traiter chaque étape.
-          </p>
-          <p>
-            Je viens du marketing. J'ai appris à coder pour ne plus dépendre d'un dev à
-            chaque test. En IA appliquée, je cadre des workflows LLM utiles, avec des
-            garde-fous. Pas des démos.
-          </p>
-          <p>
-            Ce n'est pas du growth hacking. La dette technique et la sécurité comptent
-            autant que le résultat de la semaine. Traduit en clair, c'est un profil
-            hybride qui mêle marketing, développement et IA, au service d'un produit qui
-            tourne. Je travaille aussi bien sur Mac que sur Windows.
-          </p>
+          <p>C'est un rôle qui relie l'acquisition et le développement : comprendre un besoin marketing, construire une réponse et vérifier son effet.</p>
+          <p>Mon point fort est de réaliser cette première réponse. Je cherche à progresser en équipe sur la mesure produit et l'expérimentation.</p>
           <p>
             <Link className="lk" href="/knowledge/growth-engineer-ia">
-              La version longue, avec les preuves.
+              Le rôle de Growth Engineer, en détail
             </Link>
           </p>
         </div>
@@ -113,7 +80,7 @@ export default function AboutPage() {
             <h2>Expérience.</h2>
           </div>
         </div>
-        <div className="matrix matrix-2">
+        <div className="matrix matrix-2 experience-matrix">
           <div className="matrix-item">
             <strong>Alternant communication digitale, SEO & IA appliquée</strong>
             <p>Octobre 2025 – août 2026 · Eduservices (marque ISCOM)</p>
@@ -127,7 +94,8 @@ export default function AboutPage() {
           <div className="matrix-item">
             <strong>Projets web, SEO et IA appliquée</strong>
             <p>Projets depuis 2021 · entreprise individuelle enregistrée en 2026 · Paris / hybride</p>
-            <p className="cert">Sites web (Next.js, WordPress), SEO local, assistants IA cadrés. Exemples : Les Petites Griffes en production, Job Radar pour l'automatisation et le scoring d'offres.</p>
+            <p className="cert">Sites web (Next.js, WordPress), SEO local, assistants IA cadrés. Exemple livré en production : Les Petites Griffes.</p>
+            <Link className="lk experience-proof" href="/projets/les-petites-griffes">Voir le projet Les Petites Griffes</Link>
           </div>
         </div>
       </section>
@@ -146,9 +114,9 @@ export default function AboutPage() {
             <p className="cert">Ressources de formation sur Claude, les API, les outils et les évaluations. Aucune certification obtenue n'est revendiquée.</p>
           </div>
           <div className="matrix-item">
-            <strong>MBA Expert Marketing Digital (validé)</strong>
-            <p>2024–2026 · La Digital School (année 4) + MyDigitalSchool, Paris (année 5)</p>
-            <p className="cert">Titre RNCP41809 — « Manager de la stratégie marketing digital », niveau 7 · année validée, diplôme prévu début décembre 2026</p>
+            <strong>MBA Expert Marketing Digital · bac+5</strong>
+            <p>2024–2026 · MyDigitalSchool, Paris</p>
+            <p className="cert">Titre RNCP de niveau 7 : Manager de la stratégie marketing digital.</p>
           </div>
           <div className="matrix-item">
             <strong>Bachelor Chef de projet digital</strong>
@@ -167,10 +135,7 @@ export default function AboutPage() {
         <div className="notice">
           <strong>Ce que je vise.</strong>
           <p>
-            Rejoindre une équipe où ce profil hybride sert : relier le marketing,
-            l'IA appliquée et le développement pour livrer des outils utiles, et
-            transmettre ce que je construis. Je préfère un livrable daté à une
-            promesse de transformation.
+            {site.careerGoal}
           </p>
           <div className="button-row">
             <Link className="button primary" href="/recruteurs">Page recruteurs</Link>
@@ -181,4 +146,3 @@ export default function AboutPage() {
     </div>
   );
 }
-

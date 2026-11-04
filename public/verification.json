@@ -1,5 +1,5 @@
 {
-  "reviewed_at": "2026-11-02",
+  "reviewed_at": "2026-08-28",
   "methodology": {
     "publicly-verified": "Une source publique directe permet de contrôler l'affirmation.",
     "private-evidence": "La preuve est annoncée comme montrable en entretien, mais n'est pas publiée.",
@@ -12,95 +12,137 @@
       "claim": "Recherche d'un CDI junior à Paris ou en hybride, disponible immédiatement.",
       "scope": "Positionnement",
       "status": "self-declared",
-      "checkedAt": "2026-11-02",
-      "note": "Intention professionnelle déclarée par Jonas Suhard, mise à jour le 2026-11-02."
+      "checkedAt": "2026-11-04",
+      "note": "Intention professionnelle déclarée par Jonas Suhard."
     },
     {
       "id": "rncp-41809",
       "claim": "Le titre RNCP41809 « Manager de la stratégie marketing digital » est un niveau 7 actif.",
       "scope": "Formation",
       "status": "publicly-verified",
-      "checkedAt": "2026-11-02",
+      "checkedAt": "2026-08-28",
       "sourceLabel": "France Compétences — RNCP41809",
       "sourceHref": "https://www.francecompetences.fr/recherche/rncp/41809/",
-      "note": "Le MBA est validé (bulletin S2 2025/2026) ; le diplôme est prévu début décembre 2026. Le portfolio ne prétend pas que le parchemin est déjà remis."
+      "note": "La fiche décrit le titre national, pas son attribution à Jonas. Le MBA est indiqué obtenu sur la base de sa déclaration ; aucune attribution distincte du RNCP n'est déduite."
     },
     {
       "id": "rncp-34340",
       "claim": "Le titre RNCP34340 « Chef de projet e-business » correspond à un niveau 6 historique.",
       "scope": "Formation",
       "status": "private-evidence",
-      "checkedAt": "2026-11-02",
+      "checkedAt": "2026-08-28",
       "sourceLabel": "France Compétences — RNCP34340",
       "sourceHref": "https://www.francecompetences.fr/recherche/RNCP/34340/",
       "note": "La fiche publique vérifie le titre ; l'obtention personnelle doit être confirmée par le diplôme."
-    },
-    {
-      "id": "iscom-359-pages",
-      "claim": "La refonte SEO d'ISCOM a porté sur un périmètre de 359 pages du site Drupal iscom.fr.",
-      "scope": "Expérience",
-      "status": "private-evidence",
-      "checkedAt": "2026-11-02",
-      "note": "Périmètre déclaré par Jonas, montrable en entretien via les documents de mission. Aucun export public ne permet de le vérifier."
     },
     {
       "id": "iscom-article",
       "claim": "L'article associé à l'étude de cas ISCOM est accessible publiquement sur iscom.fr.",
       "scope": "Expérience",
       "status": "publicly-verified",
-      "checkedAt": "2026-11-02",
+      "checkedAt": "2026-08-28",
       "sourceLabel": "Article ISCOM",
       "sourceHref": "https://www.iscom.fr/actualites/lia-change-de-role-les-communicants-aussi",
       "note": "Le lien public prouve la publication, pas l'ensemble des tâches internes décrites."
-    },
-    {
-      "id": "job-radar-local",
-      "claim": "Job Radar est un pipeline local d'ingestion et de scoring d'offres, utilisé comme outil personnel.",
-      "scope": "Projet",
-      "status": "private-evidence",
-      "checkedAt": "2026-11-02",
-      "note": "Captures du dashboard et rapports de refresh datés, montrables en entretien. Aucun dépôt public ni client commercial."
     },
     {
       "id": "preuvia-live",
       "claim": "L'offre Preuvia et sa méthode d'audit GEO sont présentées sur un site public.",
       "scope": "Projet",
       "status": "publicly-verified",
-      "checkedAt": "2026-11-02",
+      "checkedAt": "2026-08-28",
       "sourceLabel": "Preuvia",
       "sourceHref": "https://preuvia.vercel.app/",
       "note": "Aucun volume de clients ni résultat commercial n'est revendiqué dans le portfolio."
+    },
+    {
+      "id": "job-radar-community-repo",
+      "claim": "Le code de Job Radar Community est public sur GitHub sous licence MIT.",
+      "scope": "Projet",
+      "status": "publicly-verified",
+      "checkedAt": "2026-08-31",
+      "sourceLabel": "Repo GitHub Job Radar Community",
+      "sourceHref": "https://github.com/Jonassuhard/job-radar-community",
+      "note": "L'édition publique est reconstruite sans l'historique, le profil, les candidatures ni les données de la version personnelle."
+    },
+    {
+      "id": "job-radar-community-beta-1",
+      "claim": "La preuve Job Radar Community v0.1.0-beta.1 rapporte 336 tests backend, 36 tests frontend et 37 tests E2E sans échec ; 8 scénarios E2E sont ignorés intentionnellement. Elle couvre 20 combinaisons route/viewport sans violation Axe ni débordement.",
+      "scope": "Projet",
+      "status": "publicly-verified",
+      "checkedAt": "2026-08-31",
+      "sourceLabel": "Preuve Job Radar Community v0.1.0-beta.1",
+      "sourceHref": "https://github.com/Jonassuhard/job-radar-community/blob/main/docs/verification/v0.1.0-beta.1.json",
+      "note": "Preuve publique d'une validation locale datée sur un corpus de 42 offres fictives, complétée par la release GitHub et ses contrôles publics. Elle ne prouve ni adoption externe ni candidature obtenue."
+    },
+    {
+      "id": "job-radar-personal-deployed-2026-08-25",
+      "claim": "La version personnelle de Job Radar est déployée avec un frontend Vercel, une API et des tâches Cloud Run, une base Turso et des sauvegardes Google Drive.",
+      "scope": "Projet",
+      "status": "private-evidence",
+      "checkedAt": "2026-08-31",
+      "note": "Preuve privée : contrôle de production daté du 25/08/2026, huit routes frontend en HTTP 200, huit sources en état OK sur le run vérifié et intégrité de la base confirmée. L'application et ses données ne sont pas publiques."
+    },
+    {
+      "id": "cortex-bridge-repo",
+      "claim": "Le code de Cortex Bridge est public sur GitHub sous licence MIT.",
+      "scope": "Projet",
+      "status": "publicly-verified",
+      "checkedAt": "2026-08-27",
+      "sourceLabel": "Repo GitHub Cortex Bridge",
+      "sourceHref": "https://github.com/Jonassuhard/cortex-bridge",
+      "note": "Le dépôt public, sa branche principale et sa licence ont été contrôlés le 27/08/2026."
+    },
+    {
+      "id": "cortex-bridge-release-0-6-1",
+      "claim": "La preuve publique du tag Cortex Bridge v0.6.1 rapporte 724 tests backend, 207 frontend, 138 extension, 26 E2E et 4 accessibilité sans échec ; un test E2E optionnel est ignoré.",
+      "scope": "Projet",
+      "status": "publicly-verified",
+      "checkedAt": "2026-09-10",
+      "sourceLabel": "Preuve publique du tag Cortex Bridge v0.6.1",
+      "sourceHref": "https://github.com/Jonassuhard/cortex-bridge/blob/v0.6.1/docs/verification/v0.6.1.json",
+      "note": "Résultats automatisés datés et publiés dans le dépôt. Le manifeste marque RELEASE_BLOCKED_BY_PROVIDER_TERMS : il ne prouve pas une compatibilité continue avec ChatGPT ; le cycle macOS propre n'a pas été exécuté."
+    },
+    {
+      "id": "cortex-bridge-preview-0-6-5",
+      "claim": "Cortex Bridge publie le tag v0.6.5-preview.1 comme preview non finalisée, et non comme release stable.",
+      "scope": "Projet",
+      "status": "publicly-verified",
+      "checkedAt": "2026-09-23",
+      "sourceLabel": "État public de la preview v0.6.5",
+      "sourceHref": "https://github.com/Jonassuhard/cortex-bridge/blob/v0.6.5-preview.1/PREVIEW_V065.md",
+      "note": "Lecture du tag et de la note publique, sans nouvelle exécution des tests Cortex. Installation complète, isolation entre projets, Windows et contrôle de confidentialité restent ouverts. Les scores historiques v0.6.1 ne qualifient pas cette preview."
     },
     {
       "id": "lpg-live-audit-2026-08-01",
       "claim": "L'audit live du 2026-08-01 couvre 18 pages publiques contrôlées à 390 px et 1440 px, 36 captures pleine page, 30 images uniques chargées sur le live et cinq scores de performance Lighthouse mobile : Accueil 91, Galerie 87, Compose 97, Méthode 97, Le studio 66.",
       "scope": "Projet",
       "status": "private-evidence",
-      "checkedAt": "2026-11-02",
+      "checkedAt": "2026-08-28",
       "note": "Projet familial non facturé ; aucune vente à un client externe n'est prouvée ; mesures datées du 2026-08-01, non continues."
     },
     {
-      "id": "educool-classroom",
-      "claim": "Educool a été conçu pour un usage réel en classe avec des données de mineurs.",
+      "id": "cool-bank-la-herse-versions",
+      "claim": "Cool Bank / La Herse distingue une V2 3D locale, une reconstruction web V3 et une migration Godot V4 partiellement jouable. Aucun pilote en classe n'est validé.",
       "scope": "Projet",
       "status": "private-evidence",
-      "checkedAt": "2026-11-02",
-      "note": "Les captures publiques utilisent des données fictives ; les données réelles restent privées."
+      "checkedAt": "2026-09-23",
+      "note": "Sources et journaux privés relus le 23 septembre. Les essais V2/V3 d'août restent historiques. V4 : restauration d'une candidate Mac et captures natives du 21 septembre, sans recette complète ni validation sur appareils scolaires. Aucun test humain ou résultat pédagogique déduit des images."
     },
     {
-      "id": "non-public-projects",
-      "claim": "Le code de Job Radar, RAG Starter Kit, Board IA PME, Edusemantix et Pokémon Gen-4 Toolkit n'est pas public à ce jour.",
+      "id": "rag-board-historical-prototypes",
+      "claim": "RAG Starter Kit et Board IA PME ont existé comme prototypes privés audités en juin 2026, mais leurs sources d'origine ne sont plus présentes sur les volumes montés.",
       "scope": "Projets",
-      "status": "removed-pending-proof",
-      "checkedAt": "2026-11-02",
-      "note": "Aucun dépôt GitHub précis n'est revendiqué tant qu'un lien public vérifiable n'est pas disponible."
+      "status": "private-evidence",
+      "checkedAt": "2026-08-28",
+      "note": "Les audits privés du 29/06/2026 documentent l'historique Git et la structure des deux prototypes. Au 28/08/2026, leurs octets sont absents du Mac, des volumes montés et des dépôts GitHub accessibles ; aucune exécution actuelle n'est revendiquée."
     },
     {
       "id": "hoopsphere-metrics",
       "claim": "Les métriques Instagram, emailing, bêta-testeurs et la publication Google Play de HoopSphere ne sont plus citées.",
       "scope": "Projet",
       "status": "removed-pending-proof",
-      "checkedAt": "2026-11-02",
+      "checkedAt": "2026-08-28",
       "note": "Ces chiffres ont été retirés des contenus citables jusqu'à fourniture d'exports et d'un lien public."
     },
     {
@@ -108,7 +150,7 @@
       "claim": "Parcours de formation Anthropic Academy autour de Claude et du développement d'applications.",
       "scope": "Formation",
       "status": "self-declared",
-      "checkedAt": "2026-11-02",
+      "checkedAt": "2026-08-28",
       "sourceLabel": "Anthropic Academy",
       "sourceHref": "https://www.anthropic.com/learn/build-with-claude",
       "note": "Le portfolio parle de formation en cours, pas de certification obtenue."

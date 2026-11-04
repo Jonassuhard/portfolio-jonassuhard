@@ -46,7 +46,7 @@ typography:
   headline-sm:
     fontFamily: Cormorant Garamond
     fontSize: 24px
-    fontWeight: 600
+    fontWeight: 700
     lineHeight: 1.18
     letterSpacing: 0em
   body-lg:
@@ -82,7 +82,7 @@ typography:
   data-md:
     fontFamily: Courier Prime
     fontSize: 12px
-    fontWeight: 700
+    fontWeight: 400
     lineHeight: 1.45
     letterSpacing: 0em
   caption:
@@ -161,6 +161,13 @@ Le corps `ink` sur `surface` doit rester supérieur à WCAG AA. Le texte `muted`
 
 Deux voix suffisent : **Cormorant Garamond** pour les titres éditoriaux et **Courier Prime** pour le corps, les données et les marques d'archive. Oslo II reste une exception locale pour l'horloge nixie. Cette discipline évite qu'une fonte décorative de 53 Ko ralentisse chaque première visite.
 
+Cormorant Garamond 700 est servi depuis un WOFF2 local sous-ensemblé au corpus français et anglais du site. Courier Prime 400 reste fourni par `next/font`. Ces deux fontes critiques sont préchargées ; aucune graisse synthétique n'est autorisée.
+
+Le fallback de Courier Prime est explicitement Courier New, puis monospace,
+sans fallback Arial automatique. Le chargement reste `optional` pour éviter
+une permutation tardive. Les nouvelles introductions utilisent des tailles
+fixes par breakpoint, pas de taille de police proportionnelle au viewport.
+
 - Les titres restent courts, fermes, avec une taille responsive bornée et sans espacement négatif.
 - Le corps conserve une hauteur de ligne généreuse pour compenser la texture monospace.
 - Les labels utilisent la casse naturelle ou des capitales courtes ; l'espacement des lettres reste à zéro.
@@ -171,9 +178,9 @@ Deux voix suffisent : **Cormorant Garamond** pour les titres éditoriaux et **Co
 
 Le contenu est centré dans une largeur maximale de **1120 px**. Les pages utilisent des bandes et sections non encartées ; les cartes sont réservées aux éléments réellement répétés : projets, preuves, résultats du décodeur et blocs comparables.
 
-La grille de fond possède des lignes mineures tous les **32 px** et majeures tous les **160 px**. Les schémas SVG sont fixes, sans interaction, plus pâles que la grille et dégagent la zone centrale. La hiérarchie est construite par l'ordre titre, promesse, preuve, détail, action.
+La grille de fond possède des lignes mineures tous les **32 px** et majeures tous les **160 px**. Onze motifs techniques noirs sur fond transparent forment un calque bitmap fixe, sans interaction, plus pâle que la grille et allégé sur mobile. Les fichiers restent locaux, en WebP avec alpha, et les formes décoratives mobiles sont masquées avant chargement. La hiérarchie est construite par l'ordre titre, promesse, preuve, détail, action.
 
-Les seuils de référence sont 430, 640, 760, 960 et 1080 px. Tout composant fixe possède des dimensions stables. Sur mobile, le header tient autour de 96 à 104 px, le menu est immédiatement compréhensible et les cibles tactiles mesurent au moins 44 px.
+Les seuils de référence sont 430, 640, 760, 960 et 1080 px ; le header Signature passe au menu compact à 800 px. Tout composant fixe possède des dimensions stables. Sur mobile, le header tient autour de 80 px, le menu est immédiatement compréhensible et les cibles tactiles mesurent au moins 44 px.
 
 ## Elevation & Depth
 
@@ -191,19 +198,69 @@ Les cadres, graduations, traits pointillés et repères techniques utilisent un 
 
 ### Header et navigation
 
-Le header sticky regroupe une titlebar compacte et la navigation. Sur mobile, le rôle long et les secondes de l'horloge disparaissent ; le nom, la localisation, l'heure et l'accès au menu restent visibles. L'ouverture du menu dure au plus 550 ms, avec un décalage total inférieur à 180 ms.
+Le header Signature éditoriale (proposition 1 choisie le 9 septembre 2026, intégration locale) tient sur une seule bande crème. Nom en Cormorant Garamond 29 px, rôle en Courier Prime 11 px ; navigation à droite, sans capitales forcées. Sur mobile jusqu'à 800 px : nom 26 px, rôle 10 px, menu sans cadre avec cible de 44 px. Le bandeau supérieur, le médaillon et l'horloge ne sont plus rendus dans ce header. La flèche de retour reste présente dans les fiches projet. L'ouverture du menu dure au plus 550 ms, avec un décalage total inférieur à 180 ms ; Escape ferme le menu et rend le focus au bouton.
+
+La preview lisibilité du 9 septembre conserve quatre entrées : Recruteurs,
+Projets, À propos et Contact. Compétences, Méthode et Preuves restent accessibles
+dans le footer et depuis les pages pertinentes. La page active est soulignée ;
+le menu fermé n'expose pas ses liens au clavier, Échap rend le focus au bouton.
+
+L’accueil conserve son fond papier clair et sa grille. Seules la carte portrait À propos et le footer ont un fond noir : un reflet traverse ces surfaces en 2,2 secondes, puis marque une pause avant le cycle suivant de 10 secondes. Cet effet est indépendant du glitch des titres. Le mouvement réduit le désactive.
+
+### Footer Signature compacte
+
+Les liens vers les deux CV ouvrent un dialogue natif avec un aperçu fidèle du PDF, puis les actions Télécharger, Ouvrir le PDF et Version texte. Le PDF reste accessible sans JavaScript. Les aperçus JPEG sont générés par `npm run generate:cv-previews` et leur correspondance avec les PDF est vérifiée par SHA-256. Aucune iframe ni ressource chargée avant ouverture ; fermeture par Échap et restauration du focus.
+
+Les engrenages blueprint existants apparaissent en blanc à 10 % en bas à droite du footer, derrière les liens. Leur masque réutilise le bitmap transparent local, sans interaction ni animation supplémentaire.
+
+Le reflet commun au footer et à la carte portrait utilise uniquement les cinq couleurs de la palette holographique, sans blanc, avec une opacité de 5 %. Son cycle de 10 secondes produit une traversée de 2,2 secondes puis une pause.
+
+La proposition 1 choisie le 9 septembre 2026 utilise une bande noire quadrillée sans carte : nom en Cormorant Garamond 32 px et rôle à gauche, email et réseaux à droite. Le CV principal, Preuves et Méthode restent visibles ; Compétences, Knowledge, le CV illustré et Malt sont regroupés dans « Autres ressources ». Les mentions légales, la confidentialité et la gestion réelle des cookies restent toujours accessibles. Sous 700 px, les blocs s'empilent ; les cibles interactives conservent au moins 44 px de hauteur.
 
 ### Titres animés
 
-Le texte réel est présent dès la première frame. L'aberration cyan et rouge est produite en CSS par pseudo-éléments non exposés à l'arbre d'accessibilité. Le glitch périodique ne doit pas nécessiter de contrôleur JavaScript. `prefers-reduced-motion` désactive les copies et transitions.
+Le texte réel est présent dès la première frame. L'aberration cyan et rouge est produite en CSS par pseudo-éléments non exposés à l'arbre d'accessibilité. Un ordonnanceur client choisit un seul `h1` ou `h2` visible à la fois, attend aléatoirement entre 5 et 10 secondes, joue une rafale de 1,2 seconde, puis laisse le suivant apparaître. L’aberration chromatique est limitee a 2 px et 45 % d’opacite, avec un deplacement du texte de 0,35 px ; le rythme reste inchange. Le même titre n’est pas choisi deux fois de suite quand un autre est visible. `prefers-reduced-motion` désactive l'ordonnanceur et les copies.
 
 ### Cartes de projet
 
-Le premier niveau conserve image, résumé et preuves complètes. Les niveaux secondaires affichent une image plus basse et une ligne de preuve courte, sans supprimer les informations des pages détaillées. Toute la carte peut être cliquable, mais les liens secondaires restent utilisables au clavier.
+Chaque carte indique l'utilité du projet et son état actuel. La confidentialité
+des preuves est expliquée dans la fiche, sans laisser entendre qu'un site public
+est une démo privée. Les descriptions détaillées restent dans les fiches.
+Job Radar, Cortex Bridge et Les Petites Griffes ouvrent les trois index.
+Toutes les cartes gardent leur ratio, y compris dans les labs et archives.
+
+Cortex Bridge : illustration orbitale carrée (760 × 760), avec tête de femme chauve aux yeux verts, quatre astres et pont sans croisillons. Elle est affichée sans recadrage dans la carte 38/23. Le titre et les noms Luna/Terra/Sol/Astra sont rendus en HTML, pas générés dans le bitmap. Exception au fond transparent : le fichier utilise un fond crème pour éviter le damier incrusté par le générateur. Les anciennes illustrations restent conservées.
+
+Interaction des cartes : contour encre renforcé en 200 ms et flèche décalée de 3 px, sans déplacement de carte ni barre lumineuse. Le focus clavier offre le même retour. Un voile holographique transparent, large de 200 % de la carte, passe au-dessus de l'image et du texte en 4,8 secondes, une seule fois par entrée de souris ; il disparaît à la fin. Aucun cycle permanent. Sur écran tactile, la flèche reste visible sans dépendre du survol. Le mouvement réduit supprime le voile et les transitions.
+Toute la carte de l'index peut être cliquable ; les liens secondaires restent
+utilisables au clavier.
+
+Chaque vignette utilise un bitmap WebP de 760 × 460 avec transparence réelle. Elle est rendue sans recadrage dans son ratio source 38/23. Elle mélange la couleur et le symbole propres au projet avec la composition Archive Worldline : titre court à gauche, un seul emblème lisible à droite, repères techniques très rares. Le contenu placé sous l'image ne répète pas visuellement ce titre ; il reste présent hors écran pour conserver la structure accessible. Les scènes détaillées, schémas génériques et générateurs SVG de cartes sont exclus ; les couleurs des projets restent affichées sans filtre sépia.
 
 ### Boutons et liens
 
 Le bouton primaire est encre sur papier inversé ; le secondaire reste papier avec bordure d'encre. Le focus clavier utilise un contour rouille de 2 px. Les libellés sont des commandes concrètes : consulter, télécharger, contacter, analyser.
+
+Le CV classique est une action principale sur Accueil et Recruteurs.
+Les deux PDF publics sont generes depuis `public/cv.md` : une page A4, projets avant experiences, liens de contact et de projets cliquables. La version illustree reprend la composition des CV de candidature de septembre 2026 : portrait original, papier creme, grille et mecanismes tres pales. La version classique conserve le meme contenu sur fond blanc, sans decor ni portrait. Les documents publics ne contiennent ni telephone prive ni entreprise cible.
+Le CV illustré reste disponible au second niveau. Le rôle principal est
+Growth Engineer junior ; Forward Deployed Engineer est un objectif, pas un
+poste déjà occupé.
+
+### Fiches et galeries
+
+L'introduction donne le nom du projet, son utilité, son état et le rôle de Jonas.
+Elle montre une vraie interface ou vidéo lorsqu'elle existe ; l'illustration
+reste réservée à la carte. Les galeries ne recadrent pas les captures.
+Un clic ouvre l'image originale dans un dialogue natif accessible ; Échap,
+la fermeture et le clic sur le fond rendent le focus au déclencheur.
+Sans JavaScript, le lien ouvre directement le fichier. Aucun média tiers ajouté.
+
+Les contraintes importantes restent visibles avant le dossier technique.
+Les décisions, tableaux, comptes de tests, versions et architecture sont
+disponibles dans des volets natifs, sans retirer les faits des Markdown.
+Les vidéos gardent leur lecture muette à l'apparition, la pause hors écran
+et le respect du mouvement réduit. Les médias des Petites Griffes sont conservés.
 
 ### Consentement
 

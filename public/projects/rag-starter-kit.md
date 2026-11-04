@@ -1,25 +1,51 @@
-# RAG Starter Kit - API de retrieval augmenté multi-tenant
+# RAG Starter Kit - rechercher dans des documents avec leurs sources
 
-Type : Projet perso / preuve technique.
-Période : 2026.
-Rôle : Conception et développement (full-stack).
-Stack : FastAPI, Qdrant, Mistral AI, LangChain, SQLite, pytest, Next.js 16 / React 19, Docker Compose.
-Statut : Prototype privé - publication à préparer.
-Niveau de preuve : Démo privée.
+## Repères
 
-En bref : API FastAPI qui ingère des documents (PDF, DOCX, Markdown, texte), les indexe dans Qdrant et répond en citant ses sources, avec auth multi-tenant et un module d'évaluation type Ragas.
+| Repère | Détail |
+| --- | --- |
+| Format | Projet perso / preuve technique |
+| Période | 2026 |
+| Rôle de Jonas | Conception et développement (full-stack) |
+| Statut | Prototype privé historique · source à restaurer |
+| Niveau de preuve | Preuves privées |
+| Stack | FastAPI, Qdrant, Mistral AI, LangChain, SQLite, Next.js 15, React 19, Docker Compose |
 
-## Problème
+## À quoi ça sert
 
-Servir plusieurs clients sur un même backend RAG, en gardant les données isolées par client_id et en mesurant la qualité des réponses.
+Prototype privé historique pour interroger des documents sans mélanger les données de plusieurs clients. Son architecture et son historique Git sont documentés, mais le code n'est plus présent localement et aucune exécution actuelle n'est revendiquée.
 
-## Ce que ça montre
+## Ce que Jonas a fait
 
-- Architecture RAG complète de bout en bout, avec ingestion multi-format, indexation vectorielle et génération avec citation des sources.
-- Isolation multi-tenant (un backend, plusieurs clients séparés par client_id) avec couche d'auth.
-- Module d'évaluation de la qualité des réponses inspiré de Ragas, avec cas de scoring versionnés et suite pytest.
+- Le prototype historique audité réunissait ingestion, retriever, chat avec citations, authentification multi-tenant et journaux d'usage.
+- Interface historique Next.js 15 / React 19 avec espaces cabinet, administration et portail.
+- Docker Compose, documentation d'onboarding et cas d'évaluation inspirés de Ragas.
+
+## Ce que ça prouve
+
+Un prototype privé multi-tenant a été audité en juin 2026 : ingestion de documents, recherche Qdrant, réponses Mistral avec citations et cas d'évaluation. Sa source doit maintenant être restaurée.
+
+- Construire historiquement un parcours complet : ingestion, recherche, réponse et citations.
+- Séparer les données par client_id avec authentification, journaux d'usage et filtres de recherche.
+- Prévoir des cas versionnés pour mesurer le retrieval sans inventer de score actuel.
+
+Audit privé du 29 juin 2026 : dépôt master au commit 1fc9629, quatre commits et structure complète documentés. Le manifeste du 29 avril recensait 3,4 Go. Les octets de la source et de sa copie de publication sont absents des volumes montés au 28 août 2026.
+
+## Visuels
+
+![Reconstitution éditoriale du parcours historique : ingestion, indexation, recherche puis réponse avec ses sources.](/assets/proof/rag-starter-kit/rag-document-pipeline-20260828.webp)
+
+![Reconstitution de l'isolation historique par client_id ; ce schéma n'est pas une certification de sécurité actuelle.](/assets/proof/rag-starter-kit/rag-tenant-isolation-20260828.webp)
+
+![Cas d'évaluation présents dans le dépôt historique ; aucun résultat actuel n'est publié sans restauration de la source.](/assets/proof/rag-starter-kit/rag-evaluation-loop-20260828.webp)
+
 
 ## Limites
 
-- Code et démonstration non publics à ce jour ; l'architecture décrite n'est donc pas auditée publiquement.
-- Le module d'évaluation fournit le harnais ; les scores de qualité ne sont pas publiés.
+- Source d'origine et copie de publication absentes après migration ; le prototype n'est pas exécutable aujourd'hui.
+- La présence historique de fichiers de test ne prouve pas leur réussite actuelle.
+- L'ancienne copie anonymisée conservait encore des coordonnées professionnelles et son historique Git ; elle n'était pas publiable telle quelle.
+
+## Liens
+
+- [Étude de cas](/projets/rag-starter-kit)

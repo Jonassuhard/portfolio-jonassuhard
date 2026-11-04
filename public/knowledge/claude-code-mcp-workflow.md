@@ -5,39 +5,39 @@ Dernière vérification : 2026-07-20.
 
 ## Réponse courte
 
-- Claude Code devient utile quand on lui donne une structure : identité, règles, skills, agents, hooks, MCP.
-- Le MCP branche des outils externes ; les agents isolent les tâches longues du contexte principal.
-- Les hooks imposent des garde-fous déterministes : confirmation ou Touch ID sur action sensible, secrets hors des logs.
-- Le lazy-load évite de tout charger au démarrage : moins de tokens, moins de RAM.
-- L'intérêt n'est pas le nombre d'outils, mais un système lisible et réutilisable.
+- Claude Code gagne à avoir une identité, des règles et des outils séparés.
+- Le protocole MCP relie des outils externes ; les agents prennent les tâches longues à part.
+- Les hooks, des contrôles automatiques, demandent une confirmation ou Touch ID avant une action sensible et évitent les secrets dans les journaux.
+- Le chargement à la demande évite de tout ouvrir au démarrage.
+- Le but est un système lisible et réutilisable, pas une collection d'outils.
 
 ## Problème
 
-Sorti de la boîte, un assistant CLI répond poliment mais oublie le contexte, recharge tout, et n'a aucun garde-fou sur les actions dangereuses. Sans structure, chaque session repart de zéro et les mauvaises habitudes reviennent.
+Sans règles ni contexte écrit, un assistant peut oublier les décisions et agir sans les contrôles attendus. Chaque session repart alors de zéro.
 
 ## Méthode
 
-- Séparer l'identité (ton, valeurs, refus) de la config technique, dans des fichiers dédiés.
-- Router chaque tâche vers le bon outil : skill, agent, MCP ou commande simple.
-- Isoler les investigations lourdes dans des agents pour garder le contexte principal propre.
-- Poser des hooks sur les actions sensibles : confirmation, Touch ID, rédaction des secrets.
-- Charger les MCP et agents à la demande, pas au démarrage.
+- Séparer l'identité de l'assistant et sa configuration technique dans des fichiers dédiés.
+- Choisir le bon outil pour chaque tâche : règle, agent, MCP ou commande simple.
+- Mettre les recherches lourdes dans des agents pour garder le contexte principal lisible.
+- Ajouter des contrôles sur les actions sensibles : confirmation, Touch ID et masquage des secrets.
+- Charger les MCP et les agents seulement quand ils servent.
 
 ## Exemple
 
-claude-code-soul est un pack open source (MIT) qui applique ça : un soul.md pour l'identité, des rules, skills, agents et hooks, avec Touch ID sur les actions sensibles, secrets via Keychain et gitleaks au moment de publier. Le repo est publié sans fuite : 0 PII, 0 secret, 0 chemin personnel.
+claude-code-soul est un projet open source sous licence MIT. Il rassemble un fichier d'identité, des règles, des outils et des contrôles : Touch ID pour les actions sensibles, secrets dans Keychain et contrôle avant publication. Le dépôt publié ne contient ni donnée personnelle, ni secret, ni chemin local.
 
 ## Limites
 
-- Une config opinionnée : ce workflow reflète des choix personnels, à adapter avant réutilisation.
-- Plus de structure veut dire plus de maintenance : il faut nettoyer régulièrement skills et règles.
-- Un garde-fou ne remplace pas la vigilance : le hook réduit le risque, il ne l'annule pas.
+- Cette configuration reflète des choix personnels et doit être adaptée avant réutilisation.
+- Plus de structure demande plus d'entretien : il faut nettoyer les outils et les règles.
+- Un contrôle automatique réduit un risque, il ne le supprime pas.
 
 ## À retenir
 
-- Un bon workflow Claude Code se juge à sa lisibilité, pas au nombre d'outils branchés.
-- Les hooks déterministes valent mieux qu'une consigne polie pour les actions sensibles.
-- Séparer identité et config rend le tout réutilisable et publiable.
+- Un bon workflow Claude Code est lisible, pas seulement riche en outils.
+- Un contrôle automatique est plus fiable qu'une simple consigne pour une action sensible.
+- Séparer l'identité et la configuration aide à réutiliser et publier le système.
 
 ## Preuves
 

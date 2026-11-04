@@ -5,28 +5,28 @@ Dernière vérification : 2026-07-20.
 
 ## Réponse courte
 
-- Un agent IA ne lit pas un portfolio comme un recruteur : il extrait des faits, des liens et des preuves.
-- La page HTML reste la version canonique pour les humains.
-- Les fichiers Markdown et JSON servent de carte lisible par machine.
-- Le but n'est pas de forcer une citation, mais de rendre les faits vérifiables.
-- Ce site utilise llms.txt, profile.json, claims.json, verification.json, skills.md, des fiches projet Markdown et un knowledge graph JSON-LD.
+- Un agent IA cherche des faits, des liens et des preuves.
+- La page HTML est faite pour les humains.
+- Les fichiers Markdown et JSON donnent les mêmes informations sous une forme simple à lire par machine.
+- Le but est de rendre les faits vérifiables, pas d'imposer une citation.
+- Ce site publie un guide llms.txt, des profils JSON, des questions-réponses, des preuves et des fiches projet en Markdown.
 
 ## Problème
 
-Un beau portfolio peut rester flou pour un agent : titre, disponibilité, compétences, projets et limites sont dispersés dans le design. Sans source structurée, le modèle résume au jugé.
+Un portfolio peut être clair pour un humain et difficile à lire pour un agent. Le titre, les projets et leurs limites sont souvent dispersés dans la page.
 
 ## Méthode
 
-- Créer un llms.txt court qui joue le rôle de carte d'entrée.
-- Maintenir un profile.json pour les faits stables : titre, disponibilité, stack, projets et limites.
-- Ajouter un claims.json en questions-réponses pour les réponses que l'agent doit pouvoir citer sans inventer.
-- Publier un registre de preuves qui sépare source publique, preuve privée, déclaratif et affirmation retirée.
-- Publier une version Markdown des pages clés pour réduire le bruit de layout.
-- Exposer un graphe JSON-LD qui relie personne, compétences et projets par des IDs stables.
+- Créer un llms.txt court pour orienter l'agent.
+- Garder un profile.json pour les faits stables : titre, disponibilité, outils, projets et limites.
+- Ajouter un claims.json en questions-réponses pour éviter les réponses inventées.
+- Publier un registre qui sépare les preuves publiques, privées, déclarées et retirées.
+- Publier les pages clés aussi en Markdown, sans la mise en page.
+- Relier la personne, les compétences et les projets dans du JSON-LD, un format de données structuré.
 
 ## Exemple
 
-Sur ce portfolio, Preuvia sert de cas produit GEO/AEO ; la couche agent-readable du site sert de démonstrateur vivant. Un recruteur lit les pages HTML, un agent peut suivre llms.txt puis vérifier les mêmes faits dans les JSON et Markdown.
+Sur ce portfolio, Preuvia sert de cas d'audit de visibilité dans les assistants IA. Un recruteur lit les pages HTML ; un agent peut suivre llms.txt et vérifier les mêmes faits dans les fichiers JSON et Markdown.
 
 ## Limites
 
@@ -36,9 +36,9 @@ Sur ce portfolio, Preuvia sert de cas produit GEO/AEO ; la couche agent-readable
 
 ## À retenir
 
-- Un agent cite plus facilement une page quand il peut extraire des faits autonomes.
-- La bonne unité n'est pas un slogan : c'est un fait vérifiable relié à une preuve.
-- HTML pour les humains, Markdown/JSON pour les agents, une seule vérité éditoriale.
+- Un agent peut mieux reprendre une page quand les faits sont séparés et sourcés.
+- Un fait utile est relié à une preuve, pas à un slogan.
+- HTML pour les humains, Markdown et JSON pour les agents, avec les mêmes informations.
 
 ## Preuves
 

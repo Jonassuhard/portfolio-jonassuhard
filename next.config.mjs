@@ -6,6 +6,7 @@ const root = dirname(fileURLToPath(import.meta.url));
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   poweredByHeader: false,
+  allowedDevOrigins: ["127.0.0.1"],
   images: {
     // Les cartes et portraits sont servis via /_next/image avec un srcset
     // responsive. Ce TTL évite de retraiter les mêmes variantes à chaque visite.
@@ -23,6 +24,8 @@ const nextConfig = {
   // et des scripts (JSON-LD + hydratation Next), une CSP trop dure casserait le rendu.
   // On garde les directives sûres qui n'affectent pas le chargement des ressources.
   async headers() {
+    // WebKit upgrades loopback assets too; the HTTP dev server has no TLS.
+    const production = process.env.NODE_ENV === "production";
     const securityHeaders = [
       {
         key: "Strict-Transport-Security",
@@ -38,7 +41,8 @@ const nextConfig = {
       {
         key: "Content-Security-Policy",
         value:
-          "frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-src 'none'; upgrade-insecure-requests"
+          "frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-src 'none'" +
+          (production ? "; upgrade-insecure-requests" : "")
       }
     ];
     const agentReadableNoIndex = {

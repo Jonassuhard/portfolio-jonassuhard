@@ -1,9 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 // Parent de retour pour les sous-pages (projet / knowledge). null sur les pages de 1er niveau.
 function backTarget(pathname: string | null): string | null {
@@ -14,23 +13,23 @@ function backTarget(pathname: string | null): string | null {
 }
 
 // Barre de navigation avec menu burger sur mobile (dans la DA : cadre ink, dépliant cream).
-export default function SiteNav() {
+export default function SiteNav({ name, role }: { name: string; role: string }) {
   const [open, setOpen] = useState(false);
+  const toggle = useRef<HTMLButtonElement>(null);
   const close = () => setOpen(false);
-  const parent = backTarget(usePathname());
+  const pathname = usePathname();
+  const parent = backTarget(pathname);
 
   return (
-    <div className="menubar">
+    <div className="menubar" onKeyDown={(event) => {
+      if (event.key === "Escape" && open) {
+        close();
+        toggle.current?.focus();
+      }
+    }}>
       <Link className="brand" href="/" aria-label="Accueil Jonas Suhard" prefetch={false} onClick={close}>
-        <Image
-          className="brand-mark"
-          src="/brand/js-medallion-sm.webp"
-          alt="Jonas Suhard"
-          width={36}
-          height={36}
-          sizes="36px"
-          quality={85}
-        />
+        <span className="brand-name">{name}</span>
+        <span className="brand-role">{role}</span>
       </Link>
       {parent ? (
         <Link className="nav-back" href={parent} aria-label="Retour" prefetch={false} onClick={close}>
@@ -38,23 +37,27 @@ export default function SiteNav() {
         </Link>
       ) : null}
       <button
+        ref={toggle}
         type="button"
         className="nav-toggle"
         aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
         aria-expanded={open}
-        onClick={() => setOpen((v) => !v)}
+        aria-controls="main-navigation"
+        onClick={(event) => {
+          // Safari does not focus buttons on pointer activation.
+          event.currentTarget.focus();
+          setOpen((v) => !v);
+        }}
       >
         <span />
         <span />
         <span />
       </button>
-      <nav className={open ? "main-nav open" : "main-nav"} aria-label="Navigation principale">
-        <Link href="/recruteurs" prefetch={false} onClick={close}>Recruteurs</Link>
-        <Link href="/projets" prefetch={false} onClick={close}>Projets</Link>
-        <Link href="/competences" prefetch={false} onClick={close}>Compétences</Link>
-        <Link href="/methode" prefetch={false} onClick={close}>Méthode</Link>
-        <Link href="/preuves" prefetch={false} onClick={close}>Preuves</Link>
-        <Link href="/a-propos" prefetch={false} onClick={close}>À propos</Link>
+      <nav id="main-navigation" className={open ? "main-nav open" : "main-nav"} aria-label="Navigation principale">
+        <Link href="/recruteurs" prefetch={false} onClick={close} aria-current={pathname === "/recruteurs" ? "page" : undefined}>Recruteurs</Link>
+        <Link href="/projets" prefetch={false} onClick={close} aria-current={pathname?.startsWith("/projets") ? "page" : undefined}>Projets</Link>
+        <Link href="/a-propos" prefetch={false} onClick={close} aria-current={pathname === "/a-propos" ? "page" : undefined}>À propos</Link>
+        <Link href="/contact" prefetch={false} onClick={close} aria-current={pathname === "/contact" ? "page" : undefined}>Contact</Link>
       </nav>
     </div>
   );

@@ -15,11 +15,11 @@ export default function JobDecoderPage() {
     <div className="page decoder-page">
       <section className="decoder-hero">
         <p className="eyebrow">Outil public · version 1</p>
-        <AnimatedTitle>Ce poste IA est-il vraiment celui qu’il prétend être&nbsp;?</AnimatedTitle>
+        <AnimatedTitle>Que décrit vraiment cette offre IA&nbsp;?</AnimatedTitle>
         <p className="lead">
-          Colle une offre : le moteur lit les missions, la technique et la place dans l’organisation,
-          puis les confronte à des preuves concrètes. Pas de score magique — le costume trois-pièces
-          des algorithmes qui n’ont rien à dire.
+          Colle une offre. L'outil repère les missions, la technique et la place
+          dans l'organisation, puis les compare à des critères visibles. Il ne
+          donne pas un score global qui cache le détail.
         </p>
         <ul className="decoder-principles" aria-label="Principes du décodeur">
           <li>Analyse intégralement dans le navigateur</li>
@@ -32,12 +32,12 @@ export default function JobDecoderPage() {
         <div className="notice">
           <strong>Ce que l’outil ne fait pas.</strong>
           <p>
-            Il ne décide pas à ta place, ne mesure pas la qualité d’une entreprise et ne remplace pas
-            une discussion avec l’équipe. Il rend simplement les indices de l’annonce moins brumeux.
+            Il ne décide pas à ta place, ne mesure pas la qualité d'une entreprise
+            et ne remplace pas une discussion avec l'équipe. Il aide à lire les
+            indices de l'annonce.
           </p>
         </div>
       </section>
     </div>
   );
 }
-
