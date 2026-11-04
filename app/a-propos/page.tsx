@@ -22,16 +22,16 @@ export default function AboutPage() {
           </AnimatedTitle>
           <p className="lead">
             J'ai commencé par le marketing digital : acquisition, SEO, contenu.
-            Vite, j'ai voulu produire les outils que je recommandais plutôt que
-            les décrire. Aujourd'hui je fais les deux dans le même geste, cadrer
-            un besoin d'équipe et livrer ce qui y répond.
+            Vite, j'ai voulu construire les outils que je recommandais plutôt
+            que les décrire. Aujourd'hui je fais les deux dans le même geste,
+            cadrer un besoin d'équipe et livrer ce qui y répond.
           </p>
           <p>
-            Concrètement, je cadre un besoin, je construis une première version,
-            je définis ce qui doit être mesuré et je documente les décisions et ce qu'il
-            reste à construire. Je cherche un CDI où ce profil hybride sert, dans
-            une équipe qui produit vite, teste proprement et met l'IA au service
-            d'un travail utile.
+            Concrètement, je prends le dernier kilomètre : je cadre le besoin, je
+            construis une première version, je définis ce qui doit être mesuré et
+            je documente les décisions et ce qu'il reste à construire. Je cherche
+            un CDI où ce profil hybride sert, dans une équipe qui produit vite,
+            teste proprement et met l'IA au service d'un travail utile.
           </p>
           <div className="button-row">
             <a className="button primary" href={`mailto:${site.email}`}>Me contacter</a>
@@ -59,13 +59,14 @@ export default function AboutPage() {
           <h2>Position cible</h2>
           <p>
             Chef de projet IA appliquée &amp; automatisation junior, avec une
-            spécialisation Growth Engineer et Product Builder IA,
-            dans une équipe qui relie besoins métier et exécution produit.
+            spécialisation Growth Engineer et Product Builder IA, dans une équipe
+            qui relie besoins métier et exécution produit.
           </p>
           <h3>Ce que je cherche à construire</h3>
           <p>
             Des outils marketing et IA simples à vérifier, utiles à une équipe,
-            et documentés pour être repris.
+            et documentés pour être repris. Une version qui tourne, une mesure,
+            une trace écrite. Le reste est de la littérature.
           </p>
         </div>
       </section>
@@ -126,7 +127,7 @@ export default function AboutPage() {
           <div className="matrix-item">
             <strong>Projets web, SEO et IA appliquée</strong>
             <p>Projets depuis 2021 · entreprise individuelle enregistrée en 2026 · Paris / hybride</p>
-            <p className="cert">Sites web (Next.js, WordPress), SEO local, assistants IA cadrés. Exemple livré en production : Les Petites Griffes.</p>
+            <p className="cert">Sites web (Next.js, WordPress), SEO local, assistants IA cadrés. Exemples : Les Petites Griffes en production, Job Radar pour l'automatisation et le scoring d'offres.</p>
           </div>
         </div>
       </section>
@@ -145,9 +146,9 @@ export default function AboutPage() {
             <p className="cert">Ressources de formation sur Claude, les API, les outils et les évaluations. Aucune certification obtenue n'est revendiquée.</p>
           </div>
           <div className="matrix-item">
-            <strong>MBA Expert Marketing Digital (en cours)</strong>
-            <p>2024–2026 · MyDigitalSchool, Paris</p>
-            <p className="cert">Prépare le titre RNCP41809 — « Manager de la stratégie marketing digital », niveau 7</p>
+            <strong>MBA Expert Marketing Digital (validé)</strong>
+            <p>2024–2026 · La Digital School (année 4) + MyDigitalSchool, Paris (année 5)</p>
+            <p className="cert">Titre RNCP41809 — « Manager de la stratégie marketing digital », niveau 7 · année validée, diplôme prévu début décembre 2026</p>
           </div>
           <div className="matrix-item">
             <strong>Bachelor Chef de projet digital</strong>
@@ -168,7 +169,8 @@ export default function AboutPage() {
           <p>
             Rejoindre une équipe où ce profil hybride sert : relier le marketing,
             l'IA appliquée et le développement pour livrer des outils utiles, et
-            transmettre ce que je construis.
+            transmettre ce que je construis. Je préfère un livrable daté à une
+            promesse de transformation.
           </p>
           <div className="button-row">
             <Link className="button primary" href="/recruteurs">Page recruteurs</Link>

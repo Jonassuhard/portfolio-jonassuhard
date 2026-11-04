@@ -4,30 +4,46 @@
   "location": "Paris, France",
   "target_contract": "CDI",
   "seniority": "junior",
-  "availability": "1er septembre 2026",
-  "verified_at": "2026-08-15",
+  "availability": "immédiate",
+  "verified_at": "2026-11-02",
   "citable_facts": {
+    "job_radar": "Pipeline local d'ingestion, de fusion et de scoring d'offres : scores de pertinence et de confiance séparés, dashboard FastAPI / React, aucune candidature préparée ni envoyée.",
+    "iscom_359_pages": "Refonte SEO du site Drupal iscom.fr sur un périmètre de 359 pages (preuve privée, montrable en entretien).",
     "les_petites_griffes_live_audit_2026_08_01": "L'audit live du 2026-08-01 couvre 18 pages publiques contrôlées à 390 px et 1440 px, 36 captures pleine page, 30 images uniques chargées sur le live et cinq scores de performance Lighthouse mobile : Accueil 91, Galerie 87, Compose 97, Méthode 97, Le studio 66.",
     "les_petites_griffes_limit": "Projet familial non facturé ; aucune vente à un client externe n'est prouvée ; mesures datées du 2026-08-01, non continues.",
     "educool_context": "démonstration privée sur données fictives ; aucune donnée de mineur n'est publiée"
   },
   "target_roles": [
+    "Chef de projet digital & marketing IA",
     "Chef de projet IA appliquée & automatisation junior",
     "Growth Engineer junior",
     "Product Builder IA"
   ],
-  "positioning": "Cadrer et livrer des projets d'IA appliquée et d'automatisation, avec une spécialisation growth et développement web.",
+  "positioning": "Prendre le dernier kilomètre des projets IA et web : les données, les validations, la mesure. Livrer un outil qui tourne, puis documenter ce qui a été fait pour qu'une équipe puisse reprendre.",
   "skills": {
     "marketing": ["SEO", "content strategy", "conversion", "analytics", "marketing operations"],
     "ai": ["LLM workflows", "RAG", "prompt engineering", "automation", "AI-assisted content QA"],
-    "development": ["Next.js", "React", "Firebase", "Supabase", "Python", "Playwright"]
+    "development": ["Next.js", "React", "FastAPI", "Python", "SQLite", "Firebase", "Supabase", "Playwright"]
   },
   "education": [
-    { "degree": "MBA Expert Marketing Digital", "status": "en cours", "period": "2024–2026", "school": "MyDigitalSchool, Paris", "certification": "prépare le RNCP41809 — Manager de la stratégie marketing digital, niveau 7" },
+    { "degree": "MBA Expert Marketing Digital", "status": "validé", "period": "2024–2026", "school": "La Digital School (année 4) + MyDigitalSchool, Paris (année 5)", "certification": "RNCP41809 — Manager de la stratégie marketing digital, niveau 7 ; année validée, diplôme prévu début décembre 2026" },
     { "degree": "Bachelor Chef de projet digital", "period": "2023–2024", "school": "La Digital School, Angers", "certification": "RNCP34340 niveau 6 — Chef de projet e-business ; preuve privée" },
     { "degree": "Animation 2D / 3D", "period": "2019–2021", "school": "Human Academy, Angoulême", "certification": "certificat d'école, non inscrit au RNCP" }
   ],
   "projects": [
+    {
+      "project": "Job Radar",
+      "type": "outil local — ingestion, scoring, dashboard",
+      "period": "2026 - en cours",
+      "role": "conception, développement, data, UX, QA",
+      "stack": ["Python", "FastAPI", "SQLite", "React", "TypeScript", "Playwright"],
+      "case_study": "/projets/job-radar",
+      "markdown": "/projects/job-radar.md",
+      "evidence": "Connecteurs ATS, fusion canonique des offres, extraction de faits, scores de pertinence et de confiance séparés, dashboard local et rapports de refresh datés.",
+      "limits": "Outil personnel, pas un produit commercialisé ; précision du scoring non mesurée publiquement ; aucune soumission automatique.",
+      "confidentiality": "données de candidature privées",
+      "repo_status": "privé — usage personnel"
+    },
     {
       "project": "Les Petites Griffes",
       "type": "site live + CMS + assistant IA",
@@ -75,7 +91,7 @@
       "stack": ["Drupal", "Playwright", "Semrush", "LLM-assisted QA"],
       "case_study": "/projets/iscom",
       "markdown": "/projects/iscom.md",
-      "evidence": "Actu SEO publiée en live, audit de cannibalisation livré, process de pré-publication durci avec validation humaine.",
+      "evidence": "Refonte SEO d'un site Drupal de 359 pages, actu SEO publiée en live, audit de cannibalisation livré, process de pré-publication durci avec validation humaine.",
       "limits": "Accès CMS et données internes non publiables ; impact trafic non publié ici.",
       "confidentiality": "accès CMS et données internes non publiés",
       "repo_status": "CMS employeur — non publiable"

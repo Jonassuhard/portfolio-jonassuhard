@@ -7,19 +7,20 @@ Stack : Drupal, Playwright, Semrush, SEO, LLM-assisted QA.
 Statut : Alternance / client interne.
 Niveau de preuve : Preuve publique.
 
-En bref : Contenus SEO qui vont réellement en ligne dans le CMS d'un employeur, avec fact-check de chaque affirmation et validation humaine avant publication.
+En bref : Refonte SEO du site Drupal d'ISCOM (359 pages) : arborescence de formations, FAQ, audit de cannibalisation et validation humaine avant publication.
 
-Preuves : Article publié en ligne, plus une checklist QA de pré-publication et un extrait d'audit de cannibalisation anonymisés.
+Preuves : Article publié en ligne, checklist QA de pré-publication et extrait d'audit de cannibalisation anonymisé. Le périmètre de 359 pages est une preuve privée, montrable en entretien.
 
 Lien : https://www.iscom.fr/actualites/lia-change-de-role-les-communicants-aussi
 
 ## Problème
 
-Production éditoriale SEO dans le Drupal d'ISCOM : rédaction et fact-check d'articles, audits de cannibalisation avec Semrush, et automatisations Playwright pour la saisie, avec validation humaine avant chaque publication.
+Refonte SEO du site Drupal d'ISCOM (359 pages) : arborescence de formations, FAQ, audit de cannibalisation Semrush et automatisations Playwright, avec validation humaine avant chaque publication.
 
 ## Ce que ça montre
 
-- Livrer dans le process de publication d'un employeur sans court-circuiter la validation éditoriale.
+- Publication en ligne dans le Drupal de l'employeur, avec validation humaine avant chaque mise en ligne.
+- Travail à l'échelle d'un site de 359 pages, pas sur une page isolée (preuve privée).
 - Capacité à transformer un audit SEO en décisions nommées.
 - Discipline sur les actions sensibles, avec validation avant publication.
 

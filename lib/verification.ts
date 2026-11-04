@@ -1,5 +1,5 @@
-export const contentReviewDate = "2026-08-15";
-export const contentReviewDateLabel = "15 août 2026";
+export const contentReviewDate = "2026-11-02";
+export const contentReviewDateLabel = "2 novembre 2026";
 
 export type ClaimStatus =
   | "publicly-verified"
@@ -43,11 +43,11 @@ export const claimStatusMeta: Record<
 export const verificationItems: VerificationItem[] = [
   {
     id: "target-role",
-    claim: "Recherche d'un CDI junior à Paris ou en hybride à partir du 1er septembre 2026.",
+    claim: "Recherche d'un CDI junior à Paris ou en hybride, disponible immédiatement.",
     scope: "Positionnement",
     status: "self-declared",
     checkedAt: contentReviewDate,
-    note: "Intention professionnelle déclarée par Jonas Suhard."
+    note: "Intention professionnelle déclarée par Jonas Suhard, mise à jour le 2026-11-02."
   },
   {
     id: "rncp-41809",
@@ -57,7 +57,7 @@ export const verificationItems: VerificationItem[] = [
     checkedAt: contentReviewDate,
     sourceLabel: "France Compétences — RNCP41809",
     sourceHref: "https://www.francecompetences.fr/recherche/rncp/41809/",
-    note: "Le portfolio indique que Jonas prépare le titre ; il ne prétend pas l'avoir déjà obtenu."
+    note: "Le MBA est validé (bulletin S2 2025/2026) ; le diplôme est prévu début décembre 2026. Le portfolio ne prétend pas que le parchemin est déjà remis."
   },
   {
     id: "rncp-34340",
@@ -70,6 +70,14 @@ export const verificationItems: VerificationItem[] = [
     note: "La fiche publique vérifie le titre ; l'obtention personnelle doit être confirmée par le diplôme."
   },
   {
+    id: "iscom-359-pages",
+    claim: "La refonte SEO d'ISCOM a porté sur un périmètre de 359 pages du site Drupal iscom.fr.",
+    scope: "Expérience",
+    status: "private-evidence",
+    checkedAt: contentReviewDate,
+    note: "Périmètre déclaré par Jonas, montrable en entretien via les documents de mission. Aucun export public ne permet de le vérifier."
+  },
+  {
     id: "iscom-article",
     claim: "L'article associé à l'étude de cas ISCOM est accessible publiquement sur iscom.fr.",
     scope: "Expérience",
@@ -78,6 +86,14 @@ export const verificationItems: VerificationItem[] = [
     sourceLabel: "Article ISCOM",
     sourceHref: "https://www.iscom.fr/actualites/lia-change-de-role-les-communicants-aussi",
     note: "Le lien public prouve la publication, pas l'ensemble des tâches internes décrites."
+  },
+  {
+    id: "job-radar-local",
+    claim: "Job Radar est un pipeline local d'ingestion et de scoring d'offres, utilisé comme outil personnel.",
+    scope: "Projet",
+    status: "private-evidence",
+    checkedAt: contentReviewDate,
+    note: "Captures du dashboard et rapports de refresh datés, montrables en entretien. Aucun dépôt public ni client commercial."
   },
   {
     id: "preuvia-live",
@@ -107,7 +123,7 @@ export const verificationItems: VerificationItem[] = [
   },
   {
     id: "non-public-projects",
-    claim: "Le code de RAG Starter Kit, Board IA PME, Edusemantix et Pokémon Gen-4 Toolkit n'est pas public à ce jour.",
+    claim: "Le code de Job Radar, RAG Starter Kit, Board IA PME, Edusemantix et Pokémon Gen-4 Toolkit n'est pas public à ce jour.",
     scope: "Projets",
     status: "removed-pending-proof",
     checkedAt: contentReviewDate,

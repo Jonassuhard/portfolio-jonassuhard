@@ -64,13 +64,22 @@ const SECTIONS = [
   },
   {
     kicker: "Ce qui compte",
-    title: "Ce qui fait la différence avec l'IA.",
+    title: "Ce qui reste quand l'IA a produit.",
     items: [
-      "L'IA avance vite et prend en charge une part croissante du travail, y compris une partie du jugement. Le nier serait malhonnête.",
-      "Ce qui fait la différence, c'est de savoir exactement ce qu'on veut, et de savoir l'expliquer, à un modèle comme à une équipe.",
-      "Choisir le bon modèle à chaque étape pèse autant que le prompt. Un modèle pour cadrer et planifier, un autre pour exécuter.",
-      "Le vrai enjeu aujourd'hui c'est le coût. On peut presque tout faire, la compétence c'est de le faire au bon prix.",
-      "La responsabilité de ce qui part en production reste signée par un humain. Moi, en l'occurrence."
+      "L'IA produit vite. Elle ne décide pas ce qui est bon. Le jugement reste le travail.",
+      "Ma lecture : l'IA ne dévore pas d'abord ce qui est facile, elle dévore ce qui est vérifiable. Donc la valeur se déplace vers celui qui sait définir le test.",
+      "Je sépare la production du contrôle. Un modèle écrit, un humain signe.",
+      "Le coût par tâche compte plus que le prix du token. Un modèle moins cher qui rate trois fois coûte plus cher qu'un modèle qui rate une fois.",
+      "Ce qui n'est pas documenté ne se transmet pas. Ce qui ne se transmet pas s'arrête avec la personne qui l'a fait."
+    ]
+  },
+  {
+    kicker: "Ce que je ne délègue pas",
+    title: "Les trois choses qui restent de mon côté.",
+    items: [
+      "La décision de ce qui part en production, et la responsabilité de le signer.",
+      "La définition de ce qui est bon : la grille, le test, le seuil. Un modèle ne choisit pas son propre critère de réussite.",
+      "La relation avec les personnes qui utilisent l'outil. Les retours terrain ne se déduisent pas d'un prompt."
     ]
   }
 ];
@@ -86,6 +95,18 @@ export default function MethodePage() {
           travail, mais les décisions, la vérification et la responsabilité du
           résultat restent les miennes.
         </p>
+      </section>
+
+      <section className="section">
+        <div className="notice">
+          <strong>Le dernier kilomètre.</strong>
+          <p>
+            Un projet ne bloque presque jamais sur la partie spectaculaire. Il
+            bloque sur les données, les accès, les validations et la mesure.
+            C'est là que je travaille. Une démo qui ne passe pas en production
+            n'est pas un livrable ; c'est une promesse avec une interface.
+          </p>
+        </div>
       </section>
 
       {SECTIONS.map((s) => (

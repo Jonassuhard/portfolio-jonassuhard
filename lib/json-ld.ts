@@ -36,15 +36,15 @@ export function personJsonLd() {
     sameAs: [site.github, site.linkedin, ...(site.malt ? [site.malt] : [])],
     seeks: {
       "@type": "Demand",
-      name: "CDI junior Chef de projet IA appliquée et automatisation / Growth Engineer",
-      availabilityStarts: "2026-09-01",
+      name: "CDI junior Chef de projet digital & marketing IA / IA appliquée et automatisation / Growth Engineer",
+      availabilityStarts: "2026-11-02",
       areaServed: "Paris / hybride"
     },
     alumniOf: [
       {
         "@type": "EducationalOrganization",
         name: "MyDigitalSchool Paris",
-        description: "MBA Expert Marketing Digital - préparation du titre RNCP41809 niveau 7 (en cours, 2024-2026)"
+        description: "MBA Expert Marketing Digital - titre RNCP41809 niveau 7 validé, diplôme prévu début décembre 2026 (2024-2026)"
       },
       {
         "@type": "EducationalOrganization",

@@ -5,11 +5,11 @@
 Spécialisation Growth Engineer et Product Builder IA : je transforme des besoins métier en outils, automatisations et workflows IA mesurables.
 
 Contact : contact@jonassuhard.com · jonassuhard.com · github.com/Jonassuhard · LinkedIn (Jonas Suhard) · Paris / hybride
-Disponible en CDI à partir du 1er septembre 2026.
+Disponible en CDI immédiatement, à Paris ou en hybride.
 
 ## Profil
 
-Profil hybride marketing, IA générative et développement web. Je transforme des besoins d'acquisition, de contenu ou d'opération en outils utilisables : sites, automatisations LLM, SEO et produits web. Du cadrage au déploiement, je construis et je documente ce que je propose. MBA en cours, en alternance chez Eduservices (marque ISCOM).
+Profil hybride marketing, IA générative et développement web. Je prends le dernier kilomètre des projets : les données, les validations, la mesure. Je transforme des besoins d'acquisition, de contenu ou d'opération en outils utilisables — sites, automatisations LLM, SEO et produits web — puis je documente ce que j'ai livré. MBA validé (diplôme prévu début décembre 2026), deux alternances en communication digitale et SEO.
 
 ## Expériences
 
@@ -25,7 +25,7 @@ Profil hybride marketing, IA générative et développement web. Je transforme d
 ### Projets web, SEO & IA appliquée · depuis 2021 · entreprise individuelle enregistrée en 2026
 - Création de sites web (WordPress, Next.js), SEO local et contenus ; déploiement et maintenance.
 - Automatisations et intégration d'outils IA dans les workflows clients (assistants cadrés, QA).
-- Exemple : Les Petites Griffes. L'audit live du 2026-08-01 couvre 18 pages publiques contrôlées à 390 px et 1440 px, 36 captures pleine page, 30 images uniques chargées sur le live et cinq scores de performance Lighthouse mobile : Accueil 91, Galerie 87, Compose 97, Méthode 97, Le studio 66. Projet familial non facturé ; aucune vente à un client externe n'est prouvée ; mesures datées du 2026-08-01, non continues.
+- Exemples : Job Radar (connecteurs ATS, fusion des offres, scoring de pertinence et de confiance séparés, dashboard local ; outil personnel) et Les Petites Griffes (site live, CMS maison, assistant IA cadré). L'audit live du 2026-08-01 couvre 18 pages publiques contrôlées à 390 px et 1440 px, 36 captures pleine page, 30 images uniques chargées sur le live et cinq scores de performance Lighthouse mobile : Accueil 91, Galerie 87, Compose 97, Méthode 97, Le studio 66. Projet familial non facturé ; mesures datées du 2026-08-01, non continues.
 
 ### Co-fondateur & responsable marketing · HoopSphere · projet MBA · 2024–2026
 - Marketing, acquisition et contenu ; business plan et projections financières (projet MBA à 4 associés).
@@ -38,13 +38,13 @@ Profil hybride marketing, IA générative et développement web. Je transforme d
 - Réseaux sociaux, Google Ads, e-mailing (Sendinblue), reporting KPIs.
 
 ## Formations
-- MBA Expert Marketing Digital (en cours), préparation du RNCP41809 niveau 7 · MyDigitalSchool Paris · 2024–2026
+- MBA Expert Marketing Digital (validé), RNCP41809 niveau 7, diplôme prévu début décembre 2026 · La Digital School + MyDigitalSchool Paris · 2024–2026
 - Bachelor Chef de projet digital, RNCP34340 niveau 6 (preuve privée) · La Digital School, Angers · 2023–2024
 - Animation 2D/3D & Design, certificat d'école non RNCP · Human Academy · 2019–2021
 - Parcours Anthropic Academy sur Claude et le développement d'applications · en cours, aucune certification obtenue revendiquée
 
 ## Compétences
-- **Développement** : Next.js, React, Firebase, Supabase, Python, WordPress, Drupal, HTML/CSS, Playwright
+- **Développement** : Next.js, React, FastAPI, Python, SQLite, Firebase, Supabase, WordPress, Drupal, HTML/CSS, Playwright
 - **IA générative** : Claude & Claude Code, workflows LLM, RAG, prompt engineering, automatisation, fact-check & QA, orchestration multi-IA
 - **Marketing / Growth** : SEO technique, GEO (ChatGPT Search, Perplexity, Gemini), SEA, content, analytics, e-mailing, Semrush, chef de projet digital, communication digitale
 - **Design** : Figma, Suite Adobe (Photoshop, Illustrator, InDesign, Premiere), Midjourney

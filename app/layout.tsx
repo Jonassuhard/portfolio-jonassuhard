@@ -119,7 +119,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               </div>
             </div>
             <p className="foot-pitch">
-              Marketing, IA générative, automatisation et développement web.
+              Le dernier kilomètre des projets IA et web : données, validations,
+              mesure.
             </p>
           </div>
           <div className="foot-cols">

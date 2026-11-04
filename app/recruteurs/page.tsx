@@ -31,9 +31,10 @@ export default function RecruitersPage() {
             <Link href="/a-propos#growth-engineer">Correspondance avec le rôle Growth Engineer →</Link>
           </p>
           <p className="lead">
-            Profil marketing et développement : je cadre un besoin, je livre une
-            première version, je définis comment la mesurer et je documente pour
-            que l'équipe puisse reprendre derrière.
+            Je prends le dernier kilomètre : les données, les validations, la
+            mesure. Je ne livre pas une démo de plus ; je livre un outil qui
+            tourne, avec ce qu'il faut pour le reprendre. Et je dis aussi ce
+            qu'il ne règle pas.
           </p>
           <div className="button-row">
             <a className="button primary" href={`mailto:${site.email}`}>Me contacter</a>
@@ -54,7 +55,7 @@ export default function RecruitersPage() {
               </tr>
               <tr>
                 <th scope="row">Disponibilité</th>
-                <td><strong>À partir du 1er septembre 2026</strong></td>
+                <td><strong>Immédiate</strong></td>
               </tr>
               <tr>
                 <th scope="row">Zone</th>
@@ -62,7 +63,7 @@ export default function RecruitersPage() {
               </tr>
               <tr>
                 <th scope="row">Rôles</th>
-                <td>Chef de projet IA appliquée &amp; automatisation junior, Growth Engineer junior, Product Builder IA</td>
+                <td>Chef de projet digital &amp; marketing IA, Chef de projet IA appliquée &amp; automatisation junior, Growth Engineer junior, Product Builder IA</td>
               </tr>
               <tr>
                 <th scope="row">Stack</th>
@@ -85,11 +86,12 @@ export default function RecruitersPage() {
         <div className="section-head">
           <div>
             <p className="section-kicker">Ce que je peux prendre en charge</p>
-            <h2>Ce que je peux livrer.</h2>
+            <h2>Ce que je livre, et sous quelle condition.</h2>
           </div>
           <p>
             Un besoin marketing devient un livrable concret : page de conversion,
-            workflow IA, automatisation, audit SEO ou prototype web.
+            workflow IA, automatisation, audit SEO ou prototype web. Le livrable
+            n'est fini que si quelqu'un peut le reprendre sans moi.
           </p>
         </div>
         <div className="matrix matrix-2">
@@ -108,6 +110,46 @@ export default function RecruitersPage() {
           <div className="matrix-item">
             <strong>Opérations</strong>
             <p>Scripts Python, Playwright, rapports, automatisation de tâches répétitives.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="section-head">
+          <div>
+            <p className="section-kicker">Avant de construire</p>
+            <h2>Six questions que je pose avant de livrer.</h2>
+          </div>
+          <p>
+            Elles ne sont pas décoratives. Chacune change le périmètre, le budget
+            ou la date. Si la réponse manque, on construit un prototype, pas une
+            plateforme.
+          </p>
+        </div>
+        <div className="matrix matrix-2">
+          <div className="matrix-item">
+            <strong>Qui utilise l'outil, et à quelle fréquence ?</strong>
+            <p>Si la réponse est « personne encore », on teste une hypothèse avant d'industrialiser.</p>
+          </div>
+          <div className="matrix-item">
+            <strong>Qu'est-ce qui est vérifié aujourd'hui, et par qui ?</strong>
+            <p>Le contrôle est le vrai coût. On le nomme avant d'écrire la première ligne.</p>
+          </div>
+          <div className="matrix-item">
+            <strong>Quelle décision l'outil doit-il rendre possible ?</strong>
+            <p>Un tableau de bord qui ne change aucune décision est de la décoration.</p>
+          </div>
+          <div className="matrix-item">
+            <strong>Qu'est-ce qu'on ne veut surtout pas automatiser ?</strong>
+            <p>Les actions irréversibles restent humaines. On le dit dès le cadrage.</p>
+          </div>
+          <div className="matrix-item">
+            <strong>Comment saura-t-on, dans 90 jours, que ça a marché ?</strong>
+            <p>Une mesure datée, pas une impression de fin de réunion.</p>
+          </div>
+          <div className="matrix-item">
+            <strong>Qu'est-ce qu'on arrête de faire ?</strong>
+            <p>Un nouvel outil qui s'ajoute aux anciens ne remplace rien. Il ajoute de la maintenance.</p>
           </div>
         </div>
       </section>
@@ -151,8 +193,10 @@ export default function RecruitersPage() {
             <h2>Le bon niveau, sans survendre.</h2>
           </div>
           <p>
-            Je suis déjà opérationnel sur le build web, le SEO et les workflows
-            IA. Je veux consolider en équipe la data produit et l'expérimentation.
+            Je suis opérationnel sur le build web, le SEO et les workflows IA.
+            Je viens consolider en équipe la data produit, l'expérimentation et
+            les pratiques d'une équipe logiciel. Je ne prétends pas les avoir
+            déjà faites à cette échelle.
           </p>
         </div>
         <div className="matrix matrix-2">
@@ -174,9 +218,9 @@ export default function RecruitersPage() {
             <h2>Trois projets qui montrent comment je travaille.</h2>
           </div>
           <p>
-            Une production SEO en entreprise avec preuve en ligne, un site client
-            livré de bout en bout, et une méthode d'audit IA sur le sujet exact
-            du poste.
+            Un pipeline complet construit de bout en bout, une refonte SEO en
+            contexte employeur avec preuve en ligne, et un site client en
+            production. Trois niveaux de preuve, pas trois copies du même projet.
           </p>
         </div>
         <div className="proof-grid">
@@ -204,7 +248,7 @@ export default function RecruitersPage() {
         <div className="section-head">
           <div>
             <p className="section-kicker">Prise en charge</p>
-            <h2>Mes 30 premiers jours dans une équipe.</h2>
+            <h2>Mes 30 premiers jours : un livrable, une mesure.</h2>
           </div>
         </div>
         <div className="matrix matrix-2">
@@ -247,11 +291,12 @@ export default function RecruitersPage() {
 
       <section className="section">
         <div className="notice">
-          <strong>Mon périmètre.</strong>
+          <strong>Mon périmètre, et ce que je ne promets pas.</strong>
           <p>
             Mon cœur, c'est de relier acquisition, IA appliquée et exécution
             produit. Pour du ML research pur ou du backend lourd, je m'appuie sur
-            l'équipe.
+            l'équipe. Je ne promets ni un modèle infaillible, ni une adoption
+            sans formation, ni une transformation en trente jours.
           </p>
           <div className="button-row">
             <a className="button primary" href={`mailto:${site.email}`}>Me contacter</a>

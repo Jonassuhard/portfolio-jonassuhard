@@ -24,9 +24,10 @@ export default function ProjectsPage() {
         <p className="eyebrow">Projets</p>
         <AnimatedTitle>Du projet principal au lab.</AnimatedTitle>
         <p className="lead">
-          Trois niveaux, les projets livrés que je mets en avant, les projets
-          techniques, puis les labs personnels. Chaque carte indique ce qui est
-          public, privé ou en cours de publication.
+          Trois niveaux. Les projets que je mets en avant, les preuves
+          techniques, puis les labs. Chaque carte dit ce qui est public, privé
+          ou en cours. Une preuve privée se montre en entretien ; elle ne se cite
+          pas comme un lien public.
         </p>
       </section>
 
@@ -83,9 +84,10 @@ export default function ProjectsPage() {
 
       <section className="section">
         <div className="notice">
-          <strong>La suite se passe en échange.</strong>
+          <strong>Un projet ne vaut pas par sa stack.</strong>
           <p>
-            Je reprends n'importe lequel de ces projets en entretien :
+            Il vaut par ce qu'il prouve, ce qu'il coûte et ce qu'il ne règle
+            pas. Je reprends n'importe lequel de ces projets en entretien :
             architecture, décisions et limites, sans filtre.
           </p>
           <div className="button-row">

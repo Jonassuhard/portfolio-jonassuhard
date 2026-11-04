@@ -1,5 +1,5 @@
 {
-  "reviewed_at": "2026-08-15",
+  "reviewed_at": "2026-11-02",
   "methodology": {
     "publicly-verified": "Une source publique directe permet de contrôler l'affirmation.",
     "private-evidence": "La preuve est annoncée comme montrable en entretien, mais n'est pas publiée.",
@@ -9,48 +9,64 @@
   "claims": [
     {
       "id": "target-role",
-      "claim": "Recherche d'un CDI junior à Paris ou en hybride à partir du 1er septembre 2026.",
+      "claim": "Recherche d'un CDI junior à Paris ou en hybride, disponible immédiatement.",
       "scope": "Positionnement",
       "status": "self-declared",
-      "checkedAt": "2026-08-15",
-      "note": "Intention professionnelle déclarée par Jonas Suhard."
+      "checkedAt": "2026-11-02",
+      "note": "Intention professionnelle déclarée par Jonas Suhard, mise à jour le 2026-11-02."
     },
     {
       "id": "rncp-41809",
       "claim": "Le titre RNCP41809 « Manager de la stratégie marketing digital » est un niveau 7 actif.",
       "scope": "Formation",
       "status": "publicly-verified",
-      "checkedAt": "2026-08-15",
+      "checkedAt": "2026-11-02",
       "sourceLabel": "France Compétences — RNCP41809",
       "sourceHref": "https://www.francecompetences.fr/recherche/rncp/41809/",
-      "note": "Le portfolio indique que Jonas prépare le titre ; il ne prétend pas l'avoir déjà obtenu."
+      "note": "Le MBA est validé (bulletin S2 2025/2026) ; le diplôme est prévu début décembre 2026. Le portfolio ne prétend pas que le parchemin est déjà remis."
     },
     {
       "id": "rncp-34340",
       "claim": "Le titre RNCP34340 « Chef de projet e-business » correspond à un niveau 6 historique.",
       "scope": "Formation",
       "status": "private-evidence",
-      "checkedAt": "2026-08-15",
+      "checkedAt": "2026-11-02",
       "sourceLabel": "France Compétences — RNCP34340",
       "sourceHref": "https://www.francecompetences.fr/recherche/RNCP/34340/",
       "note": "La fiche publique vérifie le titre ; l'obtention personnelle doit être confirmée par le diplôme."
+    },
+    {
+      "id": "iscom-359-pages",
+      "claim": "La refonte SEO d'ISCOM a porté sur un périmètre de 359 pages du site Drupal iscom.fr.",
+      "scope": "Expérience",
+      "status": "private-evidence",
+      "checkedAt": "2026-11-02",
+      "note": "Périmètre déclaré par Jonas, montrable en entretien via les documents de mission. Aucun export public ne permet de le vérifier."
     },
     {
       "id": "iscom-article",
       "claim": "L'article associé à l'étude de cas ISCOM est accessible publiquement sur iscom.fr.",
       "scope": "Expérience",
       "status": "publicly-verified",
-      "checkedAt": "2026-08-15",
+      "checkedAt": "2026-11-02",
       "sourceLabel": "Article ISCOM",
       "sourceHref": "https://www.iscom.fr/actualites/lia-change-de-role-les-communicants-aussi",
       "note": "Le lien public prouve la publication, pas l'ensemble des tâches internes décrites."
+    },
+    {
+      "id": "job-radar-local",
+      "claim": "Job Radar est un pipeline local d'ingestion et de scoring d'offres, utilisé comme outil personnel.",
+      "scope": "Projet",
+      "status": "private-evidence",
+      "checkedAt": "2026-11-02",
+      "note": "Captures du dashboard et rapports de refresh datés, montrables en entretien. Aucun dépôt public ni client commercial."
     },
     {
       "id": "preuvia-live",
       "claim": "L'offre Preuvia et sa méthode d'audit GEO sont présentées sur un site public.",
       "scope": "Projet",
       "status": "publicly-verified",
-      "checkedAt": "2026-08-15",
+      "checkedAt": "2026-11-02",
       "sourceLabel": "Preuvia",
       "sourceHref": "https://preuvia.vercel.app/",
       "note": "Aucun volume de clients ni résultat commercial n'est revendiqué dans le portfolio."
@@ -60,7 +76,7 @@
       "claim": "L'audit live du 2026-08-01 couvre 18 pages publiques contrôlées à 390 px et 1440 px, 36 captures pleine page, 30 images uniques chargées sur le live et cinq scores de performance Lighthouse mobile : Accueil 91, Galerie 87, Compose 97, Méthode 97, Le studio 66.",
       "scope": "Projet",
       "status": "private-evidence",
-      "checkedAt": "2026-08-15",
+      "checkedAt": "2026-11-02",
       "note": "Projet familial non facturé ; aucune vente à un client externe n'est prouvée ; mesures datées du 2026-08-01, non continues."
     },
     {
@@ -68,15 +84,15 @@
       "claim": "Educool a été conçu pour un usage réel en classe avec des données de mineurs.",
       "scope": "Projet",
       "status": "private-evidence",
-      "checkedAt": "2026-08-15",
+      "checkedAt": "2026-11-02",
       "note": "Les captures publiques utilisent des données fictives ; les données réelles restent privées."
     },
     {
       "id": "non-public-projects",
-      "claim": "Le code de RAG Starter Kit, Board IA PME, Edusemantix et Pokémon Gen-4 Toolkit n'est pas public à ce jour.",
+      "claim": "Le code de Job Radar, RAG Starter Kit, Board IA PME, Edusemantix et Pokémon Gen-4 Toolkit n'est pas public à ce jour.",
       "scope": "Projets",
       "status": "removed-pending-proof",
-      "checkedAt": "2026-08-15",
+      "checkedAt": "2026-11-02",
       "note": "Aucun dépôt GitHub précis n'est revendiqué tant qu'un lien public vérifiable n'est pas disponible."
     },
     {
@@ -84,7 +100,7 @@
       "claim": "Les métriques Instagram, emailing, bêta-testeurs et la publication Google Play de HoopSphere ne sont plus citées.",
       "scope": "Projet",
       "status": "removed-pending-proof",
-      "checkedAt": "2026-08-15",
+      "checkedAt": "2026-11-02",
       "note": "Ces chiffres ont été retirés des contenus citables jusqu'à fourniture d'exports et d'un lien public."
     },
     {
@@ -92,7 +108,7 @@
       "claim": "Parcours de formation Anthropic Academy autour de Claude et du développement d'applications.",
       "scope": "Formation",
       "status": "self-declared",
-      "checkedAt": "2026-08-15",
+      "checkedAt": "2026-11-02",
       "sourceLabel": "Anthropic Academy",
       "sourceHref": "https://www.anthropic.com/learn/build-with-claude",
       "note": "Le portfolio parle de formation en cours, pas de certification obtenue."

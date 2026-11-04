@@ -58,7 +58,7 @@ export const site = {
   name: "Jonas Suhard",
   title: "Chef de projet IA appliquée & automatisation junior",
   description:
-    "Portfolio de Jonas Suhard, Chef de projet IA appliquée & automatisation junior : projets, décisions, limites et niveau de preuve.",
+    "Portfolio de Jonas Suhard, chef de projet IA appliquée & automatisation junior : projets livrés, décisions, limites et niveau de preuve. Le dernier kilomètre des projets IA et web.",
   email: "contact@jonassuhard.com",
   github: "https://github.com/Jonassuhard",
   linkedin: "https://www.linkedin.com/in/jonas-suhard-b73923245/",
@@ -66,7 +66,7 @@ export const site = {
   // les affirmations vérifiables du portfolio avant de redevenir public ici.
   malt: null as string | null,
   location: "Paris, France",
-  availability: "1er septembre 2026",
+  availability: "immédiate",
   cvClassic: "/cv.pdf",
   cvStyled: "/cv-portfolio.pdf"
 };
@@ -146,6 +146,90 @@ export const pageMeta = (opts: {
 };
 
 export const projects: Project[] = [
+  {
+    slug: "job-radar",
+    title: "Job Radar - radar d'offres, scoring et dashboard",
+    shortTitle: "Job Radar",
+    type: "Outil local - ingestion, scoring, dashboard",
+    period: "2026 - en cours",
+    role: "Conception, développement, data, UX, QA",
+    status: "Outil personnel, en usage",
+    evidenceLevel: "private",
+    tier: 1,
+    image: "/assets/cards/job-radar.webp",
+    repoStatus: "Privé, usage personnel",
+    liveLabel: "Démo locale / captures en entretien",
+    evidenceNote:
+      "Captures du dashboard et rapports de refresh datés, montrables en entretien. Outil personnel, pas un produit commercialisé ; les données de candidature restent privées.",
+    metaDescription:
+      "Radar local d'offres : connecteurs ATS, fusion canonique, scoring de pertinence et de confiance séparés, dashboard FastAPI / React. Le refresh ne prépare ni n'envoie de candidature.",
+    cardLine:
+      "Connecteurs ATS, fusion des doublons, scoring de pertinence et de confiance séparés, dashboard local. Aucune candidature préparée ni envoyée par le refresh.",
+    architecture: [
+      "Sources autorisées (France Travail, Adzuna, Greenhouse, Lever, Ashby, etc.) et alertes locales importées ; les plateformes restreintes ne sont pas scrapées.",
+      "Pipeline : ingestion → fusion canonique des offres → extraction de faits → scoring pertinence / confiance → rapports JSON et Markdown.",
+      "SQLite local, profil candidat hors du dépôt, API FastAPI et interface React.",
+      "Refresh planifié avec verrou inter-processus et contrôle d'intégrité ; aucune candidature préparée ni envoyée."
+    ],
+    v2: [
+      "Mesurer la précision du scoring sur des décisions réelles, pas seulement sur des cas construits.",
+      "Durcir les connecteurs et les tests de non-régression à mesure que les sources changent."
+    ],
+    notMeasured: [
+      "Précision du scoring comparée à une décision humaine : pas encore mesurée sur un échantillon publiable.",
+      "Temps gagné par refresh : non instrumenté."
+    ],
+    proofLine:
+      "Un pipeline complet : connecteurs ATS, fusion des offres, scoring de pertinence et de confiance séparés, dashboard local. Le refresh ne prépare ni n'envoie aucune candidature.",
+    summary:
+      "Radar local d'offres d'emploi : collecter des sources autorisées, fusionner les doublons, extraire les faits, séparer le score de pertinence du score de confiance, puis rendre le tout lisible dans un dashboard. Le refresh ne prépare ni n'envoie de candidature.",
+    stack: ["Python", "FastAPI", "SQLite", "React", "TypeScript", "Playwright", "Connecteurs ATS"],
+    recruiterProof: [
+      "Automatisation de bout en bout : ingestion, normalisation, scoring, API et interface.",
+      "Séparation explicite entre pertinence et confiance : un score élevé ne masque pas une source douteuse.",
+      "Garde-fous produit : sources autorisées, secrets hors dépôt, aucune soumission automatique."
+    ],
+    constraints: [
+      "Sources hétérogènes et doublons entre plateformes.",
+      "Données personnelles et offres à ne pas exposer.",
+      "Plateformes restreintes non scrapées : seules les sources autorisées ou importées sont utilisées."
+    ],
+    decisions: [
+      {
+        decision: "Séparer le score de pertinence du score de confiance",
+        why: "Un bon poste mal sourcé n'est pas une bonne offre.",
+        rejected: "Un score unique qui mélange le poste et la fiabilité de la source."
+      },
+      {
+        decision: "SQLite local",
+        why: "Un seul utilisateur, zéro serveur à maintenir, des requêtes assez rapides.",
+        rejected: "Postgres ou une base hébergée pour un outil personnel."
+      },
+      {
+        decision: "Aucune soumission automatique",
+        why: "Le geste final reste humain, avec revue du CV et de la lettre.",
+        rejected: "Un robot qui postule à ma place."
+      }
+    ],
+    delivered: [
+      "Connecteurs ATS et import d'alertes locales.",
+      "Schéma canonique des offres, fusion des doublons et extraction de faits.",
+      "Scores de pertinence et de confiance séparés.",
+      "Dashboard React et API FastAPI, rapports de refresh.",
+      "Refresh planifié avec verrou et contrôle d'intégrité."
+    ],
+    results: [
+      "Outil utilisé pour la recherche d'emploi : collecte, tri et priorisation des offres.",
+      "Le pipeline tourne localement ; les rapports de refresh sont datés.",
+      "Aucune candidature n'est préparée ni envoyée par le refresh."
+    ],
+    limits: [
+      "Outil personnel, pas un produit commercialisé : pas de client ni de revenu.",
+      "Précision du scoring non mesurée publiquement.",
+      "Les connecteurs dépendent des APIs et de leurs quotas ; certaines plateformes restent manuelles."
+    ],
+    links: [{ label: "Version Markdown", href: "/projects/job-radar.md" }]
+  },
   {
     slug: "les-petites-griffes",
     title: "Les Petites Griffes - site live, CMS et assistant IA",
@@ -444,9 +528,11 @@ export const projects: Project[] = [
     repoStatus: "CMS employeur, non publiable",
     liveLabel: "Actu publiée (lien)",
     evidenceNote:
-      "Article publié en ligne, plus une checklist QA de pré-publication et un extrait d'audit de cannibalisation anonymisés.",
+      "Article publié en ligne, checklist QA de pré-publication et extrait d'audit de cannibalisation anonymisé. Le périmètre de 359 pages est une preuve privée, montrable en entretien.",
     metaDescription:
-      "Production éditoriale SEO dans Drupal : rédaction, fact-check claim par claim, audits de cannibalisation Semrush, validation humaine avant publication.",
+      "Refonte SEO d'un site Drupal de 359 pages : arborescence de formations, FAQ, audit de cannibalisation Semrush, QA éditoriale et validation humaine.",
+    cardLine:
+      "Production SEO dans le Drupal d'ISCOM : arborescence de formations, FAQ, audit de cannibalisation et validation humaine avant publication.",
     architecture: [
       "Production éditoriale SEO saisie dans Drupal (CMS sensible).",
       "Audits de cannibalisation et inter-marques via Semrush.",
@@ -460,12 +546,13 @@ export const projects: Project[] = [
       "Impact trafic SEO des contenus : suivi côté employeur, non publiable ici."
     ],
     proofLine:
-      "Contenus SEO qui vont réellement en ligne dans le CMS d'un employeur, avec fact-check de chaque affirmation et validation humaine avant publication.",
+      "Refonte SEO du site Drupal d'ISCOM (359 pages) : arborescence de formations, FAQ, audit de cannibalisation et validation humaine avant publication.",
     summary:
-      "Production éditoriale SEO dans le Drupal d'ISCOM : rédaction et fact-check d'articles, audits de cannibalisation avec Semrush, et automatisations Playwright pour la saisie, avec validation humaine avant chaque publication.",
+      "Refonte SEO du site Drupal d'ISCOM (359 pages) : arborescence de formations, FAQ, audit de cannibalisation Semrush et automatisations Playwright, avec validation humaine avant chaque publication.",
     stack: ["Drupal", "Playwright", "Semrush", "SEO", "LLM-assisted QA"],
     recruiterProof: [
-      "Livrer dans le process de publication d'un employeur sans court-circuiter la validation éditoriale.",
+      "Publication en ligne dans le Drupal de l'employeur, avec validation humaine avant chaque mise en ligne.",
+      "Travail à l'échelle d'un site de 359 pages, pas sur une page isolée (preuve privée).",
       "Capacité à transformer un audit SEO en décisions nommées.",
       "Discipline sur les actions sensibles, avec validation avant publication."
     ],
@@ -494,6 +581,7 @@ export const projects: Project[] = [
       "Lessons qualité et garde-fous."
     ],
     results: [
+      "Périmètre de la refonte : 359 pages du site Drupal iscom.fr.",
       "Actu IA agentique publiée live le 16/06.",
       "Audit cannibalisation livré en PDF.",
       "Process de pré-publication durci après erreurs."
@@ -969,13 +1057,13 @@ export const projects: Project[] = [
   }
 ];
 
-export const featuredProjects = ["les-petites-griffes", "educool-la-herse", "iscom"]
+export const featuredProjects = ["job-radar", "les-petites-griffes", "iscom"]
   .map((slug) => projects.find((project) => project.slug === slug))
   .filter((project): project is Project => Boolean(project));
 
 // Preuves recruteur découplées de la home : contexte employeur (ISCOM), livraison
 // client bout-en-bout (LPG), couche IA sur le sujet exact du poste (Preuvia).
-export const recruiterFeatured = ["iscom", "les-petites-griffes", "preuvia"]
+export const recruiterFeatured = ["job-radar", "iscom", "les-petites-griffes"]
   .map((slug) => projects.find((project) => project.slug === slug))
   .filter((project): project is Project => Boolean(project));
 
@@ -989,12 +1077,12 @@ export const skills = [
     limit: "Pas encore de programmatic SEO à grande échelle ni de domaine à fort trafic historisé."
   },
   {
-    name: "Automatisation / QA / Playwright",
-    proofSlugs: ["battle-engine"],
+    name: "Automatisation / data / QA",
+    proofSlugs: ["job-radar", "battle-engine"],
     proofExtra: "audits Playwright, scripts Python",
-    proof: "Battle Engine, audits Playwright, scripts Python",
-    note: "Pipelines Python, audits Playwright multi-viewports, génération et contrôles automatisés.",
-    limit: "Automatisation de projets perso ; pas encore de QA en CI/CD dans une équipe multi-dev."
+    proof: "Job Radar, Battle Engine, audits Playwright",
+    note: "Pipelines Python, connecteurs et normalisation de données, scoring, dashboard, audits Playwright multi-viewports.",
+    limit: "Automatisation d'outils personnels et de projets cadrés ; pas encore de QA en CI/CD dans une équipe multi-dev."
   },
   {
     name: "IA appliquée / workflows LLM",
@@ -1006,10 +1094,10 @@ export const skills = [
   },
   {
     name: "Full-stack web",
-    proofSlugs: ["les-petites-griffes", "educool-la-herse"],
+    proofSlugs: ["les-petites-griffes", "educool-la-herse", "job-radar"],
     proofExtra: "ce portfolio",
-    proof: "Les Petites Griffes, Educool, ce portfolio",
-    note: "Next.js, React, pages publiques, CMS léger, rendu statique, déploiement et production.",
+    proof: "Les Petites Griffes, Educool, Job Radar, ce portfolio",
+    note: "Next.js, React, FastAPI, pages publiques, CMS léger, rendu statique, déploiement et production.",
     limit: "Surtout front et intégrations ; pas de backend distribué à forte charge."
   },
   {

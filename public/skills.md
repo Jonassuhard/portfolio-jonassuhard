@@ -8,13 +8,13 @@ Recherche, structure, maillage, production éditoriale dans Drupal, vérificatio
 
 Limite : pas encore de programmatic SEO à grande échelle ni de domaine à fort trafic historisé.
 
-## Automatisation / QA / Playwright
+## Automatisation / data / QA
 
-Preuves : Battle Engine, audits Playwright, scripts Python.
+Preuves : Job Radar, Battle Engine, audits Playwright.
 
-Pipelines Python, audits Playwright multi-viewports, génération et contrôles automatisés.
+Pipelines Python, connecteurs et normalisation de données, scoring, dashboard, audits Playwright multi-viewports.
 
-Limite : automatisation de projets perso ; pas encore de QA en CI/CD dans une équipe multi-dev.
+Limite : automatisation d'outils personnels et de projets cadrés ; pas encore de QA en CI/CD dans une équipe multi-dev.
 
 ## IA appliquée / workflows LLM
 
@@ -26,9 +26,9 @@ Limite : POC et projets cadrés ; pas encore de LLM en production sous charge av
 
 ## Full-stack web
 
-Preuves : Les Petites Griffes, Educool, ce portfolio.
+Preuves : Les Petites Griffes, Educool, Job Radar, ce portfolio.
 
-Next.js, React, pages publiques, CMS léger, rendu statique, déploiement et production.
+Next.js, React, FastAPI, pages publiques, CMS léger, rendu statique, déploiement et production.
 
 Limite : surtout front et intégrations ; pas de backend distribué à forte charge.
 

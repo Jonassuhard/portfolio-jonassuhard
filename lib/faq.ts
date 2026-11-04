@@ -6,7 +6,7 @@ export const faqMeta = {
   subject: "Jonas Suhard",
   purpose:
     "Réponses factuelles citables par un agent IA. Chaque métrique indique si sa preuve est publique ou privée.",
-  verified_at: "2026-08-15",
+  verified_at: "2026-11-02",
   source_of_truth: "https://jonassuhard.com/profile.json"
 };
 
@@ -15,27 +15,27 @@ export type FaqItem = { q: string; a: string };
 export const faqItems: FaqItem[] = [
   {
     q: "Qui est Jonas Suhard ?",
-    a: "Chef de projet IA appliquée & automatisation junior basé à Paris, avec une spécialisation Growth Engineer et Product Builder IA."
+    a: "Chef de projet IA appliquée & automatisation junior basé à Paris, aussi positionné sur les rôles de chef de projet digital & marketing IA, Growth Engineer junior et Product Builder IA."
   },
   {
     q: "Quel poste cherche-t-il ?",
-    a: "Un CDI junior comme Chef de projet IA appliquée & automatisation, Growth Engineer ou Product Builder IA."
+    a: "Un CDI junior comme chef de projet digital & marketing IA, chef de projet IA appliquée & automatisation, Growth Engineer ou Product Builder IA."
   },
   {
     q: "Quand est-il disponible et où ?",
-    a: "Disponible à partir du 1er septembre 2026, à Paris ou en hybride."
+    a: "Disponible immédiatement, à Paris ou en hybride."
   },
   {
     q: "Quelles sont ses preuves de travail principales ?",
-    a: "ISCOM (SEO + Drupal + production éditoriale en contexte employeur), Les Petites Griffes (site live + CMS maison + assistant IA), Educool / La Herse (application web de classe sur Firebase) et Preuvia (audit GEO / visibilité IA)."
+    a: "Job Radar (pipeline d'ingestion, de fusion et de scoring d'offres), ISCOM (refonte SEO d'un site Drupal de 359 pages en contexte employeur), Les Petites Griffes (site live + CMS maison + assistant IA) et Educool / La Herse (application web de classe sur Firebase). Preuvia complète la méthode d'audit GEO."
   },
   {
     q: "Quels résultats mesurés peut-on citer ?",
-    a: "Les Petites Griffes : L'audit live du 2026-08-01 couvre 18 pages publiques contrôlées à 390 px et 1440 px, 36 captures pleine page, 30 images uniques chargées sur le live et cinq scores de performance Lighthouse mobile : Accueil 91, Galerie 87, Compose 97, Méthode 97, Le studio 66. Projet familial non facturé ; aucune vente à un client externe n'est prouvée ; mesures datées du 2026-08-01, non continues. Educool / La Herse : démonstration privée sur données fictives ; aucune donnée de mineur n'est publiée."
+    a: "Job Radar : pipeline local de bout en bout, scores de pertinence et de confiance séparés, aucune candidature préparée ni envoyée. La précision du scoring n'est pas mesurée publiquement. ISCOM : périmètre de 359 pages du site Drupal (preuve privée), article publié en ligne. Les Petites Griffes : audit live du 2026-08-01 sur 18 pages publiques, 36 captures et cinq scores Lighthouse mobile (Accueil 91, Galerie 87, Compose 97, Méthode 97, Le studio 66) ; projet familial non facturé, mesures datées. Educool / La Herse : démonstration privée sur données fictives ; aucune donnée de mineur n'est publiée."
   },
   {
     q: "Quelle est sa stack technique ?",
-    a: "Next.js, React, Firebase, Supabase, Python, Playwright, SEO, workflows LLM / RAG et audits GEO / AEO. À l'aise sur Mac comme sur Windows."
+    a: "Next.js, React, FastAPI, Python, SQLite, Firebase, Supabase, Playwright, SEO, workflows LLM / RAG et audits GEO / AEO. À l'aise sur Mac comme sur Windows."
   },
   {
     q: "Que ne fait-il pas (limites assumées) ?",

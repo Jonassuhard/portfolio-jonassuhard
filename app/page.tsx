@@ -14,7 +14,7 @@ export default function HomePage() {
       <section className="hero">
         <div className="hero-copy">
           <div>
-            <p className="eyebrow">CDI · Paris ou hybride · disponible le 1er septembre 2026</p>
+            <p className="eyebrow">CDI · Paris ou hybride · disponible immédiatement</p>
             <AnimatedTitle glitch>
               Chef de projet IA appliquée &amp; automatisation junior
             </AnimatedTitle>
@@ -23,9 +23,11 @@ export default function HomePage() {
               <Link href="/a-propos#growth-engineer" prefetch={false}>Pourquoi je garde aussi le rôle Growth Engineer →</Link>
             </p>
             <p className="lead">
-              Je transforme des besoins marketing et opérationnels en outils web,
-              automatisations et workflows IA mesurables. Je documente les choix
-              pour qu'une équipe puisse reprendre le travail.
+              Je prends le dernier kilomètre des projets IA et web : les données,
+              les validations, la mesure. Je livre un outil qui tourne, puis je
+              documente ce qu'il faut pour qu'une équipe le reprenne. Je ne
+              promets pas une transformation : une version qui tourne, une
+              mesure et une trace écrite.
             </p>
           </div>
           <div className="button-row">
@@ -48,19 +50,19 @@ export default function HomePage() {
           </div>
           <div className="ledger-list">
             <div className="ledger-item">
+              <time>2026-10</time>
+              <strong>Radar d'offres + scoring</strong>
+              <span>Job Radar, connecteurs ATS, fusion des offres et dashboard local.</span>
+            </div>
+            <div className="ledger-item">
               <time>2026-06</time>
               <strong>Site live + CMS + assistant IA</strong>
               <span>Les Petites Griffes, prod live et contenus éditables.</span>
             </div>
             <div className="ledger-item">
-              <time>2026-06</time>
-              <strong>App classe + données sensibles</strong>
-              <span>Educool, Firebase, PDF, sécurité et retours terrain.</span>
-            </div>
-            <div className="ledger-item">
-              <time>2026-06</time>
-              <strong>Production SEO + validation humaine</strong>
-              <span>ISCOM, articles publiés dans Drupal, fact-check avant mise en ligne.</span>
+              <time>2026</time>
+              <strong>Refonte SEO à l'échelle</strong>
+              <span>ISCOM, 359 pages Drupal, audit de cannibalisation et validation humaine.</span>
             </div>
           </div>
         </aside>
@@ -75,12 +77,12 @@ export default function HomePage() {
         <div className="section-head">
           <div>
             <p className="section-kicker">Projets phares</p>
-            <h2>Mes trois projets les plus solides.</h2>
+            <h2>Trois projets, trois terrains.</h2>
           </div>
           <p>
-            Trois terrains différents : un site client démontrable en entretien,
-            une application métier documentée sur données fictives et une
-            publication SEO vérifiable en ligne.
+            Un outil d'automatisation construit de bout en bout, un site client
+            en production et une refonte SEO à l'échelle d'un site employeur.
+            Trois preuves différentes, pas trois variations du même récit.
           </p>
         </div>
 
@@ -120,9 +122,12 @@ export default function HomePage() {
         <div className="section-head">
           <div>
             <p className="section-kicker">Compétences reliées</p>
-            <h2>Ce que je sais faire, projets à l'appui.</h2>
+            <h2>Ce que je sais faire, avec le projet qui le prouve.</h2>
           </div>
-          <p>Chaque compétence indique le projet associé et son niveau de preuve.</p>
+          <p>
+            Une compétence sans projet est une déclaration. Chaque ligne indique
+            où elle a servi et ce qui reste à consolider.
+          </p>
         </div>
 
         <div className="matrix">
@@ -143,9 +148,9 @@ export default function HomePage() {
             <h2>Cadrer, construire, vérifier, transmettre.</h2>
           </div>
           <p>
-            Quatre temps sur chaque projet. Le dernier compte autant que les
-            autres : un travail qui ne se transmet pas s'arrête avec celui qui
-            l'a fait. <Link href="/methode">Voir la méthode en détail.</Link>
+            Quatre temps sur chaque projet. Les trois premiers font avancer ;
+            le dernier décide si le travail survit à celui qui l'a fait.
+            <Link href="/methode"> Voir la méthode en détail.</Link>
           </p>
         </div>
         <div className="matrix matrix-2">
@@ -170,10 +175,22 @@ export default function HomePage() {
 
       <section className="section">
         <div className="notice">
+          <strong>La question que je pose avant de coder.</strong>
+          <p>
+            Qu'est-ce qui, dans votre métier, coûte cher uniquement parce que
+            c'est long à vérifier ? C'est là que je commence. Pas par l'outil.
+            Par le test qui manque.
+          </p>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="notice">
           <strong>Ce que je cherche.</strong>
           <p>
-            Un CDI à Paris ou hybride, dans une équipe qui relie acquisition,
-            IA appliquée et exécution produit.
+            Un CDI à Paris ou hybride, dans une équipe qui a des utilisateurs,
+            un interlocuteur technique et des priorités explicites. Le reste,
+            je l'apprends en travaillant.
           </p>
           <div className="button-row">
             <Link className="button primary" href="/recruteurs">
