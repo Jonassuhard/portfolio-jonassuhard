@@ -1817,7 +1817,7 @@ export const projects: Project[] = [
   }
 ];
 
-export const featuredProjects = ["job-radar", "cortex-bridge", "les-petites-griffes"]
+export const featuredProjects = ["iscom", "les-petites-griffes", "job-radar"]
   .map((slug) => projects.find((project) => project.slug === slug))
   .filter((project): project is Project => Boolean(project));
 
@@ -1827,7 +1827,7 @@ export const orderedProjects = [
 ];
 
 // Meme selection et meme ordre sur les trois points d'entree.
-export const recruiterFeatured = ["job-radar", "cortex-bridge", "les-petites-griffes"]
+export const recruiterFeatured = ["iscom", "les-petites-griffes", "job-radar"]
   .map((slug) => projects.find((project) => project.slug === slug))
   .filter((project): project is Project => Boolean(project));
 

@@ -11,7 +11,7 @@ test("Educool V2 has its own teacher case study, separate from Cool Bank", () =>
   assert.equal(project.fullColorMedia, true);
   assert.ok((project.gallery?.length ?? 0) >= 3);
   assert.match(project.repoStatus ?? "", /privé/);
-  assert.deepEqual(featuredProjects.map(({ slug }) => slug), ["job-radar", "cortex-bridge", "les-petites-griffes"]);
+  assert.deepEqual(featuredProjects.map(({ slug }) => slug), ["iscom", "les-petites-griffes", "job-radar"]);
   for (const file of ["llms.txt", "profile.md", "profile.json"]) {
     assert.match(readFileSync(new URL(`../public/${file}`, import.meta.url), "utf8"), /educool-v2/);
   }

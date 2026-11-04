@@ -122,18 +122,16 @@ test("les sélections recruteur ne contiennent que des projets principaux", () =
   }
 });
 
-test("les sélections principales placent Job Radar devant les preuves complémentaires", () => {
+test("les sélections principales placent la preuve employeur ISCOM en tête", () => {
   assert.deepEqual(
     featuredProjects.map((project) => project.slug),
-    ["job-radar", "cortex-bridge", "les-petites-griffes"]
+    ["iscom", "les-petites-griffes", "job-radar"]
   );
   assert.deepEqual(
     recruiterFeatured.map((project) => project.slug),
-    ["job-radar", "cortex-bridge", "les-petites-griffes"]
+    ["iscom", "les-petites-griffes", "job-radar"]
   );
-  assert.equal(featuredProjects.some((project) => project.slug === "iscom"), false);
-  assert.equal(recruiterFeatured.some((project) => project.slug === "iscom"), false);
-  assert.ok(projects.some((project) => project.slug === "iscom"));
+  assert.ok(projects.some((project) => project.slug === "cortex-bridge"), "Cortex Bridge reste indexé dans /projets");
 });
 
 test("Job Radar distingue la version personnelle déployée de l'édition Community", () => {
