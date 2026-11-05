@@ -2,15 +2,15 @@
 
 ## À quoi ça sert
 
-Une banque de classe transformée en petit monde vivant : les élèves explorent, économisent et tiennent des rôles, pendant que l'enseignante garde un outil de pilotage séparé.
+Une banque de classe transformée en jeu 3D multijoueur : les élèves gagnent des cools, les placent à la banque et font grandir leur maison, pendant que l'enseignante garde la main sur la partie.
 
 ## Rendre l'argent et la responsabilité plus concrets.
 
 La banque existait déjà dans la classe. Le projet lui donne des lieux, des personnages et des conséquences visibles, sans transformer l'outil de l'enseignante en jeu.
 
-- Les élèves explorent le bourg, accomplissent des missions, économisent et font évoluer progressivement leur maison.
-- Un élève peut tenir le guichet pendant une période donnée, avec des plafonds clairs et un registre vérifiable.
-- L'enseignante conserve les commandes essentielles et peut interrompre le monde ou les échanges sans perdre son espace de travail calme.
+- Les élèves gagnent des cools et des centicools avec des quêtes, les placent à la banque, achètent un terrain et font grandir leur maison : tente, cabane, maison, puis manoir.
+- Onze ceintures de progression, des habitants qui parlent, un marché, une mine, la pêche et le vol donnent au bourg une vie quotidienne, dans l'esprit de la classe coopérative de Freinet et Oury.
+- Un serveur de classe réunit jusqu'à 30 élèves dans la même partie. L'enseignante peut geler le monde, rappeler tout le monde ou couper le chat, et l'économie reste reliée à Educool.
 
 ## Trois rôles
 
@@ -32,14 +32,16 @@ La V2 relie déjà un monde 3D à architecture multijoueur, les trois rôles et 
 
 La V3 est une reconstruction séparée, avec une carte et un périmètre plus larges. Le travail actuel porte sur le monde, les déplacements et les interfaces. La validation technique complète, puis les essais avec les utilisateurs, restent à faire.
 
-### V4 — Migration native vers Godot
+### V4 — Le jeu de la classe dans Godot
 
-État public : Migration partiellement jouable, non finalisée.
+État public : Version en cours, testée au banc, non finalisée.
 
-La V4 reprend le monde dans Godot. L'exploration, les missions, les boutiques et les premières étapes de maison sont partiellement jouables. Le but est de travailler sur un client natif ; les performances sur les PC scolaires restent à mesurer.
+La V4 est le jeu en cours, refait dans Godot 4.6.2 : quêtes, banque, terrains, maisons, ceintures, habitants, marché, mine, pêche et vol. Un serveur de classe réunit jusqu'à 30 élèves, avec les commandes de l'enseignante et le lien avec Educool. Le jeu est construit à la main avec plusieurs agents Claude coordonnés, un ticket et une preuve par correctif.
 
 ## Ce que Jonas a fait
 
+- V4 : jeu Godot avec quêtes, banque, terrains, maisons, 11 ceintures, habitants, marché, mine, pêche et vol ; serveur de classe jusqu'à 30 élèves ; commandes de l'enseignante ; lien avec Educool.
+- V4 : banc multijoueur de 21 scénarios, profil « vieil iPad », lanceur avec mises à jour et réparation, site privé de la classe.
 - V2 : prototype local à architecture multijoueur, validé sur un appareil avec trois rôles, quêtes, maisons, mini-jeux et pont Educool/Firebase.
 - V3 : monde 3D, économie fictive, marchands et maisons présents dans les versions précédentes ; intégration actuelle encore en validation.
 - Interface Educool : authentification, rôles, règles Firestore, Cloud Functions et suivi scolaire.
@@ -47,25 +49,26 @@ La V4 reprend le monde dans Godot. L'exploration, les missions, les boutiques et
 
 ## Ce que ça prouve
 
-La V2 permet déjà de vivre la boucle 3D sur un appareil. La V3 reconstruit le jeu web ; la V4 est une migration native distincte vers Godot. Aucune efficacité pédagogique ni utilisation en classe n'est revendiquée.
+La V4 réunit une classe entière dans un jeu Godot, avec un multijoueur testé au banc comme dans un studio (mauvais réseau, charge, triche). V2 et V3 restent des archives. Aucune efficacité pédagogique ni utilisation en classe n'est revendiquée.
 
 - Partir d'un besoin réel de classe, construire une expérience testable, puis séparer clairement ce qui fonctionne de ce qui reste à valider.
-- Relier le jeu, les trois rôles, Firebase, la sécurité et les tests.
+- Coordonner plusieurs agents Claude sur un même jeu : une session cheffe, un seul écrivain par fichier, un ticket et une preuve courte par correctif.
+- Tester un multijoueur à la manière des studios : mauvais réseau, arrivée en rafale, triche, puis corriger à la cause.
 - Dire clairement ce qui fonctionne et ce qui reste bloqué avant un pilote.
 
-Sources relues le 23 septembre 2026. V2 : essais locaux historiques d'août. V3 : reconstruction web, carte et interfaces encore en travail. V4 : migration distincte vers Godot, partiellement jouable ; captures natives du 21 septembre. Aucun pilote en classe ni validation complète du jeu ne sont revendiqués.
+Sources relues le 5 novembre 2026 : journaux de tickets, banc multijoueur, mesures du profil iPad et du lanceur. La V4 est le jeu en cours ; V2 et V3 restent des archives avec leurs propres preuves. Le site du jeu est privé et fermé par un code de classe ; le téléchargement n'y est pas encore ouvert. Aucun pilote en classe ni résultat pédagogique ne sont revendiqués.
 
 ## Visuels
 
-### V4 — le chantier natif
+### V4 — le jeu de la classe dans Godot
 
-La V4 reprend le monde dans Godot. Ces captures des 21 et 23 septembre montrent l'exploration, les commandes et l'éditeur de jardin, pas un jeu terminé. La progression complète et les essais sur un PC scolaire restent à valider.
+Captures natives du 5 novembre 2026 sur des profils de démonstration : la banque, le profil allégé pour les vieux iPad et le site privé de la classe. Elles montrent le jeu en cours, pas une version finale ni un usage en classe.
 
-![V4 : entrée dans le bourg et commandes du joueur. Capture native de contrôle du 21 septembre 2026, sans données scolaires.](/assets/proof/educool/v4-world-20260921.webp)
+![V4 : le compte de l'élève à la banque, ses cools et le bureau de change. Habitante et soldes fictifs, capture native du 5 novembre 2026.](/assets/proof/educool/v4-banque-20261105.webp)
 
-![V4 : déplacer et tourner les objets du jardin. Test natif du 23 septembre avec maison et inventaire de démonstration injectés ; ce n'est pas une progression joueur complète.](/assets/proof/educool/v4-garden-20260923.webp)
+![V4 : même point de vue en profil PC (à gauche) et en profil « vieil iPad » (à droite). Le profil retire environ 70 % des appels de dessin ; les budgets de l'iPad Air 2 ne sont pas encore atteints.](/assets/proof/educool/v4-ipad-profil-20261105.webp)
 
-![V4 : contrôle de l'interface à 390 pixels dans Godot. Ce cadrage ne prouve pas une version mobile distribuée ni un test sur téléphone physique.](/assets/proof/educool/v4-mobile-20260921.webp)
+![Le site privé du jeu, fermé par un code de classe. Page d'accueil capturée en local le 5 novembre 2026 ; le téléchargement n'est pas encore ouvert.](/assets/proof/educool/v4-site-classe-20261105.webp)
 
 ### V3 — la reconstruction locale
 
@@ -92,13 +95,15 @@ Vues différentes issues des preuves locales d'août 2026 : bourg 3D, organisati
 
 - Preuve privée : code, captures complètes et données de contexte se montrent uniquement sur fixtures anonymisées.
 - V2 n'est pas prête pour Internet ; V3 et V4 ne sont pas validées comme pilotes auprès d'enfants.
+- Les mesures V4 viennent de bancs techniques avec des élèves simulés, pas d'une séance réelle en classe.
 - Les volumes de tests prouvent le comportement technique, pas l'utilité pédagogique ni l'adoption.
 - V2 : Deux PC et une tablette physique, coupure Wi-Fi et audio multi-appareils restent à rejouer ensemble.
 - V2 : Le pré-RC reste bloqué par 3 échecs i18n, 20 assets provisoires et une gate online à 87/89.
 - V3 : Validation de la direction artistique, test sur appareil enfant modeste et observation de la compréhension par un enfant encore requis.
 - V3 : Aucun déploiement, aucune donnée réelle d'enfant et aucun verdict d'usage terrain ne sont revendiqués.
-- V4 : La progression complète, les accès aux maisons et plusieurs parcours de sauvegarde restent en chantier.
-- V4 : Aucune validation Windows, PC i5/4 Go, enfant ou utilisation en classe n'est déduite de ces captures.
+- V4 : Trois scénarios échouent encore : les habitants et l'heure du jeu ne sont pas identiques d'un PC à l'autre (correctif en cours). Le test d'endurance de 2 heures est prévu, pas encore joué.
+- V4 : Le profil iPad reste 2,7 à 2,9 fois au-dessus du budget d'appels de dessin et ne réduit pas encore la mémoire ; aucun essai sur un vrai iPad.
+- V4 : Lanceur non essayé sur les PC de la classe ; téléchargement pas encore ouvert sur le site.
 - Compréhension, plaisir et autonomie des enfants : recette terrain non publiée.
 - Gain de temps pour l'enseignante : non chiffré publiquement.
 
@@ -106,12 +111,12 @@ Vues différentes issues des preuves locales d'août 2026 : bourg 3D, organisati
 
 | Repère | Détail |
 | --- | --- |
-| Format | Jeu scolaire 3D + outil enseignant |
+| Format | Jeu scolaire 3D multijoueur (Godot) + outil enseignant |
 | Période | Juillet 2026 - en cours |
-| Rôle de Jonas | Conception produit, UX, développement full-stack, systèmes de jeu, sécurité, QA |
-| Statut | V2 locale · V3 web · V4 en migration vers Godot |
+| Rôle de Jonas | Conception produit, UX, développement Godot et serveur, systèmes de jeu, orchestration d'agents IA, QA |
+| Statut | V4 Godot en cours · multijoueur de classe testé au banc · site privé de la classe |
 | Niveau de preuve | Preuves privées |
-| Stack | Godot, Blender, Three.js, Next.js, Firebase, Firestore, Cloud Functions, TypeScript, Vite, Node.js, Playwright |
+| Stack | Godot 4.6, GDScript, Blender, Python, Educool, Firebase, Vercel, TypeScript, Three.js, Next.js, Playwright |
 
 ## Preuves techniques
 
@@ -134,12 +139,13 @@ Statut interne : Chantier de septembre non validé intégralement ; READY_FOR_HU
 
 ### V4
 
-Statut interne : Chantier Godot séparé ; aucun verdict global de jeu terminé.
+Statut interne : Version actuelle ; aucun verdict global de jeu terminé ni pilote en classe.
 
-- Sources et journaux privés relus le 23 septembre 2026.
-- Une candidate Mac restaurée et son entrée dans le monde ont été contrôlées le 21 septembre.
-- Captures natives d'interface avec des données de jeu fictives.
+- Banc multijoueur du 5 novembre 2026 : 18 scénarios sur 21 passent (30 élèves connectés en 15,1 s, coupure réseau de 10 s, 10 % de pertes, doublons, triche, ordres de l'enseignante reçus en moins de 400 ms par 23 élèves).
+- Profil « vieil iPad » mesuré sur Mac aux 6 points les plus chargés : environ 70 % d'appels de dessin et 55 % de triangles en moins.
+- Lanceur avec mises à jour et réparation : 15 contrôles sur 15 passent sur Mac.
 
 ## Liens
 
 - [Étude de cas](/projets/educool-la-herse)
+- [Site du jeu (privé, code de classe)](https://cool-bank-v4.vercel.app)

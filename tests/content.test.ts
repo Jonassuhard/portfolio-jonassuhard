@@ -302,14 +302,14 @@ test("Cool Bank distingue ses chantiers 3D avant ses statuts techniques", () => 
   assert.ok(project);
   assert.equal(project.title, "Cool Bank - donner vie à une banque de classe");
   assert.equal(project.fullColorMedia, true);
-  assert.match(project.heroImage?.src ?? "", /v2-village-20260817/);
+  assert.match(project.heroImage?.src ?? "", /v4-bourg-20261105/);
   assert.deepEqual(project.story?.roles.map((role) => role.title), [
     "L'élève",
     "Le banquier",
     "L'enseignante"
   ]);
   assert.deepEqual(project.story?.galleryGroups.map((group) => group.title), [
-    "V4 — le chantier natif",
+    "V4 — le jeu de la classe dans Godot",
     "V3 — la reconstruction locale",
     "V2 — la boucle 3D déjà jouable"
   ]);
@@ -482,7 +482,7 @@ test("les projets utilisent les médias frais retenus lors de l'audit", () => {
   assert.equal(bySlug("battle-engine")?.video, "/assets/video/battle-bl05-20260923.mp4");
   assert.equal(
     bySlug("educool-la-herse")?.heroImage?.src,
-    "/assets/proof/educool/v2-village-20260817.webp"
+    "/assets/proof/educool/v4-bourg-20261105.webp"
   );
   assert.match(JSON.stringify(bySlug("educool-la-herse")?.story), /v2-house-20260822\.webp/);
   assert.match(JSON.stringify(bySlug("hoopsphere")?.gallery), /landing-20260908\.webp/);
@@ -511,7 +511,7 @@ test("Cool Bank / La Herse expose séparément les versions V2, V3 et V4", () =>
   assert.ok(project);
   assert.equal(project.shortTitle, "Cool Bank / La Herse");
   assert.deepEqual(project.versions?.map((version) => version.label), ["V2", "V3", "V4"]);
-  assert.match(project.versions?.[2].publicStatus ?? "", /partiellement jouable, non finalisée/);
+  assert.match(project.versions?.[2].publicStatus ?? "", /non finalisée/);
   assert.match(project.versions?.[0].status ?? "", /LOCAL_SINGLE_DEVICE_READY/);
   assert.match(project.versions?.[1].status ?? "", /READY_FOR_HUMAN_RECIPE/);
   assert.doesNotMatch(
