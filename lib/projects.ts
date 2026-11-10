@@ -84,6 +84,8 @@ export type Project = {
   // Pilote le JSON-LD : contributor au lieu d'author, pas de programmingLanguage.
   codeByOthers?: boolean;
   gallery?: ProofImage[];
+  mapHref?: string;
+  mapLabel?: string;
   links: Array<{
     label: string;
     href: string;
@@ -228,6 +230,8 @@ export const projects: Project[] = [
     cardStatus: "Version personnelle déployée · Community publique",
     repoStatus: "Version personnelle privée · édition Community publique MIT : github.com/Jonassuhard/job-radar-community",
     liveLabel: "Repo Community et preuve v0.1.0-beta.1",
+    mapHref: "/job-radar/architecture-map.html",
+    mapLabel: "Carte d'architecture",
     evidenceNote:
       "Sources personnelles relues le 23 septembre 2026 : classement et contrôle de fraîcheur des offres renforcés localement, sans assimiler ces travaux au code cloud déployé. La preuve de déploiement du 25 août et les captures fictives du 8 septembre restent datées. Community v0.1.0-beta.1 reste la version publique : 336 tests backend, 36 frontend et 37 E2E sans échec ; 8 E2E ignorés intentionnellement dans cette preuve historique.",
     metaDescription:
@@ -403,6 +407,7 @@ export const projects: Project[] = [
         href: "https://github.com/Jonassuhard/job-radar-community/blob/main/docs/verification/v0.1.0-beta.1.json",
         external: true
       },
+      { label: "Carte d'architecture", href: "/job-radar/architecture-map.html" },
       { label: "Version Markdown", href: "/projects/job-radar.md" }
     ]
   },

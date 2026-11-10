@@ -122,8 +122,18 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                 {primaryLink.label}
               </a>
             ) : null}
+            {project.mapHref ? (
+              <a className="button" href={project.mapHref}>
+                {project.mapLabel ?? "Carte d'architecture"}
+              </a>
+            ) : null}
             <a className="lk" href={`/projects/${project.slug}.md`}>Version Markdown</a>
           </div>
+          {project.mapHref ? (
+            <p className="project-state">
+              La carte est statique et se consulte sans validation humaine. Le radar et le scoring tournent automatiquement ; la validation reste obligatoire avant l&apos;envoi d&apos;une candidature.
+            </p>
+          ) : null}
         </div>
         <div className="project-hero-media">
           {project.video ? (

@@ -136,3 +136,4 @@ Cette édition partage le noyau du Radar sans profil, CV, candidatures ni donné
 - [Configurer son radar](https://github.com/Jonassuhard/job-radar-community/blob/main/docs/CONFIGURATION.md)
 - [Architecture publique](https://github.com/Jonassuhard/job-radar-community/blob/main/docs/ARCHITECTURE.md)
 - [Preuve v0.1.0-beta.1](https://github.com/Jonassuhard/job-radar-community/blob/main/docs/verification/v0.1.0-beta.1.json)
+- [Carte d'architecture](/job-radar/architecture-map.html)
