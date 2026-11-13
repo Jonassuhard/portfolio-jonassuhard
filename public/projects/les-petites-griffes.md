@@ -5,7 +5,7 @@
 | Repère | Détail |
 | --- | --- |
 | Format | Site live + CMS + assistant IA |
-| Période | Avril 2026 - Juin 2026 |
+| Période | Avril à juin 2026 |
 | Rôle de Jonas | Stratégie, design, développement, SEO, déploiement, QA |
 | Statut | Prod live |
 | Niveau de preuve | Preuves privées |

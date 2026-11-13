@@ -1034,3 +1034,21 @@ html { scrollbar-gutter:stable; }
   .hero-readable h1, .recruiter-intro h1, .project-hero h1 { font-size:34px; }
   .hero-readable .button-row { gap:8px; }
 }
+
+/* Récit à la première personne et schéma de présentation des fiches projet. */
+.project-voice-text { max-width:68ch; }
+.project-voice-text p { font-size:15px; line-height:1.78; color:var(--color-ink-soft); margin:0 0 16px; }
+.project-voice-text p:first-child { font-size:17px; color:var(--color-ink); }
+.flow-chart { list-style:none; margin:20px 0 0; padding:0; display:grid; grid-auto-flow:column; grid-auto-columns:minmax(0,1fr); gap:28px; counter-reset:none; }
+.flow-chart li { position:relative; display:flex; flex-direction:column; gap:6px; padding:14px 14px 16px; border:1px solid var(--color-ink); background:var(--color-surface-strong); min-height:132px; }
+.flow-chart li:not(:last-child)::after { content:""; position:absolute; top:50%; right:-28px; width:28px; height:1px; background:var(--color-ink); }
+.flow-chart li:not(:last-child)::before { content:""; position:absolute; top:calc(50% - 4px); right:-28px; width:8px; height:8px; border-top:1px solid var(--color-ink); border-right:1px solid var(--color-ink); transform:rotate(45deg); z-index:1; }
+.flow-chart .flow-index { font-family:var(--ft-data); font-size:11px; color:var(--color-rust); }
+.flow-chart strong { font-family:var(--ft-title); font-size:21px; line-height:1.1; color:var(--color-ink); }
+.flow-chart .flow-text { font-size:12.5px; line-height:1.55; color:var(--color-ink-soft); }
+@media (max-width:960px) {
+  .flow-chart { grid-auto-flow:row; grid-auto-columns:auto; grid-template-columns:1fr; gap:24px; }
+  .flow-chart li { min-height:0; }
+  .flow-chart li:not(:last-child)::after { top:auto; bottom:-24px; right:auto; left:24px; width:1px; height:24px; }
+  .flow-chart li:not(:last-child)::before { top:auto; bottom:-24px; right:auto; left:20px; transform:rotate(135deg); }
+}

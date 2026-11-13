@@ -5,7 +5,7 @@
 | Repère | Détail |
 | --- | --- |
 | Format | Prototype produit |
-| Période | 2025 - 2026 |
+| Période | 2025 et 2026 |
 | Rôle de Jonas | Co-fondateur, responsable marketing et projections financières |
 | Statut | Archive / MBA |
 | Niveau de preuve | À documenter |

@@ -87,19 +87,16 @@ test("les cartes projet utilisent des illustrations bitmap transparentes en coul
     assert.ok(existsSync(assetUrl), `Illustration absente pour ${project.slug}`);
     const metadata = await sharp(fileURLToPath(assetUrl)).metadata();
     assert.equal(metadata.width, 760, `${project.slug} n'est pas large de 760 px`);
-    assert.equal(metadata.height, project.slug === "cortex-bridge" ? 760 : 460, `${project.slug} doit conserver son ratio source`);
-    if (project.slug === "cortex-bridge") {
-      assert.equal(metadata.hasAlpha, false, "Cortex utilise le fond creme approuve, pas un faux alpha");
-    } else {
-      assert.equal(metadata.hasAlpha, true, `${project.slug} n'a pas de transparence réelle`);
-    }
+    assert.equal(metadata.height, 460, `${project.slug} doit conserver son ratio source`);
+    assert.equal(metadata.hasAlpha, true, `${project.slug} n'a pas de transparence réelle`);
+    assert.match(project.image, /-duotone-\d{8}-art\.webp$/, `${project.slug} n'utilise pas la série deux tons`);
   }
 });
 
 test("Job Radar garde une couverture illustree distincte de ses captures produit", async () => {
   const project = projects.find((item) => item.slug === "job-radar");
   assert.ok(project);
-  assert.match(project.image, /\/cards\/job-radar-illustration-[\d]+-art\.webp$/);
+  assert.match(project.image, /\/cards\/job-radar-duotone-[\d]+-art\.webp$/);
   assert.notEqual(project.image, project.heroImage?.src);
 
   const assetUrl = new URL(`../public${project.image}`, import.meta.url);
@@ -309,9 +306,9 @@ test("Cool Bank distingue ses chantiers 3D avant ses statuts techniques", () => 
     "L'enseignante"
   ]);
   assert.deepEqual(project.story?.galleryGroups.map((group) => group.title), [
-    "V4 — le jeu de la classe dans Godot",
-    "V3 — la reconstruction locale",
-    "V2 — la boucle 3D déjà jouable"
+    "V4, le jeu de la classe dans Godot",
+    "V3, la reconstruction locale",
+    "V2, la boucle 3D déjà jouable"
   ]);
   assert.ok(project.story?.galleryGroups.every((group) => group.images.length >= 3));
 
@@ -335,7 +332,7 @@ test("Cool Bank distingue ses chantiers 3D avant ses statuts techniques", () => 
 test("la carte Cool Bank utilise l'illustration des deux mondes et non l'écran de rôles", () => {
   const project = projects.find((item) => item.slug === "educool-la-herse");
   const illustration = new URL(
-    "../public/assets/cards/cool-bank-art.webp",
+    "../public/assets/cards/educool-la-herse-duotone-20261113-art.webp",
     import.meta.url
   );
   const formerScreen = new URL(
@@ -344,7 +341,7 @@ test("la carte Cool Bank utilise l'illustration des deux mondes et non l'écran 
   );
 
   assert.ok(project);
-  assert.equal(project.image, "/assets/cards/cool-bank-art.webp");
+  assert.equal(project.image, "/assets/cards/educool-la-herse-duotone-20261113-art.webp");
   assert.equal(existsSync(illustration), true);
   assert.equal(existsSync(formerScreen), false);
 });

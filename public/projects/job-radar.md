@@ -5,9 +5,9 @@
 | Repère | Détail |
 | --- | --- |
 | Format | Radar d'offres déployé + édition open source |
-| Période | Juillet - septembre 2026 |
+| Période | Juillet à septembre 2026 |
 | Rôle de Jonas | Conception produit, architecture, développement full-stack, déploiement cloud, sécurité et QA |
-| Statut | Version personnelle déployée · Community v0.1.0-beta.1 publique |
+| Statut | Version personnelle déployée, édition Community v0.1.0-beta.1 publique |
 | Niveau de preuve | Preuve publique |
 | Stack | Python, FastAPI, React, Turso, Cloud Run, Vercel, Playwright |
 

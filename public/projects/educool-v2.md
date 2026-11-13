@@ -5,9 +5,9 @@
 | Repère | Détail |
 | --- | --- |
 | Format | Application pour l'enseignante |
-| Période | 2026 - en cours |
+| Période | Depuis 2026, en cours |
 | Rôle de Jonas | Conception produit, interface, développement full-stack et vérification avec des données fictives |
-| Statut | Application à accès réservé · améliorations locales en cours |
+| Statut | Application à accès réservé, améliorations locales en cours |
 | Niveau de preuve | Preuves privées |
 | Stack | Next.js, React, TypeScript, Zustand, Firebase, Firestore, Cloud Functions, IndexedDB |
 
@@ -77,5 +77,5 @@ Sources locales relues le 9 septembre 2026. Captures issues des contrôles locau
 ## Liens
 
 - [Étude de cas](/projets/educool-v2)
-- [Application · accès réservé](https://educool-v2.vercel.app)
+- [Application à accès réservé](https://educool-v2.vercel.app)
 - [Projet distinct : Cool Bank](/projets/educool-la-herse)

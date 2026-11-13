@@ -60,7 +60,7 @@ export default function ProjectStory({ project }: ProjectStoryProps) {
             {project.versions.map((version) => (
               <article className="version-story" key={version.label}>
                 <p className="case-meta">{version.publicStatus ?? version.status}</p>
-                <h3>{version.label} — {version.name}</h3>
+                <h3>{version.label}, {version.name}</h3>
                 <p>{version.summary}</p>
               </article>
             ))}

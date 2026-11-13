@@ -7,7 +7,7 @@
 | Format | POC / preuve technique |
 | Période | 2026 |
 | Rôle de Jonas | Conception et développement (POC) |
-| Statut | Prototype privé historique · source à restaurer |
+| Statut | Prototype privé historique, source à restaurer |
 | Niveau de preuve | Preuves privées |
 | Stack | Python, Mistral Large, Pondération déterministe, JSON |
 

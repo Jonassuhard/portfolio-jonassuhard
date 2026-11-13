@@ -4,10 +4,10 @@
 
 | Repère | Détail |
 | --- | --- |
-| Format | Produit - audit GEO (visibilité IA) |
-| Période | Juin 2026 - en cours |
+| Format | Produit, audit GEO (visibilité IA) |
+| Période | Depuis juin 2026, en cours |
 | Rôle de Jonas | Conception produit, méthode d'audit, site, prototypage du livrable |
-| Statut | Offre en ligne - phase de lancement |
+| Statut | Offre en ligne, en phase de lancement |
 | Niveau de preuve | Preuve publique |
 | Stack | Next.js, GEO / AEO, LLM multi-modèles, Schema JSON-LD, PDF |
 

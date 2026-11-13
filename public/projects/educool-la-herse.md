@@ -60,7 +60,7 @@ Sources relues le 5 novembre 2026 : journaux de tickets, banc multijoueur, mesur
 
 ## Visuels
 
-### V4 — le jeu de la classe dans Godot
+### V4, le jeu de la classe dans Godot
 
 Captures natives du 5 novembre 2026 sur des profils de démonstration : la banque, le profil allégé pour les vieux iPad et le site privé de la classe. Elles montrent le jeu en cours, pas une version finale ni un usage en classe.
 
@@ -70,7 +70,7 @@ Captures natives du 5 novembre 2026 sur des profils de démonstration : la banqu
 
 ![Le site privé du jeu, fermé par un code de classe. Page d'accueil capturée en local le 5 novembre 2026 ; le téléchargement n'est pas encore ouvert.](/assets/proof/educool/v4-site-classe-20261105.webp)
 
-### V3 — la reconstruction locale
+### V3, la reconstruction locale
 
 Nouvelles vues du build local du 7 septembre 2026, capturées le 8 septembre en mode de prévisualisation de carte. Le code source a encore évolué depuis ce build. Aucun usage en classe ni test humain n'est déduit de ces images.
 
@@ -80,7 +80,7 @@ Nouvelles vues du build local du 7 septembre 2026, capturées le 8 septembre en 
 
 ![V3 : vue d'ensemble du terrain pour situer les zones. Prévisualisation technique, pas validation humaine du jeu.](/assets/proof/educool/v3-map-island-20260908.webp)
 
-### V2 — la boucle 3D déjà jouable
+### V2, la boucle 3D déjà jouable
 
 Vues différentes issues des preuves locales d'août 2026 : bourg 3D, organisation du monde et intérieur de maison. Ce sont des archives de la V2, pas une nouvelle recette complète.
 
@@ -112,9 +112,9 @@ Vues différentes issues des preuves locales d'août 2026 : bourg 3D, organisati
 | Repère | Détail |
 | --- | --- |
 | Format | Jeu scolaire 3D multijoueur (Godot) + outil enseignant |
-| Période | Juillet 2026 - en cours |
+| Période | Depuis juillet 2026, en cours |
 | Rôle de Jonas | Conception produit, UX, développement Godot et serveur, systèmes de jeu, orchestration d'agents IA, QA |
-| Statut | V4 Godot en cours · multijoueur de classe testé au banc · site privé de la classe |
+| Statut | V4 Godot en cours, multijoueur de classe testé au banc, site privé de la classe |
 | Niveau de preuve | Preuves privées |
 | Stack | Godot 4.6, GDScript, Blender, Python, Educool, Firebase, Vercel, TypeScript, Three.js, Next.js, Playwright |
 

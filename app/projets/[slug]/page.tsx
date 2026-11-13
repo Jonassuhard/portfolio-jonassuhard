@@ -6,6 +6,7 @@ import { evidenceLevelMeta, getProject, projects, ogImage, type Project } from "
 import AnimatedTitle from "../../animated-title";
 import ProjectVideo from "../../project-video";
 import ProjectStory from "./project-story";
+import { projectVoice } from "@/lib/project-voice";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -94,6 +95,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
     { name: project.shortTitle, path: `/projets/${project.slug}` }
   ]);
   const primaryLink = project.links.find((link) => link.external);
+  const voice = projectVoice[project.slug];
   const cover = project.heroImage ?? project.gallery?.find((shot) => !shot.poster);
   const gallery = project.gallery?.filter((shot) => project.video || shot.src !== cover?.src);
 
@@ -108,7 +110,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
 
       <section className="case-hero project-hero">
         <div>
-          <p className="eyebrow">Projet · {project.period}</p>
+          <p className="eyebrow">{project.period}</p>
           <AnimatedTitle>{project.shortTitle}</AnimatedTitle>
           <p className="lead">{project.cardLine ?? project.summary}</p>
           <p className="project-state">{project.cardStatus ?? project.status}</p>
@@ -154,6 +156,32 @@ export default async function ProjectDetailPage({ params }: PageProps) {
         </div>
       </section>
 
+      {voice ? (
+        <section className="section project-voice" id="recit">
+          <p className="section-kicker">Le projet, raconté</p>
+          <h2>Pourquoi je l'ai fait, et comment.</h2>
+          <div className="project-voice-text">
+            {voice.narrative.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+          </div>
+        </section>
+      ) : null}
+
+      {voice ? (
+        <section className="section project-flow" id="schema">
+          <p className="section-kicker">Schéma</p>
+          <h2>{voice.flowTitle}.</h2>
+          <ol className="flow-chart">
+            {voice.flow.map((step, index) => (
+              <li key={step.label}>
+                <span className="flow-index" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+                <strong>{step.label}</strong>
+                <span className="flow-text">{step.text}</span>
+              </li>
+            ))}
+          </ol>
+        </section>
+      ) : null}
+
       {project.need || project.intention ? (
         <section className="section project-need" id="besoin">
           {project.need ? (
@@ -186,7 +214,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                 ) : (
                   <ProjectImage src={shot.src} alt={shot.caption} width={shot.width} height={shot.height}
                     sizes="(max-width: 640px) calc(100vw - 28px), 552px"
-                    quality={78} loading="lazy"
+                    quality={75} loading="lazy"
                     className={`full-color-media${shot.height / shot.width > 1.6 ? " proof-portrait" : ""}`} />
                 )}
                 <figcaption>{shot.caption}</figcaption>
@@ -215,7 +243,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
             {project.versions.map((version) => (
               <article className="version-story" key={version.label}>
                 <p className="case-meta">{version.publicStatus ?? version.status}</p>
-                <h3>{version.label} · {version.name}</h3>
+                <h3>{version.label}, {version.name}</h3>
                 <p>{version.summary}</p>
               </article>
             ))}
@@ -302,7 +330,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                 {project.story ? <p>Ces contrôles techniques ne remplacent pas une validation humaine en classe.</p> : null}
                 {project.versions.map((version) => (
                   <details className="reading-details" key={version.label}>
-                    <summary>{version.label} · preuves et limites techniques</summary>
+                    <summary>{version.label}, preuves et limites techniques</summary>
                     <p className="case-meta">{version.status}</p>
                     <h4>Preuves</h4>
                     <ul>{version.evidence.map((item) => <li key={item}>{item}</li>)}</ul>

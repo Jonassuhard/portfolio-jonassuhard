@@ -51,7 +51,7 @@ export default function AboutPage() {
           </div>
           <h2>{site.name}</h2>
           <p>{site.title}</p>
-          <p>Paris · web, automatisation et IA appliquée</p>
+          <p>Paris. Web, automatisation et IA appliquée</p>
         </div>
       </section>
 
@@ -83,17 +83,17 @@ export default function AboutPage() {
         <div className="matrix matrix-2 experience-matrix">
           <div className="matrix-item">
             <strong>Alternant communication digitale, SEO & IA appliquée</strong>
-            <p>Octobre 2025 – août 2026 · Eduservices (marque ISCOM)</p>
+            <p>D'octobre 2025 à août 2026, chez Eduservices (marque ISCOM)</p>
             <p className="cert">Production SEO dans Drupal, audits de cannibalisation (Semrush), automatisations Playwright, fact-check et validation humaine avant publication.</p>
           </div>
           <div className="matrix-item">
             <strong>Alternant communication digitale & SEO</strong>
-            <p>Novembre 2024 – août 2025 · Attineos (Angers)</p>
+            <p>De novembre 2024 à août 2025, chez Attineos (Angers)</p>
             <p className="cert">Refonte et optimisation du site WordPress, contenus LinkedIn, articles, SEO on-page, suivi GA4 et supports de communication.</p>
           </div>
           <div className="matrix-item">
             <strong>Projets web, SEO et IA appliquée</strong>
-            <p>Projets depuis 2021 · entreprise individuelle enregistrée en 2026 · Paris / hybride</p>
+            <p>Des projets depuis 2021, une entreprise individuelle enregistrée en 2026, à Paris ou en hybride</p>
             <p className="cert">Sites web (Next.js, WordPress), SEO local, assistants IA cadrés. Exemple livré en production : Les Petites Griffes.</p>
             <Link className="lk experience-proof" href="/projets/les-petites-griffes">Voir le projet Les Petites Griffes</Link>
           </div>
@@ -110,23 +110,23 @@ export default function AboutPage() {
         <div className="matrix matrix-2">
           <div className="matrix-item">
             <strong>Parcours Anthropic Academy (en cours)</strong>
-            <p>2026 · formation à distance</p>
+            <p>2026, formation à distance</p>
             <p className="cert">Ressources de formation sur Claude, les API, les outils et les évaluations. Aucune certification obtenue n'est revendiquée.</p>
           </div>
           <div className="matrix-item">
-            <strong>MBA Expert Marketing Digital · bac+5</strong>
-            <p>2024–2026 · MyDigitalSchool, Paris</p>
+            <strong>MBA Expert Marketing Digital (bac+5)</strong>
+            <p>De 2024 à 2026, MyDigitalSchool, Paris</p>
             <p className="cert">Titre RNCP de niveau 7 : Manager de la stratégie marketing digital.</p>
           </div>
           <div className="matrix-item">
             <strong>Bachelor Chef de projet digital</strong>
-            <p>2023–2024 · La Digital School, Angers</p>
-            <p className="cert">Titre RNCP34340, niveau 6 — « Chef de projet e-business » · preuve privée</p>
+            <p>De 2023 à 2024, La Digital School, Angers</p>
+            <p className="cert">Titre RNCP34340 de niveau 6, « Chef de projet e-business » (preuve privée)</p>
           </div>
           <div className="matrix-item">
             <strong>Animation 2D / 3D</strong>
-            <p>2019–2021 · Human Academy, Angoulême</p>
-            <p className="cert">Formation suivie de 2019 à 2021 — certificat d'école, non inscrit au RNCP</p>
+            <p>De 2019 à 2021, Human Academy, Angoulême</p>
+            <p className="cert">Formation suivie de 2019 à 2021, certificat d'école non inscrit au RNCP</p>
           </div>
         </div>
       </section>

@@ -5,7 +5,7 @@
 | Repère | Détail |
 | --- | --- |
 | Format | Conversion + expérimentation IA |
-| Période | Juin 2026 - Juillet 2026 |
+| Période | Juin et juillet 2026 |
 | Rôle de Jonas | Stratégie, audit, UX, contenus, expérimentation IA, présentation client |
 | Statut | Staging / workshop MBA |
 | Niveau de preuve | Preuves privées |

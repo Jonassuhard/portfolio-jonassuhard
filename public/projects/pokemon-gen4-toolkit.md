@@ -7,7 +7,7 @@
 | Format | Lab / projet perso |
 | Période | 2026 |
 | Rôle de Jonas | Conception et développement |
-| Statut | Lab privé - aucune ROM distribuée |
+| Statut | Lab privé, aucune ROM distribuée |
 | Niveau de preuve | Preuves privées |
 | Stack | Python 3, ndspy, Format NARC, Moteur de texte Gen 4 maison |
 

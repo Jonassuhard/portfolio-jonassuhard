@@ -5,9 +5,9 @@
 | Repère | Détail |
 | --- | --- |
 | Format | Agent de code local open source piloté par ChatGPT |
-| Période | Juillet - septembre 2026 · v0.6.5-preview.1 |
+| Période | Juillet à septembre 2026, v0.6.5-preview.1 |
 | Rôle de Jonas | Conception produit, architecture, extension MV3, backend FastAPI, sécurité, QA |
-| Statut | Preview technique open source · v0.6.5-preview.1 non finalisée |
+| Statut | Preview technique open source, v0.6.5-preview.1 non finalisée |
 | Niveau de preuve | Preuve publique |
 | Stack | Chrome MV3, FastAPI, Next.js, React, SQLite, Python, Ollama |
 

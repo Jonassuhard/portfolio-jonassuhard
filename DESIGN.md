@@ -229,13 +229,17 @@ est une démo privée. Les descriptions détaillées restent dans les fiches.
 Job Radar, Cortex Bridge et Les Petites Griffes ouvrent les trois index.
 Toutes les cartes gardent leur ratio, y compris dans les labs et archives.
 
-Cortex Bridge : illustration orbitale carrée (760 × 760), avec tête de femme chauve aux yeux verts, quatre astres et pont sans croisillons. Elle est affichée sans recadrage dans la carte 38/23. Le titre et les noms Luna/Terra/Sol/Astra sont rendus en HTML, pas générés dans le bitmap. Exception au fond transparent : le fichier utilise un fond crème pour éviter le damier incrusté par le générateur. Les anciennes illustrations restent conservées.
+Série deux tons du 13 novembre 2026 : les quinze vignettes ont été refaites une par une avec Gemini, dans un style de sérigraphie tramée (objet 3D en vue trois quarts, hachures, ambiance d'archive scientifique). Chaque image n'utilise que deux teintes, l'encre `#15120E` et un orange `#D95A1E`, sur fond transparent. La recoloration et le détourage sont faits après génération, ce qui garantit les deux teintes exactes. Le titre est composé en Cormorant Garamond dans le bitmap ; aucune lettre n'est générée par le modèle. Cortex Bridge suit désormais le format commun 760 × 460. Les anciennes illustrations restent conservées dans le dépôt.
 
 Interaction des cartes : contour encre renforcé en 200 ms et flèche décalée de 3 px, sans déplacement de carte ni barre lumineuse. Le focus clavier offre le même retour. Un voile holographique transparent, large de 200 % de la carte, passe au-dessus de l'image et du texte en 4,8 secondes, une seule fois par entrée de souris ; il disparaît à la fin. Aucun cycle permanent. Sur écran tactile, la flèche reste visible sans dépendre du survol. Le mouvement réduit supprime le voile et les transitions.
 Toute la carte de l'index peut être cliquable ; les liens secondaires restent
 utilisables au clavier.
 
-Chaque vignette utilise un bitmap WebP de 760 × 460 avec transparence réelle. Elle est rendue sans recadrage dans son ratio source 38/23. Elle mélange la couleur et le symbole propres au projet avec la composition Archive Worldline : titre court à gauche, un seul emblème lisible à droite, repères techniques très rares. Le contenu placé sous l'image ne répète pas visuellement ce titre ; il reste présent hors écran pour conserver la structure accessible. Les scènes détaillées, schémas génériques et générateurs SVG de cartes sont exclus ; les couleurs des projets restent affichées sans filtre sépia.
+Chaque vignette utilise un bitmap WebP de 760 × 460 avec transparence réelle, rendu sans recadrage dans son ratio source 38/23. Titre court à gauche, souligné d'un trait orange ; un seul emblème lisible à droite. Le contenu placé sous l'image ne répète pas visuellement ce titre ; il reste présent hors écran pour conserver la structure accessible. Les couleurs propres à chaque projet ne sont plus utilisées dans les vignettes : la série est strictement bicolore. Aucun personnage, logo ou élément d'une œuvre existante.
+
+### Récit et schéma des fiches
+
+Chaque fiche ouvre sur un récit à la première personne (`lib/project-voice.ts`), en prose, sans liste. Il est suivi d'un schéma de présentation : quatre à six étapes numérotées, encadrées d'un trait d'encre et reliées par une flèche, en ligne sur grand écran et en colonne sous 960 px. Les listes détaillées restent dans le dossier technique.
 
 ### Boutons et liens
 

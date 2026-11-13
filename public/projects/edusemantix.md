@@ -7,7 +7,7 @@
 | Format | Lab / projet perso |
 | Période | 2026 |
 | Rôle de Jonas | Conception et développement |
-| Statut | Démo publique en ligne · projet personnel |
+| Statut | Démo publique en ligne, projet personnel |
 | Niveau de preuve | Preuve publique |
 | Stack | React 19 / Vite 6, Node.js / Express / Socket.io, ConceptNet Numberbatch, Python (pré-calcul), Firebase Firestore |
 
