@@ -746,7 +746,7 @@ export const projects: Project[] = [
         limits: [
           "Trois scénarios échouent encore : les habitants et l'heure du jeu ne sont pas identiques d'un PC à l'autre (correctif en cours). Le test d'endurance de 2 heures est prévu, pas encore joué.",
           "Le profil iPad reste 2,7 à 2,9 fois au-dessus du budget d'appels de dessin et ne réduit pas encore la mémoire ; aucun essai sur un vrai iPad.",
-          "Sur un poste d'élève, le jeu reste lent dehors (11 à 13 images par seconde le 14 novembre 2026) et le premier chargement prend neuf minutes."
+          "Sur un poste d'élève, la version 0.3.2 pas encore publiée reste lente dehors (11 à 13 images par seconde, un poste et un lancement, le 14 novembre 2026) et le premier chargement après une mise à jour prend 9 minutes."
         ]
       }
     ],

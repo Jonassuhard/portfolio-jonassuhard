@@ -103,7 +103,7 @@ Vues différentes issues des preuves locales d'août 2026 : bourg 3D, organisati
 - V3 : Aucun déploiement, aucune donnée réelle d'enfant et aucun verdict d'usage terrain ne sont revendiqués.
 - V4 : Trois scénarios échouent encore : les habitants et l'heure du jeu ne sont pas identiques d'un PC à l'autre (correctif en cours). Le test d'endurance de 2 heures est prévu, pas encore joué.
 - V4 : Le profil iPad reste 2,7 à 2,9 fois au-dessus du budget d'appels de dessin et ne réduit pas encore la mémoire ; aucun essai sur un vrai iPad.
-- V4 : Sur un poste d'élève, le jeu reste lent dehors (11 à 13 images par seconde le 14 novembre 2026) et le premier chargement prend neuf minutes.
+- V4 : Sur un poste d'élève, la version 0.3.2 pas encore publiée reste lente dehors (11 à 13 images par seconde, un poste et un lancement, le 14 novembre 2026) et le premier chargement après une mise à jour prend 9 minutes.
 - Compréhension, plaisir et autonomie des enfants : recette terrain non publiée.
 - Gain de temps pour l'enseignante : non chiffré publiquement.
 
@@ -156,7 +156,7 @@ Cool Bank est un jeu en 3D pour une classe de CM1-CM2. Les élèves y gagnent la
 - Genre. Jeu de vie et de gestion en 3D, à jouer seul ou avec sa classe
 - Pour qui. Une classe de CM1-CM2, des élèves de 9 à 11 ans, et leur enseignante
 - Mon rôle. Conception du jeu, direction, pilotage des agents IA qui écrivent le code, tests, mises en ligne
-- Équipe. Moi, avec plusieurs sessions d'agents IA qui travaillent en parallèle
+- Équipe. Moi, avec jusqu'à une quinzaine de sessions d'agents IA en parallèle, coordonnées par une session cheffe
 - Durée. Depuis juin 2026 pour la première version. La V4 a commencé le 17 octobre 2026.
 - Moteur et outils. Godot 4.6, GDScript, Blender, Python, Firebase, Vercel
 - Plateformes. Windows 64 bits, Windows 32 bits pour les vieux PC, Mac
@@ -309,7 +309,7 @@ Ce que j'ai fait. J'ai repris les sons un par un. 116 sons ont été fabriqués 
 
 ## Le vrai test, sur un ordinateur de l'école.
 
-Le 14 novembre, j'ai mesuré le jeu sur un poste d'élève, un PC de bureau avec 4 Go de mémoire et une puce graphique intégrée de 2013. Le jeu choisit seul un profil allégé sur ces machines.
+Le 14 novembre, j'ai mesuré la version 0.3.2, pas encore publiée, sur un poste d'élève. C'est un PC de bureau de 2014 avec 4 Go de mémoire et une carte graphique intégrée. Le jeu choisit seul un profil allégé sur ces machines. La mesure porte sur un seul poste et un seul lancement.
 
 | Endroit du jeu | Images par seconde | Moments les plus lents |
 |---|---|---|
@@ -319,13 +319,13 @@ Le 14 novembre, j'ai mesuré le jeu sur un poste d'élève, un PC de bureau avec
 | La salle du cristal, cristal rose | 25,1 | 23,3 |
 | La salle du cristal, cristal doré | 24,1 | 22,4 |
 
-Dans les salles, ça se joue. Dehors, c'est encore lent, et le tout premier chargement prend neuf minutes sur ce poste. Aucune erreur de script pendant la mesure. C'est le chantier en cours.
+C'est le double de la version d'avant, qui tournait à 6 ou 7 images par seconde dehors et 10 ou 11 dans les salles. Dans les salles, ça se joue. Dehors, c'est encore lent. Le premier chargement après une mise à jour prend 9 minutes sur ce poste, puis 6 à 7 minutes les fois suivantes. Aucune erreur de script pendant la mesure. C'est le chantier en cours.
 
 ## Comment je travaille avec des agents IA.
 
 - Un ticket par demande. Chaque retour devient une ligne numérotée. Le compteur en est à 732. Quand je dis « le collier du maire est droit », ça devient le ticket 730.
 - Une preuve avant de dire « fait ». Une capture avant, une capture après, un journal. Un test qui passe ne veut pas dire que j'ai validé. Les deux statuts sont séparés dans le suivi et moi seul donne le second.
-- Des sessions en parallèle. Plusieurs agents travaillent en même temps, chacun sur son lot. Une session cheffe tient le suivi et relit les preuves. Un seul agent écrit un fichier à la fois.
+- Des sessions en parallèle. Jusqu'à une quinzaine d'agents travaillent en même temps, chacun sur son lot. Une session cheffe tient le suivi et relit les preuves. Un seul agent écrit un fichier à la fois.
 - Un regard neuf. Je fais jouer le jeu par une session qui ne l'a jamais vu. Elle note ce qu'un enfant ne comprendrait pas, sans rien savoir de ce que j'ai voulu faire.
 
 ## Les chiffres, avec leur source.

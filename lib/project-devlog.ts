@@ -77,7 +77,7 @@ export const projectDevlogs: Record<string, ProjectDevlog> = {
       { label: "Genre", value: "Jeu de vie et de gestion en 3D, à jouer seul ou avec sa classe" },
       { label: "Pour qui", value: "Une classe de CM1-CM2, des élèves de 9 à 11 ans, et leur enseignante" },
       { label: "Mon rôle", value: "Conception du jeu, direction, pilotage des agents IA qui écrivent le code, tests, mises en ligne" },
-      { label: "Équipe", value: "Moi, avec plusieurs sessions d'agents IA qui travaillent en parallèle" },
+      { label: "Équipe", value: "Moi, avec jusqu'à une quinzaine de sessions d'agents IA en parallèle, coordonnées par une session cheffe" },
       { label: "Durée", value: "Depuis juin 2026 pour la première version. La V4 a commencé le 17 octobre 2026." },
       { label: "Moteur et outils", value: "Godot 4.6, GDScript, Blender, Python, Firebase, Vercel" },
       { label: "Plateformes", value: "Windows 64 bits, Windows 32 bits pour les vieux PC, Mac" },
@@ -284,7 +284,7 @@ export const projectDevlogs: Record<string, ProjectDevlog> = {
     ],
     measureTitle: "Le vrai test, sur un ordinateur de l'école.",
     measureLead:
-      "Le 14 novembre, j'ai mesuré le jeu sur un poste d'élève, un PC de bureau avec 4 Go de mémoire et une puce graphique intégrée de 2013. Le jeu choisit seul un profil allégé sur ces machines.",
+      "Le 14 novembre, j'ai mesuré la version 0.3.2, pas encore publiée, sur un poste d'élève. C'est un PC de bureau de 2014 avec 4 Go de mémoire et une carte graphique intégrée. Le jeu choisit seul un profil allégé sur ces machines. La mesure porte sur un seul poste et un seul lancement.",
     measureRows: [
       { where: "La place du bourg", fps: "11,3", slow: "9,0" },
       { where: "Devant le château des maths", fps: "13,5", slow: "11,3" },
@@ -293,7 +293,7 @@ export const projectDevlogs: Record<string, ProjectDevlog> = {
       { where: "La salle du cristal, cristal doré", fps: "24,1", slow: "22,4" }
     ],
     measureNote:
-      "Dans les salles, ça se joue. Dehors, c'est encore lent, et le tout premier chargement prend neuf minutes sur ce poste. Aucune erreur de script pendant la mesure. C'est le chantier en cours.",
+      "C'est le double de la version d'avant, qui tournait à 6 ou 7 images par seconde dehors et 10 ou 11 dans les salles. Dans les salles, ça se joue. Dehors, c'est encore lent. Le premier chargement après une mise à jour prend 9 minutes sur ce poste, puis 6 à 7 minutes les fois suivantes. Aucune erreur de script pendant la mesure. C'est le chantier en cours.",
     methodTitle: "Comment je travaille avec des agents IA.",
     method: [
       {
@@ -306,7 +306,7 @@ export const projectDevlogs: Record<string, ProjectDevlog> = {
       },
       {
         title: "Des sessions en parallèle",
-        text: "Plusieurs agents travaillent en même temps, chacun sur son lot. Une session cheffe tient le suivi et relit les preuves. Un seul agent écrit un fichier à la fois."
+        text: "Jusqu'à une quinzaine d'agents travaillent en même temps, chacun sur son lot. Une session cheffe tient le suivi et relit les preuves. Un seul agent écrit un fichier à la fois."
       },
       {
         title: "Un regard neuf",
