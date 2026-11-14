@@ -7,6 +7,8 @@ import AnimatedTitle from "../../animated-title";
 import ProjectVideo from "../../project-video";
 import ProjectStory from "./project-story";
 import { projectVoice } from "@/lib/project-voice";
+import ProjectDevlog from "./project-devlog";
+import { projectDevlogs } from "@/lib/project-devlog";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -95,7 +97,8 @@ export default async function ProjectDetailPage({ params }: PageProps) {
     { name: project.shortTitle, path: `/projets/${project.slug}` }
   ]);
   const primaryLink = project.links.find((link) => link.external);
-  const voice = projectVoice[project.slug];
+  const devlog = projectDevlogs[project.slug];
+  const voice = devlog ? undefined : projectVoice[project.slug];
   const cover = project.heroImage ?? project.gallery?.find((shot) => !shot.poster);
   const gallery = project.gallery?.filter((shot) => project.video || shot.src !== cover?.src);
 
@@ -200,7 +203,9 @@ export default async function ProjectDetailPage({ params }: PageProps) {
         </section>
       ) : null}
 
-      {project.story ? <ProjectStory project={project} /> : null}
+      {devlog ? <ProjectDevlog devlog={devlog} /> : null}
+
+      {project.story && !devlog ? <ProjectStory project={project} /> : null}
 
       {!project.story && gallery?.length ? (
         <section className="section" id="galerie">
