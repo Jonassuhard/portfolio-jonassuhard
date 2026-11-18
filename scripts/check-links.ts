@@ -22,6 +22,7 @@ const routes = new Set([
   "/preuves",
   "/projets",
   "/recruteurs",
+  "/dirigeants",
   "/outils/decodeur-offre-ia",
   "/robots.txt",
   "/sitemap.xml",
