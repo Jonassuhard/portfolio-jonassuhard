@@ -570,28 +570,28 @@ export const projects: Project[] = [
   },
   {
     slug: "educool-la-herse",
-    roleSummary: "J'ai conçu l'expérience, développé les rôles et relié le jeu à l'outil de gestion de classe.",
+    roleSummary: "J'ai conçu le jeu, dirigé les agents IA qui l'écrivent, testé chaque version et relié le jeu à l'outil de l'enseignante.",
     title: "Cool Bank - donner vie à une banque de classe",
     shortTitle: "Cool Bank / La Herse",
     type: "Jeu scolaire 3D multijoueur (Godot) + outil enseignant",
-    period: "Depuis juillet 2026, en cours",
-    role: "Conception produit, UX, développement Godot et serveur, systèmes de jeu, orchestration d'agents IA, QA",
-    status: "V4 Godot en cours, multijoueur de classe testé au banc, site privé de la classe",
+    period: "Depuis juin 2026, en cours",
+    role: "Conception du jeu, direction, pilotage d'agents IA, tests, mises en ligne",
+    status: "V4 dans Godot, version 0.3.1 du 13 novembre 2026, installée sur des ordinateurs de l'école",
     evidenceLevel: "private",
     tier: 1,
     image: "/assets/cards/educool-la-herse-duotone-20261113-art.webp",
     heroImage: {
-      src: "/assets/proof/educool/v4-bourg-20261105.webp",
-      caption: "Cool Bank V4 : la place du marché et l'interface du joueur dans Godot. Capture native du 5 novembre 2026, profil de démonstration, aucune donnée d'élève.",
-      width: 1440,
-      height: 1003
+      src: "/assets/proof/educool/v4-ile-20261107.webp",
+      caption: "L'île de Cool Bank V4, avec le bourg au centre et les trois châteaux au nord. Capture du jeu du 7 novembre 2026.",
+      width: 1600,
+      height: 900
     },
     fullColorMedia: true,
-    cardStatus: "V4 dans Godot, multijoueur de classe, données fictives",
+    cardStatus: "V4 dans Godot, version 0.3.1, élèves inventés dans toutes les images",
     repoStatus: "Dépôts privés, données scolaires exclues des preuves",
-    liveLabel: "Site privé de la classe, accès par code",
+    liveLabel: "Jeu réservé à la classe, accès par code",
     evidenceNote:
-      "Sources relues le 5 novembre 2026 : journaux de tickets, banc multijoueur, mesures du profil iPad et du lanceur. La V4 est le jeu en cours ; V2 et V3 restent des archives avec leurs propres preuves. Le site du jeu est privé et fermé par un code de classe ; le téléchargement n'y est pas encore ouvert. Aucun pilote en classe ni résultat pédagogique ne sont revendiqués.",
+      "Sources relues le 14 novembre 2026 : suivi des tickets, journal des versions, bilan de la version 0.3.1, banc multijoueur du 5 novembre et mesure sur un poste d'élève. La V4 est le jeu en cours ; V1, V2 et V3 restent des archives. Le jeu et son site sont réservés à la classe. Tous les élèves visibles dans les images sont inventés. Aucun résultat pédagogique n'est revendiqué.",
     metaDescription:
       "Cool Bank V4 : un jeu 3D multijoueur fait dans Godot pour une classe de CM1-CM2, avec banque de classe, quêtes, ceintures et outils pour l'enseignante.",
     cardLine:
@@ -746,7 +746,7 @@ export const projects: Project[] = [
         limits: [
           "Trois scénarios échouent encore : les habitants et l'heure du jeu ne sont pas identiques d'un PC à l'autre (correctif en cours). Le test d'endurance de 2 heures est prévu, pas encore joué.",
           "Le profil iPad reste 2,7 à 2,9 fois au-dessus du budget d'appels de dessin et ne réduit pas encore la mémoire ; aucun essai sur un vrai iPad.",
-          "Lanceur non essayé sur les PC de la classe ; téléchargement pas encore ouvert sur le site."
+          "Sur un poste d'élève, la version 0.3.2 pas encore publiée reste lente dehors (11 à 13 images par seconde, un poste et un lancement, le 14 novembre 2026) et le premier chargement après une mise à jour prend 9 minutes."
         ]
       }
     ],
@@ -815,12 +815,11 @@ export const projects: Project[] = [
     ],
     limits: [
       "Preuve privée : code, captures complètes et données de contexte se montrent uniquement sur fixtures anonymisées.",
-      "V2 n'est pas prête pour Internet ; V3 et V4 ne sont pas validées comme pilotes auprès d'enfants.",
+      "V2 n'est pas prête pour Internet ; V3 n'a jamais été validée auprès d'enfants ; aucune mesure d'usage en classe n'est publiée pour la V4.",
       "Les mesures V4 viennent de bancs techniques avec des élèves simulés, pas d'une séance réelle en classe.",
       "Les volumes de tests prouvent le comportement technique, pas l'utilité pédagogique ni l'adoption."
     ],
     links: [
-      { label: "Site du jeu (privé, code de classe)", href: "https://cool-bank-v4.vercel.app", external: true },
       { label: "Version Markdown", href: "/projects/educool-la-herse.md" }
     ]
   },

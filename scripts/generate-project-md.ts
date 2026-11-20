@@ -8,6 +8,7 @@ import { dirname, join } from "node:path";
 import { evidenceLevelMeta, projects, type Project } from "../lib/projects";
 import { knowledgePages, type KnowledgePage } from "../lib/knowledge";
 import { faqMeta, faqItems } from "../lib/faq";
+import { projectDevlogs } from "../lib/project-devlog";
 import {
   claimStatusMeta,
   contentReviewDate,
@@ -131,8 +132,43 @@ function storyToMarkdown(project: Project) {
   return `${lines.join("\n").trimEnd()}\n`;
 }
 
+function devlogToMarkdown(project: Project) {
+  const devlog = projectDevlogs[project.slug];
+  if (!devlog) return "";
+  const media = (items: { kind: string; src: string; caption: string }[]) =>
+    items.map((item) => item.kind === "video" ? `[Vidéo. ${item.caption}](${item.src})` : `![${item.caption}](${item.src})`);
+  const lines = [
+    "", "## Fiche du jeu", "", devlog.pitch, "",
+    bullets(devlog.sheet.map((row) => `${row.label}. ${row.value}`)),
+    "", `## ${devlog.pillarsTitle}`, "",
+    bullets(devlog.pillars.map((item) => `${item.title}. ${item.text}`)),
+    "", `## ${devlog.versionsTitle}`, "", devlog.versionsLead
+  ];
+  for (const version of devlog.versions) {
+    lines.push("", `### ${version.label}, ${version.name} (${version.period})`, "", ...version.text,
+      "", `Ce que j'en garde. ${version.kept}`, "", ...media(version.media));
+  }
+  lines.push("", `## ${devlog.stepsTitle}`, "", devlog.stepsLead);
+  for (const step of devlog.steps) {
+    lines.push("", `### ${step.title} (${step.when})`, "", `Le problème. ${step.problem}`, "",
+      `Ce que j'ai fait. ${step.solution}`);
+    if (step.result) lines.push("", step.result);
+    lines.push("", ...media(step.media));
+  }
+  lines.push("", `## ${devlog.measureTitle}`, "", devlog.measureLead, "",
+    "| Endroit du jeu | Images par seconde | Moments les plus lents |", "|---|---|---|",
+    ...devlog.measureRows.map((row) => `| ${row.where} | ${row.fps} | ${row.slow} |`),
+    "", devlog.measureNote,
+    "", `## ${devlog.methodTitle}`, "", bullets(devlog.method.map((item) => `${item.title}. ${item.text}`)),
+    "", `## ${devlog.numbersTitle}`, "",
+    bullets(devlog.numbers.map((item) => `${item.value} ${item.label} (source : ${item.source})`)),
+    "", `## ${devlog.learnedTitle}`, "", bullets(devlog.learned.map((item) => `${item.title}. ${item.text}`)),
+    "", `## ${devlog.nextTitle}`, "", bullets(devlog.next), "");
+  return lines.join("\n");
+}
+
 function toMarkdown(project: Project) {
-  if (project.story) return storyToMarkdown(project);
+  if (project.story) return storyToMarkdown(project) + devlogToMarkdown(project);
 
   const lines = [
     `# ${project.title}`,

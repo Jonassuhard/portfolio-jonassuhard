@@ -299,7 +299,7 @@ test("Cool Bank distingue ses chantiers 3D avant ses statuts techniques", () => 
   assert.ok(project);
   assert.equal(project.title, "Cool Bank - donner vie à une banque de classe");
   assert.equal(project.fullColorMedia, true);
-  assert.match(project.heroImage?.src ?? "", /v4-bourg-20261105/);
+  assert.match(project.heroImage?.src ?? "", /v4-ile-20261107/);
   assert.deepEqual(project.story?.roles.map((role) => role.title), [
     "L'élève",
     "Le banquier",
@@ -479,7 +479,7 @@ test("les projets utilisent les médias frais retenus lors de l'audit", () => {
   assert.equal(bySlug("battle-engine")?.video, "/assets/video/battle-bl05-20260923.mp4");
   assert.equal(
     bySlug("educool-la-herse")?.heroImage?.src,
-    "/assets/proof/educool/v4-bourg-20261105.webp"
+    "/assets/proof/educool/v4-ile-20261107.webp"
   );
   assert.match(JSON.stringify(bySlug("educool-la-herse")?.story), /v2-house-20260822\.webp/);
   assert.match(JSON.stringify(bySlug("hoopsphere")?.gallery), /landing-20260908\.webp/);
